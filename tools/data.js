@@ -72,7 +72,7 @@ function fmt(v, ind) {
 const writeJson = (f, v) => fs.writeFileSync(path.join(DATA, f), fmt(v) + '\n');
 
 /* Порядок полей человека в data/people/*.json (остальные — в конце, как есть). t и ai живут в texts/. */
-const PERSON_KEYS = ['id', 'name', 'full', 'en', 'al', 'fem', 'group', 'hs', 'h', 'k', 'pre', 'n', 'r', 'rm', 'cl', 'su',
+const PERSON_KEYS = ['id', 'name', 'full', 'en', 'al', 'fem', 'group', 'hs', 'h', 'alt', 'k', 'pre', 'n', 'r', 'rm', 'cl', 'su',
   'p', 'par', 'rp', 'unc', 'b', 'd', 'dr', 'kl', 'sp', 'wd', 'pr', 'ev', 'wiki'];
 const orderKeys = (o, keys) => { const r = {}; keys.forEach(k => { if (k in o) r[k] = o[k]; }); Object.keys(o).forEach(k => { if (!(k in r)) r[k] = o[k]; }); return r; };
 

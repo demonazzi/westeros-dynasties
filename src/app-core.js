@@ -405,6 +405,9 @@
       g.append('rect').attr('class', 'halo').attr('x', -5).attr('y', -H / 2 - 5).attr('width', W + 10).attr('height', H + 10).attr('rx', 12);
       g.append('rect').attr('class', 'card').attr('x', 0).attr('y', -H / 2).attr('width', W).attr('height', H).attr('rx', 8);
       g.append('rect').attr('class', 'fbar').attr('x', 0).attr('y', -H / 2).attr('width', 6).attr('height', H).attr('rx', 3);
+      // alt — дом по теории или слухам (Джон Сноу — Таргариен): полоса его цвета у правого края карточки
+      g.filter(d => d.data.alt).append('rect').attr('class', 'altbar').attr('x', W - 6).attr('y', -H / 2).attr('width', 6).attr('height', H).attr('rx', 3)
+        .style('fill', d => 'var(--' + d.data.alt + ')');
       g.append('text').attr('class', 'name').attr('x', 12).attr('y', d => meta(d.data) ? -3 : 5).text(d => d.data.name);
       g.append('text').attr('class', 'meta').attr('x', 12).attr('y', 14).text(d => meta(d.data));
       const b = g.filter(d => d.data.k === 'K' && d.data.n).append('g').attr('class', 'badge');
@@ -606,7 +609,7 @@
      подсказка говорит, кто с кем связан, а нажатие переносит к дальнему от указателя концу. */
   const X_KIND = { m: 'Брак', b: 'Помолвка', l: 'Связь вне брака', rumor: 'Родство по слухам', w: 'Воспитанник' };
   const xText = e => e.type === 'w' ? 'Воспитанник: ' + byId.get(e.b).full + ' у ' + byId.get(e.a).full
-    : e.type === 'rumor' ? 'По слухам: ' + byId.get(e.b).full + ' — ребёнок ' + byId.get(e.a).full
+    : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? 'По теории: ' : 'По слухам: ') + byId.get(e.b).full + ' — ребёнок ' + byId.get(e.a).full
     : X_KIND[e.type] + ': ' + byId.get(e.a).full + ' и ' + byId.get(e.b).full;
   const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
   function drawCross() {

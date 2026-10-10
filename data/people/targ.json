@@ -254,8 +254,7 @@
         {"id":"daenerys","name":"Дейенерис","full":"Дейенерис Бурерождённая","en":"Daenerys Stormborn","al":["Мать драконов","Дени"],"fem":1,"k":"C","p":"aerys2","par":["aerys2","rhaella"],"b":"284","dr":"Дрогон, Рейегаль, Визерион","sp":[["кхал Дрого"],["Хиздар зо Лорак","в книгах"]]},
         {"id":"rhaego","name":"Рейго","en":"Rhaego","k":"T","p":"daenerys","par":["кхал Дрого","daenerys"],"b":"299","d":"299"},
         {"id":"rhaenys_r","name":"Рейенис","full":"Рейенис, дочь Рейегара","fem":1,"k":"T","p":"rhaegar","par":["rhaegar","elia"],"b":"280","d":"283","wiki":"Rhaenys Targaryen (daughter of Rhaegar)"},
-        {"id":"aegon_r","name":"Эйгон","full":"Эйгон, сын Рейегара","al":["Молодой Гриф","Эйгон VI"],"k":"T","p":"rhaegar","par":["rhaegar","elia"],"b":"281","d":"283","wiki":"Aegon Targaryen (son of Rhaegar)"},
-        {"id":"jon","name":"Джон Сноу","en":"Jon Snow","k":"R","p":"rhaegar","par":["rhaegar","lyanna"],"unc":1,"b":"283"}
+        {"id":"aegon_r","name":"Эйгон","full":"Эйгон, сын Рейегара","al":["Молодой Гриф","Эйгон VI"],"k":"T","p":"rhaegar","par":["rhaegar","elia"],"b":"281","d":"283","wiki":"Aegon Targaryen (son of Rhaegar)"}
       ]
     }
   ]

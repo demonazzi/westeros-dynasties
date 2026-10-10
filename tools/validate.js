@@ -15,6 +15,7 @@ P.forEach(p => {
   const h = p.hs || (p.k === 'B' ? 'bf' : 'targ');
   if (!HOUSES[h]) errs.push('нет дома ' + h + ' у ' + p.id);
   if (h === 'oth' && !p.h) errs.push('у другого дома нет h: ' + p.id);
+  if (p.alt && (!HOUSES[p.alt] || p.alt === h)) errs.push('alt — не другой дом: ' + p.alt + ' у ' + p.id);
   if (!p.t) warn.push('нет описания ' + p.id);
 });
 const roots = new Set(BANDS.flatMap(b => b.roots.map(r => r[0])));

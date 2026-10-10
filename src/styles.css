@@ -590,6 +590,7 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 [data-faction="ai"] { --fc: var(--f-gold); }
 .fbar { display: none; }
 .node[data-faction] .fbar { display: inline; fill: var(--fc); }
+.altbar { pointer-events: none; opacity: .9; }
 .node[data-faction] .card { stroke: var(--fc); stroke-width: 2.4; }
 .life[data-faction] .lf { stroke: var(--fc); }
 .life[data-faction] .lf-name { fill: var(--fc); }
