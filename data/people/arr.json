@@ -29,16 +29,16 @@
         {"id":"jasper","name":"Джаспер Аррен","en":"Jasper Arryn","hs":"arr","k":"T","par":["родители в книгах не названы"]},
         {"id":"jon_a","name":"Джон Аррен","en":"Jon Arryn","hs":"arr","k":"T","p":"jasper","d":"298","sp":[["Джейна Ройс","умерла в родах"],["Ровена Аррен","кузина"],["lysa"]],"wd":["robert","eddard"]},
         {"id":"ronnel_j","name":"Роннел Аррен","full":"Роннел Аррен, брат Джона","hs":"arr","k":"T","p":"jasper","sp":[["дама из дома Белморов"]],"wiki":"Ronnel Arryn (son of Jasper)"},
-        {"id":"alys_j","name":"Алис Аррен","full":"Алис Аррен, сестра Джона","fem":1,"hs":"arr","k":"T","p":"jasper","sp":[["сир Элис Уэйнвуд"]],"wiki":"Alys Arryn (sister of Jon)"},
+        {"id":"alys_j","name":"Алис Аррен","full":"Алис Аррен, сестра Джона","fem":1,"hs":"arr","k":"T","p":"jasper","b":"219–251","sp":[["сир Элис Уэйнвуд"]],"wiki":"Alys Arryn (sister of Jon)"},
         {"id":"robert_a","name":"Роберт Аррен","en":"Robert Arryn, Sweetrobin","hs":"arr","k":"T","p":"jon_a","par":["jon_a","lysa"],"b":"292","wiki":"Robert Arryn"},
         {"id":"elbert","name":"Элберт Аррен","full":"Сир Элберт Аррен","en":"Elbert Arryn","hs":"arr","k":"T","p":"ronnel_j","par":["ronnel_j","дама из дома Белморов"],"d":"282"},
-        {"id":"jasper_w","name":"Джаспер Уэйнвуд","en":"Jasper Waynwood","hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"]},
-        {"id":"waynwood_e","name":"Старшая дочь Алис","full":"Старшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"sp":[["denys"]],"wiki":"Denys Arryn"},
+        {"id":"jasper_w","name":"Джаспер Уэйнвуд","en":"Jasper Waynwood","hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"d":"в детстве"},
+        {"id":"waynwood_e","name":"Старшая дочь Алис","full":"Старшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"d":"после 283","sp":[["denys"]],"wiki":"Denys Arryn"},
         {"id":"waynwood_m","name":"Ещё шесть дочерей","full":"Шесть средних дочерей Алис Аррен","fem":1,"group":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"wiki":"Alys Arryn (sister of Jon)"},
-        {"id":"waynwood_y","name":"Младшая дочь Алис","full":"Младшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"sp":[["рыцарь из дома Хардингов"]],"wiki":"Harrold Hardyng"},
+        {"id":"waynwood_y","name":"Младшая дочь Алис","full":"Младшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"d":"после 281","sp":[["рыцарь из дома Хардингов"]],"wiki":"Harrold Hardyng"},
         {"id":"denys","name":"Денис Аррен","full":"Сир Денис Аррен, Любимец Долины","en":"Denys Arryn","hs":"arr","k":"T","par":["дальний родственник Джона; линия не прослежена"],"d":"283","sp":[["waynwood_e"]]},
         {"id":"denys_son","name":"Сын Дениса","full":"Сын Дениса Аррена","hs":"arr","k":"T","p":"denys","par":["denys","waynwood_e"],"wiki":"Denys Arryn"},
-        {"id":"harrold","name":"Гарольд Хардинг","full":"Гарольд Хардинг, Гарри Наследник","en":"Harrold Hardyng, Harry the Heir","hs":"oth","h":"Хардингов","k":"T","p":"waynwood_y","par":["рыцарь из дома Хардингов","waynwood_y"]}
+        {"id":"harrold","name":"Гарольд Хардинг","full":"Гарольд Хардинг, Гарри Наследник","en":"Harrold Hardyng, Harry the Heir","hs":"oth","h":"Хардингов","k":"T","p":"waynwood_y","par":["рыцарь из дома Хардингов","waynwood_y"],"b":"281/282"}
       ]
     }
   ]

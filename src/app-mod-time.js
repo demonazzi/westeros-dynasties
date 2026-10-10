@@ -66,6 +66,8 @@
         if (L.b >= 228 && !p.pre) { L.d = 300; L.alive = true; L.de = false; }
         else L.d = Math.min(299, Math.max(floor, L.b + 55));
       }
+      // оценка по цепочке родни может уехать за 300 г. — рождение не позже 299
+      if (L.be && L.b > 299) L.b = 299;
       if (L.d < L.b) L.d = L.b + 1;
     });
     KINGS = PEOPLE.filter(p => p.k === 'K' && LIFE.get(p.id).ra != null).sort((a, b) => LIFE.get(a.id).ra - LIFE.get(b.id).ra);
@@ -187,11 +189,15 @@
       if (!a || !b) return;
       let y = null;
       [[a.p, e.b], [b.p, e.a]].forEach(([p, other]) => (p.sp || []).forEach(([ref, note]) => { if (ref === other) { const m = /(\d+) г\./.exec(note || ''); if (m) y = +m[1]; } }));
+      // год не назван — оценка: до первого общего ребёнка, иначе через 20 лет после рождения младшего
+      // (помолвка — через 12); не раньше двенадцати лет младшего и не позже смерти любого из двоих
       if (y == null) {
         const kids = PEOPLE.filter(q => q.par.map(idOf).includes(e.a) && q.par.map(idOf).includes(e.b)).map(q => LIFE.get(q.id).b);
-        y = kids.length ? Math.min(...kids) - 1 : Math.max(a.L.b, b.L.b) + 20;
+        const young = Math.max(a.L.b, b.L.b);
+        y = kids.length ? Math.min(...kids) - 1 : young + (e.type === 'b' ? 12 : 20);
+        y = Math.max(y, young + 12);
+        y = Math.min(y, a.L.alive ? 300 : a.L.d, b.L.alive ? 300 : b.L.d);
       }
-      y = Math.max(y, Math.max(a.L.b, b.L.b) + 12);
       marriages.push({ e, a, b, y, key: e.a + '|' + e.b, cross: a.band !== b.band });
     });
     const mg = L_.mar.selectAll('g.t-mar').data(marriages, d => d.key).join('g').attr('class', d => 't-mar t-' + d.e.type + (d.cross ? ' cross' : ''));
