@@ -34,11 +34,10 @@
         gens.get(g).push(p);
       });
       const keys = [...gens.keys()].sort((a, b) => a - b);
-      // малый дом — под своим великим, свёрнут; герб — если задан
-      const sub = !!band.sub;
-      html += '<section class="lv-house h-' + band.house + (sub ? ' lv-sub' : '') + '" data-house="' + band.house + '"><h3 class="lv-head"><button type="button" aria-expanded="' + !sub + '">' +
-        (App.sigilSVG && HOUSES[band.house].sigil ? App.sigilSVG(band.house, 0, 0, sub ? 20 : 26, 'lv-sigil') : '') +
-        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button></h3><div class="lv-body"' + (sub ? ' hidden' : '') + '>';
+      // у малого дома герб меньше
+      html += '<section class="lv-house h-' + band.house + '" data-house="' + band.house + '"><h3 class="lv-head"><button type="button" aria-expanded="true">' +
+        (App.sigilSVG ? App.sigilSVG(band.house, 0, 0, band.liege ? 18 : 26, 'lv-sigil') : '') +
+        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button></h3><div class="lv-body">';
       const pre = keys.filter(g => g < 6), post = keys.filter(g => g >= 6);
       const groups = (pre.length ? [[pre, 'До Завоевания']] : []).concat(post.map(g => [[g], genLabel(g)]));
       groups.forEach(([gs, label]) => {
@@ -64,8 +63,6 @@
     el.querySelectorAll('.lv-item').forEach(b => { const ok = (!q || b.dataset.q.includes(q)) && !hidden.has(b.closest('.lv-house').dataset.house); b.parentElement.hidden = !ok; if (ok) n++; });
     el.querySelectorAll('.lv-gen-wrap').forEach(w => { w.hidden = !w.querySelector('li:not([hidden])'); });
     el.querySelectorAll('.lv-house').forEach(h => { h.hidden = !h.querySelector('li:not([hidden])'); });
-    // поиск находит людей и в свёрнутых малых домах — такие дома раскрываются
-    if (q) el.querySelectorAll('.lv-sub:not([hidden])').forEach(h => { h.querySelector('.lv-body').hidden = false; h.querySelector('.lv-head button').setAttribute('aria-expanded', 'true'); });
     el.querySelector('#lv-count').textContent = App.plural(n, 'человек', 'человека', 'человек');
   }
   el.addEventListener('click', e => {

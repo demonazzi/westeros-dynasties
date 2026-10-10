@@ -7,7 +7,7 @@ const fs = require('fs'), path = require('path');
   const errs = []; p.on('pageerror', e => errs.push(e.message));
   await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
   await p.goto('file://' + path.join(__dirname, '..', 'dist', 'targaryen-tree.html')); await p.waitForTimeout(700);
-  // CHECK_PRE — js перед проверкой (так check-subs.js проверяет развёрнутые малые дома)
+  // CHECK_PRE — js перед проверкой (например, другой вид или фильтр)
   if (process.env.CHECK_PRE) { await p.evaluate(process.env.CHECK_PRE); await p.waitForTimeout(300); }
   const res = await p.evaluate(() => {
     const bad = [];
@@ -17,11 +17,11 @@ const fs = require('fs'), path = require('path');
     // Древо в масштабе 1, чтобы пиксели были понятны
     App.svg.call(App.zoom.transform, d3.zoomIdentity);
     const cards = [...document.querySelectorAll('#tree g.node rect.card')].map(c => ({ b: box(c), id: c.parentNode.__data__.data.id }));
-    const labels = [...document.querySelectorAll('#tree .gap-note, #tree .gap-years, #tree g.band-head text, #tree g.band-head svg, #tree g.sub-head text')];
+    const labels = [...document.querySelectorAll('#tree .gap-note, #tree .gap-years, #tree g.band-head text, #tree g.band-head svg')];
     labels.forEach(l => { const lb = box(l); cards.forEach(c => { if (hit(lb, c.b, 6)) bad.push('древо: «' + name(l) + '» наезжает на ' + c.id); }); });
     // Подписи пропусков между собой и с заголовками
     for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
-      const hg = el => el.closest('g.band-head, g.sub-head');
+      const hg = el => el.closest('g.band-head');
       if (hg(labels[i]) && hg(labels[i]) === hg(labels[j])) continue;
       if (hit(box(labels[i]), box(labels[j]), 2)) bad.push('древо: «' + name(labels[i]) + '» и «' + name(labels[j]) + '» наезжают друг на друга');
     }

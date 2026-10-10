@@ -1,6 +1,6 @@
 /* Запуск: подзаголовок в шапке, дома в легенде, затем старт приложения. */
 (function () {
-  const order = App.bandOrder().filter(b => !b.sub).map(b => b.house);
+  const order = App.bandOrder().filter(b => !b.liege).map(b => b.house);
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
   const sub = document.getElementById('brand-sub');
   sub.textContent = App.housesLabel() + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +

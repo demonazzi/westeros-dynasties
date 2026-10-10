@@ -8,7 +8,7 @@ const fs = require('fs'), path = require('path');
   const errs = []; p.on('pageerror', e => errs.push(e.message));
   await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
   await p.goto('file://' + path.join(__dirname, '..', 'dist', 'targaryen-tree.html')); await p.waitForTimeout(700);
-  // CHECK_PRE — js перед проверкой (так check-subs.js проверяет развёрнутые малые дома)
+  // CHECK_PRE — js перед проверкой (например, другой вид или фильтр)
   if (process.env.CHECK_PRE) { await p.evaluate(process.env.CHECK_PRE); await p.waitForTimeout(300); }
   await p.evaluate(() => { App.reduced = true; App.select(null); });
   const bad = [];
@@ -72,7 +72,7 @@ const fs = require('fs'), path = require('path');
         }
         const nearTree = q => { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { const c = window.__tree.grid.get((Math.floor(q.x / 20) + i) + ',' + (Math.floor(q.y / 20) + j)); if (c && c.some(o => Math.abs(o[0] - q.x) < 6 && Math.abs(o[1] - q.y) < 6)) return true; } return false; };
         const knots = App.layers.knots.selectAll('g.knot').data(), marks = App.layers.marks.selectAll('g.xmark').data();
-        const pick = gap => {
+        const pick = (gap, half) => {
           let best = null;
           for (let s = 0; s <= L; s += 4) {
             const q = path.getPointAtLength(s);
@@ -82,14 +82,30 @@ const fs = require('fs'), path = require('path');
             if (others.some(o => Math.abs(o[0] - q.x) < gap && Math.abs(o[1] - q.y) < gap)) continue;
             if (nearTree(q)) continue;
             const dist = Math.hypot(n.X + 88 - q.x, n.Y - q.y);
-            if (dist >= Math.hypot(m.X + 88 - q.x, m.Y - q.y)) continue;
+            if (half && dist >= Math.hypot(m.X + 88 - q.x, m.Y - q.y)) continue;
             if (!best || dist < best.dist) best = { x: q.x, y: q.y, dist };
           }
           return best;
         };
-        return pick(11) || pick(6);
+        // если у конца from линия идёт в пучке с другими, берётся чистое место дальше по линии:
+        // тогда проверяется, что подсказка и нажатие ведут к одному и тому же концу
+        const near = pick(11, true) || pick(6, true);
+        if (near) return Object.assign(near, { strict: true });
+        return pick(11, false) || pick(6, false);
       }, [l.key, from, to]);
       if (!pt) { bad.push('линия ' + l.key + ': по всей длине сливается с другими линиями'); continue; }
+      if (!pt.strict) {
+        if (from !== l.a) continue; // одной проверки в чистом месте достаточно
+        const [sx, sy] = await aim(pt.x, pt.y, 1.2);
+        await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);
+        const st = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const tip = document.querySelector('.xtip'); return { under: el ? (el.__data__ && el.__data__.key) || el.getAttribute('class') : 'ничего', tip: tip && !tip.hidden ? tip.textContent : '' }; }, [sx, sy]);
+        if (st.under !== l.key) { bad.push('линия ' + l.key + ': под указателем ' + st.under); continue; }
+        await p.mouse.click(sx, sy); await p.waitForTimeout(60);
+        const sel = await p.evaluate(() => App.state.selected);
+        const selName = await p.evaluate(id => id && App.byId.get(id) ? App.byId.get(id).full : '', sel);
+        if ((sel !== l.a && sel !== l.b) || !st.tip.includes('перейти к: ' + selName)) bad.push('линия ' + l.key + ': подсказка «' + st.tip + '», нажатие выбрало ' + sel);
+        continue;
+      }
       const [sx, sy] = await aim(pt.x, pt.y, 1.2);
       await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);
       const st = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const tip = document.querySelector('.xtip'); return { under: el ? (el.__data__ && el.__data__.key) || el.getAttribute('class') : 'ничего', tip: tip && !tip.hidden ? tip.textContent : '' }; }, [sx, sy]);

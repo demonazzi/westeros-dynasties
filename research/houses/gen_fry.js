@@ -138,7 +138,7 @@ D.writeJson('people/fry.json', {
 const meta = readJson('meta.json');
 if (!meta.people_files.includes('fry')) meta.people_files.push('fry');
 meta.bands = meta.bands.filter(b => b.house !== 'fry');
-meta.bands.splice(meta.bands.findIndex(b => b.house === 'tul') + 1, 0, { house: 'fry', sub: 'tul', roots: ROOTS });
+meta.bands.splice(meta.bands.findIndex(b => b.house === 'tul') + 1, 0, { house: 'fry', liege: 'tul', roots: ROOTS });
 meta.houses.fry = { name: 'Дом Фреев', band: 'Фреи', motto: 'Близнецы', sigil: { field: '#C9CDD3', charge: '#2C4A86' } };
 meta.gaps = meta.gaps.filter(g => g.house !== 'fry').concat(GAPS);
 D.writeJson('meta.json', meta);

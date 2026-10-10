@@ -14,7 +14,7 @@ node tools/check-scale.js         # шкала времени
 node tools/check-labels.js        # подписи и пунктиры ни на что не наезжают
 node tools/check-links.js         # связи между домами
 node tools/check-vassal.js        # вкладка «Вассалитет»
-node tools/check-subs.js          # малые дома: Фреи и (в копии данных) Блэквуды под Талли — древо, хронология, список
+node tools/check-minor.js         # малые дома: своя полоса, герб меньше, отдельный раздел в фильтре
 node tools/shot.js имя 1440 900 "js" dark   # скриншот в shots/
 ```
 Проверки в браузере используют Playwright с Chromium (`/opt/npm-tools/node_modules/playwright`).

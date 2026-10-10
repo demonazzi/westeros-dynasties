@@ -12,7 +12,7 @@
     {"house":"lan","roots":[["loren",6],["lyman",8],["lan_lord10",10],["tya",16],["gerold",16]]},
     {"house":"arr","roots":[["sharra",5],["hubert",6],["joffrey_a",10],["isembard",10],["donnel",14],["alys_r",15],["jasper",17],["denys",19]]},
     {"house":"tul","roots":[["edmyn",6],["grover",9],["elmo",11],["tul_lord17",17]]},
-    {"house":"fry","sub":"tul","roots":[["forrest_fr",10],["sabitha_fr",10],["fr_lord14",14],["alys_fr",17],["jyanna_fr",17],["theo_fr",18]]},
+    {"house":"fry","liege":"tul","roots":[["forrest_fr",10],["sabitha_fr",10],["fr_lord14",14],["alys_fr",17],["jyanna_fr",17],["theo_fr",18]]},
     {"house":"stk","roots":[["torrhen",6],["cregan",11],["brandon_c",14]]},
     {"house":"gry","roots":[["vickon",6],["gry_lord10",10],["alton",13],["torwyn",14],["loron",15],["dagon",16],["alannys",19],["quenton_c",19],["dagon_d",19]]}
   ],

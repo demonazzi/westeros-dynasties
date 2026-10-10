@@ -72,7 +72,7 @@
 
   /* ——— Фильтры ——— */
   state.hiddenHouses = new Set();
-  const GREAT = () => BANDS.filter(b => !b.sub).map(b => b.house);
+  const ALL = () => BANDS.map(b => b.house);
   state.kinds = new Set(['K', 'C', 'R', 'B', 'T']);
   state.ridersOnly = false;
   const KINDS = [['K', 'Короли'], ['C', 'Претенденты'], ['R', 'Бастарды'], ['B', 'Блэкфайры'], ['T', 'Остальные']];
@@ -92,11 +92,12 @@
   const fbtn = document.getElementById('filter-btn');
   const fpop = document.getElementById('filter-pop');
   const fcount = document.getElementById('filter-count');
+  const houseBox = b => '<label class="h-' + b.house + '"><input type="checkbox" data-house="' + b.house + '"' + (state.hiddenHouses.has(b.house) ? '' : ' checked') + '><i></i>' + esc(HOUSES[b.house].band) + '</label>';
   function renderFilters() {
     fpop.innerHTML =
-      '<fieldset><legend>Полосы домов</legend>' + App.bandOrder().map(b =>
-        '<label class="h-' + b.house + (b.sub ? ' f-sub' : '') + '"><input type="checkbox" data-house="' + b.house + '"' + (state.hiddenHouses.has(b.house) ? '' : ' checked') + '><i></i>' + esc(HOUSES[b.house].band) + '</label>').join('') +
-      '<div class="f-row"><button type="button" class="linkish" data-fall="1">все</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button></div></fieldset>' +
+      '<fieldset><legend>Великие дома</legend>' + App.bandOrder().filter(b => !b.liege).map(houseBox).join('') + '</fieldset>' +
+      (App.bandOrder().some(b => b.liege) ? '<fieldset><legend>Малые дома</legend>' + App.bandOrder().filter(b => b.liege).map(houseBox).join('') + '</fieldset>' : '') +
+      '<div class="f-row f-houses"><button type="button" class="linkish" data-fall="1">все дома</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button></div>' +
       '<fieldset' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
@@ -126,7 +127,7 @@
     const t = e.target;
     if (t.dataset.house) {
       if (t.checked) state.hiddenHouses.delete(t.dataset.house);
-      else if (App.bandSub(t.dataset.house) || GREAT().filter(h => !state.hiddenHouses.has(h)).length > 1) state.hiddenHouses.add(t.dataset.house);
+      else if (ALL().filter(h => !state.hiddenHouses.has(h)).length > 1) state.hiddenHouses.add(t.dataset.house);
       else t.checked = true;
       applyHouses();
     } else if (t.dataset.kind) {
@@ -140,7 +141,7 @@
   fpop.addEventListener('click', e => {
     const all = e.target.closest('[data-fall]');
     if (all) {
-      state.hiddenHouses = new Set(all.dataset.fall === 'core' ? GREAT().filter(h => h !== 'targ' && h !== 'vel') : []);
+      state.hiddenHouses = new Set(all.dataset.fall === 'core' ? ALL().filter(h => h !== 'targ' && h !== 'vel') : []);
       renderFilters(); applyHouses(); return;
     }
     if (e.target.closest('[data-freset]')) {
@@ -151,16 +152,13 @@
   // Если выбранный человек оказался в скрытой полосе — показываем её снова.
   App.hooks.select.push(id => {
     if (!id) return;
-    const h = App.bandOf(id), par = App.bandSub(h);
-    if (h && (state.hiddenHouses.has(h) || (par && state.hiddenHouses.has(par))) && state.view === 'people') {
-      state.hiddenHouses.delete(h); if (par) state.hiddenHouses.delete(par);
-      App.render(); updateCount(); App.centerOn(id);
-    }
+    const h = App.bandOf(id);
+    if (h && state.hiddenHouses.has(h) && state.view === 'people') { state.hiddenHouses.delete(h); App.render(); updateCount(); App.centerOn(id); }
   });
 
   App.smokeMini = () => {
     const out = { mmNodes: document.querySelectorAll('#minimap-svg rect.mm-node').length };
-    state.hiddenHouses = new Set(GREAT().filter(h => h !== 'targ' && h !== 'vel'));
+    state.hiddenHouses = new Set(ALL().filter(h => h !== 'targ' && h !== 'vel'));
     applyHouses();
     out.nodesAfterHide = document.querySelectorAll('#tree g.node').length;
     state.hiddenHouses = new Set(); applyHouses();

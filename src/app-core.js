@@ -39,24 +39,19 @@
   App.bandOf = id => bandOf.get(id);
   App.genOf = id => genOf.has(id) ? genOf.get(id) : 0;
 
-  /* Малые дома — подполосы под своим великим домом (в BANDS: sub — чей). Цвета берут у великого дома. */
+  /* Малые дома: полоса как у великих, только герб в заголовке меньше; liege — великий дом, которому они
+     присягают (по нему же цвета). */
   const bandByHouse = new Map(BANDS.map(b => [b.house, b]));
-  const subsOf = new Map();
-  BANDS.forEach(b => { if (b.sub) { if (!subsOf.has(b.sub)) subsOf.set(b.sub, []); subsOf.get(b.sub).push(b); } });
-  App.bandSub = h => (bandByHouse.get(h) || {}).sub || null;
-  App.subsOf = h => subsOf.get(h) || [];
-  const bandSize = new Map();
-  bandOf.forEach(h => bandSize.set(h, (bandSize.get(h) || 0) + 1));
-  App.bandSize = h => bandSize.get(h) || 0;
+  App.bandLiege = h => (bandByHouse.get(h) || {}).liege || null;
   // «12 домов» или «12 домов и 5 малых»
   App.housesLabel = () => {
-    const minor = BANDS.filter(b => b.sub).length;
+    const minor = BANDS.filter(b => b.liege).length;
     return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' и ' + minor + ' ' + (minor % 10 === 1 && minor % 100 !== 11 ? 'малый' : 'малых') : '');
   };
   (function () {
     const css = [];
     Object.keys(HOUSES).forEach(h => {
-      const tone = HOUSES[h].tone || App.bandSub(h);
+      const tone = HOUSES[h].tone || App.bandLiege(h);
       if (tone) css.push('.h-' + h + '{--hc:var(--' + tone + ');--ht:var(--' + tone + '-tint)}');
     });
     if (css.length) { const s = document.createElement('style'); s.textContent = css.join('\n'); document.head.appendChild(s); }
@@ -145,7 +140,7 @@
   svg.call(zoom).on('dblclick.zoom', null);
   App.zoom = zoom;
 
-  const state = App.state = { selected: null, showLinks: true, mode: 'gen', view: 'people', history: [], openSubs: new Set() };
+  const state = App.state = { selected: null, showLinks: true, mode: 'gen', view: 'people', history: [] };
   let visible = new Set();
   let allNodes = [];
   let bandBoxes = [];
@@ -153,88 +148,55 @@
   App.allNodes = () => allNodes;
   App.bandBoxes = () => bandBoxes;
 
-  /* Раскладка по поколениям: полосы домов друг под другом, малые дома — внутри полосы своего великого дома,
-     по умолчанию свёрнуты в строку с названием. */
-  const SUB_GAP = 14, SUB_H = 50, SUB_HEADER = 70, SUB_INSET = 34;
-  App.SUB_INSET = SUB_INSET;
+  /* Раскладка по поколениям: полосы домов друг под другом. */
   let bandOrder = BANDS.slice();
-  function placeBand(band, contentTop, links) {
-    const placed = [];
-    let bottom = contentTop, minCol = Infinity, maxCol = -Infinity;
-    band.roots.forEach(([id, gen]) => {
-      const r = roots.get(id);
-      treeLayout(r);
-      const ns = r.descendants();
-      let x0 = Infinity, x1 = -Infinity, depth = 0;
-      ns.forEach(n => { x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x); depth = Math.max(depth, n.depth); });
-      const g0 = gen, g1 = gen + depth;
-      let top = contentTop;
-      placed.forEach(pl => { if (!(g1 < pl.g0 || g0 > pl.g1)) top = Math.max(top, pl.bottom + ROOT_GAP); });
-      const off = top - x0 + H / 2;
-      ns.forEach(n => { n.X = colX(gen + n.depth); n.Y = n.x + off; n.band = band.house; n.gen = gen + n.depth; allNodes.push(n); });
-      r.links().forEach(l => links.push(l));
-      const b = top + (x1 - x0) + H;
-      placed.push({ g0, g1, bottom: b });
-      bottom = Math.max(bottom, b);
-      minCol = Math.min(minCol, g0); maxCol = Math.max(maxCol, g1);
-    });
-    return { bottom, minCol, maxCol };
-  }
   function layoutGenerations() {
     allNodes = []; bandBoxes = [];
     const links = [];
-    let cursor = 0, shown = 0, great = null;
+    let cursor = 0, shown = 0;
     const hidden = state.hiddenHouses || new Set();
     bandOrder.forEach(band => {
-      if (hidden.has(band.house) || (band.sub && hidden.has(band.sub))) return;
-      if (band.sub) {
-        if (!great || great.house !== band.sub) return;
-        const top = great.edge;
-        let box;
-        if (state.openSubs.has(band.house)) {
-          const r = placeBand(band, top + SUB_HEADER, links);
-          box = { house: band.house, sub: band.sub, top, bottom: r.bottom + 26, minCol: r.minCol, maxCol: r.maxCol };
-        } else box = { house: band.house, sub: band.sub, collapsed: true, top, bottom: top + SUB_H };
-        bandBoxes.push(box);
-        great.edge = box.bottom + SUB_GAP;
-        great.bottom = box.bottom + 24;
-        cursor = great.bottom;
-        return;
-      }
+      if (hidden.has(band.house)) return;
       const bandTop = cursor + (shown++ ? BAND_GAP : 0);
-      const r = placeBand(band, bandTop + HEADER, links);
-      great = { house: band.house, top: bandTop, bottom: r.bottom + 40, edge: r.bottom + 30, minCol: r.minCol, maxCol: r.maxCol };
-      bandBoxes.push(great);
-      cursor = great.bottom;
+      const contentTop = bandTop + HEADER;
+      const placed = [];
+      let bottom = contentTop, minCol = Infinity, maxCol = -Infinity;
+      band.roots.forEach(([id, gen]) => {
+        const r = roots.get(id);
+        treeLayout(r);
+        const ns = r.descendants();
+        let x0 = Infinity, x1 = -Infinity, depth = 0;
+        ns.forEach(n => { x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x); depth = Math.max(depth, n.depth); });
+        const g0 = gen, g1 = gen + depth;
+        let top = contentTop;
+        placed.forEach(pl => { if (!(g1 < pl.g0 || g0 > pl.g1)) top = Math.max(top, pl.bottom + ROOT_GAP); });
+        const off = top - x0 + H / 2;
+        ns.forEach(n => { n.X = colX(gen + n.depth); n.Y = n.x + off; n.band = band.house; n.gen = gen + n.depth; allNodes.push(n); });
+        r.links().forEach(l => links.push(l));
+        const b = top + (x1 - x0) + H;
+        placed.push({ g0, g1, bottom: b });
+        bottom = Math.max(bottom, b);
+        minCol = Math.min(minCol, g0); maxCol = Math.max(maxCol, g1);
+      });
+      bandBoxes.push({ house: band.house, minor: !!band.liege, top: bandTop, bottom: bottom + 40, minCol, maxCol });
+      cursor = bottom + 40;
     });
     return links;
   }
   App.layouts = { gen: layoutGenerations };
   App.bandOrder = () => bandOrder;
 
-  /* Порядок полос: первый дом в данных (Таргариены) остаётся наверху, остальные великие дома (вместе со своими
-     малыми) ставятся так, чтобы связи между домами — браки, помолвки, родство по слухам, воспитанники — были
-     в сумме короче. Считается один раз по полной раскладке (малые дома свёрнуты). */
+  /* Порядок полос: первый дом в данных (Таргариены) остаётся наверху, остальные — великие и малые — ставятся
+     так, чтобы связи между домами (браки, помолвки, родство по слухам, воспитанники) были в сумме короче.
+     Считается один раз по полной раскладке. */
   (function orderBands() {
-    const blocks = BANDS.filter(b => !b.sub).map(b => [b].concat(subsOf.get(b.house) || []));
+    const blocks = BANDS.map(b => [b]);
     bandOrder = blocks.flat();
     layoutGenerations();
     const blockOf = new Map(), local = new Map(), height = new Map();
-    bandBoxes.forEach(b => {
-      const blk = blocks.findIndex(x => x[0].house === (b.sub || b.house));
-      if (!b.sub) height.set(blk, b.bottom - b.top);
-      else if (b.collapsed) blocks[blk].forEach(x => { if (x.house === b.house) x._stripY = (b.top + b.bottom) / 2; });
-    });
-    const topOf = new Map(bandBoxes.filter(b => !b.sub).map(b => [b.house, b.top]));
-    const laid = new Set(allNodes);
-    PEOPLE.forEach(p => {
-      const h = bandOf.get(p.id); if (!h) return;
-      const great = bandByHouse.get(h).sub || h;
-      const blk = blocks.findIndex(x => x[0].house === great);
-      const n = nodeById.get(p.id);
-      const y = laid.has(n) ? n.Y : bandByHouse.get(h)._stripY;
-      blockOf.set(p.id, blk); local.set(p.id, y - topOf.get(great));
-    });
+    const topOf = new Map();
+    bandBoxes.forEach(b => { const blk = blocks.findIndex(x => x[0].house === b.house); height.set(blk, b.bottom - b.top); topOf.set(b.house, b.top); });
+    allNodes.forEach(n => { blockOf.set(n.data.id, blocks.findIndex(x => x[0].house === n.band)); local.set(n.data.id, n.Y - topOf.get(n.band)); });
     const links = [];
     PAIRS.forEach(e => { if (blockOf.has(e.a) && blockOf.has(e.b) && blockOf.get(e.a) !== blockOf.get(e.b)) links.push([e.a, e.b]); });
     const cost = ord => {
@@ -378,15 +340,16 @@
     layers.bands.selectAll('*').remove();
     bandBoxes.forEach(b => {
       const h = HOUSES[b.house];
-      const g = layers.bands.append('g').attr('class', 'h-' + b.house + (b.sub ? ' band-sub' + (b.collapsed ? ' collapsed' : '') : ''));
-      if (b.sub) { drawSubHead(g, b, h, left + SUB_INSET, right - 16); return; }
+      const g = layers.bands.append('g').attr('class', 'h-' + b.house + (b.minor ? ' band-minor' : ''));
       g.append('rect').attr('class', 'band-bg').attr('x', left).attr('y', b.top).attr('width', right - left).attr('height', b.bottom - b.top).attr('rx', 18);
-      // Заголовок полосы с гербом: у всех домов в одном месте — у левого края полосы
+      // Заголовок полосы с гербом: у всех домов в одном месте — у левого края полосы; у малого дома герб меньше
       b.hx0 = left + 26;
+      const sw = b.minor ? 36 : 54;
+      b.tx = sw + 14;
       const head = g.append('g').attr('class', 'band-head').attr('transform', 'translate(' + b.hx0 + ',' + (b.top + 14) + ')');
-      head.html(App.sigilSVG ? App.sigilSVG(b.house, 0, 0, 54) : '');
-      head.append('text').attr('class', 'band-title').attr('x', 68).attr('y', 40).text(h.band);
-      head.append('text').attr('class', 'band-motto').attr('x', 68).attr('y', 64).text(h.motto);
+      head.html(App.sigilSVG ? App.sigilSVG(b.house, 0, b.minor ? 10 : 0, sw) : '');
+      head.append('text').attr('class', 'band-title').attr('x', b.tx).attr('y', 40).text(h.band);
+      head.append('text').attr('class', 'band-motto').attr('x', b.tx).attr('y', 64).text(h.motto);
       b.headW = Math.max(textWidth('band-title', h.band, 22), textWidth('band-motto', h.motto, 8));
     });
 
@@ -460,7 +423,6 @@
     App.nodeSel = nodeSel;
 
     fitNames(nodeSel);
-    placeSubHeads();
     drawCross();
     App.hooks.afterRender.forEach(f => f(nodeSel));
     decorate();
@@ -468,56 +430,6 @@
   App.render = render;
   const bandsBottom = () => Math.max(...bandBoxes.map(b => b.bottom));
   App.bandsBottom = bandsBottom;
-  // место заголовка полосы (герб, название, девиз) — подписи и значки его обходят
-  const subHeadRect = (b, pad) => [b.hx0 - 10 - pad, b.top + 2, b.hx0 + (b.headW || 200) + 14 + pad, b.top + 48];
-  App.subHeadRect = subHeadRect;
-
-  /* Малый дом: строка-заголовок со стрелкой (свёрнут) или заголовок над его карточками (развёрнут), без герба. */
-  function drawSubHead(g, b, h, x0, x1) {
-    g.append('rect').attr('class', 'band-bg sub-bg').attr('x', x0).attr('y', b.top).attr('width', x1 - x0).attr('height', b.bottom - b.top).attr('rx', 14);
-    b.hx0 = x0 + 16; b.hx1 = x1;
-    const n = App.bandSize(b.house);
-    const head = g.append('g').attr('class', 'sub-head').attr('transform', 'translate(' + b.hx0 + ',' + (b.top + 25) + ')')
-      .attr('tabindex', 0).attr('role', 'button').attr('aria-expanded', String(!b.collapsed))
-      .attr('aria-label', h.band + ', ' + plural(n, 'человек', 'человека', 'человек') + '. ' + (b.collapsed ? 'Развернуть' : 'Свернуть'));
-    const tw = textWidth('sub-title', h.band, 13), mw = h.motto ? textWidth('band-motto sub-motto', h.motto, 7) : 0;
-    const cnt = plural(n, 'человек', 'человека', 'человек'), cw = textWidth('sub-count', cnt, 7);
-    // герб — только у малых домов, которым он задан (большие, как Фреи)
-    const sig = h.sigil && App.sigilSVG ? App.sigilSVG(b.house, 19, -15, 25) : '';
-    const tx = sig ? 54 : 26;
-    b.headW = tx + 4 + tw + 16 + (mw ? mw + 16 : 0) + cw;
-    head.append('rect').attr('class', 'sub-hit').attr('x', -10).attr('y', -21).attr('width', b.headW + 24).attr('height', 42).attr('rx', 10);
-    head.append('text').attr('class', 'sub-chev').attr('x', 6).attr('y', 1).text(b.collapsed ? '▸' : '▾');
-    if (sig) head.append('g').attr('class', 'sub-sigil').html(sig);
-    head.append('text').attr('class', 'sub-title').attr('x', tx).attr('y', 1).text(h.band);
-    if (h.motto) head.append('text').attr('class', 'band-motto sub-motto').attr('x', tx + tw + 16).attr('y', 1).text(h.motto);
-    head.append('text').attr('class', 'sub-count').attr('x', tx + tw + 16 + (mw ? mw + 16 : 0)).attr('y', 1).text(cnt);
-    head.append('title').text((b.collapsed ? 'Развернуть: ' : 'Свернуть: ') + h.band + (HOUSES[b.sub] ? ' — малый дом, сюзерен — ' + HOUSES[b.sub].name.replace('Дом ', 'дом ') : ''));
-    head.on('click', e => { e.stopPropagation(); toggleSub(b.house); })
-      .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSub(b.house); } });
-    head.datum(b);
-  }
-  /* Заголовок малого дома едет вслед за видом по горизонтали: свёрнутая строка — пустая полоса, и без названия
-     у правого края древа было бы непонятно, чья она. Дальше своей полосы заголовок не уходит. */
-  function placeSubHeads(t) {
-    t = t || d3.zoomTransform(svg.node());
-    const x = t.invertX(18);
-    layers.bands.selectAll('g.sub-head').attr('transform', b => 'translate(' + Math.max(b.hx0, Math.min(x, b.hx1 - b.headW - 40)) + ',' + (b.top + 25) + ')');
-  }
-  App.hooks.afterZoom.push(t => placeSubHeads(t));
-  /* Развернуть или свернуть малый дом; строка с его названием остаётся на том же месте экрана. */
-  function toggleSub(house, open) {
-    const was = bandBoxes.find(b => b.house === house);
-    if (open == null) open = !state.openSubs.has(house);
-    if (open === state.openSubs.has(house)) return;
-    if (open) state.openSubs.add(house); else state.openSubs.delete(house);
-    render();
-    const now = bandBoxes.find(b => b.house === house);
-    if (was && now && state.view === 'people') svg.call(zoom.translateBy, 0, was.top - now.top);
-    (App.hooks.subs || []).forEach(f => f(house, open));
-  }
-  App.toggleSub = toggleSub;
-  App.hooks.subs = [];
 
   /* Ширина текста в пикселях для класса подписи. Меряется на холсте шрифтом этого класса — без пересчёта
      раскладки страницы — и запоминается. Без браузера (проверки в jsdom) — оценка по числу букв. */
@@ -571,7 +483,7 @@
       obst.push({ r: [n.X - 10, n.Y - H / 2 - 10, n.X + W + (hasKids(n) ? TOG + 12 : 0) + 10, n.Y + H / 2 + 10], id: n.data.id });
       if (n.children && n.children.length) { const ys = n.children.map(c => c.Y).concat(n.Y); obst.push({ r: [n.X + W + TOG - 2, Math.min(...ys) - 6, colX(n.gen + 1), Math.max(...ys) + 6], id: n.data.id }); }
     });
-    bandBoxes.forEach(b => obst.push({ r: b.sub ? subHeadRect(b, 8) : [b.hx0 - 8, b.top + 6, b.hx0 + 68 + (b.headW || 300) + 16, b.top + 90] }));
+    bandBoxes.forEach(b => obst.push({ r: [b.hx0 - 8, b.top + 6, b.hx0 + b.tx + (b.headW || 300) + 16, b.top + 90] }));
     // Пунктир: кубические кривые; форма выбирается так, чтобы не задеть чужие карточки
     const line = (ax, ay, bx, by) => [[ax, ay], [ax + (bx - ax) / 3, ay + (by - ay) / 3], [ax + 2 * (bx - ax) / 3, ay + 2 * (by - ay) / 3], [bx, by]];
     const shapes = (x0, y0, x1, y1) => {
@@ -716,7 +628,7 @@
     // Значок брака — в середине линии, но не на карточке, не на заголовке дома и не вплотную к другому значку
     const busy = allNodes.map(n => [n.X - 14, n.Y - H / 2 - 14, n.X + W + (hasKids(n) ? TOG + 10 : 0) + 14, n.Y + H / 2 + 14])
       .concat(knots.map(k => [k.x - 16, k.y - 16, k.x + 16, k.y + 16]))
-      .concat(bandBoxes.map(b => b.sub ? subHeadRect(b, 10) : [b.hx0 - 10, b.top, b.hx0 + 68 + (b.headW || 300) + 10, b.top + 92]));
+      .concat(bandBoxes.map(b => [b.hx0 - 10, b.top, b.hx0 + b.tx + (b.headW || 300) + 10, b.top + 92]));
     const spots = [];
     const ok = pt => !busy.some(r => pt[0] > r[0] && pt[0] < r[2] && pt[1] > r[1] && pt[1] < r[3]) && !spots.some(q => Math.hypot(q[0] - pt[0], q[1] - pt[1]) < 34);
     const markData = geo.filter(d => d.e.type === 'm' && !d.knot);
@@ -782,9 +694,6 @@
   function reveal(id) {
     const n = nodeById.get(id); if (!n) return;
     let changed = false;
-    // человек из свёрнутого малого дома: дом разворачивается
-    const h = bandOf.get(id);
-    if (App.bandSub(h) && !state.openSubs.has(h)) { state.openSubs.add(h); changed = true; (App.hooks.subs || []).forEach(f => f(h, true)); }
     for (let a = n.parent; a; a = a.parent) {
       if (a._children) { a.children = a._children; a._children = null; changed = true; }
     }
