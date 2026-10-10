@@ -2,8 +2,8 @@
   "now_year": 300,
   "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr"],
   "bands": [
-    {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
+    {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
     {"house":"hgt","roots":[["manfred_h",6],["hgt_lord8",8],["leyton",18]]},
     {"house":"tyr","roots":[["harlen",6],["bertrand",8],["matthos",10],["lyonel_t",12],["leo_t",15],["tyr_lord17",17],["olenna",18],["quentin",18],["victor_t",18],["normund",19]]},
     {"house":"mar","roots":[["meria",6],["qoren",10],["dorne_p14",14],["dorne_p19",19],["lewyn",19]]},

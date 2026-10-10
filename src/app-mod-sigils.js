@@ -115,6 +115,7 @@
   FIG.dur = FIG.bar;
   App.sigilSVG = (house, x, y, w, extraClass) => {
     const h = HOUSES[house] || HOUSES.oth;
+    if (!h.sigil) return ''; // у малых домов гербов нет
     const f = h.sigil.field, c = h.sigil.charge;
     const fig = (FIG[house] || FIG.oth)(f, c);
     const hgt = w * 76 / 64;

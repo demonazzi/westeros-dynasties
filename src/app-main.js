@@ -1,9 +1,9 @@
 /* Запуск: подзаголовок в шапке, дома в легенде, затем старт приложения. */
 (function () {
-  const order = BANDS.map(b => b.house);
+  const order = App.bandOrder().filter(b => !b.sub).map(b => b.house);
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
   const sub = document.getElementById('brand-sub');
-  sub.textContent = App.plural(order.length, 'дом', 'дома', 'домов') + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +
+  sub.textContent = App.housesLabel() + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +
     (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · от Исхода Эйнара до Войны пяти королей';
   sub.title = 'Дома: ' + order.map(h => HOUSES[h].band).join(', ') + '. Годы — от Завоевания Эйгона.';
   const legendHouses = order.concat(['bf', 'seed', 'oth']);

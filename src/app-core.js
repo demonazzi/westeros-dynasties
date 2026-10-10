@@ -38,6 +38,44 @@
   BANDS.forEach(b => b.roots.forEach(([id, gen]) => roots.get(id).each(n => { bandOf.set(n.data.id, b.house); genOf.set(n.data.id, gen + n.depth); })));
   App.bandOf = id => bandOf.get(id);
   App.genOf = id => genOf.has(id) ? genOf.get(id) : 0;
+
+  /* Малые дома — подполосы под своим великим домом (в BANDS: sub — чей). Цвета берут у великого дома. */
+  const bandByHouse = new Map(BANDS.map(b => [b.house, b]));
+  const subsOf = new Map();
+  BANDS.forEach(b => { if (b.sub) { if (!subsOf.has(b.sub)) subsOf.set(b.sub, []); subsOf.get(b.sub).push(b); } });
+  App.bandSub = h => (bandByHouse.get(h) || {}).sub || null;
+  App.subsOf = h => subsOf.get(h) || [];
+  const bandSize = new Map();
+  bandOf.forEach(h => bandSize.set(h, (bandSize.get(h) || 0) + 1));
+  App.bandSize = h => bandSize.get(h) || 0;
+  // «12 домов» или «12 домов и 5 малых»
+  App.housesLabel = () => {
+    const minor = BANDS.filter(b => b.sub).length;
+    return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' и ' + minor + ' ' + (minor % 10 === 1 && minor % 100 !== 11 ? 'малый' : 'малых') : '');
+  };
+  (function () {
+    const css = [];
+    Object.keys(HOUSES).forEach(h => {
+      const tone = HOUSES[h].tone || App.bandSub(h);
+      if (tone) css.push('.h-' + h + '{--hc:var(--' + tone + ');--ht:var(--' + tone + '-tint)}');
+    });
+    if (css.length) { const s = document.createElement('style'); s.textContent = css.join('\n'); document.head.appendChild(s); }
+  })();
+
+  /* Колонки поколений. Где людей много (поздние поколения), промежуток между колонками шире: веер к детям,
+     узлы браков и связи между домами не теснятся. Считается по всем людям, без фильтров, — колонки не прыгают. */
+  const COL_BUSY = 40, COL_EXTRA = 90;
+  const colPos = [0];
+  (function () {
+    const cnt = new Map();
+    genOf.forEach(g => cnt.set(g, (cnt.get(g) || 0) + 1));
+    const maxG = Math.max(0, ...cnt.keys());
+    for (let g = 0; g <= maxG + 1; g++) colPos.push(colPos[g] + DY + (Math.max(cnt.get(g) || 0, cnt.get(g + 1) || 0) >= COL_BUSY ? COL_EXTRA : 0));
+  })();
+  const colX = g => g < 0 ? g * DY : g < colPos.length ? colPos[g] : colPos[colPos.length - 1] + (g - colPos.length + 1) * DY;
+  // колонка, над чьей карточкой (или ближе всего к ней) лежит точка x
+  const colAt = x => { let best = 0; for (let g = 0; g < colPos.length; g++) if (Math.abs(x - colX(g) - W / 2) < Math.abs(x - colX(best) - W / 2)) best = g; return best; };
+  App.colX = colX; App.colAt = colAt;
   const tKings = PEOPLE.filter(p => p.k === 'K' && p.n).sort((a, b) => a.n - b.n);
   App.tKings = tKings;
 
@@ -107,7 +145,7 @@
   svg.call(zoom).on('dblclick.zoom', null);
   App.zoom = zoom;
 
-  const state = App.state = { selected: null, showLinks: true, mode: 'gen', view: 'people', history: [] };
+  const state = App.state = { selected: null, showLinks: true, mode: 'gen', view: 'people', history: [], openSubs: new Set() };
   let visible = new Set();
   let allNodes = [];
   let bandBoxes = [];
@@ -115,41 +153,142 @@
   App.allNodes = () => allNodes;
   App.bandBoxes = () => bandBoxes;
 
-  /* Раскладка по поколениям: полосы домов друг под другом. */
+  /* Раскладка по поколениям: полосы домов друг под другом, малые дома — внутри полосы своего великого дома,
+     по умолчанию свёрнуты в строку с названием. */
+  const SUB_GAP = 14, SUB_H = 50, SUB_HEADER = 70, SUB_INSET = 34;
+  App.SUB_INSET = SUB_INSET;
+  let bandOrder = BANDS.slice();
+  function placeBand(band, contentTop, links) {
+    const placed = [];
+    let bottom = contentTop, minCol = Infinity, maxCol = -Infinity;
+    band.roots.forEach(([id, gen]) => {
+      const r = roots.get(id);
+      treeLayout(r);
+      const ns = r.descendants();
+      let x0 = Infinity, x1 = -Infinity, depth = 0;
+      ns.forEach(n => { x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x); depth = Math.max(depth, n.depth); });
+      const g0 = gen, g1 = gen + depth;
+      let top = contentTop;
+      placed.forEach(pl => { if (!(g1 < pl.g0 || g0 > pl.g1)) top = Math.max(top, pl.bottom + ROOT_GAP); });
+      const off = top - x0 + H / 2;
+      ns.forEach(n => { n.X = colX(gen + n.depth); n.Y = n.x + off; n.band = band.house; n.gen = gen + n.depth; allNodes.push(n); });
+      r.links().forEach(l => links.push(l));
+      const b = top + (x1 - x0) + H;
+      placed.push({ g0, g1, bottom: b });
+      bottom = Math.max(bottom, b);
+      minCol = Math.min(minCol, g0); maxCol = Math.max(maxCol, g1);
+    });
+    return { bottom, minCol, maxCol };
+  }
   function layoutGenerations() {
     allNodes = []; bandBoxes = [];
     const links = [];
-    let cursor = 0, shown = 0;
+    let cursor = 0, shown = 0, great = null;
     const hidden = state.hiddenHouses || new Set();
-    BANDS.forEach(band => {
-      if (hidden.has(band.house)) return;
+    bandOrder.forEach(band => {
+      if (hidden.has(band.house) || (band.sub && hidden.has(band.sub))) return;
+      if (band.sub) {
+        if (!great || great.house !== band.sub) return;
+        const top = great.edge;
+        let box;
+        if (state.openSubs.has(band.house)) {
+          const r = placeBand(band, top + SUB_HEADER, links);
+          box = { house: band.house, sub: band.sub, top, bottom: r.bottom + 26, minCol: r.minCol, maxCol: r.maxCol };
+        } else box = { house: band.house, sub: band.sub, collapsed: true, top, bottom: top + SUB_H };
+        bandBoxes.push(box);
+        great.edge = box.bottom + SUB_GAP;
+        great.bottom = box.bottom + 24;
+        cursor = great.bottom;
+        return;
+      }
       const bandTop = cursor + (shown++ ? BAND_GAP : 0);
-      const contentTop = bandTop + HEADER;
-      const placed = [];
-      let bottom = contentTop, minCol = Infinity, maxCol = -Infinity;
-      band.roots.forEach(([id, gen]) => {
-        const r = roots.get(id);
-        treeLayout(r);
-        const ns = r.descendants();
-        let x0 = Infinity, x1 = -Infinity, depth = 0;
-        ns.forEach(n => { x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x); depth = Math.max(depth, n.depth); });
-        const g0 = gen, g1 = gen + depth;
-        let top = contentTop;
-        placed.forEach(pl => { if (!(g1 < pl.g0 || g0 > pl.g1)) top = Math.max(top, pl.bottom + ROOT_GAP); });
-        const off = top - x0 + H / 2;
-        ns.forEach(n => { n.X = (gen + n.depth) * DY; n.Y = n.x + off; n.band = band.house; n.gen = gen + n.depth; allNodes.push(n); });
-        r.links().forEach(l => links.push(l));
-        const b = top + (x1 - x0) + H;
-        placed.push({ g0, g1, bottom: b });
-        bottom = Math.max(bottom, b);
-        minCol = Math.min(minCol, g0); maxCol = Math.max(maxCol, g1);
-      });
-      bandBoxes.push({ house: band.house, top: bandTop, bottom: bottom + 40, minCol, maxCol });
-      cursor = bottom + 40;
+      const r = placeBand(band, bandTop + HEADER, links);
+      great = { house: band.house, top: bandTop, bottom: r.bottom + 40, edge: r.bottom + 30, minCol: r.minCol, maxCol: r.maxCol };
+      bandBoxes.push(great);
+      cursor = great.bottom;
     });
     return links;
   }
   App.layouts = { gen: layoutGenerations };
+  App.bandOrder = () => bandOrder;
+
+  /* Порядок полос: первый дом в данных (Таргариены) остаётся наверху, остальные великие дома (вместе со своими
+     малыми) ставятся так, чтобы связи между домами — браки, помолвки, родство по слухам, воспитанники — были
+     в сумме короче. Считается один раз по полной раскладке (малые дома свёрнуты). */
+  (function orderBands() {
+    const blocks = BANDS.filter(b => !b.sub).map(b => [b].concat(subsOf.get(b.house) || []));
+    bandOrder = blocks.flat();
+    layoutGenerations();
+    const blockOf = new Map(), local = new Map(), height = new Map();
+    bandBoxes.forEach(b => {
+      const blk = blocks.findIndex(x => x[0].house === (b.sub || b.house));
+      if (!b.sub) height.set(blk, b.bottom - b.top);
+      else if (b.collapsed) blocks[blk].forEach(x => { if (x.house === b.house) x._stripY = (b.top + b.bottom) / 2; });
+    });
+    const topOf = new Map(bandBoxes.filter(b => !b.sub).map(b => [b.house, b.top]));
+    const laid = new Set(allNodes);
+    PEOPLE.forEach(p => {
+      const h = bandOf.get(p.id); if (!h) return;
+      const great = bandByHouse.get(h).sub || h;
+      const blk = blocks.findIndex(x => x[0].house === great);
+      const n = nodeById.get(p.id);
+      const y = laid.has(n) ? n.Y : bandByHouse.get(h)._stripY;
+      blockOf.set(p.id, blk); local.set(p.id, y - topOf.get(great));
+    });
+    const links = [];
+    PAIRS.forEach(e => { if (blockOf.has(e.a) && blockOf.has(e.b) && blockOf.get(e.a) !== blockOf.get(e.b)) links.push([e.a, e.b]); });
+    const cost = ord => {
+      const top = new Map(); let t = 0;
+      ord.forEach((blk, i) => { if (i) t += BAND_GAP; top.set(blk, t); t += height.get(blk); });
+      return links.reduce((s, [a, b]) => s + Math.abs(top.get(blockOf.get(a)) + local.get(a) - top.get(blockOf.get(b)) - local.get(b)), 0);
+    };
+    // Домов немного, поэтому перебираются все порядки — по подмножествам: dp[S] — лучшая укладка набора S сверху,
+    // считая куски связей до нижнего края S. Блок k под набором S удлиняет каждую связь, торчащую из S, на промежуток
+    // и на высоту k (или до её конца в k), а связи, начатые в k, — от их начала до низа k.
+    const n = blocks.length, H = blocks.map((_, i) => height.get(i));
+    const L = links.map(([a, b]) => ({ A: blockOf.get(a), B: blockOf.get(b), la: local.get(a), lb: local.get(b) }));
+    const add = (S, k) => {
+      let c = 0;
+      L.forEach(l => {
+        const inA = S >> l.A & 1, inB = S >> l.B & 1;
+        if (inA && !inB) c += BAND_GAP + (l.B === k ? l.lb : H[k]);
+        else if (inB && !inA) c += BAND_GAP + (l.A === k ? l.la : H[k]);
+        else if (!inA && !inB) { if (l.A === k) c += H[k] - l.la; else if (l.B === k) c += H[k] - l.lb; }
+      });
+      return c;
+    };
+    let ord = blocks.map((_, i) => i);
+    if (n > 1 && n <= 16) {
+      const full = (1 << n) - 1, dp = new Float64Array(1 << n).fill(Infinity), from = new Int8Array(1 << n).fill(-1);
+      dp[1] = add(0, 0);
+      for (let S = 1; S <= full; S += 2) {
+        if (dp[S] === Infinity) continue;
+        for (let k = 1; k < n; k++) if (!(S >> k & 1)) { const T = S | 1 << k, c = dp[S] + add(S, k); if (c < dp[T] - 1e-6) { dp[T] = c; from[T] = k; } }
+      }
+      ord = [];
+      for (let S = full; S !== 1;) { const k = from[S]; ord.unshift(k); S ^= 1 << k; }
+      ord.unshift(0);
+    } else if (n > 16) {
+      // слишком много великих домов для полного перебора — перестановки, пока сумма уменьшается
+      let best = cost(ord);
+      for (let pass = 0; pass < 60; pass++) {
+        let move = null;
+        for (let i = 1; i < n; i++) for (let j = 1; j < n; j++) {
+          if (i === j) continue;
+          const o = ord.slice(); const [x] = o.splice(i, 1); o.splice(j, 0, x);
+          const c = cost(o);
+          if (c < best - 1e-6 && (!move || c < move.c)) move = { o, c };
+        }
+        if (!move) break;
+        ord = move.o; best = move.c;
+      }
+    }
+    const best = cost(ord);
+    bandOrder = ord.flatMap(i => blocks[i]);
+    // для проверок: сумма прибавок по шагам должна совпадать с прямым подсчётом длины связей
+    const stepwise = o => { let S = 0, c = 0; o.forEach(k => { c += add(S, k); S |= 1 << k; }); return c; };
+    App.bandOrderCost = { before: cost(blocks.map((_, i) => i)), after: best, order: ord.slice(), cost, stepwise };
+  })();
 
   /* Линия между домами: из низа верхней карточки в верх нижней. oa, ob — сдвиг конца от середины карточки,
      чтобы линии из одной колонки не шли друг по другу. */
@@ -239,7 +378,8 @@
     layers.bands.selectAll('*').remove();
     bandBoxes.forEach(b => {
       const h = HOUSES[b.house];
-      const g = layers.bands.append('g').attr('class', 'h-' + b.house);
+      const g = layers.bands.append('g').attr('class', 'h-' + b.house + (b.sub ? ' band-sub' + (b.collapsed ? ' collapsed' : '') : ''));
+      if (b.sub) { drawSubHead(g, b, h, left + SUB_INSET, right - 16); return; }
       g.append('rect').attr('class', 'band-bg').attr('x', left).attr('y', b.top).attr('width', right - left).attr('height', b.bottom - b.top).attr('rx', 18);
       // Заголовок полосы с гербом: у всех домов в одном месте — у левого края полосы
       b.hx0 = left + 26;
@@ -253,8 +393,8 @@
     // Граница Завоевания (в хронологии рисует своя ось)
     layers.era.selectAll('*').remove();
     if (genMode) {
-      const lx = 6 * DY - (DY - W - TOG) / 2 - 2;
-      const top = bandBoxes[0].top - 46, bot = bandBoxes[bandBoxes.length - 1].bottom + 30;
+      const lx = colX(6) - (colX(6) - colX(5) - W - TOG) / 2 - 2;
+      const top = bandBoxes[0].top - 46, bot = bandsBottom() + 30;
       layers.era.append('line').attr('class', 'era-line').attr('x1', lx).attr('x2', lx).attr('y1', top).attr('y2', bot);
       layers.era.append('text').attr('class', 'era').attr('x', lx - 14).attr('y', top + 16).attr('text-anchor', 'end').text('до Завоевания');
       layers.era.append('text').attr('class', 'era').attr('x', lx + 14).attr('y', top + 16).text('Завоевание, 1 г. →');
@@ -305,6 +445,7 @@
       t.append('title');
       t.on('click', (e, d) => { e.stopPropagation(); toggle(d); });
       g.on('click', (e, d) => App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id));
+      g.on('pointerenter', (e, d) => peek(d.data.id)).on('pointerleave', () => peek(null));
       g.on('keydown', (e, d) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id); }
         else if (e.key === 'ArrowRight' && d._children) { e.preventDefault(); toggle(d); }
@@ -324,6 +465,45 @@
     decorate();
   }
   App.render = render;
+  const bandsBottom = () => Math.max(...bandBoxes.map(b => b.bottom));
+  App.bandsBottom = bandsBottom;
+  // место заголовка полосы (герб, название, девиз) — подписи и значки его обходят
+  const subHeadRect = (b, pad) => [b.hx0 - 10 - pad, b.top + 2, b.hx0 + (b.headW || 200) + 14 + pad, b.top + 48];
+  App.subHeadRect = subHeadRect;
+
+  /* Малый дом: строка-заголовок со стрелкой (свёрнут) или заголовок над его карточками (развёрнут), без герба. */
+  function drawSubHead(g, b, h, x0, x1) {
+    g.append('rect').attr('class', 'band-bg sub-bg').attr('x', x0).attr('y', b.top).attr('width', x1 - x0).attr('height', b.bottom - b.top).attr('rx', 14);
+    b.hx0 = x0 + 16;
+    const n = App.bandSize(b.house);
+    const head = g.append('g').attr('class', 'sub-head').attr('transform', 'translate(' + b.hx0 + ',' + (b.top + 25) + ')')
+      .attr('tabindex', 0).attr('role', 'button').attr('aria-expanded', String(!b.collapsed))
+      .attr('aria-label', h.band + ', ' + plural(n, 'человек', 'человека', 'человек') + '. ' + (b.collapsed ? 'Развернуть' : 'Свернуть'));
+    const tw = textWidth('sub-title', h.band, 13), mw = h.motto ? textWidth('band-motto sub-motto', h.motto, 7) : 0;
+    const cnt = plural(n, 'человек', 'человека', 'человек'), cw = textWidth('sub-count', cnt, 7);
+    b.headW = 30 + tw + 16 + (mw ? mw + 16 : 0) + cw;
+    head.append('rect').attr('class', 'sub-hit').attr('x', -10).attr('y', -21).attr('width', b.headW + 24).attr('height', 42).attr('rx', 10);
+    head.append('text').attr('class', 'sub-chev').attr('x', 6).attr('y', 1).text(b.collapsed ? '▸' : '▾');
+    head.append('text').attr('class', 'sub-title').attr('x', 26).attr('y', 1).text(h.band);
+    if (h.motto) head.append('text').attr('class', 'band-motto sub-motto').attr('x', 26 + tw + 16).attr('y', 1).text(h.motto);
+    head.append('text').attr('class', 'sub-count').attr('x', 26 + tw + 16 + (mw ? mw + 16 : 0)).attr('y', 1).text(cnt);
+    head.append('title').text((b.collapsed ? 'Развернуть: ' : 'Свернуть: ') + h.band + (HOUSES[b.sub] ? ' — малый дом, сюзерен — ' + HOUSES[b.sub].name.replace('Дом ', 'дом ') : ''));
+    head.on('click', e => { e.stopPropagation(); toggleSub(b.house); })
+      .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSub(b.house); } });
+  }
+  /* Развернуть или свернуть малый дом; строка с его названием остаётся на том же месте экрана. */
+  function toggleSub(house, open) {
+    const was = bandBoxes.find(b => b.house === house);
+    if (open == null) open = !state.openSubs.has(house);
+    if (open === state.openSubs.has(house)) return;
+    if (open) state.openSubs.add(house); else state.openSubs.delete(house);
+    render();
+    const now = bandBoxes.find(b => b.house === house);
+    if (was && now && state.view === 'people') svg.call(zoom.translateBy, 0, was.top - now.top);
+    (App.hooks.subs || []).forEach(f => f(house, open));
+  }
+  App.toggleSub = toggleSub;
+  App.hooks.subs = [];
 
   /* Ширина текста в пикселях для класса подписи. Меряется на холсте шрифтом этого класса — без пересчёта
      раскладки страницы — и запоминается. Без браузера (проверки в jsdom) — оценка по числу букв. */
@@ -375,9 +555,9 @@
     const obst = [];
     allNodes.forEach(n => {
       obst.push({ r: [n.X - 10, n.Y - H / 2 - 10, n.X + W + (hasKids(n) ? TOG + 12 : 0) + 10, n.Y + H / 2 + 10], id: n.data.id });
-      if (n.children && n.children.length) { const ys = n.children.map(c => c.Y).concat(n.Y); obst.push({ r: [n.X + W + TOG - 2, Math.min(...ys) - 6, n.X + DY, Math.max(...ys) + 6], id: n.data.id }); }
+      if (n.children && n.children.length) { const ys = n.children.map(c => c.Y).concat(n.Y); obst.push({ r: [n.X + W + TOG - 2, Math.min(...ys) - 6, colX(n.gen + 1), Math.max(...ys) + 6], id: n.data.id }); }
     });
-    bandBoxes.forEach(b => obst.push({ r: [b.hx0 - 8, b.top + 6, b.hx0 + 68 + (b.headW || 300) + 16, b.top + 90] }));
+    bandBoxes.forEach(b => obst.push({ r: b.sub ? subHeadRect(b, 8) : [b.hx0 - 8, b.top + 6, b.hx0 + 68 + (b.headW || 300) + 16, b.top + 90] }));
     // Пунктир: кубические кривые; форма выбирается так, чтобы не задеть чужие карточки
     const line = (ax, ay, bx, by) => [[ax, ay], [ax + (bx - ax) / 3, ay + (by - ay) / 3], [ax + 2 * (bx - ax) / 3, ay + 2 * (by - ay) / 3], [bx, by]];
     const shapes = (x0, y0, x1, y1) => {
@@ -522,7 +702,7 @@
     // Значок брака — в середине линии, но не на карточке, не на заголовке дома и не вплотную к другому значку
     const busy = allNodes.map(n => [n.X - 14, n.Y - H / 2 - 14, n.X + W + (hasKids(n) ? TOG + 10 : 0) + 14, n.Y + H / 2 + 14])
       .concat(knots.map(k => [k.x - 16, k.y - 16, k.x + 16, k.y + 16]))
-      .concat(bandBoxes.map(b => [b.hx0 - 10, b.top, b.hx0 + 68 + (b.headW || 300) + 10, b.top + 92]));
+      .concat(bandBoxes.map(b => b.sub ? subHeadRect(b, 10) : [b.hx0 - 10, b.top, b.hx0 + 68 + (b.headW || 300) + 10, b.top + 92]));
     const spots = [];
     const ok = pt => !busy.some(r => pt[0] > r[0] && pt[0] < r[2] && pt[1] > r[1] && pt[1] < r[3]) && !spots.some(q => Math.hypot(q[0] - pt[0], q[1] - pt[1]) < 34);
     const markData = geo.filter(d => d.e.type === 'm' && !d.knot);
@@ -571,6 +751,11 @@
   }
   App.xFar = xFar;
   App.drawCross = drawCross;
+  // карточка под указателем: её связи с другими домами видны ярче
+  function peek(id) {
+    layers.x.selectAll('path.xlink').classed('peek', d => !!id && (d.e.a === id || d.e.b === id));
+    layers.marks.selectAll('g.xmark').classed('peek', d => !!id && (d.e.a === id || d.e.b === id));
+  }
 
   function toggle(d) {
     const before = { X: d.X, Y: d.Y };
@@ -583,6 +768,9 @@
   function reveal(id) {
     const n = nodeById.get(id); if (!n) return;
     let changed = false;
+    // человек из свёрнутого малого дома: дом разворачивается
+    const h = bandOf.get(id);
+    if (App.bandSub(h) && !state.openSubs.has(h)) { state.openSubs.add(h); changed = true; (App.hooks.subs || []).forEach(f => f(h, true)); }
     for (let a = n.parent; a; a = a.parent) {
       if (a._children) { a.children = a._children; a._children = null; changed = true; }
     }
@@ -688,7 +876,7 @@
     return { letter: (w[0] || '?').charAt(0), roman: roman || '' };
   }
   function medallion(p) {
-    const s = HOUSES[p.house].sigil;
+    const s = HOUSES[p.house].sigil || HOUSES.oth.sigil; // у малых домов гербов нет — нейтральный щит
     const ini = initials(p);
     const crown = p.k === 'K'
       ? '<path d="M18 13 L22 4 L27 10 L32 2 L37 10 L42 4 L46 13 Z" fill="' + s.charge + '" stroke="' + s.field + '" stroke-width="1"/>' : '';
@@ -734,7 +922,7 @@
     if (!p) {
       panel.classList.add('is-empty');
       panelContent.innerHTML =
-        '<div class="empty"><p class="eyebrow">' + plural(BANDS.length, 'дом', 'дома', 'домов') + '</p><h2>Выберите человека на древе</h2>' +
+        '<div class="empty"><p class="eyebrow">' + App.housesLabel() + '</p><h2>Выберите человека на древе</h2>' +
         '<p>Карточка покажет годы жизни, родителей, супругов, детей и хронологию. Древо подсветит линию предков, браки и второго родителя, даже если он из другого дома.</p>' +
         '<p class="stats">' + PEOPLE.length + ' человек · ' + PAIRS.filter(e => e.type === 'm').length + ' браков на древе</p>' +
         '<p class="keys"><kbd>/</kbd> поиск · <kbd>Esc</kbd> закрыть · <kbd>Alt</kbd>+<kbd>←</kbd> назад</p></div>';
@@ -860,7 +1048,7 @@
   function fitAll() {
     let x0 = Infinity, x1 = -Infinity;
     allNodes.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X); });
-    fitBox(x0 - 80, bandBoxes[0].top - 60, x1 + W + TOG + 80, bandBoxes[bandBoxes.length - 1].bottom + 30);
+    fitBox(x0 - 80, bandBoxes[0].top - 60, x1 + W + TOG + 80, bandsBottom() + 30);
   }
   App.fitAll = fitAll;
   App.fitIds = (ids, minK) => {

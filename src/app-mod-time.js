@@ -114,21 +114,33 @@
   const ROW = 30, BHEAD = 64, BGAP = 26, TOP = 30;
   let built = false, rows = new Map(), bandBoxes = [], width = 0, height = 0, builtKey = '';
   // фильтр «Полосы домов»: скрытые дома не попадают в хронологию, как и на древо
-  const hiddenKey = () => [...(state.hiddenHouses || [])].sort().join(',');
+  const hiddenKey = () => [...(state.hiddenHouses || [])].sort().join(',') + '|' + [...(state.openSubs || [])].sort().join(',');
+  const SUBH = 40, SUBHEAD = 46, SUBIN = 24;
   const LAB = 8;
 
   function layout() {
     ensureLife();
-    let y = TOP;
+    let y = TOP, great = null;
     bandBoxes = [];
     rows = new Map();
     const hidden = state.hiddenHouses || new Set();
-    BANDS.filter(b => !hidden.has(b.house)).forEach(band => {
+    (App.bandOrder ? App.bandOrder() : BANDS).filter(b => !hidden.has(b.house) && !(b.sub && hidden.has(b.sub))).forEach(band => {
+      // малый дом — внутри полосы своего великого, под его людьми; свёрнутый — одна строка с названием
+      if (band.sub) {
+        if (!great || great.house !== band.sub) return;
+        y = great.bottom - 2;
+      }
+      const grow = box => { if (band.sub) { great.bottom = box.bottom + 10; y = great.bottom + BGAP; } };
+      if (band.sub && !state.openSubs.has(band.house)) {
+        const box = { house: band.house, sub: band.sub, collapsed: true, top: y, bottom: y + SUBH };
+        bandBoxes.push(box); grow(box);
+        return;
+      }
       const order = [];
       const walk = p => { order.push(p); p.kids.forEach(walk); };
       band.roots.forEach(([id]) => walk(byId.get(id)));
       const ends = [];
-      const top = y + BHEAD;
+      const top = y + (band.sub ? SUBHEAD : BHEAD);
       order.forEach(p => {
         const L = LIFE.get(p.id);
         const x0 = X(L.b), x1 = X(L.d);
@@ -145,11 +157,30 @@
         rows.set(p.id, { row, band: band.house, y: top + row * ROW + ROW / 2, x0, x1, p, L });
       });
       const bottom = top + ends.length * ROW + 10;
-      bandBoxes.push({ house: band.house, top: y, bottom });
-      y = bottom + BGAP;
+      const box = { house: band.house, sub: band.sub || null, top: y, bottom };
+      bandBoxes.push(box);
+      if (band.sub) grow(box); else { great = box; y = bottom + BGAP; }
     });
     width = X(302) + 40; height = y + 40;
   }
+
+  /* Малый дом в хронологии: строка-заголовок со стрелкой, как на древе; нажатие разворачивает его и там, и там */
+  function subHead(g, b) {
+    const h = HOUSES[b.house], n = App.bandSize(b.house);
+    g.append('rect').attr('class', 'band-bg sub-bg').attr('x', SUBIN).attr('y', b.top).attr('width', width - SUBIN - 12).attr('height', b.bottom - b.top).attr('rx', 12);
+    const cnt = App.plural(n, 'человек', 'человека', 'человек');
+    const tw = App.textWidth('t-sub sub-title', h.band, 11);
+    const head = g.append('g').attr('class', 'sub-head t-sub').attr('transform', 'translate(' + (X(-30) + 10) + ',' + (b.top + 20) + ')')
+      .attr('tabindex', 0).attr('role', 'button').attr('aria-expanded', String(!b.collapsed))
+      .attr('aria-label', h.band + ', ' + cnt + '. ' + (b.collapsed ? 'Развернуть' : 'Свернуть'));
+    head.append('rect').attr('class', 'sub-hit').attr('x', -8).attr('y', -16).attr('width', 26 + tw + 14 + App.textWidth('sub-count', cnt, 7) + 16).attr('height', 32).attr('rx', 8);
+    head.append('text').attr('class', 'sub-chev').attr('x', 6).attr('y', 1).text(b.collapsed ? '▸' : '▾');
+    head.append('text').attr('class', 'sub-title').attr('x', 24).attr('y', 1).text(h.band);
+    head.append('text').attr('class', 'sub-count').attr('x', 24 + tw + 14).attr('y', 1).text(cnt);
+    head.on('click', e => { e.stopPropagation(); App.toggleSub(b.house); })
+      .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.toggleSub(b.house); } });
+  }
+  App.hooks.subs.push(() => { if (built && state.view === 'time' && builtKey !== hiddenKey()) { build(); decorateTime(); } });
 
   const L_ = {};
   function build() {
@@ -159,7 +190,8 @@
     ['bands', 'eras', 'mar', 'drops', 'lives', 'labels', 'slice'].forEach(k => { L_[k] = gz.append('g').attr('class', 'tl-' + k); });
     // Полосы домов
     bandBoxes.forEach(b => {
-      const g = L_.bands.append('g').attr('class', 'h-' + b.house);
+      const g = L_.bands.append('g').attr('class', 'h-' + b.house + (b.sub ? ' band-sub' + (b.collapsed ? ' collapsed' : '') : ''));
+      if (b.sub) { subHead(g, b); return; }
       g.append('rect').attr('class', 'band-bg').attr('x', 0).attr('y', b.top).attr('width', width).attr('height', b.bottom - b.top).attr('rx', 18);
       // Заголовок полосы с гербом и девизом — у левого края вида «К началу», на месте и не двигается
       const head = g.append('g').attr('class', 'band-head t-head').attr('transform', 'translate(' + (X(-30) + 6) + ',' + (b.top + 12) + ')');

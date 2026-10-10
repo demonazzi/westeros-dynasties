@@ -99,7 +99,7 @@
       const c = cols.reduce((best, x) => Math.abs(x.mid - y) < Math.abs(best.mid - y) ? x : best);
       const svgNode = App.svg.node(), t = d3.zoomTransform(svgNode);
       const w = svgNode.getBoundingClientRect().width || 1000;
-      const nt = d3.zoomIdentity.translate(w / 2 - t.k * (c.g * App.DY + App.W / 2), t.y).scale(t.k);
+      const nt = d3.zoomIdentity.translate(w / 2 - t.k * (App.colX(c.g) + App.W / 2), t.y).scale(t.k);
       if (App.reduced) App.svg.call(App.zoom.transform, nt); else App.svg.transition().duration(App.dur).call(App.zoom.transform, nt);
     } else if (v.scaleGo) v.scaleGo(y);
   }
@@ -309,8 +309,8 @@
     const t = d3.zoomTransform(App.svg.node());
     let end = 58;
     treeCols().forEach(c => {
-      const cx = t.applyX(c.g * App.DY + App.W / 2);
-      const cardL = t.applyX(c.g * App.DY), cardR = t.applyX(c.g * App.DY + App.W);
+      const cx = t.applyX(App.colX(c.g) + App.W / 2);
+      const cardL = t.applyX(App.colX(c.g)), cardR = t.applyX(App.colX(c.g) + App.W);
       if (cardR < 20 || cardL > m.w - 20) return;
       const text = '≈ ' + range(c.lo, c.hi);
       const lg = g.append('g').attr('class', 'ts-gen');

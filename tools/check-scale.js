@@ -75,8 +75,8 @@ const fs = require('fs'), path = require('path');
       document.querySelectorAll('#scale-svg .ts-gen').forEach(g => {
         const m = /translate\(([-\d.]+)/.exec(g.getAttribute('transform'));
         const x = +m[1];
-        const col = Math.round((t.invertX(x) - App.W / 2) / App.DY);
-        const cardL = t.applyX(col * App.DY), cardR = t.applyX(col * App.DY + App.W);
+        const col = App.colAt(t.invertX(x));
+        const cardL = t.applyX(App.colX(col)), cardR = t.applyX(App.colX(col) + App.W);
         out.push({ text: g.querySelector('text').textContent, col, inside: x >= cardL - 30 && x <= cardR + 30 });
       });
       res(out);

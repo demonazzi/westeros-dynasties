@@ -8,6 +8,8 @@ const fs = require('fs'), path = require('path');
   const errs = []; p.on('pageerror', e => errs.push(e.message));
   await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
   await p.goto('file://' + path.join(__dirname, '..', 'dist', 'targaryen-tree.html')); await p.waitForTimeout(700);
+  // CHECK_PRE — js перед проверкой (так check-subs.js проверяет развёрнутые малые дома)
+  if (process.env.CHECK_PRE) { await p.evaluate(process.env.CHECK_PRE); await p.waitForTimeout(300); }
   await p.evaluate(() => { App.reduced = true; App.select(null); });
   const bad = [];
   // Ставит точку дерева (x, y) в центр холста при масштабе k и возвращает экранные координаты
@@ -31,7 +33,10 @@ const fs = require('fs'), path = require('path');
   // Каждый значок: под указателем именно он, подсказка с обоими именами, нажатие уводит к одному из супругов
   for (const m of marks) {
     await p.evaluate(() => App.select(null));
-    const [sx, sy] = await aim(m.mp[0], m.mp[1], 1);
+    // место значка берётся заново: выбор человека из малого дома разворачивает его, и раскладка сдвигается
+    const mp = await p.evaluate(key => { const q = App.layers.marks.selectAll('g.xmark').data().find(x => x.key === key); return q ? q.mp : null; }, m.key);
+    if (!mp) { bad.push('значок ' + m.key + ' пропал'); continue; }
+    const [sx, sy] = await aim(mp[0], mp[1], 1);
     await p.mouse.move(sx - 30, sy - 30); await p.mouse.move(sx, sy);
     const st = await p.evaluate(([sx, sy, key]) => {
       const el = document.elementFromPoint(sx, sy), g = el && el.closest('g.xmark');
@@ -86,7 +91,9 @@ const fs = require('fs'), path = require('path');
   const knots = await p.evaluate(() => App.knots().map(k => ({ key: k.key, x: k.x, y: k.y, want: k.o.id || k.s.data.id })));
   for (const k of knots) {
     await p.evaluate(() => App.select(null));
-    const [sx, sy] = await aim(k.x, k.y, 1);
+    const kp = await p.evaluate(key => { const q = App.knots().find(x => x.key === key); return q ? [q.x, q.y] : null; }, k.key);
+    if (!kp) { bad.push('узел брака ' + k.key + ' пропал'); continue; }
+    const [sx, sy] = await aim(kp[0], kp[1], 1);
     await p.mouse.move(sx - 25, sy - 25); await p.mouse.move(sx, sy);
     const under = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const g = el && el.closest('g.knot'); return g ? g.__data__.key : (el ? el.tagName + '.' + el.getAttribute('class') : 'ничего'); }, [sx, sy]);
     if (under !== k.key) { bad.push('узел брака ' + k.key + ': под указателем ' + under); continue; }
