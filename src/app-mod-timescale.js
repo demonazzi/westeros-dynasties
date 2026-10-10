@@ -71,7 +71,7 @@
   /* Рамка на древе: годы жизни тех, чьи карточки сейчас видны на экране, — от самого раннего рождения до самой поздней смерти (живые — до 300 г.). */
   function treeWindow() {
     const svgNode = App.svg.node();
-    const r = svgNode.getBoundingClientRect();
+    const vs = App.viewSize(), r = { width: vs.w, height: vs.h };
     if (!r.width) return null;
     const t = d3.zoomTransform(svgNode);
     let a = Infinity, b = -Infinity;

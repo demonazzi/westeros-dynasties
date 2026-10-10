@@ -135,7 +135,16 @@
   const linkGen = d3.linkHorizontal();
   App.linkGen = linkGen;
   const treeLayout = d3.tree().nodeSize([DX, DY]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
-  const zoom = d3.zoom().scaleExtent([0.04, 2.4]).on('zoom', e => { gRoot.attr('transform', e.transform); App.hooks.afterZoom && App.hooks.afterZoom.forEach(f => f(e.transform)); });
+  // Пока древо тащат мышью, пальцем или крутят колесом, наведение на древо выключено (класс panning): иначе каждое
+  // движение мыши перекрашивало подсветку и заставляло браузер заново раскладывать всё древо
+  let panning = false;
+  const zoom = d3.zoom().scaleExtent([0.04, 2.4])
+    .on('zoom', e => {
+      gRoot.attr('transform', e.transform);
+      if (e.sourceEvent && !panning) { panning = true; svg.classed('panning', true); xHover(null); peek(null); }
+      App.hooks.afterZoom && App.hooks.afterZoom.forEach(f => f(e.transform));
+    })
+    .on('end', () => { if (panning) { panning = false; svg.classed('panning', false); } });
   App.hooks.afterZoom = [];
   svg.call(zoom).on('dblclick.zoom', null);
   App.zoom = zoom;
@@ -601,6 +610,7 @@
     : X_KIND[e.type] + ': ' + byId.get(e.a).full + ' и ' + byId.get(e.b).full;
   const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
   function drawCross() {
+    xKey = null; peekId = null; xBox = null;
     const pairs = state.showLinks ? PAIRS.filter(e => visible.has(e.a) && visible.has(e.b) && nodeById.get(e.a).band !== nodeById.get(e.b).band) : [];
     const raw = pairs.map(e => ({ e, key: e.a + '|' + e.b, k: e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(e.a + '|' + e.b) }));
     // Концы линий, выходящие из одной колонки в одну сторону, разводятся по полосам поперёк карточки
@@ -655,32 +665,67 @@
     return da > db ? d.e.a : d.e.b;
   }
   function xGo(d, pt) { xHover(null); select(xFar(d, pt), { center: true }); }
+  const canvasEl = document.getElementById('canvas');
   const xtip = document.createElement('div');
   xtip.className = 'xtip'; xtip.setAttribute('role', 'tooltip'); xtip.hidden = true;
-  document.getElementById('canvas').appendChild(xtip);
+  canvasEl.appendChild(xtip);
+  /* Наведение на связь. Подсветка меняется только при переходе на другую линию; размеры холста и подсказки
+     запоминаются в начале наведения — на каждом движении мыши раскладка страницы не читается. */
+  let xKey = null, xFarId = null, xBox = null, xTipW = 0, xTipH = 0;
   function xHover(d, ev) {
-    layers.x.selectAll('path.xlink').classed('hover', q => !!d && q.key === d.key);
-    layers.marks.selectAll('g.xmark').classed('hover', q => !!d && q.key === d.key);
-    layers.nodes.selectAll('g.node').classed('xpeer', n => !!d && (n.data.id === d.e.a || n.data.id === d.e.b));
-    if (!d) { xtip.hidden = true; return; }
-    const pt = d3.pointer(ev, gRoot.node());
-    xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>Нажмите — перейти к: ' + esc(byId.get(xFar(d, pt)).full) + '</span>';
-    xtip.hidden = false;
-    const c = document.getElementById('canvas').getBoundingClientRect();
-    const x = Math.min(ev.clientX - c.left + 16, c.width - xtip.offsetWidth - 8), y = Math.min(ev.clientY - c.top + 18, c.height - xtip.offsetHeight - 8);
+    const key = d ? d.key : null;
+    if (key !== xKey) {
+      layers.x.selectAll('path.xlink.hover').classed('hover', false);
+      layers.marks.selectAll('g.xmark.hover').classed('hover', false);
+      layers.nodes.selectAll('g.node.xpeer').classed('xpeer', false);
+      if (d) {
+        layers.x.selectAll('path.xlink').filter(q => q.key === key).classed('hover', true);
+        layers.marks.selectAll('g.xmark').filter(q => q.key === key).classed('hover', true);
+        layers.nodes.selectAll('g.node').filter(n => n.data.id === d.e.a || n.data.id === d.e.b).classed('xpeer', true);
+      }
+      xKey = key; xFarId = null;
+    }
+    if (!d) { xtip.hidden = true; xBox = null; return; }
+    if (!xBox) {
+      const c = canvasEl.getBoundingClientRect(), r = svg.node().getBoundingClientRect();
+      xBox = { cl: c.left, ct: c.top, cw: c.width, ch: c.height, sl: r.left, st: r.top };
+    }
+    const pt = treePoint(ev);
+    const far = xFar(d, pt);
+    if (far !== xFarId) {
+      xFarId = far;
+      xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>Нажмите — перейти к: ' + esc(byId.get(far).full) + '</span>';
+      xtip.hidden = false;
+      xTipW = xtip.offsetWidth; xTipH = xtip.offsetHeight;
+    }
+    const x = Math.min(ev.clientX - xBox.cl + 16, xBox.cw - xTipW - 8), y = Math.min(ev.clientY - xBox.ct + 18, xBox.ch - xTipH - 8);
     xtip.style.transform = 'translate(' + Math.max(8, x) + 'px,' + Math.max(8, y) + 'px)';
   }
+  // точка древа под указателем: по запомненному положению холста и текущему масштабу, без чтения раскладки
+  function treePoint(ev) {
+    if (!xBox) return d3.pointer(ev, gRoot.node());
+    return d3.zoomTransform(svg.node()).invert([ev.clientX - xBox.sl, ev.clientY - xBox.st]);
+  }
   function xEvents(sel) {
-    sel.on('pointerenter pointermove', (e, d) => xHover(d, e))
+    sel.on('pointerenter pointermove', (e, d) => { if (!panning) xHover(d, e); })
       .on('pointerleave', () => xHover(null))
-      .on('click', (e, d) => { e.stopPropagation(); xGo(d, d3.pointer(e, gRoot.node())); });
+      .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
   App.xFar = xFar;
   App.drawCross = drawCross;
   // карточка под указателем: её связи с другими домами видны ярче
+  let peekId = null;
   function peek(id) {
-    layers.x.selectAll('path.xlink').classed('peek', d => !!id && (d.e.a === id || d.e.b === id));
-    layers.marks.selectAll('g.xmark').classed('peek', d => !!id && (d.e.a === id || d.e.b === id));
+    if (id && panning) return;
+    if (id === peekId) return;
+    if (peekId) {
+      layers.x.selectAll('path.xlink.peek').classed('peek', false);
+      layers.marks.selectAll('g.xmark.peek').classed('peek', false);
+    }
+    peekId = id;
+    if (!id) return;
+    layers.x.selectAll('path.xlink').filter(d => d.e.a === id || d.e.b === id).classed('peek', true);
+    layers.marks.selectAll('g.xmark').filter(d => d.e.a === id || d.e.b === id).classed('peek', true);
   }
 
   function toggle(d) {
@@ -896,8 +941,12 @@
         '<a class="btn" href="' + wikiUrl(p) + '" target="_blank" rel="noopener">A Wiki of Ice and Fire ↗</a>' +
       '</div>' +
       '<p class="src">Источник: книги Мартина; даты сверены по A Wiki of Ice and Fire. Годы — от Завоевания.</p>';
-    panel.scrollTop = 0;
+    // прокрутка наверх — только если карточку прокручивали, и в следующем кадре: сброс прокрутки прямо здесь
+    // заставлял браузер разложить всю страницу посреди обработки нажатия
+    if (panelScrolled) { panelScrolled = false; requestAnimationFrame(() => { panel.scrollTop = 0; }); }
   }
+  let panelScrolled = false;
+  panel.addEventListener('scroll', () => { panelScrolled = panel.scrollTop > 0; }, { passive: true });
   App.renderPanel = renderPanel;
   /* История карточек: id человека или «d:id» для дракона. */
   App.historyLabel = h => h.startsWith('d:') ? (App.dragonLabel ? App.dragonLabel(h.slice(2)) : h) : (byId.get(h) || {}).name;
@@ -946,7 +995,10 @@
   }
   App.goBack = goBack;
 
-  function viewSize() { const r = svg.node().getBoundingClientRect(); return { w: r.width, h: r.height }; }
+  // Размер холста запоминает ResizeObserver: мини-карта и шкала спрашивают его на каждом кадре перетаскивания
+  let svgSize = null;
+  if (window.ResizeObserver) new ResizeObserver(es => { const r = es[es.length - 1].contentRect; svgSize = r.width ? { w: r.width, h: r.height } : null; }).observe(svg.node());
+  function viewSize() { if (svgSize) return svgSize; const r = svg.node().getBoundingClientRect(); return { w: r.width, h: r.height }; }
   App.viewSize = viewSize;
 
   function centerOn(id, scale, animate) {

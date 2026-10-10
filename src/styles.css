@@ -302,6 +302,8 @@ rect.lg-sub { fill: var(--hc); }
 .xmark.hot circle { stroke-width: 2.6; }
 /* Линии между домами и значки браков отзываются на наведение и нажатие */
 .xhit { fill: none; stroke: transparent; stroke-width: 14; pointer-events: stroke; cursor: pointer; }
+/* пока древо тащат или крутят колесом, браузер не ищет, что под указателем, и не меняет подсветку наведения */
+#tree.panning * { pointer-events: none; }
 .xlink.hover { opacity: 1; stroke-width: 3.2; }
 .xmark { cursor: pointer; }
 .xmark text { pointer-events: none; }

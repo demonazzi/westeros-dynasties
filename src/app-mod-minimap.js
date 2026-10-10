@@ -40,8 +40,8 @@
   }
   function drawViewport(t) {
     if (!geo) return;
-    const r = App.svg.node().getBoundingClientRect();
-    const [ax, ay] = t.invert([0, 0]), [bx, by] = t.invert([r.width || 1000, r.height || 700]);
+    const r = App.viewSize();
+    const [ax, ay] = t.invert([0, 0]), [bx, by] = t.invert([r.w || 1000, r.h || 700]);
     const x = geo.ox + (ax - geo.x0) * geo.s, y = geo.oy + (ay - geo.y0) * geo.s;
     const w = (bx - ax) * geo.s, h = (by - ay) * geo.s;
     const cx = Math.max(-2, Math.min(MW + 2, x)), cy = Math.max(-2, Math.min(MH + 2, y));

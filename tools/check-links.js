@@ -134,8 +134,35 @@ const fs = require('fs'), path = require('path');
     if (sel !== k.want) bad.push('узел брака ' + k.key + ': нажатие выбрало ' + sel + ', ждали ' + k.want);
   }
   console.log('узлов браков внутри домов', knots.length);
+  // Перетаскивание, начатое на линии: пока тянут, подсветка и карточки не меняются (иначе всё тормозит),
+  // после отпускания наведение снова работает
+  {
+    await p.evaluate(() => App.select(null));
+    const l = lines[0];
+    const pt = await p.evaluate(key => { const path = App.layers.x.selectAll('path.xhit').filter(q => q.key === key).node(); const q = path.getPointAtLength(path.getTotalLength() / 2); return [q.x, q.y]; }, l.key);
+    const [sx, sy] = await aim(pt[0], pt[1], 1);
+    await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);
+    const before = await p.evaluate(() => { const t = document.querySelector('.xtip'); return !t.hidden; });
+    await p.evaluate(() => { window.__cls = 0; window.__mo = new MutationObserver(ms => ms.forEach(m => { if (m.attributeName === 'class' && m.target.id !== 'tree') window.__cls++; })); window.__mo.observe(App.gRoot.node(), { attributes: true, subtree: true, attributeFilter: ['class'] }); });
+    await p.mouse.down();
+    for (let i = 1; i <= 30; i++) await p.mouse.move(sx + i * 5, sy + i * 3);
+    const during = await p.evaluate(() => ({ cls: window.__cls, panning: App.svg.classed('panning'), tip: !document.querySelector('.xtip').hidden }));
+    await p.mouse.up();
+    await p.evaluate(() => window.__mo.disconnect());
+    const afterEnd = await p.evaluate(() => App.svg.classed('panning'));
+    if (!before) bad.push('перетаскивание: до него подсказка линии ' + l.key + ' не появилась');
+    // в начале перетаскивания один раз снимается подсветка (линия, значок, два конца); дальше — ничего
+    if (during.cls > 8) bad.push('перетаскивание по линии: классы на древе менялись ' + during.cls + ' раз');
+    if (!during.panning || during.tip) bad.push('перетаскивание: panning ' + during.panning + ', подсказка ' + during.tip);
+    if (afterEnd) bad.push('перетаскивание: после отпускания класс panning остался');
+    const pt2 = await p.evaluate(key => { const path = App.layers.x.selectAll('path.xhit').filter(q => q.key === key).node(); const q = path.getPointAtLength(path.getTotalLength() / 2); return [q.x, q.y]; }, l.key);
+    const [tx, ty] = await aim(pt2[0], pt2[1], 1);
+    await p.mouse.move(tx - 20, ty); await p.mouse.move(tx, ty);
+    const again = await p.evaluate(() => !document.querySelector('.xtip').hidden && document.querySelectorAll('#tree g.node.xpeer').length === 2);
+    if (!again) bad.push('перетаскивание: после него наведение на линию ' + l.key + ' не работает');
+  }
   if (errs.length) bad.push('ошибки страницы: ' + errs.join(' | '));
   console.log('значков брака', marks.length, 'линий между домами', lines.length);
-  if (bad.length) { console.log(bad.join('\n')); process.exitCode = 1; } else console.log('связи в порядке: значки и линии отзываются на наведение и нажатие, ведут к нужному концу, на карточках не лежат');
+  if (bad.length) { console.log(bad.join('\n')); process.exitCode = 1; } else console.log('связи в порядке: значки и линии отзываются на наведение и нажатие, ведут к нужному концу, на карточках не лежат; перетаскивание с линии не трогает подсветку');
   await b.close();
 })();
