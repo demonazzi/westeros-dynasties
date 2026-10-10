@@ -22,8 +22,8 @@
     PEOPLE.forEach(p => {
       const b = num(p.b), d = num(p.d);
       const L = { b, d, be: b == null, de: d == null, alive: false, mar: null };
-      // «в детстве», «в младенчестве» — умер, но год не назван: линия короткая, не «жив на 300 г.»
-      if (d == null && /детств|младенч/.test(p.d || '')) L.young = /младенч/.test(p.d) ? 1 : 8;
+      // «в детстве», «в младенчестве», «при рождении» — умер, но год не назван: линия короткая, не «жив на 300 г.»
+      if (d == null && /детств|младенч|при рождении/.test(p.d || '')) L.young = /младенч|при рождении/.test(p.d) ? 1 : 8;
       if (p.k === 'K' && p.r && /^\d/.test(p.r)) { const [ra, rb] = p.r.split('–').map(Number); L.ra = ra; L.rb = rb; }
       else if (p.rm && /с (\d+)/.test(p.rm)) { L.ra = +/с (\d+)/.exec(p.rm)[1]; L.rb = null; }
       (p.sp || []).forEach(([, note]) => { const m = /(\d+) г\./.exec(note || ''); if (m) L.mar = L.mar == null ? +m[1] : Math.min(L.mar, +m[1]); });

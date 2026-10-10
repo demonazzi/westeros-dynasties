@@ -20,7 +20,7 @@
     {
       "title": "Время книг",
       "people": [
-        {"id":"tul_lord17","name":"Лорд Талли","full":"Лорд Талли, отец Хостера и Бриндена","hs":"tul","k":"T"},
+        {"id":"tul_lord17","name":"Лорд Талли","full":"Лорд Талли, отец Хостера и Бриндена","hs":"tul","k":"T","wiki":"Hoster Tully"},
         {"id":"hoster","name":"Хостер Талли","en":"Hoster Tully","hs":"tul","k":"T","p":"tul_lord17","d":"299","sp":[["Миниса Уэнт","умерла в родах"]]},
         {"id":"brynden_t","name":"Бринден Талли","full":"Бринден Талли, Чёрная Рыба","en":"Brynden Tully, the Blackfish","al":["Чёрная Рыба"],"hs":"tul","k":"T","p":"tul_lord17"},
         {"id":"catelyn","name":"Кейтилин Талли","en":"Catelyn Tully","fem":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"299","sp":[["brandon_r","помолвка","b"],["eddard"]]},

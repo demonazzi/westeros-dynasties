@@ -26,6 +26,8 @@ P.forEach(p => { if (!seen.has(p.id)) errs.push('недостижим ' + p.id);
 const fulls = {}; P.forEach(p => { const f = p.full || p.name; if (fulls[f]) errs.push('одинаковое полное имя: ' + f); fulls[f] = 1; });
 P.forEach(p => {
   if (p.wiki != null && typeof p.wiki !== 'string') errs.push('wiki не строка у ' + p.id);
+  // без en и wiki ссылка на A Wiki of Ice and Fire ищет русское имя и ничего не находит
+  if (!p.en && !p.wiki) errs.push('нет en или wiki (ссылка на вики) у ' + p.id);
 });
 BANDS.forEach(b => { if (!HOUSES[b.house] || !HOUSES[b.house].band) errs.push('полоса без описания дома ' + b.house); });
 // малые дома: liege — великий дом с полосой

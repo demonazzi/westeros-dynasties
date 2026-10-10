@@ -5,7 +5,7 @@
     {
       "title": "Танец драконов",
       "people": [
-        {"id":"bw_lord10","name":"Лорд Блэквуд","full":"Лорд Блэквуд, отец Сэмвела и Алисанны","hs":"bw","k":"T"},
+        {"id":"bw_lord10","name":"Лорд Блэквуд","full":"Лорд Блэквуд, отец Сэмвела и Алисанны","hs":"bw","k":"T","wiki":"Samwell Blackwood"},
         {"id":"samwell_bw","name":"Сэмвел Блэквуд","en":"Samwell Blackwood","hs":"bw","k":"T","p":"bw_lord10","d":"129"},
         {"id":"alysanne_bw","name":"Алисанна Блэквуд","en":"Alysanne Blackwood","al":["Чёрная Эли"],"fem":1,"hs":"bw","k":"T","p":"bw_lord10","sp":[["cregan","132 г."]]},
         {"id":"benjicot","name":"Бенджикот Блэквуд","en":"Benjicot Blackwood","al":["Кровавый Бен"],"hs":"bw","k":"T","p":"samwell_bw"}

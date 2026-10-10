@@ -60,7 +60,8 @@ const fs = require('fs'), path = require('path');
         const L = path.getTotalLength(), n = App.nodeById.get(from), m = App.nodeById.get(to);
         // точка линии вне карточек и вдали от других линий и линий родства, ближайшая к концу from
         // и на его половине (нажатие ведёт к дальнему от указателя концу)
-        const cards = App.allNodes().map(c => [c.X - 4, c.Y - 27, c.X + 180, c.Y + 27]);
+        // карточка вместе с кружком раскрытия справа от неё
+        const cards = App.allNodes().map(c => [c.X - 4, c.Y - 27, c.X + 210, c.Y + 27]);
         const sample = (sel, skip) => { const pts = []; sel.each(function (q) { if (skip && skip(q)) return; const P = this.getTotalLength(); for (let s = 0; s <= P; s += 3) { const o = this.getPointAtLength(s); pts.push([o.x, o.y]); } }); return pts; };
         const others = sample(App.layers.x.selectAll('path.xhit'), q => q.key === key);
         // точки линий родства — один раз на раскладку, в сетке по 20 px
@@ -89,9 +90,10 @@ const fs = require('fs'), path = require('path');
         };
         // если у конца from линия идёт в пучке с другими, берётся чистое место дальше по линии:
         // тогда проверяется, что подсказка и нажатие ведут к одному и тому же концу
-        const near = pick(11, true) || pick(6, true);
+        // у линии для наведения полоса 14 px: точка ближе 8 px к соседней линии лежит под ней
+        const near = pick(11, true) || pick(8, true);
         if (near) return Object.assign(near, { strict: true });
-        return pick(11, false) || pick(6, false);
+        return pick(11, false) || pick(8, false);
       }, [l.key, from, to]);
       if (!pt) { bad.push('линия ' + l.key + ': по всей длине сливается с другими линиями'); continue; }
       if (!pt.strict) {

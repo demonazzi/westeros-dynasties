@@ -5,7 +5,7 @@
     {
       "title": "",
       "people": [
-        {"id":"tyr_lord17","name":"Лорд Тирелл","full":"Лорд Тирелл, отец Лютора и его братьев","hs":"tyr","k":"T"},
+        {"id":"tyr_lord17","name":"Лорд Тирелл","full":"Лорд Тирелл, отец Лютора и его братьев","hs":"tyr","k":"T","wiki":"Luthor Tyrell"},
         {"id":"harlen","name":"Харлен Тирелл","en":"Harlan Tyrell","hs":"tyr","k":"T","d":"5"},
         {"id":"theo","name":"Тео Тирелл","en":"Theo Tyrell","hs":"tyr","k":"T","p":"harlen","par":["harlen"]},
         {"id":"bertrand","name":"Бертранд Тирелл","en":"Bertrand Tyrell","hs":"tyr","k":"T","par":["родство с Тео не названо"],"d":"59"},
