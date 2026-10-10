@@ -29,7 +29,7 @@
         {"id":"joanna","name":"Джоанна Ланнистер","en":"Joanna Lannister","fem":1,"hs":"lan","k":"T","p":"jason_g","d":"273","sp":[["tywin"]]},
         {"id":"tywin","name":"Тайвин Ланнистер","en":"Tywin Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"b":"242","d":"300","sp":[["joanna"]]},
         {"id":"kevan","name":"Киван Ланнистер","en":"Kevan Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"d":"300","sp":[["Дорна Свифт"]]},
-        {"id":"genna","name":"Дженна Ланнистер","en":"Genna Lannister","fem":1,"hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"sp":[["Эммон Фрей"]]},
+        {"id":"genna","name":"Дженна Ланнистер","en":"Genna Lannister","fem":1,"hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"sp":[["emmon_fr"]]},
         {"id":"tygett","name":"Тигетт Ланнистер","en":"Tygett Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"]},
         {"id":"gerion","name":"Герион Ланнистер","en":"Gerion Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"]},
         {"id":"cersei","name":"Серсея Ланнистер","en":"Cersei Lannister","fem":1,"hs":"lan","k":"T","p":"tywin","par":["tywin","joanna"],"b":"266","sp":[["robert","284 г."],["jaime","тайная связь","l"]]},

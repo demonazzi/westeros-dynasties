@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -12,6 +12,7 @@
     {"house":"lan","roots":[["loren",6],["lyman",8],["lan_lord10",10],["tya",16],["gerold",16]]},
     {"house":"arr","roots":[["sharra",5],["hubert",6],["joffrey_a",10],["isembard",10],["donnel",14],["alys_r",15],["jasper",17],["denys",19]]},
     {"house":"tul","roots":[["edmyn",6],["grover",9],["elmo",11],["tul_lord17",17]]},
+    {"house":"fry","sub":"tul","roots":[["forrest_fr",10],["sabitha_fr",10],["fr_lord14",14],["alys_fr",17],["jyanna_fr",17],["theo_fr",18]]},
     {"house":"stk","roots":[["torrhen",6],["cregan",11],["brandon_c",14]]},
     {"house":"gry","roots":[["vickon",6],["gry_lord10",10],["alton",13],["torwyn",14],["loron",15],["dagon",16],["alannys",19],["quenton_c",19],["dagon_d",19]]}
   ],
@@ -33,7 +34,8 @@
     "gar": {"name":"Дом Гарднеров","sigil":{"field":"#F2F0E8","charge":"#3C7A3A"}},
     "dur": {"name":"Дом Дюррандонов","sigil":{"field":"#E0A920","charge":"#17130F"}},
     "hoa": {"name":"Дом Хоаров","sigil":{"field":"#17161A","charge":"#D4AF37"}},
-    "seed": {"name":"Семя дракона","sigil":{"field":"#4A4350","charge":"#E2D8C6"}}
+    "seed": {"name":"Семя дракона","sigil":{"field":"#4A4350","charge":"#E2D8C6"}},
+    "fry": {"name":"Дом Фреев","band":"Фреи","motto":"Близнецы","sigil":{"field":"#C9CDD3","charge":"#2C4A86"}}
   },
   "gaps": [
     {"house":"bar","from":"borros","to":"lord_b208","years":"≈ 80 лет","note":"около трёх поколений лордов Штормового Предела в книгах не названы"},
@@ -62,6 +64,7 @@
     {"house":"gry","from":"toron","to":"alton","years":"","note":"Алтон, Торвин, Лорон и Дагон названы после Торона списком, без дат и родства"},
     {"house":"gry","from":"alton","to":"torwyn","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
     {"house":"gry","from":"torwyn","to":"loron","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
-    {"house":"gry","from":"loron","to":"dagon","years":"","note":"порядок лордов дан списком без дат; родство не названо"}
+    {"house":"gry","from":"loron","to":"dagon","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
+    {"house":"fry","from":"forrest_fr","to":"fr_lord14","years":"≈ 60 лет","note":"лорды Переправы между Форрестом и дедом Уолдера в книгах не названы"}
   ]
 }

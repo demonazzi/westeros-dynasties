@@ -108,7 +108,9 @@
   const el = document.getElementById('time-svg');
   const tsvg = d3.select(el);
   const gz = tsvg.append('g');
-  const tz = d3.zoom().scaleExtent([0.12, 3]).on('zoom', e => { gz.attr('transform', e.transform); if (App.redrawScale) App.redrawScale(); });
+  const tz = d3.zoom().scaleExtent([0.12, 3]).on('zoom', e => { gz.attr('transform', e.transform); placeSubHeads(e.transform); if (App.redrawScale) App.redrawScale(); });
+  // строка малого дома: название едет вслед за видом, чтобы у поздних лет было видно, чья это строка
+  const placeSubHeads = t => gz.selectAll('g.sub-head.t-sub').attr('transform', b => 'translate(' + Math.max(b.hx0, Math.min(t.invertX(18), b.hx1)) + ',' + (b.top + 20) + ')');
   tsvg.call(tz).on('dblclick.zoom', null);
   const X = d3.scaleLinear().domain([-180, -10, 302]).range([0, 440, 440 + 312 * 12]);
   const ROW = 30, BHEAD = 64, BGAP = 26, TOP = 30;
@@ -170,13 +172,17 @@
     g.append('rect').attr('class', 'band-bg sub-bg').attr('x', SUBIN).attr('y', b.top).attr('width', width - SUBIN - 12).attr('height', b.bottom - b.top).attr('rx', 12);
     const cnt = App.plural(n, 'человек', 'человека', 'человек');
     const tw = App.textWidth('t-sub sub-title', h.band, 11);
-    const head = g.append('g').attr('class', 'sub-head t-sub').attr('transform', 'translate(' + (X(-30) + 10) + ',' + (b.top + 20) + ')')
+    b.hx0 = X(-30) + 10; b.hx1 = width - 40 - 300;
+    const head = g.append('g').attr('class', 'sub-head t-sub').datum(b).attr('transform', 'translate(' + b.hx0 + ',' + (b.top + 20) + ')')
       .attr('tabindex', 0).attr('role', 'button').attr('aria-expanded', String(!b.collapsed))
       .attr('aria-label', h.band + ', ' + cnt + '. ' + (b.collapsed ? 'Развернуть' : 'Свернуть'));
-    head.append('rect').attr('class', 'sub-hit').attr('x', -8).attr('y', -16).attr('width', 26 + tw + 14 + App.textWidth('sub-count', cnt, 7) + 16).attr('height', 32).attr('rx', 8);
+    const sig = h.sigil && App.sigilSVG ? App.sigilSVG(b.house, 17, -12, 20) : '';
+    const tx = sig ? 44 : 24;
+    head.append('rect').attr('class', 'sub-hit').attr('x', -8).attr('y', -16).attr('width', tx + 2 + tw + 14 + App.textWidth('sub-count', cnt, 7) + 16).attr('height', 32).attr('rx', 8);
     head.append('text').attr('class', 'sub-chev').attr('x', 6).attr('y', 1).text(b.collapsed ? '▸' : '▾');
-    head.append('text').attr('class', 'sub-title').attr('x', 24).attr('y', 1).text(h.band);
-    head.append('text').attr('class', 'sub-count').attr('x', 24 + tw + 14).attr('y', 1).text(cnt);
+    if (sig) head.append('g').attr('class', 'sub-sigil').html(sig);
+    head.append('text').attr('class', 'sub-title').attr('x', tx).attr('y', 1).text(h.band);
+    head.append('text').attr('class', 'sub-count').attr('x', tx + tw + 14).attr('y', 1).text(cnt);
     head.on('click', e => { e.stopPropagation(); App.toggleSub(b.house); })
       .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.toggleSub(b.house); } });
   }
@@ -200,6 +206,7 @@
       const tw = App.textWidth ? App.textWidth('t-head band-title', HOUSES[b.house].band, 15) : HOUSES[b.house].band.length * 15;
       head.append('text').attr('class', 'band-motto').attr('x', 44 + tw + 18).attr('y', 30).text(HOUSES[b.house].motto);
     });
+    placeSubHeads(d3.zoomTransform(tsvg.node()));
     // Эпохи
     ERAS.forEach(e => {
       const [a, b] = eraSpan(e);

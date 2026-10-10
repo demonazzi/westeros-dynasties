@@ -55,26 +55,40 @@ const fs = require('fs'), path = require('path');
   for (const l of lines) {
     for (const [from, to] of [[l.a, l.b], [l.b, l.a]]) {
       await p.evaluate(() => App.select(null));
-      const pt = await p.evaluate(([key, from]) => {
-        const d = App.layers.x.selectAll('path.xhit').data().find(q => q.key === key);
+      const pt = await p.evaluate(([key, from, to]) => {
         const path = App.layers.x.selectAll('path.xhit').filter(q => q.key === key).node();
-        const L = path.getTotalLength(), n = App.nodeById.get(from);
-        // точка линии вне карточек и вдали от других линий, ближайшая к концу from
+        const L = path.getTotalLength(), n = App.nodeById.get(from), m = App.nodeById.get(to);
+        // точка линии вне карточек и вдали от других линий и линий родства, ближайшая к концу from
+        // и на его половине (нажатие ведёт к дальнему от указателя концу)
         const cards = App.allNodes().map(c => [c.X - 4, c.Y - 27, c.X + 180, c.Y + 27]);
-        const others = [];
-        App.layers.x.selectAll('path.xhit').each(function (q) { if (q.key === key) return; const P = this.getTotalLength(); for (let s = 0; s <= P; s += 3) { const o = this.getPointAtLength(s); others.push([o.x, o.y]); } });
-        let best = null;
-        for (let s = 0; s <= L; s += 4) {
-          const q = path.getPointAtLength(s);
-          if (cards.some(r => q.x > r[0] && q.x < r[2] && q.y > r[1] && q.y < r[3])) continue;
-          if (App.layers.knots.selectAll('g.knot').data().some(k => Math.hypot(k.x - q.x, k.y - q.y) < 14)) continue;
-          if (App.layers.marks.selectAll('g.xmark').data().some(m => Math.hypot(m.mp[0] - q.x, m.mp[1] - q.y) < 14)) continue;
-          if (others.some(o => Math.abs(o[0] - q.x) < 11 && Math.abs(o[1] - q.y) < 11)) continue;
-          const dist = Math.hypot(n.X + 88 - q.x, n.Y - q.y);
-          if (!best || dist < best.dist) best = { x: q.x, y: q.y, dist };
+        const sample = (sel, skip) => { const pts = []; sel.each(function (q) { if (skip && skip(q)) return; const P = this.getTotalLength(); for (let s = 0; s <= P; s += 3) { const o = this.getPointAtLength(s); pts.push([o.x, o.y]); } }); return pts; };
+        const others = sample(App.layers.x.selectAll('path.xhit'), q => q.key === key);
+        // точки линий родства — один раз на раскладку, в сетке по 20 px
+        const tkey = App.allNodes().length + '|' + App.bandsBottom();
+        if (!window.__tree || window.__tree.key !== tkey) {
+          const grid = new Map();
+          sample(App.layers.links.selectAll('path.link')).forEach(([x, y]) => { const k = Math.floor(x / 20) + ',' + Math.floor(y / 20); if (!grid.has(k)) grid.set(k, []); grid.get(k).push([x, y]); });
+          window.__tree = { key: tkey, grid };
         }
-        return best;
-      }, [l.key, from]);
+        const nearTree = q => { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { const c = window.__tree.grid.get((Math.floor(q.x / 20) + i) + ',' + (Math.floor(q.y / 20) + j)); if (c && c.some(o => Math.abs(o[0] - q.x) < 6 && Math.abs(o[1] - q.y) < 6)) return true; } return false; };
+        const knots = App.layers.knots.selectAll('g.knot').data(), marks = App.layers.marks.selectAll('g.xmark').data();
+        const pick = gap => {
+          let best = null;
+          for (let s = 0; s <= L; s += 4) {
+            const q = path.getPointAtLength(s);
+            if (cards.some(r => q.x > r[0] && q.x < r[2] && q.y > r[1] && q.y < r[3])) continue;
+            if (knots.some(k => Math.hypot(k.x - q.x, k.y - q.y) < 14)) continue;
+            if (marks.some(k => Math.hypot(k.mp[0] - q.x, k.mp[1] - q.y) < 14)) continue;
+            if (others.some(o => Math.abs(o[0] - q.x) < gap && Math.abs(o[1] - q.y) < gap)) continue;
+            if (nearTree(q)) continue;
+            const dist = Math.hypot(n.X + 88 - q.x, n.Y - q.y);
+            if (dist >= Math.hypot(m.X + 88 - q.x, m.Y - q.y)) continue;
+            if (!best || dist < best.dist) best = { x: q.x, y: q.y, dist };
+          }
+          return best;
+        };
+        return pick(11) || pick(6);
+      }, [l.key, from, to]);
       if (!pt) { bad.push('линия ' + l.key + ': по всей длине сливается с другими линиями'); continue; }
       const [sx, sy] = await aim(pt.x, pt.y, 1.2);
       await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);

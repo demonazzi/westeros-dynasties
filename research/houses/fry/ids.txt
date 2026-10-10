@@ -1,0 +1,108 @@
+addam_fr | Addam Frey | Addam_Frey
+aegon_fr_aenys | Aegon Frey (son of Aenys) | Aegon_Frey_(son_of_Aenys)
+aegon_fr_stevron | Aegon Frey (son of Stevron) | Aegon_Frey_(son_of_Stevron)
+aemon_rv | Aemon Rivers | Aemon_Rivers
+aenys_fr | Aenys Frey | Aenys_Frey
+alesander_fr | Alesander Frey | Alesander_Frey
+alyn_fr | Alyn Frey | Alyn_Frey
+alys_fr | Alys Frey | Alys_Frey
+alyx_fr | Alyx Frey | Alyx_Frey
+amerei_fr | Amerei Frey | Amerei_Frey
+androw_fr | Androw Frey | Androw_Frey
+arwood_fr | Arwood Frey | Arwood_Frey
+arwyn_fr | Arwyn Frey | Arwyn_Frey
+benfrey_fr | Benfrey Frey | Benfrey_Frey
+bradamar_fr | Bradamar Frey | Bradamar_Frey
+bryan_fr | Bryan Frey | Bryan_Frey
+lady_butterwell | Lady Butterwell | Lady_Butterwell
+cersei_fr | Cersei Frey | Cersei_Frey
+cleos_fr | Cleos Frey | Cleos_Frey
+colmar_fr | Colmar Frey | Colmar_Frey
+cynthea_fr | Cynthea Frey | Cynthea_Frey
+danwell_fr | Danwell Frey | Danwell_Frey
+della_fr | Della Frey | Della_Frey
+dickon_fr | Dickon Frey | Dickon_Frey
+edwyn_fr | Edwyn Frey | Edwyn_Frey
+elmar_fr | Elmar Frey | Elmar_Frey
+emberlei_fr | Emberlei Frey | Emberlei_Frey
+emmon_fr | Emmon Frey | Emmon_Frey
+forrest_fr | Forrest Frey | Forrest_Frey
+franklyn_fr | Franklyn Frey | Franklyn_Frey
+geremy_fr | Geremy Frey | Geremy_Frey
+hosteen_fr | Hosteen Frey | Hosteen_Frey
+hostella_fr | Hostella Frey | Hostella_Frey
+hoster_fr | Hoster Frey | Hoster_Frey
+jaime_fr | Jaime Frey | Jaime_Frey
+jammos_fr | Jammos Frey | Jammos_Frey
+jared_fr | Jared Frey | Jared_Frey
+jeyne_rv | Jeyne Rivers | Jeyne_Rivers
+jonos_fr | Jonos Frey | Jonos_Frey
+jyanna_fr | Jyanna Frey | Jyanna_Frey
+kyra_fr | Kyra Frey | Kyra_Frey
+leana_fr | Leana Frey | Leana_Frey
+fr_lord | Lord Frey | Lord_Frey
+lothar_fr | Lothar Frey | Lothar_Frey
+luceon_fr | Luceon Frey | Luceon_Frey
+lyonel_fr | Lyonel Frey | Lyonel_Frey
+lythene_fr | Lythene Frey | Lythene_Frey
+maegelle_fr | Maegelle Frey | Maegelle_Frey
+malwyn_fr | Malwyn Frey | Malwyn_Frey
+marissa_fr | Marissa Frey | Marissa_Frey
+martyn_rv | Martyn Rivers | Martyn_Rivers
+mathis_fr | Mathis Frey | Mathis_Frey
+mellara_rv | Mellara Rivers | Mellara_Rivers
+melwys_rv | Melwys Rivers | Melwys_Rivers
+merianne_fr | Merianne Frey | Merianne_Frey
+merrett_fr | Merrett Frey | Merrett_Frey
+morya_fr | Morya Frey | Morya_Frey
+olyvar_fr | Olyvar Frey | Olyvar_Frey
+osmund_fr | Osmund Frey | Osmund_Frey
+perra_fr | Perra Frey | Perra_Frey
+perriane_fr | Perriane Frey | Perriane_Frey
+perwyn_fr | Perwyn Frey | Perwyn_Frey
+petyr_fr | Petyr Frey | Petyr_Frey
+raymund_fr | Raymund Frey | Raymund_Frey
+rhaegar_fr | Rhaegar Frey | Rhaegar_Frey
+robert_fr_raymund | Robert Frey (son of Raymund) | Robert_Frey_(son_of_Raymund)
+robert_fr_rhaegar | Robert Frey (son of Rhaegar) | Robert_Frey_(son_of_Rhaegar)
+ronel_rv | Ronel Rivers | Ronel_Rivers
+roslin_fr | Roslin Frey | Roslin_Frey
+ryella_fr | Ryella Frey | Ryella_Frey
+ryger_rv | Ryger Rivers | Ryger_Rivers
+ryman_fr | Ryman Frey | Ryman_Frey
+sabitha_fr | Sabitha Frey | Sabitha_Frey
+sandor_fr | Sandor Frey | Sandor_Frey
+sarra_fr | Sarra Frey | Sarra_Frey
+serra_fr | Serra Frey | Serra_Frey
+shirei_fr | Shirei Frey | Shirei_Frey
+steffon_fr | Steffon Frey | Steffon_Frey
+stevron_fr | Stevron Frey | Stevron_Frey
+symond_fr | Symond Frey | Symond_Frey
+theo_fr | Theo Frey | Theo_Frey
+tion_fr | Tion Frey | Tion_Frey
+tysane_fr | Tysane Frey | Tysane_Frey
+tyta_fr | Tyta Frey | Tyta_Frey
+tytos_fr | Tytos Frey | Tytos_Frey
+tywin_fr | Tywin Frey | Tywin_Frey
+tywin_fr_raymund | Tywin Frey (son of Raymund) | Tywin_Frey_(son_of_Raymund)
+walda_fr_rhaegar | Walda Frey (daughter of Rhaegar) | Walda_Frey_(daughter_of_Rhaegar)
+walda_fr_edwyn | Walda Frey (daughter of Edwyn) | Walda_Frey_(daughter_of_Edwyn)
+walda_fr_lothar | Walda Frey (daughter of Lothar) | Walda_Frey_(daughter_of_Lothar)
+walda_fr_merrett | Walda Frey (daughter of Merrett) | Walda_Frey_(daughter_of_Merrett)
+walda_fr_walton | Walda Frey (daughter of Walton) | Walda_Frey_(daughter_of_Walton)
+walda_rv | Walda Rivers | Walda_Rivers
+walda_rv_aemon | Walda Rivers (daughter of Aemon) | Walda_Rivers_(daughter_of_Aemon)
+walder_fr_merrett | Walder Frey (son of Merrett) | Walder_Frey_(son_of_Merrett)
+walder_fr | Walder Frey | Walder_Frey
+walder_fr_emmon | Walder Frey (son of Emmon) | Walder_Frey_(son_of_Emmon)
+walder_fr_jammos | Walder Frey (son of Jammos) | Walder_Frey_(son_of_Jammos)
+walder_fr_ryman | Walder Frey (son of Ryman) | Walder_Frey_(son_of_Ryman)
+walder_rv | Walder Rivers | Walder_Rivers
+walton_fr | Walton Frey | Walton_Frey
+waltyr_fr | Waltyr Frey | Waltyr_Frey
+wendel_fr | Wendel Frey | Wendel_Frey
+whalen_fr | Whalen Frey | Whalen_Frey
+willamen_fr | Willamen Frey | Willamen_Frey
+willem_fr | Willem Frey | Willem_Frey
+zachery_fr | Zachery Frey | Zachery_Frey
+zia_fr | Zia Frey | Zia_Frey

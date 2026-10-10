@@ -34,10 +34,10 @@
         gens.get(g).push(p);
       });
       const keys = [...gens.keys()].sort((a, b) => a - b);
-      // малый дом — под своим великим, свёрнут, без герба
+      // малый дом — под своим великим, свёрнут; герб — если задан
       const sub = !!band.sub;
       html += '<section class="lv-house h-' + band.house + (sub ? ' lv-sub' : '') + '" data-house="' + band.house + '"><h3 class="lv-head"><button type="button" aria-expanded="' + !sub + '">' +
-        (!sub && App.sigilSVG ? App.sigilSVG(band.house, 0, 0, 26, 'lv-sigil') : '') +
+        (App.sigilSVG && HOUSES[band.house].sigil ? App.sigilSVG(band.house, 0, 0, sub ? 20 : 26, 'lv-sigil') : '') +
         esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button></h3><div class="lv-body"' + (sub ? ' hidden' : '') + '>';
       const pre = keys.filter(g => g < 6), post = keys.filter(g => g >= 6);
       const groups = (pre.length ? [[pre, 'До Завоевания']] : []).concat(post.map(g => [[g], genLabel(g)]));

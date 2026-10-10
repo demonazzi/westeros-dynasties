@@ -460,6 +460,7 @@
     App.nodeSel = nodeSel;
 
     fitNames(nodeSel);
+    placeSubHeads();
     drawCross();
     App.hooks.afterRender.forEach(f => f(nodeSel));
     decorate();
@@ -474,23 +475,36 @@
   /* Малый дом: строка-заголовок со стрелкой (свёрнут) или заголовок над его карточками (развёрнут), без герба. */
   function drawSubHead(g, b, h, x0, x1) {
     g.append('rect').attr('class', 'band-bg sub-bg').attr('x', x0).attr('y', b.top).attr('width', x1 - x0).attr('height', b.bottom - b.top).attr('rx', 14);
-    b.hx0 = x0 + 16;
+    b.hx0 = x0 + 16; b.hx1 = x1;
     const n = App.bandSize(b.house);
     const head = g.append('g').attr('class', 'sub-head').attr('transform', 'translate(' + b.hx0 + ',' + (b.top + 25) + ')')
       .attr('tabindex', 0).attr('role', 'button').attr('aria-expanded', String(!b.collapsed))
       .attr('aria-label', h.band + ', ' + plural(n, 'человек', 'человека', 'человек') + '. ' + (b.collapsed ? 'Развернуть' : 'Свернуть'));
     const tw = textWidth('sub-title', h.band, 13), mw = h.motto ? textWidth('band-motto sub-motto', h.motto, 7) : 0;
     const cnt = plural(n, 'человек', 'человека', 'человек'), cw = textWidth('sub-count', cnt, 7);
-    b.headW = 30 + tw + 16 + (mw ? mw + 16 : 0) + cw;
+    // герб — только у малых домов, которым он задан (большие, как Фреи)
+    const sig = h.sigil && App.sigilSVG ? App.sigilSVG(b.house, 19, -15, 25) : '';
+    const tx = sig ? 54 : 26;
+    b.headW = tx + 4 + tw + 16 + (mw ? mw + 16 : 0) + cw;
     head.append('rect').attr('class', 'sub-hit').attr('x', -10).attr('y', -21).attr('width', b.headW + 24).attr('height', 42).attr('rx', 10);
     head.append('text').attr('class', 'sub-chev').attr('x', 6).attr('y', 1).text(b.collapsed ? '▸' : '▾');
-    head.append('text').attr('class', 'sub-title').attr('x', 26).attr('y', 1).text(h.band);
-    if (h.motto) head.append('text').attr('class', 'band-motto sub-motto').attr('x', 26 + tw + 16).attr('y', 1).text(h.motto);
-    head.append('text').attr('class', 'sub-count').attr('x', 26 + tw + 16 + (mw ? mw + 16 : 0)).attr('y', 1).text(cnt);
+    if (sig) head.append('g').attr('class', 'sub-sigil').html(sig);
+    head.append('text').attr('class', 'sub-title').attr('x', tx).attr('y', 1).text(h.band);
+    if (h.motto) head.append('text').attr('class', 'band-motto sub-motto').attr('x', tx + tw + 16).attr('y', 1).text(h.motto);
+    head.append('text').attr('class', 'sub-count').attr('x', tx + tw + 16 + (mw ? mw + 16 : 0)).attr('y', 1).text(cnt);
     head.append('title').text((b.collapsed ? 'Развернуть: ' : 'Свернуть: ') + h.band + (HOUSES[b.sub] ? ' — малый дом, сюзерен — ' + HOUSES[b.sub].name.replace('Дом ', 'дом ') : ''));
     head.on('click', e => { e.stopPropagation(); toggleSub(b.house); })
       .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSub(b.house); } });
+    head.datum(b);
   }
+  /* Заголовок малого дома едет вслед за видом по горизонтали: свёрнутая строка — пустая полоса, и без названия
+     у правого края древа было бы непонятно, чья она. Дальше своей полосы заголовок не уходит. */
+  function placeSubHeads(t) {
+    t = t || d3.zoomTransform(svg.node());
+    const x = t.invertX(18);
+    layers.bands.selectAll('g.sub-head').attr('transform', b => 'translate(' + Math.max(b.hx0, Math.min(x, b.hx1 - b.headW - 40)) + ',' + (b.top + 25) + ')');
+  }
+  App.hooks.afterZoom.push(t => placeSubHeads(t));
   /* Развернуть или свернуть малый дом; строка с его названием остаётся на том же месте экрана. */
   function toggleSub(house, open) {
     const was = bandBoxes.find(b => b.house === house);

@@ -155,6 +155,23 @@
         {"id":"ulf_white","a":[["hotd","Том Беннетт","Tom Bennett","2-й сезон"]]},
         {"id":"nettles","a":[]}
       ]
+    },
+    {
+      "title": "Фреи",
+      "items": [
+        {"id":"forrest_fr","a":[["hotd","Кеннет Коллард","Kenneth Collard"]]},
+        {"id":"lothar_fr","a":[["got","Том Брук","Tom Brooke"],["got","Дэниел Тьюит","Daniel Tuite"]]},
+        {"id":"merianne_fr","a":[["got","Грэйс Хенди","Grace Hendy"]]},
+        {"id":"roslin_fr","a":[["got","Александра Даулинг","Alexandra Dowling"]]},
+        {"id":"ryger_rv","a":[["got","Брайан МакКоэрти","Bryan McCaugherty"]]},
+        {"id":"sabitha_fr","a":[["hotd","Сара Вудворд","Sarah Woodward"]]},
+        {"id":"shirei_fr","a":[["got","Мария Лэрд","Maria Laird"]]},
+        {"id":"stevron_fr","a":[["got","Колин Карнеги","Colin Carnegie"]]},
+        {"id":"walda_fr_merrett","a":[["got","Элизабет Уэбстер","Elizabeth Webster"]]},
+        {"id":"walder_fr","a":[["got","Дэвид Брэдли","David Bradley"]]},
+        {"id":"walder_fr_ryman","a":[["got","Тим Плестер","Tim Plester"]]},
+        {"id":"walder_rv","a":[["got","Тим Плестер","Tim Plester"]]}
+      ]
     }
   ]
 }

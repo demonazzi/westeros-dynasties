@@ -14,7 +14,7 @@ node tools/check-scale.js         # шкала времени
 node tools/check-labels.js        # подписи и пунктиры ни на что не наезжают
 node tools/check-links.js         # связи между домами
 node tools/check-vassal.js        # вкладка «Вассалитет»
-node tools/check-subs.js          # малые дома (подполосы) на копии данных с двумя малыми домами
+node tools/check-subs.js          # малые дома: Фреи и (в копии данных) Блэквуды под Талли — древо, хронология, список
 node tools/shot.js имя 1440 900 "js" dark   # скриншот в shots/
 ```
 Проверки в браузере используют Playwright с Chromium (`/opt/npm-tools/node_modules/playwright`).
@@ -35,7 +35,8 @@ node tools/shot.js имя 1440 900 "js" dark   # скриншот в shots/
 - Факты — A Wiki of Ice and Fire (awoiaf.westeros.org).
 - Русские имена и названия — 7kingdoms.ru (только написание, не источник фактов).
 - `research/` — сырой сбор: `vassal/` для вкладки «Вассалитет», `houses/` для домов Тиреллов и Грейджоев
-  (`gen_houses.py` — одноразовый генератор, после него файлы домов правились руками).
+  (`gen_houses.py`) и Фреев (`fry/` — бриф и сбор по частям, `gen_fry.js`). Генераторы одноразовые: после них
+  данные правятся в `data/` и `texts/`.
 
 ## Тексты и черновики Claude
 

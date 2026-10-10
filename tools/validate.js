@@ -28,13 +28,12 @@ P.forEach(p => {
   if (p.wiki != null && typeof p.wiki !== 'string') errs.push('wiki не строка у ' + p.id);
 });
 BANDS.forEach(b => { if (!HOUSES[b.house] || !HOUSES[b.house].band) errs.push('полоса без описания дома ' + b.house); });
-// малые дома: sub — великий дом с полосой; гербов у малых домов нет
+// малые дома: sub — великий дом с полосой (герб у малого дома по желанию — например, у Фреев)
 const bandHouses = new Map(BANDS.map(b => [b.house, b]));
 BANDS.filter(b => b.sub).forEach(b => {
   const g = bandHouses.get(b.sub);
   if (!g) errs.push('малый дом ' + b.house + ': нет полосы великого дома ' + b.sub);
   else if (g.sub) errs.push('малый дом ' + b.house + ': ' + b.sub + ' сам малый');
-  if (HOUSES[b.house] && HOUSES[b.house].sigil) errs.push('у малого дома ' + b.house + ' есть герб — малым домам гербы не рисуем');
 });
 const dids = new Set();
 (DRAGONS || []).forEach(d => {
