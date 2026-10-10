@@ -1,0 +1,129 @@
+/* Гербы домов — собственная упрощённая отрисовка по описаниям из книг (поле и фигура в геральдических цветах).
+   Щит 64×76, как у медальонов в карточках. App.sigilSVG(дом, x, y, ширина) возвращает вложенный <svg>. */
+(function () {
+  const App = window.App;
+  const SHIELD = 'M6 12 H58 V40 C58 57 46 67 32 73 C18 67 6 57 6 40 Z';
+  const INNER = 'M10.5 16.5 H53.5 V40 C53.5 54 43.5 62.5 32 68 C20.5 62.5 10.5 54 10.5 40 Z';
+  /* Фигуры: функция получает цвета поля и фигуры, возвращает разметку внутри щита. */
+  const dragon = (f, c) =>
+    // крылья, тело, три шеи с головами и хвост
+    '<path d="M25 47 L9 27 L13 45 Z M39 47 L55 27 L51 45 Z" fill="' + c + '" opacity=".8"/>' +
+    '<path d="M24 48 C24 42 40 42 40 48 C40 55 24 55 24 48 Z" fill="' + c + '"/>' +
+    '<path d="M27 45 C24 39 21 36 19 31 M32 44 V27 M37 45 C40 39 43 36 45 31" stroke="' + c + '" stroke-width="3.2" fill="none" stroke-linecap="round"/>' +
+    '<path d="M14.5 29.5 L20.5 27 L22 32 Z M29 22 L35 22 L32 28 Z M49.5 29.5 L43.5 27 L42 32 Z" fill="' + c + '"/>' +
+    '<path d="M36 53 C40 57 36 61 41 63" stroke="' + c + '" stroke-width="2.6" fill="none" stroke-linecap="round"/>';
+  const FIG = {
+    targ: dragon,
+    bf: dragon,
+    // серебряный морской конёк
+    vel: (f, c) =>
+      '<path d="M35 22 C29 21 25 25 21 26 C25 28 29 28 31 29 C35 33 36 37 33 42 C30 47 31 53 35 56 C38 58 40 55 38 53" stroke="' + c + '" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M38 27 L43 29 L39 32 L44 35 L38 37 L42 41 L36 42" fill="' + c + '"/>' +
+      '<circle cx="33" cy="24.5" r="1.4" fill="' + f + '"/>',
+    // коронованный олень
+    bar: (f, c) =>
+      '<path d="M28 31 C26 26 23 23 19 19 M22.5 22.5 L16 23 M20.5 20.5 L21 14 M36 31 C38 26 41 23 45 19 M41.5 22.5 L48 23 M43.5 20.5 L43 14" stroke="' + c + '" stroke-width="2.6" fill="none" stroke-linecap="round"/>' +
+      '<path d="M26.5 31 H37.5 L35.5 45 L32 51 L28.5 45 Z" fill="' + c + '"/>' +
+      '<path d="M26.5 32 L20 30.5 L25 36.5 Z M37.5 32 L44 30.5 L39 36.5 Z" fill="' + c + '"/>' +
+      '<path d="M27.5 29 L28.5 24.5 L30.5 27 L32 23.5 L33.5 27 L35.5 24.5 L36.5 29 Z" fill="' + c + '"/>' +
+      '<circle cx="29.6" cy="37" r="1.2" fill="' + f + '"/><circle cx="34.4" cy="37" r="1.2" fill="' + f + '"/>',
+    // луна и сокол
+    arr: (f, c) =>
+      '<circle cx="30" cy="43" r="15" fill="' + c + '"/><circle cx="36.5" cy="37" r="13" fill="' + f + '"/>' +
+      '<path d="M27 30 C30 26.5 33.5 26.5 35.5 29.5 C37.5 24 42.5 21.5 49 22 C44.5 25 42 29 39.5 32.5 L38 37 L35.5 33.5 C33 31.5 30 30.5 27 30 Z" fill="' + c + '"/>',
+    // ступенчатая белая башня, увенчанная огнём
+    hgt: (f, c) =>
+      '<path d="M20 63 H44 V58 H20 Z M22 57 H42 L41 45 H23 Z M21 45 H43 V42 H21 Z M25 41 H39 L38 32 H26 Z M24 32 H40 V29.5 H24 Z M27.5 29 H36.5 L35.5 24.5 H28.5 Z" fill="' + c + '"/>' +
+      '<path d="M30 50 h4 v5 h-4 Z M30.6 35 h2.8 v3.6 h-2.8 Z" fill="' + f + '"/>' +
+      '<path d="M32 12 C35 16 37 19 35.5 22.5 C34.8 24 33.5 24.6 32 24.6 C30.5 24.6 29.2 24 28.5 22.5 C27 19 29.5 16.5 32 12 Z" fill="#F08A2C"/>' +
+      '<path d="M32 17 C33.6 19.4 34 21 33 22.6 C32.4 23.4 31.6 23.4 31 22.6 C30 21 30.5 19.2 32 17 Z" fill="#FFD25A"/>',
+    // красное солнце, пронзённое золотым копьём
+    mar: (f, c) => {
+      let rays = '';
+      for (let i = 0; i < 12; i++) {
+        const a = i * Math.PI / 6, a1 = a - 0.16, a2 = a + 0.16;
+        rays += 'M' + (32 + Math.cos(a1) * 11).toFixed(1) + ' ' + (40 + Math.sin(a1) * 11).toFixed(1) + ' L' + (32 + Math.cos(a) * 17).toFixed(1) + ' ' + (40 + Math.sin(a) * 17).toFixed(1) + ' L' + (32 + Math.cos(a2) * 11).toFixed(1) + ' ' + (40 + Math.sin(a2) * 11).toFixed(1) + ' Z ';
+      }
+      return '<path d="' + rays + '" fill="' + c + '"/><circle cx="32" cy="40" r="10.5" fill="' + c + '"/>' +
+        '<path d="M15 60 L47 22" stroke="#E8B530" stroke-width="2.6" stroke-linecap="round"/><path d="M47 22 L44 30 L50.5 25 Z" fill="#E8B530"/>';
+    },
+    // мёртвое чардрево в кольце воронов
+    bw: (f, c) =>
+      '<path d="M32 62 V38 M32 46 L24 36 M24 36 L19 33 M24 36 L23 29 M32 41 L40 32 M40 32 L46 30 M40 32 L40 25 M32 38 L31 27" stroke="' + c + '" stroke-width="2.8" fill="none" stroke-linecap="round"/>' +
+      '<path d="M15 24 l3 -2 l3 2 l3 -2 l-1 3 l-5 1 Z M44 20 l3 -2 l3 2 l3 -2 l-1 3 l-5 1 Z M13 45 l3 -2 l3 2 l3 -2 l-1 3 l-5 1 Z M44 47 l3 -2 l3 2 l3 -2 l-1 3 l-5 1 Z M29 17 l3 -2 l3 2 l3 -2 l-1 3 l-5 1 Z" fill="#16121A"/>',
+    // голова льва в гриве
+    lan: (f, c) => {
+      let mane = '';
+      for (let i = 0; i < 11; i++) {
+        const a = -Math.PI / 2 + (i - 5) * 0.52;
+        mane += '<ellipse cx="' + (32 + Math.cos(a) * 12.5).toFixed(1) + '" cy="' + (38 + Math.sin(a) * 12.5).toFixed(1) + '" rx="6" ry="7.5" transform="rotate(' + (a * 180 / Math.PI + 90).toFixed(0) + ' ' + (32 + Math.cos(a) * 12.5).toFixed(1) + ' ' + (38 + Math.sin(a) * 12.5).toFixed(1) + ')" fill="' + c + '"/>';
+      }
+      return mane + '<path d="M17 50 C20 58 26 62 32 64 C38 62 44 58 47 50 Z" fill="' + c + '"/>' +
+        '<path d="M24 30 C27 26 37 26 40 30 C43 35 41 45 38 51 C36 55 34 57 32 57 C30 57 28 55 26 51 C23 45 21 35 24 30 Z" fill="' + c + '" stroke="' + f + '" stroke-width="1.3"/>' +
+        '<path d="M26.5 37 L30.5 38.5 L27 39.5 Z M37.5 37 L33.5 38.5 L37 39.5 Z" fill="' + f + '"/>' +
+        '<path d="M29.5 47 H34.5 L32 50.5 Z" fill="' + f + '"/><path d="M32 50.5 V53 M29 53.5 C30.5 55 33.5 55 35 53.5" stroke="' + f + '" stroke-width="1.2" fill="none" stroke-linecap="round"/>';
+    },
+    // прыгающая форель над волнами синего и красного
+    tul: (f, c) =>
+      '<path d="M6 46 C14 42 18 50 26 46 C34 42 38 50 46 46 C52 43 55 46 58 45 V73 H6 Z" fill="#9B2A2A"/>' +
+      '<path d="M6 56 C14 52 18 60 26 56 C34 52 38 60 46 56 C52 53 55 56 58 55" stroke="#2F4FA0" stroke-width="4" fill="none"/>' +
+      '<path d="M18 44 C22 30 38 24 46 30 C40 32 30 36 22 46 Z" fill="' + c + '"/>' +
+      '<path d="M28 31 L31 25.5 L34 29 Z M27 40 L25 45 L30 41.5 Z" fill="' + c + '"/>' +
+      '<circle cx="30" cy="35" r=".9" fill="#2F4FA0"/><circle cx="35" cy="31.5" r=".9" fill="#2F4FA0"/><circle cx="25" cy="39" r=".9" fill="#2F4FA0"/>' +
+      '<path d="M18 44 L12 46 L15 40 Z" fill="' + c + '"/><path d="M44 29.5 L50 25 L49 32 Z" fill="' + c + '"/>' +
+      '<circle cx="41.5" cy="30" r="1.2" fill="#2F4FA0"/>',
+    // голова лютоволка
+    stk: (f, c) =>
+      '<path d="M21 28 L25 16 L30 27 L34 27 L39 16 L43 28 C46 33 46 39 42 44 L35 55 C33.5 57.5 30.5 57.5 29 55 L22 44 C18 39 18 33 21 28 Z" fill="' + c + '"/>' +
+      '<path d="M26.5 35 L30 37.5 L26.8 38.3 Z M37.5 35 L34 37.5 L37.2 38.3 Z" fill="' + f + '"/>' +
+      '<path d="M30 50 L34 50 L32 53 Z" fill="' + f + '"/><path d="M32 40 V48" stroke="' + f + '" stroke-width="1" opacity=".6"/>',
+    // драконье яйцо
+    seed: (f, c) =>
+      '<path d="M32 18 C41 18 47 34 47 44 C47 54 40 61 32 61 C24 61 17 54 17 44 C17 34 23 18 32 18 Z" fill="' + c + '"/>' +
+      '<path d="M21 40 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 M19 49 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 M23 57 q4 -3.5 8 0 q4 -3.5 8 0" stroke="' + f + '" stroke-width="1.5" fill="none" opacity=".7"/>',
+    // золотая роза на зелёном
+    tyr: (f, c) => {
+      let petals = '';
+      for (let i = 0; i < 5; i++) { const a = -Math.PI / 2 + i * 2 * Math.PI / 5; petals += '<circle cx="' + (32 + Math.cos(a) * 7.5).toFixed(1) + '" cy="' + (35 + Math.sin(a) * 7.5).toFixed(1) + '" r="6.8" fill="' + c + '"/>'; }
+      return '<path d="M32 44 V62" stroke="' + c + '" stroke-width="2.6" stroke-linecap="round"/>' +
+        '<path d="M32 54 C27 50 22 51 20 55 C25 57 29 56 32 54 Z M32 50 C37 46 42 47 44 51 C39 53 35 52 32 50 Z" fill="' + c + '"/>' +
+        petals + '<circle cx="32" cy="35" r="4.2" fill="' + f + '" opacity=".55"/><circle cx="32" cy="35" r="2.2" fill="' + c + '"/>';
+    },
+    // золотой кракен на чёрном
+    gry: (f, c) => {
+      let arms = '';
+      [[-15, 8], [-9, 14], [-3, 18], [3, 18], [9, 14], [15, 8]].forEach(([dx, dy], i) => {
+        const x0 = 32 + dx * 0.35, y0 = 38, x1 = 32 + dx, y1 = 46 + dy, cx = x0 + dx * 0.9 * (i % 2 ? -0.4 : 0.6), cy = y0 + dy * 0.6;
+        arms += 'M' + x0.toFixed(1) + ' ' + y0 + ' Q' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' ';
+      });
+      return '<path d="' + arms + '" stroke="' + c + '" stroke-width="2.8" fill="none" stroke-linecap="round"/>' +
+        '<path d="M22 32 C22 22 42 22 42 32 C42 38 37 41 32 41 C27 41 22 38 22 32 Z" fill="' + c + '"/>' +
+        '<circle cx="28" cy="34" r="1.5" fill="' + f + '"/><circle cx="36" cy="34" r="1.5" fill="' + f + '"/>';
+    },
+    // зелёная рука на белом
+    gar: (f, c) =>
+      '<path d="M24 62 L24 44 C24 41 22 38 21 35 L19 31 C18 29 20 27.5 22 29 L26 34 L26 22 C26 19.5 29.5 19.5 29.5 22 L29.5 32 L29.5 18.5 C29.5 16 33 16 33 18.5 L33 32 L33 20 C33 17.5 36.5 17.5 36.5 20 L36.5 33 L36.5 24 C36.5 21.5 40 21.5 40 24 L40 45 C40 52 38 56 38 62 Z" fill="' + c + '"/>',
+    // упрощённо: золотая ладья на чёрном (полный герб Хоаров сложнее — с вороном, сосной и виноградом)
+    hoa: (f, c) =>
+      '<path d="M14 46 H50 C48 53 43 57 32 57 C21 57 16 53 14 46 Z" fill="' + c + '"/>' +
+      '<path d="M32 20 V46" stroke="' + c + '" stroke-width="2.2"/>' +
+      '<path d="M33.5 22 C40 26 42 34 40 42 H33.5 Z M30.5 24 C25 28 24 35 25.5 42 H30.5 Z" fill="' + c + '" opacity=".85"/>' +
+      '<path d="M14 46 C11 42 12 39 15 38 M50 46 C53 42 52 39 49 38" stroke="' + c + '" stroke-width="2" fill="none" stroke-linecap="round"/>',
+    // прочие дома — простое стропило
+    oth: (f, c) => '<path d="M12 50 L32 28 L52 50 L46 50 L32 35 L18 50 Z" fill="' + c + '"/>'
+  };
+  FIG.dur = FIG.bar;
+  App.sigilSVG = (house, x, y, w, extraClass) => {
+    const h = HOUSES[house] || HOUSES.oth;
+    const f = h.sigil.field, c = h.sigil.charge;
+    const fig = (FIG[house] || FIG.oth)(f, c);
+    const hgt = w * 76 / 64;
+    return '<svg class="sigil' + (extraClass ? ' ' + extraClass : '') + '" x="' + (x || 0) + '" y="' + (y || 0) + '" width="' + w + '" height="' + hgt.toFixed(1) + '" viewBox="0 0 64 76" aria-hidden="true">' +
+      '<defs><clipPath id="sg-' + house + '-' + Math.round(w) + '"><path d="' + SHIELD + '"/></clipPath></defs>' +
+      '<path d="' + SHIELD + '" fill="' + f + '"/>' +
+      '<g clip-path="url(#sg-' + house + '-' + Math.round(w) + ')">' + fig + '</g>' +
+      '<path d="' + INNER + '" fill="none" stroke="' + c + '" stroke-opacity=".35" stroke-width="1"/>' +
+      '<path d="' + SHIELD + '" fill="none" stroke="var(--hc)" stroke-width="2.4"/>' +
+      '</svg>';
+  };
+})();

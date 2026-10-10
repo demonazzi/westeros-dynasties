@@ -1,0 +1,1033 @@
+{
+  "region": "stormlands",
+  "region_ru": "Штормовые земли",
+  "ru_category": "https://7kingdoms.ru/wiki/Категория:Дома_Штормовых_земель",
+  "houses": [
+    {
+      "en": "Baratheon",
+      "page": "House_Baratheon",
+      "ru": "Баратеоны",
+      "ru_src": "7k",
+      "seat_en": "Storm's End",
+      "seat_ru": "Штормовой Предел",
+      "great": true,
+      "from": -2,
+      "to": null,
+      "liege": null,
+      "allegiance": [],
+      "note": "Основан Орисом Баратеоном в 2 г. до З. (Последняя Буря). Верхнеуровневая присяга исследуется отдельно: Боррос — за зелёных; Роберт — лидер мятежников; Ренли 298–299, Станнис 299–300; в 300 г. Штормовой Предел держит сир Гилберт Фарринг за Станниса, Золотая рота готовится его штурмовать."
+    },
+    {
+      "en": "Bolling",
+      "page": "House_Bolling",
+      "ru": "Боллинги",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Рыцарский дом без замка. Сир Тео Боллинг казнён Мейегором за измену в 47 г. (личная казнь). Сир Герберт Боллинг погиб в битве на Черноводной (сторона прямо не указана)."
+    },
+    {
+      "en": "Brownhill (stormlands)",
+      "page": "House_Brownhill_(stormlands)",
+      "ru": "Браунхиллы (Штормовые земли)",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Рыцарский дом; известен по браку Уолтера Браунхилла с Кассандрой Баратеон (136 г.). Событий о присяге нет."
+    },
+    {
+      "en": "Buckler",
+      "page": "House_Buckler",
+      "ru": "Баклеры",
+      "ru_src": "7k",
+      "seat_en": "Bronzegate",
+      "seat_ru": "Бронзовые Врата",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "инфобокс: Дюррандоны (?–2 г. до З.); лорд Баклер с Эрролом и Феллом нападал на Ориса Баратеона",
+          "src": "House_Buckler"
+        },
+        {
+          "from": 129,
+          "to": 129,
+          "liege": "blacks",
+          "why": "лорд Баклер казнён в Королевской Гавани за отказ отречься от клятв Рейнире (начало Танца, год по началу Танца)",
+          "src": "House_Buckler"
+        },
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "лорд Ральф Баклер (вероятно, сперва за Ренли) перешёл к Станнису",
+          "src": "House_Buckler"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "после Черноводной Ральф Баклер покинул Станниса ради Джоффри",
+          "src": "House_Buckler"
+        }
+      ],
+      "note": "По AWOIAF Ральф Баклер «скорее всего» сначала объявил за Ренли (298). Сир Брюс Баклер остаётся при Станнисе (человек королевы)."
+    },
+    {
+      "en": "Cafferen",
+      "page": "House_Cafferen",
+      "ru": "Кафферены",
+      "ru_src": "7k",
+      "seat_en": "Fawnton",
+      "seat_ru": "Фонтон",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 282,
+          "to": 282,
+          "liege": "throne",
+          "why": "лорд Кафферен — лоялист Таргариенов, пленён Робертом при Летнем замке (282 г.)",
+          "src": "Battles_at_Summerhall"
+        },
+        {
+          "from": 282,
+          "to": 283,
+          "liege": "rebels",
+          "why": "перешёл на сторону Роберта; убит в битве при Эшфорде (голову Тарли отправил Эйерису)",
+          "src": "House_Cafferen"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "en": "Caron",
+      "page": "House_Caron",
+      "ru": "Кароны",
+      "ru_src": "7k",
+      "seat_en": "Nightsong",
+      "seat_ru": "Ночная Песнь",
+      "great": false,
+      "from": null,
+      "to": 299,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "дом со времён Века Героев, до Завоевания — под штормовыми королями",
+          "src": "House_Caron"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "лорд Брюс Карон вместе с большинством штормовых лордов объявил за Ренли",
+          "src": "House_Caron"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "после смерти Ренли Брюс перешёл к Станнису, убит на Черноводной; в ADWD сюзерен — Баратеоны с Драконьего Камня (Ролланд Шторм — претендент на Ночную Песнь)",
+          "src": "House_Caron"
+        }
+      ],
+      "note": "В 299 г. Джоффри передал земли Каронов Филипу Футу (Футы из Ночной Песни); в ADWD Кароны — «низложенный дом». Инфобокс: Seat «Nightsong (stripped)»."
+    },
+    {
+      "en": "Cole",
+      "page": "House_Cole",
+      "ru": "Коли",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Dondarrion",
+      "allegiance": [],
+      "note": "Вассалы Дондаррионов (Чёрный Приют). Сир Кристон Коль — «Делатель королей», вождь зелёных в Танце (129–130), но это личная позиция, а не дома. По полуканону дом угас (год не указан)."
+    },
+    {
+      "en": "Connington",
+      "page": "House_Connington",
+      "ru": "Коннингтоны",
+      "ru_src": "7k",
+      "seat_en": "Griffin's Roost",
+      "seat_ru": "Грифонье Гнездо",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 282,
+          "to": 283,
+          "liege": "throne",
+          "why": "Джон Коннингтон — десница Эйериса II; после поражения при Каменной Септе лишён земель и изгнан, земли оставлены сиру Рональду",
+          "src": "House_Connington"
+        },
+        {
+          "from": 283,
+          "to": 283,
+          "liege": "rebels",
+          "why": "Рональд Коннингтон примкнул к восстанию после битвы на Трезубце; Роберт оставил ему Грифонье Гнездо (дом понижен до рыцарского)",
+          "src": "House_Connington"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "сир Роннет Коннингтон сначала выступил за Ренли",
+          "src": "House_Connington"
+        },
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "Роннет перешёл к Станнису и сражался за него на Черноводной",
+          "src": "House_Connington"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "после Черноводной Роннет преклонил колено перед Джоффри",
+          "src": "House_Connington"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "Джон Коннингтон с Золотой ротой взял Грифонье Гнездо и вновь объявил себя лордом; гарнизон присягнул ему",
+          "src": "Landing_of_the_Golden_Company"
+        }
+      ],
+      "note": "Инфобокс: Overlords — House Baratheon (AGOT); House Targaryen (ADWD). После 283 г. — рыцарский дом."
+    },
+    {
+      "en": "Dondarrion",
+      "page": "House_Dondarrion",
+      "ru": "Дондаррионы",
+      "ru_src": "7k",
+      "seat_en": "Blackhaven",
+      "seat_ru": "Чёрный Приют",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "основатель — гонец штормового короля; Бастард из Чёрного Приюта погиб в Последней Буре за Аргилака",
+          "src": "House_Dondarrion"
+        }
+      ],
+      "note": "Лорд Берик Дондаррион возглавил Братство без знамён (298+) — личная позиция; AWOIAF: неизвестно, объявил ли Чёрный Приют за кого-либо в Войне пяти королей."
+    },
+    {
+      "en": "Durrandon",
+      "page": "House_Durrandon",
+      "ru": "Дюррандоны",
+      "ru_src": "7k",
+      "seat_en": "Storm's End",
+      "seat_ru": "Штормовой Предел",
+      "great": true,
+      "from": null,
+      "to": -2,
+      "liege": null,
+      "allegiance": [],
+      "note": "Штормовые короли. Последний — Аргилак Надменный, убит Орисом Баратеоном в Последней Буре; инфобокс: угас ~2/1 г. до З. Дочь Аргелла вышла за Ориса."
+    },
+    {
+      "en": "Errol",
+      "page": "House_Errol",
+      "ru": "Эрролы",
+      "ru_src": "7k",
+      "seat_en": "Haystack Hall",
+      "seat_ru": "Скирд",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "лорды Эррол, Фелл и Баклер устроили засаду Орису на Вендуотере; лорд Эррол погиб до Последней Бури",
+          "src": "House_Errol"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "поддержал Ренли в начале Войны пяти королей",
+          "src": "House_Errol"
+        },
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "после смерти Ренли перешёл к Станнису",
+          "src": "House_Errol"
+        }
+      ],
+      "note": "Что было с Эрролами после Черноводной — AWOIAF не сообщает."
+    },
+    {
+      "en": "Estermont",
+      "page": "House_Estermont",
+      "ru": "Эстермонты",
+      "ru_src": "7k",
+      "seat_en": "Greenstone",
+      "seat_ru": "Нефрит",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "лорд Эстермонт объявил за внука и сюзерена короля Ренли",
+          "src": "House_Estermont"
+        },
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "после смерти Ренли перешли к Станнису; сражались на Черноводной",
+          "src": "House_Estermont"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "после поражения Станниса лорд Эстермонт с Эйемоном и Алином преклонили колено перед Джоффри",
+          "src": "House_Estermont"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "Марк Мандрагор (Золотая рота) взял Нефрит на острове Эстермонт",
+          "src": "Landing_of_the_Golden_Company"
+        }
+      ],
+      "note": "Инфобокс указывает сюзерена «House Baratheon of King's Landing». Часть людей Нефрита (сиры Ломас и Эндрю) осталась верна Станнису; Ломас — в Штормовом Пределе. Лорд Эстермонт умер в 300 г. Неясно, Элдон ли этот лорд."
+    },
+    {
+      "en": "Fell",
+      "page": "House_Fell",
+      "ru": "Феллы",
+      "ru_src": "7k",
+      "seat_en": "Felwood",
+      "seat_ru": "Фелвуд",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "лорд Фелл с Эрролом и Баклером нападал на Ориса на Вендуотере",
+          "src": "House_Fell"
+        },
+        {
+          "from": 129,
+          "to": 129,
+          "liege": "blacks",
+          "why": "леди Фелл казнена за отказ отречься от клятв Рейнире (год по началу Танца)",
+          "src": "House_Fell"
+        },
+        {
+          "from": 282,
+          "to": 282,
+          "liege": "throne",
+          "why": "лорд Фелл остался верен Железному трону; Роберт разбил лоялистов при Летнем замке и убил лорда Фелла в поединке",
+          "src": "Battles_at_Summerhall"
+        },
+        {
+          "from": 282,
+          "to": 283,
+          "liege": "rebels",
+          "why": "сын лорда, Серебряный Топор (Silveraxe) Фелл, попал в плен и перешёл на сторону Роберта",
+          "src": "Battles_at_Summerhall"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "stannis",
+          "why": "инфобокс (ADWD): Баратеоны с Драконьего Камня; люди Феллов в походе Станниса на Север",
+          "src": "House_Fell"
+        }
+      ],
+      "note": "Сир Уиллис Фелл (Королевская гвардия) — за Эйегона II (личная позиция). Лорд Харвуд Фелл в походе Станниса на Винтерфелл (ADWD); начало службы Станнису (299?) не датировано."
+    },
+    {
+      "en": "Foote of Nightsong",
+      "page": "House_Foote_of_Nightsong",
+      "ru": "Футы из Ночной Песни",
+      "ru_src": "7k",
+      "seat_en": "Nightsong",
+      "seat_ru": "Ночная Песнь",
+      "great": false,
+      "from": 299,
+      "to": null,
+      "liege": "throne",
+      "allegiance": [],
+      "note": "Основан в 299 г.: сир Филип Фут убил лорда Брюса Карона на Черноводной и получил от Железного трона земли Каронов. Инфобокс: сюзерен — Баратеоны Королевской Гавани."
+    },
+    {
+      "en": "Gower",
+      "page": "House_Gower",
+      "ru": "Гоуэры",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "единственный известный член дома, сир Джеральд Гоуэр, остаётся на службе Станниса после Черноводной",
+          "src": "House_Gower"
+        }
+      ],
+      "note": "Сир Джеральд — среди тех, кто вывез Эдрика Шторма с Драконьего Камня."
+    },
+    {
+      "en": "Grandison",
+      "page": "House_Grandison",
+      "ru": "Грандисоны",
+      "ru_src": "7k",
+      "seat_en": "Grandview",
+      "seat_ru": "Грандвью",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 282,
+          "to": 282,
+          "liege": "throne",
+          "why": "лорд Грандисон — лоялист, пленён Робертом при Летнем замке (282 г.)",
+          "src": "Battles_at_Summerhall"
+        },
+        {
+          "from": 282,
+          "to": 283,
+          "liege": "rebels",
+          "why": "Роберт обратил пленных лоялистов в союзников; лорд Грандисон ранен на Трезубце, сражаясь за Роберта",
+          "src": "House_Grandison"
+        }
+      ],
+      "note": "Лорд Лорент Грандисон — регент Эйегона III (136 г.). Старый лорд Хью Грандисон присягнул Штормовому Пределу (ADWD); сир Нарберт Грандисон служит Станнису (личная позиция)."
+    },
+    {
+      "en": "Hasty",
+      "page": "House_Hasty",
+      "ru": "Хасти",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "сир Бонифер Хасти (глава дома) сражался за Станниса на Черноводной и попал в плен",
+          "src": "House_Hasty"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "Бонифер подчинился королю Джоффри; затем со Святой Сотней в войске Джейме",
+          "src": "House_Hasty"
+        }
+      ],
+      "note": "Рыцарский дом."
+    },
+    {
+      "en": "Herston",
+      "page": "House_Herston",
+      "ru": "Хэрстоны",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Известен только по полуканоническому гербовнику (The Citadel); AWOIAF числит его среди домов Штормовых земель в начале AGOT."
+    },
+    {
+      "en": "Horpe",
+      "page": "House_Horpe",
+      "ru": "Хорпы",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "сир Ричард Хорп (единственный известный член дома) — человек королевы, остаётся при Станнисе после Черноводной",
+          "src": "House_Horpe"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "en": "Kellington",
+      "page": "House_Kellington",
+      "ru": "Келлингтоны",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Известен только по полуканоническому гербовнику (The Citadel); в книгах членов нет."
+    },
+    {
+      "en": "Lonmouth",
+      "page": "House_Lonmouth",
+      "ru": "Лонмауты",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Сир Джоффри Лонмаут убит Кристоном Колем на свадебном турнире Рейниры; сир Ричард Лонмаут — друг Роберта. Событий о присяге нет."
+    },
+    {
+      "en": "Mertyns",
+      "page": "House_Mertyns",
+      "ru": "Мертинсы",
+      "ru_src": "7k",
+      "seat_en": "Mistwood",
+      "seat_ru": "Туманный Лес",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "сыновья и внуки леди Мэри Мертинс поначалу поддержали Ренли",
+          "src": "House_Mertyns"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "Туманный Лес пал перед Золотой ротой (TWOW, главы Арианны; год по высадке)",
+          "src": "House_Mertyns"
+        }
+      ],
+      "note": "Внук ранен на Черноводной (сторона не указана)."
+    },
+    {
+      "en": "Morrigen",
+      "page": "House_Morrigen",
+      "ru": "Морригены",
+      "ru_src": "7k",
+      "seat_en": "Crow's Nest",
+      "seat_ru": "Воронье Гнездо",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "Дикон Морриген командовал авангардом Аргилака в Последней Буре и погиб",
+          "src": "House_Morrigen"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "Морригены среди штормовых лордов, выступивших за Ренли",
+          "src": "House_Morrigen"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "после смерти Ренли перешли к Станнису; лорд Лестер Морриген остался верен ему после Черноводной",
+          "src": "House_Morrigen"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "сир Тристан Риверс (Золотая рота) взял Воронье Гнездо",
+          "src": "Landing_of_the_Golden_Company"
+        }
+      ],
+      "note": "Инфобокс: House Baratheon (ACOK); House Baratheon of Dragonstone (ADWD)."
+    },
+    {
+      "en": "Musgood",
+      "page": "House_Musgood",
+      "ru": "Масгуды",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Джек Масгуд — лорд-командующий Ночного Дозора при вторжении Раймунда Рыжебородого (WOIAF, ADWD). Событий о присяге нет."
+    },
+    {
+      "en": "Peasebury",
+      "page": "House_Peasebury",
+      "ru": "Пизбери",
+      "ru_src": "7k",
+      "seat_en": "Poddingfield",
+      "seat_ru": "Гороховое Поле",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "лорд Робин Пизбери — один из немногих штормовых лордов, оставшихся верными Станнису после Черноводной; идёт с ним на Север",
+          "src": "House_Peasebury"
+        }
+      ],
+      "note": "AWOIAF предполагает, что сначала дом объявил за Ренли. Инфобокс: House Baratheon (AGOT); House Baratheon of Dragonstone (ADWD)."
+    },
+    {
+      "en": "Penrose",
+      "page": "House_Penrose",
+      "ru": "Пенрозы",
+      "ru_src": "7k",
+      "seat_en": "Parchments",
+      "seat_ru": "Пергаменты",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 196,
+          "to": 196,
+          "liege": "throne",
+          "why": "в Первом восстании Блэкфайров Пенрозы остались верны Таргариенам; сир Квентин Болл убил сыновей леди Пенроз",
+          "src": "House_Penrose"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "лорд Пенроз поднял знамёна за Ренли; сир Кортни Пенроз держал Штормовой Предел против Станниса",
+          "src": "House_Penrose"
+        }
+      ],
+      "note": "Кто держит Пергаменты после смерти Ренли/Черноводной — AWOIAF не сообщает."
+    },
+    {
+      "en": "Rogers",
+      "page": "House_Rogers",
+      "ru": "Роджерсы",
+      "ru_src": "7k",
+      "seat_en": "Amberly",
+      "seat_ru": "Амберли",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Сир Корвин Роджерс — на турнире в Эшфорде (209 г.). Событий о присяге нет."
+    },
+    {
+      "en": "Seaworth",
+      "page": "House_Seaworth",
+      "ru": "Сиворты",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": 284,
+      "to": null,
+      "liege": "Baratheon of Dragonstone",
+      "allegiance": [
+        {
+          "from": 298,
+          "to": 300,
+          "liege": "stannis",
+          "why": "Давос — человек Станниса; лорд Дождливого леса и адмирал Узкого моря при короле Станнисе",
+          "src": "House_Seaworth"
+        }
+      ],
+      "note": "Основан в 284 г. (инфобокс) после того, как Давос прорвал блокаду Штормового Предела. Земли на мысе Гнева (небольшой замок), замок в инфобоксе не указан."
+    },
+    {
+      "en": "Selmy",
+      "page": "House_Selmy",
+      "ru": "Селми",
+      "ru_src": "7k",
+      "seat_en": "Harvest Hall",
+      "seat_ru": "Дом Урожая",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "дом Селми поддерживает Ренли в Войне пяти королей",
+          "src": "House_Selmy"
+        }
+      ],
+      "note": "Сир Барристан Селми — Королевская гвардия (личная служба). После смерти Ренли позиция дома не указана."
+    },
+    {
+      "en": "Staedmon",
+      "page": "House_Staedmon",
+      "ru": "Стедмоны",
+      "ru_src": "7k",
+      "seat_en": "Broad Arch",
+      "seat_ru": "Широкая Арка",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 299,
+          "liege": "stannis",
+          "why": "лорд Алесандер Стедмон попал в плен в битве на Черноводной (на стороне Станниса)",
+          "src": "House_Staedmon"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "Алесандер присягнул Джоффри",
+          "src": "House_Staedmon"
+        }
+      ],
+      "note": "AWOIAF предполагает, что сначала Стедмоны объявили за Ренли."
+    },
+    {
+      "en": "Swann",
+      "page": "House_Swann",
+      "ru": "Сванны",
+      "ru_src": "7k",
+      "seat_en": "Stonehelm",
+      "seat_ru": "Каменный Шлем",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 129,
+          "to": 131,
+          "liege": "greens",
+          "why": "в инфобоксе статьи о Танце Сванны — среди зелёных",
+          "src": "Dance_of_the_Dragons"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "neutral",
+          "why": "лорд Гулиан Сванн сказался больным и не участвовал в войне; сыновья на разных сторонах",
+          "src": "House_Swann"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "throne",
+          "why": "наследник сир Доннел (Ренли→Станнис) после Черноводной выкуплен и присягнул Джоффри; сир Бейлон Сванн сражался за Джоффри",
+          "src": "House_Swann"
+        }
+      ],
+      "note": "Сам лорд Гулиан не ответил на требования Станниса; смена на «throne» — по присяге наследника."
+    },
+    {
+      "en": "Sweet",
+      "page": "House_Sweet",
+      "ru": "Свиты",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon of Dragonstone",
+      "allegiance": [
+        {
+          "from": 298,
+          "to": 300,
+          "liege": "stannis",
+          "why": "лорд Свит — человек королевы, поддерживает Станниса, сопровождает его в Чёрный Замок",
+          "src": "House_Sweet"
+        }
+      ],
+      "note": "Регион по AWOIAF и 7kingdoms: «Штормовые земли или Королевские земли» (не уверены). Страница «Свиты» есть на 7kingdoms, но не в категории Штормовых земель."
+    },
+    {
+      "en": "Swygert",
+      "page": "House_Swygert",
+      "ru": "Свигерты",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Известен только по полуканоническим гербовнику и девизам (The Citadel)."
+    },
+    {
+      "en": "Targaryen",
+      "page": "House_Targaryen",
+      "ru": "Таргариены",
+      "ru_src": "7k",
+      "seat_en": "Summerhall",
+      "seat_ru": "Летний замок",
+      "great": true,
+      "from": null,
+      "to": null,
+      "liege": null,
+      "allegiance": [],
+      "note": "В категорию Штормовых земель попал из-за Летнего замка (бывшая летняя резиденция); основной регион — Королевские земли/Драконий Камень. Вероятный дубликат с другим регионом."
+    },
+    {
+      "en": "Tarth",
+      "page": "House_Tarth",
+      "ru": "Тарты",
+      "ru_src": "7k",
+      "seat_en": "Evenfall Hall",
+      "seat_ru": "Закатный",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": -10,
+          "to": -2,
+          "liege": "Durrandon",
+          "why": "Тарт под властью штормовых королей со времён Даррана Прекрасного",
+          "src": "House_Tarth"
+        },
+        {
+          "from": 298,
+          "to": 299,
+          "liege": "renly",
+          "why": "Тарты объявили за Ренли (Станнису согласились лишь на тайную встречу)",
+          "src": "House_Tarth"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "Тарт взят наёмниками Золотой роты (TWOW, главы Арианны; год по высадке)",
+          "src": "Landing_of_the_Golden_Company"
+        }
+      ],
+      "note": "Позиция лорда Селвина Тарта после смерти Ренли/Черноводной AWOIAF не сообщает."
+    },
+    {
+      "en": "Toyne",
+      "page": "House_Toyne",
+      "ru": "Тойны",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": 281,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Падение дома после казни сира Терренса Тойна Эйегоном IV (~178 г.); Тойны стали разбойниками (Королевское Братство), Саймон Тойн убит в 281 г. — инфобокс: угас в Вестеросе в 281, в Эссосе (Майлз Тойн, Золотая рота) в 296. Год утраты земель не указан."
+    },
+    {
+      "en": "Trant",
+      "page": "House_Trant",
+      "ru": "Транты",
+      "ru_src": "7k",
+      "seat_en": "Gallowsgrey",
+      "seat_ru": "Серая Виселица",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Сир Меррин Трант — Королевская гвардия Джоффри (личная служба). Событий о присяге дома нет."
+    },
+    {
+      "en": "Tudbury",
+      "page": "House_Tudbury",
+      "ru": "Тадбери",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Известен только по полуканоническому гербовнику (The Citadel)."
+    },
+    {
+      "en": "Wagstaff",
+      "page": "House_Wagstaff",
+      "ru": "Вагстаффы",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [],
+      "note": "Сир Хамфри Вагстафф — кастелян Грандисонов (AFFC)."
+    },
+    {
+      "en": "Wensington",
+      "page": "House_Wensington",
+      "ru": "Венсингтоны",
+      "ru_src": "7k",
+      "seat_en": null,
+      "seat_ru": null,
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "дом (весь или частично) остался верен Станнису после Черноводной; знамёна Венсингтонов у Стены в походе Станниса",
+          "src": "House_Wensington"
+        }
+      ],
+      "note": "AWOIAF предполагает, что сначала за Ренли."
+    },
+    {
+      "en": "Whitehead",
+      "page": "House_Whitehead",
+      "ru": "Уайтхеды",
+      "ru_src": "7k",
+      "seat_en": "Weeping Town",
+      "seat_ru": "Скорбящий городок",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "наследник сир Аддам Уайтхед ушёл к Джону Коннингтону после взятия Грифоньего Гнезда (TWOW, глава Арианны)",
+          "src": "House_Whitehead"
+        }
+      ],
+      "note": "Позиция самого старого лорда Уайтхеда не указана. 7kingdoms: замок — «вероятно, Скорбящая башня» в Скорбящем городке."
+    },
+    {
+      "en": "Wylde",
+      "page": "House_Wylde",
+      "ru": "Уайлды",
+      "ru_src": "7k",
+      "seat_en": "Rain House",
+      "seat_ru": "Дождливый Дом",
+      "great": false,
+      "from": null,
+      "to": null,
+      "liege": "Baratheon",
+      "allegiance": [
+        {
+          "from": 129,
+          "to": 130,
+          "liege": "greens",
+          "why": "лорд Джаспер Уайлд, мастер над законами, поддержал зелёных; казнён Рейнирой при взятии Королевской Гавани в 130 г.",
+          "src": "House_Wylde"
+        },
+        {
+          "from": 299,
+          "to": 300,
+          "liege": "stannis",
+          "why": "по полуканону лорд Каспер Уайлд — сначала за Ренли, затем за Станниса; сир Ормунд Уайлд верен Станнису после Черноводной",
+          "src": "House_Wylde"
+        },
+        {
+          "from": 300,
+          "to": 300,
+          "liege": "aegon_young",
+          "why": "сир Ласвелл Пик (Золотая рота) взял Дождливый Дом",
+          "src": "Landing_of_the_Golden_Company"
+        }
+      ],
+      "note": "Сир Гавен Уайлд при осаде Штормового Предела (283) пытался сдаться Тиреллам (личный поступок). В инфобоксе статьи о Танце Уайлды среди зелёных с неясной пометкой «Originally blacks»."
+    }
+  ]
+}

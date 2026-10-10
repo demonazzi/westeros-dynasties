@@ -1,0 +1,210 @@
+{
+  "claimants": [
+    { "id": "blacks", "ru": "Рейнира («чёрные»)", "from": 129, "from_frac": 0.2, "to": 131, "to_frac": 0.5, "why": "Рейниру короновал Деймон на Драконьем Камне (129). После её гибели (22-й день 10-й луны 130) «чёрные» воевали за её сына. Сторона победила: в середине 131 он стал Эйгоном III", "src": "Dance_of_the_Dragons; 129_AC; 130_AC; 131_AC; Rhaenyra_Targaryen", "verified": true },
+    { "id": "greens", "ru": "Эйгон II («зелёные»)", "from": 129, "from_frac": 0.18, "to": 131, "to_frac": 0.5, "why": "Визерис I умер на 3-й день 3-й луны 129, Эйгона II короновали в Драконьем Логове. Отравлен «в середине года» 131", "src": "129_AC; 131_AC", "verified": true },
+    { "id": "blackfyre", "ru": "Деймон Блэкфайр (Первое восстание Блэкфайра)", "from": 196, "from_frac": 0.15, "to": 196, "to_frac": 0.85, "why": "Восстание длилось «почти год» и закончилось битвой на Краснотравном поле в конце 196. Деймон погиб, Блэкфайры ушли в изгнание в Эссос", "src": "First_Blackfyre_Rebellion", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "blackfyre", "ru": "Деймон II Блэкфайр (Второе восстание Блэкфайра)", "from": 212, "from_frac": 0.4, "to": 212, "to_frac": 0.45, "why": "«Сир Джон Скрипач». Заговор на турнире в Белых Стенах раскрыли до начала мятежа", "src": "Blackfyre_Rebellions", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "blackfyre", "ru": "Хегон Блэкфайр (Третье восстание Блэкфайра)", "from": 219, "from_frac": 0.3, "to": 219, "to_frac": 0.7, "why": "Хегона короновал Эйгор Риверс (Жгучий Клинок)", "src": "Blackfyre_Rebellions", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "blackfyre", "ru": "Деймон III Блэкфайр (Четвёртое восстание Блэкфайра)", "from": 236, "from_frac": 0.3, "to": 236, "to_frac": 0.7, "why": "Высадился у Крюка Масси с Золотыми Мечами, разбит у моста через Вендуотер. Примкнули лишь немногие лорды", "src": "Blackfyre_Rebellions", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "blackfyre", "ru": "Мейлис Блэкфайр (Война Девятигрошовых королей)", "from": 260, "from_frac": 0.0, "to": 260, "to_frac": 0.9, "why": "Союз Девяти (258) взял Ступени и Тирош (260). Барристан Селми убил Мейлиса на Ступенях, и дом Блэкфайров пресёкся. В Вестеросе боёв не было", "src": "Blackfyre_Rebellions", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "rebels", "ru": "Мятежники (Роберт Баратеон)", "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.45, "why": "Лианну похитили «с приходом нового года» (282), затем убили Рикарда и Брандона. Джон Аррен отказался выдать Роберта и Эддарда и созвал знамёна. Порядок 283 года: Колокольная битва → Трезубец → Разорение Королевской Гавани → коронация Роберта → снятие осады Штормового Предела → Башня Радости", "src": "Robert's_Rebellion; 283_AC", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "balon", "ru": "Бейлон Грейджой — король Железных островов (Восстание Бейлона Грейджоя)", "from": 289, "from_frac": 0.1, "to": 289, "to_frac": 0.9, "why": "«В 289, через шесть лет после свержения Таргариенов». После падения Пайка Бейлон в цепях преклонил колено перед Робертом, Теона отдали воспитанником Старкам", "src": "Greyjoy's_Rebellion; Balon_Greyjoy", "verified": true, "inferred": "доли года — оценка" },
+    { "id": "renly", "ru": "Ренли Баратеон — король в Хайгардене", "from": 298, "from_frac": 0.9, "to": 299, "to_frac": 0.3, "why": "После смерти Роберта коронован в Хайгардене и женился на Маргери Тирелл (свадьба — 299). Убит тенью Мелисандры у Штормового Предела (299)", "src": "Renly_Baratheon; 299_AC; War_of_the_Five_Kings", "verified": true, "inferred": "начало — оценка: таблица королей даёт 298–299, свадьба датирована 299" },
+    { "id": "robb", "ru": "Робб Старк — Король Севера и Трезубца", "from": 299, "from_frac": 0.05, "to": 299, "to_frac": 0.65, "why": "Северные и речные лорды провозгласили его в Риверране, когда пришла весть о казни Эддарда (299). Убит на Красной Свадьбе (299)", "src": "Robb_Stark; War_of_the_Five_Kings; Eddard_Stark", "verified": true },
+    { "id": "stannis", "ru": "Станнис Баратеон — король Узкого моря", "from": 299, "from_frac": 0.1, "to": 300, "to_frac": 0.99, "why": "Объявил себя королём на Драконьем Камне уже после Робба и Ренли. В 300 взял Темнолесье и пошёл на Винтерфелл", "src": "Stannis_Baratheon; War_of_the_Five_Kings; 300_AC", "verified": true, "inferred": "год — по порядку: Робб коронован в 299" },
+    { "id": "balon", "ru": "Бейлон Грейджой — король Островов и Севера", "from": 299, "from_frac": 0.2, "to": 299, "to_frac": 0.6, "why": "Отверг предложение Робба и объявил себя королём ещё до нападения на Север. После захвата северных замков титуловался «королём Островов и Севера». Разбился, упав с моста в Пайке (299)", "src": "Balon_Greyjoy; 299_AC", "verified": true, "inferred": "доли года — оценка; по Бенедикту (War_of_the_Five_Kings) коронация была уже после гибели Ренли" },
+    { "id": "euron", "ru": "Эурон Грейджой", "from": 300, "from_frac": 0.2, "to": 300, "to_frac": 0.99, "why": "Занял Морской трон после смерти Бейлона. Избран и коронован на вече на Старом Вике (300)", "src": "Kingsmoot; Balon_Greyjoy; 300_AC", "verified": true },
+    { "id": "aegon_young", "ru": "Эйгон (Молодой Гриф)", "from": 300, "from_frac": 0.7, "to": 300, "to_frac": 0.99, "why": "Золотые Мечи высадились в Штормовых землях (300), штормы сорвали высадку. Взяли Гнездо Грифона; по сэмплу TWOW — и Штормовой Предел. Происхождение «Эйгона» не подтверждено", "src": "300_AC; Young_Griff", "verified": true, "inferred": "доли года — оценка" }
+  ],
+  "great": {
+    "Stark": [
+      { "from": -10, "to": -2, "to_frac": 0.75, "liege": "independent", "why": "Короли Севера (Торрхен Старк)", "src": "Aegon's_Conquest", "verified": true },
+      { "from": -2, "from_frac": 0.75, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "Торрхен Старк преклонил колено на Трезубце («Король, Преклонивший Колено»). Стал лордом Винтерфелла и Хранителем Севера", "src": "Aegon's_Conquest; Torrhen_Stark", "verified": true, "inferred": "в таблице преемства — «2/1 до З.Э.»" },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "blacks", "why": "Криган Старк за Рейниру (Пакт Льда и Пламени). Северное войско дошло до Королевской Гавани уже после смерти Эйгона II", "src": "Dance_of_the_Dragons; Pact_of_Ice_and_Fire", "verified": true, "inferred": "сторона с начала войны: Джейекерис прилетел в Винтерфелл «в начале»" },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "Криган — Десница на один день («Час Волка»), затем король Эйгон III", "src": "131_AC", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Эддард Старк поднялся вместе с Джоном Арреном и Робертом после убийства Рикарда и Брандона", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 298, "to_frac": 0.55, "liege": "throne", "why": "Роберт I", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 298, "from_frac": 0.55, "to": 299, "to_frac": 0.05, "liege": "independent", "why": "После ареста Эддарда (298) Робб созвал знамёна и воевал с Ланнистерами, ещё не будучи королём", "src": "298_AC; War_of_the_Five_Kings", "verified": true, "inferred": "значение «independent» — вывод" },
+      { "from": 299, "from_frac": 0.05, "to": 299, "to_frac": 0.65, "liege": "robb", "why": "Робб — Король Севера и Трезубца", "src": "Robb_Stark", "verified": true },
+      { "from": 299, "from_frac": 0.65, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "После Красной Свадьбы у Старков нет правящего лорда. Хранитель Севера от Железного трона — Русе Болтон (см. paramount)", "src": "Roose_Bolton", "verified": true, "inferred": "условное значение: дом фактически разгромлен" }
+    ],
+    "Arryn": [
+      { "from": -10, "to": -2, "to_frac": 0.85, "liege": "independent", "why": "Королевство Горы и Долины: король Роннел Аррен, регент — его мать Шарра", "src": "Aegon's_Conquest", "verified": true },
+      { "from": -2, "from_frac": 0.85, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "Сдались после того, как Визенья облетела с Роннелом Копьё Великана. Роннел стал лордом Орлиного Гнезда и Хранителем Востока", "src": "Aegon's_Conquest", "verified": true, "inferred": "год (2 или 1 до З.Э.) не указан" },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "blacks", "why": "Джейекерис склонил Джейну Аррен на сторону Рейниры", "src": "Dance_of_the_Dragons", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "В 196 — за Дейерона II", "src": "First_Blackfyre_Rebellion", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Джон Аррен отказался выдать Роберта и Эддарда и поднял знамёна; так началась война", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 298, "to_frac": 0.55, "liege": "throne", "why": "Роберт I", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 298, "from_frac": 0.55, "to": 300, "to_frac": 0.99, "liege": "neutral", "why": "Лиза держала Долину нейтральной и отказала Кейтилин. В 300 вышла за Мизинца, назначила его лордом-протектором и погибла. Нейтралитет Долины при Мизинце сохранился", "src": "Lysa_Arryn", "verified": true }
+    ],
+    "Lannister": [
+      { "from": -10, "to": -2, "to_frac": 0.61, "liege": "independent", "why": "Короли Утёса (Лорен I Ланнистер)", "src": "Aegon's_Conquest", "verified": true },
+      { "from": -2, "from_frac": 0.61, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "На следующий день после Пламенного Поля Лорен отказался от короны и стал Хранителем Запада", "src": "Field_of_Fire", "verified": true, "inferred": "Пламенное Поле — «около 2 до З.Э.»" },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "greens", "why": "Лорд Джейсон — за Эйгона II (брат Тиланд был мастером над монетой). Погиб в битве у Красного Зубца (130), дальше правила регент леди Джоанна", "src": "Jason_Lannister; Dance_of_the_Dragons", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "В 196 — за Дейерона II", "src": "First_Blackfyre_Rebellion", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.35, "liege": "neutral", "why": "Тайвин отклонял призывы к оружию от обеих сторон", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.35, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Разорение Королевской Гавани: войско Тайвина вошло в город, Джейме убил Эйриса", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "Роберт I, затем Джоффри и Томмен. Тайвин — Десница Джоффри (298)", "src": "Robert's_Rebellion; 298_AC", "verified": true }
+    ],
+    "Tully": [
+      { "from": -10, "to": -2, "to_frac": 0.3, "liege": "Hoare", "why": "Речные земли входили в королевство Островов и Рек Харрена Чёрного", "src": "Aegon's_Conquest", "verified": true },
+      { "from": -2, "from_frac": 0.3, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "Эдмин Талли отказался поддержать Харрена и перешёл к Эйгону до осады. Присягнул на следующий день после сожжения Харренхолла и стал Верховным лордом Трезубца", "src": "Burning_of_Harrenhal; Aegon's_Conquest", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 130, "to_frac": 0.6, "liege": "neutral", "why": "Лорд Гровер хотел поддержать «зелёных», но был прикован к постели. Сир Элмо держал знамёна Талли в Риверране", "src": "Grover_Tully; Elmo_Tully", "verified": true },
+      { "from": 130, "from_frac": 0.6, "to": 131, "to_frac": 0.5, "liege": "blacks", "why": "После визита Аддама Велариона Талли выступили за Рейниру. Элмо победил во Второй битве при Тамблтоне. Кермит убил Борроса Баратеона в битве на Королевском тракте", "src": "Elmo_Tully; Kermit_Tully", "verified": true, "inferred": "дата вступления — по порядку событий 130 года" },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.95, "liege": "throne", "why": "В 196 — за Дейерона II", "src": "First_Blackfyre_Rebellion", "verified": true },
+      { "from": 282, "from_frac": 0.95, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Хостер Талли примкнул к мятежникам до Колокольной битвы. После неё — двойная свадьба в Риверране", "src": "Robert's_Rebellion; 283_AC", "verified": true, "inferred": "момент вступления — оценка" },
+      { "from": 283, "from_frac": 0.45, "to": 298, "to_frac": 0.55, "liege": "throne", "why": "Роберт I", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 298, "from_frac": 0.55, "to": 299, "to_frac": 0.05, "liege": "independent", "why": "Война с Ланнистерами в речных землях (бой под стенами Риверрана, 298) до провозглашения Робба", "src": "298_AC", "verified": true, "inferred": "значение «independent» — вывод" },
+      { "from": 299, "from_frac": 0.05, "to": 299, "to_frac": 0.65, "liege": "robb", "why": "Речные лорды провозгласили Робба Королём Севера и Трезубца", "src": "War_of_the_Five_Kings", "verified": true },
+      { "from": 299, "from_frac": 0.65, "to": 300, "to_frac": 0.45, "liege": "independent", "why": "Эдмур в плену после Красной Свадьбы. Риверран удерживает сир Бринден Талли, «Хранитель Южных пределов» Робба", "src": "Siege_of_Riverrun", "verified": true, "inferred": "условное значение" },
+      { "from": 300, "from_frac": 0.45, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "Эдмур сдал Риверран (300) и отправлен в Утёс Кастерли. Лорд Риверрана — Эммон Фрей", "src": "Siege_of_Riverrun; 300_AC", "verified": true }
+    ],
+    "Tyrell": [
+      { "from": -10, "to": -2, "to_frac": 0.63, "liege": "Gardener", "why": "Стюарды Хайгардена при королях Простора", "src": "Field_of_Fire", "verified": true },
+      { "from": -2, "from_frac": 0.63, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "После Пламенного Поля Харлен Тирелл сдал Хайгарден без боя. Стал лордом Хайгардена, Верховным лордом Мандера и Хранителем Юга", "src": "Field_of_Fire", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "neutral", "why": "Регенты Хайгардена (кастелян и стюард) отказались участвовать", "src": "Dance_of_the_Dragons", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "В 196 — за Дейерона II", "src": "First_Blackfyre_Rebellion", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.5, "liege": "throne", "why": "Лоялисты Эйриса: Эшфорд, осада Штормового Предела «почти год»", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.5, "to": 298, "to_frac": 0.9, "liege": "throne", "why": "Эддард снял осаду Штормового Предела, и лорды Простора склонили знамёна перед Робертом", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 298, "from_frac": 0.9, "to": 299, "to_frac": 0.3, "liege": "renly", "why": "Главная опора Ренли: брак с Маргери Тирелл", "src": "Renly_Baratheon", "verified": true },
+      { "from": 299, "from_frac": 0.3, "to": 299, "to_frac": 0.4, "liege": "neutral", "why": "После гибели Ренли Тарли, Роуэн и Окхарт отказались идти к Станнису и ушли в Горький Мост", "src": "Renly_Baratheon", "verified": true, "inferred": "сегмент-вывод до союза с Ланнистерами" },
+      { "from": 299, "from_frac": 0.4, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "Союз с Ланнистерами скреплён помолвкой Джоффри и Маргери. Черноводная (299). Маргери замужем за Томменом (300), Мейс осаждает Штормовой Предел", "src": "299_AC; 300_AC", "verified": true }
+    ],
+    "Baratheon": [
+      { "from": -2, "from_frac": 0.45, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "Орис Баратеон убил Аргилака в Последнем Шторме и женился на Аргелле. Стал лордом Штормового Предела и Верховным лордом Штормовых земель", "src": "Aegon's_Conquest; Last_Storm", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "greens", "why": "Боррос Баратеон — за Эйгона II, на другую сторону не переходил. Взял Королевскую Гавань (Луна Трёх королей), убит Кермитом Талли в битве на Королевском тракте (131)", "src": "Borros_Baratheon", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "Ройс Баратеон родился через 7 дней после гибели отца, регентом была Эленда Карон", "src": "Borros_Baratheon", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Роберт Баратеон — во главе восстания", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 298, "to_frac": 0.9, "liege": "throne", "why": "Роберт — король. Ренли — лорд Штормового Предела и Верховный лорд Штормовых земель", "src": "Renly_Baratheon", "verified": true },
+      { "from": 298, "from_frac": 0.9, "to": 299, "to_frac": 0.3, "liege": "renly", "why": "Ренли — король", "src": "Renly_Baratheon", "verified": true },
+      { "from": 299, "from_frac": 0.3, "to": 299, "to_frac": 0.35, "liege": "independent", "why": "Сир Кортни Пенроз удерживает Штормовой Предел против Станниса", "src": "Stannis_Baratheon", "verified": true, "inferred": "условное значение" },
+      { "from": 299, "from_frac": 0.35, "to": 300, "to_frac": 0.99, "liege": "stannis", "why": "Пенроз разбился, упав с башни, и лорд Элвуд Медоуз сдал замок Станнису. В 300 его осаждает Мейс Тирелл; по сэмплу TWOW замок взяли Золотые Мечи", "src": "Stannis_Baratheon; 300_AC; Young_Griff", "verified": true, "inferred": "год падения — по названию статьи Siege_of_Storm's_End_(299)" }
+    ],
+    "Martell": [
+      { "from": -10, "to": 4, "liege": "independent", "why": "Княжество Дорн. Мерия Мартелл отказалась покориться, Рейенис нашла замки пустыми", "src": "Aegon's_Conquest", "verified": true },
+      { "from": 4, "to": 13, "to_frac": 0.5, "liege": "independent", "why": "Первая Дорнийская война (4–13). Эйгон объявил Дорн частью королевства, но покорить его не смог", "src": "First_Dornish_War", "verified": true },
+      { "from": 13, "from_frac": 0.5, "to": 129, "to_frac": 0.17, "liege": "independent", "why": "Нимор Мартелл заключил мир, не подчинившись трону", "src": "First_Dornish_War", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "independent", "why": "Принц Корен отказался вступать в Танец Драконов (Дорн был вне королевства)", "src": "Dance_of_the_Dragons", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 158, "to_frac": 0.5, "liege": "independent", "why": "В 157 Дейерон I начал завоевание Дорна", "src": "Conquest_of_Dorne", "verified": true },
+      { "from": 158, "from_frac": 0.5, "to": 159, "to_frac": 0.9, "liege": "throne", "why": "Покорение Солнечного Копья (158). Наместником оставлен Лионель Тирелл", "src": "Conquest_of_Dorne", "verified": true, "inferred": "конец: восстание после гибели Лионеля, «ок. 159–160»" },
+      { "from": 159, "from_frac": 0.9, "to": 187, "to_frac": 0.5, "liege": "independent", "why": "За две недели дорнийцы свели завоевание на нет. Дейерона I убили под мирным знаменем (161)", "src": "Conquest_of_Dorne", "verified": true },
+      { "from": 187, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "Брак Марона Мартелла и Дейенерис Таргариен мирно привёл Дорн под власть Железного трона. В 196 — за Дейерона II", "src": "Conquest_of_Dorne; First_Blackfyre_Rebellion", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 282, "to_frac": 0.9, "liege": "neutral", "why": "Доран поначалу отклонил призыв Эйриса", "src": "Robert's_Rebellion", "verified": true, "inferred": "момент перехода — оценка" },
+      { "from": 282, "from_frac": 0.9, "to": 283, "to_frac": 0.45, "liege": "throne", "why": "После угроз Элии и её детям Доран послал 10 000 дорнийцев с Левином Мартеллом (Трезубец)", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 284, "liege": "neutral", "why": "Оберин пытался поднять Дорн за Визериса. Конец положил приезд Джона Аррена в Солнечное Копьё с костями Левина «на следующий год после восстания»", "src": "Doran_Martell", "verified": true, "inferred": "284 — вывод; формальная присяга не описана" },
+      { "from": 284, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "В 298–300 Доран принял условия Тириона (верность Джоффри, помолвка Мирцеллы и Тристана), но держал войска в горных проходах. Тайно отправил Квентина к Дейенерис, а Арианну (сэмпл TWOW) — к Эйгону", "src": "Doran_Martell", "verified": true }
+    ],
+    "Greyjoy": [
+      { "from": -10, "to": -2, "to_frac": 0.35, "liege": "Hoare", "why": "Грейджои — лорды Пайка в королевстве Хоаров", "src": "Vickon_Greyjoy", "verified": true },
+      { "from": -2, "from_frac": 0.35, "to": 2, "to_frac": 0.5, "liege": "independent", "why": "После гибели Харрена претенденты боролись за Морской трон", "src": "Vickon_Greyjoy", "verified": true, "inferred": "значение «independent» — вывод" },
+      { "from": 2, "from_frac": 0.5, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "В 2 от З.Э. Эйгон прекратил распри. Железнорождённые избрали Викона Грейджоя, и тот принёс оммаж", "src": "Vickon_Greyjoy", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "blacks", "why": "Далтон Грейджой (Красный Кракен) выбрал Рейниру и разорил Ланниспорт", "src": "Dalton_Greyjoy", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "Далтон ещё около двух лет игнорировал приказы прекратить набеги. Убит в 133", "src": "Dalton_Greyjoy", "verified": true },
+      { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.32, "liege": "neutral", "why": "Квеллон Грейджой «решил не участвовать в войне»", "src": "Quellon_Greyjoy", "verified": true },
+      { "from": 283, "from_frac": 0.32, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Только после Трезубца сыновья уговорили Квеллона вступить в войну против Таргариенов. Повёл 50 ладей на Простор и погиб в битве в устье Мандера (283)", "src": "Quellon_Greyjoy", "verified": true },
+      { "from": 283, "from_frac": 0.45, "to": 289, "to_frac": 0.1, "liege": "throne", "why": "Бейлон — лорд Железных островов (283)", "src": "Quellon_Greyjoy; Balon_Greyjoy", "verified": true },
+      { "from": 289, "from_frac": 0.1, "to": 289, "to_frac": 0.9, "liege": "balon", "why": "Восстание Бейлона Грейджоя", "src": "Greyjoy's_Rebellion", "verified": true },
+      { "from": 289, "from_frac": 0.9, "to": 299, "to_frac": 0.2, "liege": "throne", "why": "Бейлон преклонил колено, Теон — воспитанник у Старков", "src": "Greyjoy's_Rebellion", "verified": true },
+      { "from": 299, "from_frac": 0.2, "to": 299, "to_frac": 0.6, "liege": "balon", "why": "Бейлон снова король, ведёт набеги на Север", "src": "Balon_Greyjoy", "verified": true },
+      { "from": 299, "from_frac": 0.6, "to": 300, "to_frac": 0.2, "liege": "independent", "why": "После гибели Бейлона Эурон занял Морской трон, Эйерон созвал вече", "src": "Kingsmoot; Balon_Greyjoy", "verified": true, "inferred": "условное значение" },
+      { "from": 300, "from_frac": 0.2, "to": 300, "to_frac": 0.99, "liege": "euron", "why": "Эурона избрали на вече на Старом Вике (300). Взял Щитовые острова", "src": "Kingsmoot; 300_AC", "verified": true }
+    ],
+    "Targaryen": [
+      { "from": -10, "to": -2, "to_frac": 0.05, "liege": "independent", "why": "Владыки Драконьего Камня (переселились за 12 лет до Рока Валирии)", "src": "Aegon's_Conquest", "verified": true },
+      { "from": -2, "from_frac": 0.05, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "Правящий дом", "src": "Aegon's_Conquest", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "throne", "why": "Дом расколот: Эйгон II («зелёные») против Рейниры («чёрные»)", "src": "Dance_of_the_Dragons", "verified": true, "inferred": "условное значение" },
+      { "from": 131, "from_frac": 0.5, "to": 283, "to_frac": 0.35, "liege": "throne", "why": "Правящий дом до гибели Эйриса II", "src": "Robert's_Rebellion", "verified": true },
+      { "from": 283, "from_frac": 0.35, "to": 300, "to_frac": 0.99, "liege": "independent", "why": "Изгнание. Рейла бежала с Визерисом на Драконий Камень. В 284 Виллем Дарри увёз Визериса и Дейенерис в Браавос, пока гарнизон собирался выдать их Баратеонам. Визерис умер в 298, Дейенерис в 300 — королева Миэрина", "src": "Assault_on_Dragonstone; 283_AC; 298_AC; 300_AC", "verified": true }
+    ],
+    "Gardener": [
+      { "from": -10, "to": -2, "to_frac": 0.6, "liege": "independent", "why": "Короли Простора. Мерн IX и его родичи погибли на Пламенном Поле, дом пресёкся", "src": "Aegon's_Conquest; Field_of_Fire", "verified": true }
+    ],
+    "Durrandon": [
+      { "from": -10, "to": -2, "to_frac": 0.45, "liege": "independent", "why": "Штормовые короли. Аргилака убили в Последнем Шторме, его дочь Аргелла вышла за Ориса Баратеона", "src": "Aegon's_Conquest; Last_Storm", "verified": true }
+    ],
+    "Hoare": [
+      { "from": -10, "to": -2, "to_frac": 0.35, "liege": "independent", "why": "Короли Островов и Рек. Харрен Чёрный и его сыновья сгорели в Харренхолле, дом пресёкся", "src": "Aegon's_Conquest; Burning_of_Harrenhal", "verified": true }
+    ],
+    "Hightower": [
+      { "from": -10, "to": -2, "to_frac": 0.6, "liege": "Gardener", "why": "Староместо вошло во власть Хайгардена через брак, а не завоевание", "src": "House_Hightower", "verified": true },
+      { "from": -2, "from_frac": 0.6, "to": 1, "liege": "independent", "why": "Манфред Хайтауэр не пришёл к своему королю Мерну IX на Пламенное Поле; Староместо открыло ворота только Эйгону", "src": "House_Hightower; Aegon's_Conquest", "verified": true, "inferred": "условное значение" },
+      { "from": 1, "to": 129, "to_frac": 0.17, "liege": "Tyrell", "why": "Манфред открыл Эйгону ворота, через три дня — коронация в Звёздной септе. В инфобоксе сюзерен — «House Tyrell»", "src": "House_Hightower; Aegon's_Conquest", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "greens", "why": "Отто, Алисента и Ормунд Хайтауэры — за Эйгона II, хотя Тиреллы нейтральны", "src": "Dance_of_the_Dragons", "verified": true },
+      { "from": 131, "from_frac": 0.5, "to": 300, "to_frac": 0.99, "liege": "Tyrell", "why": "В 196 Хайтауэры не поддержали всерьёз ни одну сторону и были в обоих лагерях", "src": "House_Hightower; First_Blackfyre_Rebellion", "verified": true }
+    ],
+    "Bolton": [
+      { "from": -10, "to": 299, "to_frac": 0.65, "liege": "Stark", "why": "В инфобоксе сюзерен — «House Stark (?–299 AC)». В 283 Русе пошёл на зов Эддарда и сражался на Трезубце", "src": "House_Bolton", "verified": true },
+      { "from": 299, "from_frac": 0.65, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "Русе спланировал Красную Свадьбу с Лотаром Фреем и убил Робба. Тайвин сделал его Хранителем Севера. В инфобоксе: «House Baratheon of King's Landing (300 AC–present)»", "src": "House_Bolton; Roose_Bolton", "verified": true }
+    ],
+    "Frey": [
+      { "from": -10, "to": -2, "to_frac": 0.36, "liege": "Hoare", "why": "Подданные Харрена Чёрного; во время Завоевания восстали против него", "src": "House_Frey", "verified": true },
+      { "from": -2, "from_frac": 0.36, "to": 299, "to_frac": 0.65, "liege": "Tully", "why": "После сожжения Харренхолла вместе с другими речными лордами присягнули Талли", "src": "House_Frey", "verified": true },
+      { "from": 299, "from_frac": 0.65, "to": 300, "to_frac": 0.99, "liege": "Baelish", "why": "Красная Свадьба: Фреи перешли к Ланнистерам. В инфобоксе сюзерены — «House Tully (AGOT), House Baelish (ADWD)». Эммон Фрей — лорд Риверрана (300)", "src": "House_Frey; 300_AC; Siege_of_Riverrun", "verified": true }
+    ],
+    "Baelish": [
+      { "from": 299, "from_frac": 0.47, "to": 300, "to_frac": 0.99, "liege": "throne", "why": "После Черноводной — лорд Харренхолла и Верховный лорд Трезубца (Харренхолл тогда ещё держал Русе Болтон за Робба). С 300 — лорд-протектор Долины", "src": "Petyr_Baelish; 299_AC; Lysa_Arryn", "verified": true }
+    ],
+    "Baratheon of Dragonstone": [
+      { "from": 284, "from_frac": 0.3, "to": 299, "to_frac": 0.1, "liege": "throne", "why": "Станнис взял Драконий Камень (284). По странице Станниса он поселился там «около 287»", "src": "Assault_on_Dragonstone; Stannis_Baratheon", "verified": true, "inferred": "год пожалования не указан" },
+      { "from": 299, "from_frac": 0.1, "to": 300, "to_frac": 0.99, "liege": "stannis", "why": "Станнис — король. В 300 Лорас Тирелл штурмует Драконий Камень", "src": "Stannis_Baratheon; 300_AC", "verified": true }
+    ]
+  },
+  "paramount": [
+    { "region": "riverlands", "house": "Hoare", "from": -10, "to": -2, "to_frac": 0.36, "why": "Речные земли — часть королевства Островов и Рек Харрена Чёрного", "src": "Aegon's_Conquest", "verified": true },
+    { "region": "iron_islands", "house": "Hoare", "from": -10, "to": -2, "to_frac": 0.35, "why": "До Завоевания островами правили Хоары; Грейджои стали лордами Железных островов в 2 от З.Э.", "src": "Vickon_Greyjoy", "verified": true },
+    { "region": "reach", "house": "Gardener", "from": -10, "to": -2, "to_frac": 0.6, "why": "Короли Простора до Пламенного Поля", "src": "Aegon's_Conquest", "verified": true },
+    { "region": "stormlands", "house": "Durrandon", "from": -10, "to": -2, "to_frac": 0.45, "why": "Штормовые короли до Последнего Шторма", "src": "Aegon's_Conquest", "verified": true },
+    { "region": "dorne", "house": "Tyrell", "from": 159, "to": 159, "to_frac": 0.9, "why": "Дейерон I оставил Лионеля Тирелла держать мир в Дорне; его гибель подняла восстание", "src": "Conquest_of_Dorne", "verified": true, "inferred": "конец — оценка" },
+    { "region": "dragonstone", "house": "Baratheon of Dragonstone", "from": 284, "from_frac": 0.3, "to": 300, "to_frac": 0.99, "why": "Станнис — лорд Драконьего Камня", "src": "Assault_on_Dragonstone; Stannis_Baratheon", "verified": true },
+    { "region": "stormlands", "house": "Baratheon of Dragonstone", "from": 299, "from_frac": 0.35, "to": 300, "to_frac": 0.9, "why": "Штормовой Предел за Станнисом после гибели Ренли и Пенроза", "src": "Stannis_Baratheon", "verified": true, "inferred": "конец — по сэмплу TWOW" },
+    { "region": "riverlands", "house": "Baelish", "from": 299, "from_frac": 0.47, "to": 300, "to_frac": 0.99, "why": "Петир Бейлиш — Верховный лорд Трезубца после Черноводной. Риверран с 300 у Эммона Фрея", "src": "Petyr_Baelish; War_of_the_Five_Kings", "verified": true },
+    { "region": "north", "house": "Bolton", "from": 300, "from_frac": 0.0, "to": 300, "to_frac": 0.99, "why": "Русе Болтон — Хранитель Севера после Красной Свадьбы (в инфобоксе — «300 – наст. время»). Его сын Рамси женился на «Арье» (Джейни Пуль)", "src": "Roose_Bolton; 300_AC", "verified": true },
+    { "region": "vale", "house": "Baelish", "from": 300, "from_frac": 0.05, "to": 300, "to_frac": 0.99, "why": "Лиза вышла за Мизинца после смерти Джоффри и назначила его лордом-протектором; после её гибели (300) он остался регентом при Роберте Аррене", "src": "Lysa_Arryn; Petyr_Baelish", "verified": true },
+    { "region": "stormlands", "house": "Targaryen", "from": 300, "from_frac": 0.9, "to": 300, "to_frac": 0.99, "why": "Эйгон (Молодой Гриф) и Джон Коннингтон; Золотые Мечи взяли Штормовой Предел — только по сэмплу TWOW", "src": "Young_Griff", "verified": true, "inferred": "сэмпл TWOW, может измениться" }
+  ],
+  "milestones": [
+    { "year": -2, "frac": 0.05, "ru": "Высадка Эйгона", "src": "Aegon's_Conquest", "verified": true },
+    { "year": -2, "frac": 0.3, "ru": "Талли переходят к Эйгону", "src": "Burning_of_Harrenhal", "verified": true },
+    { "year": -2, "frac": 0.35, "ru": "Сожжение Харренхолла", "src": "Burning_of_Harrenhal", "verified": true },
+    { "year": -2, "frac": 0.45, "ru": "Последний Шторм", "src": "Last_Storm", "verified": true },
+    { "year": -2, "frac": 0.6, "ru": "Пламенное Поле", "src": "Field_of_Fire", "verified": true },
+    { "year": -2, "frac": 0.75, "ru": "Торрхен Старк преклоняет колено", "src": "Torrhen_Stark", "verified": true, "inferred": "год 2/1 до З.Э." },
+    { "year": -2, "frac": 0.85, "ru": "Долина покоряется", "src": "Aegon's_Conquest", "verified": true, "inferred": "год 2/1 до З.Э." },
+    { "year": 1, "frac": 0.0, "ru": "Коронация Эйгона в Староместе", "src": "Aegon's_Conquest", "verified": true },
+    { "year": 2, "frac": 0.5, "ru": "Викон Грейджой — лорд Железных островов", "src": "Vickon_Greyjoy", "verified": true },
+    { "year": 4, "frac": 0.0, "ru": "Первая Дорнийская война", "src": "First_Dornish_War", "verified": true },
+    { "year": 13, "frac": 0.5, "ru": "Мир с Дорном", "src": "First_Dornish_War", "verified": true },
+    { "year": 129, "frac": 0.17, "ru": "Смерть Визериса I, начало Танца Драконов", "src": "129_AC", "verified": true },
+    { "year": 130, "frac": 0.15, "ru": "Рейнира берёт Королевскую Гавань", "src": "130_AC; Rhaenyra_Targaryen", "verified": true, "inferred": "доля года: «около полугода» до бегства" },
+    { "year": 130, "frac": 0.81, "ru": "Гибель Рейниры", "src": "Rhaenyra_Targaryen", "verified": true },
+    { "year": 131, "frac": 0.45, "ru": "Битва на Королевском тракте", "src": "131_AC", "verified": true },
+    { "year": 131, "frac": 0.5, "ru": "Смерть Эйгона II, король Эйгон III", "src": "131_AC", "verified": true },
+    { "year": 157, "frac": 0.3, "ru": "Дейерон I идёт на Дорн", "src": "Conquest_of_Dorne", "verified": true },
+    { "year": 158, "frac": 0.5, "ru": "Покорение Солнечного Копья", "src": "Conquest_of_Dorne", "verified": true },
+    { "year": 161, "frac": 0.5, "ru": "Гибель Дейерона I, Дорн снова независим", "src": "Conquest_of_Dorne", "verified": true },
+    { "year": 187, "frac": 0.5, "ru": "Дорн входит в Семь Королевств", "src": "Conquest_of_Dorne", "verified": true },
+    { "year": 196, "frac": 0.15, "ru": "Первое восстание Блэкфайра", "src": "First_Blackfyre_Rebellion", "verified": true },
+    { "year": 196, "frac": 0.85, "ru": "Битва на Краснотравном поле", "src": "First_Blackfyre_Rebellion", "verified": true },
+    { "year": 260, "frac": 0.9, "ru": "Конец Войны Девятигрошовых королей", "src": "Blackfyre_Rebellions", "verified": true },
+    { "year": 282, "frac": 0.15, "ru": "Начало Восстания Роберта Баратеона", "src": "Robert's_Rebellion", "verified": true },
+    { "year": 283, "frac": 0.1, "ru": "Колокольная битва", "src": "283_AC", "verified": true },
+    { "year": 283, "frac": 0.3, "ru": "Битва на Трезубце", "src": "283_AC", "verified": true },
+    { "year": 283, "frac": 0.35, "ru": "Разорение Королевской Гавани", "src": "283_AC", "verified": true },
+    { "year": 283, "frac": 0.45, "ru": "Коронация Роберта I", "src": "283_AC", "verified": true },
+    { "year": 284, "frac": 0.3, "ru": "Станнис берёт Драконий Камень, Таргариены бегут в Браавос", "src": "Assault_on_Dragonstone", "verified": true },
+    { "year": 289, "frac": 0.1, "ru": "Восстание Бейлона Грейджоя", "src": "Greyjoy's_Rebellion", "verified": true },
+    { "year": 298, "frac": 0.5, "ru": "Смерть Роберта I, король Джоффри", "src": "298_AC", "verified": true },
+    { "year": 298, "frac": 0.55, "ru": "Арест Эддарда Старка", "src": "298_AC", "verified": true },
+    { "year": 299, "frac": 0.05, "ru": "Робб провозглашён Королём Севера", "src": "Robb_Stark", "verified": true },
+    { "year": 299, "frac": 0.3, "ru": "Гибель Ренли", "src": "299_AC", "verified": true },
+    { "year": 299, "frac": 0.45, "ru": "Битва на Черноводной", "src": "299_AC", "verified": true },
+    { "year": 299, "frac": 0.6, "ru": "Гибель Бейлона Грейджоя", "src": "299_AC", "verified": true },
+    { "year": 299, "frac": 0.65, "ru": "Красная Свадьба", "src": "299_AC", "verified": true },
+    { "year": 300, "frac": 0.0, "ru": "Смерть Джоффри, король Томмен", "src": "300_AC", "verified": true },
+    { "year": 300, "frac": 0.2, "ru": "Вече на Старом Вике: король Эурон", "src": "Kingsmoot; 300_AC", "verified": true },
+    { "year": 300, "frac": 0.45, "ru": "Риверран сдаётся, лорд — Эммон Фрей", "src": "Siege_of_Riverrun", "verified": true },
+    { "year": 300, "frac": 0.6, "ru": "Станнис на Севере: Темнолесье, поход на Винтерфелл", "src": "300_AC", "verified": true },
+    { "year": 300, "frac": 0.7, "ru": "Высадка Золотых Мечей с Эйгоном", "src": "300_AC; Young_Griff", "verified": true }
+  ],
+  "notes": "Годы до З.Э. отрицательные; нулевого года нет (−1 = 1 до З.Э., 1 = 1 от З.Э.). frac — порядок событий внутри года, а не календарь. Точные даты есть только у трёх событий: смерть Визериса I (3-й день 3-й луны 129), гибель Рейниры (22-й день 10-й луны 130), смерть Эйгона II («середина» 131). AWOIAF датирует Завоевание 2 до З.Э. – 1 от З.Э. Харренхолл, Последний Шторм и Пламенное Поле — 2 до З.Э. (Пламенное Поле «около 2 до З.Э.»). Торрхен — «2/1 до З.Э.», поэтому Север и Долина условно поставлены в −2. verified=true — подтверждено чтением AWOIAF; поле inferred объясняет, что именно выведено. «throne» в сегментах дома Таргариенов означает, что они сами на троне. Расхождения с исходным заданием: (1) по AWOIAF Грейджои не остались в стороне в 283 — Квеллон вступил в войну против Таргариенов после Трезубца; (2) Робб коронован в 299, а Станнис объявил себя королём после Робба и Ренли, то есть claimant stannis начинается с 299, а не с 298; (3) Дорн в 298–300 формально на стороне Джоффри (условия Тириона), не нейтрален; (4) в Танце Драконов Дорн был вне королевства, поэтому стоит independent. Русские названия взяты по 7kingdoms.ru: Танец Драконов, Рейнира, Криган Старк, Торрхен Старк, Харлен Тирелл, Пламенное Поле, Последний Шторм, Битва на Краснотравном поле, Первое восстание Блэкфайра, Восстание Роберта Баратеона, Колокольная битва, Разорение Королевской Гавани, Война Пяти Королей, Красная Свадьба, Восстание Бейлона Грейджоя, Золотые Мечи, Луна Трёх королей."
+}
