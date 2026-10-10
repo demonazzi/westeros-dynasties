@@ -8,7 +8,7 @@ const { chromium } = require('/opt/npm-tools/node_modules/playwright'); const fs
   const data = await p.evaluate(() => {
     const pick = name => { try { return eval(name); } catch (e) { return undefined; } };
     const o = {};
-    ['PEOPLE', 'SCREEN', 'DRAGONS', 'HOUSES', 'BANDS', 'GAPS', 'DS', 'SCREEN_DRAGONS', 'DRAGON_SCREEN', 'EXTRA', 'NOTES'].forEach(n => { const v = pick(n); if (v !== undefined) o[n] = v; });
+    ['PEOPLE', 'SCREEN', 'DRAGONS', 'DRAGON_ORIGINS', 'HOUSES', 'BANDS', 'GAPS', 'DS', 'SCREEN_DRAGONS', 'DRAGON_SCREEN', 'EXTRA', 'NOTES'].forEach(n => { const v = pick(n); if (v !== undefined) o[n] = v; });
     o._globals = Object.keys(window).filter(k => /^[A-Z_]+$/.test(k));
     return JSON.parse(JSON.stringify(o));
   });

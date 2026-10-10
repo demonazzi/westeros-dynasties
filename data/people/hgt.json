@@ -1,0 +1,40 @@
+{
+  "title": "Хайтауэры",
+  "about": "Дом Хайтауэров (Староместо). Дети Алерии и Мейса Тирелла — в полосе Тиреллов (tyr).",
+  "groups": [
+    {
+      "title": "Первые годы после Завоевания",
+      "people": [
+        {"id":"manfred_h","name":"Манфред Хайтауэр","en":"Manfred Hightower","hs":"hgt","k":"T","wiki":"Manfred Hightower (son of Addam)"},
+        {"id":"martyn_h","name":"Мартин Хайтауэр","full":"Мартин Хайтауэр, сын Манфреда","en":"Martyn Hightower","hs":"hgt","k":"T","p":"manfred_h","wiki":"Martyn Hightower (son of Manfred)"},
+        {"id":"ceryse","name":"Серис Хайтауэр","en":"Ceryse Hightower","fem":1,"hs":"hgt","k":"T","p":"manfred_h","b":"2","d":"45","sp":[["maegor1","25 г."]]},
+        {"id":"morgan_h","name":"Морган Хайтауэр","en":"Morgan Hightower","hs":"hgt","k":"T","p":"manfred_h"}
+      ]
+    },
+    {
+      "title": "Отто, Алисента и их родня: Танец драконов",
+      "people": [
+        {"id":"hgt_lord8","name":"Лорд Хайтауэр","full":"Лорд Хайтауэр, отец Отто","hs":"hgt","k":"T","wiki":"House Hightower"},
+        {"id":"hgt_lord9","name":"Лорд Хайтауэр","full":"Лорд Хайтауэр, брат Отто","hs":"hgt","k":"T","p":"hgt_lord8","wiki":"House Hightower"},
+        {"id":"otto","name":"Отто Хайтауэр","en":"Otto Hightower","hs":"hgt","k":"T","p":"hgt_lord8","d":"129"},
+        {"id":"alicent","name":"Алисента Хайтауэр","en":"Alicent Hightower","fem":1,"hs":"hgt","k":"T","p":"otto","b":"88","d":"133","sp":[["viserys1","106 г."]]},
+        {"id":"gwayne","name":"Гвейн Хайтауэр","en":"Gwayne Hightower","hs":"hgt","k":"T","p":"otto","d":"129"},
+        {"id":"ormund_h","name":"Ормунд Хайтауэр","en":"Ormund Hightower","hs":"hgt","k":"T","p":"hgt_lord9","d":"130","sp":[["Саманта Тарли","вторая жена"]]},
+        {"id":"lyonel_h","name":"Лайонел Хайтауэр","en":"Lyonel Hightower","hs":"hgt","k":"T","p":"ormund_h","sp":[["Саманта Тарли","вдова отца","l"]],"wiki":"Lyonel Hightower (son of Ormund)"},
+        {"id":"garmund","name":"Гармунд Хайтауэр","en":"Garmund Hightower","hs":"hgt","k":"T","p":"ormund_h","sp":[["rhaena_d"]]},
+        {"id":"bethany_h","name":"Бетани Хайтауэр","en":"Bethany Hightower","fem":1,"hs":"hgt","k":"T","p":"ormund_h"}
+      ]
+    },
+    {
+      "title": "Лейтон Хайтауэр и его дети: время книг",
+      "people": [
+        {"id":"leyton","name":"Лейтон Хайтауэр","en":"Leyton Hightower","al":["Голос Староместа"],"hs":"hgt","k":"T","sp":[["Рия Флорент"]]},
+        {"id":"baelor_h","name":"Бейелор Хайтауэр","en":"Baelor Hightower","al":["Бейелор Светлая Улыбка"],"hs":"hgt","k":"T","p":"leyton","sp":[["Ронда Рован"]],"wiki":"Baelor Hightower"},
+        {"id":"malora","name":"Малора Хайтауэр","en":"Malora Hightower","al":["Безумная Дева"],"fem":1,"hs":"hgt","k":"T","p":"leyton"},
+        {"id":"alerie","name":"Алерия Хайтауэр","en":"Alerie Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["mace"]]},
+        {"id":"garth_h","name":"Гарт Хайтауэр","en":"Garth Hightower","al":["Гарт Седая Сталь"],"hs":"hgt","k":"T","p":"leyton"},
+        {"id":"lynesse","name":"Линесс Хайтауэр","en":"Lynesse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["Джорах Мормонт","вторая жена"]]}
+      ]
+    }
+  ]
+}

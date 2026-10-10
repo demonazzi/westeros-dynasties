@@ -1,4 +1,4 @@
-"""Собирает src/data-house-tyr.js и src/data-house-gry.js из house_tyr.json / house_gry.json (сбор по AWOIAF и 7kingdoms).
+"""Историческое (данные с тех пор переехали в data/ и texts/, файлы домов правились руками): собирал src/data-house-tyr.js и src/data-house-gry.js из house_tyr.json / house_gry.json (сбор по AWOIAF и 7kingdoms).
 Тексты t и отличия df помечены ai: 1 — это черновики Claude, их правит автор."""
 import json, re, sys
 

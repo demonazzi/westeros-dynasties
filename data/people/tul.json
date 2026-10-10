@@ -1,0 +1,32 @@
+{
+  "title": "Талли",
+  "about": "Дом Талли (Риверран).",
+  "groups": [
+    {
+      "title": "",
+      "people": [
+        {"id":"edmyn","name":"Эдмин Талли","en":"Edmyn Tully","hs":"tul","k":"T"}
+      ]
+    },
+    {
+      "title": "Танец драконов",
+      "people": [
+        {"id":"grover","name":"Гровер Талли","en":"Grover Tully","hs":"tul","k":"T"},
+        {"id":"elmo","name":"Элмо Талли","en":"Elmo Tully","hs":"tul","k":"T"},
+        {"id":"kermit","name":"Кермит Талли","en":"Kermit Tully","hs":"tul","k":"T","p":"elmo"},
+        {"id":"oscar","name":"Оскар Талли","en":"Oscar Tully","hs":"tul","k":"T","p":"elmo"}
+      ]
+    },
+    {
+      "title": "Время книг",
+      "people": [
+        {"id":"tul_lord17","name":"Лорд Талли","full":"Лорд Талли, отец Хостера и Бриндена","hs":"tul","k":"T"},
+        {"id":"hoster","name":"Хостер Талли","en":"Hoster Tully","hs":"tul","k":"T","p":"tul_lord17","d":"299","sp":[["Миниса Уэнт","умерла в родах"]]},
+        {"id":"brynden_t","name":"Бринден Талли","full":"Бринден Талли, Чёрная Рыба","en":"Brynden Tully, the Blackfish","al":["Чёрная Рыба"],"hs":"tul","k":"T","p":"tul_lord17"},
+        {"id":"catelyn","name":"Кейтилин Талли","en":"Catelyn Tully","fem":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"299","sp":[["brandon_r","помолвка","b"],["eddard"]]},
+        {"id":"lysa","name":"Лиза Талли","en":"Lysa Tully","fem":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"300","sp":[["jon_a"],["Петир Бейлиш"]]},
+        {"id":"edmure","name":"Эдмур Талли","en":"Edmure Tully","hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"sp":[["Рослин Фрей","299 г."]]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "series": {
+    "got": {"name":"Игра престолов","years":"2011–2019"},
+    "hotd": {"name":"Дом Дракона","years":"с 2022"},
+    "kotsk": {"name":"Рыцарь Семи Королевств","years":"2026"}
+  },
+  "groups": [
+    {
+      "title": "«Дом Дракона»: Таргариены",
+      "items": [
+        {"id":"jaehaerys1","a":[["hotd","Майкл Картер","Michael Carter"]]},
+        {"id":"viserys1","a":[["hotd","Пэдди Консидайн","Paddy Considine"]]},
+        {"id":"rhaenyra","a":[["hotd","Милли Олкок","Milly Alcock","в юности"],["hotd","Эмма Д’Арси","Emma D’Arcy"]]},
+        {"id":"daemon","a":[["hotd","Мэтт Смит","Matt Smith"]]},
+        {"id":"aemma","a":[["hotd","Шан Брук","Sian Brooke"]]},
+        {"id":"aegon2","a":[["hotd","Тай Теннант","Ty Tennant","в юности"],["hotd","Том Глинн-Карни","Tom Glynn-Carney"]]},
+        {"id":"helaena","a":[["hotd","Иви Аллен","Evie Allen","в юности"],["hotd","Фиа Сабан","Phia Saban"]]},
+        {"id":"aemond","a":[["hotd","Лео Эштон","Leo Ashton","в юности"],["hotd","Юэн Митчелл","Ewan Mitchell"]]},
+        {"id":"daeron_d","a":[["hotd","Бенджамин Эван Эйнсворт","Benjamin Evan Ainsworth","3-й сезон"]]},
+        {"id":"rhaenys_q","a":[["hotd","Ив Бест","Eve Best"]]},
+        {"id":"baela","a":[["hotd","Шани Сметхерст","Shani Smethurst","в детстве"],["hotd","Бетани Антония","Bethany Antonia"]]},
+        {"id":"rhaena_d","a":[["hotd","Ева Осси-Гернинг","Eva Ossei-Gerning","в детстве"],["hotd","Фиби Кэмпбелл","Phoebe Campbell"]]},
+        {"id":"jacaerys","a":[["hotd","Лео Харт","Leo Hart","в детстве"],["hotd","Гарри Коллетт","Harry Collett"]]},
+        {"id":"lucerys","a":[["hotd","Харви Сэдлер","Harvey Sadler","в детстве"],["hotd","Эллиот Грихолт","Elliot Grihault"]]},
+        {"id":"joffrey","a":[["hotd","Оскар Эскинази","Oscar Eskinazi"]]}
+      ]
+    },
+    {
+      "title": "«Дом Дракона»: Веларионы",
+      "items": [
+        {"id":"corlys","a":[["hotd","Стив Туссен","Steve Toussaint"]]},
+        {"id":"vaemond","a":[["hotd","Уил Джонсон","Wil Johnson"]]},
+        {"id":"laena","a":[["hotd","Нова Фуэйи-Мозе","Nova Foueillis-Mosé","в детстве"],["hotd","Саванна Стейн","Savannah Steyn","в юности"],["hotd","Нанна Блонделл","Nanna Blondell"]]},
+        {"id":"laenor","a":[["hotd","Мэттью Карвер","Matthew Carver","в детстве"],["hotd","Тео Нейт","Theo Nate","в юности"],["hotd","Джон Макмиллан","John Macmillan"]]},
+        {"id":"addam","a":[["hotd","Клинтон Либерти","Clinton Liberty"]]},
+        {"id":"alyn","a":[["hotd","Абубакар Салим","Abubakar Salim"]]}
+      ]
+    },
+    {
+      "title": "«Дом Дракона»: другие дома",
+      "items": [
+        {"id":"alicent","a":[["hotd","Эмили Кэри","Emily Carey","в юности"],["hotd","Оливия Кук","Olivia Cooke"]]},
+        {"id":"otto","a":[["hotd","Рис Иванс","Rhys Ifans"]]},
+        {"id":"gwayne","a":[["hotd","Фредди Фокс","Freddie Fox"]]},
+        {"id":"ormund_h","a":[["hotd","Джеймс Нортон","James Norton","3-й сезон"]]},
+        {"id":"jason_l","a":[["hotd","Джефферсон Холл","Jefferson Hall","играет обоих близнецов"]]},
+        {"id":"tyland","a":[["hotd","Джефферсон Холл","Jefferson Hall","играет обоих близнецов"]]},
+        {"id":"borros","a":[["hotd","Роджер Эванс","Roger Evans"]]},
+        {"id":"boremund","a":[["hotd","Джулиан Льюис Джонс","Julian Lewis Jones"]]},
+        {"id":"cregan","a":[["hotd","Том Тейлор","Tom Taylor"]]},
+        {"id":"jeyne","a":[["hotd","Аманда Коллин","Amanda Collin"]]},
+        {"id":"alysanne_bw","a":[["hotd","Энни Шапиро","Annie Shapero"]]},
+        {"id":"oscar","a":[["hotd","Арчи Барнс","Archie Barnes"]]}
+      ]
+    },
+    {
+      "title": "«Рыцарь Семи Королевств»",
+      "items": [
+        {"id":"aegon5","a":[["kotsk","Декстер Сол Анселл","Dexter Sol Ansell","Эгг"]]},
+        {"id":"baelor_b","a":[["kotsk","Берти Карвел","Bertie Carvel"]]},
+        {"id":"maekar1","a":[["kotsk","Сэм Спрюэлл","Sam Spruell"]]},
+        {"id":"aerion_m","a":[["kotsk","Финн Беннетт","Finn Bennett"]]},
+        {"id":"daeron_dr","a":[["kotsk","Генри Эштон","Henry Ashton"]]},
+        {"id":"lyonel","a":[["kotsk","Дэниел Ингс","Daniel Ings"]]},
+        {"id":"gowen","a":[["kotsk","Коннан Аарон","Connan Aaron"]]}
+      ]
+    },
+    {
+      "title": "«Игра престолов»: Таргариены",
+      "items": [
+        {"id":"aerys2","a":[["got","Дэвид Ринтул","David Rintoul","в видениях Брана"]]},
+        {"id":"rhaegar","a":[["got","Уилф Сколдинг","Wilf Scolding","в видениях Брана"]]},
+        {"id":"viserys3","a":[["got","Гарри Ллойд","Harry Lloyd"]]},
+        {"id":"daenerys","a":[["got","Эмилия Кларк","Emilia Clarke"]]},
+        {"id":"jon","a":[["got","Кит Харингтон","Kit Harington"]]},
+        {"id":"aemon_m","a":[["got","Питер Вон","Peter Vaughan"]]},
+        {"id":"brynden","a":[["got","Струан Роджер","Struan Rodger","4-й сезон"],["got","Макс фон Сюдов","Max von Sydow","6-й сезон"]]},
+        {"id":"aegon_r"}
+      ]
+    },
+    {
+      "title": "«Игра престолов»: Старки",
+      "items": [
+        {"id":"eddard","a":[["got","Себастьян Крофт","Sebastian Croft","в детстве"],["got","Роберт Арамайо","Robert Aramayo","в юности"],["got","Шон Бин","Sean Bean"]]},
+        {"id":"catelyn","a":[["got","Мишель Фэйрли","Michelle Fairley"]]},
+        {"id":"robb","a":[["got","Ричард Мэдден","Richard Madden"]]},
+        {"id":"sansa","a":[["got","Софи Тёрнер","Sophie Turner"]]},
+        {"id":"arya","a":[["got","Мэйси Уильямс","Maisie Williams"]]},
+        {"id":"bran","a":[["got","Айзек Хэмпстед-Райт","Isaac Hempstead Wright"]]},
+        {"id":"rickon","a":[["got","Арт Паркинсон","Art Parkinson"]]},
+        {"id":"benjen","a":[["got","Джозеф Моул","Joseph Mawle"]]},
+        {"id":"lyanna","a":[["got","Айслинг Франчози","Aisling Franciosi","в видениях Брана"]]}
+      ]
+    },
+    {
+      "title": "«Игра престолов»: Баратеоны",
+      "items": [
+        {"id":"robert","a":[["got","Марк Эдди","Mark Addy"]]},
+        {"id":"stannis","a":[["got","Стивен Диллэйн","Stephen Dillane"]]},
+        {"id":"renly","a":[["got","Гетин Энтони","Gethin Anthony"]]},
+        {"id":"shireen","a":[["got","Керри Ингрэм","Kerry Ingram"]]},
+        {"id":"joffrey_b","a":[["got","Джек Глисон","Jack Gleeson"]]},
+        {"id":"myrcella","a":[["got","Эйми Ричардсон","Aimee Richardson","1–2-й сезоны"],["got","Нелл Тайгер Фри","Nell Tiger Free","5–6-й сезоны"]]},
+        {"id":"tommen","a":[["got","Каллум Уорри","Callum Wharry","1–2-й сезоны"],["got","Дин-Чарльз Чэпмен","Dean-Charles Chapman","с 4-го сезона"]]},
+        {"id":"gendry","a":[["got","Джо Демпси","Joe Dempsie"]]}
+      ]
+    },
+    {
+      "title": "«Игра престолов»: Ланнистеры",
+      "items": [
+        {"id":"tywin","a":[["got","Чарльз Дэнс","Charles Dance"]]},
+        {"id":"kevan","a":[["got","Иэн Гелдер","Ian Gelder"]]},
+        {"id":"cersei","a":[["got","Лина Хиди","Lena Headey"]]},
+        {"id":"jaime","a":[["got","Николай Костер-Вальдау","Nikolaj Coster-Waldau"]]},
+        {"id":"tyrion","a":[["got","Питер Динклэйдж","Peter Dinklage"]]},
+        {"id":"lancel","a":[["got","Юджин Саймон","Eugene Simon"]]}
+      ]
+    },
+    {
+      "title": "«Игра престолов»: Аррены, Талли, Мартеллы, Тиреллы",
+      "items": [
+        {"id":"lysa","a":[["got","Кейт Дики","Kate Dickie"]]},
+        {"id":"robert_a","a":[["got","Лино Фачоли","Lino Facioli"]]},
+        {"id":"hoster","a":[["got","Кристофер Ньюман","Christopher Newman"]]},
+        {"id":"brynden_t","a":[["got","Клайв Расселл","Clive Russell"]]},
+        {"id":"edmure","a":[["got","Тобайас Мензис","Tobias Menzies"]]},
+        {"id":"doran","a":[["got","Александр Сиддиг","Alexander Siddig"]]},
+        {"id":"oberyn","a":[["got","Педро Паскаль","Pedro Pascal"]]},
+        {"id":"trystane","a":[["got","Тоби Себастиан","Toby Sebastian"]]},
+        {"id":"sand_snakes","a":[["got","Кейша Касл-Хьюз","Keisha Castle-Hughes","Обара"],["got","Джессика Хенвик","Jessica Henwick","Нимерия"],["got","Розабелл Лаурентти Селлерс","Rosabell Laurenti Sellers","Тиена"]]},
+        {"id":"arianne"},
+        {"id":"quentyn"},
+        {"id":"margaery","a":[["got","Натали Дормер","Natalie Dormer"]]},
+        {"id":"loras","a":[["got","Финн Джонс","Finn Jones"]]},
+        {"id":"willas"}
+      ]
+    },
+    {
+      "title": "Тиреллы и Грейджои",
+      "items": [
+        {"id":"leo_t","a":[["kotsk","Стив Уолл","Steve Wall"]]},
+        {"id":"olenna","a":[["got","Диана Ригг","Diana Rigg"]]},
+        {"id":"mace","a":[["got","Роджер Эштон-Гриффитс","Roger Ashton-Griffiths"]]},
+        {"id":"balon","a":[["got","Патрик Малахайд","Patrick Malahide"]]},
+        {"id":"euron","a":[["got","Пилу Асбек","Pilou Asbaek"]]},
+        {"id":"aeron","a":[["got","Майкл Фист","Michael Feast"]]},
+        {"id":"asha","a":[["got","Джемма Уилан","Gemma Whelan"]]},
+        {"id":"theon","a":[["got","Элфи Аллен","Alfie Allen"]]}
+      ]
+    },
+    {
+      "title": "«Семя дракона»",
+      "items": [
+        {"id":"hugh_hammer","a":[["hotd","Киран Бью","Kieran Bew","2-й сезон"]]},
+        {"id":"ulf_white","a":[["hotd","Том Беннетт","Tom Bennett","2-й сезон"]]},
+        {"id":"nettles","a":[]}
+      ]
+    }
+  ]
+}

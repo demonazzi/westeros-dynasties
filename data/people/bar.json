@@ -1,0 +1,46 @@
+{
+  "title": "Баратеоны",
+  "about": "Дом Баратеонов (Штормовой Предел).",
+  "groups": [
+    {
+      "title": "",
+      "people": [
+        {"id":"orys","name":"Орис Баратеон","full":"Орис Баратеон, Однорукий","en":"Orys Baratheon","hs":"bar","k":"T","par":["aerion_l (по слухам)"],"rp":"aerion_l","sp":[["Аргелла Дюррандон"]]},
+        {"id":"davos_b","name":"Давос Баратеон","en":"Davos Baratheon","hs":"bar","k":"T","p":"orys","par":["orys","Аргелла Дюррандон"]},
+        {"id":"raymont","name":"Реймонт Баратеон","full":"Сир Реймонт Баратеон","en":"Raymont Baratheon","hs":"bar","k":"T","p":"orys","par":["orys","Аргелла Дюррандон"]},
+        {"id":"orys_son","name":"Отец Рогара","full":"Отец Рогара Баратеона","hs":"bar","k":"T","p":"orys","wiki":"Rogar Baratheon"},
+        {"id":"rogar","name":"Рогар Баратеон","en":"Rogar Baratheon","hs":"bar","k":"T","p":"orys_son","d":"62","sp":[["alyssa_v","49 г."]]},
+        {"id":"borys_b","name":"Борис Баратеон","full":"Сир Борис Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Borys Baratheon"},
+        {"id":"garon_b","name":"Гарон Баратеон","full":"Сир Гарон Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Garon Baratheon"},
+        {"id":"ronnal_b","name":"Роннал Баратеон","full":"Сир Роннал Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Ronnal Baratheon"},
+        {"id":"orryn_b","name":"Оррин Баратеон","full":"Сир Оррин Баратеон","hs":"bar","k":"T","p":"orys_son","sp":[["alysanne","несостоявшийся брак, 49 г.","b"],["дочь тирошийского архонта"]],"wiki":"Orryn Baratheon"},
+        {"id":"boremund","name":"Боремунд Баратеон","en":"Boremund Baratheon","hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"51"},
+        {"id":"jocelyn","name":"Джоселин Баратеон","en":"Jocelyn Baratheon","fem":1,"hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"54","sp":[["aemon_j","70 г."]]},
+        {"id":"borros","name":"Боррос Баратеон","en":"Borros Baratheon","hs":"bar","k":"T","p":"boremund","d":"131","sp":[["Эленда Карон"]]},
+        {"id":"cassandra","name":"Кассандра Баратеон","en":"Cassandra Baratheon","fem":1,"hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"],"sp":[["aegon2","помолвка","b"],["сир Уолтер Браунхилл"]]},
+        {"id":"maris","name":"Марис Баратеон","en":"Maris Baratheon","fem":1,"hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"]},
+        {"id":"ellyn","name":"Эллин Баратеон","en":"Ellyn Baratheon","fem":1,"hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"]},
+        {"id":"floris","name":"Флорис Баратеон","en":"Floris Baratheon","fem":1,"hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"],"sp":[["лорд Таддеус Рован"]]},
+        {"id":"royce","name":"Ройс Баратеон","en":"Royce Baratheon","hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"]},
+        {"id":"lord_b208","name":"Лорд Баратеон","full":"Лорд Баратеон (около 208 г.)","hs":"bar","k":"T","wiki":"Gowen Baratheon"},
+        {"id":"lyonel","name":"Лайонел Баратеон","full":"Лайонел Баратеон, Смеющийся Шторм","en":"Lyonel Baratheon, the Laughing Storm","hs":"bar","k":"T","p":"lord_b208","par":["lord_b208 (по-видимому)"],"unc":1,"b":"174–194","d":"239–245"},
+        {"id":"gowen","name":"Гоуэн Баратеон","en":"Gowen Baratheon","hs":"bar","k":"T","p":"lord_b208","sp":[["tya"]]},
+        {"id":"lyonel_d","name":"Дочь Лайонела","full":"Дочь Лайонела Баратеона","fem":1,"hs":"bar","k":"T","p":"lyonel","sp":[["duncan","разорванная помолвка","b"]],"wiki":"Lyonel Baratheon"},
+        {"id":"ormund","name":"Ормунд Баратеон","en":"Ormund Baratheon","hs":"bar","k":"T","p":"lyonel","d":"260","sp":[["rhaelle","245 г."]]},
+        {"id":"steffon","name":"Стеффон Баратеон","en":"Steffon Baratheon","hs":"bar","k":"T","p":"ormund","par":["ormund","rhaelle"],"b":"246","d":"278","sp":[["Кассана Эстермонт"]]},
+        {"id":"robert","name":"Роберт I","full":"Роберт I Баратеон","en":"Robert Baratheon","hs":"bar","k":"K","r":"283–298","su":"joffrey_b","p":"steffon","par":["steffon","Кассана Эстермонт"],"b":"262","d":"298","sp":[["cersei","284 г."],["lyanna","помолвка","b"]],"pr":"aerys2"},
+        {"id":"stannis","name":"Станнис Баратеон","en":"Stannis Baratheon","hs":"bar","k":"C","p":"steffon","par":["steffon","Кассана Эстермонт"],"b":"264","sp":[["Селиса Флорент"]]},
+        {"id":"renly","name":"Ренли Баратеон","en":"Renly Baratheon","hs":"bar","k":"C","p":"steffon","par":["steffon","Кассана Эстермонт"],"b":"277","d":"299","sp":[["margaery"]]},
+        {"id":"joffrey_b","name":"Джоффри I","full":"Джоффри I Баратеон","en":"Joffrey Baratheon","hs":"bar","k":"K","r":"298–300","su":"tommen","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"286","d":"300","sp":[["margaery"]],"pr":"robert"},
+        {"id":"myrcella","name":"Мирцелла","full":"Мирцелла Баратеон","fem":1,"hs":"bar","k":"T","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"290","sp":[["trystane","помолвка","b"]],"wiki":"Myrcella Baratheon"},
+        {"id":"tommen","name":"Томмен I","full":"Томмен I Баратеон","hs":"bar","k":"K","rm":"на троне с 300","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"291","sp":[["margaery"]],"pr":"joffrey_b","wiki":"Tommen Baratheon"},
+        {"id":"mya_stone","name":"Мия Стоун","en":"Mya Stone","fem":1,"hs":"bar","k":"R","p":"robert"},
+        {"id":"gendry","name":"Джендри","en":"Gendry","hs":"bar","k":"R","p":"robert"},
+        {"id":"edric","name":"Эдрик Шторм","en":"Edric Storm","hs":"bar","k":"R","p":"robert","par":["robert","Делена Флорент"]},
+        {"id":"bella","name":"Белла","en":"Bella","fem":1,"hs":"bar","k":"R","p":"robert"},
+        {"id":"barra","name":"Барра","en":"Barra","fem":1,"hs":"bar","k":"R","p":"robert","d":"298"},
+        {"id":"shireen","name":"Ширен","full":"Ширен Баратеон","fem":1,"hs":"bar","k":"T","p":"stannis","par":["stannis","Селиса Флорент"],"b":"289","wiki":"Shireen Baratheon"}
+      ]
+    }
+  ]
+}

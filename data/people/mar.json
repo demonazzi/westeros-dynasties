@@ -1,0 +1,43 @@
+{
+  "title": "Мартеллы",
+  "about": "Дом Мартеллов (Солнечное Копьё).",
+  "groups": [
+    {
+      "title": "Завоевание и Первая Дорнийская война",
+      "people": [
+        {"id":"meria","name":"Мерия Мартелл","en":"Meria Martell","al":["Жёлтая Жаба"],"fem":1,"hs":"mar","k":"T"},
+        {"id":"nymor","name":"Нимор Мартелл","en":"Nymor Martell","hs":"mar","k":"T","p":"meria"},
+        {"id":"deria","name":"Дерия Мартелл","en":"Deria Martell","fem":1,"hs":"mar","k":"T","p":"nymor"}
+      ]
+    },
+    {
+      "title": "Эпоха Танца драконов",
+      "people": [
+        {"id":"qoren","name":"Корен Мартелл","en":"Qoren Martell","hs":"mar","k":"T"},
+        {"id":"aliandra","name":"Алиандра Мартелл","en":"Aliandra Martell","fem":1,"hs":"mar","k":"T","p":"qoren","b":"115","sp":[["alyn","по слухам — возлюбленный","l"],["Драженко Рогаре","принц-консорт"]]}
+      ]
+    },
+    {
+      "title": "Мирия и Марон: союз с Таргариенами",
+      "people": [
+        {"id":"dorne_p14","name":"Принц Дорна","full":"Принц Дорна, отец Мирии и Марона","hs":"mar","k":"T","wiki":"Maron Martell"},
+        {"id":"myriah","name":"Мирия Мартелл","en":"Myriah Martell","fem":1,"hs":"mar","k":"T","p":"dorne_p14","sp":[["daeron2"]]},
+        {"id":"maron","name":"Марон Мартелл","en":"Maron Martell","hs":"mar","k":"T","p":"dorne_p14","sp":[["daenerys_n","187 г."]]}
+      ]
+    },
+    {
+      "title": "Время книг",
+      "people": [
+        {"id":"dorne_p19","name":"Принцесса Дорна","full":"Принцесса Дорна, мать Дорана, Элии и Оберина","fem":1,"hs":"mar","k":"T","wiki":"Doran Martell"},
+        {"id":"lewyn","name":"Левин Мартелл","en":"Lewyn Martell","hs":"mar","k":"T","d":"283"},
+        {"id":"doran","name":"Доран Мартелл","en":"Doran Martell","hs":"mar","k":"T","p":"dorne_p19","b":"247","sp":[["Мелларио из Норвоса"]]},
+        {"id":"elia","name":"Элия Мартелл","en":"Elia Martell","fem":1,"hs":"mar","k":"T","p":"dorne_p19","b":"257","d":"283","sp":[["rhaegar","280 г."]]},
+        {"id":"oberyn","name":"Оберин Мартелл","en":"Oberyn Martell","al":["Красный Змей"],"hs":"mar","k":"T","p":"dorne_p19","b":"257","d":"300","sp":[["Эллария Сэнд","возлюбленная","l"]]},
+        {"id":"arianne","name":"Арианна Мартелл","en":"Arianne Martell","fem":1,"hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"276"},
+        {"id":"quentyn","name":"Квентин Мартелл","en":"Quentyn Martell","hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"281","d":"300"},
+        {"id":"trystane","name":"Тристан Мартелл","en":"Trystane Martell","hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"286","sp":[["myrcella","помолвка","b"]]},
+        {"id":"sand_snakes","name":"Песчаные Змейки","full":"Песчаные Змейки, дочери Оберина","en":"Sand Snakes","group":1,"hs":"mar","k":"R","p":"oberyn"}
+      ]
+    }
+  ]
+}

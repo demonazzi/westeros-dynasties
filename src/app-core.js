@@ -18,7 +18,7 @@
     p.full = p.full || p.name;
     if (!p.par) p.par = p.p ? [p.p] : [];
     p.house = p.hs || (p.k === 'B' ? 'bf' : 'targ');
-    p.sex = GROUPS.has(p.id) ? 'u' : (FEMALE.has(p.id) || p.fem ? 'f' : 'm');
+    p.sex = p.group ? 'u' : (p.fem ? 'f' : 'm');
     p.kids = [];
   });
   PEOPLE.forEach(p => { if (p.p && byId.has(p.p)) byId.get(p.p).kids.push(p); });
@@ -726,7 +726,7 @@
   App.lifeEvents = lifeEvents;
 
   const wikiUrl = p => 'https://awoiaf.westeros.org/index.php?title=Special:Search&go=Go&search=' +
-    encodeURIComponent(WIKI[p.id] || (p.en ? p.en.split(',')[0] : p.full));
+    encodeURIComponent(p.wiki || (p.en ? p.en.split(',')[0] : p.full));
   App.wikiUrl = wikiUrl;
 
   function renderPanel(p) {

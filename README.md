@@ -7,7 +7,8 @@
 
 ```
 python3 tools/build.py            # → dist/artifact.html (для публикации) и dist/targaryen-tree.html (отдельный файл)
-node tools/validate.js            # данные: ссылки, корни, дубликаты
+node tools/validate.js            # данные: ссылки, корни, дубликаты, тексты
+node tools/data.js --sync         # после правки data/: порядок и заголовки в texts/, разделы для новых людей
 node tools/smoke.js               # все вкладки в jsdom
 node tools/check-scale.js         # шкала времени
 node tools/check-labels.js        # подписи и пунктиры ни на что не наезжают
@@ -19,10 +20,11 @@ node tools/shot.js имя 1440 900 "js" dark   # скриншот в shots/
 
 ## Устройство
 
-- `src/data-meta.js` — полосы домов (BANDS), дома и гербы (HOUSES), пропуски поколений (GAPS), пол, запросы к вики.
-- `src/data-people.js`, `src/data-house-*.js` — люди. Поля описаны в шапке `data-meta.js` (перед PEOPLE).
-- `src/data-extra-*.js` — драконы и экранизации.
-- `src/data-vassals.js` — собирается `node tools/vassals-build.js` из `research/vassal/*.json`.
+- `data/` — данные в JSON: полосы, дома и пропуски (`meta.json`), люди по домам (`people/*.json`), драконы,
+  экранизации, вассалитет. Поля описаны в `data/README.md`.
+- `texts/` — длинные тексты в Markdown: описания людей и драконов, отличия сериалов от книг. Раздел — `### id · Имя`.
+- `tools/data.js` — загрузчик: склеивает `data/` и `texts/` в переменные страницы (`--emit`), раскладывает тексты (`--sync`).
+- `data/vassals.json` — собирается `node tools/vassals-build.js` из `research/vassal/*.json`.
 - `src/app-core.js` — ядро: данные, раскладка древа, карточка, поиск, история.
 - `src/app-mod-*.js` — вкладки и модули (хронология, драконы, родословная, список, вассалитет, шкала, линзы, фильтры…).
 - `src/styles.css`, `src/body.html` — стили и разметка.
@@ -36,10 +38,10 @@ node tools/shot.js имя 1440 900 "js" dark   # скриншот в shots/
 
 ## Тексты и черновики Claude
 
-`ai: 1` у человека — описание `t` написал Claude (черновик); у записи в `EXTRA.screen` — отличия от книг `df`.
+`✎` в конце заголовка раздела в `texts/` — текст написал Claude (черновик); на странице это `ai: 1`.
 В карточке такие тексты помечены «✎ Черновик Claude», линза «Тексты Claude» подсвечивает их на древе.
-Правки из присланного файла:
+Править можно прямо в `texts/*.md` (тогда `✎` стереть руками) или в присланном файле страницы:
 ```
 node tools/texts-extract.js /путь/к/правленому.html /путь/edited.json
-node tools/texts-merge.js /папка/с/edited.json     # переносит t и df в src; у изменённых снимает ai: 1
+node tools/texts-merge.js /папка/с/edited.json     # переносит тексты в texts/; у изменённых снимает ✎
 ```

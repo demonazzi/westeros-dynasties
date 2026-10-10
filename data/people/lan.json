@@ -1,0 +1,42 @@
+{
+  "title": "Ланнистеры",
+  "about": "Дом Ланнистеров (Утёс Кастерли).",
+  "groups": [
+    {
+      "title": "Завоевание и Джейехерис I",
+      "people": [
+        {"id":"loren","name":"Лорен Ланнистер","full":"Лорен I Ланнистер, Последний","en":"Loren the Last","hs":"lan","k":"T","wiki":"Loren I Lannister"},
+        {"id":"lyman","name":"Лайман Ланнистер","en":"Lyman Lannister","hs":"lan","k":"T","d":"59","sp":[["Джокаста Тарбек"]]},
+        {"id":"tymond","name":"Таймонд Ланнистер","en":"Tymond Lannister","hs":"lan","k":"T","p":"lyman"}
+      ]
+    },
+    {
+      "title": "Танец драконов",
+      "people": [
+        {"id":"lan_lord10","name":"Лорд Ланнистер","full":"Лорд Ланнистер, отец Джейсона и Тиланда","hs":"lan","k":"T","wiki":"House Lannister"},
+        {"id":"jason_l","name":"Джейсон Ланнистер","full":"Джейсон Ланнистер, близнец Тиланда","en":"Jason Lannister","hs":"lan","k":"T","p":"lan_lord10","b":"89–97","d":"130","sp":[["Джоанна Уэстерлинг"]],"ev":[["112","Сватался к Рейенире","rhaenyra"]],"wiki":"Jason Lannister"},
+        {"id":"tyland","name":"Тиланд Ланнистер","en":"Tyland Lannister","hs":"lan","k":"T","p":"lan_lord10","d":"133"},
+        {"id":"loreon","name":"Лореон Ланнистер","en":"Loreon Lannister","hs":"lan","k":"T","p":"jason_l","par":["jason_l","Джоанна Уэстерлинг"]}
+      ]
+    },
+    {
+      "title": "Род Тайвина",
+      "people": [
+        {"id":"tya","name":"Тия Ланнистер","en":"Tya Lannister","fem":1,"hs":"lan","k":"T","sp":[["gowen"]]},
+        {"id":"gerold","name":"Джерольд Ланнистер","full":"Джерольд Ланнистер, Золотой","en":"Gerold Lannister","al":["Джерольд Золотой"],"hs":"lan","k":"T","d":"244"},
+        {"id":"tytos_l","name":"Титос Ланнистер","en":"Tytos Lannister","hs":"lan","k":"T","p":"gerold","d":"267","sp":[["Джейн Марбранд"]]},
+        {"id":"jason_g","name":"Джейсон Ланнистер","full":"Джейсон Ланнистер, сын Джерольда","en":"Jason Lannister","hs":"lan","k":"T","p":"gerold","d":"260","wiki":"Jason Lannister (son of Gerold)"},
+        {"id":"joanna","name":"Джоанна Ланнистер","en":"Joanna Lannister","fem":1,"hs":"lan","k":"T","p":"jason_g","d":"273","sp":[["tywin"]]},
+        {"id":"tywin","name":"Тайвин Ланнистер","en":"Tywin Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"b":"242","d":"300","sp":[["joanna"]]},
+        {"id":"kevan","name":"Киван Ланнистер","en":"Kevan Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"d":"300","sp":[["Дорна Свифт"]]},
+        {"id":"genna","name":"Дженна Ланнистер","en":"Genna Lannister","fem":1,"hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"],"sp":[["Эммон Фрей"]]},
+        {"id":"tygett","name":"Тигетт Ланнистер","en":"Tygett Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"]},
+        {"id":"gerion","name":"Герион Ланнистер","en":"Gerion Lannister","hs":"lan","k":"T","p":"tytos_l","par":["tytos_l","Джейн Марбранд"]},
+        {"id":"cersei","name":"Серсея Ланнистер","en":"Cersei Lannister","fem":1,"hs":"lan","k":"T","p":"tywin","par":["tywin","joanna"],"b":"266","sp":[["robert","284 г."],["jaime","тайная связь","l"]]},
+        {"id":"jaime","name":"Джейме Ланнистер","en":"Jaime Lannister","al":["Цареубийца"],"hs":"lan","k":"T","p":"tywin","par":["tywin","joanna"],"b":"266"},
+        {"id":"tyrion","name":"Тирион Ланнистер","en":"Tyrion Lannister","al":["Бес"],"hs":"lan","k":"T","p":"tywin","par":["tywin","joanna"],"b":"273","sp":[["Тиша","брак расторгнут Тайвином"],["sansa","299 г."]]},
+        {"id":"lancel","name":"Лансель Ланнистер","en":"Lancel Lannister","hs":"lan","k":"T","p":"kevan","par":["kevan","Дорна Свифт"]}
+      ]
+    }
+  ]
+}

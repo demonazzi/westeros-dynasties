@@ -1,0 +1,59 @@
+{
+  "title": "Тиреллы",
+  "about": "Дом Тиреллов (Хайгарден). Собрано по A Wiki of Ice and Fire, русские имена — 7kingdoms.ru.",
+  "groups": [
+    {
+      "title": "",
+      "people": [
+        {"id":"tyr_lord17","name":"Лорд Тирелл","full":"Лорд Тирелл, отец Лютора и его братьев","hs":"tyr","k":"T"},
+        {"id":"harlen","name":"Харлен Тирелл","en":"Harlan Tyrell","hs":"tyr","k":"T","d":"5"},
+        {"id":"theo","name":"Тео Тирелл","en":"Theo Tyrell","hs":"tyr","k":"T","p":"harlen","par":["harlen"]},
+        {"id":"bertrand","name":"Бертранд Тирелл","en":"Bertrand Tyrell","hs":"tyr","k":"T","par":["родство с Тео не названо"],"d":"59"},
+        {"id":"martyn_t","name":"Мартин Тирелл","en":"Martyn Tyrell","hs":"tyr","k":"T","p":"bertrand","par":["bertrand"],"b":"не позднее 43","sp":[["Флоренс Фоссовей"]]},
+        {"id":"matthos","name":"Маттос Тирелл","en":"Matthos Tyrell","hs":"tyr","k":"T","par":["родство с Бертрандом не названо"],"d":"101–129"},
+        {"id":"lyonel_t","name":"Лионель Тирелл","full":"Лионель Тирелл, лорд Хайгардена","en":"Lyonel Tyrell","hs":"tyr","k":"T","par":["отец не назван; мать правила Простором как регент"],"b":"≈129","d":"159/160","wiki":"Lyonel Tyrell (lord)"},
+        {"id":"leo_t","name":"Лео Тирелл","full":"Лео Тирелл, Лео Длинный Шип","en":"Leo Tyrell (Longthorn)","al":["Длинный Шип"],"hs":"tyr","k":"T","par":["родство с Лионелем не названо"]},
+        {"id":"luthor","name":"Лютор Тирелл","en":"Luthor Tyrell","hs":"tyr","k":"T","p":"tyr_lord17","par":["tyr_lord17"],"b":"не позднее 237","d":"255–281","sp":[["shaera","обручение 237 г., расторгнуто в 240 г.","b"],["olenna"]]},
+        {"id":"olenna","name":"Оленна Редвин","en":"Olenna Redwyne","al":["Королева Шипов","Оленна Тирелл"],"fem":1,"hs":"oth","h":"Редвинов","k":"T","par":["Рансфорд Редвин"],"b":"228","sp":[["daeron_e","обручение 237 г., расторгнуто в 246 г.","b"],["luthor"]],"wiki":"Olenna Tyrell"},
+        {"id":"mace","name":"Мейс Тирелл","en":"Mace Tyrell","hs":"tyr","k":"T","p":"luthor","par":["luthor","olenna"],"b":"256–263","sp":[["alerie"]]},
+        {"id":"mina","name":"Мина Тирелл","en":"Mina Tyrell","fem":1,"hs":"tyr","k":"T","p":"luthor","par":["luthor","olenna"],"b":"246–270","sp":[["Пакстер Редвин","двоюродный брат"]]},
+        {"id":"janna","name":"Янна Тирелл","en":"Janna Tyrell","fem":1,"hs":"tyr","k":"T","p":"luthor","par":["luthor","olenna"],"b":"247–282","sp":[["Джон Фоссовей"]],"wiki":"Janna Fossoway"},
+        {"id":"garth_t","name":"Гарт Тирелл","full":"Гарт Тирелл, Гарт Тучный","en":"Garth Tyrell","al":["Тучный"],"hs":"tyr","k":"T","p":"tyr_lord17","par":["tyr_lord17"]},
+        {"id":"garse","name":"Гарс Флауэрс","en":"Garse Flowers","hs":"tyr","k":"R","p":"garth_t","par":["garth_t"]},
+        {"id":"garrett","name":"Гарретт Флауэрс","en":"Garrett Flowers","hs":"tyr","k":"R","p":"garth_t","par":["garth_t"]},
+        {"id":"moryn","name":"Морин Тирелл","en":"Moryn Tyrell","hs":"tyr","k":"T","p":"tyr_lord17","par":["tyr_lord17"]},
+        {"id":"gormon","name":"Гормон Тирелл","en":"Gormon Tyrell","hs":"tyr","k":"T","p":"tyr_lord17","par":["tyr_lord17"]},
+        {"id":"luthor_m","name":"Лютор Тирелл","full":"Лютор Тирелл, сын Морина","en":"Luthor Tyrell (son of Moryn)","hs":"tyr","k":"T","p":"moryn","par":["moryn"],"d":"не позднее 299","sp":[["Элин Норридж"]]},
+        {"id":"leo_m","name":"Лео Тирелл","full":"Лео Тирелл, сын Морина","en":"Leo Tyrell (son of Moryn)","al":["Ленивец"],"hs":"tyr","k":"T","p":"moryn","par":["moryn"]},
+        {"id":"theodore","name":"Теодор Тирелл","en":"Theodore Tyrell","hs":"tyr","k":"T","p":"luthor_m","par":["luthor_m","Элин Норридж"],"sp":[["Лия Серри"]]},
+        {"id":"medwick","name":"Медвик Тирелл","en":"Medwick Tyrell","hs":"tyr","k":"T","p":"luthor_m","par":["luthor_m","Элин Норридж"]},
+        {"id":"olene","name":"Олин Тирелл","en":"Olene Tyrell","fem":1,"hs":"tyr","k":"T","p":"luthor_m","par":["luthor_m","Элин Норридж"],"sp":[["Лео Блэкбар"]]},
+        {"id":"elinor","name":"Элинор Тирелл","en":"Elinor Tyrell","fem":1,"hs":"tyr","k":"T","p":"theodore","par":["theodore","Лия Серри"],"b":"≈286","sp":[["Алин Амброз","помолвка; свадьба после посвящения жениха в рыцари","b"]]},
+        {"id":"luthor_th","name":"Лютор Тирелл","full":"Лютор Тирелл, сын Теодора","en":"Luthor Tyrell (son of Theodore)","hs":"tyr","k":"T","p":"theodore","par":["theodore","Лия Серри"]},
+        {"id":"quentin","name":"Квентин Тирелл","en":"Quentin Tyrell","hs":"tyr","k":"T","par":["родственник Мейса; общий предок с главной линией не назван"],"d":"282"},
+        {"id":"olymer","name":"Олимер Тирелл","en":"Olymer Tyrell","hs":"tyr","k":"T","p":"quentin","par":["quentin"],"sp":[["Лиза Медоуз"]]},
+        {"id":"raymund","name":"Раймунд Тирелл","en":"Raymund Tyrell","hs":"tyr","k":"T","p":"olymer","par":["olymer","Лиза Медоуз"]},
+        {"id":"rickard_t","name":"Рикард Тирелл","en":"Rickard Tyrell","hs":"tyr","k":"T","p":"olymer","par":["olymer","Лиза Медоуз"]},
+        {"id":"megga","name":"Мегга Тирелл","en":"Megga Tyrell","fem":1,"hs":"tyr","k":"T","p":"olymer","par":["olymer","Лиза Медоуз"],"b":"≈286"},
+        {"id":"normund","name":"Нормунд Тирелл","en":"Normund Tyrell","al":["Мейстер Нормунд"],"hs":"tyr","k":"T","par":["родственник Мейса; через кого именно — не сказано"]},
+        {"id":"victor_t","name":"Виктор Тирелл","en":"Victor Tyrell","hs":"tyr","k":"T","par":["дальний родственник Мейса; общий предок не назван"],"b":"не позднее 262","d":"не позднее 281"},
+        {"id":"victaria","name":"Виктария Тирелл","en":"Victaria Tyrell","fem":1,"hs":"tyr","k":"T","p":"victor_t","par":["victor_t"],"b":"не позднее 279","sp":[["Джон Бульвер","муж умер до 300 года"]]},
+        {"id":"leo_v","name":"Лео Тирелл","full":"Лео Тирелл, сын Виктора","en":"Leo Tyrell (son of Victor)","hs":"tyr","k":"T","p":"victor_t","par":["victor_t"],"sp":[["Алис Бисбери"]]},
+        {"id":"alla","name":"Элла Тирелл","en":"Alla Tyrell","fem":1,"hs":"tyr","k":"T","p":"leo_v","par":["leo_v","Алис Бисбери"],"b":"≈286"},
+        {"id":"leona","name":"Леона Тирелл","en":"Leona Tyrell","fem":1,"hs":"tyr","k":"T","p":"leo_v","par":["leo_v","Алис Бисбери"]},
+        {"id":"lyonel_l","name":"Лионель Тирелл","full":"Лионель Тирелл, сын Лео","en":"Lyonel Tyrell (son of Leo)","hs":"tyr","k":"T","p":"leo_v","par":["leo_v","Алис Бисбери"]},
+        {"id":"lucas","name":"Лукас Тирелл","en":"Lucas Tyrell","hs":"tyr","k":"T","p":"leo_v","par":["leo_v","Алис Бисбери"]},
+        {"id":"lorent","name":"Лорент Тирелл","full":"Лорент Тирелл, сын Лео","en":"Lorent Tyrell (son of Leo)","hs":"tyr","k":"T","p":"leo_v","par":["leo_v","Алис Бисбери"]}
+      ]
+    },
+    {
+      "title": "Дети Мейса и Алерии Хайтауэр (тексты — авторские, раньше стояли в полосе Хайтауэров)",
+      "people": [
+        {"id":"willas","name":"Уиллас Тирелл","en":"Willas Tyrell","hs":"tyr","k":"T","p":"mace","par":["mace","alerie"],"b":"273–276"},
+        {"id":"garlan","name":"Гарлан Тирелл","en":"Garlan Tyrell","al":["Гарлан Галантный"],"hs":"tyr","k":"T","p":"mace","par":["mace","alerie"],"b":"277","sp":[["Леонетта Фоссовей"]]},
+        {"id":"loras","name":"Лорас Тирелл","en":"Loras Tyrell","al":["Рыцарь Цветов"],"hs":"tyr","k":"T","p":"mace","par":["mace","alerie"],"b":"282","sp":[["renly","возлюбленные","l"]]},
+        {"id":"margaery","name":"Маргери Тирелл","en":"Margaery Tyrell","fem":1,"hs":"tyr","k":"T","p":"mace","par":["mace","alerie"],"b":"283","sp":[["renly"],["joffrey_b","300 г."],["tommen","300 г."]]}
+      ]
+    }
+  ]
+}

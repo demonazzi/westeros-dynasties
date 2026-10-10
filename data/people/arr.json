@@ -1,0 +1,45 @@
+{
+  "title": "Аррены",
+  "about": "Дом Арренов (Орлиное Гнездо).",
+  "groups": [
+    {
+      "title": "",
+      "people": [
+        {"id":"sharra","name":"Шарра Аррен","en":"Sharra Arryn","fem":1,"hs":"arr","k":"T"},
+        {"id":"ronnel_k","name":"Роннел Аррен","full":"Роннел Аррен, Король, который летал","en":"Ronnel Arryn, the King Who Flew","hs":"arr","k":"T","p":"sharra","d":"37","sp":[["torrhen_d","брак устроила Рейенис Таргариен"]],"wiki":"Ronnel Arryn (king)"},
+        {"id":"ronnel_kids","name":"Дети Роннела","full":"Дети Роннела Аррена","group":1,"hs":"arr","k":"T","p":"ronnel_k","par":["ronnel_k","torrhen_d"],"d":"37","wiki":"Ronnel Arryn (king)"},
+        {"id":"jonos","name":"Джонос Аррен","full":"Джонос Аррен, Братоубийца","en":"Jonos Arryn, the Kinslayer","hs":"arr","k":"T","p":"sharra","d":"37"},
+        {"id":"hubert","name":"Хьюберт Аррен","en":"Hubert Arryn","hs":"arr","k":"T","sp":[["дама из дома Ройсов"]]},
+        {"id":"darnold","name":"Дарнольд Аррен","en":"Darnold Arryn","hs":"arr","k":"T","p":"hubert","par":["родство с Хьюбертом в книгах не указано"],"unc":1,"d":"54"},
+        {"id":"rymond","name":"Раймонд Аррен","full":"Сир Раймонд Аррен","en":"Rymond Arryn","hs":"arr","k":"T","p":"hubert","par":["родство с Хьюбертом в книгах не указано"],"unc":1,"d":"54"},
+        {"id":"rodrik","name":"Родрик Аррен","en":"Rodrik Arryn","hs":"arr","k":"T","p":"rymond","b":"44","sp":[["первая жена","имя неизвестно"],["daella_j","80 г."]]},
+        {"id":"elys_a","name":"Элис Аррен","en":"Elys Arryn","fem":1,"hs":"arr","k":"T","p":"rodrik","par":["rodrik","первая жена Родрика"]},
+        {"id":"amanda_a","name":"Аманда Аррен","en":"Amanda Arryn","fem":1,"hs":"arr","k":"T","p":"rodrik","par":["rodrik","первая жена Родрика"]},
+        {"id":"jeyne_f","name":"Лорд Аррен","full":"Лорд Аррен, отец Джейны","hs":"arr","k":"T","p":"rodrik","par":["rodrik (вероятно)","первая жена Родрика"],"unc":1,"d":"97","wiki":"Jeyne Arryn"},
+        {"id":"rodrik_s2","name":"Второй сын Родрика","full":"Второй сын Родрика Аррена","hs":"arr","k":"T","p":"rodrik","par":["rodrik (вероятно)","первая жена Родрика"],"unc":1,"wiki":"Arnold Arryn"},
+        {"id":"aemma","name":"Эймма Аррен","en":"Aemma Arryn","fem":1,"hs":"arr","k":"T","p":"rodrik","par":["rodrik","daella_j"],"b":"82","d":"105","sp":[["viserys1","93 г."]]},
+        {"id":"jeyne","name":"Джейна Аррен","full":"Джейна Аррен, Дева Долины","en":"Jeyne Arryn, the Maiden of the Vale","fem":1,"hs":"arr","k":"T","p":"jeyne_f","b":"94","d":"134"},
+        {"id":"jeyne_br","name":"Братья Джейны","full":"Братья Джейны Аррен","group":1,"hs":"arr","k":"T","p":"jeyne_f","d":"97","wiki":"Jeyne Arryn"},
+        {"id":"arnold","name":"Арнольд Аррен","full":"Сир Арнольд Аррен, Безумный наследник","en":"Arnold Arryn, the Mad Heir","hs":"arr","k":"T","p":"rodrik_s2","par":["двоюродный брат Джейны; отец не назван"],"unc":1},
+        {"id":"eldric","name":"Элдрик Аррен","full":"Сир Элдрик Аррен","en":"Eldric Arryn","hs":"arr","k":"T","p":"arnold"},
+        {"id":"joffrey_a","name":"Джоффри Аррен","en":"Joffrey Arryn","hs":"arr","k":"T","par":["дальний кузен Джейны; линия не прослежена"]},
+        {"id":"isembard","name":"Изембард Аррен","en":"Isembard Arryn","hs":"arr","k":"T","par":["глава Арренов из Чаячьего города"]},
+        {"id":"donnel","name":"Доннел Аррен","en":"Donnel Arryn","hs":"arr","k":"T","par":["родство с предыдущими лордами в книгах не прослежено"]},
+        {"id":"alys_r","name":"Алис Аррен","full":"Алис Аррен, жена Рейегеля","en":"Alys Arryn","fem":1,"hs":"arr","k":"T","par":["родители в книгах не названы"],"sp":[["rhaegel"]],"wiki":"Alys Arryn (wife of Rhaegel)"},
+        {"id":"jasper","name":"Джаспер Аррен","en":"Jasper Arryn","hs":"arr","k":"T","par":["родители в книгах не названы"]},
+        {"id":"jon_a","name":"Джон Аррен","en":"Jon Arryn","hs":"arr","k":"T","p":"jasper","d":"298","sp":[["Джейна Ройс","умерла в родах"],["Ровена Аррен","кузина"],["lysa"]],"wd":["robert","eddard"]},
+        {"id":"ronnel_j","name":"Роннел Аррен","full":"Роннел Аррен, брат Джона","hs":"arr","k":"T","p":"jasper","sp":[["дама из дома Белморов"]],"wiki":"Ronnel Arryn (son of Jasper)"},
+        {"id":"alys_j","name":"Алис Аррен","full":"Алис Аррен, сестра Джона","fem":1,"hs":"arr","k":"T","p":"jasper","sp":[["сир Элис Уэйнвуд"]],"wiki":"Alys Arryn (sister of Jon)"},
+        {"id":"robert_a","name":"Роберт Аррен","en":"Robert Arryn, Sweetrobin","hs":"arr","k":"T","p":"jon_a","par":["jon_a","lysa"],"b":"292","wiki":"Robert Arryn"},
+        {"id":"elbert","name":"Элберт Аррен","full":"Сир Элберт Аррен","en":"Elbert Arryn","hs":"arr","k":"T","p":"ronnel_j","par":["ronnel_j","дама из дома Белморов"],"d":"282"},
+        {"id":"jasper_w","name":"Джаспер Уэйнвуд","en":"Jasper Waynwood","hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"]},
+        {"id":"waynwood_e","name":"Старшая дочь Алис","full":"Старшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"sp":[["denys"]],"wiki":"Denys Arryn"},
+        {"id":"waynwood_m","name":"Ещё шесть дочерей","full":"Шесть средних дочерей Алис Аррен","fem":1,"group":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"wiki":"Alys Arryn (sister of Jon)"},
+        {"id":"waynwood_y","name":"Младшая дочь Алис","full":"Младшая дочь Алис Аррен","fem":1,"hs":"oth","h":"Уэйнвудов","k":"T","p":"alys_j","par":["сир Элис Уэйнвуд","alys_j"],"sp":[["рыцарь из дома Хардингов"]],"wiki":"Harrold Hardyng"},
+        {"id":"denys","name":"Денис Аррен","full":"Сир Денис Аррен, Любимец Долины","en":"Denys Arryn","hs":"arr","k":"T","par":["дальний родственник Джона; линия не прослежена"],"d":"283","sp":[["waynwood_e"]]},
+        {"id":"denys_son","name":"Сын Дениса","full":"Сын Дениса Аррена","hs":"arr","k":"T","p":"denys","par":["denys","waynwood_e"],"wiki":"Denys Arryn"},
+        {"id":"harrold","name":"Гарольд Хардинг","full":"Гарольд Хардинг, Гарри Наследник","en":"Harrold Hardyng, Harry the Heir","hs":"oth","h":"Хардингов","k":"T","p":"waynwood_y","par":["рыцарь из дома Хардингов","waynwood_y"]}
+      ]
+    }
+  ]
+}

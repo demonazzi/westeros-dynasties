@@ -348,7 +348,7 @@
   App.hooks.decorate.push(() => state.year != null ? id => !aliveAt(id, state.year) : null);
   App.yearText = y => {
     ensureLife();
-    const alive = PEOPLE.filter(p => aliveAt(p.id, y) && !GROUPS.has(p.id)).length;
+    const alive = PEOPLE.filter(p => aliveAt(p.id, y) && !p.group).length;
     const king = KINGS.find(p => { const L = LIFE.get(p.id); return L.ra <= y && y < (L.rb != null ? L.rb : 301); });
     const era = eraAt(y);
     return { year: y < 0 ? -y + ' г. до З.' : y + ' г.', alive, king: king ? king.name : '', era: era ? era.name : '' };

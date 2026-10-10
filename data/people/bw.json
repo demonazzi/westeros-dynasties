@@ -1,0 +1,36 @@
+{
+  "title": "Блэквуды",
+  "about": "Дом Блэквудов (Древорон). Родство между ветвями в книгах почти не прослежено, поэтому ветви стоят отдельно.",
+  "groups": [
+    {
+      "title": "Танец драконов",
+      "people": [
+        {"id":"bw_lord10","name":"Лорд Блэквуд","full":"Лорд Блэквуд, отец Сэмвела и Алисанны","hs":"bw","k":"T"},
+        {"id":"samwell_bw","name":"Сэмвел Блэквуд","en":"Samwell Blackwood","hs":"bw","k":"T","p":"bw_lord10","d":"129"},
+        {"id":"alysanne_bw","name":"Алисанна Блэквуд","en":"Alysanne Blackwood","al":["Чёрная Эли"],"fem":1,"hs":"bw","k":"T","p":"bw_lord10","sp":[["cregan","132 г."]]},
+        {"id":"benjicot","name":"Бенджикот Блэквуд","en":"Benjicot Blackwood","al":["Кровавый Бен"],"hs":"bw","k":"T","p":"samwell_bw"}
+      ]
+    },
+    {
+      "title": "Любовница Эйгона IV",
+      "people": [
+        {"id":"melissa_bw","name":"Мелисса Блэквуд","en":"Melissa Blackwood","al":["Мисси"],"fem":1,"hs":"bw","k":"T","sp":[["aegon4","любовница","l"]]}
+      ]
+    },
+    {
+      "title": "Жёны Старков и королева",
+      "people": [
+        {"id":"melantha","name":"Меланта Блэквуд","en":"Melantha Blackwood","fem":1,"hs":"bw","k":"T","sp":[["willam_s"]]},
+        {"id":"betha","name":"Бета Блэквуд","full":"Бета Блэквуд, Чёрная Бета","en":"Betha Blackwood","al":["Чёрная Бета"],"fem":1,"hs":"bw","k":"T","sp":[["aegon5","220 г."]]}
+      ]
+    },
+    {
+      "title": "Время книг",
+      "people": [
+        {"id":"tytos_bw","name":"Титос Блэквуд","en":"Tytos Blackwood","hs":"bw","k":"T"},
+        {"id":"lucas_bw","name":"Лукас Блэквуд","en":"Lucas Blackwood","hs":"bw","k":"T","p":"tytos_bw","d":"299"},
+        {"id":"hoster_bw","name":"Хостер Блэквуд","en":"Hoster Blackwood","hs":"bw","k":"T","p":"tytos_bw"}
+      ]
+    }
+  ]
+}

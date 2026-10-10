@@ -1,4 +1,4 @@
-/* Сборка данных вкладки «Вассалитет»: research/vassal/*.json (сбор по A Wiki of Ice and Fire и 7kingdoms.ru) → src/data-vassals.js.
+/* Сборка данных вкладки «Вассалитет»: research/vassal/*.json (сбор по A Wiki of Ice and Fire и 7kingdoms.ru) → data/vassals.json (поля описаны в data/README.md).
    Сводит дубли, разрешает ссылки на сюзеренов, переводит годы в точные интервалы (дробная часть — момент внутри года). */
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..'), RES = path.join(ROOT, 'research', 'vassal');
@@ -148,14 +148,8 @@ const pre = [['riverlands', 'hoare'], ['ironislands', 'hoare'], ['reach', 'garde
   return { region, king, until: first ? r2(first.s) : -2 };
 });
 
-const js = '/* Вассалитет: кто кому служил с 10 г. до З. по 300 г. Собрано по A Wiki of Ice and Fire, русские названия — 7kingdoms.ru.\n' +
-  '   Файл собирается: node tools/vassals-build.js (из research/vassal/*.json). Годы — дробные: 299.65 — Красная свадьба внутри 299 г.\n' +
-  '   al — периоды фактической присяги [с, по, сюзерен, почему]; liege — сюзерен по умолчанию; ex — годы существования дома. */\n' +
-  'const V_REGIONS = ' + JSON.stringify(regions) + ';\n' +
-  'const V_PRE = ' + JSON.stringify(pre) + ';\n' +
-  'const V_CLAIMANTS = ' + JSON.stringify(claimants) + ';\n' +
-  'const V_MILESTONES = ' + JSON.stringify(milestones) + ';\n' +
-  'const V_HOUSES = [\n' + out.map(h => JSON.stringify(h)).join(',\n') + '\n];\n';
-fs.writeFileSync(path.join(ROOT, 'src', 'data-vassals.js'), js);
-console.log('домов', out.length, 'великих', out.filter(h => h.great).length, 'периодов присяги', out.reduce((a, h) => a + h.al.length, 0), 'размер', js.length);
+const D = require('./data');
+D.writeJson('vassals.json', { regions, pre, claimants, milestones, houses: out });
+const size = fs.statSync(path.join(D.DATA, 'vassals.json')).size;
+console.log('домов', out.length, 'великих', out.filter(h => h.great).length, 'периодов присяги', out.reduce((a, h) => a + h.al.length, 0), 'размер', size);
 if (problems.length) console.log('проблемы:\n  ' + [...new Set(problems)].join('\n  '));
