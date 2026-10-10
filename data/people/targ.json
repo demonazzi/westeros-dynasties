@@ -97,7 +97,7 @@
       "title": "Дети Деймона и Лейны Веларион",
       "people": [
         {"id":"baela","name":"Бейла","en":"Baela","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","dr":"Лунная Плясунья","sp":[["jacaerys","помолвка","b"],["alyn"]]},
-        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","sp":[["lucerys","помолвка","b"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
+        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","sp":[["lucerys","помолвка","b"],["Корвин Корбрей","первый муж, сир; погиб в 135 году"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
         {"id":"son_laena","name":"Сын Лейны","full":"Сын Деймона и Лейны","k":"T","p":"daemon","par":["daemon","laena"],"b":"120","d":"120","wiki":"Laena Velaryon"}
       ]
     },
