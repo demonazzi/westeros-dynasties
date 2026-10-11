@@ -30,7 +30,7 @@
         {"id":"victarion_dau","name":"Дочь","full":"Мертворождённая дочь Виктариона Грейджоя","fem":1,"hs":"gry","k":"T","p":"victarion","par":["victarion","первая жена Виктариона"],"d":"при рождении","wiki":"Victarion Greyjoy"},
         {"id":"robin_g","name":"Робин Грейджой","en":"Robin Greyjoy","hs":"gry","k":"T","p":"quellon","par":["quellon","lady_piper"],"b":"269–283","d":"269–289"},
         {"id":"quellon_dau","name":"Дочь","full":"Мертворождённая дочь Квеллона Грейджоя","fem":1,"hs":"gry","k":"T","p":"quellon","par":["quellon","lady_piper"],"d":"при рождении","wiki":"Quellon Greyjoy"},
-        {"id":"alannys","name":"Аланнис Харлоу","en":"Alannys Harlaw","al":["Ланни"],"fem":1,"hs":"oth","h":"Харлоу","k":"T","par":["Лорд Харлоу (отец Аланнис, имя не названо)"],"b":"227–262","sp":[["balon","год брака не указан"]]},
+        {"id":"alannys","name":"Аланнис Харлоу","en":"Alannys Harlaw","al":["Ланни"],"fem":1,"hs":"oth","h":"Харлоу","k":"T","par":["har_lord"],"b":"227–262","sp":[["balon","год брака не указан"]]},
         {"id":"rodrik_g","name":"Родрик Грейджой","full":"Родрик Грейджой, сын Бейлона","en":"Rodrik Greyjoy","hs":"gry","k":"T","p":"balon","par":["balon","alannys"],"b":"267–274","d":"289"},
         {"id":"maron_g","name":"Марон Грейджой","en":"Maron Greyjoy","hs":"gry","k":"T","p":"balon","par":["balon","alannys"],"b":"268–275","d":"289"},
         {"id":"asha","name":"Аша Грейджой","en":"Asha Greyjoy","al":["Дочь кракена","Эсгред"],"fem":1,"hs":"gry","k":"T","p":"balon","par":["balon","alannys"],"b":"275/276","sp":[["Эрик Айронмейкер","брак навязан Эуроном, год не указан"]]},

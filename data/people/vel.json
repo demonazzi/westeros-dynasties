@@ -24,7 +24,7 @@
         {"id":"vaemond","name":"Вейемонд Веларион","full":"Сир Вейемонд Веларион","en":"Vaemond Velaryon","hs":"vel","k":"T","p":"corlys_br1","d":"126"},
         {"id":"daemion_v","name":"Деймион Веларион","en":"Daemion Velaryon","hs":"vel","k":"T","p":"vaemond"},
         {"id":"daeron_v","name":"Дейерон Веларион","en":"Daeron Velaryon","hs":"vel","k":"T","p":"vaemond","sp":[["Хейзел Харт"]]},
-        {"id":"daenaera","name":"Дейенейра Веларион","en":"Daenaera Velaryon","fem":1,"hs":"vel","k":"T","p":"daeron_v","par":["daeron_v","Хейзел Харт"],"b":"127","sp":[["aegon3","133 г."]]},
+        {"id":"daenaera","name":"Дейнейра Веларион","en":"Daenaera Velaryon","fem":1,"hs":"vel","k":"T","p":"daeron_v","par":["daeron_v","Хейзел Харт"],"b":"127","sp":[["aegon3","133 г."]]},
         {"id":"malentine","name":"Малентин Веларион","full":"Сир Малентин Веларион","en":"Malentine Velaryon","hs":"vel","k":"T","p":"corlys_br2","unc":1},
         {"id":"rhogar_v","name":"Рогар Веларион","full":"Сир Рогар Веларион","en":"Rhogar Velaryon","hs":"vel","k":"T","p":"corlys_br2","unc":1},
         {"id":"silent3","name":"Ещё трое братьев","full":"Трое безымянных из «молчаливой пятёрки»","group":1,"hs":"vel","k":"T","p":"corlys_br2","unc":1,"wiki":"Silent five"},

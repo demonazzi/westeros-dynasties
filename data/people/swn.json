@@ -1,0 +1,29 @@
+{
+  "title": "Сванны",
+  "about": "Дом Сваннов (Каменный Шлем), знаменосцы Баратеонов.",
+  "groups": [
+    {
+      "title": "Сванны при Таргариенах",
+      "people": [
+        {"id":"johanna_s","name":"Джоханна Сванн","full":"Джоханна Сванн, Чёрный Лебедь","en":"Johanna Swann","al":["Чёрный Лебедь"],"fem":1,"hs":"swn","k":"T","b":"81–94"},
+        {"id":"swann_lord129","name":"Лорд Сванн","full":"Лорд Сванн в Танец драконов","hs":"swn","k":"T","wiki":"Byron Swann"},
+        {"id":"swann_son129","name":"Сын","full":"Старший сын лорда Сванна","hs":"swn","k":"T","p":"swann_lord129","par":["swann_lord129"],"wiki":"House Swann"},
+        {"id":"byron_s","name":"Байрон Сванн","full":"Сир Байрон Сванн","en":"Byron Swann","hs":"swn","k":"T","p":"swann_lord129","par":["swann_lord129"],"d":"130"},
+        {"id":"gawen_s","name":"Гавен Сванн","en":"Gawen Swann","hs":"swn","k":"T","b":"не позднее 152"}
+      ]
+    },
+    {
+      "title": "Каменный Шлем в конце третьего века",
+      "people": [
+        {"id":"manfred_s","name":"Манфред Сванн","en":"Manfred Swann","hs":"swn","k":"T"},
+        {"id":"cyrenna","name":"Сиренна Сванн","en":"Cyrenna Swann","fem":1,"hs":"swn","k":"T","d":"248–258","sp":[["walder_fr","вторая жена"]]},
+        {"id":"corenna","name":"Коренна Сванн","en":"Corenna Swann","fem":1,"hs":"swn","k":"T","d":"245–249","sp":[["stevron_fr","первая жена"]]},
+        {"id":"gulian","name":"Джулиан Сванн","en":"Gulian Swann","hs":"swn","k":"T","b":"не позднее 259","sp":[["жена, имя не названа"]]},
+        {"id":"donnel_s","name":"Доннел Сванн","full":"Сир Доннел Сванн","en":"Donnel Swann","hs":"swn","k":"T","p":"gulian","par":["gulian","жена, имя не названа"]},
+        {"id":"balon_s","name":"Бейлон Сванн","full":"Сир Бейлон Сванн","en":"Balon Swann","hs":"swn","k":"T","p":"gulian","par":["gulian","жена, имя не названа"]},
+        {"id":"ravella","name":"Равелла Сванн","en":"Ravella Swann","al":["Равелла Смоллвуд"],"fem":1,"hs":"swn","k":"T","sp":[["Теомар Смоллвуд"]]},
+        {"id":"jeyne_s","name":"Джейн Сванн","en":"Jeyne Swann","fem":1,"hs":"swn","k":"T"}
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@
       "people": [
         {"id":"far_lord130","name":"Лорд Фарман","full":"Лорд Фарман, отец Лизы","hs":"far","k":"T","d":"не позднее 133","wiki":"Lysa Farman"},
         {"id":"far_sons130","name":"Сыновья","full":"Сыновья лорда Фармана, выкупленные с отцом","group":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"wiki":"House Farman"},
-        {"id":"lysa_f","name":"Лиза Фарман","en":"Lysa Farman","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["dalton","солёная жена"],["Гунтор Гудбразер","солёная жена"]]},
+        {"id":"lysa_f","name":"Лиза Фарман","en":"Lysa Farman","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["dalton","солёная жена"],["gunthor_g","солёная жена"]]},
         {"id":"far_daus3","name":"Три дочери","full":"Три другие дочери лорда Фармана, солёные жёны Дальтона","fem":1,"group":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["dalton","солёные жёны"]],"wiki":"House Farman"},
         {"id":"far_dau5","name":"Дочь","full":"Пятая дочь лорда Фармана, солёная жена Верона","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["veron","солёная жена"]],"wiki":"House Farman"}
       ]

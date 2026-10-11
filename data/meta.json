@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak","wes","crk","far","plm"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak","wes","crk","far","plm","day","yrn","hlw","gdb","est","swn","pen","stw"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -23,6 +23,14 @@
     {"house":"crk","liege":"lan","roots":[["clarent",11],["roland_kg",15],["sumner",17],["amarei",17],["melesa",19],["shiera_c",19]]},
     {"house":"far","liege":"lan","roots":[["far_lord43",6],["far_lord130",10],["alysanne_f",16],["far_par19",18]]},
     {"house":"plm","liege":"lan","roots":[["ossifer",14],["petyr_pl",15],["maynard",15],["philip_pl",18],["ben_pl",19]]},
+    {"house":"day","liege":"mar","roots":[["joffrey_d",6],["clarisse",7],["dyanna",14],["ulrick",15],["day_lord17",17],["gerold_d",19]]},
+    {"house":"yrn","liege":"mar","roots":[["gyles_y",11],["edgar_y",16]]},
+    {"house":"hlw","liege":"gry","roots":[["theomore_h",14],["sigfryd",17],["har_lord",17],["harras",18],["hotho",18],["boremund_h",18]]},
+    {"house":"gdb","liege":"gry","roots":[["gunthor_g",11],["arthur_g",11],["gorold",18]]},
+    {"house":"est","liege":"bar","roots":[["gunthor_e",15],["est_lord17",17],["eldon",17]]},
+    {"house":"swn","liege":"bar","roots":[["johanna_s",9],["swann_lord129",10],["gawen_s",14],["manfred_s",17],["cyrenna",17],["corenna",18],["gulian",18],["ravella",19],["jeyne_s",19]]},
+    {"house":"pen","liege":"bar","roots":[["lucinda",11],["ronnel",14],["pen_lady196",14],["aelinor",15],["jon_pn",15],["pen_lord18",17]]},
+    {"house":"stw","liege":"targ","roots":[["alyn_s",6],["stw_lord129",10],["falena",12],["maia",13],["samwell_s",15],["manly",17],["tanda",17]]},
     {"house":"roy","liege":"arr","roots":[["allard",8],["yorbert",10],["willam_r",11],["gunthor_r",11],["alyssa_r",12],["lorra",15],["perra",17],["benedict",17],["yohn",18],["nestor",18],["jeyne_r",18],["kyle_r",18],["ryella",19]]},
     {"house":"bae","liege":"arr","roots":[["bae_ss",16]]},
     {"house":"cor","liege":"arr","roots":[["gawen",6],["qarl",8],["cor_lord9",9],["gwayne_c",14],["cor_lord17",17]]},
@@ -83,7 +91,15 @@
     "wes": {"name":"Дом Вестерлингов","band":"Вестерлинги","motto":"Скала · «Честь, а не почести»","sigil":{"field":"#C9AE7C","charge":"#F4F1EA"}},
     "crk": {"name":"Дом Крейкхоллов","band":"Крейкхоллы","motto":"Крейкхолл · «Никто столь не свиреп»","sigil":{"field":"#6E4B2E","charge":"#17161A"}},
     "far": {"name":"Дом Фарманов","band":"Фарманы","motto":"Светлый замок · «Оседлавшие ветер»","sigil":{"field":"#2D4C8C","charge":"#E6E7EA"}},
-    "plm": {"name":"Дом Пламмов","band":"Пламмы","motto":"«Попробуй меня»","sigil":{"field":"#D9A63A","charge":"#5B2A6E"}}
+    "plm": {"name":"Дом Пламмов","band":"Пламмы","motto":"«Попробуй меня»","sigil":{"field":"#D9A63A","charge":"#5B2A6E"}},
+    "day": {"name":"Дом Дейнов","band":"Дейны","motto":"Звездопад","sigil":{"field":"#8E79AE","charge":"#F4F1EA"}},
+    "yrn": {"name":"Дом Айронвудов","band":"Айронвуды","motto":"Айронвуд · «Мы храним путь»","sigil":{"field":"#D8C39A","charge":"#17161A"}},
+    "hlw": {"name":"Дом Харлоу","band":"Харлоу","motto":"Десять Башен","sigil":{"field":"#17161A","charge":"#D9DBDE"}},
+    "gdb": {"name":"Дом Гудбразеров","band":"Гудбразеры","motto":"Хаммерхорн","sigil":{"field":"#B3261E","charge":"#17161A"}},
+    "est": {"name":"Дом Эстермонтов","band":"Эстермонты","motto":"Нефрит","sigil":{"field":"#A9C9A0","charge":"#2E5A33"}},
+    "swn": {"name":"Дом Сваннов","band":"Сванны","motto":"Каменный Шлем","sigil":{"field":"#F0EEE8","charge":"#17161A"}},
+    "pen": {"name":"Дом Пенрозов","band":"Пенрозы","motto":"Пергаменты · «Запишем наши деяния»","sigil":{"field":"#7A4A2A","charge":"#F0EEE8"}},
+    "stw": {"name":"Дом Стоквортов","band":"Стокворты","motto":"Стокворт · «Гордимся преданностью»","sigil":{"field":"#2E6B33","charge":"#F4F1EA"}}
   },
   "gaps": [
     {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},
@@ -113,6 +129,8 @@
     {"house":"gry","from":"alton","to":"torwyn","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
     {"house":"gry","from":"torwyn","to":"loron","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
     {"house":"gry","from":"loron","to":"dagon","years":"","note":"порядок лордов дан списком без дат; родство не названо"},
-    {"house":"fry","from":"forrest_fr","to":"fr_lord14","years":"≈ 60 лет","note":"лорды Переправы между Форрестом и дедом Уолдера в книгах не названы"}
+    {"house":"fry","from":"forrest_fr","to":"fr_lord14","years":"≈ 60 лет","note":"лорды Переправы между Форрестом и дедом Уолдера в книгах не названы"},
+    {"house":"hlw","from":"theomore_h","to":"sigfryd","years":"","note":"Зигфрид — внук Теомора; его отец в книгах не назван"},
+    {"house":"hlw","from":"theomore_h","to":"har_lord","years":"","note":"отец Родрика — правнук Теомора; промежуточные лорды в книгах не названы"}
   ]
 }

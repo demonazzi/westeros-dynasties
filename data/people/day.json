@@ -1,0 +1,27 @@
+{
+  "title": "Дейны",
+  "about": "Дом Дейнов (Звездопад), знаменосцы Мартеллов; младшая ветвь — Дейны из Горного Приюта.",
+  "groups": [
+    {
+      "title": "Дейны при Таргариенах",
+      "people": [
+        {"id":"joffrey_d","name":"Джоффри Дейн","full":"Сир Джоффри Дейн","en":"Joffrey Dayne","hs":"day","k":"T"},
+        {"id":"clarisse","name":"Кларисса Дейн","en":"Clarisse Dayne","fem":1,"hs":"day","k":"T"},
+        {"id":"dyanna","name":"Дианна Дейн","en":"Dyanna Dayne","fem":1,"hs":"day","k":"T","b":"≈149","d":"201–209","sp":[["maekar1"]]},
+        {"id":"ulrick","name":"Ульрик Дейн","full":"Сир Ульрик Дейн, Меч Зари","en":"Ulrick Dayne","al":["Меч Зари"],"hs":"day","k":"T"}
+      ]
+    },
+    {
+      "title": "Звездопад в конце третьего века",
+      "people": [
+        {"id":"day_lord17","name":"Лорд Дейн","full":"Лорд Дейн, отец Эртура, Эшары и Аллирии","hs":"day","k":"T","wiki":"Ashara Dayne"},
+        {"id":"day_lord18","name":"Лорд Дейн","full":"Лорд Дейн, отец Эдрика","hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"wiki":"Edric Dayne"},
+        {"id":"arthur_d","name":"Эртур Дейн","full":"Сир Эртур Дейн, Меч Зари","en":"Arthur Dayne","al":["Меч Зари"],"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"b":"не позднее 260","d":"283"},
+        {"id":"ashara","name":"Эшара Дейн","en":"Ashara Dayne","fem":1,"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"b":"260","d":"283"},
+        {"id":"allyria","name":"Аллирия Дейн","en":"Allyria Dayne","fem":1,"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"sp":[["Берик Дондаррион","помолвка","b"]]},
+        {"id":"edric_d","name":"Эдрик Дейн","en":"Edric Dayne","al":["Нед"],"hs":"day","k":"T","p":"day_lord18","par":["day_lord18"],"b":"287"},
+        {"id":"gerold_d","name":"Герольд Дейн","full":"Сир Герольд Дейн, Тёмная Звезда","en":"Gerold Dayne","al":["Тёмная Звезда"],"hs":"day","k":"T","par":["Дейны из Горного Приюта; кузен Эртура"],"b":"270–274"}
+      ]
+    }
+  ]
+}

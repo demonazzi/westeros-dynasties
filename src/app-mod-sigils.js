@@ -224,6 +224,63 @@
         '<path d="M-4 -1.5 C-4 -3.5 -3 -4.5 -2 -4.8" stroke="#fff" stroke-width="1.2" fill="none" opacity=".4" stroke-linecap="round"/></g>';
       return plum(22.5, 32) + plum(41.5, 32) + plum(32, 51);
     },
+    // белые меч и падающая звезда накрест на лиловом (Дейны)
+    day: (f, c) => {
+      let star = '';
+      for (let i = 0; i < 10; i++) {
+        const a = -Math.PI / 2 + i * Math.PI / 5, r = i % 2 ? 3.2 : 7.6;
+        star += (i ? 'L' : 'M') + (41 + Math.cos(a) * r).toFixed(1) + ' ' + (50 + Math.sin(a) * r).toFixed(1) + ' ';
+      }
+      return '<path d="M18 22 L37 46" stroke="' + c + '" stroke-width="3.2" stroke-linecap="round" opacity=".55"/>' +
+        '<path d="M14 26 L36 49 M22 18 L39 44" stroke="' + c + '" stroke-width="1.2" stroke-linecap="round" opacity=".4"/>' +
+        '<path d="' + star + 'Z" fill="' + c + '"/>' +
+        '<path d="M45.5 22.5 L20 56 L18.5 58.5 L21 57 L47.5 24.5 Z" fill="' + c + '"/>' +
+        '<path d="M42 19 L51 27" stroke="' + c + '" stroke-width="2.6" stroke-linecap="round"/>' +
+        '<path d="M47.5 22.5 L52 17.5" stroke="' + c + '" stroke-width="2.2" stroke-linecap="round"/><circle cx="52.6" cy="16.8" r="1.8" fill="' + c + '"/>';
+    },
+    // чёрная опускная решётка на песочном (Айронвуды)
+    yrn: (f, c) => {
+      let out = '<path d="M17 24 H47 M17 33 H47 M17 42 H47 M17 51 H47" stroke="' + c + '" stroke-width="2.4"/>';
+      [19, 25.5, 32, 38.5, 45].forEach(x => { out += '<path d="M' + x + ' 21 V58 L' + (x - 1.6) + ' 58 L' + x + ' 62 L' + (x + 1.6) + ' 58 L' + x + ' 58" stroke="' + c + '" stroke-width="2.4" fill="' + c + '"/>'; });
+      return out + '<path d="M19 21 L14 14 M45 21 L50 14" stroke="' + c + '" stroke-width="1.2" stroke-dasharray="1.6 1.2"/>';
+    },
+    // серебряная коса на чёрном (Харлоу)
+    hlw: (f, c) =>
+      '<path d="M22 62 C26 48 30 34 38 20" stroke="#8A7A62" stroke-width="2.6" fill="none" stroke-linecap="round"/>' +
+      '<path d="M26.5 50 l-4 -2 M31.5 34 l4 2" stroke="#8A7A62" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M38 20 C30 15 20 16 13 23 C21 21 29 22 36.5 25 Z" fill="' + c + '"/>',
+    // чёрный боевой рог с золотыми кольцами на красном (Гудбразеры)
+    gdb: (f, c) =>
+      '<path d="M13 30 C21 32 32 34 41 41 C46 45 49 51 49.5 56 C46 54 42 54 39 55.5 C39 50 36 46 32 43.5 C26 40 19 38 13 37 Z" fill="' + c + '"/>' +
+      '<path d="M21 31.8 L20.2 39 M30 34.6 L28.2 41.7 M38.5 39.4 L35 45" stroke="#D9A63A" stroke-width="2"/>' +
+      '<path d="M39 55.5 C42 54 46 54 49.5 56" stroke="#D9A63A" stroke-width="1.6" fill="none"/>' +
+      '<path d="M16 30.5 C18 24 26 22 31 26" stroke="#D9A63A" stroke-width="1" fill="none" opacity=".7"/>',
+    // тёмно-зелёная морская черепаха на бледно-зелёном (Эстермонты)
+    est: (f, c) =>
+      '<path d="M22 31 C16 28 13 30 12 33 C16 33 19 34 22 36 Z M42 31 C48 28 51 30 52 33 C48 33 45 34 42 36 Z M23 50 C18 52 16 56 17 58 C20 56 23 55 25.5 53 Z M41 50 C46 52 48 56 47 58 C44 56 41 55 38.5 53 Z" fill="' + c + '"/>' +
+      '<ellipse cx="32" cy="22.5" rx="3.6" ry="4.4" fill="' + c + '"/><path d="M32 56 L30 61 L34 61 Z" fill="' + c + '"/>' +
+      '<ellipse cx="32" cy="42" rx="12" ry="15" fill="' + c + '"/>' +
+      '<path d="M32 30 L27 36 L27 46 L32 52 L37 46 L37 36 Z M27 36 L21.5 33.5 M37 36 L42.5 33.5 M27 46 L21.5 49 M37 46 L42.5 49" stroke="' + f + '" stroke-width="1" fill="none" opacity=".55"/>',
+    // два лебедя друг против друга, щит рассечён на белое и чёрное, цвета перемешаны (Сванны)
+    swn: (f, c) => {
+      const swan = (dir, col) => '<g transform="translate(32 0) scale(' + dir + ' 1) translate(-32 0)">' +
+        '<path d="M14 50 C14 44 20 41 26 43 C28 40 28.5 35 27 31 C26 27 26.5 23 29.5 22 C31.5 21.5 32.5 23 31 24.5 C29.5 26 30 30 31 33 C32 38 31 45 29 50 C24 54 16 54 14 50 Z" fill="' + col + '"/>' +
+        '<path d="M31 22.5 L34.5 23.5 L31.5 25 Z" fill="#D9A63A"/><path d="M20 53 V58 M24 53 V58 M18.5 58 H21.5 M22.5 58 H25.5" stroke="#D9A63A" stroke-width="1.1"/></g>';
+      return '<path d="M32 0 H70 V80 H32 Z" fill="' + c + '"/>' + swan(1, c) + swan(-1, f);
+    },
+    // два белых скрещённых пера на буром (Пенрозы)
+    pen: (f, c) => {
+      const quill = a => '<g transform="rotate(' + a + ' 32 42)"><path d="M32 18 C37 24 37.5 34 34 46 L32 58 L30 46 C26.5 34 27 24 32 18 Z" fill="' + c + '"/>' +
+        '<path d="M32 22 V60" stroke="' + f + '" stroke-width=".8" opacity=".6"/><path d="M32 58 V63" stroke="' + c + '" stroke-width="1.4" stroke-linecap="round"/></g>';
+      return quill(-32) + quill(32);
+    },
+    // белый ягнёнок с золотой чашей на зелёном (Стокворты)
+    stw: (f, c) =>
+      '<path d="M20 43 C18 37 23 33 28 35 C30 31 37 31 39 35 C44 34 47 38 45.5 43 C47 47 44 51 40 50.5 C38 53 32 53 30 50.5 C25 52 20 49 20 43 Z" fill="' + c + '"/>' +
+      '<path d="M23 49 V59 M28 50 V59 M37 50 V59 M41.5 49 V59" stroke="' + c + '" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M45 40 C46 35 49 32 52 33 C54 34 54 37 52 39 C50.5 40.5 48 41 45 40 Z" fill="' + c + '"/><circle cx="51" cy="35.5" r=".8" fill="#17161A"/>' +
+      '<path d="M17 25 H27 C27 30 25 33 22 33 C19 33 17 30 17 25 Z M21 33 H23 V37 H25 V38.5 H19 V37 H21 Z" fill="#D9A63A"/>' +
+      '<path d="M21.5 38 C22 41 23 42 24 42.5" stroke="' + c + '" stroke-width="2" fill="none" stroke-linecap="round"/>',
     // ступенчатая белая башня, увенчанная огнём
     hgt: (f, c) =>
       '<path d="M20 63 H44 V58 H20 Z M22 57 H42 L41 45 H23 Z M21 45 H43 V42 H21 Z M25 41 H39 L38 32 H26 Z M24 32 H40 V29.5 H24 Z M27.5 29 H36.5 L35.5 24.5 H28.5 Z" fill="' + c + '"/>' +

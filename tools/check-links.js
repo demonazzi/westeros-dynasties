@@ -55,63 +55,74 @@ const fs = require('fs'), path = require('path');
   for (const l of lines) {
     for (const [from, to] of [[l.a, l.b], [l.b, l.a]]) {
       await p.evaluate(() => App.select(null));
-      const pt = await p.evaluate(([key, from, to]) => {
+      const res = await p.evaluate(([key, from, to]) => {
         const path = App.layers.x.selectAll('path.xhit').filter(q => q.key === key).node();
         const L = path.getTotalLength(), n = App.nodeById.get(from), m = App.nodeById.get(to);
-        // точка линии вне карточек и вдали от других линий и линий родства, ближайшая к концу from
-        // и на его половине (нажатие ведёт к дальнему от указателя концу)
-        // карточка вместе с кружком раскрытия справа от неё
-        const cards = App.allNodes().map(c => [c.X - 4, c.Y - 27, c.X + 210, c.Y + 27]);
-        const sample = (sel, skip) => { const pts = []; sel.each(function (q) { if (skip && skip(q)) return; const P = this.getTotalLength(); for (let s = 0; s <= P; s += 3) { const o = this.getPointAtLength(s); pts.push([o.x, o.y]); } }); return pts; };
-        const others = sample(App.layers.x.selectAll('path.xhit'), q => q.key === key);
-        // точки линий родства — один раз на раскладку, в сетке по 20 px
+        // точки линий между домами (через 1.5 px), линий родства (через 3 px) и карточки (вместе с кружком
+        // раскрытия справа) — один раз на раскладку, в сетке по 20 px: соседей ищем только в ближайших клетках
         const tkey = App.allNodes().length + '|' + App.bandsBottom();
-        if (!window.__tree || window.__tree.key !== tkey) {
-          const grid = new Map();
-          sample(App.layers.links.selectAll('path.link')).forEach(([x, y]) => { const k = Math.floor(x / 20) + ',' + Math.floor(y / 20); if (!grid.has(k)) grid.set(k, []); grid.get(k).push([x, y]); });
-          window.__tree = { key: tkey, grid };
+        if (!window.__geo || window.__geo.key !== tkey) {
+          const G = 20, put = (grid, x, y, v) => { const k = Math.floor(x / G) + ',' + Math.floor(y / G); if (!grid.has(k)) grid.set(k, []); grid.get(k).push(v); };
+          const xs = new Map(), tree = new Map(), cards = new Map();
+          App.layers.x.selectAll('path.xhit').each(function (q) { const P = this.getTotalLength(); for (let s = 0; s <= P; s += 1.5) { const o = this.getPointAtLength(s); put(xs, o.x, o.y, [o.x, o.y, q.key]); } });
+          App.layers.links.selectAll('path.link').each(function () { const P = this.getTotalLength(); for (let s = 0; s <= P; s += 3) { const o = this.getPointAtLength(s); put(tree, o.x, o.y, [o.x, o.y]); } });
+          App.allNodes().forEach(c => {
+            const r = [c.X - 4, c.Y - 27, c.X + 210, c.Y + 27];
+            for (let gx = Math.floor(r[0] / G); gx <= Math.floor(r[2] / G); gx++) for (let gy = Math.floor(r[1] / G); gy <= Math.floor(r[3] / G); gy++) { const k = gx + ',' + gy; if (!cards.has(k)) cards.set(k, []); cards.get(k).push(r); }
+          });
+          window.__geo = { key: tkey, xs, tree, cards, G };
         }
-        const nearTree = q => { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { const c = window.__tree.grid.get((Math.floor(q.x / 20) + i) + ',' + (Math.floor(q.y / 20) + j)); if (c && c.some(o => Math.abs(o[0] - q.x) < 6 && Math.abs(o[1] - q.y) < 6)) return true; } return false; };
+        const { xs, tree, cards, G } = window.__geo;
+        const around = (grid, q, f) => { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { const c = grid.get((Math.floor(q.x / G) + i) + ',' + (Math.floor(q.y / G) + j)); if (c && c.some(f)) return true; } return false; };
         const knots = App.layers.knots.selectAll('g.knot').data(), marks = App.layers.marks.selectAll('g.xmark').data();
+        // точки линии вне карточек и вдали от других линий и линий родства, ближайшие к концу from
+        // (с half — на его половине: нажатие ведёт к дальнему от указателя концу); до четырёх мест через 30 px
         const pick = (gap, half) => {
-          let best = null;
+          const all = [];
           for (let s = 0; s <= L; s += 4) {
             const q = path.getPointAtLength(s);
-            if (cards.some(r => q.x > r[0] && q.x < r[2] && q.y > r[1] && q.y < r[3])) continue;
+            const cc = cards.get(Math.floor(q.x / G) + ',' + Math.floor(q.y / G));
+            if (cc && cc.some(r => q.x > r[0] && q.x < r[2] && q.y > r[1] && q.y < r[3])) continue;
             if (knots.some(k => Math.hypot(k.x - q.x, k.y - q.y) < 14)) continue;
             if (marks.some(k => Math.hypot(k.mp[0] - q.x, k.mp[1] - q.y) < 14)) continue;
-            if (others.some(o => Math.abs(o[0] - q.x) < gap && Math.abs(o[1] - q.y) < gap)) continue;
-            if (nearTree(q)) continue;
+            if (around(xs, q, o => o[2] !== key && Math.hypot(o[0] - q.x, o[1] - q.y) < gap)) continue;
+            if (around(tree, q, o => Math.abs(o[0] - q.x) < 6 && Math.abs(o[1] - q.y) < 6)) continue;
             const dist = Math.hypot(n.X + 88 - q.x, n.Y - q.y);
             if (half && dist >= Math.hypot(m.X + 88 - q.x, m.Y - q.y)) continue;
-            if (!best || dist < best.dist) best = { x: q.x, y: q.y, dist };
+            all.push({ x: q.x, y: q.y, dist });
           }
-          return best;
+          all.sort((u, v) => u.dist - v.dist);
+          const out = [];
+          for (const c of all) { if (out.every(o => Math.hypot(o.x - c.x, o.y - c.y) >= 30)) out.push(c); if (out.length === 4) break; }
+          return out.length ? out : null;
         };
         // если у конца from линия идёт в пучке с другими, берётся чистое место дальше по линии:
         // тогда проверяется, что подсказка и нажатие ведут к одному и тому же концу
         // у линии для наведения полоса 14 px: точка ближе 8 px к соседней линии лежит под ней
         const near = pick(11, true) || pick(8, true);
-        if (near) return Object.assign(near, { strict: true });
-        return pick(11, false) || pick(8, false);
+        if (near) return { strict: true, cands: near };
+        const far = pick(11, false) || pick(8, false);
+        return far ? { strict: false, cands: far } : null;
       }, [l.key, from, to]);
-      if (!pt) { bad.push('линия ' + l.key + ': по всей длине сливается с другими линиями'); continue; }
-      if (!pt.strict) {
-        if (from !== l.a) continue; // одной проверки в чистом месте достаточно
-        const [sx, sy] = await aim(pt.x, pt.y, 1.2);
+      if (!res) { bad.push('линия ' + l.key + ': по всей длине сливается с другими линиями'); continue; }
+      if (!res.strict && from !== l.a) continue; // одной проверки в чистом месте достаточно
+      // браузер проверяет попадание по длинной кривой приближённо, и соседняя линия может оказаться сверху
+      // в нескольких пикселях от расчётной: тогда берётся следующее чистое место
+      let sx, sy, st;
+      for (const c of res.cands) {
+        [sx, sy] = await aim(c.x, c.y, 1.2);
         await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);
-        const st = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const tip = document.querySelector('.xtip'); return { under: el ? (el.__data__ && el.__data__.key) || el.getAttribute('class') : 'ничего', tip: tip && !tip.hidden ? tip.textContent : '' }; }, [sx, sy]);
-        if (st.under !== l.key) { bad.push('линия ' + l.key + ': под указателем ' + st.under); continue; }
+        st = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const tip = document.querySelector('.xtip'); return { under: el ? (el.__data__ && el.__data__.key) || el.getAttribute('class') : 'ничего', tip: tip && !tip.hidden ? tip.textContent : '' }; }, [sx, sy]);
+        if (st.under === l.key) break;
+      }
+      if (st.under !== l.key) { bad.push('линия ' + l.key + (res.strict ? ' (' + l.type + ') у ' + from : '') + ': под указателем ' + st.under); continue; }
+      if (!res.strict) {
         await p.mouse.click(sx, sy); await p.waitForTimeout(60);
         const sel = await p.evaluate(() => App.state.selected);
         const selName = await p.evaluate(id => id && App.byId.get(id) ? App.byId.get(id).full : '', sel);
         if ((sel !== l.a && sel !== l.b) || !st.tip.includes('перейти к: ' + selName)) bad.push('линия ' + l.key + ': подсказка «' + st.tip + '», нажатие выбрало ' + sel);
         continue;
       }
-      const [sx, sy] = await aim(pt.x, pt.y, 1.2);
-      await p.mouse.move(sx - 20, sy); await p.mouse.move(sx, sy);
-      const st = await p.evaluate(([sx, sy]) => { const el = document.elementFromPoint(sx, sy); const tip = document.querySelector('.xtip'); return { under: el ? (el.__data__ && el.__data__.key) || el.getAttribute('class') : 'ничего', tip: tip && !tip.hidden ? tip.textContent : '' }; }, [sx, sy]);
-      if (st.under !== l.key) { bad.push('линия ' + l.key + ' (' + l.type + ') у ' + from + ': под указателем ' + st.under); continue; }
       const toName = await p.evaluate(id => App.byId.get(id).full, to);
       if (!st.tip.includes('перейти к: ' + toName)) bad.push('линия ' + l.key + ' у ' + from + ': подсказка «' + st.tip + '»');
       await p.mouse.click(sx, sy); await p.waitForTimeout(60);
