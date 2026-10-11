@@ -547,8 +547,30 @@
           if (!best || hits < best.hits) best = Object.assign({ hits, pts, x0 }, sh);
         });
       });
+      // Если конец пропуска — прямой ребёнок его начала (ветвь младшего сына сдвинута к ровесникам), пунктир идёт
+      // из веера родителя, как ещё одна ветка к ребёнку: вниз (или вверх) из кнопки ветви, вдоль края всей ветви и
+      // к карточке. Иначе хвост из-за ветви читался как продолжение того из внуков, рядом с кем он начинается.
+      // Пропуски через несколько поколений по-прежнему выходят из-за всей ветви.
+      const direct = (dst.data.par || []).some(r => (/^[a-z_0-9]+/.exec(r) || [''])[0] === gp.from);
+      if (kids.length && direct) {
+        const desc = src.descendants().filter(n => n !== src);
+        const own = new Set([gp.to, gp.from].concat(desc.map(n => n.data.id)));
+        const fx = src.X + W + TOG, fy = src.Y;
+        const right = Math.max(...desc.map(n => n.X + W + (hasKids(n) ? TOG : 0)));
+        const ends = [Math.max(...desc.map(n => n.Y)) + H / 2 + 22, Math.min(...desc.map(n => n.Y)) - H / 2 - 22];
+        let fan = null;
+        ends.forEach(ye => {
+          const xa = fx + 34, xb = Math.max(right + 30, xa + 20), xc = x1;
+          const segs = [[[fx, fy], [fx + 22, fy], [fx + 12, ye], [xa, ye]], line(xa, ye, xb, ye), [[xb, ye], [xb + (xc - xb) * 0.5, ye], [xb + (xc - xb) * 0.5, y1], [xc, y1]]];
+          const pts = sample(segs);
+          const hits = pts.filter(pt => obst.some(o => o.id && !own.has(o.id) && inR(pt, o.r, 0))).length;
+          const len = Math.abs(ye - fy) + Math.abs(ye - y1);
+          if (!fan || hits < fan.hits || (hits === fan.hits && len < fan.len)) fan = { hits, len, pts, segs, flat: [xa, xb, ye], x0: fx };
+        });
+        if (fan.hits <= best.hits) best = fan;
+      }
       const x0 = best.x0;
-      gaps.push({ gp, dst, x0, y0, x1, y1, shape: best });
+      gaps.push({ gp, dst, x0, y0: best.segs[0][0][1], x1, y1, shape: best });
     });
     const placed = [];
     const free = r => !obst.some(o => hitR(r, o.r)) && !placed.some(q => hitR(r, q)) && !gaps.some(q => q.shape.pts.some(pt => inR(pt, r, 5)));
