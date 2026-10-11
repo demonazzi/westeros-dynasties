@@ -1,0 +1,18 @@
+{
+  "title": "Осгреи",
+  "about": "Дом Осгреев (Оплот), знаменосцы Тиреллов.",
+  "groups": [
+    {
+      "title": "Осгреи",
+      "people": [
+        {"id":"ormond","name":"Ормонд Осгрей","en":"Ormond Osgrey","hs":"osg","k":"T"},
+        {"id":"clarice","name":"Клариса Осгрей","en":"Clarice Osgrey","fem":1,"hs":"osg","k":"T"},
+        {"id":"eustace","name":"Юстас Осгрей","full":"Сир Юстас Осгрей","en":"Eustace Osgrey","hs":"osg","k":"T","d":"211–219","sp":[["первая жена, имя не названа","покончила с собой после гибели сыновей"],["Роанна Веббер","211 г."]]},
+        {"id":"edwyn_o","name":"Эдвин Осгрей","full":"Сир Эдвин Осгрей","en":"Edwyn Osgrey","hs":"osg","k":"T","p":"eustace","par":["eustace","первая жена Юстаса"],"d":"196"},
+        {"id":"harrold_o","name":"Гаррольд Осгрей","full":"Сир Гаррольд Осгрей","en":"Harrold Osgrey","hs":"osg","k":"T","p":"eustace","par":["eustace","первая жена Юстаса"],"d":"196"},
+        {"id":"addam_o","name":"Аддам Осгрей","en":"Addam Osgrey","hs":"osg","k":"T","p":"eustace","par":["eustace","первая жена Юстаса"],"d":"196"},
+        {"id":"alysanne_o","name":"Алисанна Осгрей","en":"Alysanne Osgrey","fem":1,"hs":"osg","k":"T","p":"eustace","par":["eustace","первая жена Юстаса"],"d":"209/210"}
+      ]
+    }
+  ]
+}

@@ -27,7 +27,9 @@ const fs = require('fs'), path = require('path');
       if (!who.length) return { ok: !rect, note: 'пусто' };
       if (!rect) return { ok: false, note: 'нет рамки', exp: [a, bb] };
       const gotA = X.invert(+rect.getAttribute('x') + 3), gotB = X.invert(+rect.getAttribute('x') + +rect.getAttribute('width') - 3);
-      return { ok: Math.abs(gotA - a) < 0.6 && Math.abs(gotB - bb) < 0.6 || (bb - a < 1), exp: [Math.round(a), Math.round(bb)], got: [Math.round(gotA), Math.round(gotB)], n: who.length };
+      // рамка не уже 6px: у очень короткой жизни правый край отодвинут
+      const narrow = X(bb) - X(a) < 6;
+      return { ok: Math.abs(gotA - a) < 0.6 && (Math.abs(gotB - bb) < 0.6 || narrow) || (bb - a < 1), exp: [Math.round(a), Math.round(bb)], got: [Math.round(gotA), Math.round(gotB)], n: who.length };
     };
   });
   const bad = [];

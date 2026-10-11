@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -13,6 +13,12 @@
     {"house":"arr","roots":[["sharra",5],["hubert",6],["joffrey_a",10],["isembard",10],["donnel",14],["alys_r",15],["jasper",17],["denys",19]]},
     {"house":"tul","roots":[["edmyn",6],["grover",9],["tul_lord17",17]]},
     {"house":"fry","liege":"tul","roots":[["forrest_fr",10],["sabitha_fr",10],["fr_lord14",14],["alys_fr",17],["jyanna_fr",17],["theo_fr",18]]},
+    {"house":"tar","liege":"tyr","roots":[["savage_sam",7],["donald",10],["alan_t",10],["samwyle",15],["tar_lord17",17]]},
+    {"house":"red","liege":"tyr","roots":[["manfryd",7],["patricia",12],["runceford",16],["desmond_rw",18],["bethany_rw",18]]},
+    {"house":"pea","liege":"tyr","roots":[["uther",8],["pea_lord9",9],["gedmund",9],["gormon_p",14],["titus_p",18],["pea_exile",17]]},
+    {"house":"osg","liege":"tyr","roots":[["ormond",7],["clarice",10],["eustace",13]]},
+    {"house":"fos","liege":"tyr","roots":[["florence",7],["owen_f",11],["steffon_fs",15],["raymun_f",15],["jon_f",18],["tanton",19],["bryan_fs",19],["edwyd",19],["franklyn",19],["jeyne_fs",19],["leonette",19]]},
+    {"house":"oak","liege":"tyr","roots":[["alys_oak",7],["torgen",8],["arthor_oak",8],["oak_lord73",9],["olyvar_oak",13],["gwayne_oak",15],["arwyn",18]]},
     {"house":"roy","liege":"arr","roots":[["allard",8],["yorbert",10],["willam_r",11],["gunthor_r",11],["alyssa_r",12],["lorra",15],["perra",17],["benedict",17],["yohn",18],["nestor",18],["jeyne_r",18],["kyle_r",18],["ryella",19]]},
     {"house":"bae","liege":"arr","roots":[["bae_ss",16]]},
     {"house":"cor","liege":"arr","roots":[["gawen",6],["qarl",8],["cor_lord9",9],["gwayne_c",14],["cor_lord17",17]]},
@@ -63,7 +69,13 @@
     "bae": {"name":"Дом Бейлишей","band":"Бейлиши","motto":"Пальцы","sigil":{"field":"#3E7D4A","charge":"#E4E5E8"}},
     "cor": {"name":"Дом Корбреев","band":"Корбреи","motto":"Дом Сердец","sigil":{"field":"#EFEDE8","charge":"#18171A"}},
     "way": {"name":"Дом Уэйнвудов","band":"Уэйнвуды","motto":"Железная Дубрава","sigil":{"field":"#356B3A","charge":"#151515"}},
-    "har": {"name":"Дом Хардингов","band":"Хардинги","motto":"Долина Аррен","sigil":{"field":"#F2F0EC","charge":"#B3261E"}}
+    "har": {"name":"Дом Хардингов","band":"Хардинги","motto":"Долина Аррен","sigil":{"field":"#F2F0EC","charge":"#B3261E"}},
+    "tar": {"name":"Дом Тарли","band":"Тарли","motto":"Рогов Холм · «Первые в битве»","sigil":{"field":"#2F6B33","charge":"#B3261E"}},
+    "red": {"name":"Дом Редвинов","band":"Редвины","motto":"Арбор","sigil":{"field":"#2D4C8C","charge":"#6D1B3A"}},
+    "pea": {"name":"Дом Пиков","band":"Пики","motto":"Звёздный Пик","sigil":{"field":"#D9782A","charge":"#17161A"}},
+    "osg": {"name":"Дом Осгреев","band":"Осгреи","motto":"Оплот","sigil":{"field":"#F0EEE8","charge":"#2E6B33"}},
+    "fos": {"name":"Дом Фоссовеев","band":"Фоссовеи","motto":"Сидрхолл · «Вкус славы»","sigil":{"field":"#D9A63A","charge":"#B3261E"}},
+    "oak": {"name":"Дом Окхартов","band":"Окхарты","motto":"Старый Дуб · «Наши корни глубоки»","sigil":{"field":"#D9A63A","charge":"#2E6B33"}}
   },
   "gaps": [
     {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},

@@ -1,0 +1,35 @@
+{
+  "title": "Пики",
+  "about": "Дом Пиков (Звёздный Пик), знаменосцы Тиреллов.",
+  "groups": [
+    {
+      "title": "Пики при Таргариенах",
+      "people": [
+        {"id":"uther","name":"Утер Пик","en":"Uther Peake","hs":"pea","k":"T","sp":[["Прунелла Селтигар"]]},
+        {"id":"pea_lord9","name":"Лорд Пик","full":"Лорд Пик, отец Анвина","hs":"pea","k":"T","wiki":"Unwin Peake"},
+        {"id":"unwin","name":"Анвин Пик","en":"Unwin Peake","hs":"pea","k":"T","p":"pea_lord9","par":["pea_lord9"],"b":"не позднее 100","d":"136–196","sp":[["три жены"]]},
+        {"id":"unwin_son1","name":"Сын","full":"Первенец Анвина Пика","hs":"pea","k":"T","p":"unwin","par":["unwin"],"d":"в младенчестве","wiki":"Unwin Peake"},
+        {"id":"unwin_dau1","name":"Дочь","full":"Старшая дочь Анвина Пика","fem":1,"hs":"pea","k":"T","p":"unwin","par":["unwin"],"wiki":"Unwin Peake"},
+        {"id":"unwin_daus2","name":"Две дочери","full":"Дочери Анвина Пика от второй жены","fem":1,"group":1,"hs":"pea","k":"T","p":"unwin","par":["unwin","вторая жена Анвина"],"d":"в младенчестве","wiki":"Unwin Peake"},
+        {"id":"unwin_son2","name":"Сын","full":"Второй сын Анвина Пика","hs":"pea","k":"T","p":"unwin","par":["unwin"],"wiki":"Unwin Peake"},
+        {"id":"titus_u","name":"Титус Пик","full":"Сир Титус Пик, сын Анвина","en":"Titus Peake","hs":"pea","k":"T","p":"unwin","par":["unwin"],"wiki":"Titus Peake (son of Unwin)"},
+        {"id":"myrielle","name":"Мириэль Пик","en":"Myrielle Peake","al":["Леди Репка"],"fem":1,"hs":"pea","k":"T","p":"unwin","par":["unwin"]},
+        {"id":"mervyn","name":"Мервин Флауэрс","full":"Сир Мервин Флауэрс","en":"Mervyn Flowers","hs":"pea","k":"R","p":"pea_lord9","par":["pea_lord9"]},
+        {"id":"pea_sib","name":"Брат или сестра","full":"Брат или сестра Анвина Пика, родитель Амори","hs":"pea","k":"T","p":"pea_lord9","par":["pea_lord9"],"wiki":"Amaury Peake"},
+        {"id":"amaury","name":"Амори Пик","full":"Сир Амори Пик","en":"Amaury Peake","hs":"pea","k":"T","p":"pea_sib","par":["pea_sib"]},
+        {"id":"gedmund","name":"Гедмунд Пик","full":"Сир Гедмунд Пик, Большой Топор","en":"Gedmund Peake","al":["Большой Топор"],"hs":"pea","k":"T","par":["родители не названы; дядя Анвина"]},
+        {"id":"gormon_p","name":"Гормон Пик","en":"Gormon Peake","hs":"pea","k":"T","b":"не позднее 181","d":"212"}
+      ]
+    },
+    {
+      "title": "Пики в конце третьего века",
+      "people": [
+        {"id":"titus_p","name":"Титус Пик","full":"Титус Пик, лорд Звёздного Пика","en":"Titus Peake","hs":"pea","k":"T","sp":[["Марго Ланнистер"]]},
+        {"id":"pea_exile","name":"Пик","full":"Пик, отец Ласвелла, Тормана и Пайквуда","hs":"pea","k":"T","wiki":"Laswell Peake"},
+        {"id":"laswell","name":"Ласвелл Пик","full":"Сир Ласвелл Пик","en":"Laswell Peake","hs":"pea","k":"T","p":"pea_exile","par":["pea_exile"]},
+        {"id":"torman","name":"Торман Пик","en":"Torman Peake","hs":"pea","k":"T","p":"pea_exile","par":["pea_exile"]},
+        {"id":"pykewood","name":"Пайквуд Пик","en":"Pykewood Peake","hs":"pea","k":"T","p":"pea_exile","par":["pea_exile"]}
+      ]
+    }
+  ]
+}

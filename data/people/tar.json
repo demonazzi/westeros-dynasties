@@ -1,0 +1,28 @@
+{
+  "title": "Тарли",
+  "about": "Дом Тарли (Рогов Холм), знаменосцы Тиреллов.",
+  "groups": [
+    {
+      "title": "Тарли при Таргариенах",
+      "people": [
+        {"id":"savage_sam","name":"Сэмвелл Тарли","full":"Сэмвелл Тарли, Свирепый","en":"Samwell Tarly","al":["Свирепый Сэм"],"hs":"tar","k":"T","wiki":"Samwell Tarly (Savage Sam)"},
+        {"id":"donald","name":"Дональд Тарли","en":"Donald Tarly","hs":"tar","k":"T","sp":[["Джейна Рован"]]},
+        {"id":"samantha","name":"Саманта Тарли","en":"Samantha Tarly","fem":1,"hs":"tar","k":"T","p":"donald","par":["donald","Джейна Рован"],"sp":[["ormund_h","вторая жена"],["lyonel_h","вдова отца; тринадцать лет — любовница, затем жена"]]},
+        {"id":"sansara","name":"Сансара Тарли","en":"Sansara Tarly","fem":1,"hs":"tar","k":"T","p":"donald","par":["donald","Джейна Рован"]},
+        {"id":"alan_t","name":"Алан Тарли","en":"Alan Tarly","hs":"tar","k":"T"},
+        {"id":"samwyle","name":"Сэмвиль Тарли","full":"Сир Сэмвиль Тарли","en":"Samwyle Tarly","hs":"tar","k":"T"}
+      ]
+    },
+    {
+      "title": "Рогов Холм в конце третьего века",
+      "people": [
+        {"id":"tar_lord17","name":"Лорд Тарли","full":"Лорд Тарли, отец Рендилла","hs":"tar","k":"T","wiki":"Randyll Tarly"},
+        {"id":"randyll","name":"Рендилл Тарли","en":"Randyll Tarly","hs":"tar","k":"T","p":"tar_lord17","par":["tar_lord17"],"sp":[["Мелесса Флорент"]]},
+        {"id":"samwell","name":"Сэмвелл Тарли","full":"Сэмвелл Тарли, сын Рендилла","en":"Samwell Tarly","hs":"tar","k":"T","p":"randyll","par":["randyll","Мелесса Флорент"],"b":"283"},
+        {"id":"talla","name":"Талла Тарли","en":"Talla Tarly","fem":1,"hs":"tar","k":"T","p":"randyll","par":["randyll","Мелесса Флорент"]},
+        {"id":"randyll_daus","name":"Две дочери","full":"Другие дочери Рендилла Тарли","fem":1,"group":1,"hs":"tar","k":"T","p":"randyll","par":["randyll","Мелесса Флорент"],"wiki":"Randyll Tarly"},
+        {"id":"dickon","name":"Дикон Тарли","en":"Dickon Tarly","hs":"tar","k":"T","p":"randyll","par":["randyll","Мелесса Флорент"],"b":"287–290","sp":[["Элеанора Мутон"]]}
+      ]
+    }
+  ]
+}

@@ -145,6 +145,44 @@
       }
       return out;
     },
+    // шагающий красный охотник с луком на зелёном (Тарли)
+    tar: (f, c) =>
+      '<circle cx="30" cy="23" r="3.6" fill="' + c + '"/><path d="M27 21.5 L33 20 L34 22 Z" fill="' + c + '"/>' +
+      '<path d="M27 27.5 H33 L34 41 H26 Z" fill="' + c + '"/>' +
+      '<path d="M27.5 40 L21 55 M32.5 40 L39 54 M21 55 L18 56 M39 54 L42 56" stroke="' + c + '" stroke-width="3.2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M33 30 L41 32 M27 30 L22 36" stroke="' + c + '" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<path d="M41 22 C47 28 47 36 41 42" stroke="' + c + '" stroke-width="1.8" fill="none"/><path d="M41 22 V42" stroke="' + c + '" stroke-width=".8"/>',
+    // гроздь винограда цвета бургундского на синем (Редвины)
+    red: (f, c) => {
+      let out = '<path d="M32 21 C33 17 37 15 41 16" stroke="#3C6B35" stroke-width="2" fill="none"/><path d="M35 20 C40 17 46 20 44 25 C40 24 37 23 35 20 Z" fill="#3C6B35"/>';
+      [[26, 27], [32, 27], [38, 27], [23, 33], [29, 33], [35, 33], [41, 33], [26, 39], [32, 39], [38, 39], [29, 45], [35, 45], [32, 51]].forEach(([x, y]) => {
+        out += '<circle cx="' + x + '" cy="' + y + '" r="3.4" fill="' + c + '"/><circle cx="' + (x - 1) + '" cy="' + (y - 1) + '" r=".9" fill="' + f + '" opacity=".45"/>';
+      });
+      return out;
+    },
+    // три чёрных замка на оранжевом (Пики)
+    pea: (f, c) => {
+      const castle = (x, y, s) => '<g transform="translate(' + x + ' ' + y + ') scale(' + s + ')"><path d="M-7 8 V-2 H-7 V-6 H-4.5 V-3.5 H-2 V-6 H2 V-3.5 H4.5 V-6 H7 V-2 V8 Z" fill="' + c + '"/><path d="M-1.6 8 V4 C-1.6 2 1.6 2 1.6 4 V8 Z" fill="' + f + '"/></g>';
+      return castle(22, 30, 1) + castle(42, 30, 1) + castle(32, 50, 1.05);
+    },
+    // клетчатый зелёно-золотой лев на белом (Осгреи)
+    osg: (f, c) => {
+      const lion = 'M22 60 L24 46 C20 44 19 38 22 34 C20 30 22 25 26 24 C26 20 30 18 33 20 C37 19 40 22 39 26 C42 28 43 33 41 37 L44 40 C46 36 50 35 51 39 C48 39 47 42 45 45 C44 50 42 55 41 60 H36 L35 52 H29 L28 60 Z';
+      let cells = '';
+      for (let r = 0; r < 12; r++) for (let q = 0; q < 10; q++) if ((r + q) % 2) cells += 'M' + (17 + q * 4) + ' ' + (17 + r * 4) + ' h4 v4 h-4 Z ';
+      return '<clipPath id="osg-lion"><path d="' + lion + '"/></clipPath><path d="' + lion + '" fill="' + c + '"/><path d="' + cells + '" fill="#D4A82E" clip-path="url(#osg-lion)"/>';
+    },
+    // красное яблоко на золотом (Фоссовеи)
+    fos: (f, c) =>
+      '<path d="M32 30 C26 25 17 28 17 38 C17 50 26 59 32 56 C38 59 47 50 47 38 C47 28 38 25 32 30 Z" fill="' + c + '"/>' +
+      '<path d="M32 30 C32 26 33 22 35 19" stroke="#5A3B22" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M34 23 C38 18 45 19 46 22 C42 25 37 25 34 23 Z" fill="#3C7A35"/>' +
+      '<path d="M23 37 C23 33 25 31 27 31" stroke="#fff" stroke-width="1.6" fill="none" opacity=".45" stroke-linecap="round"/>',
+    // три зелёных дубовых листа на золотом (Окхарты)
+    oak: (f, c) => {
+      const leaf = (x, y, a) => '<g transform="translate(' + x + ' ' + y + ') rotate(' + a + ')"><path d="M0 -11 C3 -9 2 -7 4 -6 C6 -5 5 -2 3 -1 C6 0 6 3 3 3.5 C5 5 4 8 1 8 L0.6 11 H-0.6 L-1 8 C-4 8 -5 5 -3 3.5 C-6 3 -6 0 -3 -1 C-5 -2 -6 -5 -4 -6 C-2 -7 -3 -9 0 -11 Z" fill="' + c + '"/><path d="M0 -9 V10" stroke="' + f + '" stroke-width=".7" opacity=".6"/></g>';
+      return leaf(22, 31, -20) + leaf(42, 31, 20) + leaf(32, 50, 0);
+    },
     // ступенчатая белая башня, увенчанная огнём
     hgt: (f, c) =>
       '<path d="M20 63 H44 V58 H20 Z M22 57 H42 L41 45 H23 Z M21 45 H43 V42 H21 Z M25 41 H39 L38 32 H26 Z M24 32 H40 V29.5 H24 Z M27.5 29 H36.5 L35.5 24.5 H28.5 Z" fill="' + c + '"/>' +

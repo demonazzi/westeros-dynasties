@@ -1,0 +1,27 @@
+{
+  "title": "Окхарты",
+  "about": "Дом Окхартов (Старый Дуб), знаменосцы Тиреллов.",
+  "groups": [
+    {
+      "title": "Окхарты при Таргариенах",
+      "people": [
+        {"id":"alys_oak","name":"Алис Окхарт","en":"Alys Oakheart","fem":1,"hs":"oak","k":"T"},
+        {"id":"torgen","name":"Торген Окхарт","en":"Torgen Oakheart","hs":"oak","k":"T"},
+        {"id":"arthor_oak","name":"Артор Окхарт","full":"Сир Артор Окхарт","en":"Arthor Oakheart","hs":"oak","k":"T"},
+        {"id":"oak_lord73","name":"Лорд Окхарт","full":"Лорд Окхарт, отец Дениса","hs":"oak","k":"T","wiki":"Denys Oakheart"},
+        {"id":"denys_oak","name":"Денис Окхарт","en":"Denys Oakheart","hs":"oak","k":"T","p":"oak_lord73","par":["oak_lord73"]},
+        {"id":"oak_son73","name":"Сын","full":"Сын лорда Окхарта, рождённый в 73 году","hs":"oak","k":"T","p":"oak_lord73","par":["oak_lord73"],"b":"73","wiki":"Denys Oakheart"},
+        {"id":"olyvar_oak","name":"Оливар Окхарт","full":"Сир Оливар Окхарт, Зелёный Дуб","en":"Olyvar Oakheart","al":["Зелёный Дуб"],"hs":"oak","k":"T","d":"161"},
+        {"id":"gwayne_oak","name":"Гвейн Окхарт","full":"Сир Гвейн Окхарт","en":"Gwayne Oakheart","hs":"oak","k":"T"}
+      ]
+    },
+    {
+      "title": "Старый Дуб в конце третьего века",
+      "people": [
+        {"id":"arwyn","name":"Арвин Окхарт","en":"Arwyn Oakheart","fem":1,"hs":"oak","k":"T","sp":[["муж, умерший"]]},
+        {"id":"arwyn_sons","name":"Сыновья","full":"Старшие сыновья Арвин Окхарт","group":1,"hs":"oak","k":"T","p":"arwyn","par":["arwyn"],"wiki":"Arwyn Oakheart"},
+        {"id":"arys","name":"Арис Окхарт","full":"Сир Арис Окхарт","en":"Arys Oakheart","hs":"oak","k":"T","p":"arwyn","par":["arwyn"],"b":"не позднее 274","d":"300"}
+      ]
+    }
+  ]
+}

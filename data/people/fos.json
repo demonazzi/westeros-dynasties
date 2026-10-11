@@ -1,0 +1,27 @@
+{
+  "title": "Фоссовеи",
+  "about": "Дом Фоссовеев: красного яблока (Сидрхолл) и зелёного яблока (Новая Бочка), знаменосцы Тиреллов.",
+  "groups": [
+    {
+      "title": "Фоссовеи красного яблока",
+      "people": [
+        {"id":"florence","name":"Флоренс Фоссовей","en":"Florence Fossoway","fem":1,"hs":"fos","k":"T","sp":[["martyn_t"]]},
+        {"id":"owen_f","name":"Оуэн Фоссовей","en":"Owen Fossoway","hs":"fos","k":"T","d":"130"},
+        {"id":"steffon_fs","name":"Стеффон Фоссовей","full":"Сир Стеффон Фоссовей","en":"Steffon Fossoway","hs":"fos","k":"T"},
+        {"id":"tanton","name":"Тантон Фоссовей","full":"Сир Тантон Фоссовей","en":"Tanton Fossoway","hs":"fos","k":"T"},
+        {"id":"bryan_fs","name":"Брайан Фоссовей","full":"Сир Брайан Фоссовей","en":"Bryan Fossoway","hs":"fos","k":"T","d":"299"},
+        {"id":"edwyd","name":"Эдвид Фоссовей","full":"Сир Эдвид Фоссовей","en":"Edwyd Fossoway","hs":"fos","k":"T","d":"299"},
+        {"id":"franklyn","name":"Франклин Флауэрс","full":"Сир Франклин Флауэрс","en":"Franklyn Flowers","hs":"fos","k":"R","par":["бастард Сидрхолла; отец — один из сыновей рыцаря Сидрхолла"]},
+        {"id":"leonette","name":"Леонетта Фоссовей","en":"Leonette Fossoway","fem":1,"hs":"fos","k":"T","sp":[["garlan"]]}
+      ]
+    },
+    {
+      "title": "Фоссовеи зелёного яблока",
+      "people": [
+        {"id":"raymun_f","name":"Раймун Фоссовей","full":"Сир Раймун Фоссовей","en":"Raymun Fossoway","hs":"fos","k":"T","par":["родители не названы; младший кузен Стеффона"]},
+        {"id":"jon_f","name":"Джон Фоссовей","full":"Сир Джон Фоссовей","en":"Jon Fossoway","hs":"fos","k":"T","sp":[["janna"]]},
+        {"id":"jeyne_fs","name":"Джейна Фоссовей","en":"Jeyne Fossoway","fem":1,"hs":"fos","k":"T","sp":[["gunthor"]]}
+      ]
+    }
+  ]
+}

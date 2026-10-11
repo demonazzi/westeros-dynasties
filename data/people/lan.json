@@ -31,8 +31,8 @@
       "people": [
         {"id":"tya","name":"Тия Ланнистер","en":"Tya Lannister","fem":1,"hs":"lan","k":"T","sp":[["gowen"]]},
         {"id":"gerold","name":"Джерольд Ланнистер","full":"Джерольд Ланнистер, Золотой","en":"Gerold Lannister","al":["Джерольд Золотой"],"hs":"lan","k":"T","d":"244"},
-        {"id":"tywald","name":"Тайвальд Ланнистер","full":"Сир Тайвальд Ланнистер","en":"Tywald Lannister","hs":"lan","k":"T","p":"gerold","par":["gerold","Рохана Уэббер"],"b":"211–219","d":"233"},
-        {"id":"tion_l","name":"Тион Ланнистер","full":"Сир Тион Ланнистер","en":"Tion Lannister","hs":"lan","k":"T","p":"gerold","par":["gerold","Рохана Уэббер"],"b":"211–219","d":"236","sp":[["Эллин Рейн"]]},
+        {"id":"tywald","name":"Тайвальд Ланнистер","full":"Сир Тайвальд Ланнистер","en":"Tywald Lannister","hs":"lan","k":"T","p":"gerold","par":["gerold","Роанна Веббер"],"b":"211–219","d":"233"},
+        {"id":"tion_l","name":"Тион Ланнистер","full":"Сир Тион Ланнистер","en":"Tion Lannister","hs":"lan","k":"T","p":"gerold","par":["gerold","Роанна Веббер"],"b":"211–219","d":"236","sp":[["Эллин Рейн"]]},
         {"id":"tytos_l","name":"Титос Ланнистер","en":"Tytos Lannister","hs":"lan","k":"T","p":"gerold","d":"267","sp":[["Джейн Марбранд"]]},
         {"id":"jason_g","name":"Джейсон Ланнистер","full":"Джейсон Ланнистер, сын Джерольда","en":"Jason Lannister","hs":"lan","k":"T","p":"gerold","d":"260","sp":[["Элис Стакспир","первая жена; умерла в родах"],["Марла Престер","вторая жена"]],"wiki":"Jason Lannister (son of Gerold)"},
         {"id":"damon_l","name":"Дамон Ланнистер","full":"Дамон Ланнистер, сын Джейсона","en":"Damon Lannister","hs":"lan","k":"T","p":"jason_g","par":["jason_g","Элис Стакспир"],"b":"244/245","sp":[["Элла Ланнистер"]],"wiki":"Damon Lannister (son of Jason)"},

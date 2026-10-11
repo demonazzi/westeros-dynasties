@@ -20,12 +20,12 @@
         {"id":"alicent","name":"Алисента Хайтауэр","en":"Alicent Hightower","fem":1,"hs":"hgt","k":"T","p":"otto","b":"88","d":"133","sp":[["viserys1","106 г."]]},
         {"id":"otto_sons","name":"Сыновья","full":"Старшие сыновья Отто Хайтауэра","group":1,"hs":"hgt","k":"T","p":"otto","par":["otto","жена не названа"],"wiki":"Otto Hightower"},
         {"id":"gwayne","name":"Гвейн Хайтауэр","en":"Gwayne Hightower","hs":"hgt","k":"T","p":"otto","d":"129"},
-        {"id":"ormund_h","name":"Ормунд Хайтауэр","en":"Ormund Hightower","hs":"hgt","k":"T","p":"hgt_lord9","d":"130","sp":[["первая жена, имя не названа","умерла в родах"],["Саманта Тарли","вторая жена"]]},
-        {"id":"lyonel_h","name":"Лайонел Хайтауэр","en":"Lyonel Hightower","hs":"hgt","k":"T","p":"ormund_h","sp":[["Саманта Тарли","вдова отца; тринадцать лет — любовница, затем жена"]],"wiki":"Lyonel Hightower (son of Ormund)"},
+        {"id":"ormund_h","name":"Ормунд Хайтауэр","en":"Ormund Hightower","hs":"hgt","k":"T","p":"hgt_lord9","d":"130","sp":[["первая жена, имя не названа","умерла в родах"],["samantha","вторая жена"]]},
+        {"id":"lyonel_h","name":"Лайонел Хайтауэр","en":"Lyonel Hightower","hs":"hgt","k":"T","p":"ormund_h","sp":[["samantha","вдова отца; тринадцать лет — любовница, затем жена"]],"wiki":"Lyonel Hightower (son of Ormund)"},
         {"id":"martyn_ho","name":"Мартин Хайтауэр","full":"Мартин Хайтауэр, сын Ормунда","en":"Martyn Hightower","hs":"hgt","k":"T","p":"ormund_h","par":["ormund_h","первая жена Ормунда"],"b":"115–126","wiki":"Martyn Hightower (son of Ormund)"},
         {"id":"garmund","name":"Гармунд Хайтауэр","en":"Garmund Hightower","hs":"hgt","k":"T","p":"ormund_h","sp":[["rhaena_d"]]},
         {"id":"bethany_h","name":"Бетани Хайтауэр","en":"Bethany Hightower","fem":1,"hs":"hgt","k":"T","p":"ormund_h"},
-        {"id":"lyonel_kids","name":"Шестеро детей","full":"Дети Лионеля Хайтауэра и Саманты Тарли","group":1,"hs":"hgt","k":"T","p":"lyonel_h","par":["lyonel_h","Саманта Тарли"],"wiki":"Samantha Tarly"},
+        {"id":"lyonel_kids","name":"Шестеро детей","full":"Дети Лионеля Хайтауэра и Саманты Тарли","group":1,"hs":"hgt","k":"T","p":"lyonel_h","par":["lyonel_h","samantha"],"wiki":"Samantha Tarly"},
         {"id":"garmund_daus","name":"Шесть дочерей","full":"Шесть дочерей Гармунда Хайтауэра и Рейены","fem":1,"group":1,"hs":"hgt","k":"T","p":"garmund","par":["garmund","rhaena_d"],"wiki":"Garmund Hightower"}
       ]
     },
@@ -37,11 +37,11 @@
         {"id":"malora","name":"Малора Хайтауэр","en":"Malora Hightower","al":["Безумная Дева"],"fem":1,"hs":"hgt","k":"T","p":"leyton"},
         {"id":"alerie","name":"Алерия Хайтауэр","en":"Alerie Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["mace"]]},
         {"id":"garth_h","name":"Гарт Хайтауэр","en":"Garth Hightower","al":["Гарт Седая Сталь"],"hs":"hgt","k":"T","p":"leyton"},
-        {"id":"denyse_h","name":"Дениза Хайтауэр","en":"Denyse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Десмонд Редвин"]]},
+        {"id":"denyse_h","name":"Дениза Хайтауэр","en":"Denyse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["desmond_rw"]]},
         {"id":"leyla_h","name":"Лейла Хайтауэр","en":"Leyla Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Джон Каппс"]]},
         {"id":"alysanne_h","name":"Алисанна Хайтауэр","en":"Alysanne Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Артур Амброз"]]},
         {"id":"lynesse","name":"Линесс Хайтауэр","en":"Lynesse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["jorah","вторая жена"]]},
-        {"id":"gunthor","name":"Гюнтор Хайтауэр","full":"Сир Гюнтор Хайтауэр","en":"Gunthor Hightower","hs":"hgt","k":"T","p":"leyton","par":["leyton"],"b":"271–285","sp":[["Джейна Фоссовей"]]},
+        {"id":"gunthor","name":"Гюнтор Хайтауэр","full":"Сир Гюнтор Хайтауэр","en":"Gunthor Hightower","hs":"hgt","k":"T","p":"leyton","par":["leyton"],"b":"271–285","sp":[["jeyne_fs"]]},
         {"id":"humfrey_h","name":"Хамфри Хайтауэр","full":"Сир Хамфри Хайтауэр","en":"Humfrey Hightower","hs":"hgt","k":"T","p":"leyton","par":["leyton"],"b":"272–285"}
       ]
     }
