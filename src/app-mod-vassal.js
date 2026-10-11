@@ -156,8 +156,8 @@
   function evDiff() { if (!EVDIFF) EVDIFF = EVS.map((e, i) => i ? diffIds(snapshot(EVS[i - 1].t), snapshot(e.t)).length : 0); return EVDIFF; }
 
   /* ——— Подписи ——— */
-  const yearWord = y => { const f = Math.floor(y); return f < 0 ? (-f) + ' г. до З.' : Math.max(1, f) + ' г.'; };
-  const yearShort = y => { const f = Math.floor(y); return f < 0 ? (-f) + ' до З.' : String(Math.max(1, f)); };
+  const yearWord = y => { const f = Math.floor(y); return App.yearWord(f < 0 ? f : Math.max(1, f)); };
+  const yearShort = y => { const f = Math.floor(y); return f < 0 ? App.t('{n} до З.', { n: -f }) : String(Math.max(1, f)); };
   const span = (a, b) => { const A = yearShort(a), B = b >= Y1 ? '300' : yearShort(b - 0.001); return A === B ? A : A + '–' + B; };
   function kingAt(y) {
     if (y < 1) return 'Эйгон Завоеватель';
@@ -182,6 +182,7 @@
   const enRx = new RegExp('\\b(?:House )?(' + [...EN2RU.keys()].map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')\\b', 'g');
   function tidy(t) {
     if (!t) return '';
+    if (App.lang !== 'ru' && !/[А-Яа-яЁё]/.test(t)) return t; // переведённая заметка уже чистая: AC/BC и названия книг не трогаем
     return t
       .replace(/\b(TWOIAF|AGOT|ACOK|ASOS|AFFC|ADWD|TWOW|TSS|THK|TMK|F&B)\b/g, m => BOOKS[m] || m)
       .replace(/(\d+)\s*AC\b\.?/g, '$1 г.').replace(/(\d+)\s*BC\b\.?/g, '$1 г. до З.')
@@ -385,7 +386,7 @@
     const mv = moved.has(id) || (!isOpen && subtreeHas(id, moved));
     const tip = (h.seat ? h.seat + ' · ' : '') + REG.get(h.region).ru + (L.own && L.why ? '\n' + tidy(L.why) : '');
     return '<li><div class="vs-row h-' + REGCLS[h.region] + (L.own ? ' own' : '') + (mv ? ' moved' : '') + '">' +
-      (sub.length ? chev(key, isOpen, (isOpen ? 'Свернуть' : 'Раскрыть') + ' знаменосцев: ' + h.ru) : '<span class="vs-tog-sp"></span>') +
+      (sub.length ? chev(key, isOpen, App.t(isOpen ? 'Свернуть знаменосцев: {name}' : 'Раскрыть знаменосцев: {name}', { name: h.ru })) : '<span class="vs-tog-sp"></span>') +
       '<button type="button" class="vs-name' + (id === sel ? ' sel' : '') + '" data-vh="' + id + '" data-q="' + esc(norm(h.ru + ' ' + h.en)) + '" title="' + esc(tip) + '"><i aria-hidden="true"></i><span>' + esc(h.ru) + '</span>' +
         (L.own ? '<span class="vs-flag" aria-label="присяга по событию">⚑</span>' : '') + '</button>' +
       (n ? '<button type="button" class="vs-n" data-tog="' + key + '" tabindex="-1" aria-hidden="true">' + n + '</button>' : '') + '</div>' +
@@ -396,7 +397,7 @@
     const isOpen = sub.length > 0 && open.has(key), wide = isOpen && n >= WIDE;
     const mv = moved.has(id) || (!isOpen && subtreeHas(id, moved));
     return '<article class="vs-card h-' + clsOf(h) + (wide ? ' wide' : '') + (isOpen ? ' open' : '') + (mv ? ' moved' : '') + '"><h4 class="vs-card-head">' +
-      (sub.length ? chev(key, isOpen, (isOpen ? 'Свернуть' : 'Раскрыть') + ' знаменосцев: ' + h.ru) : '<span class="vs-tog-sp"></span>') +
+      (sub.length ? chev(key, isOpen, App.t(isOpen ? 'Свернуть знаменосцев: {name}' : 'Раскрыть знаменосцев: {name}', { name: h.ru })) : '<span class="vs-tog-sp"></span>') +
       '<button type="button" class="vs-card-name' + (id === sel ? ' sel' : '') + '" data-vh="' + id + '" data-q="' + esc(norm(h.ru + ' ' + h.en)) + '" title="' + esc((h.seat ? h.seat + ' · ' : '') + REG.get(h.region).ru + (L.own && L.why ? '\n' + tidy(L.why) : '')) + '">' +
         (h.great && App.sigilSVG ? App.sigilSVG(clsOf(h), 0, 0, 20, 'vs-sigil') : '<i aria-hidden="true"></i>') + '<span>' + esc(h.ru) + '</span>' +
         (L.own ? '<span class="vs-flag">⚑</span>' : '') + '</button>' +

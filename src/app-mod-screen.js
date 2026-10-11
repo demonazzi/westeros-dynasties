@@ -36,7 +36,7 @@
       const ic = g.append('g').attr('class', 'scr-ico').attr('transform', 'translate(' + x + ',3)');
       ic.append('rect').attr('x', 0.5).attr('y', 0.5).attr('width', 13).attr('height', 9).attr('rx', 2);
       ic.append('path').attr('d', 'M4 12h6M7 9.5v2.5');
-      ic.append('title').text('В экранизации иначе: ' + SCREEN[n.data.id].df.split('. ')[0] + '.');
+      ic.append('title').text(App.t('В экранизации иначе: {text}', { text: SCREEN[n.data.id].df.split('. ')[0] + '.' }));
     });
   });
   // Драконы: значок рядом с именем на шкале
@@ -52,7 +52,7 @@
       const ic = g.append('g').attr('class', 'scr-ico').attr('transform', 'translate(' + x + ',-24)');
       ic.append('rect').attr('x', 0.5).attr('y', 0.5).attr('width', 13).attr('height', 9).attr('rx', 2);
       ic.append('path').attr('d', 'M4 12h6M7 9.5v2.5');
-      ic.append('title').text('В экранизации иначе: ' + DS[r.d.id]);
+      ic.append('title').text(App.t('В экранизации иначе: {text}', { text: DS[r.d.id] }));
     });
   }
 

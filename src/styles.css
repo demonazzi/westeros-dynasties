@@ -710,6 +710,9 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .mm-sel { fill: none; stroke: var(--path); stroke-width: 2; }
 .mm-view { fill: var(--path); fill-opacity: .06; stroke: var(--path); stroke-width: 1.5; pointer-events: none; }
 
+/* Текст без перевода в английском: пометка над русским оригиналом */
+.tr-missing { margin: 0; font-size: 12.5px; color: var(--muted); font-style: italic; }
+
 /* Переключатель языка */
 /* рядом с названием: свой ряд не занимает и не наезжает на кнопки, как бы ни переносилась шапка */
 .brand-row { display: flex; align-items: center; gap: 14px; }

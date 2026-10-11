@@ -46,7 +46,7 @@
   // «12 домов» или «12 домов и 5 малых»
   App.housesLabel = () => {
     const minor = BANDS.filter(b => b.liege).length;
-    return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' и ' + minor + ' ' + (minor % 10 === 1 && minor % 100 !== 11 ? 'малый' : 'малых') : '');
+    return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' ' + App.t(minor % 10 === 1 && minor % 100 !== 11 ? 'и {n} малый' : 'и {n} малых', { n: minor }) : '');
   };
   (function () {
     const css = [];
@@ -93,30 +93,33 @@
   App.PAIRS = PAIRS;
 
   /* ——— Тексты ——— */
-  const plural = (n, one, few, many) => { const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many); };
+  // формы числа: в английском — по словарю «один|два|пять» → «one|many» (App.tPlural)
+  const plural = (n, one, few, many) => { if (App.lang !== 'ru' && App.tPlural) return App.tPlural(n, one, few, many); const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many); };
   App.plural = plural;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   App.esc = esc;
   const simple = /^\d+$/;
   function meta(p) {
-    if (p.k === 'K') return p.rm || 'правил ' + p.r;
-    if (p.pre) return 'до Завоевания';
-    if (p.b && p.d) return simple.test(p.b) && simple.test(p.d) ? p.b + '–' + p.d : 'р. ' + p.b + ' · † ' + p.d;
-    if (p.d) return '† ' + p.d;
-    if (p.b) return 'р. ' + p.b;
-    if (p.house === 'oth') return 'дом ' + p.h;
+    const tD = App.tDate;
+    if (p.k === 'K') return p.rm || App.t('правил {r}', { r: p.r });
+    if (p.pre) return App.t('до Завоевания');
+    if (p.b && p.d) return simple.test(p.b) && simple.test(p.d) ? p.b + '–' + p.d : App.t('р. {b}', { b: tD(p.b) }) + ' · ' + App.t('† {d}', { d: tD(p.d) });
+    if (p.d) return App.t('† {d}', { d: tD(p.d) });
+    if (p.b) return App.t('р. {b}', { b: tD(p.b) });
+    if (p.house === 'oth') return App.t('дом {h}', { h: p.h });
     return '';
   }
   App.meta = meta;
-  const houseName = p => p.house === 'oth' ? 'Дом ' + p.h : HOUSES[p.house].name;
+  const houseName = p => p.house === 'oth' ? App.t('Дом {h}', { h: p.h }) : HOUSES[p.house].name;
   App.houseName = houseName;
   function kindLabel(p) {
-    if (p.pre) return 'Владыки Драконьего Камня · до Завоевания';
+    const t = App.t;
+    if (p.pre) return t('Владыки Драконьего Камня · до Завоевания');
     if (p.kl) return houseName(p) + ' · ' + p.kl;
-    if (p.k === 'K') return (p.n ? 'Король № ' + p.n + ' · ' : houseName(p) + ' · король · ') + (p.rm || 'правил ' + p.r);
-    if (p.k === 'C') return (p.house === 'targ' ? '' : houseName(p) + ' · ') + (p.sex === 'f' ? 'Претендентка на трон' : 'Претендент на трон');
-    if (p.k === 'B') return p.cl ? 'Дом Блэкфайров · претендент' : 'Дом Блэкфайров';
-    if (p.k === 'R') return 'Бастард · ' + houseName(p).replace('Дом ', 'дом ');
+    if (p.k === 'K') return (p.n ? t('Король № {n}', { n: p.n }) + ' · ' : houseName(p) + ' · ' + t('король') + ' · ') + (p.rm || t('правил {r}', { r: p.r }));
+    if (p.k === 'C') return (p.house === 'targ' ? '' : houseName(p) + ' · ') + (p.sex === 'f' ? t('Претендентка на трон') : t('Претендент на трон'));
+    if (p.k === 'B') return p.cl ? t('Дом Блэкфайров · претендент') : t('Дом Блэкфайров');
+    if (p.k === 'R') return t('Бастард') + ' · ' + (App.lang === 'ru' ? houseName(p).replace('Дом ', 'дом ') : houseName(p));
     return houseName(p);
   }
   App.kindLabel = kindLabel;
@@ -399,7 +402,7 @@
       return g;
     });
     knotSel.attr('class', d => 'knot t-' + d.type + (d.o.id ? '' : ' plain')).attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
-    knotSel.select('title').text(d => (d.type === 'l' ? 'Связь: ' : 'Брак: ') + d.s.data.full + ' и ' + d.o.label + ' · ' + plural(d.kids.length, 'ребёнок', 'ребёнка', 'детей') + (d.o.id ? ' · нажмите, чтобы открыть второго родителя' : ''));
+    knotSel.select('title').text(d => App.t(d.type === 'l' ? 'Связь' : 'Брак') + ': ' + App.t('{a} и {b}', { a: d.s.data.full, b: App.tData(d.o.label) }) + ' · ' + plural(d.kids.length, 'ребёнок', 'ребёнка', 'детей') + (d.o.id ? ' · ' + App.t('нажмите, чтобы открыть второго родителя') : ''));
 
     // Карточки
     const nodeSel = layers.nodes.selectAll('g.node').data(allNodes, d => d.data.id).join(enter => {
@@ -635,9 +638,10 @@
   /* Связи между домами. Линию и значок брака можно навести и нажать: подсвечиваются линия и оба конца,
      подсказка говорит, кто с кем связан, а нажатие переносит к дальнему от указателя концу. */
   const X_KIND = { m: 'Брак', b: 'Помолвка', l: 'Связь вне брака', rumor: 'Родство по слухам', w: 'Воспитанник' };
-  const xText = e => e.type === 'w' ? 'Воспитанник: ' + byId.get(e.b).full + ' у ' + byId.get(e.a).full
-    : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? 'По теории: ' : 'По слухам: ') + byId.get(e.b).full + ' — ребёнок ' + byId.get(e.a).full
-    : X_KIND[e.type] + ': ' + byId.get(e.a).full + ' и ' + byId.get(e.b).full;
+  const xText = e => { const a = byId.get(e.a).full, b = byId.get(e.b).full, t = App.t;
+    return e.type === 'w' ? t('Воспитанник: {b} у {a}', { a, b })
+      : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? t('По теории: {b} — ребёнок {a}', { a, b }) : t('По слухам: {b} — ребёнок {a}', { a, b }))
+      : t(X_KIND[e.type]) + ': ' + t('{a} и {b}', { a, b }); };
   const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
   function drawCross() {
     xKey = null; peekId = null; xBox = null;
@@ -686,7 +690,7 @@
       return g;
     });
     marks.attr('transform', d => 'translate(' + d.mp[0] + ',' + d.mp[1] + ')')
-      .attr('aria-label', d => xText(d.e) + '. Перейти к ' + byId.get(xFar(d, d.mp)).full);
+      .attr('aria-label', d => xText(d.e) + '. ' + App.t('Перейти к {name}', { name: byId.get(xFar(d, d.mp)).full }));
   }
   // Дальний от точки конец линии: туда и ведёт нажатие
   function xFar(d, pt) {
@@ -724,7 +728,7 @@
     const far = xFar(d, pt);
     if (far !== xFarId) {
       xFarId = far;
-      xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>Нажмите — перейти к: ' + esc(byId.get(far).full) + '</span>';
+      xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>' + esc(App.t('Нажмите — перейти к: {name}', { name: byId.get(far).full })) + '</span>';
       xtip.hidden = false;
       xTipW = xtip.offsetWidth; xTipH = xtip.offsetHeight;
     }
@@ -855,8 +859,8 @@
     const p = byId.get(ref);
     const label = p
       ? '<button type="button" class="chip h-' + p.house + '" data-id="' + p.id + '">' + esc(p.full) + '</button>'
-      : '<span class="ref">' + esc(ref) + '</span>';
-    return '<li>' + label + (note ? '<span class="ref-note">' + esc(note) + '</span>' : '') + '</li>';
+      : '<span class="ref">' + esc(App.tData(ref)) + '</span>';
+    return '<li>' + label + (note ? '<span class="ref-note">' + esc(App.tData(note)) + '</span>' : '') + '</li>';
   }
   App.chip = chip;
   const row = (label, html) => html ? '<div><dt>' + label + '</dt><dd>' + html + '</dd></div>' : '';
@@ -892,20 +896,21 @@
   /* Мини-хронология жизни: рождение, браки, правление, смерть и особые события. */
   function lifeEvents(p) {
     const ev = [];
-    if (p.b) ev.push({ y: yearOf(p.b), label: p.b, text: 'Родил' + (p.sex === 'f' ? 'ась' : 'ся') });
+    const t = App.t;
+    if (p.b) ev.push({ y: yearOf(p.b), label: App.tDate(p.b), text: p.sex === 'f' ? t('Родилась') : t('Родился') });
     (p.sp || []).forEach(([ref, note, type]) => {
       const m = /(\d+) г\./.exec(note || '');
       if (!m) return;
-      const who = byId.has(ref) ? byId.get(ref).full : ref;
-      ev.push({ y: +m[1], label: m[1], text: (type === 'b' ? 'Помолвка: ' : 'Брак: ') + who, ref: byId.has(ref) ? ref : null });
+      const who = byId.has(ref) ? byId.get(ref).full : App.tData(ref);
+      ev.push({ y: +m[1], label: m[1], text: (type === 'b' ? t('Помолвка: {who}', { who }) : t('Брак: {who}', { who })), ref: byId.has(ref) ? ref : null });
     });
-    (p.ev || []).forEach(([y, text, ref]) => ev.push({ y: yearOf(y), label: String(y), text, ref }));
+    (p.ev || []).forEach(([y, text, ref]) => ev.push({ y: yearOf(y), label: String(y), text: App.tData(text), ref }));
     if (p.k === 'K' && p.r) {
       const [a, b] = p.r.split('–');
-      ev.push({ y: yearOf(a), label: a, text: (p.sex === 'f' ? 'Взошла' : 'Взошёл') + ' на Железный трон' });
-      if (b && b !== p.d) ev.push({ y: yearOf(b), label: b, text: 'Конец правления' });
+      ev.push({ y: yearOf(a), label: a, text: p.sex === 'f' ? t('Взошла на Железный трон') : t('Взошёл на Железный трон') });
+      if (b && b !== p.d) ev.push({ y: yearOf(b), label: b, text: t('Конец правления') });
     }
-    if (p.d) ev.push({ y: yearOf(p.d), label: p.d, text: p.sex === 'f' ? 'Умерла' : 'Умер', last: true });
+    if (p.d) ev.push({ y: yearOf(p.d), label: App.tDate(p.d), text: p.sex === 'f' ? t('Умерла') : t('Умер'), last: true });
     ev.sort((a, b) => (a.y ?? 9999) - (b.y ?? 9999) || (a.last ? 1 : 0) - (b.last ? 1 : 0));
     return ev;
   }
@@ -954,7 +959,9 @@
         // второе имя под заголовком: в русском — английское, в английском — русское
         ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
       '</div></div>' +
-      '<p class="note">' + esc(p.t || '') + '</p>' +
+      // в английском: перевод текста, если он есть; иначе русский с пометкой, что перевода пока нет
+      (p.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      '<p class="note"' + (p.tUntranslated ? ' lang="ru"' : '') + '>' + esc(p.t || '') + '</p>' +
       (p.ai ? '<p class="ai-mark" title="Текст написал Claude по A Wiki of Ice and Fire; автор его ещё правит">✎ Черновик Claude</p>' : '') +
       (ev.length ? '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>' : esc(e.text)) + '</span></li>').join('') + '</ol>' : '') +

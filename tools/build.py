@@ -33,6 +33,11 @@ def build():
     for f in sorted((SRC / 'i18n').glob('*.json')):
         langs[f.stem] = {k: v for k, v in json.loads(f.read_text(encoding='utf-8')).items() if v}
     data += '\nconst I18N = ' + json.dumps(langs, ensure_ascii=False) + ';\n'
+    # строки данных: texts/<язык>/data.json → I18N_DATA (только переведённые)
+    ddata = {}
+    for f in sorted((ROOT / 'texts').glob('*/data.json')):
+        ddata[f.parent.name] = {k: v['en'] for k, v in json.loads(f.read_text(encoding='utf-8')).items() if v.get('en')}
+    data += 'const I18N_DATA = ' + json.dumps(ddata, ensure_ascii=False) + ';\n'
     page = HEAD + '<style>\n' + css + '</style>\n\n' + body + '\n' + D3 + '<script>\n' + data + '\n</script>\n<script>\n' + app + '\n</script>\n'
     DIST.mkdir(exist_ok=True)
     (DIST / 'artifact.html').write_text(page, encoding='utf-8')

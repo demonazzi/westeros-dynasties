@@ -43,9 +43,10 @@
     FREE.range([PAD, PAD + (w - 2 * PAD) * 0.2, w - PAD]);
     return { w, x: y => FREE(y), inv: px => FREE.invert(px), dom: FREE.domain() };
   }
-  const label = y => y < 0 ? -y + ' до З.' : (y === 0 ? '1' : String(y));
-  const yearWord = y => y < 0 ? -y + ' г. до З.' : y + ' г.';
-  const range = (a, b) => a === b ? (a < 0 ? -a + ' до З.' : String(a)) : a < 0 && b < 0 ? (-a) + '–' + (-b) + ' до З.' : a < 0 ? (-a) + ' до З.–' + b : a + '–' + b;
+  const bc = n => App.t('{n} до З.', { n });
+  const label = y => y < 0 ? bc(-y) : (y === 0 ? '1' : String(y));
+  const yearWord = y => App.yearWord(y);
+  const range = (a, b) => a === b ? (a < 0 ? bc(-a) : String(a)) : a < 0 && b < 0 ? bc((-a) + '–' + (-b)) : a < 0 ? bc(-a) + '–' + b : a + '–' + b;
   const clampY = y => Math.max(YMIN, Math.min(YMAX, Math.round(y)));
   const quant = (arr, q) => arr[Math.max(0, Math.min(arr.length - 1, Math.round(q * (arr.length - 1))))];
 
@@ -141,9 +142,9 @@
         g.append('rect').attr('class', 'ts-sub-bar').attr('x', a).attr('y', H - 5).attr('width', b - a).attr('height', 5);
         g.append('line').attr('class', 'ts-sub-edge').attr('x1', a).attr('x2', a).attr('y1', 0).attr('y2', H);
         g.append('line').attr('class', 'ts-sub-edge').attr('x1', b).attr('x2', b).attr('y1', 0).attr('y2', H);
-        const tip = s.name + ': ' + (s.est ? '≈ ' : '') + yearWord(Math.round(s.a)) + ' — ' + (s.alive ? 'жив на конец книг' : yearWord(Math.round(s.b)));
-        g.append('title').text(tip + ' (годы жизни выбранного)');
-        subLabel = { a, b, s, text: s.name + ' · ' + (s.est ? '≈ ' : '') + range(Math.round(s.a), Math.round(s.b)) + (s.alive ? ' и дальше' : '') };
+        const tip = s.name + ': ' + (s.est ? '≈ ' : '') + yearWord(Math.round(s.a)) + ' — ' + (s.alive ? App.t('жив на конец книг') : yearWord(Math.round(s.b)));
+        g.append('title').text(tip + ' (' + App.t('годы жизни выбранного') + ')');
+        subLabel = { a, b, s, text: s.name + ' · ' + (s.est ? '≈ ' : '') + range(Math.round(s.a), Math.round(s.b)) + (s.alive ? ' ' + App.t('и дальше') : '') };
       }
     }
 
@@ -202,7 +203,7 @@
       if (words.length) g.append('text').attr('x', x0 + 7).attr('y', R0 + RH / 2 + 0.5).text(words[0]);
       g.append('title').text(tip);
     };
-    hatch(0, m.x(1) - 1, 'pre', ['до Завоевания: владыки Драконьего Камня', 'владыки Драконьего Камня', 'до Завоевания'], 'До Завоевания королей не было: Таргариены правили Драконьим Камнем');
+    hatch(0, m.x(1) - 1, 'pre', ['до Завоевания: владыки Драконьего Камня', 'владыки Драконьего Камня', 'до Завоевания'], App.t('До Завоевания королей не было: Таргариены правили Драконьим Камнем'));
     (App.kings ? App.kings() : []).forEach(p => {
       const L = App.life(p.id);
       const a = m.x(L.ra), b = L.rb != null ? m.x(L.rb) : Math.max(m.x(300), a + 10);
@@ -214,9 +215,9 @@
       const w = b - a;
       const t = p.n ? (w > 96 ? p.n + ' · ' + p.name : w > 20 ? String(p.n) : '') : (w > 64 ? p.name : '');
       if (t) g.append('text').attr('x', a + 5).attr('y', R0 + RH / 2 + 0.5).text(t);
-      g.append('title').text(p.full + ' · правил' + (p.sex === 'f' ? 'а ' : ' ') + (p.r || p.rm) + ' · нажмите — открыть карточку');
+      g.append('title').text(p.full + ' · ' + App.t(p.sex === 'f' ? 'правила {r}' : 'правил {r}', { r: p.r || p.rm }) + ' · ' + App.t('нажмите — открыть карточку'));
     });
-    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], 'Дальше книги не дошли: что было после 300 г., неизвестно');
+    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], App.t('Дальше книги не дошли: что было после 300 г., неизвестно'));
     gaps.forEach(gp => {
       const g = ssvg.append('g').attr('class', 'ts-gap');
       g.append('rect').attr('x', gp.x0).attr('y', 0).attr('width', gp.x1 - gp.x0).attr('height', H);
@@ -304,7 +305,7 @@
     if (hoverCol) showColSpan(hoverCol);
 
     svgEl.setAttribute('aria-valuenow', String(sy != null ? Math.round(sy) : 129));
-    svgEl.setAttribute('aria-valuetext', own() ? 'Год: ' + own().label(sy) : state.year != null ? 'Срез: ' + yearWord(state.year) : 'Срез по году выключен');
+    svgEl.setAttribute('aria-valuetext', own() ? App.t('Год: {y}', { y: own().label(sy) }) : state.year != null ? App.t('Срез: {y}', { y: yearWord(state.year) }) : App.t('Срез по году выключен'));
   }
 
   function drawGens(m, H, GH) {

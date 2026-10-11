@@ -4,8 +4,8 @@
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
   const sub = document.getElementById('brand-sub');
   sub.textContent = App.housesLabel() + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +
-    (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · от Исхода Эйнара до Войны пяти королей';
-  sub.title = 'Дома: ' + order.map(h => HOUSES[h].band).join(', ') + '. Годы — от Завоевания Эйгона.';
+    (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · ' + App.t('от Исхода Эйнара до Войны пяти королей');
+  sub.title = App.t('Дома: {list}. Годы — от Завоевания Эйгона.', { list: order.map(h => HOUSES[h].band).join(', ') });
   // Легенда: образцы гербов великого и малого дома (список домов не нужен — цвета видны на полосах и в фильтре)
   const minor1 = App.bandOrder().find(b => b.liege);
   document.getElementById('lg-sig-great').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG('targ', 4, 0, 22) + '</svg>';
@@ -17,5 +17,6 @@
     b.addEventListener('click', () => App.setLang(b.dataset.lang));
   });
   App.translateDom(document.querySelector('.app'));
+  App.autoTranslate(document.body);
   App.start();
 })();

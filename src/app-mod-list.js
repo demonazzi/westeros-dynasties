@@ -9,7 +9,7 @@
 
   const genLabel = g => g >= 6 ? 'Поколение ' + (g - 5) : 'До Завоевания';
   const yearsLabel = (lo, hi) => {
-    const f = y => y < 0 ? -y + ' до З.' : String(y);
+    const f = y => y < 0 ? App.t('{n} до З.', { n: -y }) : String(y);
     return 'рождения ≈ ' + (lo === hi ? f(lo) : f(lo) + '–' + f(hi));
   };
   function item(p) {

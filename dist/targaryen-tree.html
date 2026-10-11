@@ -721,6 +721,9 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .mm-sel { fill: none; stroke: var(--path); stroke-width: 2; }
 .mm-view { fill: var(--path); fill-opacity: .06; stroke: var(--path); stroke-width: 1.5; pointer-events: none; }
 
+/* Текст без перевода в английском: пометка над русским оригиналом */
+.tr-missing { margin: 0; font-size: 12.5px; color: var(--muted); font-style: italic; }
+
 /* Переключатель языка */
 /* рядом с названием: свой ряд не занимает и не наезжает на кнопки, как бы ни переносилась шапка */
 .brand-row { display: flex; align-items: center; gap: 14px; }
@@ -2551,6 +2554,9 @@ const DRAGON_SCREEN = {
 "rhaegal": "В «Игре престолов» Джон становится всадником Рейегаля. Дракон переживает битву с мертвецами, но затем погибает от выстрелов корабельных скорпионов флота Эурона у Драконьего Камня. В опубликованных романах Рейегаль жив и ещё не получил всадника.",
 "viserion": "В сериале Король Ночи убивает Визериона, поднимает его мёртвым драконом и с его помощью разрушает Стену. После гибели Короля Ночи Визерион окончательно падает. В опубликованных романах дракон жив, остаётся возле Миэрина и не связан с Иными таким образом."
 };
+const DRAGON_SCREEN_EN = {
+
+};
 const V_REGIONS = [{"id":"north","ru":"Север","lord":"stark"},{"id":"riverlands","ru":"Речные земли","lord":"tully"},{"id":"vale","ru":"Долина Аррен","lord":"arryn"},{"id":"westerlands","ru":"Западные земли","lord":"lannister"},{"id":"reach","ru":"Простор","lord":"tyrell"},{"id":"stormlands","ru":"Штормовые земли","lord":"baratheon"},{"id":"dorne","ru":"Дорн","lord":"martell"},{"id":"ironislands","ru":"Железные острова","lord":"greyjoy"},{"id":"crownlands","ru":"Королевские земли","lord":null}];
 const V_PRE = [{"region":"riverlands","king":"hoare","until":-1.7},{"region":"ironislands","king":"hoare","until":2.5},{"region":"reach","king":"gardener","until":-1.37},{"region":"stormlands","king":"durrandon","until":-1.55}];
 const V_CLAIMANTS = [{"id":"blacks","ru":"Рейнира («чёрные»)","s":129.2,"e":131.5,"why":"Рейниру короновал Деймон на Драконьем Камне (129). После её гибели (22-й день 10-й луны 130) «чёрные» воевали за её сына. Сторона победила: в середине 131 он стал Эйгоном III"},{"id":"greens","ru":"Эйгон II («зелёные»)","s":129.18,"e":131.5,"why":"Визерис I умер на 3-й день 3-й луны 129, Эйгона II короновали в Драконьем Логове. Отравлен «в середине года» 131"},{"id":"blackfyre","ru":"Деймон Блэкфайр (Первое восстание Блэкфайра)","s":196.15,"e":196.85,"why":"Восстание длилось «почти год» и закончилось битвой на Краснотравном поле в конце 196. Деймон погиб, Блэкфайры ушли в изгнание в Эссос"},{"id":"blackfyre","ru":"Деймон II Блэкфайр (Второе восстание Блэкфайра)","s":212.4,"e":212.45,"why":"«Сир Джон Скрипач». Заговор на турнире в Белых Стенах раскрыли до начала мятежа"},{"id":"blackfyre","ru":"Хегон Блэкфайр (Третье восстание Блэкфайра)","s":219.3,"e":219.7,"why":"Хегона короновал Эйгор Риверс (Жгучий Клинок)"},{"id":"blackfyre","ru":"Деймон III Блэкфайр (Четвёртое восстание Блэкфайра)","s":236.3,"e":236.7,"why":"Высадился у Крюка Масси с Золотыми Мечами, разбит у моста через Вендуотер. Примкнули лишь немногие лорды"},{"id":"blackfyre","ru":"Мейлис Блэкфайр (Война Девятигрошовых королей)","s":260,"e":260.9,"why":"Союз Девяти (258) взял Ступени и Тирош (260). Барристан Селми убил Мейлиса на Ступенях, и дом Блэкфайров пресёкся. В Вестеросе боёв не было"},{"id":"rebels","ru":"Мятежники (Роберт Баратеон)","s":282.15,"e":283.45,"why":"Лианну похитили «с приходом нового года» (282), затем убили Рикарда и Брандона. Джон Аррен отказался выдать Роберта и Эддарда и созвал знамёна. Порядок 283 года: Колокольная битва → Трезубец → Разорение Королевской Гавани → коронация Роберта → снятие осады Штормового Предела → Башня Радости"},{"id":"balon","ru":"Бейлон Грейджой — король Железных островов (Восстание Бейлона Грейджоя)","s":289.1,"e":289.9,"why":"«В 289, через шесть лет после свержения Таргариенов». После падения Пайка Бейлон в цепях преклонил колено перед Робертом, Теона отдали воспитанником Старкам"},{"id":"renly","ru":"Ренли Баратеон — король в Хайгардене","s":298.9,"e":299.3,"why":"После смерти Роберта коронован в Хайгардене и женился на Маргери Тирелл (свадьба — 299). Убит тенью Мелисандры у Штормового Предела (299)"},{"id":"robb","ru":"Робб Старк — Король Севера и Трезубца","s":299.05,"e":299.65,"why":"Северные и речные лорды провозгласили его в Риверране, когда пришла весть о казни Эддарда (299). Убит на Красной Свадьбе (299)"},{"id":"stannis","ru":"Станнис Баратеон — король Узкого моря","s":299.1,"e":300.99,"why":"Объявил себя королём на Драконьем Камне уже после Робба и Ренли. В 300 взял Темнолесье и пошёл на Винтерфелл"},{"id":"balon","ru":"Бейлон Грейджой — король Островов и Севера","s":299.2,"e":299.6,"why":"Отверг предложение Робба и объявил себя королём ещё до нападения на Север. После захвата северных замков титуловался «королём Островов и Севера». Разбился, упав с моста в Пайке (299)"},{"id":"euron","ru":"Эурон Грейджой","s":300.2,"e":300.99,"why":"Занял Морской трон после смерти Бейлона. Избран и коронован на вече на Старом Вике (300)"},{"id":"aegon_young","ru":"Эйгон (Молодой Гриф)","s":300.7,"e":300.99,"why":"Золотые Мечи высадились в Штормовых землях (300), штормы сорвали высадку. Взяли Гнездо Грифона; по сэмплу TWOW — и Штормовой Предел. Происхождение «Эйгона» не подтверждено"}];
@@ -2985,6 +2991,7 @@ const V_HOUSES = [
 ];
 
 const I18N = {"en": {}};
+const I18N_DATA = {"en": {}};
 
 </script>
 <script>
@@ -3002,7 +3009,9 @@ const I18N = {"en": {}};
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* без хранилища язык живёт до перезагрузки */ } } };
   const fromUrl = (location.search.match(/[?&]lang=(ru|en)\b/) || [])[1];
   const lang = fromUrl || (LANGS.includes(store.get('lang')) ? store.get('lang') : 'ru');
-  const dict = (typeof I18N !== 'undefined' && I18N[lang]) || {};
+  // window.__I18N_TEST = { ui, data, texts } — словари для проверок (tools/check-i18n.js), поверх собранных
+  const TEST = window.__I18N_TEST || {};
+  const dict = Object.assign({}, (typeof I18N !== 'undefined' && I18N[lang]) || {}, lang !== 'ru' ? TEST.ui : null);
   App.lang = lang;
   App.langs = LANGS;
   document.documentElement.setAttribute('lang', lang);
@@ -3020,11 +3029,29 @@ const I18N = {"en": {}};
       const raw = n.nodeValue, key = raw.replace(/\s+/g, ' ').trim();
       if (key && dict[key]) n.nodeValue = (/^\s/.test(raw) ? ' ' : '') + dict[key] + (/\s$/.test(raw) ? ' ' : '');
     }
-    root.querySelectorAll('[title],[placeholder],[aria-label]').forEach(el => ATTRS.forEach(a => {
+    const els = root.querySelectorAll ? [...root.querySelectorAll('[title],[placeholder],[aria-label]')] : [];
+    if (root.nodeType === 1) els.push(root);
+    els.forEach(el => ATTRS.forEach(a => {
       const v = el.getAttribute(a);
       const k = v && v.replace(/\s+/g, ' ').trim();
       if (k && dict[k]) el.setAttribute(a, dict[k]);
     }));
+  };
+
+  /* Всё, что страница дорисовывает потом (вкладки, всплывающие подсказки, легенды, карточки), переводится само:
+     наблюдатель смотрит на новые узлы и переведёт целые подписи, которые есть в словаре. Составные строки
+     (с именами и годами внутри) в коде собираются через App.t с подстановками. В русском наблюдателя нет. */
+  App.autoTranslate = root => {
+    if (lang === 'ru' || !window.MutationObserver) return;
+    const one = n => {
+      if (n.nodeType === 3) { const k = n.nodeValue.replace(/\s+/g, ' ').trim(); if (k && dict[k]) n.nodeValue = n.nodeValue.replace(/\S[\s\S]*\S|\S/, dict[k]); }
+      else if (n.nodeType === 1) App.translateDom(n);
+    };
+    new MutationObserver(list => list.forEach(m => {
+      if (m.type === 'characterData') one(m.target);
+      else if (m.type === 'attributes') { const v = m.target.getAttribute(m.attributeName), k = v && v.replace(/\s+/g, ' ').trim(); if (k && dict[k]) m.target.setAttribute(m.attributeName, dict[k]); }
+      else m.addedNodes.forEach(one);
+    })).observe(root, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
   };
 
   App.setLang = next => {
@@ -3035,14 +3062,84 @@ const I18N = {"en": {}};
     else location.reload();
   };
 
-  // имена в данных: в английском — поле en (если есть), русское имя остаётся в ruName/ruFull
+  /* Данные в английском. Строки данных (дома, девизы, заметки, вассалитет, приписки к бракам…) переводятся по словарю
+     I18N_DATA «русская строка → английская» из texts/en/data.json; длинные тексты — из texts/en (поля t_en, df_en).
+     Имена людей и драконов — из поля en. Что код разбирает сам (годы рождения и смерти, приписки «N г.» у браков,
+     ссылки родителей), остаётся в данных по-русски и переводится только при показе: App.tData, App.tDate. */
+  const DD = Object.assign({}, (lang !== 'ru' && typeof I18N_DATA !== 'undefined' && I18N_DATA[lang]) || {}, lang !== 'ru' ? TEST.data : null);
+  const NOTE_REF = /^([a-z0-9_]+) \((.+)\)$/;
+  App.tData = s => {
+    if (lang === 'ru' || typeof s !== 'string') return s;
+    if (DD[s]) return DD[s];
+    const y = /^(\d+) г\.$/.exec(s.trim());
+    if (y) return App.t('{n} г.', { n: y[1] });
+    const m = NOTE_REF.exec(s);
+    return m && DD[m[2]] ? m[1] + ' (' + DD[m[2]] + ')' : s;
+  };
+  // годы вида «не позднее 27», «136 или позже», «в младенчестве»: шаблоны из словаря интерфейса
+  const DATE_FORMS = [[/^не позднее (.+)$/, 'не позднее {n}'], [/^не ранее (.+)$/, 'не ранее {n}'], [/^после (.+)$/, 'после {n}'],
+    [/^(.+) или позже$/, '{n} или позже'], [/^(.+) или (.+)$/, '{n} или {m}']];
+  App.tDate = s => {
+    if (lang === 'ru' || typeof s !== 'string' || !/[А-Яа-яЁё]/.test(s)) return s;
+    if (dict[s]) return dict[s];
+    for (const [re, key] of DATE_FORMS) { const m = re.exec(s); if (m) return App.t(key, { n: m[1], m: m[2] }); }
+    return s;
+  };
+  // год словом: «130 г.», «20 г. до З.» (до Завоевания)
+  App.yearWord = y => (y < 0 ? App.t('{n} г. до З.', { n: -y }) : App.t('{n} г.', { n: y }));
+  // формы числа: ключ «дом|дома|домов» → «house|houses» (единственное|множественное)
+  App.tPlural = (n, one, few, many) => {
+    const v = dict[one + '|' + few + '|' + many];
+    if (!v) { const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many); }
+    const [sg, pl] = v.split('|');
+    return n + ' ' + (n === 1 ? sg : (pl || sg));
+  };
+  // какие поля данных переводятся на месте: всё, где есть кириллица, кроме разбираемого кодом и длинных текстов
+  const SKIP = new Set(['t', 'df', 'id', 'b', 'd', 'sp', 'par']);
+  const CYR = /[А-Яа-яЁё]/;
+  const walk = v => {
+    if (Array.isArray(v)) { v.forEach((x, i) => { if (typeof x === 'string') { if (CYR.test(x) && DD[x]) v[i] = DD[x]; } else walk(x); }); return; }
+    if (v && typeof v === 'object') Object.keys(v).forEach(k => {
+      if (SKIP.has(k)) return;
+      const x = v[k];
+      if (typeof x === 'string') { if (CYR.test(x) && DD[x]) v[k] = DD[x]; } else walk(x);
+    });
+  };
   App.localizeData = () => {
     if (lang === 'ru') return;
-    (typeof PEOPLE !== 'undefined' ? PEOPLE : []).forEach(p => {
+    // данные страницы — глобальные const из tools/data.js; через typeof, чтобы модуль не падал без них (например, в проверках)
+    const V = {
+      PEOPLE: typeof PEOPLE !== 'undefined' ? PEOPLE : null, DRAGONS: typeof DRAGONS !== 'undefined' ? DRAGONS : null,
+      DRAGON_ORIGINS: typeof DRAGON_ORIGINS !== 'undefined' ? DRAGON_ORIGINS : null, EXTRA: typeof EXTRA !== 'undefined' ? EXTRA : null,
+      DRAGON_SCREEN: typeof DRAGON_SCREEN !== 'undefined' ? DRAGON_SCREEN : null, DRAGON_SCREEN_EN: typeof DRAGON_SCREEN_EN !== 'undefined' ? DRAGON_SCREEN_EN : null,
+      HOUSES: typeof HOUSES !== 'undefined' ? HOUSES : null, GAPS: typeof GAPS !== 'undefined' ? GAPS : null,
+      DRAGON_FIGHTS: typeof DRAGON_FIGHTS !== 'undefined' ? DRAGON_FIGHTS : null, SERIES: typeof SERIES !== 'undefined' ? SERIES : null,
+      V_REGIONS: typeof V_REGIONS !== 'undefined' ? V_REGIONS : null, V_PRE: typeof V_PRE !== 'undefined' ? V_PRE : null,
+      V_CLAIMANTS: typeof V_CLAIMANTS !== 'undefined' ? V_CLAIMANTS : null, V_MILESTONES: typeof V_MILESTONES !== 'undefined' ? V_MILESTONES : null,
+      V_HOUSES: typeof V_HOUSES !== 'undefined' ? V_HOUSES : null
+    };
+    const G = name => V[name];
+    const PEOPLE_ = G('PEOPLE') || [], DRAGONS_ = G('DRAGONS') || [], ORIG = G('DRAGON_ORIGINS') || [], EXTRA_ = G('EXTRA');
+    PEOPLE_.forEach(p => {
+      if (TEST.texts && TEST.texts[p.id]) p.t_en = TEST.texts[p.id];
       p.ruName = p.name; p.ruFull = p.full || p.name;
       if (p.en) { p.name = p.en.split(',')[0]; p.full = p.en; }
+      if (p.t_en) { p.t = p.t_en; p.ai = p.ai_en ? 1 : 0; } else if (p.t) p.tUntranslated = true;
     });
-    (typeof DRAGONS !== 'undefined' ? DRAGONS : []).forEach(d => { d.ruName = d.name; if (d.en) d.name = d.en; });
+    DRAGONS_.concat(ORIG).forEach(d => {
+      d.ruName = d.name;
+      if (d.en) { d.name = d.en; d.full = d.en; }
+      if (d.t_en) { d.t = d.t_en; d.ai = d.ai_en ? 1 : 0; } else if (d.t) d.tUntranslated = true;
+    });
+    if (EXTRA_ && EXTRA_.screen) Object.values(EXTRA_.screen).forEach(o => {
+      if (o.df_en) o.df = o.df_en; else if (o.df) o.dfUntranslated = true;
+      // актёры: [сериал, имя по-русски, имя по-английски] — в английском показываем английское
+      (o.a || []).forEach(a => { if (a[2]) a[1] = a[2]; });
+    });
+    const DS = G('DRAGON_SCREEN'), DSE = G('DRAGON_SCREEN_EN');
+    if (DS && DSE) Object.keys(DSE).forEach(id => { DS[id] = DSE[id]; });
+    ['HOUSES', 'GAPS', 'PEOPLE', 'DRAGONS', 'DRAGON_ORIGINS', 'DRAGON_FIGHTS', 'SERIES', 'EXTRA', 'V_REGIONS', 'V_PRE', 'V_CLAIMANTS', 'V_MILESTONES', 'V_HOUSES']
+      .forEach(n => { const v = G(n); if (v) walk(v); });
   };
   App.localizeData();
 })();
@@ -3095,7 +3192,7 @@ const I18N = {"en": {}};
   // «12 домов» или «12 домов и 5 малых»
   App.housesLabel = () => {
     const minor = BANDS.filter(b => b.liege).length;
-    return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' и ' + minor + ' ' + (minor % 10 === 1 && minor % 100 !== 11 ? 'малый' : 'малых') : '');
+    return plural(BANDS.length - minor, 'дом', 'дома', 'домов') + (minor ? ' ' + App.t(minor % 10 === 1 && minor % 100 !== 11 ? 'и {n} малый' : 'и {n} малых', { n: minor }) : '');
   };
   (function () {
     const css = [];
@@ -3142,30 +3239,33 @@ const I18N = {"en": {}};
   App.PAIRS = PAIRS;
 
   /* ——— Тексты ——— */
-  const plural = (n, one, few, many) => { const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many); };
+  // формы числа: в английском — по словарю «один|два|пять» → «one|many» (App.tPlural)
+  const plural = (n, one, few, many) => { if (App.lang !== 'ru' && App.tPlural) return App.tPlural(n, one, few, many); const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many); };
   App.plural = plural;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   App.esc = esc;
   const simple = /^\d+$/;
   function meta(p) {
-    if (p.k === 'K') return p.rm || 'правил ' + p.r;
-    if (p.pre) return 'до Завоевания';
-    if (p.b && p.d) return simple.test(p.b) && simple.test(p.d) ? p.b + '–' + p.d : 'р. ' + p.b + ' · † ' + p.d;
-    if (p.d) return '† ' + p.d;
-    if (p.b) return 'р. ' + p.b;
-    if (p.house === 'oth') return 'дом ' + p.h;
+    const tD = App.tDate;
+    if (p.k === 'K') return p.rm || App.t('правил {r}', { r: p.r });
+    if (p.pre) return App.t('до Завоевания');
+    if (p.b && p.d) return simple.test(p.b) && simple.test(p.d) ? p.b + '–' + p.d : App.t('р. {b}', { b: tD(p.b) }) + ' · ' + App.t('† {d}', { d: tD(p.d) });
+    if (p.d) return App.t('† {d}', { d: tD(p.d) });
+    if (p.b) return App.t('р. {b}', { b: tD(p.b) });
+    if (p.house === 'oth') return App.t('дом {h}', { h: p.h });
     return '';
   }
   App.meta = meta;
-  const houseName = p => p.house === 'oth' ? 'Дом ' + p.h : HOUSES[p.house].name;
+  const houseName = p => p.house === 'oth' ? App.t('Дом {h}', { h: p.h }) : HOUSES[p.house].name;
   App.houseName = houseName;
   function kindLabel(p) {
-    if (p.pre) return 'Владыки Драконьего Камня · до Завоевания';
+    const t = App.t;
+    if (p.pre) return t('Владыки Драконьего Камня · до Завоевания');
     if (p.kl) return houseName(p) + ' · ' + p.kl;
-    if (p.k === 'K') return (p.n ? 'Король № ' + p.n + ' · ' : houseName(p) + ' · король · ') + (p.rm || 'правил ' + p.r);
-    if (p.k === 'C') return (p.house === 'targ' ? '' : houseName(p) + ' · ') + (p.sex === 'f' ? 'Претендентка на трон' : 'Претендент на трон');
-    if (p.k === 'B') return p.cl ? 'Дом Блэкфайров · претендент' : 'Дом Блэкфайров';
-    if (p.k === 'R') return 'Бастард · ' + houseName(p).replace('Дом ', 'дом ');
+    if (p.k === 'K') return (p.n ? t('Король № {n}', { n: p.n }) + ' · ' : houseName(p) + ' · ' + t('король') + ' · ') + (p.rm || t('правил {r}', { r: p.r }));
+    if (p.k === 'C') return (p.house === 'targ' ? '' : houseName(p) + ' · ') + (p.sex === 'f' ? t('Претендентка на трон') : t('Претендент на трон'));
+    if (p.k === 'B') return p.cl ? t('Дом Блэкфайров · претендент') : t('Дом Блэкфайров');
+    if (p.k === 'R') return t('Бастард') + ' · ' + (App.lang === 'ru' ? houseName(p).replace('Дом ', 'дом ') : houseName(p));
     return houseName(p);
   }
   App.kindLabel = kindLabel;
@@ -3448,7 +3548,7 @@ const I18N = {"en": {}};
       return g;
     });
     knotSel.attr('class', d => 'knot t-' + d.type + (d.o.id ? '' : ' plain')).attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
-    knotSel.select('title').text(d => (d.type === 'l' ? 'Связь: ' : 'Брак: ') + d.s.data.full + ' и ' + d.o.label + ' · ' + plural(d.kids.length, 'ребёнок', 'ребёнка', 'детей') + (d.o.id ? ' · нажмите, чтобы открыть второго родителя' : ''));
+    knotSel.select('title').text(d => App.t(d.type === 'l' ? 'Связь' : 'Брак') + ': ' + App.t('{a} и {b}', { a: d.s.data.full, b: App.tData(d.o.label) }) + ' · ' + plural(d.kids.length, 'ребёнок', 'ребёнка', 'детей') + (d.o.id ? ' · ' + App.t('нажмите, чтобы открыть второго родителя') : ''));
 
     // Карточки
     const nodeSel = layers.nodes.selectAll('g.node').data(allNodes, d => d.data.id).join(enter => {
@@ -3684,9 +3784,10 @@ const I18N = {"en": {}};
   /* Связи между домами. Линию и значок брака можно навести и нажать: подсвечиваются линия и оба конца,
      подсказка говорит, кто с кем связан, а нажатие переносит к дальнему от указателя концу. */
   const X_KIND = { m: 'Брак', b: 'Помолвка', l: 'Связь вне брака', rumor: 'Родство по слухам', w: 'Воспитанник' };
-  const xText = e => e.type === 'w' ? 'Воспитанник: ' + byId.get(e.b).full + ' у ' + byId.get(e.a).full
-    : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? 'По теории: ' : 'По слухам: ') + byId.get(e.b).full + ' — ребёнок ' + byId.get(e.a).full
-    : X_KIND[e.type] + ': ' + byId.get(e.a).full + ' и ' + byId.get(e.b).full;
+  const xText = e => { const a = byId.get(e.a).full, b = byId.get(e.b).full, t = App.t;
+    return e.type === 'w' ? t('Воспитанник: {b} у {a}', { a, b })
+      : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? t('По теории: {b} — ребёнок {a}', { a, b }) : t('По слухам: {b} — ребёнок {a}', { a, b }))
+      : t(X_KIND[e.type]) + ': ' + t('{a} и {b}', { a, b }); };
   const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
   function drawCross() {
     xKey = null; peekId = null; xBox = null;
@@ -3735,7 +3836,7 @@ const I18N = {"en": {}};
       return g;
     });
     marks.attr('transform', d => 'translate(' + d.mp[0] + ',' + d.mp[1] + ')')
-      .attr('aria-label', d => xText(d.e) + '. Перейти к ' + byId.get(xFar(d, d.mp)).full);
+      .attr('aria-label', d => xText(d.e) + '. ' + App.t('Перейти к {name}', { name: byId.get(xFar(d, d.mp)).full }));
   }
   // Дальний от точки конец линии: туда и ведёт нажатие
   function xFar(d, pt) {
@@ -3773,7 +3874,7 @@ const I18N = {"en": {}};
     const far = xFar(d, pt);
     if (far !== xFarId) {
       xFarId = far;
-      xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>Нажмите — перейти к: ' + esc(byId.get(far).full) + '</span>';
+      xtip.innerHTML = '<b>' + esc(xText(d.e)) + '</b><span>' + esc(App.t('Нажмите — перейти к: {name}', { name: byId.get(far).full })) + '</span>';
       xtip.hidden = false;
       xTipW = xtip.offsetWidth; xTipH = xtip.offsetHeight;
     }
@@ -3904,8 +4005,8 @@ const I18N = {"en": {}};
     const p = byId.get(ref);
     const label = p
       ? '<button type="button" class="chip h-' + p.house + '" data-id="' + p.id + '">' + esc(p.full) + '</button>'
-      : '<span class="ref">' + esc(ref) + '</span>';
-    return '<li>' + label + (note ? '<span class="ref-note">' + esc(note) + '</span>' : '') + '</li>';
+      : '<span class="ref">' + esc(App.tData(ref)) + '</span>';
+    return '<li>' + label + (note ? '<span class="ref-note">' + esc(App.tData(note)) + '</span>' : '') + '</li>';
   }
   App.chip = chip;
   const row = (label, html) => html ? '<div><dt>' + label + '</dt><dd>' + html + '</dd></div>' : '';
@@ -3941,20 +4042,21 @@ const I18N = {"en": {}};
   /* Мини-хронология жизни: рождение, браки, правление, смерть и особые события. */
   function lifeEvents(p) {
     const ev = [];
-    if (p.b) ev.push({ y: yearOf(p.b), label: p.b, text: 'Родил' + (p.sex === 'f' ? 'ась' : 'ся') });
+    const t = App.t;
+    if (p.b) ev.push({ y: yearOf(p.b), label: App.tDate(p.b), text: p.sex === 'f' ? t('Родилась') : t('Родился') });
     (p.sp || []).forEach(([ref, note, type]) => {
       const m = /(\d+) г\./.exec(note || '');
       if (!m) return;
-      const who = byId.has(ref) ? byId.get(ref).full : ref;
-      ev.push({ y: +m[1], label: m[1], text: (type === 'b' ? 'Помолвка: ' : 'Брак: ') + who, ref: byId.has(ref) ? ref : null });
+      const who = byId.has(ref) ? byId.get(ref).full : App.tData(ref);
+      ev.push({ y: +m[1], label: m[1], text: (type === 'b' ? t('Помолвка: {who}', { who }) : t('Брак: {who}', { who })), ref: byId.has(ref) ? ref : null });
     });
-    (p.ev || []).forEach(([y, text, ref]) => ev.push({ y: yearOf(y), label: String(y), text, ref }));
+    (p.ev || []).forEach(([y, text, ref]) => ev.push({ y: yearOf(y), label: String(y), text: App.tData(text), ref }));
     if (p.k === 'K' && p.r) {
       const [a, b] = p.r.split('–');
-      ev.push({ y: yearOf(a), label: a, text: (p.sex === 'f' ? 'Взошла' : 'Взошёл') + ' на Железный трон' });
-      if (b && b !== p.d) ev.push({ y: yearOf(b), label: b, text: 'Конец правления' });
+      ev.push({ y: yearOf(a), label: a, text: p.sex === 'f' ? t('Взошла на Железный трон') : t('Взошёл на Железный трон') });
+      if (b && b !== p.d) ev.push({ y: yearOf(b), label: b, text: t('Конец правления') });
     }
-    if (p.d) ev.push({ y: yearOf(p.d), label: p.d, text: p.sex === 'f' ? 'Умерла' : 'Умер', last: true });
+    if (p.d) ev.push({ y: yearOf(p.d), label: App.tDate(p.d), text: p.sex === 'f' ? t('Умерла') : t('Умер'), last: true });
     ev.sort((a, b) => (a.y ?? 9999) - (b.y ?? 9999) || (a.last ? 1 : 0) - (b.last ? 1 : 0));
     return ev;
   }
@@ -4003,7 +4105,9 @@ const I18N = {"en": {}};
         // второе имя под заголовком: в русском — английское, в английском — русское
         ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
       '</div></div>' +
-      '<p class="note">' + esc(p.t || '') + '</p>' +
+      // в английском: перевод текста, если он есть; иначе русский с пометкой, что перевода пока нет
+      (p.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      '<p class="note"' + (p.tUntranslated ? ' lang="ru"' : '') + '>' + esc(p.t || '') + '</p>' +
       (p.ai ? '<p class="ai-mark" title="Текст написал Claude по A Wiki of Ice and Fire; автор его ещё правит">✎ Черновик Claude</p>' : '') +
       (ev.length ? '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>' : esc(e.text)) + '</span></li>').join('') + '</ol>' : '') +
@@ -4298,13 +4402,12 @@ const I18N = {"en": {}};
 
   const yr = y => {
     if (y == null) return '';
-    const n = Math.floor(y);
-    return n < 0 ? -n + ' г. до З.' : n + ' г.';
+    return App.yearWord(Math.floor(y));
   };
   const span = (a, b) => {
     const A = Math.floor(a), B = Math.floor(b);
-    if (A === B) return A < 0 ? -A + ' до З.' : String(A);
-    const f = n => n < 0 ? -n + ' до З.' : String(n);
+    if (A === B) return A < 0 ? App.t('{n} до З.', { n: -A }) : String(A);
+    const f = n => n < 0 ? App.t('{n} до З.', { n: -n }) : String(n);
     return f(A) + '–' + f(B);
   };
   const lum = hex => {
@@ -4552,12 +4655,12 @@ const I18N = {"en": {}};
       const x = X(f.y);
       const g = L.fights.append('g').attr('class', 'd-fightg');
       g.append('line').attr('class', 'd-fight').attr('x1', x).attr('x2', x).attr('y1', a.y).attr('y2', b.y);
-      g.append('title').text(DR.get(f.a).name + ' против ' + DR.get(f.b).name + ' · ' + yr(f.y) + ', ' + f.place + (f.both ? ' · погибли оба' : ''));
+      g.append('title').text(App.t('{a} против {b}', { a: DR.get(f.a).name, b: DR.get(f.b).name }) + ' · ' + yr(f.y) + ', ' + f.place + (f.both ? ' · ' + App.t('погибли оба') : ''));
       const mark = (r, kill) => {
         const m = L.marks.append('g').attr('class', kill ? 'd-kill' : 'd-hitter').attr('transform', 'translate(' + x + ',' + r.y + ')');
         m.append('circle').attr('r', kill ? 6 : 3.5);
         if (kill) m.append('path').attr('d', 'M-2.6-2.6L2.6 2.6M2.6-2.6L-2.6 2.6');
-        m.append('title').text(DR.get(f.a).name + ' против ' + DR.get(f.b).name + ' · ' + yr(f.y) + ', ' + f.place);
+        m.append('title').text(App.t('{a} против {b}', { a: DR.get(f.a).name, b: DR.get(f.b).name }) + ' · ' + yr(f.y) + ', ' + f.place);
       };
       mark(b, true); mark(a, !!f.both);
     });
@@ -4610,15 +4713,16 @@ const I18N = {"en": {}};
   const CS = { art: 'Окрас — со слов художника, согласованных с командой Мартина.', ill: 'Окрас — по иллюстрациям; в книгах он не описан.', name: 'Окрас — по имени и рисункам; в книгах он не описан.' };
   function dragonEvents(d) {
     const ev = [];
-    ev.push({ y: d.h, label: d.ha ? '≈ ' + yr(d.h).replace(' г.', '') : yr(d.h).replace(' г.', ''), text: (d.sex === 'f' ? 'Вылупилась' : d.sex === 'm' ? 'Вылупился' : 'Вылупился') + (d.hl ? ': ' + d.hl : '') });
-    d.r.forEach(([who, a, b, how]) => ev.push({ y: a, label: (a < 0 ? '≈ ' : '') + yr(a).replace(' г.', ''), text: 'Всадник: ' + personName(who), ref: byId.has(who) ? who : null }));
-    (d.ev || []).forEach(([y, text]) => ev.push({ y, label: yr(y).replace(' г.', ''), text }));
+    const t = App.t, num = y => (y < 0 ? App.t('{n} до З.', { n: -Math.floor(y) }) : String(Math.floor(y)));
+    ev.push({ y: d.h, label: (d.ha ? '≈ ' : '') + num(d.h), text: (d.sex === 'f' ? t('Вылупилась') : t('Вылупился')) + (d.hl ? ': ' + d.hl : '') });
+    d.r.forEach(([who, a, b, how]) => ev.push({ y: a, label: (a < 0 ? '≈ ' : '') + num(a), text: t('Всадник: {name}', { name: personName(who) }), ref: byId.has(who) ? who : null }));
+    (d.ev || []).forEach(([y, text]) => ev.push({ y, label: num(y), text }));
     const deaths = DRAGON_FIGHTS.filter(f => f.b === d.id || (f.both && f.a === d.id));
     deaths.slice(0, 1).forEach(f => {
       const foes = deaths.map(x => DR.get(x.a === d.id ? x.b : x.a));
-      ev.push({ y: f.y, label: yr(f.y).replace(' г.', ''), text: (d.sex === 'f' ? 'Погибла' : 'Погиб') + ' в схватке с драконом ' + foes.map(x => x.name).join(' и ') + ', ' + f.place.replace(/, вместе с .*$/, ''), dragon: foes[0].id, last: true });
+      ev.push({ y: f.y, label: num(f.y), text: (d.sex === 'f' ? t('Погибла в схватке с драконом {foe}', { foe: foes.map(x => x.name).join(' / ') }) : t('Погиб в схватке с драконом {foe}', { foe: foes.map(x => x.name).join(' / ') })) + ', ' + f.place.replace(/, вместе с .*$/, ''), dragon: foes[0].id, last: true });
     });
-    if (d.d != null && !deaths.length) ev.push({ y: d.d, label: yr(d.d).replace(' г.', ''), text: (d.sex === 'f' ? 'Погибла' : 'Погиб') + ': ' + d.dl, last: true });
+    if (d.d != null && !deaths.length) ev.push({ y: d.d, label: num(d.d), text: (d.sex === 'f' ? t('Погибла') : t('Погиб')) + ': ' + d.dl, last: true });
     else if (d.alive) ev.push({ y: 301, label: '300', text: 'Жив' + (d.sex === 'f' ? 'а' : '') + ' на конец книг', last: true });
     else if (d.d == null) ev.push({ y: d.dx, label: '?', text: 'Смерть: ' + d.dl, last: true });
     ev.sort((a, b) => a.y - b.y || (a.last ? 1 : 0) - (b.last ? 1 : 0));
@@ -4655,9 +4759,10 @@ const I18N = {"en": {}};
       '<div class="panel-top">' + egg(d) + '<div>' +
         '<p class="eyebrow">' + (d.sex === 'f' ? 'Дракон · самка' : d.sex === 'm' ? 'Дракон · самец' : 'Дракон') + (origin ? ' · ' + esc(origin.name) : '') + '</p>' +
         '<h2>' + esc(d.full) + '</h2>' +
-        '<p class="en">' + esc(d.en) + '</p>' +
+        '<p class="en">' + esc(App.lang === 'en' ? (d.ruName || '') : d.en) + '</p>' +
       '</div></div>' +
-      '<p class="note">' + esc(d.t) + '</p>' +
+      (d.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      '<p class="note"' + (d.tUntranslated ? ' lang="ru"' : '') + '>' + esc(d.t) + '</p>' +
       '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>'
           : e.dragon ? '<button type="button" class="linkish" data-action="dragon" data-dragon="' + e.dragon + '">' + esc(e.text) + '</button>' : esc(e.text)) +
@@ -4952,7 +5057,7 @@ const I18N = {"en": {}};
       b.append('text').attr('y', 0.5).text('×' + d.rep);
       b.append('title').text('Встречается в родословной ' + App.plural(d.rep, 'раз', 'раза', 'раз'));
     }
-    if (p) g0.append('title').text(p.full + (d.rep > 1 ? ' · встречается ' + App.plural(d.rep, 'раз', 'раза', 'раз') : ''));
+    if (p) g0.append('title').text(p.full + (d.rep > 1 ? ' · ' + App.t('встречается {k}', { k: App.plural(d.rep, 'раз', 'раза', 'раз') }) : ''));
     return g0;
   }
   function pedTree(id, depth) {
@@ -5065,7 +5170,7 @@ const I18N = {"en": {}};
           gsl.append('circle').attr('class', 'rep-dot').attr('cx', x).attr('cy', y).attr('r', 3.5);
         }
       }
-      gsl.append('title').text(p ? p.full + (counts.get(p.id) > 1 ? ' · встречается ' + App.plural(counts.get(p.id), 'раз', 'раза', 'раз') : '') : (s.text || 'неизвестно'));
+      gsl.append('title').text(p ? p.full + (counts.get(p.id) > 1 ? ' · ' + App.t('встречается {k}', { k: App.plural(counts.get(p.id), 'раз', 'раза', 'раз') }) : '') : (App.tData(s.text) || App.t('неизвестно')));
     });
     // Центр
     const c = byId.get(id);
@@ -5344,7 +5449,7 @@ const I18N = {"en": {}};
 
   const genLabel = g => g >= 6 ? 'Поколение ' + (g - 5) : 'До Завоевания';
   const yearsLabel = (lo, hi) => {
-    const f = y => y < 0 ? -y + ' до З.' : String(y);
+    const f = y => y < 0 ? App.t('{n} до З.', { n: -y }) : String(y);
     return 'рождения ≈ ' + (lo === hi ? f(lo) : f(lo) + '–' + f(hi));
   };
   function item(p) {
@@ -5618,10 +5723,10 @@ const I18N = {"en": {}};
   state.fq = '';
   const houseItem = (h, great) => '<div class="f-item h-' + h + (great ? ' f-great' : '') + '" data-name="' + esc(HOUSES[h].band.toLowerCase()) + '">' +
     '<label><input type="checkbox" data-house="' + h + '"' + (state.hiddenHouses.has(h) ? '' : ' checked') + '><i></i>' + esc(HOUSES[h].band) + '</label>' +
-    '<button type="button" class="f-only" data-only="' + h + '" title="Показать только ' + esc(HOUSES[h].band) + '">только</button></div>';
+    '<button type="button" class="f-only" data-only="' + h + '" title="' + esc(App.t('Показать только {name}', { name: HOUSES[h].band })) + '">только</button></div>';
   const regionBox = r => '<section class="f-reg" data-reg="' + r.id + '" data-name="' + esc(r.title.toLowerCase()) + '">' +
     '<div class="f-reg-h"><label><input type="checkbox" data-reg="' + r.id + '">' + esc(r.title) + '</label>' +
-    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="Показать только малые дома края: ' + esc(r.title) + '">только</button></div>' +
+    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="' + esc(App.t('Показать только малые дома края: {name}', { name: App.t(r.title) })) + '">только</button></div>' +
     r.houses.map(h => houseItem(h, false)).join('') + '</section>';
   const blockHead = (title, kind) => '<div class="f-block-h"><span>' + title + ' <span class="f-cnt" data-cnt="' + kind + '"></span></span>' +
     '<span class="f-acts"><button type="button" class="linkish" data-ball="' + kind + '">все</button> · <button type="button" class="linkish" data-bnone="' + kind + '">снять</button></span></div>';
@@ -5855,7 +5960,7 @@ const I18N = {"en": {}};
       const ic = g.append('g').attr('class', 'scr-ico').attr('transform', 'translate(' + x + ',3)');
       ic.append('rect').attr('x', 0.5).attr('y', 0.5).attr('width', 13).attr('height', 9).attr('rx', 2);
       ic.append('path').attr('d', 'M4 12h6M7 9.5v2.5');
-      ic.append('title').text('В экранизации иначе: ' + SCREEN[n.data.id].df.split('. ')[0] + '.');
+      ic.append('title').text(App.t('В экранизации иначе: {text}', { text: SCREEN[n.data.id].df.split('. ')[0] + '.' }));
     });
   });
   // Драконы: значок рядом с именем на шкале
@@ -5871,7 +5976,7 @@ const I18N = {"en": {}};
       const ic = g.append('g').attr('class', 'scr-ico').attr('transform', 'translate(' + x + ',-24)');
       ic.append('rect').attr('x', 0.5).attr('y', 0.5).attr('width', 13).attr('height', 9).attr('rx', 2);
       ic.append('path').attr('d', 'M4 12h6M7 9.5v2.5');
-      ic.append('title').text('В экранизации иначе: ' + DS[r.d.id]);
+      ic.append('title').text(App.t('В экранизации иначе: {text}', { text: DS[r.d.id] }));
     });
   }
 
@@ -6505,7 +6610,7 @@ const I18N = {"en": {}};
     mg.append('line').attr('x1', d => X(d.y)).attr('x2', d => X(d.y)).attr('y1', d => d.a.y).attr('y2', d => d.b.y);
     mg.append('circle').attr('cx', d => X(d.y)).attr('cy', d => d.a.y).attr('r', 3.6);
     mg.append('circle').attr('cx', d => X(d.y)).attr('cy', d => d.b.y).attr('r', 3.6);
-    mg.append('title').text(d => (d.e.type === 'b' ? 'Помолвка: ' : d.e.type === 'l' ? 'Связь: ' : 'Брак: ') + d.a.p.full + ' и ' + d.b.p.full + (d.e.type === 'm' ? ' · около ' + Math.round(d.y) + ' г.' : ''));
+    mg.append('title').text(d => App.t(d.e.type === 'b' ? 'Помолвка' : d.e.type === 'l' ? 'Связь' : 'Брак') + ': ' + App.t('{a} и {b}', { a: d.a.p.full, b: d.b.p.full }) + (d.e.type === 'm' ? ' · ' + App.t('около {y}', { y: App.yearWord(Math.round(d.y)) }) : ''));
     // Линии к детям: от родителя на древе к началу жизни ребёнка
     const drops = [];
     rows.forEach(r => {
@@ -6524,7 +6629,7 @@ const I18N = {"en": {}};
     const lives = L_.lives.selectAll('g.life').data([...rows.values()], d => d.p.id).join('g')
       .attr('class', d => 'life h-' + d.p.house + ' st-' + d.p.k)
       .attr('data-id', d => d.p.id).attr('tabindex', 0).attr('role', 'button')
-      .attr('aria-label', d => d.p.full + ', ' + App.kindLabel(d.p) + ', ' + Math.round(d.L.b) + '–' + (d.L.alive ? 'жив на 300 г.' : Math.round(d.L.d)));
+      .attr('aria-label', d => d.p.full + ', ' + App.kindLabel(d.p) + ', ' + Math.round(d.L.b) + '–' + (d.L.alive ? App.t('жив на 300 г.') : Math.round(d.L.d)));
     lives.append('line').attr('class', 'hit').attr('x1', d => d.x0).attr('x2', d => Math.max(d.x1, d.x0 + 30)).attr('y1', d => d.y).attr('y2', d => d.y);
     lives.each(function (d) {
       const g = d3.select(this);
@@ -6546,7 +6651,7 @@ const I18N = {"en": {}};
       }
       if (d.p.d) g.append('circle').attr('class', 'lf-end').attr('cx', d.x1).attr('cy', d.y).attr('r', 2.6);
       g.append('text').attr('class', 'lf-name').attr('x', d.x0).attr('y', d.y - 7).text(d.p.name);
-      g.append('title').text(d.p.full + ' · ' + (d.L.be ? '≈' : '') + Math.round(d.L.b) + '–' + (d.L.alive ? 'жив на 300 г.' : (d.L.de ? '≈' : '') + Math.round(d.L.d)) + (d.L.be || d.L.de ? ' (годы со знаком ≈ оценены по родственникам)' : ''));
+      g.append('title').text(d.p.full + ' · ' + (d.L.be ? '≈' : '') + Math.round(d.L.b) + '–' + (d.L.alive ? App.t('жив на 300 г.') : (d.L.de ? '≈' : '') + Math.round(d.L.d)) + (d.L.be || d.L.de ? ' (' + App.t('годы со знаком ≈ оценены по родственникам') + ')' : ''));
     });
     lives.on('click', (e, d) => App.select(d.p.id));
     lives.on('keydown', (e, d) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.select(d.p.id); } });
@@ -6661,7 +6766,7 @@ const I18N = {"en": {}};
     const alive = PEOPLE.filter(p => aliveAt(p.id, y) && !p.group).length;
     const king = KINGS.find(p => { const L = LIFE.get(p.id); return L.ra <= y && y < (L.rb != null ? L.rb : 301); });
     const era = eraAt(y);
-    return { year: y < 0 ? -y + ' г. до З.' : y + ' г.', alive, king: king ? king.name : '', era: era ? era.name : '' };
+    return { year: App.yearWord(y), alive, king: king ? king.name : '', era: era ? era.name : '' };
   };
 
   App.smokeTime = () => {
@@ -6725,9 +6830,10 @@ const I18N = {"en": {}};
     FREE.range([PAD, PAD + (w - 2 * PAD) * 0.2, w - PAD]);
     return { w, x: y => FREE(y), inv: px => FREE.invert(px), dom: FREE.domain() };
   }
-  const label = y => y < 0 ? -y + ' до З.' : (y === 0 ? '1' : String(y));
-  const yearWord = y => y < 0 ? -y + ' г. до З.' : y + ' г.';
-  const range = (a, b) => a === b ? (a < 0 ? -a + ' до З.' : String(a)) : a < 0 && b < 0 ? (-a) + '–' + (-b) + ' до З.' : a < 0 ? (-a) + ' до З.–' + b : a + '–' + b;
+  const bc = n => App.t('{n} до З.', { n });
+  const label = y => y < 0 ? bc(-y) : (y === 0 ? '1' : String(y));
+  const yearWord = y => App.yearWord(y);
+  const range = (a, b) => a === b ? (a < 0 ? bc(-a) : String(a)) : a < 0 && b < 0 ? bc((-a) + '–' + (-b)) : a < 0 ? bc(-a) + '–' + b : a + '–' + b;
   const clampY = y => Math.max(YMIN, Math.min(YMAX, Math.round(y)));
   const quant = (arr, q) => arr[Math.max(0, Math.min(arr.length - 1, Math.round(q * (arr.length - 1))))];
 
@@ -6823,9 +6929,9 @@ const I18N = {"en": {}};
         g.append('rect').attr('class', 'ts-sub-bar').attr('x', a).attr('y', H - 5).attr('width', b - a).attr('height', 5);
         g.append('line').attr('class', 'ts-sub-edge').attr('x1', a).attr('x2', a).attr('y1', 0).attr('y2', H);
         g.append('line').attr('class', 'ts-sub-edge').attr('x1', b).attr('x2', b).attr('y1', 0).attr('y2', H);
-        const tip = s.name + ': ' + (s.est ? '≈ ' : '') + yearWord(Math.round(s.a)) + ' — ' + (s.alive ? 'жив на конец книг' : yearWord(Math.round(s.b)));
-        g.append('title').text(tip + ' (годы жизни выбранного)');
-        subLabel = { a, b, s, text: s.name + ' · ' + (s.est ? '≈ ' : '') + range(Math.round(s.a), Math.round(s.b)) + (s.alive ? ' и дальше' : '') };
+        const tip = s.name + ': ' + (s.est ? '≈ ' : '') + yearWord(Math.round(s.a)) + ' — ' + (s.alive ? App.t('жив на конец книг') : yearWord(Math.round(s.b)));
+        g.append('title').text(tip + ' (' + App.t('годы жизни выбранного') + ')');
+        subLabel = { a, b, s, text: s.name + ' · ' + (s.est ? '≈ ' : '') + range(Math.round(s.a), Math.round(s.b)) + (s.alive ? ' ' + App.t('и дальше') : '') };
       }
     }
 
@@ -6884,7 +6990,7 @@ const I18N = {"en": {}};
       if (words.length) g.append('text').attr('x', x0 + 7).attr('y', R0 + RH / 2 + 0.5).text(words[0]);
       g.append('title').text(tip);
     };
-    hatch(0, m.x(1) - 1, 'pre', ['до Завоевания: владыки Драконьего Камня', 'владыки Драконьего Камня', 'до Завоевания'], 'До Завоевания королей не было: Таргариены правили Драконьим Камнем');
+    hatch(0, m.x(1) - 1, 'pre', ['до Завоевания: владыки Драконьего Камня', 'владыки Драконьего Камня', 'до Завоевания'], App.t('До Завоевания королей не было: Таргариены правили Драконьим Камнем'));
     (App.kings ? App.kings() : []).forEach(p => {
       const L = App.life(p.id);
       const a = m.x(L.ra), b = L.rb != null ? m.x(L.rb) : Math.max(m.x(300), a + 10);
@@ -6896,9 +7002,9 @@ const I18N = {"en": {}};
       const w = b - a;
       const t = p.n ? (w > 96 ? p.n + ' · ' + p.name : w > 20 ? String(p.n) : '') : (w > 64 ? p.name : '');
       if (t) g.append('text').attr('x', a + 5).attr('y', R0 + RH / 2 + 0.5).text(t);
-      g.append('title').text(p.full + ' · правил' + (p.sex === 'f' ? 'а ' : ' ') + (p.r || p.rm) + ' · нажмите — открыть карточку');
+      g.append('title').text(p.full + ' · ' + App.t(p.sex === 'f' ? 'правила {r}' : 'правил {r}', { r: p.r || p.rm }) + ' · ' + App.t('нажмите — открыть карточку'));
     });
-    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], 'Дальше книги не дошли: что было после 300 г., неизвестно');
+    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], App.t('Дальше книги не дошли: что было после 300 г., неизвестно'));
     gaps.forEach(gp => {
       const g = ssvg.append('g').attr('class', 'ts-gap');
       g.append('rect').attr('x', gp.x0).attr('y', 0).attr('width', gp.x1 - gp.x0).attr('height', H);
@@ -6986,7 +7092,7 @@ const I18N = {"en": {}};
     if (hoverCol) showColSpan(hoverCol);
 
     svgEl.setAttribute('aria-valuenow', String(sy != null ? Math.round(sy) : 129));
-    svgEl.setAttribute('aria-valuetext', own() ? 'Год: ' + own().label(sy) : state.year != null ? 'Срез: ' + yearWord(state.year) : 'Срез по году выключен');
+    svgEl.setAttribute('aria-valuetext', own() ? App.t('Год: {y}', { y: own().label(sy) }) : state.year != null ? App.t('Срез: {y}', { y: yearWord(state.year) }) : App.t('Срез по году выключен'));
   }
 
   function drawGens(m, H, GH) {
@@ -7343,8 +7449,8 @@ const I18N = {"en": {}};
   function evDiff() { if (!EVDIFF) EVDIFF = EVS.map((e, i) => i ? diffIds(snapshot(EVS[i - 1].t), snapshot(e.t)).length : 0); return EVDIFF; }
 
   /* ——— Подписи ——— */
-  const yearWord = y => { const f = Math.floor(y); return f < 0 ? (-f) + ' г. до З.' : Math.max(1, f) + ' г.'; };
-  const yearShort = y => { const f = Math.floor(y); return f < 0 ? (-f) + ' до З.' : String(Math.max(1, f)); };
+  const yearWord = y => { const f = Math.floor(y); return App.yearWord(f < 0 ? f : Math.max(1, f)); };
+  const yearShort = y => { const f = Math.floor(y); return f < 0 ? App.t('{n} до З.', { n: -f }) : String(Math.max(1, f)); };
   const span = (a, b) => { const A = yearShort(a), B = b >= Y1 ? '300' : yearShort(b - 0.001); return A === B ? A : A + '–' + B; };
   function kingAt(y) {
     if (y < 1) return 'Эйгон Завоеватель';
@@ -7369,6 +7475,7 @@ const I18N = {"en": {}};
   const enRx = new RegExp('\\b(?:House )?(' + [...EN2RU.keys()].map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')\\b', 'g');
   function tidy(t) {
     if (!t) return '';
+    if (App.lang !== 'ru' && !/[А-Яа-яЁё]/.test(t)) return t; // переведённая заметка уже чистая: AC/BC и названия книг не трогаем
     return t
       .replace(/\b(TWOIAF|AGOT|ACOK|ASOS|AFFC|ADWD|TWOW|TSS|THK|TMK|F&B)\b/g, m => BOOKS[m] || m)
       .replace(/(\d+)\s*AC\b\.?/g, '$1 г.').replace(/(\d+)\s*BC\b\.?/g, '$1 г. до З.')
@@ -7572,7 +7679,7 @@ const I18N = {"en": {}};
     const mv = moved.has(id) || (!isOpen && subtreeHas(id, moved));
     const tip = (h.seat ? h.seat + ' · ' : '') + REG.get(h.region).ru + (L.own && L.why ? '\n' + tidy(L.why) : '');
     return '<li><div class="vs-row h-' + REGCLS[h.region] + (L.own ? ' own' : '') + (mv ? ' moved' : '') + '">' +
-      (sub.length ? chev(key, isOpen, (isOpen ? 'Свернуть' : 'Раскрыть') + ' знаменосцев: ' + h.ru) : '<span class="vs-tog-sp"></span>') +
+      (sub.length ? chev(key, isOpen, App.t(isOpen ? 'Свернуть знаменосцев: {name}' : 'Раскрыть знаменосцев: {name}', { name: h.ru })) : '<span class="vs-tog-sp"></span>') +
       '<button type="button" class="vs-name' + (id === sel ? ' sel' : '') + '" data-vh="' + id + '" data-q="' + esc(norm(h.ru + ' ' + h.en)) + '" title="' + esc(tip) + '"><i aria-hidden="true"></i><span>' + esc(h.ru) + '</span>' +
         (L.own ? '<span class="vs-flag" aria-label="присяга по событию">⚑</span>' : '') + '</button>' +
       (n ? '<button type="button" class="vs-n" data-tog="' + key + '" tabindex="-1" aria-hidden="true">' + n + '</button>' : '') + '</div>' +
@@ -7583,7 +7690,7 @@ const I18N = {"en": {}};
     const isOpen = sub.length > 0 && open.has(key), wide = isOpen && n >= WIDE;
     const mv = moved.has(id) || (!isOpen && subtreeHas(id, moved));
     return '<article class="vs-card h-' + clsOf(h) + (wide ? ' wide' : '') + (isOpen ? ' open' : '') + (mv ? ' moved' : '') + '"><h4 class="vs-card-head">' +
-      (sub.length ? chev(key, isOpen, (isOpen ? 'Свернуть' : 'Раскрыть') + ' знаменосцев: ' + h.ru) : '<span class="vs-tog-sp"></span>') +
+      (sub.length ? chev(key, isOpen, App.t(isOpen ? 'Свернуть знаменосцев: {name}' : 'Раскрыть знаменосцев: {name}', { name: h.ru })) : '<span class="vs-tog-sp"></span>') +
       '<button type="button" class="vs-card-name' + (id === sel ? ' sel' : '') + '" data-vh="' + id + '" data-q="' + esc(norm(h.ru + ' ' + h.en)) + '" title="' + esc((h.seat ? h.seat + ' · ' : '') + REG.get(h.region).ru + (L.own && L.why ? '\n' + tidy(L.why) : '')) + '">' +
         (h.great && App.sigilSVG ? App.sigilSVG(clsOf(h), 0, 0, 20, 'vs-sigil') : '<i aria-hidden="true"></i>') + '<span>' + esc(h.ru) + '</span>' +
         (L.own ? '<span class="vs-flag">⚑</span>' : '') + '</button>' +
@@ -8157,8 +8264,8 @@ const I18N = {"en": {}};
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
   const sub = document.getElementById('brand-sub');
   sub.textContent = App.housesLabel() + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +
-    (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · от Исхода Эйнара до Войны пяти королей';
-  sub.title = 'Дома: ' + order.map(h => HOUSES[h].band).join(', ') + '. Годы — от Завоевания Эйгона.';
+    (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · ' + App.t('от Исхода Эйнара до Войны пяти королей');
+  sub.title = App.t('Дома: {list}. Годы — от Завоевания Эйгона.', { list: order.map(h => HOUSES[h].band).join(', ') });
   // Легенда: образцы гербов великого и малого дома (список домов не нужен — цвета видны на полосах и в фильтре)
   const minor1 = App.bandOrder().find(b => b.liege);
   document.getElementById('lg-sig-great').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG('targ', 4, 0, 22) + '</svg>';
@@ -8170,6 +8277,7 @@ const I18N = {"en": {}};
     b.addEventListener('click', () => App.setLang(b.dataset.lang));
   });
   App.translateDom(document.querySelector('.app'));
+  App.autoTranslate(document.body);
   App.start();
 })();
 

@@ -1,10 +1,11 @@
 /* Данные страницы: строение — data/*.json, тексты — texts/ (Markdown). Описание полей — data/README.md.
    node tools/data.js --emit   → JS с глобальными переменными для страницы (так собирает build.py)
-   node tools/data.js --sync   → texts/*.md по data/*.json: порядок и группы, имена в заголовках, пустые разделы для новых
+   node tools/data.js --sync   → texts/*.md по data/*.json: порядок и группы, имена в заголовках, пустые разделы для новых;
+                                 то же для английских текстов в texts/en/ (заголовки — английские имена)
    node tools/data.js --check  → загрузить и показать, что не сходится между data/ и texts/
    Из других скриптов: const D = require('./data'); D.load() → { PEOPLE, BANDS, …, problems }. */
 const fs = require('fs'), path = require('path');
-const ROOT = path.join(__dirname, '..'), DATA = path.join(ROOT, 'data'), TEXTS = path.join(ROOT, 'texts');
+const ROOT = path.join(__dirname, '..'), DATA = path.join(ROOT, 'data'), TEXTS = path.join(ROOT, 'texts'), TEXTS_EN = path.join(TEXTS, 'en');
 const readJson = f => JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8'));
 const C = JSON.stringify;
 
@@ -36,9 +37,12 @@ function parseMd(file) {
 }
 const MD_NOTE = '<!-- Тексты для страницы. Заголовок «### id · Имя» служебный: id не менять, имя подставляется само. ' +
   AI_MARK + ' в конце заголовка — черновик Claude: поправили текст — сотрите ' + AI_MARK + '. Текст — строки под заголовком. -->';
+const MD_NOTE_EN = '<!-- English texts for the page. The «### id · Name» heading is technical: never change the id, the name is filled in ' +
+  'automatically. Text goes on the lines under the heading; an empty section means the Russian text is shown. ' + AI_MARK +
+  ' at the end of the heading marks an AI-written draft. See texts/en/README.md. -->';
 /* groups: [{ title, items: [{ id, name, text, ai }] }] */
-function renderMd(title, groups) {
-  const out = ['# ' + title, '', MD_NOTE, ''];
+function renderMd(title, groups, note) {
+  const out = ['# ' + title, '', note || MD_NOTE, ''];
   groups.forEach(g => {
     if (g.title) out.push('## ' + g.title, '');
     g.items.forEach(it => {
@@ -79,11 +83,12 @@ const orderKeys = (o, keys) => { const r = {}; keys.forEach(k => { if (k in o) r
 /* Что откуда: файлы с текстами и их разделы */
 function sources() {
   const meta = readJson('meta.json');
-  const people = meta.people_files.map(f => ({ f, json: readJson('people/' + f + '.json'), md: path.join(TEXTS, 'people', f + '.md') }));
+  const people = meta.people_files.map(f => ({ f, json: readJson('people/' + f + '.json'), md: path.join(TEXTS, 'people', f + '.md'), mdEn: path.join(TEXTS_EN, 'people', f + '.md') }));
   return {
     meta, people,
-    dragons: readJson('dragons.json'), dragonsMd: path.join(TEXTS, 'dragons.md'),
+    dragons: readJson('dragons.json'), dragonsMd: path.join(TEXTS, 'dragons.md'), dragonsMdEn: path.join(TEXTS_EN, 'dragons.md'),
     screen: readJson('screen.json'), screenMd: path.join(TEXTS, 'screen.md'), screenDragonsMd: path.join(TEXTS, 'screen-dragons.md'),
+    screenMdEn: path.join(TEXTS_EN, 'screen.md'), screenDragonsMdEn: path.join(TEXTS_EN, 'screen-dragons.md'),
     vassals: readJson('vassals.json')
   };
 }
@@ -97,13 +102,18 @@ function load() {
   };
   // люди
   const PEOPLE = [];
-  S.people.forEach(({ f, json, md: mdFile }) => {
+  // английский текст — в t_en (ai_en — черновик нейросети); пустой раздел — на странице русский текст
+  const en = (x, e, k) => { if (e && e.text) { x[k || 't_en'] = e.text; if (e.ai) x.ai_en = 1; } };
+  S.people.forEach(({ f, json, md: mdFile, mdEn }) => {
     const list = json.groups.flatMap(g => g.people);
-    const md = useMd(parseMd(mdFile), new Set(list.map(p => p.id)), 'data/people/' + f + '.json');
+    const ids = new Set(list.map(p => p.id));
+    const md = useMd(parseMd(mdFile), ids, 'data/people/' + f + '.json');
+    const mdE = useMd(parseMd(mdEn), ids, 'data/people/' + f + '.json');
     list.forEach(p => {
       const q = Object.assign({}, p), e = md.entries.get(p.id);
       if (e && e.text) q.t = e.text;
       if (e && e.ai) q.ai = 1;
+      en(q, mdE.entries.get(p.id));
       if (!e) problems.push('texts/people/' + f + '.md: нет раздела ' + p.id);
       PEOPLE.push(q);
     });
@@ -112,26 +122,31 @@ function load() {
   const D = S.dragons;
   const DRAGONS = D.groups.flatMap(g => g.dragons).map(d => Object.assign({}, d));
   const DRAGON_ORIGINS = D.origins.map(o => Object.assign({}, o));
-  const dmd = useMd(parseMd(S.dragonsMd), new Set(DRAGONS.concat(DRAGON_ORIGINS).map(x => x.id)), 'data/dragons.json');
-  DRAGONS.concat(DRAGON_ORIGINS).forEach(x => { const e = dmd.entries.get(x.id); if (e && e.text) x.t = e.text; if (e && e.ai) x.ai = 1; });
+  const dIds = new Set(DRAGONS.concat(DRAGON_ORIGINS).map(x => x.id));
+  const dmd = useMd(parseMd(S.dragonsMd), dIds, 'data/dragons.json'), dmdE = useMd(parseMd(S.dragonsMdEn), dIds, 'data/dragons.json');
+  DRAGONS.concat(DRAGON_ORIGINS).forEach(x => { const e = dmd.entries.get(x.id); if (e && e.text) x.t = e.text; if (e && e.ai) x.ai = 1; en(x, dmdE.entries.get(x.id)); });
   // экранизации
   const screen = {};
   const items = S.screen.groups.flatMap(g => g.items);
-  const smd = useMd(parseMd(S.screenMd), new Set(items.map(x => x.id)), 'data/screen.json');
+  const sIds = new Set(items.map(x => x.id));
+  const smd = useMd(parseMd(S.screenMd), sIds, 'data/screen.json'), smdE = useMd(parseMd(S.screenMdEn), sIds, 'data/screen.json');
   items.forEach(it => {
     const o = Object.assign({}, it); delete o.id;
     const e = smd.entries.get(it.id);
     if (e && e.text) o.df = e.text;
     if (e && e.ai) o.ai = 1;
+    en(o, smdE.entries.get(it.id), 'df_en');
     screen[it.id] = o;
   });
-  const DRAGON_SCREEN = {};
-  const dsmd = useMd(parseMd(S.screenDragonsMd), new Set(DRAGONS.map(d => d.id)), 'data/dragons.json');
+  const DRAGON_SCREEN = {}, DRAGON_SCREEN_EN = {};
+  const drIds = new Set(DRAGONS.map(d => d.id));
+  const dsmd = useMd(parseMd(S.screenDragonsMd), drIds, 'data/dragons.json'), dsmdE = useMd(parseMd(S.screenDragonsMdEn), drIds, 'data/dragons.json');
   dsmd.entries.forEach((e, id) => { if (e.text) DRAGON_SCREEN[id] = e.text; });
+  dsmdE.entries.forEach((e, id) => { if (e.text) DRAGON_SCREEN_EN[id] = e.text; });
   const V = S.vassals;
   return {
     NOW_YEAR: S.meta.now_year, BANDS: S.meta.bands, HOUSES: S.meta.houses, GAPS: S.meta.gaps, PEOPLE,
-    DRAGON_ORIGINS, DRAGONS, DRAGON_FIGHTS: D.fights, SERIES: S.screen.series, EXTRA: { screen }, DRAGON_SCREEN,
+    DRAGON_ORIGINS, DRAGONS, DRAGON_FIGHTS: D.fights, SERIES: S.screen.series, EXTRA: { screen }, DRAGON_SCREEN, DRAGON_SCREEN_EN,
     V_REGIONS: V.regions, V_PRE: V.pre, V_CLAIMANTS: V.claimants, V_MILESTONES: V.milestones, V_HOUSES: V.houses,
     problems
   };
@@ -155,6 +170,7 @@ function emit(d) {
     'const SERIES = ' + C(d.SERIES) + ';',
     'const EXTRA = { screen: ' + map(d.EXTRA.screen) + ' };',
     'const DRAGON_SCREEN = ' + map(d.DRAGON_SCREEN) + ';',
+    'const DRAGON_SCREEN_EN = ' + map(d.DRAGON_SCREEN_EN) + ';',
     'const V_REGIONS = ' + C(d.V_REGIONS) + ';',
     'const V_PRE = ' + C(d.V_PRE) + ';',
     'const V_CLAIMANTS = ' + C(d.V_CLAIMANTS) + ';',
@@ -176,23 +192,31 @@ function sync(override) {
   };
   const written = [];
   const put = (file, s) => { fs.mkdirSync(path.dirname(file), { recursive: true }); const old = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : ''; if (old !== s) { fs.writeFileSync(file, s); written.push(path.relative(ROOT, file)); } };
-  S.people.forEach(({ json, md: mdFile }) => {
-    const md = parseMd(mdFile);
+  // английские тексты: те же разделы, в заголовке — английское имя (поле en), тексты и ✎ сохраняются
+  const keep = (md, id) => { const e = md.entries.get(id); return e ? { text: e.text, ai: e.ai } : { text: '', ai: false }; };
+  const enName = x => x.en || x.full || x.name;
+  S.people.forEach(({ json, md: mdFile, mdEn }) => {
+    const md = parseMd(mdFile), mdE = parseMd(mdEn);
     put(mdFile, renderMd(json.title, json.groups.map(g => ({ title: g.title, items: g.people.map(p => Object.assign({ id: p.id, name: p.full || p.name }, pick(md, 'people', p.id))) }))));
+    put(mdEn, renderMd(json.title, json.groups.map(g => ({ title: g.title, items: g.people.map(p => Object.assign({ id: p.id, name: enName(p) }, keep(mdE, p.id))) })), MD_NOTE_EN));
   });
-  const D = S.dragons, dmd = parseMd(S.dragonsMd);
+  const D = S.dragons, dmd = parseMd(S.dragonsMd), dmdE = parseMd(S.dragonsMdEn);
   put(S.dragonsMd, renderMd('Драконы', [{ title: 'Откуда драконы (ветви)', items: D.origins.map(x => Object.assign({ id: x.id, name: x.name }, pick(dmd, 'dragons', x.id))) }]
     .concat(D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: x.full || x.name }, pick(dmd, 'dragons', x.id))) })))));
-  const names = new Map();
-  S.people.forEach(({ json }) => json.groups.forEach(g => g.people.forEach(p => names.set(p.id, p.full || p.name))));
-  const smd = parseMd(S.screenMd);
+  put(S.dragonsMdEn, renderMd('Dragons', [{ title: 'Откуда драконы (ветви)', items: D.origins.map(x => Object.assign({ id: x.id, name: enName(x) }, keep(dmdE, x.id))) }]
+    .concat(D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: enName(x) }, keep(dmdE, x.id))) }))), MD_NOTE_EN));
+  const names = new Map(), namesEn = new Map();
+  S.people.forEach(({ json }) => json.groups.forEach(g => g.people.forEach(p => { names.set(p.id, p.full || p.name); namesEn.set(p.id, enName(p)); })));
+  const smd = parseMd(S.screenMd), smdE = parseMd(S.screenMdEn);
   put(S.screenMd, renderMd('Экранизации: чем сериал отличается от книг', S.screen.groups.map(g => ({ title: g.title, items: g.items.map(x => Object.assign({ id: x.id, name: names.get(x.id) || x.id }, pick(smd, 'screen', x.id))) }))));
-  const dsmd = parseMd(S.screenDragonsMd);
+  put(S.screenMdEn, renderMd('Adaptations: how the shows differ from the books', S.screen.groups.map(g => ({ title: g.title, items: g.items.map(x => Object.assign({ id: x.id, name: namesEn.get(x.id) || x.id }, keep(smdE, x.id))) })), MD_NOTE_EN));
+  const dsmd = parseMd(S.screenDragonsMd), dsmdE = parseMd(S.screenDragonsMdEn);
   put(S.screenDragonsMd, renderMd('Драконы на экране: чем сериал отличается от книг', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: x.full || x.name }, pick(dsmd, 'screenDragons', x.id))) }))));
+  put(S.screenDragonsMdEn, renderMd('Dragons on screen: how the shows differ from the books', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: enName(x) }, keep(dsmdE, x.id))) })), MD_NOTE_EN));
   return written;
 }
 
-module.exports = { load, emit, sync, parseMd, renderMd, fmt, writeJson, orderKeys, PERSON_KEYS, ROOT, DATA, TEXTS };
+module.exports = { load, emit, sync, parseMd, renderMd, fmt, writeJson, orderKeys, PERSON_KEYS, ROOT, DATA, TEXTS, TEXTS_EN };
 
 if (require.main === module) {
   const a = process.argv[2];

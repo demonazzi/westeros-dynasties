@@ -211,7 +211,7 @@
       b.append('text').attr('y', 0.5).text('×' + d.rep);
       b.append('title').text('Встречается в родословной ' + App.plural(d.rep, 'раз', 'раза', 'раз'));
     }
-    if (p) g0.append('title').text(p.full + (d.rep > 1 ? ' · встречается ' + App.plural(d.rep, 'раз', 'раза', 'раз') : ''));
+    if (p) g0.append('title').text(p.full + (d.rep > 1 ? ' · ' + App.t('встречается {k}', { k: App.plural(d.rep, 'раз', 'раза', 'раз') }) : ''));
     return g0;
   }
   function pedTree(id, depth) {
@@ -324,7 +324,7 @@
           gsl.append('circle').attr('class', 'rep-dot').attr('cx', x).attr('cy', y).attr('r', 3.5);
         }
       }
-      gsl.append('title').text(p ? p.full + (counts.get(p.id) > 1 ? ' · встречается ' + App.plural(counts.get(p.id), 'раз', 'раза', 'раз') : '') : (s.text || 'неизвестно'));
+      gsl.append('title').text(p ? p.full + (counts.get(p.id) > 1 ? ' · ' + App.t('встречается {k}', { k: App.plural(counts.get(p.id), 'раз', 'раза', 'раз') }) : '') : (App.tData(s.text) || App.t('неизвестно')));
     });
     // Центр
     const c = byId.get(id);

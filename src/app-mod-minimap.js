@@ -123,10 +123,10 @@
   state.fq = '';
   const houseItem = (h, great) => '<div class="f-item h-' + h + (great ? ' f-great' : '') + '" data-name="' + esc(HOUSES[h].band.toLowerCase()) + '">' +
     '<label><input type="checkbox" data-house="' + h + '"' + (state.hiddenHouses.has(h) ? '' : ' checked') + '><i></i>' + esc(HOUSES[h].band) + '</label>' +
-    '<button type="button" class="f-only" data-only="' + h + '" title="Показать только ' + esc(HOUSES[h].band) + '">только</button></div>';
+    '<button type="button" class="f-only" data-only="' + h + '" title="' + esc(App.t('Показать только {name}', { name: HOUSES[h].band })) + '">только</button></div>';
   const regionBox = r => '<section class="f-reg" data-reg="' + r.id + '" data-name="' + esc(r.title.toLowerCase()) + '">' +
     '<div class="f-reg-h"><label><input type="checkbox" data-reg="' + r.id + '">' + esc(r.title) + '</label>' +
-    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="Показать только малые дома края: ' + esc(r.title) + '">только</button></div>' +
+    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="' + esc(App.t('Показать только малые дома края: {name}', { name: App.t(r.title) })) + '">только</button></div>' +
     r.houses.map(h => houseItem(h, false)).join('') + '</section>';
   const blockHead = (title, kind) => '<div class="f-block-h"><span>' + title + ' <span class="f-cnt" data-cnt="' + kind + '"></span></span>' +
     '<span class="f-acts"><button type="button" class="linkish" data-ball="' + kind + '">все</button> · <button type="button" class="linkish" data-bnone="' + kind + '">снять</button></span></div>';

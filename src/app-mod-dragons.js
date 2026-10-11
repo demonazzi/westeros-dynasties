@@ -25,13 +25,12 @@
 
   const yr = y => {
     if (y == null) return '';
-    const n = Math.floor(y);
-    return n < 0 ? -n + ' г. до З.' : n + ' г.';
+    return App.yearWord(Math.floor(y));
   };
   const span = (a, b) => {
     const A = Math.floor(a), B = Math.floor(b);
-    if (A === B) return A < 0 ? -A + ' до З.' : String(A);
-    const f = n => n < 0 ? -n + ' до З.' : String(n);
+    if (A === B) return A < 0 ? App.t('{n} до З.', { n: -A }) : String(A);
+    const f = n => n < 0 ? App.t('{n} до З.', { n: -n }) : String(n);
     return f(A) + '–' + f(B);
   };
   const lum = hex => {
@@ -279,12 +278,12 @@
       const x = X(f.y);
       const g = L.fights.append('g').attr('class', 'd-fightg');
       g.append('line').attr('class', 'd-fight').attr('x1', x).attr('x2', x).attr('y1', a.y).attr('y2', b.y);
-      g.append('title').text(DR.get(f.a).name + ' против ' + DR.get(f.b).name + ' · ' + yr(f.y) + ', ' + f.place + (f.both ? ' · погибли оба' : ''));
+      g.append('title').text(App.t('{a} против {b}', { a: DR.get(f.a).name, b: DR.get(f.b).name }) + ' · ' + yr(f.y) + ', ' + f.place + (f.both ? ' · ' + App.t('погибли оба') : ''));
       const mark = (r, kill) => {
         const m = L.marks.append('g').attr('class', kill ? 'd-kill' : 'd-hitter').attr('transform', 'translate(' + x + ',' + r.y + ')');
         m.append('circle').attr('r', kill ? 6 : 3.5);
         if (kill) m.append('path').attr('d', 'M-2.6-2.6L2.6 2.6M2.6-2.6L-2.6 2.6');
-        m.append('title').text(DR.get(f.a).name + ' против ' + DR.get(f.b).name + ' · ' + yr(f.y) + ', ' + f.place);
+        m.append('title').text(App.t('{a} против {b}', { a: DR.get(f.a).name, b: DR.get(f.b).name }) + ' · ' + yr(f.y) + ', ' + f.place);
       };
       mark(b, true); mark(a, !!f.both);
     });
@@ -337,15 +336,16 @@
   const CS = { art: 'Окрас — со слов художника, согласованных с командой Мартина.', ill: 'Окрас — по иллюстрациям; в книгах он не описан.', name: 'Окрас — по имени и рисункам; в книгах он не описан.' };
   function dragonEvents(d) {
     const ev = [];
-    ev.push({ y: d.h, label: d.ha ? '≈ ' + yr(d.h).replace(' г.', '') : yr(d.h).replace(' г.', ''), text: (d.sex === 'f' ? 'Вылупилась' : d.sex === 'm' ? 'Вылупился' : 'Вылупился') + (d.hl ? ': ' + d.hl : '') });
-    d.r.forEach(([who, a, b, how]) => ev.push({ y: a, label: (a < 0 ? '≈ ' : '') + yr(a).replace(' г.', ''), text: 'Всадник: ' + personName(who), ref: byId.has(who) ? who : null }));
-    (d.ev || []).forEach(([y, text]) => ev.push({ y, label: yr(y).replace(' г.', ''), text }));
+    const t = App.t, num = y => (y < 0 ? App.t('{n} до З.', { n: -Math.floor(y) }) : String(Math.floor(y)));
+    ev.push({ y: d.h, label: (d.ha ? '≈ ' : '') + num(d.h), text: (d.sex === 'f' ? t('Вылупилась') : t('Вылупился')) + (d.hl ? ': ' + d.hl : '') });
+    d.r.forEach(([who, a, b, how]) => ev.push({ y: a, label: (a < 0 ? '≈ ' : '') + num(a), text: t('Всадник: {name}', { name: personName(who) }), ref: byId.has(who) ? who : null }));
+    (d.ev || []).forEach(([y, text]) => ev.push({ y, label: num(y), text }));
     const deaths = DRAGON_FIGHTS.filter(f => f.b === d.id || (f.both && f.a === d.id));
     deaths.slice(0, 1).forEach(f => {
       const foes = deaths.map(x => DR.get(x.a === d.id ? x.b : x.a));
-      ev.push({ y: f.y, label: yr(f.y).replace(' г.', ''), text: (d.sex === 'f' ? 'Погибла' : 'Погиб') + ' в схватке с драконом ' + foes.map(x => x.name).join(' и ') + ', ' + f.place.replace(/, вместе с .*$/, ''), dragon: foes[0].id, last: true });
+      ev.push({ y: f.y, label: num(f.y), text: (d.sex === 'f' ? t('Погибла в схватке с драконом {foe}', { foe: foes.map(x => x.name).join(' / ') }) : t('Погиб в схватке с драконом {foe}', { foe: foes.map(x => x.name).join(' / ') })) + ', ' + f.place.replace(/, вместе с .*$/, ''), dragon: foes[0].id, last: true });
     });
-    if (d.d != null && !deaths.length) ev.push({ y: d.d, label: yr(d.d).replace(' г.', ''), text: (d.sex === 'f' ? 'Погибла' : 'Погиб') + ': ' + d.dl, last: true });
+    if (d.d != null && !deaths.length) ev.push({ y: d.d, label: num(d.d), text: (d.sex === 'f' ? t('Погибла') : t('Погиб')) + ': ' + d.dl, last: true });
     else if (d.alive) ev.push({ y: 301, label: '300', text: 'Жив' + (d.sex === 'f' ? 'а' : '') + ' на конец книг', last: true });
     else if (d.d == null) ev.push({ y: d.dx, label: '?', text: 'Смерть: ' + d.dl, last: true });
     ev.sort((a, b) => a.y - b.y || (a.last ? 1 : 0) - (b.last ? 1 : 0));
@@ -382,9 +382,10 @@
       '<div class="panel-top">' + egg(d) + '<div>' +
         '<p class="eyebrow">' + (d.sex === 'f' ? 'Дракон · самка' : d.sex === 'm' ? 'Дракон · самец' : 'Дракон') + (origin ? ' · ' + esc(origin.name) : '') + '</p>' +
         '<h2>' + esc(d.full) + '</h2>' +
-        '<p class="en">' + esc(d.en) + '</p>' +
+        '<p class="en">' + esc(App.lang === 'en' ? (d.ruName || '') : d.en) + '</p>' +
       '</div></div>' +
-      '<p class="note">' + esc(d.t) + '</p>' +
+      (d.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      '<p class="note"' + (d.tUntranslated ? ' lang="ru"' : '') + '>' + esc(d.t) + '</p>' +
       '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>'
           : e.dragon ? '<button type="button" class="linkish" data-action="dragon" data-dragon="' + e.dragon + '">' + esc(e.text) + '</button>' : esc(e.text)) +

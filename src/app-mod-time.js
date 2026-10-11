@@ -204,7 +204,7 @@
     mg.append('line').attr('x1', d => X(d.y)).attr('x2', d => X(d.y)).attr('y1', d => d.a.y).attr('y2', d => d.b.y);
     mg.append('circle').attr('cx', d => X(d.y)).attr('cy', d => d.a.y).attr('r', 3.6);
     mg.append('circle').attr('cx', d => X(d.y)).attr('cy', d => d.b.y).attr('r', 3.6);
-    mg.append('title').text(d => (d.e.type === 'b' ? 'Помолвка: ' : d.e.type === 'l' ? 'Связь: ' : 'Брак: ') + d.a.p.full + ' и ' + d.b.p.full + (d.e.type === 'm' ? ' · около ' + Math.round(d.y) + ' г.' : ''));
+    mg.append('title').text(d => App.t(d.e.type === 'b' ? 'Помолвка' : d.e.type === 'l' ? 'Связь' : 'Брак') + ': ' + App.t('{a} и {b}', { a: d.a.p.full, b: d.b.p.full }) + (d.e.type === 'm' ? ' · ' + App.t('около {y}', { y: App.yearWord(Math.round(d.y)) }) : ''));
     // Линии к детям: от родителя на древе к началу жизни ребёнка
     const drops = [];
     rows.forEach(r => {
@@ -223,7 +223,7 @@
     const lives = L_.lives.selectAll('g.life').data([...rows.values()], d => d.p.id).join('g')
       .attr('class', d => 'life h-' + d.p.house + ' st-' + d.p.k)
       .attr('data-id', d => d.p.id).attr('tabindex', 0).attr('role', 'button')
-      .attr('aria-label', d => d.p.full + ', ' + App.kindLabel(d.p) + ', ' + Math.round(d.L.b) + '–' + (d.L.alive ? 'жив на 300 г.' : Math.round(d.L.d)));
+      .attr('aria-label', d => d.p.full + ', ' + App.kindLabel(d.p) + ', ' + Math.round(d.L.b) + '–' + (d.L.alive ? App.t('жив на 300 г.') : Math.round(d.L.d)));
     lives.append('line').attr('class', 'hit').attr('x1', d => d.x0).attr('x2', d => Math.max(d.x1, d.x0 + 30)).attr('y1', d => d.y).attr('y2', d => d.y);
     lives.each(function (d) {
       const g = d3.select(this);
@@ -245,7 +245,7 @@
       }
       if (d.p.d) g.append('circle').attr('class', 'lf-end').attr('cx', d.x1).attr('cy', d.y).attr('r', 2.6);
       g.append('text').attr('class', 'lf-name').attr('x', d.x0).attr('y', d.y - 7).text(d.p.name);
-      g.append('title').text(d.p.full + ' · ' + (d.L.be ? '≈' : '') + Math.round(d.L.b) + '–' + (d.L.alive ? 'жив на 300 г.' : (d.L.de ? '≈' : '') + Math.round(d.L.d)) + (d.L.be || d.L.de ? ' (годы со знаком ≈ оценены по родственникам)' : ''));
+      g.append('title').text(d.p.full + ' · ' + (d.L.be ? '≈' : '') + Math.round(d.L.b) + '–' + (d.L.alive ? App.t('жив на 300 г.') : (d.L.de ? '≈' : '') + Math.round(d.L.d)) + (d.L.be || d.L.de ? ' (' + App.t('годы со знаком ≈ оценены по родственникам') + ')' : ''));
     });
     lives.on('click', (e, d) => App.select(d.p.id));
     lives.on('keydown', (e, d) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.select(d.p.id); } });
@@ -360,7 +360,7 @@
     const alive = PEOPLE.filter(p => aliveAt(p.id, y) && !p.group).length;
     const king = KINGS.find(p => { const L = LIFE.get(p.id); return L.ra <= y && y < (L.rb != null ? L.rb : 301); });
     const era = eraAt(y);
-    return { year: y < 0 ? -y + ' г. до З.' : y + ' г.', alive, king: king ? king.name : '', era: era ? era.name : '' };
+    return { year: App.yearWord(y), alive, king: king ? king.name : '', era: era ? era.name : '' };
   };
 
   App.smokeTime = () => {
