@@ -4935,8 +4935,10 @@ const I18N_DATA = {"en": {}};
         (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
       '</div></div>' +
       (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
+      // текст о доме — из texts/houses.md; пока его нет, на его месте заметка о доме из «Вассалитета»
       (H.t ? (H.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') + '<p class="note"' + (H.tUntranslated ? ' lang="ru"' : '') + '>' + esc(H.t) + '</p>' +
         (H.ai ? '<p class="ai-mark" title="Текст написал Claude; автор его ещё правит">✎ Черновик Claude</p>' : '')
+        : info && info.note ? '<p class="note vs-note hc-vnote">' + esc(info.note) + '</p>'
         : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
       '<dl class="facts">' +
         (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : '') +
@@ -4946,7 +4948,7 @@ const I18N_DATA = {"en": {}};
         App.row('На древе', '<span>' + esc(App.plural(st.n, 'человек', 'человека', 'человек')) + '</span>' + (st.a != null ? ' · <span>' + esc((st.a < 0 ? yw(st.a) : st.a) + '–' + yw(st.b)) + '</span>' : '')) +
         (info && (info.from != null || info.to != null) ? App.row('Годы дома', esc((info.from != null ? t('с {y}', { y: info.yearWord(info.from) }) : '') + (info.from != null && info.to != null ? ' ' : '') + (info.to != null ? t('по {y}', { y: info.yearWord(info.to - 0.001) }) : ''))) : '') +
       '</dl>' +
-      (info && info.periods.length ? '<h3 class="sec">Кому служил</h3><ol class="events hc-periods">' + info.periods.map(p =>
+      (info && info.periods.length ? '<h3 class="sec">Кому служил</h3>' + (H.t && info.note ? '<p class="note vs-note hc-vnote">' + esc(info.note) + '</p>' : '') + '<ol class="events hc-periods">' + info.periods.map(p =>
         '<li><span class="ev-year">' + esc(p.span) + '</span><span class="ev-text">' +
           (p.to && HOUSES_BY_V.has(p.to) ? '<button type="button" class="linkish" data-house="' + HOUSES_BY_V.get(p.to) + '">' + esc(p.liege) + '</button>' : esc(p.liege)) +
           (p.why ? '<span class="ref-note block">' + esc(p.why) + '</span>' : '') + '</span></li>').join('') + '</ol>' : '') +
@@ -8308,7 +8310,7 @@ const I18N_DATA = {"en": {}};
   App.vHouseInfo = id => {
     const h = H.get(id);
     if (!h) return null;
-    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord,
+    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord, note: h.note ? tidy(h.note) : '',
       periods: periods(h).map(p => ({ span: span(p.a, p.b), liege: liegeName(p.to, p.a), to: p.to, why: p.why ? tidy(p.why) : '' })) };
   };
   function renderPanel() {

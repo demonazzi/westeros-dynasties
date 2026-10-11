@@ -837,7 +837,7 @@
   App.vHouseInfo = id => {
     const h = H.get(id);
     if (!h) return null;
-    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord,
+    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord, note: h.note ? tidy(h.note) : '',
       periods: periods(h).map(p => ({ span: span(p.a, p.b), liege: liegeName(p.to, p.a), to: p.to, why: p.why ? tidy(p.why) : '' })) };
   };
   function renderPanel() {

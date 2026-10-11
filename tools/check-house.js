@@ -1,7 +1,7 @@
 /* Карточка дома в настоящем браузере.
    Открывается: по адресу #h:код, кликом по гербу и названию полосы на древе и в хронологии, по названию дома
    в карточке человека, из списка и из карточки дома во вкладке «Вассалитет». Проверяет историю (назад к человеку
-   и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме и его пометку ✎,
+   и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме и его пометку ✎, заметку из «Вассалитета»,
    английскую версию (английское название, под ним русское). */
 const { chromium } = require('/opt/npm-tools/node_modules/playwright');
 const fs = require('fs'), path = require('path');
@@ -26,11 +26,12 @@ const fs = require('fs'), path = require('path');
   expect(c.house === 'wes' && c.h2 === 'Дом Вестерлингов' && c.cls.includes('house-card'), '#h:wes открывает карточку: ' + JSON.stringify(c));
   expect(/h-wes/.test(c.band), 'полоса Вестерлингов подсвечена: ' + c.band);
   const facts = await p.evaluate(() => ({ dts: [...document.querySelectorAll('#panel dt')].map(x => x.textContent), words: (document.querySelector('#panel .hc-words') || {}).textContent,
-    seat: (document.querySelector('#panel .hc-seat') || {}).textContent, per: document.querySelectorAll('#panel .hc-periods li').length, empty: !!document.querySelector('#panel .hc-empty') }));
+    seat: (document.querySelector('#panel .hc-seat') || {}).textContent, per: document.querySelectorAll('#panel .hc-periods li').length, empty: !!document.querySelector('#panel .hc-empty'),
+    vnote: [...document.querySelectorAll('#panel .hc-vnote')].map(x => x.textContent), want: App.vHouseInfo(HOUSES.wes.v).note }));
   expect(facts.dts.includes('Сюзерен') && facts.dts.includes('На древе'), 'строки карточки: ' + facts.dts.join(','));
   expect(facts.words === '«Честь, а не почести»' && facts.seat === 'Скала', 'девиз и замок: ' + facts.words + ' / ' + facts.seat);
   expect(facts.per > 0, 'есть «Кому служил»');
-  expect(facts.empty, 'без текста — пометка, что текст не написан');
+  expect(!facts.empty && facts.want && facts.vnote.length === 1 && facts.vnote[0] === facts.want, 'без своего текста — заметка о доме из «Вассалитета»: ' + JSON.stringify(facts.vnote));
   // «Показать на древе»: полоса в экране, масштаб читаемый
   await p.click('#panel [data-house-locate]'); await p.waitForTimeout(1300);
   const loc = await p.evaluate(() => { const k = d3.zoomTransform(App.svg.node()).k; const r = document.querySelector('g.h-wes .band-bg').getBoundingClientRect(); const s = App.svg.node().getBoundingClientRect(); return { k, top: r.top, bottom: r.bottom, sTop: s.top, sBottom: s.bottom }; });
@@ -85,8 +86,10 @@ const fs = require('fs'), path = require('path');
 
   // 4 — текст о доме и пометка ✎
   await p.evaluate(() => { HOUSES.pip.t = 'Проверочный текст.'; HOUSES.pip.ai = 1; App.openHouse('pip'); }); await p.waitForTimeout(400);
-  const tx = await p.evaluate(() => ({ note: (document.querySelector('#panel .note') || {}).textContent, ai: !!document.querySelector('#panel .ai-mark'), empty: !!document.querySelector('#panel .hc-empty') }));
+  const tx = await p.evaluate(() => ({ note: (document.querySelector('#panel .note') || {}).textContent, ai: !!document.querySelector('#panel .ai-mark'), empty: !!document.querySelector('#panel .hc-empty'),
+    vnote: !!document.querySelector('#panel h3.sec + .hc-vnote') }));
   expect(tx.note === 'Проверочный текст.' && tx.ai && !tx.empty, 'текст о доме и ✎: ' + JSON.stringify(tx));
+  expect(tx.vnote, 'при своём тексте заметка из «Вассалитета» — под «Кому служил»');
   await p.close();
 
   // 5 — английский
