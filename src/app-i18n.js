@@ -139,6 +139,7 @@
       // актёры: [сериал, имя по-русски, имя по-английски] — в английском показываем английское
       (o.a || []).forEach(a => { if (a[2]) a[1] = a[2]; });
     });
+    Object.values(G('HOUSES') || {}).forEach(h => { h.ruName = h.name; if (h.t_en) { h.t = h.t_en; h.ai = h.ai_en ? 1 : 0; } else if (h.t) h.tUntranslated = true; });
     const DS = G('DRAGON_SCREEN'), DSE = G('DRAGON_SCREEN_EN');
     if (DS && DSE) Object.keys(DSE).forEach(id => { DS[id] = DSE[id]; });
     ['HOUSES', 'GAPS', 'PEOPLE', 'DRAGONS', 'DRAGON_ORIGINS', 'DRAGON_FIGHTS', 'SERIES', 'EXTRA', 'V_REGIONS', 'V_PRE', 'V_CLAIMANTS', 'V_MILESTONES', 'V_HOUSES']

@@ -48,7 +48,12 @@ d.DRAGONS.forEach(x => [x.name, x.full].forEach(n => n && names.add(n)));
 Object.values(d.HOUSES).forEach(h => [h.name, h.band].forEach(n => n && names.add(n)));
 d.V_HOUSES.forEach(h => names.add(h.ru));
 const nameList = [...names].filter(n => n.length >= 4);
-const yearOnly = s => !s.replace(/[\d\s–—≈.,:;·()+\-†×№]+/g, ' ').replace(/\b(г|до|З|р|гг|лет|год|года)\b\.?/g, '').trim();
+// \b в JS не видит границ кириллических слов — поэтому границы через соседние буквы
+const yearOnly = s => !s.replace(/[\d\s–—≈.,:;·()+\-†×№]+/g, ' ').replace(/(^|[^А-Яа-яЁё])(г|до|З|р|гг|лет|год|года)(?![А-Яа-яЁё])/g, '$1').trim();
+// карточка дома показывает замок и девиз по отдельности, а в «Бастард · дом …» название дома строчное
+// (только для точного совпадения: «Пламя и кровь» внутри подписи — ещё не данные)
+const dataPart = new Set();
+Object.values(d.HOUSES).forEach(h => { String(h.motto || '').split(' · ').forEach(x => x && dataPart.add(norm(x))); if (h.name) dataPart.add(h.name.replace('Дом ', 'дом ')); });
 
 const finish = composite => {
   const file = path.join(SRC, 'i18n', lang + '.json');
@@ -112,10 +117,18 @@ if (!crawl) { finish(); return; }
   await step(() => { App.setView('vassal'); App.vOpenAll && App.vOpenAll(true); });
   await step(() => { App.vOpenHouse && App.vOpenHouse('stark', true); });
   await step(() => { App.setView('people'); });
+  for (const h of ['stk', 'fry', 'bw', 'plm']) await step(`App.openHouse(${JSON.stringify(h)})`);
   await b.close();
   const composite = new Set();
+  // уже покрытое ключами: шаблон с подстановками («0 из 12» ← «{n} из {all}») или число с формой числа («108 человек»)
+  const rxEsc = x => x.replace(/[.*+?^$()|[\]\\]/g, '\\$&');
+  // шаблоны с короткой русской частью («с {y}») не берём — под них подойдёт что угодно
+  const tmpl = [...keys].filter(k => /\{\w+\}/.test(k) && (k.replace(/\{\w+\}/g, '').match(/[А-Яа-яЁё]/g) || []).length >= 5).map(k => new RegExp('^' + rxEsc(k).replace(/\{\w+\}/g, '.+?') + '$'));
+  const forms = new Set([...keys].filter(k => k.includes('|')).flatMap(k => k.split('|')));
+  const covered = s => tmpl.some(rx => rx.test(s)) || (m => !!m && forms.has(m[1]))(s.match(/^\d+\s+(.+)$/));
   seen.forEach(s => {
-    if (!s || !CYR.test(s) || data.has(s) || yearOnly(s)) return;
+    s = s.replace(/^[\s·]+|[\s·]+$/g, '');   // куски вокруг ссылки: «Бастард ·», «· Король Севера»
+    if (!s || !CYR.test(s) || data.has(s) || dataPart.has(s) || keys.has(s) || yearOnly(s) || covered(s)) return;
     if (nameList.some(n => s.includes(n)) || [...data].some(x => x.length > 12 && s.includes(x))) { if (!keys.has(s)) composite.add(s); return; }
     add(s);
   });

@@ -287,6 +287,10 @@ rect.lg-sub { fill: var(--hc); }
 .band-bg { fill: var(--hc); fill-opacity: .06; stroke: var(--hc); stroke-opacity: .22; stroke-width: 1; }
 .band-title { font-family: var(--font-display); font-size: 40px; fill: var(--hc); letter-spacing: .02em; }
 .band-head { pointer-events: none; }
+.band-hit { fill: transparent; pointer-events: all; cursor: pointer; }
+.band-head:hover .band-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.band-sel > .band-bg { fill-opacity: .1; stroke-opacity: .7; stroke-width: 2; }
+.band-sel > .band-head .band-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .band-head .sigil { overflow: visible; filter: drop-shadow(0 2px 3px var(--shadow)); }
 .t-head .band-title { font-size: 28px; }
 .lv-sigil { flex: none; display: block; }
@@ -996,7 +1000,7 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
 .lg-bub .b-chev { fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .lg-bub text { font: 700 9px var(--font-ui); fill: var(--muted); text-anchor: middle; }
 .panel-inner.vassal .medal { width: 64px; flex: none; }
-.panel-inner.vassal h3.sec { margin: 18px 0 8px; font: 700 11.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.panel-inner.vassal h3.sec, .panel-inner.house-card h3.sec { margin: 18px 0 8px; font: 700 11.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .vs-periods li.now .ev-year { color: var(--path); font-weight: 700; }
 .vs-life { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
 .vs-src { margin: 18px 0 6px; font-size: 13.5px; }
@@ -1016,6 +1020,19 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
 /* Черновик Claude: текст ещё правит автор */
 .ai-mark { margin: -4px 0 12px; font: 600 12px var(--font-ui); color: var(--muted); letter-spacing: .02em; }
 .ai-mark.inline { margin: 0 0 0 6px; font-size: 11px; font-weight: 600; text-transform: none; letter-spacing: 0; }
+
+/* Карточка дома */
+.eyebrow .eb-house { color: inherit; text-transform: inherit; letter-spacing: inherit; font-weight: inherit; text-decoration-color: currentColor; text-decoration-thickness: 1px; }
+.eyebrow .eb-house:hover { text-decoration-thickness: 2px; }
+.hc-motto { margin: 2px 0 14px; display: flex; flex-direction: column; gap: 2px; }
+.hc-words { font: 400 22px/1.25 var(--font-display); color: var(--hc); }
+.hc-seat { font-size: 14px; color: var(--muted); }
+.hc-empty { margin: 0 0 12px; font-style: italic; color: var(--muted); }
+.lv-head { display: flex; align-items: center; }
+.lv-head button.lv-card { width: auto; flex: none; padding: 6px 16px 6px 8px; font: 500 13px var(--font-ui); color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.lv-head button.lv-card::after { content: none; }
+.lv-head button.lv-card:hover { color: var(--ink); }
+.vs-card { margin: 16px 0 4px; }
 </style>
 
 <script>/* Пока только тёмная тема: светлая убрана до переработки */ document.documentElement.setAttribute('data-theme', 'dark');</script>
@@ -1280,57 +1297,57 @@ const BANDS = [
 {"house":"gry","roots":[["vickon",6],["gry_lord10",10],["alton",13],["torwyn",14],["loron",15],["dagon",16],["alannys",19],["quenton_c",19],["dagon_d",19]]}
 ];
 const HOUSES = {
-"targ": {"name":"Дом Таргариенов","band":"Таргариены","motto":"Драконий Камень · «Пламя и кровь»","sigil":{"field":"#16121A","charge":"#D02B35"}},
-"vel": {"name":"Дом Веларионов","band":"Веларионы","motto":"Дрифтмарк · «Старый, верный, отважный»","sigil":{"field":"#0E6B64","charge":"#EEF3F1"}},
-"bar": {"name":"Дом Баратеонов","band":"Баратеоны","motto":"Штормовой Предел · «Нам ярость»","sigil":{"field":"#E0A920","charge":"#17130F"}},
+"targ": {"v":"targaryen","name":"Дом Таргариенов","band":"Таргариены","motto":"Драконий Камень · «Пламя и кровь»","sigil":{"field":"#16121A","charge":"#D02B35"}},
+"vel": {"v":"velaryon","name":"Дом Веларионов","band":"Веларионы","motto":"Дрифтмарк · «Старый, верный, отважный»","sigil":{"field":"#0E6B64","charge":"#EEF3F1"}},
+"bar": {"v":"baratheon","name":"Дом Баратеонов","band":"Баратеоны","motto":"Штормовой Предел · «Нам ярость»","sigil":{"field":"#E0A920","charge":"#17130F"}},
 "bf": {"name":"Дом Блэкфайров","sigil":{"field":"#B3202A","charge":"#16121A"}},
-"arr": {"name":"Дом Арренов","band":"Аррены","motto":"Орлиное Гнездо · «Высокий как честь»","sigil":{"field":"#7DB2E2","charge":"#FBF8EF"}},
-"hgt": {"name":"Дом Хайтауэров","band":"Хайтауэры","motto":"Староместо · «Мы освещаем путь»","sigil":{"field":"#7F8582","charge":"#FBF8F0"}},
-"mar": {"name":"Дом Мартеллов","band":"Мартеллы","motto":"Солнечное Копьё · «Непреклонные, несгибаемые, несдающиеся»","sigil":{"field":"#E2731E","charge":"#9E1B24"}},
-"bw": {"name":"Дом Блэквудов","band":"Блэквуды","motto":"Древорон · девиз в книгах не назван","sigil":{"field":"#8E1C1F","charge":"#F4F1EA"}},
-"lan": {"name":"Дом Ланнистеров","band":"Ланнистеры","motto":"Утёс Кастерли · «Услышь мой рёв!»","sigil":{"field":"#8E1B22","charge":"#E6B530"}},
-"tul": {"name":"Дом Талли","band":"Талли","motto":"Риверран · «Семья, долг, честь»","sigil":{"field":"#2F4FA0","charge":"#DCE1EA"}},
-"stk": {"name":"Дом Старков","band":"Старки","motto":"Винтерфелл · «Зима близко»","sigil":{"field":"#E6E9EC","charge":"#46515C"}},
+"arr": {"v":"arryn","name":"Дом Арренов","band":"Аррены","motto":"Орлиное Гнездо · «Высокий как честь»","sigil":{"field":"#7DB2E2","charge":"#FBF8EF"}},
+"hgt": {"v":"hightower","name":"Дом Хайтауэров","band":"Хайтауэры","motto":"Староместо · «Мы освещаем путь»","sigil":{"field":"#7F8582","charge":"#FBF8F0"}},
+"mar": {"v":"martell","name":"Дом Мартеллов","band":"Мартеллы","motto":"Солнечное Копьё · «Непреклонные, несгибаемые, несдающиеся»","sigil":{"field":"#E2731E","charge":"#9E1B24"}},
+"bw": {"v":"blackwood","name":"Дом Блэквудов","band":"Блэквуды","motto":"Древорон · девиз в книгах не назван","sigil":{"field":"#8E1C1F","charge":"#F4F1EA"}},
+"lan": {"v":"lannister","name":"Дом Ланнистеров","band":"Ланнистеры","motto":"Утёс Кастерли · «Услышь мой рёв!»","sigil":{"field":"#8E1B22","charge":"#E6B530"}},
+"tul": {"v":"tully","name":"Дом Талли","band":"Талли","motto":"Риверран · «Семья, долг, честь»","sigil":{"field":"#2F4FA0","charge":"#DCE1EA"}},
+"stk": {"v":"stark","name":"Дом Старков","band":"Старки","motto":"Винтерфелл · «Зима близко»","sigil":{"field":"#E6E9EC","charge":"#46515C"}},
 "oth": {"name":"Другие дома","sigil":{"field":"#85848A","charge":"#FAF9FB"}},
-"tyr": {"name":"Дом Тиреллов","band":"Тиреллы","motto":"Хайгарден · «Вырастая — крепнем»","sigil":{"field":"#2E6B33","charge":"#E3B53B"}},
-"gry": {"name":"Дом Грейджоев","band":"Грейджои","motto":"Пайк · «Мы не сеем»","sigil":{"field":"#17161A","charge":"#D4AF37"}},
+"tyr": {"v":"tyrell","name":"Дом Тиреллов","band":"Тиреллы","motto":"Хайгарден · «Вырастая — крепнем»","sigil":{"field":"#2E6B33","charge":"#E3B53B"}},
+"gry": {"v":"greyjoy","name":"Дом Грейджоев","band":"Грейджои","motto":"Пайк · «Мы не сеем»","sigil":{"field":"#17161A","charge":"#D4AF37"}},
 "gar": {"name":"Дом Гарднеров","sigil":{"field":"#F2F0E8","charge":"#3C7A3A"}},
 "dur": {"name":"Дом Дюррандонов","sigil":{"field":"#E0A920","charge":"#17130F"}},
 "hoa": {"name":"Дом Хоаров","sigil":{"field":"#17161A","charge":"#D4AF37"}},
 "seed": {"name":"Семя дракона","sigil":{"field":"#4A4350","charge":"#E2D8C6"}},
-"fry": {"name":"Дом Фреев","band":"Фреи","motto":"Близнецы","sigil":{"field":"#C9CDD3","charge":"#2C4A86"}},
-"blt": {"name":"Дом Болтонов","band":"Болтоны","motto":"Дредфорт · «Наши ножи остры»","sigil":{"field":"#E9C4C0","charge":"#9E1F1F"}},
-"umb": {"name":"Дом Амберов","band":"Амберы","motto":"Последний Очаг · «Смерть лучше цепей»","sigil":{"field":"#B0281F","charge":"#6B4A2E"}},
-"kar": {"name":"Дом Карстарков","band":"Карстарки","motto":"Кархолд · «Солнце зимы»","sigil":{"field":"#16161A","charge":"#F1F1EE"}},
-"man": {"name":"Дом Мандерли","band":"Мандерли","motto":"Белая Гавань","sigil":{"field":"#2D7A78","charge":"#F2F3F0"}},
-"mor": {"name":"Дом Мормонтов","band":"Мормонты","motto":"Медвежий остров · «Здесь стоим»","sigil":{"field":"#2E6A3A","charge":"#141414"}},
-"brk": {"name":"Дом Бракенов","band":"Бракены","motto":"Стоунхедж","sigil":{"field":"#6B4A2B","charge":"#B3261E"}},
-"mal": {"name":"Дом Маллистеров","band":"Маллистеры","motto":"Сигард · «Над прочими»","sigil":{"field":"#3A2E6E","charge":"#DCDDE2"}},
-"btw": {"name":"Дом Баттервеллов","band":"Баттервеллы","motto":"Белые Стены","sigil":{"field":"#3F7D3A","charge":"#F3F1E8"}},
-"pip": {"name":"Дом Пайперов","band":"Пайперы","motto":"Розовая Дева · «Храбры и прекрасны»","sigil":{"field":"#2D4C8C","charge":"#E9A0BC"}},
-"roy": {"name":"Дом Ройсов","band":"Ройсы","motto":"Рунный Камень · «Мы помним»","sigil":{"field":"#B48A52","charge":"#191714"}},
-"bae": {"name":"Дом Бейлишей","band":"Бейлиши","motto":"Пальцы","sigil":{"field":"#3E7D4A","charge":"#E4E5E8"}},
-"cor": {"name":"Дом Корбреев","band":"Корбреи","motto":"Дом Сердец","sigil":{"field":"#EFEDE8","charge":"#18171A"}},
-"way": {"name":"Дом Уэйнвудов","band":"Уэйнвуды","motto":"Железная Дубрава","sigil":{"field":"#356B3A","charge":"#151515"}},
-"har": {"name":"Дом Хардингов","band":"Хардинги","motto":"Долина Аррен","sigil":{"field":"#F2F0EC","charge":"#B3261E"}},
-"tar": {"name":"Дом Тарли","band":"Тарли","motto":"Рогов Холм · «Первые в битве»","sigil":{"field":"#2F6B33","charge":"#B3261E"}},
-"red": {"name":"Дом Редвинов","band":"Редвины","motto":"Арбор","sigil":{"field":"#2D4C8C","charge":"#6D1B3A"}},
-"pea": {"name":"Дом Пиков","band":"Пики","motto":"Звёздный Пик","sigil":{"field":"#D9782A","charge":"#17161A"}},
-"osg": {"name":"Дом Осгреев","band":"Осгреи","motto":"Оплот","sigil":{"field":"#F0EEE8","charge":"#2E6B33"}},
-"fos": {"name":"Дом Фоссовеев","band":"Фоссовеи","motto":"Сидрхолл · «Вкус славы»","sigil":{"field":"#D9A63A","charge":"#B3261E"}},
-"oak": {"name":"Дом Окхартов","band":"Окхарты","motto":"Старый Дуб · «Наши корни глубоки»","sigil":{"field":"#D9A63A","charge":"#2E6B33"}},
-"wes": {"name":"Дом Вестерлингов","band":"Вестерлинги","motto":"Скала · «Честь, а не почести»","sigil":{"field":"#C9AE7C","charge":"#F4F1EA"}},
-"crk": {"name":"Дом Крейкхоллов","band":"Крейкхоллы","motto":"Крейкхолл · «Никто столь не свиреп»","sigil":{"field":"#6E4B2E","charge":"#17161A"}},
-"far": {"name":"Дом Фарманов","band":"Фарманы","motto":"Светлый замок · «Оседлавшие ветер»","sigil":{"field":"#2D4C8C","charge":"#E6E7EA"}},
-"plm": {"name":"Дом Пламмов","band":"Пламмы","motto":"«Попробуй меня»","sigil":{"field":"#D9A63A","charge":"#5B2A6E"}},
-"day": {"name":"Дом Дейнов","band":"Дейны","motto":"Звездопад","sigil":{"field":"#8E79AE","charge":"#F4F1EA"}},
-"yrn": {"name":"Дом Айронвудов","band":"Айронвуды","motto":"Айронвуд · «Мы храним путь»","sigil":{"field":"#D8C39A","charge":"#17161A"}},
-"hlw": {"name":"Дом Харлоу","band":"Харлоу","motto":"Десять Башен","sigil":{"field":"#17161A","charge":"#D9DBDE"}},
-"gdb": {"name":"Дом Гудбразеров","band":"Гудбразеры","motto":"Хаммерхорн","sigil":{"field":"#B3261E","charge":"#17161A"}},
-"est": {"name":"Дом Эстермонтов","band":"Эстермонты","motto":"Нефрит","sigil":{"field":"#A9C9A0","charge":"#2E5A33"}},
-"swn": {"name":"Дом Сваннов","band":"Сванны","motto":"Каменный Шлем","sigil":{"field":"#F0EEE8","charge":"#17161A"}},
-"pen": {"name":"Дом Пенрозов","band":"Пенрозы","motto":"Пергаменты · «Запишем наши деяния»","sigil":{"field":"#7A4A2A","charge":"#F0EEE8"}},
-"stw": {"name":"Дом Стоквортов","band":"Стокворты","motto":"Стокворт · «Гордимся преданностью»","sigil":{"field":"#2E6B33","charge":"#F4F1EA"}}
+"fry": {"v":"frey","name":"Дом Фреев","band":"Фреи","motto":"Близнецы","sigil":{"field":"#C9CDD3","charge":"#2C4A86"}},
+"blt": {"v":"bolton","name":"Дом Болтонов","band":"Болтоны","motto":"Дредфорт · «Наши ножи остры»","sigil":{"field":"#E9C4C0","charge":"#9E1F1F"}},
+"umb": {"v":"umber","name":"Дом Амберов","band":"Амберы","motto":"Последний Очаг · «Смерть лучше цепей»","sigil":{"field":"#B0281F","charge":"#6B4A2E"}},
+"kar": {"v":"karstark","name":"Дом Карстарков","band":"Карстарки","motto":"Кархолд · «Солнце зимы»","sigil":{"field":"#16161A","charge":"#F1F1EE"}},
+"man": {"v":"manderly","name":"Дом Мандерли","band":"Мандерли","motto":"Белая Гавань","sigil":{"field":"#2D7A78","charge":"#F2F3F0"}},
+"mor": {"v":"mormont","name":"Дом Мормонтов","band":"Мормонты","motto":"Медвежий остров · «Здесь стоим»","sigil":{"field":"#2E6A3A","charge":"#141414"}},
+"brk": {"v":"bracken","name":"Дом Бракенов","band":"Бракены","motto":"Стоунхедж","sigil":{"field":"#6B4A2B","charge":"#B3261E"}},
+"mal": {"v":"mallister","name":"Дом Маллистеров","band":"Маллистеры","motto":"Сигард · «Над прочими»","sigil":{"field":"#3A2E6E","charge":"#DCDDE2"}},
+"btw": {"v":"butterwell","name":"Дом Баттервеллов","band":"Баттервеллы","motto":"Белые Стены","sigil":{"field":"#3F7D3A","charge":"#F3F1E8"}},
+"pip": {"v":"piper","name":"Дом Пайперов","band":"Пайперы","motto":"Розовая Дева · «Храбры и прекрасны»","sigil":{"field":"#2D4C8C","charge":"#E9A0BC"}},
+"roy": {"v":"royce","name":"Дом Ройсов","band":"Ройсы","motto":"Рунный Камень · «Мы помним»","sigil":{"field":"#B48A52","charge":"#191714"}},
+"bae": {"v":"baelish","name":"Дом Бейлишей","band":"Бейлиши","motto":"Пальцы","sigil":{"field":"#3E7D4A","charge":"#E4E5E8"}},
+"cor": {"v":"corbray","name":"Дом Корбреев","band":"Корбреи","motto":"Дом Сердец","sigil":{"field":"#EFEDE8","charge":"#18171A"}},
+"way": {"v":"waynwood","name":"Дом Уэйнвудов","band":"Уэйнвуды","motto":"Железная Дубрава","sigil":{"field":"#356B3A","charge":"#151515"}},
+"har": {"v":"hardyng","name":"Дом Хардингов","band":"Хардинги","motto":"Долина Аррен","sigil":{"field":"#F2F0EC","charge":"#B3261E"}},
+"tar": {"v":"tarly","name":"Дом Тарли","band":"Тарли","motto":"Рогов Холм · «Первые в битве»","sigil":{"field":"#2F6B33","charge":"#B3261E"}},
+"red": {"v":"redwyne","name":"Дом Редвинов","band":"Редвины","motto":"Арбор","sigil":{"field":"#2D4C8C","charge":"#6D1B3A"}},
+"pea": {"v":"peake","name":"Дом Пиков","band":"Пики","motto":"Звёздный Пик","sigil":{"field":"#D9782A","charge":"#17161A"}},
+"osg": {"v":"osgrey","name":"Дом Осгреев","band":"Осгреи","motto":"Оплот","sigil":{"field":"#F0EEE8","charge":"#2E6B33"}},
+"fos": {"v":"fossoway_of_cider_hall","name":"Дом Фоссовеев","band":"Фоссовеи","motto":"Сидрхолл · «Вкус славы»","sigil":{"field":"#D9A63A","charge":"#B3261E"}},
+"oak": {"v":"oakheart","name":"Дом Окхартов","band":"Окхарты","motto":"Старый Дуб · «Наши корни глубоки»","sigil":{"field":"#D9A63A","charge":"#2E6B33"}},
+"wes": {"v":"westerling","name":"Дом Вестерлингов","band":"Вестерлинги","motto":"Скала · «Честь, а не почести»","sigil":{"field":"#C9AE7C","charge":"#F4F1EA"}},
+"crk": {"v":"crakehall","name":"Дом Крейкхоллов","band":"Крейкхоллы","motto":"Крейкхолл · «Никто столь не свиреп»","sigil":{"field":"#6E4B2E","charge":"#17161A"}},
+"far": {"v":"farman","name":"Дом Фарманов","band":"Фарманы","motto":"Светлый замок · «Оседлавшие ветер»","sigil":{"field":"#2D4C8C","charge":"#E6E7EA"}},
+"plm": {"v":"plumm","name":"Дом Пламмов","band":"Пламмы","motto":"«Попробуй меня»","sigil":{"field":"#D9A63A","charge":"#5B2A6E"}},
+"day": {"v":"dayne","name":"Дом Дейнов","band":"Дейны","motto":"Звездопад","sigil":{"field":"#8E79AE","charge":"#F4F1EA"}},
+"yrn": {"v":"yronwood","name":"Дом Айронвудов","band":"Айронвуды","motto":"Айронвуд · «Мы храним путь»","sigil":{"field":"#D8C39A","charge":"#17161A"}},
+"hlw": {"v":"harlaw","name":"Дом Харлоу","band":"Харлоу","motto":"Десять Башен","sigil":{"field":"#17161A","charge":"#D9DBDE"}},
+"gdb": {"v":"goodbrother","name":"Дом Гудбразеров","band":"Гудбразеры","motto":"Хаммерхорн","sigil":{"field":"#B3261E","charge":"#17161A"}},
+"est": {"v":"estermont","name":"Дом Эстермонтов","band":"Эстермонты","motto":"Нефрит","sigil":{"field":"#A9C9A0","charge":"#2E5A33"}},
+"swn": {"v":"swann","name":"Дом Сваннов","band":"Сванны","motto":"Каменный Шлем","sigil":{"field":"#F0EEE8","charge":"#17161A"}},
+"pen": {"v":"penrose","name":"Дом Пенрозов","band":"Пенрозы","motto":"Пергаменты · «Запишем наши деяния»","sigil":{"field":"#7A4A2A","charge":"#F0EEE8"}},
+"stw": {"v":"stokeworth","name":"Дом Стоквортов","band":"Стокворты","motto":"Стокворт · «Гордимся преданностью»","sigil":{"field":"#2E6B33","charge":"#F4F1EA"}}
 };
 const GAPS = [
 {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},
@@ -3128,6 +3145,7 @@ const I18N_DATA = {"en": {}};
       // актёры: [сериал, имя по-русски, имя по-английски] — в английском показываем английское
       (o.a || []).forEach(a => { if (a[2]) a[1] = a[2]; });
     });
+    Object.values(G('HOUSES') || {}).forEach(h => { h.ruName = h.name; if (h.t_en) { h.t = h.t_en; h.ai = h.ai_en ? 1 : 0; } else if (h.t) h.tUntranslated = true; });
     const DS = G('DRAGON_SCREEN'), DSE = G('DRAGON_SCREEN_EN');
     if (DS && DSE) Object.keys(DSE).forEach(id => { DS[id] = DSE[id]; });
     ['HOUSES', 'GAPS', 'PEOPLE', 'DRAGONS', 'DRAGON_ORIGINS', 'DRAGON_FIGHTS', 'SERIES', 'EXTRA', 'V_REGIONS', 'V_PRE', 'V_CLAIMANTS', 'V_MILESTONES', 'V_HOUSES']
@@ -3261,6 +3279,15 @@ const I18N_DATA = {"en": {}};
     return houseName(p);
   }
   App.kindLabel = kindLabel;
+  // в карточке человека название дома — ссылка на карточку дома
+  function eyebrowHtml(p) {
+    const s = esc(kindLabel(p));
+    if (!App.isHouseCard || !App.isHouseCard(p.house)) return s;
+    const hn = esc(houseName(p));
+    const i = s.indexOf(hn) >= 0 ? s.indexOf(hn) : s.indexOf(hn.replace('Дом ', 'дом '));
+    if (i < 0) return s;
+    return s.slice(0, i) + '<button type="button" class="linkish eb-house" data-house="' + p.house + '" title="' + esc(App.t('Открыть карточку дома')) + '">' + s.slice(i, i + hn.length) + '</button>' + s.slice(i + hn.length);
+  }
   const ariaLabel = p => [p.full, kindLabel(p), meta(p)].filter(Boolean).join(', ');
   const hasKids = d => !!(d.children || d._children);
   App.hasKids = hasKids;
@@ -3506,6 +3533,9 @@ const I18N_DATA = {"en": {}};
       head.append('text').attr('class', 'band-title').attr('x', b.tx).attr('y', 40).text(h.band);
       head.append('text').attr('class', 'band-motto').attr('x', b.tx).attr('y', 64).text(h.motto);
       b.headW = Math.max(textWidth('band-title', h.band, 22), textWidth('band-motto', h.motto, 8));
+      // герб и название открывают карточку дома
+      head.append('rect').attr('class', 'band-hit').attr('x', -8).attr('y', -4).attr('width', b.tx + textWidth('band-title', h.band, 22) + 16).attr('height', 54)
+        .on('click', e => { e.stopPropagation(); if (App.openHouse) App.openHouse(b.house); }).append('title').text(App.t('Открыть карточку дома'));
     });
 
     // Граница Завоевания (в хронологии рисует своя ось)
@@ -4092,7 +4122,7 @@ const I18N_DATA = {"en": {}};
         '<button type="button" class="btn btn-icon close" id="panel-close" aria-label="Закрыть карточку">×</button>' +
       '</div>' +
       '<div class="panel-top">' + medallion(p) + '<div>' +
-        '<p class="eyebrow">' + esc(kindLabel(p)) + '</p>' +
+        '<p class="eyebrow">' + eyebrowHtml(p) + '</p>' +
         '<h2>' + esc(p.full) + '</h2>' +
         // второе имя под заголовком: в русском — английское, в английском — русское
         ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
@@ -4127,7 +4157,8 @@ const I18N_DATA = {"en": {}};
   panel.addEventListener('scroll', () => { panelScrolled = panel.scrollTop > 0; }, { passive: true });
   App.renderPanel = renderPanel;
   /* История карточек: id человека или «d:id» для дракона. */
-  App.historyLabel = h => h.startsWith('d:') ? (App.dragonLabel ? App.dragonLabel(h.slice(2)) : h) : (byId.get(h) || {}).name;
+  App.historyLabel = h => h.startsWith('d:') ? (App.dragonLabel ? App.dragonLabel(h.slice(2)) : h)
+    : h.startsWith('h:') ? ((HOUSES[h.slice(2)] || {}).band || h) : (byId.get(h) || {}).name;
   App.currentSubject = () => state.selected;
 
   panel.addEventListener('click', e => {
@@ -4153,7 +4184,10 @@ const I18N_DATA = {"en": {}};
     if (!id && !vw.persons) { App.closeView(); return; }
     if (id && !vw.persons) { const cur = App.currentSubject(); if (opts.push !== false && cur && cur !== id) state.history.push(cur); setView('people', { quiet: true }); opts = Object.assign({}, opts, { push: false, force: true }); }
     if (id && id === state.selected && !opts.force) { if (opts.center) { const v0 = App.views[state.view]; (v0 && v0.center ? v0.center : centerOn)(id); } return; }
-    if (opts.push !== false && state.selected && id) { state.history.push(state.selected); if (state.history.length > 40) state.history.shift(); }
+    // открыта карточка дома: в историю — она, а не человек под ней
+    const was = state.house ? 'h:' + state.house : state.selected;
+    state.house = null;
+    if (opts.push !== false && was && id && was !== id) { state.history.push(was); if (state.history.length > 40) state.history.shift(); }
     if (!id) state.history = [];
     state.selected = id;
     if (id) reveal(id);
@@ -4169,6 +4203,7 @@ const I18N_DATA = {"en": {}};
     const prev = state.history.pop();
     if (!prev) return;
     if (prev.startsWith('d:') && App.openDragon) App.openDragon(prev.slice(2), { push: false, center: true });
+    else if (prev.startsWith('h:') && App.openHouse) App.openHouse(prev.slice(2), { push: false });
     else select(prev, { center: true, push: false });
   }
   App.goBack = goBack;
@@ -4191,10 +4226,13 @@ const I18N_DATA = {"en": {}};
   }
   App.centerOn = centerOn;
 
-  function fitBox(x0, y0, x1, y1, minK) {
+  // corner: если рамка не влезает при minK — прижать её левый верхний угол к краю экрана, а не центр
+  function fitBox(x0, y0, x1, y1, minK, corner) {
     const { w, h } = viewSize();
     const k = Math.max(minK || 0.04, Math.min(1.2, Math.min(w / (x1 - x0 + 40), h / (y1 - y0 + 40))));
-    const t = d3.zoomIdentity.translate(w / 2 - k * (x0 + x1) / 2, h / 2 - k * (y0 + y1) / 2).scale(k);
+    const tx = corner && k * (x1 - x0) > w ? 20 - k * x0 : w / 2 - k * (x0 + x1) / 2;
+    const ty = corner && k * (y1 - y0) > h ? 70 - k * y0 : h / 2 - k * (y0 + y1) / 2;
+    const t = d3.zoomIdentity.translate(tx, ty).scale(k);
     svg.transition().duration(dur).call(zoom.transform, t);
   }
   App.fitBox = fitBox;
@@ -4267,7 +4305,7 @@ const I18N_DATA = {"en": {}};
     document.getElementById('canvas').classList.toggle('has-marks', !!next.scaleMarks && !App.isNarrow());
     if (next.onShow) next.onShow(opts);
     if (!opts.quiet) {
-      if (next.persons) renderPanel(state.selected ? byId.get(state.selected) : null);
+      if (next.persons) { if (state.house && App.renderHousePanel) App.renderHousePanel(state.house); else renderPanel(state.selected ? byId.get(state.selected) : null); }
       else if (next.panel) next.panel();
       App.setHash(next.hash ? next.hash() : '');
     }
@@ -4275,7 +4313,7 @@ const I18N_DATA = {"en": {}};
   }
   App.setView = setView;
   App.hooks.view = [];
-  App.currentSubject = () => { const w = App.views[state.view]; return w && w.subject ? w.subject() : state.selected; };
+  App.currentSubject = () => { const w = App.views[state.view]; return w && w.subject ? w.subject() : state.house ? 'h:' + state.house : state.selected; };
   App.closeView = () => { const w = App.views[state.view]; if (w && w.close) w.close(); };
 
   /* Линза: подсветка группы людей на древе (всадники дракона, линзы эпох). */
@@ -4833,6 +4871,141 @@ const I18N_DATA = {"en": {}};
     if (dchipEl) dchipEl.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     out.afterDchip = (document.querySelector('#panel h2') || {}).textContent;
     return out;
+  };
+})();
+
+/* Карточка дома: открывается с древа и из хронологии (герб и название полосы), из карточки человека (название дома)
+   и из списка. Показывает герб, замок и девиз, текст о доме (texts/houses.md), край, сюзерена и знаменосцев на древе,
+   королей и сколько людей дома на древе, а по вкладке «Вассалитет» — кому дом служил. В истории — «h:код», в адресе — #h:код. */
+(function () {
+  const App = window.App;
+  const { byId, esc, state } = App;
+  const panel = document.getElementById('panel');
+  const panelContent = document.getElementById('panel-content');
+  const bandSet = new Set(BANDS.map(b => b.house));
+  App.isHouseCard = h => bandSet.has(h);
+  // сюзерен в «Кому служил» — по id вассалитета; если у него есть полоса на древе, открываем его карточку
+  const HOUSES_BY_V = new Map(Object.keys(HOUSES).filter(h => bandSet.has(h) && HOUSES[h].v).map(h => [HOUSES[h].v, h]));
+  App.houseByV = v => HOUSES_BY_V.get(v);
+
+  function stats(code) {
+    const ps = PEOPLE.filter(p => p.house === code && !p.group);
+    const L = App.life ? ps.map(p => App.life(p.id)).filter(Boolean) : [];
+    const a = L.length ? Math.round(Math.min(...L.map(x => x.b))) : null;
+    const b = L.length ? Math.round(Math.max(...L.map(x => (x.alive ? 300 : x.d)))) : null;
+    return { n: ps.length, a, b, kings: ps.filter(p => p.k === 'K') };
+  }
+  const houseChip = h => '<li><button type="button" class="chip h-' + h + '" data-house="' + h + '">' + esc(HOUSES[h].band) + '</button></li>';
+
+  function renderHousePanel(code) {
+    const H = HOUSES[code];
+    if (!H) return;
+    const band = BANDS.find(b => b.house === code) || {};
+    const info = H.v && App.vHouseInfo ? App.vHouseInfo(H.v) : null;
+    const st = stats(code);
+    const liege = band.liege;
+    const vassals = BANDS.filter(b => b.liege === code).map(b => b.house).sort((x, y) => HOUSES[x].band.localeCompare(HOUSES[y].band, 'ru'));
+    const first = band.roots && band.roots.length ? band.roots[0][0] : null;
+    // «Замок · «Девиз»»; у Пламмов — только девиз, у Блэквудов вместо девиза пометка
+    const parts = String(H.motto || '').split(' · ').filter(Boolean), isWords = x => /^[«"“]/.test(x);
+    const words = parts.find(isWords), seat = parts.filter(x => !isWords(x)).join(' · ');
+    const yw = App.yearWord;
+    const back = state.history.length ? App.historyLabel(state.history[state.history.length - 1]) : null;
+    const t = App.t;
+    panel.classList.remove('is-empty');
+    panelContent.className = 'panel-inner house-card h-' + code;
+    panelContent.innerHTML =
+      '<span class="grab" aria-hidden="true"></span>' +
+      '<div class="panel-nav">' +
+        (back ? '<button type="button" class="btn back" id="panel-back" title="Alt + ←">← ' + esc(back) + '</button>' : '<span></span>') +
+        '<button type="button" class="btn btn-icon close" id="panel-close" aria-label="Закрыть карточку">×</button>' +
+      '</div>' +
+      '<div class="panel-top">' + (App.sigilSVG ? App.sigilSVG(code, 0, 0, 64, 'medal') : '') + '<div>' +
+        '<p class="eyebrow"><span>' + esc(liege ? t('Малый дом') : t('Великий дом')) + '</span>' + (info ? ' · <span>' + esc(info.region) + '</span>' : '') + '</p>' +
+        // второе название под заголовком: в русском — английское, в английском — русское
+        '<h2>' + esc(App.lang === 'en' && H.name === H.ruName && info ? 'House ' + info.h.en : H.name) + '</h2>' +
+        (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
+      '</div></div>' +
+      (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
+      (H.t ? (H.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') + '<p class="note"' + (H.tUntranslated ? ' lang="ru"' : '') + '>' + esc(H.t) + '</p>' +
+        (H.ai ? '<p class="ai-mark" title="Текст написал Claude; автор его ещё правит">✎ Черновик Claude</p>' : '')
+        : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
+      '<dl class="facts">' +
+        (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : '') +
+        (vassals.length ? App.row('Знаменосцы на древе', '<ul class="refs">' + vassals.map(houseChip).join('') + '</ul>') : '') +
+        (st.kings.length ? App.row('Короли', App.list(st.kings.map(p => App.chip(p.id)))) : '') +
+        (first && byId.has(first) ? App.row('Первый на древе', App.list([App.chip(first)])) : '') +
+        App.row('На древе', '<span>' + esc(App.plural(st.n, 'человек', 'человека', 'человек')) + '</span>' + (st.a != null ? ' · <span>' + esc((st.a < 0 ? yw(st.a) : st.a) + '–' + yw(st.b)) + '</span>' : '')) +
+        (info && (info.from != null || info.to != null) ? App.row('Годы дома', esc((info.from != null ? t('с {y}', { y: info.yearWord(info.from) }) : '') + (info.from != null && info.to != null ? ' ' : '') + (info.to != null ? t('по {y}', { y: info.yearWord(info.to - 0.001) }) : ''))) : '') +
+      '</dl>' +
+      (info && info.periods.length ? '<h3 class="sec">Кому служил</h3><ol class="events hc-periods">' + info.periods.map(p =>
+        '<li><span class="ev-year">' + esc(p.span) + '</span><span class="ev-text">' +
+          (p.to && HOUSES_BY_V.has(p.to) ? '<button type="button" class="linkish" data-house="' + HOUSES_BY_V.get(p.to) + '">' + esc(p.liege) + '</button>' : esc(p.liege)) +
+          (p.why ? '<span class="ref-note block">' + esc(p.why) + '</span>' : '') + '</span></li>').join('') + '</ol>' : '') +
+      '<div class="panel-actions">' +
+        '<button type="button" class="btn" data-house-locate="' + code + '">Показать на древе</button>' +
+        (info ? '<button type="button" class="btn" data-house-vassal="' + esc(H.v) + '">Во вкладке «Вассалитет»</button>' : '') +
+        (info ? '<a class="btn" href="https://awoiaf.westeros.org/index.php/' + encodeURIComponent(info.h.page || ('House ' + info.h.en)) + '" target="_blank" rel="noopener">A Wiki of Ice and Fire ↗</a>' : '') +
+      '</div>';
+    panel.scrollTop = 0;
+    App.translateDom(panelContent);
+    markBand(code);
+  }
+  App.renderHousePanel = renderHousePanel;
+
+  // выбранная полоса: заголовок подсвечен на древе и в хронологии
+  function markBand(code) {
+    document.querySelectorAll('.band-sel').forEach(g => g.classList.remove('band-sel'));
+    if (code) document.querySelectorAll('g.h-' + code).forEach(g => { if (g.querySelector(':scope > .band-head')) g.classList.add('band-sel'); });
+  }
+
+  function openHouse(code, opts) {
+    opts = opts || {};
+    if (!bandSet.has(code)) return;
+    const vw = App.views[state.view] || {};
+    const cur = App.currentSubject();
+    if (opts.push !== false && cur && cur !== 'h:' + code) { state.history.push(cur); if (state.history.length > 40) state.history.shift(); }
+    if (!vw.persons) App.setView('people', { quiet: true });
+    // карточка дома заменяет выбранного человека: подсветка с древа снимается
+    state.selected = null;
+    state.house = code;
+    if (state.hiddenHouses && state.hiddenHouses.has(code)) { state.hiddenHouses.delete(code); App.render(); }
+    App.decorate();
+    renderHousePanel(code);
+    App.setHash('h:' + code);
+    App.hooks.select.forEach(f => f(null));
+    if (opts.locate) locate(code);
+  }
+  App.openHouse = openHouse;
+
+  // показать полосу дома на древе: вписать её в экран, а если она слишком длинная — начало полосы в читаемом масштабе
+  function locate(code) {
+    if (state.view !== 'people') App.setView('people', { quiet: true });
+    const b = App.bandBoxes().find(x => x.house === code);
+    if (!b) return;
+    const ns = App.allNodes().filter(n => App.bandOf(n.data.id) === code);
+    if (!ns.length) return;
+    const x0 = Math.min(...ns.map(n => n.X)), x1 = Math.max(...ns.map(n => n.X)) + App.W;
+    App.fitBox(x0 - 80, b.top - 20, x1 + 60, b.bottom, 0.5, true);
+  }
+  App.locateBand = locate;
+
+  panel.addEventListener('click', e => {
+    const h = e.target.closest('[data-house]');
+    if (h) { e.stopPropagation(); openHouse(h.dataset.house); return; }
+    const l = e.target.closest('[data-house-locate]');
+    if (l) { locate(l.dataset.houseLocate); return; }
+    const v = e.target.closest('[data-house-vassal]');
+    if (v) { App.setView('vassal'); if (App.vOpenHouse) App.vOpenHouse(v.dataset.houseVassal, true); }
+  });
+  // закрыть карточку дома или выбрать человека — подсветка полосы снимается
+  App.hooks.select.push(id => { if (id || !state.house) markBand(null); });
+  App.hooks.afterRender.push(() => markBand(state.house));
+
+  const prevStart = App.startHash;
+  App.startHash = h => {
+    if (h.startsWith('h:') && bandSet.has(h.slice(2))) { openHouse(h.slice(2), { push: false, locate: true }); return true; }
+    return prevStart ? prevStart(h) : false;
   };
 })();
 
@@ -5469,7 +5642,8 @@ const I18N_DATA = {"en": {}};
       // у малого дома герб меньше
       html += '<section class="lv-house h-' + band.house + '" data-house="' + band.house + '"><h3 class="lv-head"><button type="button" aria-expanded="true">' +
         (App.sigilSVG ? App.sigilSVG(band.house, 0, 0, band.liege ? 18 : 26, 'lv-sigil') : '') +
-        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button></h3><div class="lv-body">';
+        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button>' +
+        '<button type="button" class="linkish lv-card" data-hcard="' + band.house + '">Карточка дома</button></h3><div class="lv-body">';
       const pre = keys.filter(g => g < 6), post = keys.filter(g => g >= 6);
       const groups = (pre.length ? [[pre, 'До Завоевания']] : []).concat(post.map(g => [[g], genLabel(g)]));
       groups.forEach(([gs, label]) => {
@@ -5498,6 +5672,8 @@ const I18N_DATA = {"en": {}};
     el.querySelector('#lv-count').textContent = App.plural(n, 'человек', 'человека', 'человек');
   }
   el.addEventListener('click', e => {
+    const hc = e.target.closest('[data-hcard]');
+    if (hc) { if (App.openHouse) App.openHouse(hc.dataset.hcard); return; }
     const head = e.target.closest('.lv-head button');
     if (head) {
       const open = head.getAttribute('aria-expanded') !== 'true';
@@ -6570,6 +6746,8 @@ const I18N_DATA = {"en": {}};
       head.append('text').attr('class', 'band-title').attr('x', tx).attr('y', 30).text(HOUSES[b.house].band);
       const tw = App.textWidth ? App.textWidth('t-head band-title', HOUSES[b.house].band, 15) : HOUSES[b.house].band.length * 15;
       head.append('text').attr('class', 'band-motto').attr('x', tx + tw + 18).attr('y', 30).text(HOUSES[b.house].motto);
+      head.append('rect').attr('class', 'band-hit').attr('x', -6).attr('y', -4).attr('width', tx + tw + 12).attr('height', sw + 8)
+        .on('click', e => { e.stopPropagation(); if (App.openHouse) App.openHouse(b.house); }).append('title').text(App.t('Открыть карточку дома'));
     });
     // Эпохи
     ERAS.forEach(e => {
@@ -8118,6 +8296,13 @@ const I18N_DATA = {"en": {}};
     if (out.length) out[out.length - 1].b = h.ex[1] != null ? h.ex[1] : Y1 + 0.02;
     return out;
   }
+  // для карточки дома на древе: край, годы и «кому служил» по периодам
+  App.vHouseInfo = id => {
+    const h = H.get(id);
+    if (!h) return null;
+    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord,
+      periods: periods(h).map(p => ({ span: span(p.a, p.b), liege: liegeName(p.to, p.a), to: p.to, why: p.why ? tidy(p.why) : '' })) };
+  };
   function renderPanel() {
     const h = sel && H.get(sel);
     ['--hc'].forEach(v => panelContent.style.removeProperty(v));
@@ -8149,6 +8334,7 @@ const I18N_DATA = {"en": {}};
         (p.to && H.has(p.to) ? '<button type="button" class="linkish" data-vh="' + p.to + '">' + esc(liegeName(p.to, p.a)) + '</button>' : esc(liegeName(p.to, p.a))) +
         (p.why ? '<span class="ref-note block">' + esc(tidy(p.why)) + '</span>' : '') + '</span></li>').join('') + '</ol>' +
       (now.length ? '<h3 class="sec">Знаменосцы в ' + esc(yearWord(year)) + '</h3><ul class="refs">' + now.map(id => '<li><button type="button" class="chip h-' + REGCLS[H.get(id).region] + '" data-vh="' + id + '">' + esc(H.get(id).ru) + '</button></li>').join('') + '</ul>' : '') +
+      (App.houseByV && App.houseByV(h.id) ? '<div class="panel-actions vs-card"><button type="button" class="btn" data-house="' + App.houseByV(h.id) + '">Карточка дома на древе</button></div>' : '') +
       '<p class="vs-src"><a href="https://awoiaf.westeros.org/index.php/' + encodeURIComponent(h.page) + '" target="_blank" rel="noopener">Статья на A Wiki of Ice and Fire ↗</a></p>';
   }
   panelContent.addEventListener('click', e => {

@@ -833,6 +833,13 @@
     if (out.length) out[out.length - 1].b = h.ex[1] != null ? h.ex[1] : Y1 + 0.02;
     return out;
   }
+  // для карточки дома на древе: край, годы и «кому служил» по периодам
+  App.vHouseInfo = id => {
+    const h = H.get(id);
+    if (!h) return null;
+    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord,
+      periods: periods(h).map(p => ({ span: span(p.a, p.b), liege: liegeName(p.to, p.a), to: p.to, why: p.why ? tidy(p.why) : '' })) };
+  };
   function renderPanel() {
     const h = sel && H.get(sel);
     ['--hc'].forEach(v => panelContent.style.removeProperty(v));
@@ -864,6 +871,7 @@
         (p.to && H.has(p.to) ? '<button type="button" class="linkish" data-vh="' + p.to + '">' + esc(liegeName(p.to, p.a)) + '</button>' : esc(liegeName(p.to, p.a))) +
         (p.why ? '<span class="ref-note block">' + esc(tidy(p.why)) + '</span>' : '') + '</span></li>').join('') + '</ol>' +
       (now.length ? '<h3 class="sec">Знаменосцы в ' + esc(yearWord(year)) + '</h3><ul class="refs">' + now.map(id => '<li><button type="button" class="chip h-' + REGCLS[H.get(id).region] + '" data-vh="' + id + '">' + esc(H.get(id).ru) + '</button></li>').join('') + '</ul>' : '') +
+      (App.houseByV && App.houseByV(h.id) ? '<div class="panel-actions vs-card"><button type="button" class="btn" data-house="' + App.houseByV(h.id) + '">Карточка дома на древе</button></div>' : '') +
       '<p class="vs-src"><a href="https://awoiaf.westeros.org/index.php/' + encodeURIComponent(h.page) + '" target="_blank" rel="noopener">Статья на A Wiki of Ice and Fire ↗</a></p>';
   }
   panelContent.addEventListener('click', e => {

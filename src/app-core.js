@@ -123,6 +123,15 @@
     return houseName(p);
   }
   App.kindLabel = kindLabel;
+  // в карточке человека название дома — ссылка на карточку дома
+  function eyebrowHtml(p) {
+    const s = esc(kindLabel(p));
+    if (!App.isHouseCard || !App.isHouseCard(p.house)) return s;
+    const hn = esc(houseName(p));
+    const i = s.indexOf(hn) >= 0 ? s.indexOf(hn) : s.indexOf(hn.replace('Дом ', 'дом '));
+    if (i < 0) return s;
+    return s.slice(0, i) + '<button type="button" class="linkish eb-house" data-house="' + p.house + '" title="' + esc(App.t('Открыть карточку дома')) + '">' + s.slice(i, i + hn.length) + '</button>' + s.slice(i + hn.length);
+  }
   const ariaLabel = p => [p.full, kindLabel(p), meta(p)].filter(Boolean).join(', ');
   const hasKids = d => !!(d.children || d._children);
   App.hasKids = hasKids;
@@ -368,6 +377,9 @@
       head.append('text').attr('class', 'band-title').attr('x', b.tx).attr('y', 40).text(h.band);
       head.append('text').attr('class', 'band-motto').attr('x', b.tx).attr('y', 64).text(h.motto);
       b.headW = Math.max(textWidth('band-title', h.band, 22), textWidth('band-motto', h.motto, 8));
+      // герб и название открывают карточку дома
+      head.append('rect').attr('class', 'band-hit').attr('x', -8).attr('y', -4).attr('width', b.tx + textWidth('band-title', h.band, 22) + 16).attr('height', 54)
+        .on('click', e => { e.stopPropagation(); if (App.openHouse) App.openHouse(b.house); }).append('title').text(App.t('Открыть карточку дома'));
     });
 
     // Граница Завоевания (в хронологии рисует своя ось)
@@ -954,7 +966,7 @@
         '<button type="button" class="btn btn-icon close" id="panel-close" aria-label="Закрыть карточку">×</button>' +
       '</div>' +
       '<div class="panel-top">' + medallion(p) + '<div>' +
-        '<p class="eyebrow">' + esc(kindLabel(p)) + '</p>' +
+        '<p class="eyebrow">' + eyebrowHtml(p) + '</p>' +
         '<h2>' + esc(p.full) + '</h2>' +
         // второе имя под заголовком: в русском — английское, в английском — русское
         ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
@@ -989,7 +1001,8 @@
   panel.addEventListener('scroll', () => { panelScrolled = panel.scrollTop > 0; }, { passive: true });
   App.renderPanel = renderPanel;
   /* История карточек: id человека или «d:id» для дракона. */
-  App.historyLabel = h => h.startsWith('d:') ? (App.dragonLabel ? App.dragonLabel(h.slice(2)) : h) : (byId.get(h) || {}).name;
+  App.historyLabel = h => h.startsWith('d:') ? (App.dragonLabel ? App.dragonLabel(h.slice(2)) : h)
+    : h.startsWith('h:') ? ((HOUSES[h.slice(2)] || {}).band || h) : (byId.get(h) || {}).name;
   App.currentSubject = () => state.selected;
 
   panel.addEventListener('click', e => {
@@ -1015,7 +1028,10 @@
     if (!id && !vw.persons) { App.closeView(); return; }
     if (id && !vw.persons) { const cur = App.currentSubject(); if (opts.push !== false && cur && cur !== id) state.history.push(cur); setView('people', { quiet: true }); opts = Object.assign({}, opts, { push: false, force: true }); }
     if (id && id === state.selected && !opts.force) { if (opts.center) { const v0 = App.views[state.view]; (v0 && v0.center ? v0.center : centerOn)(id); } return; }
-    if (opts.push !== false && state.selected && id) { state.history.push(state.selected); if (state.history.length > 40) state.history.shift(); }
+    // открыта карточка дома: в историю — она, а не человек под ней
+    const was = state.house ? 'h:' + state.house : state.selected;
+    state.house = null;
+    if (opts.push !== false && was && id && was !== id) { state.history.push(was); if (state.history.length > 40) state.history.shift(); }
     if (!id) state.history = [];
     state.selected = id;
     if (id) reveal(id);
@@ -1031,6 +1047,7 @@
     const prev = state.history.pop();
     if (!prev) return;
     if (prev.startsWith('d:') && App.openDragon) App.openDragon(prev.slice(2), { push: false, center: true });
+    else if (prev.startsWith('h:') && App.openHouse) App.openHouse(prev.slice(2), { push: false });
     else select(prev, { center: true, push: false });
   }
   App.goBack = goBack;
@@ -1053,10 +1070,13 @@
   }
   App.centerOn = centerOn;
 
-  function fitBox(x0, y0, x1, y1, minK) {
+  // corner: если рамка не влезает при minK — прижать её левый верхний угол к краю экрана, а не центр
+  function fitBox(x0, y0, x1, y1, minK, corner) {
     const { w, h } = viewSize();
     const k = Math.max(minK || 0.04, Math.min(1.2, Math.min(w / (x1 - x0 + 40), h / (y1 - y0 + 40))));
-    const t = d3.zoomIdentity.translate(w / 2 - k * (x0 + x1) / 2, h / 2 - k * (y0 + y1) / 2).scale(k);
+    const tx = corner && k * (x1 - x0) > w ? 20 - k * x0 : w / 2 - k * (x0 + x1) / 2;
+    const ty = corner && k * (y1 - y0) > h ? 70 - k * y0 : h / 2 - k * (y0 + y1) / 2;
+    const t = d3.zoomIdentity.translate(tx, ty).scale(k);
     svg.transition().duration(dur).call(zoom.transform, t);
   }
   App.fitBox = fitBox;
@@ -1129,7 +1149,7 @@
     document.getElementById('canvas').classList.toggle('has-marks', !!next.scaleMarks && !App.isNarrow());
     if (next.onShow) next.onShow(opts);
     if (!opts.quiet) {
-      if (next.persons) renderPanel(state.selected ? byId.get(state.selected) : null);
+      if (next.persons) { if (state.house && App.renderHousePanel) App.renderHousePanel(state.house); else renderPanel(state.selected ? byId.get(state.selected) : null); }
       else if (next.panel) next.panel();
       App.setHash(next.hash ? next.hash() : '');
     }
@@ -1137,7 +1157,7 @@
   }
   App.setView = setView;
   App.hooks.view = [];
-  App.currentSubject = () => { const w = App.views[state.view]; return w && w.subject ? w.subject() : state.selected; };
+  App.currentSubject = () => { const w = App.views[state.view]; return w && w.subject ? w.subject() : state.house ? 'h:' + state.house : state.selected; };
   App.closeView = () => { const w = App.views[state.view]; if (w && w.close) w.close(); };
 
   /* Линза: подсветка группы людей на древе (всадники дракона, линзы эпох). */

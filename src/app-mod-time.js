@@ -172,6 +172,8 @@
       head.append('text').attr('class', 'band-title').attr('x', tx).attr('y', 30).text(HOUSES[b.house].band);
       const tw = App.textWidth ? App.textWidth('t-head band-title', HOUSES[b.house].band, 15) : HOUSES[b.house].band.length * 15;
       head.append('text').attr('class', 'band-motto').attr('x', tx + tw + 18).attr('y', 30).text(HOUSES[b.house].motto);
+      head.append('rect').attr('class', 'band-hit').attr('x', -6).attr('y', -4).attr('width', tx + tw + 12).attr('height', sw + 8)
+        .on('click', e => { e.stopPropagation(); if (App.openHouse) App.openHouse(b.house); }).append('title').text(App.t('Открыть карточку дома'));
     });
     // Эпохи
     ERAS.forEach(e => {

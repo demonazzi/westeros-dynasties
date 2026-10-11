@@ -37,7 +37,8 @@
       // у малого дома герб меньше
       html += '<section class="lv-house h-' + band.house + '" data-house="' + band.house + '"><h3 class="lv-head"><button type="button" aria-expanded="true">' +
         (App.sigilSVG ? App.sigilSVG(band.house, 0, 0, band.liege ? 18 : 26, 'lv-sigil') : '') +
-        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button></h3><div class="lv-body">';
+        esc(HOUSES[band.house].band) + '<span class="lv-n">' + order.length + '</span></button>' +
+        '<button type="button" class="linkish lv-card" data-hcard="' + band.house + '">Карточка дома</button></h3><div class="lv-body">';
       const pre = keys.filter(g => g < 6), post = keys.filter(g => g >= 6);
       const groups = (pre.length ? [[pre, 'До Завоевания']] : []).concat(post.map(g => [[g], genLabel(g)]));
       groups.forEach(([gs, label]) => {
@@ -66,6 +67,8 @@
     el.querySelector('#lv-count').textContent = App.plural(n, 'человек', 'человека', 'человек');
   }
   el.addEventListener('click', e => {
+    const hc = e.target.closest('[data-hcard]');
+    if (hc) { if (App.openHouse) App.openHouse(hc.dataset.hcard); return; }
     const head = e.target.closest('.lv-head button');
     if (head) {
       const open = head.getAttribute('aria-expanded') !== 'true';
