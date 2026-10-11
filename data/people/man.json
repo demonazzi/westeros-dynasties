@@ -1,0 +1,39 @@
+{
+  "title": "Мандерли",
+  "about": "Дом Мандерли (Белая Гавань), знаменосцы Старков.",
+  "groups": [
+    {
+      "title": "Мандерли при Джейехерисе I и в Танец драконов",
+      "people": [
+        {"id":"theomore","name":"Теомор Мандерли","en":"Theomore Manderly","hs":"man","k":"T","d":"87–129","sp":[["четыре жены"]]},
+        {"id":"theomore_sons","name":"Трое сыновей","full":"Сыновья Теомора Мандерли","group":1,"hs":"man","k":"T","p":"theomore","par":["theomore"],"wiki":"Theomore Manderly"},
+        {"id":"mara_m","name":"Мара Мандерли","en":"Mara Manderly","fem":1,"hs":"man","k":"T","p":"theomore","par":["theomore"]},
+        {"id":"jessamyn_m","name":"Джессамина Мандерли","en":"Jessamyn Manderly","fem":1,"hs":"man","k":"T","p":"theomore","par":["theomore"]},
+        {"id":"desmond","name":"Десмонд Мандерли","en":"Desmond Manderly","hs":"man","k":"T","par":["правнук лорда Теомора; отец и дед не названы"],"d":"132"},
+        {"id":"medrick","name":"Медрик Мандерли","full":"Сир Медрик Мандерли","en":"Medrick Manderly","hs":"man","k":"T","p":"desmond","par":["desmond"],"d":"132"},
+        {"id":"torrhen_m","name":"Торрхен Мандерли","en":"Torrhen Manderly","hs":"man","k":"T","p":"desmond","par":["desmond"],"b":"не позднее 111"},
+        {"id":"desmond_daus","name":"Дочери","full":"Дочери Десмонда Мандерли","fem":1,"group":1,"hs":"man","k":"T","p":"desmond","par":["desmond"],"wiki":"Desmond Manderly"},
+        {"id":"torrhen_m_daus","name":"Дочери","full":"Дочери Торрхена Мандерли","fem":1,"group":1,"hs":"man","k":"T","p":"torrhen_m","par":["torrhen_m"],"wiki":"Torrhen Manderly"}
+      ]
+    },
+    {
+      "title": "Мандерли — жёны Старков",
+      "people": [
+        {"id":"jeyne_m","name":"Джейн Мандерли","en":"Jeyne Manderly","fem":1,"hs":"man","k":"T","b":"не позднее 149","sp":[["rickon_c"]]},
+        {"id":"myriame","name":"Мириам Мандерли","en":"Myriame Manderly","fem":1,"hs":"man","k":"T","b":"не позднее 212","sp":[["rodwell"]]}
+      ]
+    },
+    {
+      "title": "Белая Гавань в конце третьего века",
+      "people": [
+        {"id":"wyman","name":"Виман Мандерли","en":"Wyman Manderly","hs":"man","k":"T","b":"239–242","sp":[["жена, умершая около 291 года"]]},
+        {"id":"wylis","name":"Вилис Мандерли","full":"Сир Вилис Мандерли","en":"Wylis Manderly","hs":"man","k":"T","p":"wyman","par":["wyman"],"b":"251–263","sp":[["Леона Вулфилд"]]},
+        {"id":"wynafryd","name":"Винафрид Мандерли","en":"Wynafryd Manderly","fem":1,"hs":"man","k":"T","p":"wylis","par":["wylis","Леона Вулфилд"],"b":"280/281"},
+        {"id":"wylla_m","name":"Вилла Мандерли","en":"Wylla Manderly","fem":1,"hs":"man","k":"T","p":"wylis","par":["wylis","Леона Вулфилд"],"b":"284/285"},
+        {"id":"wendel","name":"Вендел Мандерли","full":"Сир Вендел Мандерли","en":"Wendel Manderly","hs":"man","k":"T","p":"wyman","par":["wyman"],"b":"252–264","d":"299"},
+        {"id":"marlon","name":"Марлон Мандерли","full":"Сир Марлон Мандерли","en":"Marlon Manderly","hs":"man","k":"T","par":["родители не названы; кузен лорда Вимана"]},
+        {"id":"donella","name":"Донелла Хорнвуд","en":"Donella Hornwood","al":["Донелла Мандерли"],"fem":1,"hs":"man","k":"T","par":["родители не названы; кузина лорда Вимана"],"b":"не позднее 257","d":"299","sp":[["Халис Хорнвуд","первый муж"],["ramsay","второй муж"]]}
+      ]
+    }
+  ]
+}

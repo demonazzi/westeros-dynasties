@@ -172,6 +172,20 @@
         {"id":"walder_fr_ryman","a":[["got","Тим Плестер","Tim Plester"]]},
         {"id":"walder_rv","a":[["got","Тим Плестер","Tim Plester"]]}
       ]
+    },
+    {
+      "title": "«Игра престолов»: дома Севера",
+      "items": [
+        {"id":"roose","a":[["got","Майкл Макэлхаттон","Michael McElhatton"]]},
+        {"id":"ramsay","a":[["got","Иван Реон","Iwan Rheon"]]},
+        {"id":"greatjon","a":[["got","Клайв Мэнтл","Clive Mantle"]]},
+        {"id":"smalljon","a":[["got","Дин С. Джаггер","Dean S. Jagger"]]},
+        {"id":"rickard_k","a":[["got","Джон Сталь","John Stahl"]]},
+        {"id":"alys_k","a":[["got","Меган Паркинсон","Megan Parkinson"]]},
+        {"id":"jeor","a":[["got","Джеймс Космо","James Cosmo"]]},
+        {"id":"jorah","a":[["got","Иэн Глен","Iain Glen"]]},
+        {"id":"lyanna_m","a":[["got","Белла Рамзи","Bella Ramsey"]]}
+      ]
     }
   ]
 }

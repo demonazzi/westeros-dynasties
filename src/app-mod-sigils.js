@@ -37,6 +37,46 @@
       '<path d="M27 39.5 H37 V46.5 C35.2 43.6 28.8 43.6 27 46.5 Z" fill="' + c + '"/>' +
       '<path d="M20.5 34 h2 v4.5 h-2 Z M41.5 34 h2 v4.5 h-2 Z M19.5 59 V54 C19.5 51.6 23.5 51.6 23.5 54 V59 Z M40.5 59 V54 C40.5 51.6 44.5 51.6 44.5 54 V59 Z" fill="' + f + '"/>' +
       '<path d="M12 63.5 C16 61.5 20 65.5 24 63.5 S32 61.5 36 63.5 S44 65.5 48 63.5 S52 62 53 63" stroke="' + c + '" stroke-width="1.6" fill="none" opacity=".7"/>',
+    // освежёванный человек на бледно-розовом поле с каплями крови (Болтоны)
+    blt: (f, c) => {
+      const drop = (x, y) => '<path d="M' + x + ' ' + y + ' c0 -1.6 1.3 -3.2 1.3 -3.2 s1.3 1.6 1.3 3.2 a1.3 1.3 0 0 1 -2.6 0 Z" fill="' + c + '"/>';
+      return '<circle cx="32" cy="24.5" r="4.2" fill="' + c + '"/>' +
+        '<path d="M28.3 29.5 H35.7 L36.6 44 H34.6 L33.6 57 H30.4 L29.4 44 H27.4 Z" fill="' + c + '"/>' +
+        '<path d="M28.6 31 L17 22 M35.4 31 L47 22 M30.6 56 L26.5 65 M33.4 56 L37.5 65" stroke="' + c + '" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+        '<path d="M29.5 34 H34.5 M29.5 38 H34.5" stroke="' + f + '" stroke-width=".9" opacity=".7"/>' +
+        drop(15, 32) + drop(47.5, 33) + drop(19, 48) + drop(44, 47) + drop(23, 59) + drop(40.5, 60);
+    },
+    // ревущий великан в шкуре с разорванными серебряными цепями на огненно-красном (Амберы)
+    umb: (f, c) =>
+      '<circle cx="32" cy="24" r="5" fill="' + c + '"/><ellipse cx="32" cy="26" rx="1.7" ry="1.3" fill="' + f + '"/>' +
+      '<path d="M23.5 30.5 H40.5 L42.5 48 H21.5 Z" fill="' + c + '"/>' +
+      '<path d="M24.5 47 H30 V63 H24.5 Z M34 47 H39.5 V63 H34 Z" fill="' + c + '"/>' +
+      '<path d="M24 32.5 L14.5 20.5 M40 32.5 L49.5 20.5" stroke="' + c + '" stroke-width="4.2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M22 37 L42 41 M23 43 L41 39" stroke="#7E5A36" stroke-width="1.1" opacity=".8"/>' +
+      '<g fill="none" stroke="#D9DBDE" stroke-width="1.5"><ellipse cx="12.3" cy="17.8" rx="2.3" ry="1.4" transform="rotate(45 12.3 17.8)"/>' +
+      '<ellipse cx="9.4" cy="14.6" rx="2.3" ry="1.4" transform="rotate(45 9.4 14.6)"/><ellipse cx="51.7" cy="17.8" rx="2.3" ry="1.4" transform="rotate(-45 51.7 17.8)"/>' +
+      '<ellipse cx="54.6" cy="14.6" rx="2.3" ry="1.4" transform="rotate(-45 54.6 14.6)"/></g>',
+    // белое солнце с лучами на чёрном (Карстарки)
+    kar: (f, c) => {
+      let rays = '';
+      for (let i = 0; i < 16; i++) {
+        const a = i * Math.PI / 8, r1 = 9.5, r2 = i % 2 ? 15 : 19, w = 0.16;
+        const p = (r, d) => (32 + Math.cos(a + d) * r).toFixed(1) + ' ' + (40 + Math.sin(a + d) * r).toFixed(1);
+        rays += 'M' + p(r1, -w) + ' L' + p(r2, 0) + ' L' + p(r1, w) + ' Z ';
+      }
+      return '<path d="' + rays + '" fill="' + c + '"/><circle cx="32" cy="40" r="8" fill="' + c + '"/>';
+    },
+    // белый водяной с чёрным трезубцем на сине-зелёном (Мандерли)
+    man: (f, c) =>
+      '<path d="M39 17 V54" stroke="#15181A" stroke-width="2.2"/><path d="M35 23 V17.5 M39 23 V15 M43 23 V17.5 M34.5 23 H43.5" stroke="#15181A" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<circle cx="27.5" cy="23.5" r="4.1" fill="' + c + '"/><path d="M24 22 C23 26 24 28 25.5 29.5 M31 22 C32 26 31 28 29.5 29.5" stroke="#1F4A3A" stroke-width="1.6" fill="none"/>' +
+      '<path d="M23.5 29 H31.5 L31 39 C31 45 35 49 41 51.5 C46 53.5 47 58.5 43.5 61 L48.5 65 H41.5 L39.5 61 C35 59 25.5 53 24.5 41 Z" fill="' + c + '"/>' +
+      '<path d="M31 31.5 L39 30.5" stroke="' + c + '" stroke-width="2.6" stroke-linecap="round"/>',
+    // чёрный медведь в зелёном лесу (Мормонты)
+    mor: (f, c) =>
+      '<path d="M13 60 L17 48 L21 60 Z M43 60 L47 46 L51 60 Z M16 46 L19 37 L22 46 Z" fill="#6E9A63" opacity=".75"/>' +
+      '<path d="M21 61 C19 52 21 42 26.5 36 C25 32 25.5 27 29.5 25.5 C30.5 22.5 33.5 22.5 34.5 24.5 C38.5 24.5 41.5 27.5 40.5 31.5 C44.5 35.5 46 43.5 44 51 L46 61 H40 L39 54 C36 56 30 56 27.5 54 L26.5 61 Z" fill="' + c + '"/>' +
+      '<circle cx="29.5" cy="24" r="2" fill="' + c + '"/><circle cx="36" cy="24.5" r="2" fill="' + c + '"/><circle cx="34.5" cy="28" r=".9" fill="' + f + '"/>',
     // ступенчатая белая башня, увенчанная огнём
     hgt: (f, c) =>
       '<path d="M20 63 H44 V58 H20 Z M22 57 H42 L41 45 H23 Z M21 45 H43 V42 H21 Z M25 41 H39 L38 32 H26 Z M24 32 H40 V29.5 H24 Z M27.5 29 H36.5 L35.5 24.5 H28.5 Z" fill="' + c + '"/>' +

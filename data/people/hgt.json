@@ -40,7 +40,7 @@
         {"id":"denyse_h","name":"Дениза Хайтауэр","en":"Denyse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Десмонд Редвин"]]},
         {"id":"leyla_h","name":"Лейла Хайтауэр","en":"Leyla Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Джон Каппс"]]},
         {"id":"alysanne_h","name":"Алисанна Хайтауэр","en":"Alysanne Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","par":["leyton"],"sp":[["Артур Амброз"]]},
-        {"id":"lynesse","name":"Линесс Хайтауэр","en":"Lynesse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["Джорах Мормонт","вторая жена"]]},
+        {"id":"lynesse","name":"Линесс Хайтауэр","en":"Lynesse Hightower","fem":1,"hs":"hgt","k":"T","p":"leyton","sp":[["jorah","вторая жена"]]},
         {"id":"gunthor","name":"Гюнтор Хайтауэр","full":"Сир Гюнтор Хайтауэр","en":"Gunthor Hightower","hs":"hgt","k":"T","p":"leyton","par":["leyton"],"b":"271–285","sp":[["Джейна Фоссовей"]]},
         {"id":"humfrey_h","name":"Хамфри Хайтауэр","full":"Сир Хамфри Хайтауэр","en":"Humfrey Hightower","hs":"hgt","k":"T","p":"leyton","par":["leyton"],"b":"272–285"}
       ]

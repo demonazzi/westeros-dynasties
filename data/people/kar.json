@@ -1,0 +1,28 @@
+{
+  "title": "Карстарки",
+  "about": "Дом Карстарков (Кархолд), знаменосцы Старков.",
+  "groups": [
+    {
+      "title": "Карстарки — жёны Старков",
+      "people": [
+        {"id":"alys_kk","name":"Алис Карстарк","full":"Алис Карстарк, жена Брандона Старка","en":"Alys Karstark","fem":1,"hs":"kar","k":"T","sp":[["brandon_c"]],"wiki":"Alys Karstark (wife of Brandon)"},
+        {"id":"lysara","name":"Лисара Карстарк","en":"Lysara Karstark","fem":1,"hs":"kar","k":"T","d":"не ранее 198","sp":[["artos"]]}
+      ]
+    },
+    {
+      "title": "Кархолд в конце третьего века",
+      "people": [
+        {"id":"arnolf","name":"Арнольф Карстарк","en":"Arnolf Karstark","hs":"kar","k":"T","par":["родители не названы; дядя лорда Рикарда"],"b":"не позднее 237","sp":[["жена, имя не названо"]]},
+        {"id":"cregan_k","name":"Криган Карстарк","en":"Cregan Karstark","hs":"kar","k":"T","p":"arnolf","par":["arnolf","жена Арнольфа"],"b":"не позднее 249","sp":[["первая жена, имя не названа"],["вторая жена, имя не названа"]]},
+        {"id":"arnolf_gs","name":"Внуки Арнольфа","full":"Шестеро внуков Арнольфа Карстарка","group":1,"hs":"kar","k":"T","p":"cregan_k","par":["cregan_k (или Артор, или дочь Арнольфа)"],"unc":1,"wiki":"Arnolf Karstark"},
+        {"id":"arthor","name":"Артор Карстарк","en":"Arthor Karstark","hs":"kar","k":"T","p":"arnolf","par":["arnolf","жена Арнольфа"],"b":"249/250"},
+        {"id":"arnolf_daus","name":"Дочери","full":"Дочери Арнольфа Карстарка","fem":1,"group":1,"hs":"kar","k":"T","p":"arnolf","par":["arnolf","жена Арнольфа"],"wiki":"Arnolf Karstark"},
+        {"id":"rickard_k","name":"Рикард Карстарк","en":"Rickard Karstark","hs":"kar","k":"T","par":["родители не названы; Арнольф — его дядя"],"d":"299","sp":[["жена, имя не названа"]]},
+        {"id":"harrion","name":"Харрион Карстарк","en":"Harrion Karstark","hs":"kar","k":"T","p":"rickard_k","par":["rickard_k","жена Рикарда"]},
+        {"id":"eddard_k","name":"Эддард Карстарк","en":"Eddard Karstark","hs":"kar","k":"T","p":"rickard_k","par":["rickard_k","жена Рикарда"],"d":"299"},
+        {"id":"torrhen_k","name":"Торрхен Карстарк","en":"Torrhen Karstark","hs":"kar","k":"T","p":"rickard_k","par":["rickard_k","жена Рикарда"],"d":"299"},
+        {"id":"alys_k","name":"Алис Карстарк","full":"Алис Карстарк, дочь Рикарда","en":"Alys Karstark","fem":1,"hs":"kar","k":"T","p":"rickard_k","par":["rickard_k","жена Рикарда"],"b":"284/285","sp":[["Сигорн, магнар теннов"]],"wiki":"Alys Karstark"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Мормонты",
+  "about": "Дом Мормонтов (Медвежий остров), знаменосцы Старков.",
+  "groups": [
+    {
+      "title": "Мормонты",
+      "people": [
+        {"id":"mor_lord","name":"Лорд Мормонт","full":"Лорд Мормонт, отец Джиора и Мейдж","hs":"mor","k":"T","wiki":"Jeor Mormont"},
+        {"id":"jeor","name":"Джиор Мормонт","full":"Джиор Мормонт, Старый Медведь","en":"Jeor Mormont","al":["Старый Медведь"],"hs":"mor","k":"T","p":"mor_lord","par":["mor_lord"],"b":"230","d":"299"},
+        {"id":"jorah","name":"Джорах Мормонт","full":"Сир Джорах Мормонт","en":"Jorah Mormont","hs":"mor","k":"T","p":"jeor","par":["jeor"],"b":"≈254","sp":[["Леди Гловер","первая жена; умерла после третьего выкидыша"],["lynesse","вторая жена"]]},
+        {"id":"maege","name":"Мейдж Мормонт","full":"Мейдж Мормонт, Медведица","en":"Maege Mormont","al":["Медведица"],"fem":1,"hs":"mor","k":"T","p":"mor_lord","par":["mor_lord"],"b":"239–259"},
+        {"id":"dacey","name":"Дейси Мормонт","en":"Dacey Mormont","fem":1,"hs":"mor","k":"T","p":"maege","par":["maege"],"b":"251–277","d":"299"},
+        {"id":"alysane","name":"Алисана Мормонт","full":"Алисана Мормонт, Юная Медведица","en":"Alysane Mormont","al":["Юная Медведица"],"fem":1,"hs":"mor","k":"T","p":"maege","par":["maege"],"b":"273–278"},
+        {"id":"alysane_dau","name":"Дочь","full":"Дочь Алисаны Мормонт","fem":1,"hs":"mor","k":"T","p":"alysane","par":["alysane","отец не назван («медведь»)"],"unc":1,"b":"≈291","wiki":"Alysane Mormont"},
+        {"id":"alysane_son","name":"Сын","full":"Сын Алисаны Мормонт","hs":"mor","k":"T","p":"alysane","par":["alysane","отец не назван («медведь»)"],"unc":1,"b":"≈298","wiki":"Alysane Mormont"},
+        {"id":"lyra_m","name":"Лира Мормонт","en":"Lyra Mormont","fem":1,"hs":"mor","k":"T","p":"maege","par":["maege"],"b":"274–288"},
+        {"id":"jorelle","name":"Джорель Мормонт","en":"Jorelle Mormont","fem":1,"hs":"mor","k":"T","p":"maege","par":["maege"],"b":"275–289"},
+        {"id":"lyanna_m","name":"Лианна Мормонт","full":"Лианна Мормонт, дочь Мейдж","en":"Lyanna Mormont","fem":1,"hs":"mor","k":"T","p":"maege","par":["maege"],"b":"290"}
+      ]
+    }
+  ]
+}
