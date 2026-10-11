@@ -2,7 +2,8 @@
 <div class="app">
   <header class="bar">
     <div class="brand">
-      <h1>Династии Вестероса</h1>
+      <div class="brand-row"><h1>Династии Вестероса</h1>
+      <div class="lang-switch" role="group" aria-label="Язык интерфейса"><button type="button" class="lang-btn" data-lang="ru" aria-pressed="true">RU</button><button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English — заготовка, перевод ещё не сделан">EN</button></div></div>
       <p id="brand-sub">Таргариены и великие дома: родословная, драконы, хронология</p>
     </div>
     <div class="tools">
@@ -54,6 +55,11 @@
           <p class="kin-title" id="kin-title"></p>
         </div>
         <div class="kin-reps" id="kin-reps" aria-live="polite"></div>
+      </div>
+      <div class="no-houses" id="no-houses" hidden>
+        <p class="nh-title">Не выбран ни один дом</p>
+        <p class="nh-text">Отметьте нужные дома в фильтрах — их полосы появятся здесь.</p>
+        <p class="nh-acts"><button type="button" class="btn" data-nh="filters">Открыть фильтры</button> <button type="button" class="btn" data-nh="all">Показать все дома</button></p>
       </div>
       <div class="minimap" id="minimap"><svg id="minimap-svg" role="img" aria-label="Мини-карта древа: нажмите, чтобы перейти"></svg><button type="button" class="mm-toggle" id="minimap-toggle" aria-expanded="true" title="Свернуть мини-карту">−</button></div>
       <div class="lensbar pickbar" id="pickbar" hidden><span id="pickbar-text"></span><button type="button" class="btn" id="pickbar-close">Отмена</button></div>

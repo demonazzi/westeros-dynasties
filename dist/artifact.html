@@ -369,7 +369,12 @@ rect.lg-sub { fill: var(--hc); }
 .tog text { fill: var(--muted); font-family: var(--font-ui); font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
 
 /* Panel */
-.panel { min-width: 0; min-height: 0; overflow-y: auto; background: var(--surface); border-left: 1px solid var(--rule); }
+.panel { min-width: 0; min-height: 0; overflow-y: auto; background: var(--surface); border-left: 1px solid var(--rule); container: panel / inline-size; }
+/* узкая карточка: подпись над значением, а не в отдельной колонке — плашкам с именами остаётся вся ширина */
+@container panel (max-width: 420px) {
+  .panel .facts > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .panel .facts > div:has(> dd > .refs) dt { padding-top: 0; }
+}
 .panel-inner { padding: 22px 24px 28px; display: grid; gap: 16px; border-top: 4px solid var(--hc); }
 .panel-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 34px; }
 .back { max-width: 75%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; line-height: 32px; }
@@ -393,18 +398,23 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .en { margin: 6px 0 0; font-family: var(--font-body); font-style: italic; color: var(--muted); font-size: 15px; }
 .note { margin: 0; font-family: var(--font-body); font-size: 16.5px; line-height: 1.55; max-width: 62ch; }
 .facts { margin: 0; display: grid; gap: 12px; border-top: 1px solid var(--rule); padding-top: 14px; }
-.facts > div { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.facts > div { display: grid; grid-template-columns: minmax(84px, 128px) minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.facts > div:has(> dd > .refs) { align-items: start; }
+.facts > div:has(> dd > .refs) dt { padding-top: 7px; }
 .facts dt { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; overflow-wrap: anywhere; text-transform: uppercase; color: var(--muted); }
 .facts dd { margin: 0; min-width: 0; font-variant-numeric: lining-nums; }
 .refs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.refs li { display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.refs li { display: inline-flex; align-items: center; gap: 4px 6px; flex-wrap: wrap; max-width: 100%; }
+/* скругление 14px, а не «таблетка»: длинное имя в узкой карточке переносится на вторую строку и не превращается в овал */
 .chip {
-  font: inherit; font-size: 14px; color: var(--ink); background: var(--ground); border: 1px solid var(--rule);
-  border-radius: 999px; padding: 3px 11px 3px 9px; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; font-size: 14px; line-height: 1.3; color: var(--ink); background: var(--ground); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 3px 11px 3px 9px; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px; max-width: 100%;
 }
 .chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--hc); flex: none; }
 .chip:hover { border-color: var(--hc); }
-.ref { font-size: 14px; }
+/* человек без карточки на древе: такая же плашка, но без цвета дома и не нажимается — стоит в ряд с остальными */
+.ref { font-size: 14px; line-height: 1.3; display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 3px 11px 3px 9px; border: 1px dashed var(--rule); border-radius: 14px; color: var(--muted); }
+.ref::before { content: ''; width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--muted); flex: none; box-sizing: border-box; }
 .ref-note { font-size: 12.5px; color: var(--muted); }
 .empty { display: grid; gap: 10px; }
 .empty h2 { font-size: 26px; }
@@ -705,6 +715,25 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .mm-sel { fill: none; stroke: var(--path); stroke-width: 2; }
 .mm-view { fill: var(--path); fill-opacity: .06; stroke: var(--path); stroke-width: 1.5; pointer-events: none; }
 
+/* Переключатель языка */
+/* рядом с названием: свой ряд не занимает и не наезжает на кнопки, как бы ни переносилась шапка */
+.brand-row { display: flex; align-items: center; gap: 14px; }
+.lang-switch { display: inline-flex; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; height: 26px; flex: none; }
+.lang-btn { font: 700 12px var(--font-ui); letter-spacing: .06em; color: var(--muted); background: none; border: 0; padding: 0 10px; cursor: pointer; }
+.lang-btn[aria-pressed="true"] { color: var(--ink); background: var(--ground); }
+.lang-btn:hover { color: var(--ink); }
+.lang-btn:focus-visible { outline: 2px solid var(--path); outline-offset: -2px; }
+
+/* Пустое поле, когда ни один дом не выбран */
+.no-houses { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; display: grid; gap: 8px; justify-items: center; text-align: center;
+  max-width: 420px; padding: 22px 26px; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--ov-shadow); }
+.no-houses[hidden] { display: none; }
+.no-houses p { margin: 0; }
+.nh-title { font-family: var(--font-display); font-size: 22px; }
+.nh-text { color: var(--muted); font-size: 14px; }
+.nh-acts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 6px !important; }
+.minimap.mm-empty { opacity: .45; }
+
 /* Фильтры */
 .filter-pop { min-width: 300px; padding: 10px 14px 12px; gap: 10px; }
 .filter-pop fieldset { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; }
@@ -990,7 +1019,8 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
 <div class="app">
   <header class="bar">
     <div class="brand">
-      <h1>Династии Вестероса</h1>
+      <div class="brand-row"><h1>Династии Вестероса</h1>
+      <div class="lang-switch" role="group" aria-label="Язык интерфейса"><button type="button" class="lang-btn" data-lang="ru" aria-pressed="true">RU</button><button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English — заготовка, перевод ещё не сделан">EN</button></div></div>
       <p id="brand-sub">Таргариены и великие дома: родословная, драконы, хронология</p>
     </div>
     <div class="tools">
@@ -1042,6 +1072,11 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
           <p class="kin-title" id="kin-title"></p>
         </div>
         <div class="kin-reps" id="kin-reps" aria-live="polite"></div>
+      </div>
+      <div class="no-houses" id="no-houses" hidden>
+        <p class="nh-title">Не выбран ни один дом</p>
+        <p class="nh-text">Отметьте нужные дома в фильтрах — их полосы появятся здесь.</p>
+        <p class="nh-acts"><button type="button" class="btn" data-nh="filters">Открыть фильтры</button> <button type="button" class="btn" data-nh="all">Показать все дома</button></p>
       </div>
       <div class="minimap" id="minimap"><svg id="minimap-svg" role="img" aria-label="Мини-карта древа: нажмите, чтобы перейти"></svg><button type="button" class="mm-toggle" id="minimap-toggle" aria-expanded="true" title="Свернуть мини-карту">−</button></div>
       <div class="lensbar pickbar" id="pickbar" hidden><span id="pickbar-text"></span><button type="button" class="btn" id="pickbar-close">Отмена</button></div>
@@ -2941,8 +2976,69 @@ const V_HOUSES = [
 {"id":"edgerton","en":"Edgerton","ru":"Эджертоны","region":"crownlands","seat":null,"great":false,"ex":[null,null],"liege":"throne","al":[],"note":"Инфобокс: Баратеоны Королевской Гавани. Членов дома в книгах нет; событий о присяге нет.","page":"House_Edgerton"}
 ];
 
+const I18N = {"en": {}};
+
 </script>
 <script>
+/* Язык интерфейса: русский (исходный) и английский (заготовка).
+   Ключ перевода — сама русская строка, как она стоит в разметке или в коде; словарь — src/i18n/en.json
+   (собирается tools/i18n-keys.js). Пустой перевод — показывается русская строка, так что недоведённый
+   английский не ломает страницу.
+   · статичная разметка (body.html) переводится обходом: текстовые узлы и атрибуты title, placeholder, aria-label;
+   · строки из кода — через App.t('…') (подстановки: App.t('видно {n} из {all}', { n, all }));
+   · имена людей и драконов в английском — из поля en, если оно есть.
+   Язык: ?lang=en в адресе или сохранённый выбор; переключение перезагружает страницу с тем же адресом. */
+(function () {
+  const App = window.App = window.App || {};
+  const LANGS = ['ru', 'en'];
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* без хранилища язык живёт до перезагрузки */ } } };
+  const fromUrl = (location.search.match(/[?&]lang=(ru|en)\b/) || [])[1];
+  const lang = fromUrl || (LANGS.includes(store.get('lang')) ? store.get('lang') : 'ru');
+  const dict = (typeof I18N !== 'undefined' && I18N[lang]) || {};
+  App.lang = lang;
+  App.langs = LANGS;
+  document.documentElement.setAttribute('lang', lang);
+
+  const fill = (s, vars) => vars ? s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m)) : s;
+  App.t = (ru, vars) => fill(lang === 'ru' ? ru : (dict[ru] || ru), vars);
+  App.tHas = ru => lang === 'ru' || !!dict[ru];
+
+  // перевод готовой разметки: текст узла сравнивается без крайних пробелов, сами пробелы сохраняются
+  const ATTRS = ['title', 'placeholder', 'aria-label'];
+  App.translateDom = root => {
+    if (lang === 'ru' || !root) return;
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    for (let n = w.nextNode(); n; n = w.nextNode()) {
+      const raw = n.nodeValue, key = raw.replace(/\s+/g, ' ').trim();
+      if (key && dict[key]) n.nodeValue = (/^\s/.test(raw) ? ' ' : '') + dict[key] + (/\s$/.test(raw) ? ' ' : '');
+    }
+    root.querySelectorAll('[title],[placeholder],[aria-label]').forEach(el => ATTRS.forEach(a => {
+      const v = el.getAttribute(a);
+      const k = v && v.replace(/\s+/g, ' ').trim();
+      if (k && dict[k]) el.setAttribute(a, dict[k]);
+    }));
+  };
+
+  App.setLang = next => {
+    if (!LANGS.includes(next) || next === lang) return;
+    store.set('lang', next);
+    const u = new URL(location.href);
+    if (u.searchParams.has('lang')) { u.searchParams.set('lang', next); location.replace(u.toString()); }
+    else location.reload();
+  };
+
+  // имена в данных: в английском — поле en (если есть), русское имя остаётся в ruName/ruFull
+  App.localizeData = () => {
+    if (lang === 'ru') return;
+    (typeof PEOPLE !== 'undefined' ? PEOPLE : []).forEach(p => {
+      p.ruName = p.name; p.ruFull = p.full || p.name;
+      if (p.en) { p.name = p.en.split(',')[0]; p.full = p.en; }
+    });
+    (typeof DRAGONS !== 'undefined' ? DRAGONS : []).forEach(d => { d.ruName = d.name; if (d.en) d.name = d.en; });
+  };
+  App.localizeData();
+})();
+
 /* Ядро: подготовка данных, раскладка по поколениям, отрисовка, выбор, карточка, поиск, история. */
 (function () {
   const App = window.App = window.App || {};
@@ -3869,6 +3965,7 @@ const V_HOUSES = [
         '<p>Карточка покажет годы жизни, родителей, супругов, детей и хронологию. Древо подсветит линию предков, браки и второго родителя, даже если он из другого дома.</p>' +
         '<p class="stats">' + PEOPLE.length + ' человек · ' + PAIRS.filter(e => e.type === 'm').length + ' браков на древе</p>' +
         '<p class="keys"><kbd>/</kbd> поиск · <kbd>Esc</kbd> закрыть · <kbd>Alt</kbd>+<kbd>←</kbd> назад</p></div>';
+      App.translateDom(panelContent);
       return;
     }
     panel.classList.remove('is-empty');
@@ -3895,7 +3992,8 @@ const V_HOUSES = [
       '<div class="panel-top">' + medallion(p) + '<div>' +
         '<p class="eyebrow">' + esc(kindLabel(p)) + '</p>' +
         '<h2>' + esc(p.full) + '</h2>' +
-        (p.en ? '<p class="en">' + esc(p.en) + '</p>' : '') +
+        // второе имя под заголовком: в русском — английское, в английском — русское
+        ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
       '</div></div>' +
       '<p class="note">' + esc(p.t || '') + '</p>' +
       (p.ai ? '<p class="ai-mark" title="Текст написал Claude по A Wiki of Ice and Fire; автор его ещё правит">✎ Черновик Claude</p>' : '') +
@@ -3919,6 +4017,7 @@ const V_HOUSES = [
     // прокрутка наверх — только если карточку прокручивали, и в следующем кадре: сброс прокрутки прямо здесь
     // заставлял браузер разложить всю страницу посреди обработки нажатия
     if (panelScrolled) { panelScrolled = false; requestAnimationFrame(() => { panel.scrollTop = 0; }); }
+    App.translateDom(panelContent);
   }
   let panelScrolled = false;
   panel.addEventListener('scroll', () => { panelScrolled = panel.scrollTop > 0; }, { passive: true });
@@ -5402,7 +5501,8 @@ const V_HOUSES = [
   function drawMap() {
     const ns = App.allNodes();
     const bb = App.bandBoxes();
-    if (!ns.length || !bb.length) return;
+    // все дома сняты фильтром: мини-карта пустая, без рамки (раньше на ней оставалось прежнее древо)
+    if (!ns.length || !bb.length) { content.selectAll('*').remove(); vp.attr('width', 0).attr('height', 0); geo = null; return; }
     let x0 = Infinity, x1 = -Infinity;
     ns.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X + App.W); });
     x0 -= 60; x1 += 80;
@@ -5531,6 +5631,7 @@ const V_HOUSES = [
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
       '<div class="f-row f-foot"><button type="button" class="btn" data-freset="1">Сбросить</button></div>';
+    App.translateDom(fpop);
     syncHouses(); searchHouses();
   }
   // галочки домов и краёв по состоянию (край — «частично», если включены не все его дома) и счётчик видимых
@@ -5543,8 +5644,8 @@ const V_HOUSES = [
       cb.checked = on === r.houses.length; cb.indeterminate = on > 0 && on < r.houses.length;
     });
     const all = ALL().length, shown = all - state.hiddenHouses.size, el = fpop.querySelector('.f-shown');
-    if (el) el.textContent = !shown ? 'все дома сняты — отметьте нужные' : shown === all ? 'видны все ' + all : 'видно ' + shown + ' из ' + all;
-    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = hs.filter(h => !state.hiddenHouses.has(h)).length + ' из ' + hs.length; });
+    if (el) el.textContent = !shown ? App.t('все дома сняты — отметьте нужные') : shown === all ? App.t('видны все {all}', { all }) : App.t('видно {n} из {all}', { n: shown, all });
+    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = App.t('{n} из {all}', { n: hs.filter(h => !state.hiddenHouses.has(h)).length, all: hs.length }); });
   }
   function searchHouses() {
     const q = state.fq.trim().toLowerCase();
@@ -5567,7 +5668,21 @@ const V_HOUSES = [
     fcount.hidden = !n; fcount.textContent = n;
     fbtn.classList.toggle('active', !!n);
   }
+  // пустое поле: ни одного дома не выбрано — подсказка с кнопками вместо пустоты (на древе, в хронологии и в списке)
+  const noHouses = document.getElementById('no-houses');
+  function syncEmpty() {
+    const empty = ALL().length > 0 && ALL().every(h => state.hiddenHouses.has(h)) && ['people', 'time', 'list'].includes(state.view);
+    noHouses.hidden = !empty;
+    box.classList.toggle('mm-empty', empty);
+  }
+  noHouses.addEventListener('click', e => {
+    const b = e.target.closest('[data-nh]'); if (!b) return;
+    if (b.dataset.nh === 'all') { state.hiddenHouses = new Set(); syncHouses(); applyHouses(); }
+    else { e.stopPropagation(); openFilters(true); }
+  });
+  App.hooks.view.push(() => syncEmpty());
   function applyHouses() {
+    syncEmpty();
     App.render();
     App.fitAll();
     updateCount();
@@ -8041,6 +8156,12 @@ const V_HOUSES = [
   document.getElementById('lg-sig-great').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG('targ', 4, 0, 22) + '</svg>';
   if (minor1) document.getElementById('lg-sig-minor').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG(minor1.house, 8, 6, 15) + '</svg>';
   else document.getElementById('lg-sig-minor').closest('li').remove();
+  // язык: переключатель в шапке и перевод статичной разметки (в русском ничего не меняется)
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.lang === App.lang));
+    b.addEventListener('click', () => App.setLang(b.dataset.lang));
+  });
+  App.translateDom(document.querySelector('.app'));
   App.start();
 })();
 

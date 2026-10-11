@@ -364,7 +364,12 @@ rect.lg-sub { fill: var(--hc); }
 .tog text { fill: var(--muted); font-family: var(--font-ui); font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
 
 /* Panel */
-.panel { min-width: 0; min-height: 0; overflow-y: auto; background: var(--surface); border-left: 1px solid var(--rule); }
+.panel { min-width: 0; min-height: 0; overflow-y: auto; background: var(--surface); border-left: 1px solid var(--rule); container: panel / inline-size; }
+/* узкая карточка: подпись над значением, а не в отдельной колонке — плашкам с именами остаётся вся ширина */
+@container panel (max-width: 420px) {
+  .panel .facts > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .panel .facts > div:has(> dd > .refs) dt { padding-top: 0; }
+}
 .panel-inner { padding: 22px 24px 28px; display: grid; gap: 16px; border-top: 4px solid var(--hc); }
 .panel-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 34px; }
 .back { max-width: 75%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; line-height: 32px; }
@@ -388,18 +393,23 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .en { margin: 6px 0 0; font-family: var(--font-body); font-style: italic; color: var(--muted); font-size: 15px; }
 .note { margin: 0; font-family: var(--font-body); font-size: 16.5px; line-height: 1.55; max-width: 62ch; }
 .facts { margin: 0; display: grid; gap: 12px; border-top: 1px solid var(--rule); padding-top: 14px; }
-.facts > div { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.facts > div { display: grid; grid-template-columns: minmax(84px, 128px) minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.facts > div:has(> dd > .refs) { align-items: start; }
+.facts > div:has(> dd > .refs) dt { padding-top: 7px; }
 .facts dt { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; overflow-wrap: anywhere; text-transform: uppercase; color: var(--muted); }
 .facts dd { margin: 0; min-width: 0; font-variant-numeric: lining-nums; }
 .refs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.refs li { display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.refs li { display: inline-flex; align-items: center; gap: 4px 6px; flex-wrap: wrap; max-width: 100%; }
+/* скругление 14px, а не «таблетка»: длинное имя в узкой карточке переносится на вторую строку и не превращается в овал */
 .chip {
-  font: inherit; font-size: 14px; color: var(--ink); background: var(--ground); border: 1px solid var(--rule);
-  border-radius: 999px; padding: 3px 11px 3px 9px; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; font-size: 14px; line-height: 1.3; color: var(--ink); background: var(--ground); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 3px 11px 3px 9px; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px; max-width: 100%;
 }
 .chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--hc); flex: none; }
 .chip:hover { border-color: var(--hc); }
-.ref { font-size: 14px; }
+/* человек без карточки на древе: такая же плашка, но без цвета дома и не нажимается — стоит в ряд с остальными */
+.ref { font-size: 14px; line-height: 1.3; display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 3px 11px 3px 9px; border: 1px dashed var(--rule); border-radius: 14px; color: var(--muted); }
+.ref::before { content: ''; width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--muted); flex: none; box-sizing: border-box; }
 .ref-note { font-size: 12.5px; color: var(--muted); }
 .empty { display: grid; gap: 10px; }
 .empty h2 { font-size: 26px; }
@@ -699,6 +709,25 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .mm-node.dim { opacity: .18; }
 .mm-sel { fill: none; stroke: var(--path); stroke-width: 2; }
 .mm-view { fill: var(--path); fill-opacity: .06; stroke: var(--path); stroke-width: 1.5; pointer-events: none; }
+
+/* Переключатель языка */
+/* рядом с названием: свой ряд не занимает и не наезжает на кнопки, как бы ни переносилась шапка */
+.brand-row { display: flex; align-items: center; gap: 14px; }
+.lang-switch { display: inline-flex; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; height: 26px; flex: none; }
+.lang-btn { font: 700 12px var(--font-ui); letter-spacing: .06em; color: var(--muted); background: none; border: 0; padding: 0 10px; cursor: pointer; }
+.lang-btn[aria-pressed="true"] { color: var(--ink); background: var(--ground); }
+.lang-btn:hover { color: var(--ink); }
+.lang-btn:focus-visible { outline: 2px solid var(--path); outline-offset: -2px; }
+
+/* Пустое поле, когда ни один дом не выбран */
+.no-houses { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; display: grid; gap: 8px; justify-items: center; text-align: center;
+  max-width: 420px; padding: 22px 26px; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; box-shadow: var(--ov-shadow); }
+.no-houses[hidden] { display: none; }
+.no-houses p { margin: 0; }
+.nh-title { font-family: var(--font-display); font-size: 22px; }
+.nh-text { color: var(--muted); font-size: 14px; }
+.nh-acts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 6px !important; }
+.minimap.mm-empty { opacity: .45; }
 
 /* Фильтры */
 .filter-pop { min-width: 300px; padding: 10px 14px 12px; gap: 10px; }

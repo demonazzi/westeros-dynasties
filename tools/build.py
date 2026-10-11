@@ -5,7 +5,7 @@ SRC = ROOT / 'src'
 DIST = ROOT / 'dist'
 # куда ещё положить страницу для публикации (необязательно): TREE_PUBLISH=/путь/к/файлу.html
 PUBLISH = pathlib.Path(os.environ['TREE_PUBLISH']) if os.environ.get('TREE_PUBLISH') else None
-APP = ['app-core.js'] + [p.name for p in sorted(SRC.glob('app-mod-*.js'))] + ['app-main.js']
+APP = ['app-i18n.js', 'app-core.js'] + [p.name for p in sorted(SRC.glob('app-mod-*.js'))] + ['app-main.js']
 HEAD = '''<title>Династии Вестероса</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,12 @@ def build():
     body = read('body.html')
     data = data_js()
     app = '\n'.join(read(n) for n in APP)
+    # словари перевода: src/i18n/<язык>.json → I18N (ключ — русская строка, пустой перевод отбрасывается)
+    import json
+    langs = {}
+    for f in sorted((SRC / 'i18n').glob('*.json')):
+        langs[f.stem] = {k: v for k, v in json.loads(f.read_text(encoding='utf-8')).items() if v}
+    data += '\nconst I18N = ' + json.dumps(langs, ensure_ascii=False) + ';\n'
     page = HEAD + '<style>\n' + css + '</style>\n\n' + body + '\n' + D3 + '<script>\n' + data + '\n</script>\n<script>\n' + app + '\n</script>\n'
     DIST.mkdir(exist_ok=True)
     (DIST / 'artifact.html').write_text(page, encoding='utf-8')

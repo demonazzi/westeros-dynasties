@@ -11,5 +11,11 @@
   document.getElementById('lg-sig-great').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG('targ', 4, 0, 22) + '</svg>';
   if (minor1) document.getElementById('lg-sig-minor').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG(minor1.house, 8, 6, 15) + '</svg>';
   else document.getElementById('lg-sig-minor').closest('li').remove();
+  // язык: переключатель в шапке и перевод статичной разметки (в русском ничего не меняется)
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.lang === App.lang));
+    b.addEventListener('click', () => App.setLang(b.dataset.lang));
+  });
+  App.translateDom(document.querySelector('.app'));
   App.start();
 })();

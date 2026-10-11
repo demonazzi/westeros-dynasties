@@ -14,7 +14,8 @@
   function drawMap() {
     const ns = App.allNodes();
     const bb = App.bandBoxes();
-    if (!ns.length || !bb.length) return;
+    // все дома сняты фильтром: мини-карта пустая, без рамки (раньше на ней оставалось прежнее древо)
+    if (!ns.length || !bb.length) { content.selectAll('*').remove(); vp.attr('width', 0).attr('height', 0); geo = null; return; }
     let x0 = Infinity, x1 = -Infinity;
     ns.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X + App.W); });
     x0 -= 60; x1 += 80;
@@ -143,6 +144,7 @@
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
       '<div class="f-row f-foot"><button type="button" class="btn" data-freset="1">Сбросить</button></div>';
+    App.translateDom(fpop);
     syncHouses(); searchHouses();
   }
   // галочки домов и краёв по состоянию (край — «частично», если включены не все его дома) и счётчик видимых
@@ -155,8 +157,8 @@
       cb.checked = on === r.houses.length; cb.indeterminate = on > 0 && on < r.houses.length;
     });
     const all = ALL().length, shown = all - state.hiddenHouses.size, el = fpop.querySelector('.f-shown');
-    if (el) el.textContent = !shown ? 'все дома сняты — отметьте нужные' : shown === all ? 'видны все ' + all : 'видно ' + shown + ' из ' + all;
-    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = hs.filter(h => !state.hiddenHouses.has(h)).length + ' из ' + hs.length; });
+    if (el) el.textContent = !shown ? App.t('все дома сняты — отметьте нужные') : shown === all ? App.t('видны все {all}', { all }) : App.t('видно {n} из {all}', { n: shown, all });
+    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = App.t('{n} из {all}', { n: hs.filter(h => !state.hiddenHouses.has(h)).length, all: hs.length }); });
   }
   function searchHouses() {
     const q = state.fq.trim().toLowerCase();
@@ -179,7 +181,21 @@
     fcount.hidden = !n; fcount.textContent = n;
     fbtn.classList.toggle('active', !!n);
   }
+  // пустое поле: ни одного дома не выбрано — подсказка с кнопками вместо пустоты (на древе, в хронологии и в списке)
+  const noHouses = document.getElementById('no-houses');
+  function syncEmpty() {
+    const empty = ALL().length > 0 && ALL().every(h => state.hiddenHouses.has(h)) && ['people', 'time', 'list'].includes(state.view);
+    noHouses.hidden = !empty;
+    box.classList.toggle('mm-empty', empty);
+  }
+  noHouses.addEventListener('click', e => {
+    const b = e.target.closest('[data-nh]'); if (!b) return;
+    if (b.dataset.nh === 'all') { state.hiddenHouses = new Set(); syncHouses(); applyHouses(); }
+    else { e.stopPropagation(); openFilters(true); }
+  });
+  App.hooks.view.push(() => syncEmpty());
   function applyHouses() {
+    syncEmpty();
     App.render();
     App.fitAll();
     updateCount();

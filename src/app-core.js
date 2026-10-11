@@ -924,6 +924,7 @@
         '<p>Карточка покажет годы жизни, родителей, супругов, детей и хронологию. Древо подсветит линию предков, браки и второго родителя, даже если он из другого дома.</p>' +
         '<p class="stats">' + PEOPLE.length + ' человек · ' + PAIRS.filter(e => e.type === 'm').length + ' браков на древе</p>' +
         '<p class="keys"><kbd>/</kbd> поиск · <kbd>Esc</kbd> закрыть · <kbd>Alt</kbd>+<kbd>←</kbd> назад</p></div>';
+      App.translateDom(panelContent);
       return;
     }
     panel.classList.remove('is-empty');
@@ -950,7 +951,8 @@
       '<div class="panel-top">' + medallion(p) + '<div>' +
         '<p class="eyebrow">' + esc(kindLabel(p)) + '</p>' +
         '<h2>' + esc(p.full) + '</h2>' +
-        (p.en ? '<p class="en">' + esc(p.en) + '</p>' : '') +
+        // второе имя под заголовком: в русском — английское, в английском — русское
+        ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
       '</div></div>' +
       '<p class="note">' + esc(p.t || '') + '</p>' +
       (p.ai ? '<p class="ai-mark" title="Текст написал Claude по A Wiki of Ice and Fire; автор его ещё правит">✎ Черновик Claude</p>' : '') +
@@ -974,6 +976,7 @@
     // прокрутка наверх — только если карточку прокручивали, и в следующем кадре: сброс прокрутки прямо здесь
     // заставлял браузер разложить всю страницу посреди обработки нажатия
     if (panelScrolled) { panelScrolled = false; requestAnimationFrame(() => { panel.scrollTop = 0; }); }
+    App.translateDom(panelContent);
   }
   let panelScrolled = false;
   panel.addEventListener('scroll', () => { panelScrolled = panel.scrollTop > 0; }, { passive: true });
