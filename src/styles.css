@@ -706,6 +706,37 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .filter-pop label i { width: 10px; height: 10px; border-radius: 3px; background: var(--hc); flex: none; }
 .filter-pop input { accent-color: var(--path); width: 15px; height: 15px; margin: 0; }
 .filter-pop fieldset.f-one { grid-template-columns: 1fr; }
+/* Дома по краям: колонки, край не разрывается; «только» — по наведению */
+.filter-pop { left: auto; right: 0; width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 140px); overflow: auto; }
+.f-top { display: flex; align-items: center; gap: 12px; }
+.f-search { flex: 1; min-width: 0; font: inherit; font-size: 14px; color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 10px; }
+.f-search:focus-visible { outline: 2px solid var(--path); outline-offset: 1px; }
+.f-shown { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.f-block { display: grid; gap: 6px; }
+.f-block[hidden] { display: none; }
+.f-block + .f-block { margin-top: 6px; }
+.f-block-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font: 700 12px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 4px; }
+.f-cnt { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--muted); margin-left: 6px; }
+.f-acts { font: 500 12.5px var(--font-ui); letter-spacing: 0; text-transform: none; color: var(--muted); }
+.filter-pop .f-acts .linkish { display: inline; width: auto; padding: 0; font-size: 12.5px; }
+.f-greats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 14px; }
+.f-greats .f-item label { font-weight: 600; }
+.f-regions { column-count: 3; column-gap: 18px; }
+.f-reg { break-inside: avoid; padding: 2px 0 10px; }
+.f-reg-h, .f-item { display: flex; align-items: center; gap: 6px; border-radius: 6px; position: relative; padding-right: 2px; }
+.f-reg-h { border-bottom: 1px solid var(--rule); margin-bottom: 3px; padding-bottom: 2px; }
+.f-reg-h label { font: 700 11.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.f-reg-h label, .f-item label { flex: 1; min-width: 0; }
+.f-item label { font-size: 13.5px; padding: 2px 0; }
+.f-reg .f-item label { padding-left: 14px; }
+/* кнопка поверх строки справа: место под неё не резервируется, названия не переносятся */
+.filter-pop .f-only { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); display: block; font: 12px var(--font-ui); color: var(--muted); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 1px 7px; cursor: pointer; opacity: 0; }
+.filter-pop .f-reg-h:hover .f-only, .filter-pop .f-item:hover .f-only, .filter-pop .f-only:focus-visible { opacity: 1; }
+.filter-pop .f-only:hover { color: var(--ink); background: var(--surface); border-color: var(--path); }
+.f-reg-h:hover, .f-item:hover { background: var(--ground); }
+.filter-pop fieldset.f-kinds { grid-template-columns: repeat(5, auto); justify-content: start; gap: 4px 18px; }
+.f-empty { margin: 4px 0; font-size: 13px; color: var(--muted); }
+.f-reg[hidden], .f-item[hidden], .f-empty[hidden] { display: none; }
 .filter-pop fieldset[disabled] label { opacity: .45; cursor: default; }
 .filter-pop .f-note { text-transform: none; letter-spacing: 0; font-weight: 500; }
 .f-row { grid-column: 1 / -1; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; }

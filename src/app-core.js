@@ -364,7 +364,7 @@
 
     // Граница Завоевания (в хронологии рисует своя ось)
     layers.era.selectAll('*').remove();
-    if (genMode) {
+    if (genMode && bandBoxes.length) {
       const lx = colX(6) - (colX(6) - colX(5) - W - TOG) / 2 - 2;
       const top = bandBoxes[0].top - 46, bot = bandsBottom() + 30;
       layers.era.append('line').attr('class', 'era-line').attr('x1', lx).attr('x2', lx).attr('y1', top).attr('y2', bot);
@@ -440,7 +440,7 @@
     decorate();
   }
   App.render = render;
-  const bandsBottom = () => Math.max(...bandBoxes.map(b => b.bottom));
+  const bandsBottom = () => bandBoxes.length ? Math.max(...bandBoxes.map(b => b.bottom)) : 0;
   App.bandsBottom = bandsBottom;
 
   /* Ширина текста в пикселях для класса подписи. Меряется на холсте шрифтом этого класса — без пересчёта
@@ -1046,6 +1046,7 @@
   }
   App.fitBox = fitBox;
   function fitAll() {
+    if (!bandBoxes.length) return; // все дома сняты фильтром — подгонять не к чему
     let x0 = Infinity, x1 = -Infinity;
     allNodes.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X); });
     fitBox(x0 - 80, bandBoxes[0].top - 60, x1 + W + TOG + 80, bandsBottom() + 30);

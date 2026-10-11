@@ -92,19 +92,77 @@
   const fbtn = document.getElementById('filter-btn');
   const fpop = document.getElementById('filter-pop');
   const fcount = document.getElementById('filter-count');
-  const houseBox = b => '<label class="h-' + b.house + '"><input type="checkbox" data-house="' + b.house + '"' + (state.hiddenHouses.has(b.house) ? '' : ' checked') + '><i></i>' + esc(HOUSES[b.house].band) + '</label>';
+  /* Дома в фильтре: великие — отдельным блоком сверху, малые — ниже, по краям своих сюзеренов (у края своя галочка:
+     все его малые дома разом, «частично», если включены не все). У каждого дома и края — «только» (оставить одно это),
+     у блоков — «все» и «снять». Строка поиска сужает список. */
+  const REGIONS = [['crown', 'Королевские земли', ['targ', 'vel', 'bf', 'seed']], ['dorne', 'Дорн', ['mar']], ['reach', 'Простор', ['tyr', 'hgt']],
+    ['storm', 'Штормовые земли', ['bar']], ['west', 'Западные земли', ['lan']], ['river', 'Речные земли', ['tul', 'bw']],
+    ['vale', 'Долина Аррен', ['arr']], ['north', 'Север', ['stk']], ['iron', 'Железные острова', ['gry']]];
+  const GREAT = () => BANDS.filter(b => !b.liege).map(b => b.house), MINOR = () => BANDS.filter(b => b.liege).map(b => b.house);
+  const regionsNow = () => {
+    const regOf = new Map(); REGIONS.forEach(([id, , hs]) => hs.forEach(h => regOf.set(h, id)));
+    const out = REGIONS.map(([id, title]) => ({ id, title, houses: [] })).concat({ id: 'other', title: 'Прочие', houses: [] });
+    App.bandOrder().filter(b => b.liege).forEach(b => (out.find(r => r.id === regOf.get(b.liege)) || out[out.length - 1]).houses.push(b.house));
+    out.forEach(r => r.houses.sort((x, y) => HOUSES[x].band.localeCompare(HOUSES[y].band, 'ru')));
+    return out.filter(r => r.houses.length);
+  };
+  state.fq = '';
+  const houseItem = (h, great) => '<div class="f-item h-' + h + (great ? ' f-great' : '') + '" data-name="' + esc(HOUSES[h].band.toLowerCase()) + '">' +
+    '<label><input type="checkbox" data-house="' + h + '"' + (state.hiddenHouses.has(h) ? '' : ' checked') + '><i></i>' + esc(HOUSES[h].band) + '</label>' +
+    '<button type="button" class="f-only" data-only="' + h + '" title="Показать только ' + esc(HOUSES[h].band) + '">только</button></div>';
+  const regionBox = r => '<section class="f-reg" data-reg="' + r.id + '" data-name="' + esc(r.title.toLowerCase()) + '">' +
+    '<div class="f-reg-h"><label><input type="checkbox" data-reg="' + r.id + '">' + esc(r.title) + '</label>' +
+    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="Показать только малые дома края: ' + esc(r.title) + '">только</button></div>' +
+    r.houses.map(h => houseItem(h, false)).join('') + '</section>';
+  const blockHead = (title, kind) => '<div class="f-block-h"><span>' + title + ' <span class="f-cnt" data-cnt="' + kind + '"></span></span>' +
+    '<span class="f-acts"><button type="button" class="linkish" data-ball="' + kind + '">все</button> · <button type="button" class="linkish" data-bnone="' + kind + '">снять</button></span></div>';
   function renderFilters() {
     fpop.innerHTML =
-      '<fieldset><legend>Великие дома</legend>' + App.bandOrder().filter(b => !b.liege).map(houseBox).join('') + '</fieldset>' +
-      (App.bandOrder().some(b => b.liege) ? '<fieldset><legend>Малые дома</legend>' + App.bandOrder().filter(b => b.liege).map(houseBox).join('') + '</fieldset>' : '') +
-      '<div class="f-row f-houses"><button type="button" class="linkish" data-fall="1">все дома</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button></div>' +
-      '<fieldset' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
+      '<div class="f-top"><input type="search" class="f-search" placeholder="Найти дом или край…" aria-label="Найти дом" value="' + esc(state.fq) + '">' +
+      '<span class="f-shown"></span></div>' +
+      '<div class="f-row f-houses"><button type="button" class="linkish" data-fall="1">все дома</button> · <button type="button" class="linkish" data-fall="great">только великие</button> · ' +
+      '<button type="button" class="linkish" data-fall="minor">только малые</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button> · ' +
+      '<button type="button" class="linkish" data-fall="none">снять все</button></div>' +
+      '<section class="f-block f-block-great">' + blockHead('Великие дома', 'great') + '<div class="f-greats">' + App.bandOrder().filter(b => !b.liege).map(b => houseItem(b.house, true)).join('') + '</div></section>' +
+      '<section class="f-block f-block-minor">' + blockHead('Малые дома', 'minor') + '<div class="f-regions">' + regionsNow().map(regionBox).join('') + '</div></section>' +
+      '<p class="f-empty" hidden>Ничего не найдено</p>' +
+      '<fieldset class="f-kinds"' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
       '<div class="f-row f-foot"><button type="button" class="btn" data-freset="1">Сбросить</button></div>';
+    syncHouses(); searchHouses();
   }
+  // галочки домов и краёв по состоянию (край — «частично», если включены не все его дома) и счётчик видимых
+  function syncHouses() {
+    if (fpop.hidden && !fpop.innerHTML) return;
+    fpop.querySelectorAll('input[data-house]').forEach(cb => { cb.checked = !state.hiddenHouses.has(cb.dataset.house); });
+    regionsNow().forEach(r => {
+      const cb = fpop.querySelector('input[data-reg="' + r.id + '"]'); if (!cb) return;
+      const on = r.houses.filter(h => !state.hiddenHouses.has(h)).length;
+      cb.checked = on === r.houses.length; cb.indeterminate = on > 0 && on < r.houses.length;
+    });
+    const all = ALL().length, shown = all - state.hiddenHouses.size, el = fpop.querySelector('.f-shown');
+    if (el) el.textContent = !shown ? 'все дома сняты — отметьте нужные' : shown === all ? 'видны все ' + all : 'видно ' + shown + ' из ' + all;
+    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = hs.filter(h => !state.hiddenHouses.has(h)).length + ' из ' + hs.length; });
+  }
+  function searchHouses() {
+    const q = state.fq.trim().toLowerCase();
+    fpop.querySelectorAll('.f-greats .f-item').forEach(it => { it.hidden = !!q && !it.dataset.name.includes(q); });
+    fpop.querySelectorAll('.f-reg').forEach(sec => {
+      const regHit = q && sec.dataset.name.includes(q);
+      let n = 0;
+      sec.querySelectorAll('.f-item').forEach(it => { const ok = !q || regHit || it.dataset.name.includes(q); it.hidden = !ok; if (ok) n++; });
+      sec.hidden = !n;
+    });
+    let any = false;
+    fpop.querySelectorAll('.f-block').forEach(b => { const n = b.querySelectorAll('.f-item:not([hidden])').length; b.hidden = !n; if (n) any = true; });
+    const e = fpop.querySelector('.f-empty'); if (e) e.hidden = any;
+  }
+  // оставить видимыми только эти дома (хотя бы один дом всегда остаётся)
+  const showOnly = hs => { state.hiddenHouses = new Set(ALL().filter(h => !hs.includes(h))); syncHouses(); applyHouses(); };
   function updateCount() {
-    const n = state.hiddenHouses.size + (state.ridersOnly ? 1 : KINDS.length - state.kinds.size);
+    // скрытые дома — один фильтр, сколько бы их ни было; положение — по числу снятых галочек
+    const n = (state.hiddenHouses.size ? 1 : 0) + (state.ridersOnly ? 1 : KINDS.length - state.kinds.size);
     fcount.hidden = !n; fcount.textContent = n;
     fbtn.classList.toggle('active', !!n);
   }
@@ -118,18 +176,27 @@
   function openFilters(open) {
     fpop.hidden = !open;
     fbtn.setAttribute('aria-expanded', String(open));
-    if (open) { renderFilters(); const f = fpop.querySelector('input'); f && f.focus(); }
+    if (open) { renderFilters(); const f = fpop.querySelector('.f-search'); f && f.focus(); }
   }
   fbtn.addEventListener('click', e => { e.stopPropagation(); openFilters(fpop.hidden); });
   document.addEventListener('click', e => { if (!fpop.hidden && !e.target.closest('.lens-menu')) openFilters(false); });
-  fpop.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); openFilters(false); fbtn.focus(); } });
+  fpop.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    e.stopPropagation();
+    // Esc в непустой строке поиска сначала очищает её
+    if (e.target.classList.contains('f-search') && e.target.value) { e.target.value = state.fq = ''; searchHouses(); return; }
+    openFilters(false); fbtn.focus();
+  });
+  fpop.addEventListener('input', e => { if (e.target.classList.contains('f-search')) { state.fq = e.target.value; searchHouses(); } });
   fpop.addEventListener('change', e => {
     const t = e.target;
     if (t.dataset.house) {
-      if (t.checked) state.hiddenHouses.delete(t.dataset.house);
-      else if (ALL().filter(h => !state.hiddenHouses.has(h)).length > 1) state.hiddenHouses.add(t.dataset.house);
-      else t.checked = true;
-      applyHouses();
+      if (t.checked) state.hiddenHouses.delete(t.dataset.house); else state.hiddenHouses.add(t.dataset.house);
+      syncHouses(); applyHouses();
+    } else if (t.dataset.reg) {
+      const r = regionsNow().find(x => x.id === t.dataset.reg);
+      r.houses.forEach(h => (t.checked ? state.hiddenHouses.delete(h) : state.hiddenHouses.add(h)));
+      syncHouses(); applyHouses();
     } else if (t.dataset.kind) {
       if (t.checked) state.kinds.add(t.dataset.kind); else state.kinds.delete(t.dataset.kind);
       App.decorate(); drawMap(); updateCount();
@@ -141,11 +208,22 @@
   fpop.addEventListener('click', e => {
     const all = e.target.closest('[data-fall]');
     if (all) {
-      state.hiddenHouses = new Set(all.dataset.fall === 'core' ? ALL().filter(h => h !== 'targ' && h !== 'vel') : []);
-      renderFilters(); applyHouses(); return;
+      const f = all.dataset.fall;
+      state.hiddenHouses = new Set(f === 'core' ? ALL().filter(h => h !== 'targ' && h !== 'vel') : f === 'great' ? MINOR() : f === 'minor' ? GREAT() : f === 'none' ? ALL() : []);
+      syncHouses(); applyHouses(); return;
     }
+    const ball = e.target.closest('[data-ball]'), bnone = e.target.closest('[data-bnone]');
+    if (ball || bnone) {
+      const hs = (ball || bnone).dataset[ball ? 'ball' : 'bnone'] === 'great' ? GREAT() : MINOR();
+      hs.forEach(h => (ball ? state.hiddenHouses.delete(h) : state.hiddenHouses.add(h)));
+      syncHouses(); applyHouses(); return;
+    }
+    const only = e.target.closest('[data-only]');
+    if (only) { showOnly([only.dataset.only]); return; }
+    const onlyReg = e.target.closest('[data-only-reg]');
+    if (onlyReg) { showOnly(regionsNow().find(x => x.id === onlyReg.dataset.onlyReg).houses); return; }
     if (e.target.closest('[data-freset]')) {
-      state.hiddenHouses = new Set(); state.kinds = new Set(KINDS.map(k => k[0])); state.ridersOnly = false;
+      state.hiddenHouses = new Set(); state.kinds = new Set(KINDS.map(k => k[0])); state.ridersOnly = false; state.fq = '';
       renderFilters(); applyHouses(); App.decorate();
     }
   });

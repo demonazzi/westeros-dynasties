@@ -711,6 +711,37 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .filter-pop label i { width: 10px; height: 10px; border-radius: 3px; background: var(--hc); flex: none; }
 .filter-pop input { accent-color: var(--path); width: 15px; height: 15px; margin: 0; }
 .filter-pop fieldset.f-one { grid-template-columns: 1fr; }
+/* Дома по краям: колонки, край не разрывается; «только» — по наведению */
+.filter-pop { left: auto; right: 0; width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 140px); overflow: auto; }
+.f-top { display: flex; align-items: center; gap: 12px; }
+.f-search { flex: 1; min-width: 0; font: inherit; font-size: 14px; color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 10px; }
+.f-search:focus-visible { outline: 2px solid var(--path); outline-offset: 1px; }
+.f-shown { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.f-block { display: grid; gap: 6px; }
+.f-block[hidden] { display: none; }
+.f-block + .f-block { margin-top: 6px; }
+.f-block-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font: 700 12px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 4px; }
+.f-cnt { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--muted); margin-left: 6px; }
+.f-acts { font: 500 12.5px var(--font-ui); letter-spacing: 0; text-transform: none; color: var(--muted); }
+.filter-pop .f-acts .linkish { display: inline; width: auto; padding: 0; font-size: 12.5px; }
+.f-greats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 14px; }
+.f-greats .f-item label { font-weight: 600; }
+.f-regions { column-count: 3; column-gap: 18px; }
+.f-reg { break-inside: avoid; padding: 2px 0 10px; }
+.f-reg-h, .f-item { display: flex; align-items: center; gap: 6px; border-radius: 6px; position: relative; padding-right: 2px; }
+.f-reg-h { border-bottom: 1px solid var(--rule); margin-bottom: 3px; padding-bottom: 2px; }
+.f-reg-h label { font: 700 11.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.f-reg-h label, .f-item label { flex: 1; min-width: 0; }
+.f-item label { font-size: 13.5px; padding: 2px 0; }
+.f-reg .f-item label { padding-left: 14px; }
+/* кнопка поверх строки справа: место под неё не резервируется, названия не переносятся */
+.filter-pop .f-only { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); display: block; font: 12px var(--font-ui); color: var(--muted); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 1px 7px; cursor: pointer; opacity: 0; }
+.filter-pop .f-reg-h:hover .f-only, .filter-pop .f-item:hover .f-only, .filter-pop .f-only:focus-visible { opacity: 1; }
+.filter-pop .f-only:hover { color: var(--ink); background: var(--surface); border-color: var(--path); }
+.f-reg-h:hover, .f-item:hover { background: var(--ground); }
+.filter-pop fieldset.f-kinds { grid-template-columns: repeat(5, auto); justify-content: start; gap: 4px 18px; }
+.f-empty { margin: 4px 0; font-size: 13px; color: var(--muted); }
+.f-reg[hidden], .f-item[hidden], .f-empty[hidden] { display: none; }
 .filter-pop fieldset[disabled] label { opacity: .45; cursor: default; }
 .filter-pop .f-note { text-transform: none; letter-spacing: 0; font-weight: 500; }
 .f-row { grid-column: 1 / -1; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; }
@@ -3271,7 +3302,7 @@ const V_HOUSES = [
 
     // Граница Завоевания (в хронологии рисует своя ось)
     layers.era.selectAll('*').remove();
-    if (genMode) {
+    if (genMode && bandBoxes.length) {
       const lx = colX(6) - (colX(6) - colX(5) - W - TOG) / 2 - 2;
       const top = bandBoxes[0].top - 46, bot = bandsBottom() + 30;
       layers.era.append('line').attr('class', 'era-line').attr('x1', lx).attr('x2', lx).attr('y1', top).attr('y2', bot);
@@ -3347,7 +3378,7 @@ const V_HOUSES = [
     decorate();
   }
   App.render = render;
-  const bandsBottom = () => Math.max(...bandBoxes.map(b => b.bottom));
+  const bandsBottom = () => bandBoxes.length ? Math.max(...bandBoxes.map(b => b.bottom)) : 0;
   App.bandsBottom = bandsBottom;
 
   /* Ширина текста в пикселях для класса подписи. Меряется на холсте шрифтом этого класса — без пересчёта
@@ -3953,6 +3984,7 @@ const V_HOUSES = [
   }
   App.fitBox = fitBox;
   function fitAll() {
+    if (!bandBoxes.length) return; // все дома сняты фильтром — подгонять не к чему
     let x0 = Infinity, x1 = -Infinity;
     allNodes.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X); });
     fitBox(x0 - 80, bandBoxes[0].top - 60, x1 + W + TOG + 80, bandsBottom() + 30);
@@ -5436,19 +5468,77 @@ const V_HOUSES = [
   const fbtn = document.getElementById('filter-btn');
   const fpop = document.getElementById('filter-pop');
   const fcount = document.getElementById('filter-count');
-  const houseBox = b => '<label class="h-' + b.house + '"><input type="checkbox" data-house="' + b.house + '"' + (state.hiddenHouses.has(b.house) ? '' : ' checked') + '><i></i>' + esc(HOUSES[b.house].band) + '</label>';
+  /* Дома в фильтре: великие — отдельным блоком сверху, малые — ниже, по краям своих сюзеренов (у края своя галочка:
+     все его малые дома разом, «частично», если включены не все). У каждого дома и края — «только» (оставить одно это),
+     у блоков — «все» и «снять». Строка поиска сужает список. */
+  const REGIONS = [['crown', 'Королевские земли', ['targ', 'vel', 'bf', 'seed']], ['dorne', 'Дорн', ['mar']], ['reach', 'Простор', ['tyr', 'hgt']],
+    ['storm', 'Штормовые земли', ['bar']], ['west', 'Западные земли', ['lan']], ['river', 'Речные земли', ['tul', 'bw']],
+    ['vale', 'Долина Аррен', ['arr']], ['north', 'Север', ['stk']], ['iron', 'Железные острова', ['gry']]];
+  const GREAT = () => BANDS.filter(b => !b.liege).map(b => b.house), MINOR = () => BANDS.filter(b => b.liege).map(b => b.house);
+  const regionsNow = () => {
+    const regOf = new Map(); REGIONS.forEach(([id, , hs]) => hs.forEach(h => regOf.set(h, id)));
+    const out = REGIONS.map(([id, title]) => ({ id, title, houses: [] })).concat({ id: 'other', title: 'Прочие', houses: [] });
+    App.bandOrder().filter(b => b.liege).forEach(b => (out.find(r => r.id === regOf.get(b.liege)) || out[out.length - 1]).houses.push(b.house));
+    out.forEach(r => r.houses.sort((x, y) => HOUSES[x].band.localeCompare(HOUSES[y].band, 'ru')));
+    return out.filter(r => r.houses.length);
+  };
+  state.fq = '';
+  const houseItem = (h, great) => '<div class="f-item h-' + h + (great ? ' f-great' : '') + '" data-name="' + esc(HOUSES[h].band.toLowerCase()) + '">' +
+    '<label><input type="checkbox" data-house="' + h + '"' + (state.hiddenHouses.has(h) ? '' : ' checked') + '><i></i>' + esc(HOUSES[h].band) + '</label>' +
+    '<button type="button" class="f-only" data-only="' + h + '" title="Показать только ' + esc(HOUSES[h].band) + '">только</button></div>';
+  const regionBox = r => '<section class="f-reg" data-reg="' + r.id + '" data-name="' + esc(r.title.toLowerCase()) + '">' +
+    '<div class="f-reg-h"><label><input type="checkbox" data-reg="' + r.id + '">' + esc(r.title) + '</label>' +
+    '<button type="button" class="f-only" data-only-reg="' + r.id + '" title="Показать только малые дома края: ' + esc(r.title) + '">только</button></div>' +
+    r.houses.map(h => houseItem(h, false)).join('') + '</section>';
+  const blockHead = (title, kind) => '<div class="f-block-h"><span>' + title + ' <span class="f-cnt" data-cnt="' + kind + '"></span></span>' +
+    '<span class="f-acts"><button type="button" class="linkish" data-ball="' + kind + '">все</button> · <button type="button" class="linkish" data-bnone="' + kind + '">снять</button></span></div>';
   function renderFilters() {
     fpop.innerHTML =
-      '<fieldset><legend>Великие дома</legend>' + App.bandOrder().filter(b => !b.liege).map(houseBox).join('') + '</fieldset>' +
-      (App.bandOrder().some(b => b.liege) ? '<fieldset><legend>Малые дома</legend>' + App.bandOrder().filter(b => b.liege).map(houseBox).join('') + '</fieldset>' : '') +
-      '<div class="f-row f-houses"><button type="button" class="linkish" data-fall="1">все дома</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button></div>' +
-      '<fieldset' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
+      '<div class="f-top"><input type="search" class="f-search" placeholder="Найти дом или край…" aria-label="Найти дом" value="' + esc(state.fq) + '">' +
+      '<span class="f-shown"></span></div>' +
+      '<div class="f-row f-houses"><button type="button" class="linkish" data-fall="1">все дома</button> · <button type="button" class="linkish" data-fall="great">только великие</button> · ' +
+      '<button type="button" class="linkish" data-fall="minor">только малые</button> · <button type="button" class="linkish" data-fall="core">только Таргариены и Веларионы</button> · ' +
+      '<button type="button" class="linkish" data-fall="none">снять все</button></div>' +
+      '<section class="f-block f-block-great">' + blockHead('Великие дома', 'great') + '<div class="f-greats">' + App.bandOrder().filter(b => !b.liege).map(b => houseItem(b.house, true)).join('') + '</div></section>' +
+      '<section class="f-block f-block-minor">' + blockHead('Малые дома', 'minor') + '<div class="f-regions">' + regionsNow().map(regionBox).join('') + '</div></section>' +
+      '<p class="f-empty" hidden>Ничего не найдено</p>' +
+      '<fieldset class="f-kinds"' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
       '<div class="f-row f-foot"><button type="button" class="btn" data-freset="1">Сбросить</button></div>';
+    syncHouses(); searchHouses();
   }
+  // галочки домов и краёв по состоянию (край — «частично», если включены не все его дома) и счётчик видимых
+  function syncHouses() {
+    if (fpop.hidden && !fpop.innerHTML) return;
+    fpop.querySelectorAll('input[data-house]').forEach(cb => { cb.checked = !state.hiddenHouses.has(cb.dataset.house); });
+    regionsNow().forEach(r => {
+      const cb = fpop.querySelector('input[data-reg="' + r.id + '"]'); if (!cb) return;
+      const on = r.houses.filter(h => !state.hiddenHouses.has(h)).length;
+      cb.checked = on === r.houses.length; cb.indeterminate = on > 0 && on < r.houses.length;
+    });
+    const all = ALL().length, shown = all - state.hiddenHouses.size, el = fpop.querySelector('.f-shown');
+    if (el) el.textContent = !shown ? 'все дома сняты — отметьте нужные' : shown === all ? 'видны все ' + all : 'видно ' + shown + ' из ' + all;
+    [['great', GREAT()], ['minor', MINOR()]].forEach(([k, hs]) => { const c = fpop.querySelector('[data-cnt="' + k + '"]'); if (c) c.textContent = hs.filter(h => !state.hiddenHouses.has(h)).length + ' из ' + hs.length; });
+  }
+  function searchHouses() {
+    const q = state.fq.trim().toLowerCase();
+    fpop.querySelectorAll('.f-greats .f-item').forEach(it => { it.hidden = !!q && !it.dataset.name.includes(q); });
+    fpop.querySelectorAll('.f-reg').forEach(sec => {
+      const regHit = q && sec.dataset.name.includes(q);
+      let n = 0;
+      sec.querySelectorAll('.f-item').forEach(it => { const ok = !q || regHit || it.dataset.name.includes(q); it.hidden = !ok; if (ok) n++; });
+      sec.hidden = !n;
+    });
+    let any = false;
+    fpop.querySelectorAll('.f-block').forEach(b => { const n = b.querySelectorAll('.f-item:not([hidden])').length; b.hidden = !n; if (n) any = true; });
+    const e = fpop.querySelector('.f-empty'); if (e) e.hidden = any;
+  }
+  // оставить видимыми только эти дома (хотя бы один дом всегда остаётся)
+  const showOnly = hs => { state.hiddenHouses = new Set(ALL().filter(h => !hs.includes(h))); syncHouses(); applyHouses(); };
   function updateCount() {
-    const n = state.hiddenHouses.size + (state.ridersOnly ? 1 : KINDS.length - state.kinds.size);
+    // скрытые дома — один фильтр, сколько бы их ни было; положение — по числу снятых галочек
+    const n = (state.hiddenHouses.size ? 1 : 0) + (state.ridersOnly ? 1 : KINDS.length - state.kinds.size);
     fcount.hidden = !n; fcount.textContent = n;
     fbtn.classList.toggle('active', !!n);
   }
@@ -5462,18 +5552,27 @@ const V_HOUSES = [
   function openFilters(open) {
     fpop.hidden = !open;
     fbtn.setAttribute('aria-expanded', String(open));
-    if (open) { renderFilters(); const f = fpop.querySelector('input'); f && f.focus(); }
+    if (open) { renderFilters(); const f = fpop.querySelector('.f-search'); f && f.focus(); }
   }
   fbtn.addEventListener('click', e => { e.stopPropagation(); openFilters(fpop.hidden); });
   document.addEventListener('click', e => { if (!fpop.hidden && !e.target.closest('.lens-menu')) openFilters(false); });
-  fpop.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); openFilters(false); fbtn.focus(); } });
+  fpop.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    e.stopPropagation();
+    // Esc в непустой строке поиска сначала очищает её
+    if (e.target.classList.contains('f-search') && e.target.value) { e.target.value = state.fq = ''; searchHouses(); return; }
+    openFilters(false); fbtn.focus();
+  });
+  fpop.addEventListener('input', e => { if (e.target.classList.contains('f-search')) { state.fq = e.target.value; searchHouses(); } });
   fpop.addEventListener('change', e => {
     const t = e.target;
     if (t.dataset.house) {
-      if (t.checked) state.hiddenHouses.delete(t.dataset.house);
-      else if (ALL().filter(h => !state.hiddenHouses.has(h)).length > 1) state.hiddenHouses.add(t.dataset.house);
-      else t.checked = true;
-      applyHouses();
+      if (t.checked) state.hiddenHouses.delete(t.dataset.house); else state.hiddenHouses.add(t.dataset.house);
+      syncHouses(); applyHouses();
+    } else if (t.dataset.reg) {
+      const r = regionsNow().find(x => x.id === t.dataset.reg);
+      r.houses.forEach(h => (t.checked ? state.hiddenHouses.delete(h) : state.hiddenHouses.add(h)));
+      syncHouses(); applyHouses();
     } else if (t.dataset.kind) {
       if (t.checked) state.kinds.add(t.dataset.kind); else state.kinds.delete(t.dataset.kind);
       App.decorate(); drawMap(); updateCount();
@@ -5485,11 +5584,22 @@ const V_HOUSES = [
   fpop.addEventListener('click', e => {
     const all = e.target.closest('[data-fall]');
     if (all) {
-      state.hiddenHouses = new Set(all.dataset.fall === 'core' ? ALL().filter(h => h !== 'targ' && h !== 'vel') : []);
-      renderFilters(); applyHouses(); return;
+      const f = all.dataset.fall;
+      state.hiddenHouses = new Set(f === 'core' ? ALL().filter(h => h !== 'targ' && h !== 'vel') : f === 'great' ? MINOR() : f === 'minor' ? GREAT() : f === 'none' ? ALL() : []);
+      syncHouses(); applyHouses(); return;
     }
+    const ball = e.target.closest('[data-ball]'), bnone = e.target.closest('[data-bnone]');
+    if (ball || bnone) {
+      const hs = (ball || bnone).dataset[ball ? 'ball' : 'bnone'] === 'great' ? GREAT() : MINOR();
+      hs.forEach(h => (ball ? state.hiddenHouses.delete(h) : state.hiddenHouses.add(h)));
+      syncHouses(); applyHouses(); return;
+    }
+    const only = e.target.closest('[data-only]');
+    if (only) { showOnly([only.dataset.only]); return; }
+    const onlyReg = e.target.closest('[data-only-reg]');
+    if (onlyReg) { showOnly(regionsNow().find(x => x.id === onlyReg.dataset.onlyReg).houses); return; }
     if (e.target.closest('[data-freset]')) {
-      state.hiddenHouses = new Set(); state.kinds = new Set(KINDS.map(k => k[0])); state.ridersOnly = false;
+      state.hiddenHouses = new Set(); state.kinds = new Set(KINDS.map(k => k[0])); state.ridersOnly = false; state.fq = '';
       renderFilters(); applyHouses(); App.decorate();
     }
   });
