@@ -89,8 +89,7 @@ function sources() {
     dragons: readJson('dragons.json'), dragonsMd: path.join(TEXTS, 'dragons.md'), dragonsMdEn: path.join(TEXTS_EN, 'dragons.md'),
     screen: readJson('screen.json'), screenMd: path.join(TEXTS, 'screen.md'), screenDragonsMd: path.join(TEXTS, 'screen-dragons.md'),
     screenMdEn: path.join(TEXTS_EN, 'screen.md'), screenDragonsMdEn: path.join(TEXTS_EN, 'screen-dragons.md'),
-    vassals: readJson('vassals.json'),
-    housesMd: path.join(TEXTS, 'houses.md'), housesMdEn: path.join(TEXTS_EN, 'houses.md')
+    vassals: readJson('vassals.json'), vassalsMd: path.join(TEXTS, 'vassals.md'), vassalsMdEn: path.join(TEXTS_EN, 'vassals.md')
   };
 }
 
@@ -144,16 +143,23 @@ function load() {
   const dsmd = useMd(parseMd(S.screenDragonsMd), drIds, 'data/dragons.json'), dsmdE = useMd(parseMd(S.screenDragonsMdEn), drIds, 'data/dragons.json');
   dsmd.entries.forEach((e, id) => { if (e.text) DRAGON_SCREEN[id] = e.text; });
   dsmdE.entries.forEach((e, id) => { if (e.text) DRAGON_SCREEN_EN[id] = e.text; });
-  // дома с полосой на древе: текст о доме (texts/houses.md, английский — texts/en/houses.md)
-  const HOUSES = JSON.parse(JSON.stringify(S.meta.houses));
-  const hIds = new Set(S.meta.bands.map(b => b.house));
-  const hmd = useMd(parseMd(S.housesMd), hIds, 'data/meta.json (bands)'), hmdE = useMd(parseMd(S.housesMdEn), hIds, 'data/meta.json (bands)');
-  hIds.forEach(h => { const e = hmd.entries.get(h); if (e && e.text) HOUSES[h].t = e.text; if (e && e.ai) HOUSES[h].ai = 1; en(HOUSES[h], hmdE.entries.get(h)); });
+  // текст о доме — один на вкладку «Вассалитет» и карточку дома на древе: texts/vassals.md (английский — texts/en/vassals.md)
   const V = S.vassals;
+  const V_HOUSES = V.houses.map(h => Object.assign({}, h));
+  const vIds = new Set(V_HOUSES.map(h => h.id));
+  const vmd = useMd(parseMd(S.vassalsMd), vIds, 'data/vassals.json'), vmdE = useMd(parseMd(S.vassalsMdEn), vIds, 'data/vassals.json');
+  V_HOUSES.forEach(h => {
+    const e = vmd.entries.get(h.id);
+    if (e && e.text) h.t = e.text;
+    if (e && e.ai) h.ai = 1;
+    en(h, vmdE.entries.get(h.id));
+    if (!e) problems.push('texts/vassals.md: нет раздела ' + h.id);
+  });
+  const HOUSES = S.meta.houses;
   return {
     NOW_YEAR: S.meta.now_year, BANDS: S.meta.bands, HOUSES, GAPS: S.meta.gaps, PEOPLE,
     DRAGON_ORIGINS, DRAGONS, DRAGON_FIGHTS: D.fights, SERIES: S.screen.series, EXTRA: { screen }, DRAGON_SCREEN, DRAGON_SCREEN_EN,
-    V_REGIONS: V.regions, V_PRE: V.pre, V_CLAIMANTS: V.claimants, V_MILESTONES: V.milestones, V_HOUSES: V.houses,
+    V_REGIONS: V.regions, V_PRE: V.pre, V_CLAIMANTS: V.claimants, V_MILESTONES: V.milestones, V_HOUSES,
     problems
   };
 }
@@ -187,7 +193,7 @@ function emit(d) {
 }
 
 /* Раскладка текстов по data/: порядок и группы как в JSON, имена в заголовках свежие, тексты и ✎ сохраняются.
-   texts — необязательная замена текстов: { people: Map(id → {text, ai}), dragons, screen, screenDragons } */
+   texts — необязательная замена текстов: { people: Map(id → {text, ai}), dragons, screen, screenDragons, vassals } */
 function sync(override) {
   const S = sources(), o = override || {};
   const pick = (md, kind, id) => {
@@ -219,12 +225,11 @@ function sync(override) {
   const dsmd = parseMd(S.screenDragonsMd), dsmdE = parseMd(S.screenDragonsMdEn);
   put(S.screenDragonsMd, renderMd('Драконы на экране: чем сериал отличается от книг', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: x.full || x.name }, pick(dsmd, 'screenDragons', x.id))) }))));
   put(S.screenDragonsMdEn, renderMd('Dragons on screen: how the shows differ from the books', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: enName(x) }, keep(dsmdE, x.id))) })), MD_NOTE_EN));
-  // дома: порядок полос (сначала великие, потом малые), в заголовке — название дома
-  const vEn = new Map(S.vassals.houses.map(h => [h.id, h.en]));
-  const hmd = parseMd(S.housesMd), hmdE = parseMd(S.housesMdEn);
-  const bandGroups = [['Великие дома', S.meta.bands.filter(b => !b.liege)], ['Малые дома', S.meta.bands.filter(b => b.liege)]];
-  put(S.housesMd, renderMd('Дома', bandGroups.map(([title, bs]) => ({ title, items: bs.map(b => Object.assign({ id: b.house, name: S.meta.houses[b.house].name }, keep(hmd, b.house))) }))));
-  put(S.housesMdEn, renderMd('Houses', bandGroups.map(([title, bs]) => ({ title, items: bs.map(b => Object.assign({ id: b.house, name: 'House ' + (vEn.get(S.meta.houses[b.house].v) || S.meta.houses[b.house].name) }, keep(hmdE, b.house))) })), MD_NOTE_EN));
+  // дома (вкладка «Вассалитет» и карточка дома): по краям, как в data/vassals.json; в заголовке — название дома
+  const V = S.vassals, vmd = parseMd(S.vassalsMd), vmdE = parseMd(S.vassalsMdEn);
+  const vGroups = V.regions.map(r => ({ r, hs: V.houses.filter(h => h.region === r.id) }));
+  put(S.vassalsMd, renderMd('Дома Вестероса', vGroups.map(({ r, hs }) => ({ title: r.ru, items: hs.map(h => Object.assign({ id: h.id, name: h.ru }, pick(vmd, 'vassals', h.id))) }))));
+  put(S.vassalsMdEn, renderMd('Houses of Westeros', vGroups.map(({ r, hs }) => ({ title: r.ru, items: hs.map(h => Object.assign({ id: h.id, name: 'House ' + h.en }, keep(vmdE, h.id))) })), MD_NOTE_EN));
   return written;
 }
 

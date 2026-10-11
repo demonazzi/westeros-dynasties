@@ -1,4 +1,5 @@
 /* Сборка данных вкладки «Вассалитет»: research/vassal/*.json (сбор по A Wiki of Ice and Fire и 7kingdoms.ru) → data/vassals.json (поля описаны в data/README.md).
+   Текст о доме сюда не входит: он в texts/vassals.md (и texts/en/vassals.md).
    Сводит дубли, разрешает ссылки на сюзеренов, переводит годы в точные интервалы (дробная часть — момент внутри года). */
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..'), RES = path.join(ROOT, 'research', 'vassal');
@@ -34,7 +35,6 @@ REGIONS.forEach(([rid]) => {
       const other = keepNew ? prev : h;
       const seen = new Set((base.allegiance || []).map(g => g.from + '|' + g.to + '|' + g.liege));
       (other.allegiance || []).forEach(g => { if (!seen.has(g.from + '|' + g.to + '|' + g.liege)) (base.allegiance = base.allegiance || []).push(g); });
-      if (!base.note && other.note) base.note = other.note;
       houses.set(id, base);
       return;
     }
@@ -133,7 +133,7 @@ houses.forEach((h, id) => {
   out.push({
     id, en: h.en, ru: h.ru, region: h.region, seat: h.seat_ru || null, great: !!h.great,
     ex: [isFinite(s) ? r2(s) : null, isFinite(e) ? r2(e) : null], liege,
-    al: segs.map(g => [r2(g.s), r2(g.e), g.liege, g.why]), note: h.note || '', page: h.page
+    al: segs.map(g => [r2(g.s), r2(g.e), g.liege, g.why]), page: h.page
   });
 });
 out.sort((a, b) => REGIONS.findIndex(r => r[0] === a.region) - REGIONS.findIndex(r => r[0] === b.region) || (b.great - a.great) || a.ru.localeCompare(b.ru, 'ru'));

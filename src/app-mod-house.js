@@ -1,5 +1,5 @@
 /* Карточка дома: открывается с древа и из хронологии (герб и название полосы), из карточки человека (название дома)
-   и из списка. Показывает герб, замок и девиз, текст о доме (texts/houses.md), край, сюзерена и знаменосцев на древе,
+   и из списка. Показывает герб, замок и девиз, текст о доме (texts/vassals.md — тот же, что во «Вассалитете»), край, сюзерена и знаменосцев на древе,
    королей и сколько людей дома на древе, а по вкладке «Вассалитет» — кому дом служил. В истории — «h:код», в адресе — #h:код. */
 (function () {
   const App = window.App;
@@ -51,11 +51,8 @@
         (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
       '</div></div>' +
       (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
-      // текст о доме — из texts/houses.md; пока его нет, на его месте заметка о доме из «Вассалитета»
-      (H.t ? (H.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') + '<p class="note"' + (H.tUntranslated ? ' lang="ru"' : '') + '>' + esc(H.t) + '</p>' +
-        (H.ai ? '<p class="ai-mark" title="Текст написал Claude; автор его ещё правит">✎ Черновик Claude</p>' : '')
-        : info && info.note ? '<p class="note vs-note hc-vnote">' + esc(info.note) + '</p>'
-        : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
+      // текст о доме — texts/vassals.md, тот же, что во вкладке «Вассалитет»
+      (info && info.textHtml ? info.textHtml : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
       '<dl class="facts">' +
         (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : '') +
         (vassals.length ? App.row('Знаменосцы на древе', '<ul class="refs">' + vassals.map(houseChip).join('') + '</ul>') : '') +
@@ -64,7 +61,7 @@
         App.row('На древе', '<span>' + esc(App.plural(st.n, 'человек', 'человека', 'человек')) + '</span>' + (st.a != null ? ' · <span>' + esc((st.a < 0 ? yw(st.a) : st.a) + '–' + yw(st.b)) + '</span>' : '')) +
         (info && (info.from != null || info.to != null) ? App.row('Годы дома', esc((info.from != null ? t('с {y}', { y: info.yearWord(info.from) }) : '') + (info.from != null && info.to != null ? ' ' : '') + (info.to != null ? t('по {y}', { y: info.yearWord(info.to - 0.001) }) : ''))) : '') +
       '</dl>' +
-      (info && info.periods.length ? '<h3 class="sec">Кому служил</h3>' + (H.t && info.note ? '<p class="note vs-note hc-vnote">' + esc(info.note) + '</p>' : '') + '<ol class="events hc-periods">' + info.periods.map(p =>
+      (info && info.periods.length ? '<h3 class="sec">Кому служил</h3><ol class="events hc-periods">' + info.periods.map(p =>
         '<li><span class="ev-year">' + esc(p.span) + '</span><span class="ev-text">' +
           (p.to && HOUSES_BY_V.has(p.to) ? '<button type="button" class="linkish" data-house="' + HOUSES_BY_V.get(p.to) + '">' + esc(p.liege) + '</button>' : esc(p.liege)) +
           (p.why ? '<span class="ref-note block">' + esc(p.why) + '</span>' : '') + '</span></li>').join('') + '</ol>' : '') +

@@ -833,11 +833,18 @@
     if (out.length) out[out.length - 1].b = h.ex[1] != null ? h.ex[1] : Y1 + 0.02;
     return out;
   }
+  // текст о доме — texts/vassals.md; тот же абзац показывает и карточка дома на древе
+  function houseText(h) {
+    if (!h.t) return '';
+    return (h.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      '<p class="note vs-note"' + (h.tUntranslated ? ' lang="ru"' : '') + '>' + esc(h.t) + '</p>' +
+      (h.ai ? '<p class="ai-mark" title="Текст написал Claude; автор его ещё правит">✎ Черновик Claude</p>' : '');
+  }
   // для карточки дома на древе: край, годы и «кому служил» по периодам
   App.vHouseInfo = id => {
     const h = H.get(id);
     if (!h) return null;
-    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord, note: h.note ? tidy(h.note) : '',
+    return { h, region: REG.get(h.region).ru, from: h.ex[0], to: h.ex[1], yearWord, textHtml: houseText(h),
       periods: periods(h).map(p => ({ span: span(p.a, p.b), liege: liegeName(p.to, p.a), to: p.to, why: p.why ? tidy(p.why) : '' })) };
   };
   function renderPanel() {
@@ -865,7 +872,7 @@
         '<p class="eyebrow">' + esc(REG.get(h.region).ru) + (h.great ? ' · великий дом' : '') + '</p>' +
         '<h2>' + esc(h.ru) + '</h2><p class="en">House ' + esc(h.en) + (h.seat ? ' · ' + esc(h.seat) : '') + '</p>' + life +
       '</div></div>' +
-      (h.note ? '<p class="note vs-note">' + esc(tidy(h.note)) + '</p>' : '') +
+      houseText(h) +
       '<h3 class="sec">Кому служил</h3>' +
       '<ol class="events vs-periods">' + per.map(p => '<li' + (p.a <= year && year < p.b ? ' class="now"' : '') + '><span class="ev-year">' + span(p.a, p.b) + '</span><span class="ev-text">' +
         (p.to && H.has(p.to) ? '<button type="button" class="linkish" data-vh="' + p.to + '">' + esc(liegeName(p.to, p.a)) + '</button>' : esc(liegeName(p.to, p.a))) +
