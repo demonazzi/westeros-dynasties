@@ -32,8 +32,12 @@
   const gensH = () => view().gens ? (App.isNarrow() ? 20 : 24) : 0;
   // ряд отметок под шкалой (во вкладке «Вассалитет» — события)
   const marksH = () => view().scaleMarks && !App.isNarrow() ? 16 : 0;
+  // ширина шкалы — из ResizeObserver: чтение clientWidth на каждом кадре движения древа заставляло браузер
+  // заново раскладывать всю страницу (переход по линии брака заметно подтормаживал)
+  let boxW = 0;
+  if (window.ResizeObserver) new ResizeObserver(es => { const w = es[0].target.clientWidth; if (w && w !== boxW) { boxW = w; if (App.redrawScale) App.redrawScale(); } }).observe(box);
   function mapping() {
-    const w = box.clientWidth || svgEl.getBoundingClientRect().width || 1000;
+    const w = boxW || box.clientWidth || svgEl.getBoundingClientRect().width || 1000;
     const v = view();
     if (v.scale === 'sync' && v.scaleMap) return Object.assign({ w }, v.scaleMap());
     FREE.range([PAD, PAD + (w - 2 * PAD) * 0.2, w - PAD]);

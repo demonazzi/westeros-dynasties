@@ -137,14 +137,19 @@
   const treeLayout = d3.tree().nodeSize([DX, DY]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
   // Пока древо тащат мышью, пальцем или крутят колесом, наведение на древо выключено (класс panning): иначе каждое
   // движение мыши перекрашивало подсветку и заставляло браузер заново раскладывать всё древо
-  let panning = false;
-  const zoom = d3.zoom().scaleExtent([0.04, 2.4])
+  // Пока древо едет само (переход к человеку, «Всё», клик по шкале), наведение тоже не обрабатывается (moving): карточки
+  // и линии проезжают под неподвижным указателем, и каждая перекрашивала бы подсветку на каждом кадре
+  let panning = false, moving = false;
+  // Переходы — прямой интерполяцией: «облёт» d3 по умолчанию на дальних переходах отъезжает, показывая разом всё
+  // древо, и каждый кадр перерисовывает тысячу карточек — так переход по линии брака и тормозил
+  const zoom = d3.zoom().scaleExtent([0.04, 2.4]).interpolate(d3.interpolate)
+    .on('start', e => { if (!e.sourceEvent) moving = true; })
     .on('zoom', e => {
       gRoot.attr('transform', e.transform);
       if (e.sourceEvent && !panning) { panning = true; svg.classed('panning', true); xHover(null); peek(null); }
       App.hooks.afterZoom && App.hooks.afterZoom.forEach(f => f(e.transform));
     })
-    .on('end', () => { if (panning) { panning = false; svg.classed('panning', false); } });
+    .on('end', () => { moving = false; if (panning) { panning = false; svg.classed('panning', false); } });
   App.hooks.afterZoom = [];
   svg.call(zoom).on('dblclick.zoom', null);
   App.zoom = zoom;
@@ -732,7 +737,7 @@
     return d3.zoomTransform(svg.node()).invert([ev.clientX - xBox.sl, ev.clientY - xBox.st]);
   }
   function xEvents(sel) {
-    sel.on('pointerenter pointermove', (e, d) => { if (!panning) xHover(d, e); })
+    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving) xHover(d, e); })
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
@@ -741,7 +746,7 @@
   // карточка под указателем: её связи с другими домами видны ярче
   let peekId = null;
   function peek(id) {
-    if (id && panning) return;
+    if (id && (panning || moving)) return;
     if (id === peekId) return;
     if (peekId) {
       layers.x.selectAll('path.xlink.peek').classed('peek', false);

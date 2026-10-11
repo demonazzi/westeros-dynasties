@@ -32,11 +32,24 @@
       .attr('class', d => 'mm-node h-' + d.data.house + (dim(d.data.id) ? ' dim' : ''))
       .attr('x', d => ox + (d.X - x0) * s).attr('y', d => oy + (d.Y - App.H / 2 - y0) * s)
       .attr('width', Math.max(1.5, App.W * s)).attr('height', Math.max(1, App.H * s));
+    drawSel();
+    drawViewport(d3.zoomTransform(App.svg.node()));
+  }
+  // выбор человека не меняет раскладку: двигается только метка выбранного, а у прямоугольников меняется лишь
+  // приглушение, и то только там, где оно стало другим (раньше мини-карта перестраивалась целиком)
+  function drawSel() {
+    if (!geo) return;
+    content.selectAll('circle.mm-sel').remove();
     if (state.selected && App.nodeById.has(state.selected)) {
       const n = App.nodeById.get(state.selected);
-      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', ox + (n.X + App.W / 2 - x0) * s).attr('cy', oy + (n.Y - y0) * s).attr('r', 3.5);
+      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', geo.ox + (n.X + App.W / 2 - geo.x0) * geo.s).attr('cy', geo.oy + (n.Y - geo.y0) * geo.s).attr('r', 3.5);
     }
-    drawViewport(d3.zoomTransform(App.svg.node()));
+  }
+  function onSelect() {
+    if (!geo) { drawMap(); return; }
+    const dim = App.dimmedFn ? App.dimmedFn() : () => false;
+    content.selectAll('rect.mm-node').each(function (d) { const on = dim(d.data.id); if (this.classList.contains('dim') !== on) this.classList.toggle('dim', on); });
+    drawSel();
   }
   function drawViewport(t) {
     if (!geo) return;
@@ -49,7 +62,7 @@
   }
   App.hooks.afterRender.push(() => drawMap());
   App.hooks.afterZoom.push(t => drawViewport(t));
-  App.hooks.select.push(() => drawMap());
+  App.hooks.select.push(() => onSelect());
   App.hooks.lens.push(() => drawMap());
   function goTo(evt) {
     if (!geo) return;

@@ -3090,14 +3090,19 @@ const V_HOUSES = [
   const treeLayout = d3.tree().nodeSize([DX, DY]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
   // Пока древо тащат мышью, пальцем или крутят колесом, наведение на древо выключено (класс panning): иначе каждое
   // движение мыши перекрашивало подсветку и заставляло браузер заново раскладывать всё древо
-  let panning = false;
-  const zoom = d3.zoom().scaleExtent([0.04, 2.4])
+  // Пока древо едет само (переход к человеку, «Всё», клик по шкале), наведение тоже не обрабатывается (moving): карточки
+  // и линии проезжают под неподвижным указателем, и каждая перекрашивала бы подсветку на каждом кадре
+  let panning = false, moving = false;
+  // Переходы — прямой интерполяцией: «облёт» d3 по умолчанию на дальних переходах отъезжает, показывая разом всё
+  // древо, и каждый кадр перерисовывает тысячу карточек — так переход по линии брака и тормозил
+  const zoom = d3.zoom().scaleExtent([0.04, 2.4]).interpolate(d3.interpolate)
+    .on('start', e => { if (!e.sourceEvent) moving = true; })
     .on('zoom', e => {
       gRoot.attr('transform', e.transform);
       if (e.sourceEvent && !panning) { panning = true; svg.classed('panning', true); xHover(null); peek(null); }
       App.hooks.afterZoom && App.hooks.afterZoom.forEach(f => f(e.transform));
     })
-    .on('end', () => { if (panning) { panning = false; svg.classed('panning', false); } });
+    .on('end', () => { moving = false; if (panning) { panning = false; svg.classed('panning', false); } });
   App.hooks.afterZoom = [];
   svg.call(zoom).on('dblclick.zoom', null);
   App.zoom = zoom;
@@ -3685,7 +3690,7 @@ const V_HOUSES = [
     return d3.zoomTransform(svg.node()).invert([ev.clientX - xBox.sl, ev.clientY - xBox.st]);
   }
   function xEvents(sel) {
-    sel.on('pointerenter pointermove', (e, d) => { if (!panning) xHover(d, e); })
+    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving) xHover(d, e); })
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
@@ -3694,7 +3699,7 @@ const V_HOUSES = [
   // карточка под указателем: её связи с другими домами видны ярче
   let peekId = null;
   function peek(id) {
-    if (id && panning) return;
+    if (id && (panning || moving)) return;
     if (id === peekId) return;
     if (peekId) {
       layers.x.selectAll('path.xlink.peek').classed('peek', false);
@@ -5423,11 +5428,24 @@ const V_HOUSES = [
       .attr('class', d => 'mm-node h-' + d.data.house + (dim(d.data.id) ? ' dim' : ''))
       .attr('x', d => ox + (d.X - x0) * s).attr('y', d => oy + (d.Y - App.H / 2 - y0) * s)
       .attr('width', Math.max(1.5, App.W * s)).attr('height', Math.max(1, App.H * s));
+    drawSel();
+    drawViewport(d3.zoomTransform(App.svg.node()));
+  }
+  // выбор человека не меняет раскладку: двигается только метка выбранного, а у прямоугольников меняется лишь
+  // приглушение, и то только там, где оно стало другим (раньше мини-карта перестраивалась целиком)
+  function drawSel() {
+    if (!geo) return;
+    content.selectAll('circle.mm-sel').remove();
     if (state.selected && App.nodeById.has(state.selected)) {
       const n = App.nodeById.get(state.selected);
-      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', ox + (n.X + App.W / 2 - x0) * s).attr('cy', oy + (n.Y - y0) * s).attr('r', 3.5);
+      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', geo.ox + (n.X + App.W / 2 - geo.x0) * geo.s).attr('cy', geo.oy + (n.Y - geo.y0) * geo.s).attr('r', 3.5);
     }
-    drawViewport(d3.zoomTransform(App.svg.node()));
+  }
+  function onSelect() {
+    if (!geo) { drawMap(); return; }
+    const dim = App.dimmedFn ? App.dimmedFn() : () => false;
+    content.selectAll('rect.mm-node').each(function (d) { const on = dim(d.data.id); if (this.classList.contains('dim') !== on) this.classList.toggle('dim', on); });
+    drawSel();
   }
   function drawViewport(t) {
     if (!geo) return;
@@ -5440,7 +5458,7 @@ const V_HOUSES = [
   }
   App.hooks.afterRender.push(() => drawMap());
   App.hooks.afterZoom.push(t => drawViewport(t));
-  App.hooks.select.push(() => drawMap());
+  App.hooks.select.push(() => onSelect());
   App.hooks.lens.push(() => drawMap());
   function goTo(evt) {
     if (!geo) return;
@@ -6581,8 +6599,12 @@ const V_HOUSES = [
   const gensH = () => view().gens ? (App.isNarrow() ? 20 : 24) : 0;
   // ряд отметок под шкалой (во вкладке «Вассалитет» — события)
   const marksH = () => view().scaleMarks && !App.isNarrow() ? 16 : 0;
+  // ширина шкалы — из ResizeObserver: чтение clientWidth на каждом кадре движения древа заставляло браузер
+  // заново раскладывать всю страницу (переход по линии брака заметно подтормаживал)
+  let boxW = 0;
+  if (window.ResizeObserver) new ResizeObserver(es => { const w = es[0].target.clientWidth; if (w && w !== boxW) { boxW = w; if (App.redrawScale) App.redrawScale(); } }).observe(box);
   function mapping() {
-    const w = box.clientWidth || svgEl.getBoundingClientRect().width || 1000;
+    const w = boxW || box.clientWidth || svgEl.getBoundingClientRect().width || 1000;
     const v = view();
     if (v.scale === 'sync' && v.scaleMap) return Object.assign({ w }, v.scaleMap());
     FREE.range([PAD, PAD + (w - 2 * PAD) * 0.2, w - PAD]);
