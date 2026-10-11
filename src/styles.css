@@ -263,7 +263,6 @@ body.resizing, body.resizing * { cursor: col-resize !important; user-select: non
 .legend-body { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 22px; padding: 0 14px 12px; }
 .legend h3 { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .legend ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-#legend-houses { grid-template-columns: repeat(2, auto); column-gap: 16px; }
 .legend li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .legend li:has(> h3) { margin-top: 2px; }
 .legend li > h3 { margin: 0; }
@@ -271,6 +270,9 @@ body.resizing, body.resizing * { cursor: col-resize !important; user-select: non
 .lg-win { fill: none; stroke: var(--path); stroke-width: 1.6; }
 rect.lg-sub { fill: var(--hc); }
 .lg-gen { fill: var(--surface); stroke: var(--rule); }
+.lg-alt { fill: var(--hc); }
+.lg-sig { flex: none; width: 30px; display: inline-flex; justify-content: center; }
+.lg-sig svg { overflow: visible; }
 .lg-click { fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .legend svg { flex: none; overflow: visible; }
 .legend .sw-label { color: var(--hc); font-weight: 700; }
@@ -405,7 +407,7 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .empty .stats { font-family: var(--font-ui); font-size: 13px; letter-spacing: .04em; color: var(--ink); font-variant-numeric: lining-nums; }
 .grab { display: none; }
 
-@container (max-width: 1000px) { .legend-body { grid-template-columns: repeat(2, auto); } }
+@container (max-width: 1000px) { .legend-body { grid-template-columns: repeat(2, minmax(0, auto)); } .legend li { white-space: normal; } }
 @container (max-width: 640px) { .legend-body, .dlegend { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
   .brand h1 { font-size: 23px; }

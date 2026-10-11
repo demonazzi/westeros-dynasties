@@ -274,7 +274,6 @@ body.resizing, body.resizing * { cursor: col-resize !important; user-select: non
 .legend-body { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 22px; padding: 0 14px 12px; }
 .legend h3 { margin: 0 0 6px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .legend ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-#legend-houses { grid-template-columns: repeat(2, auto); column-gap: 16px; }
 .legend li { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .legend li:has(> h3) { margin-top: 2px; }
 .legend li > h3 { margin: 0; }
@@ -282,6 +281,9 @@ body.resizing, body.resizing * { cursor: col-resize !important; user-select: non
 .lg-win { fill: none; stroke: var(--path); stroke-width: 1.6; }
 rect.lg-sub { fill: var(--hc); }
 .lg-gen { fill: var(--surface); stroke: var(--rule); }
+.lg-alt { fill: var(--hc); }
+.lg-sig { flex: none; width: 30px; display: inline-flex; justify-content: center; }
+.lg-sig svg { overflow: visible; }
 .lg-click { fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .legend svg { flex: none; overflow: visible; }
 .legend .sw-label { color: var(--hc); font-weight: 700; }
@@ -416,7 +418,7 @@ kbd { font-family: var(--font-ui); font-size: 12px; border: 1px solid var(--rule
 .empty .stats { font-family: var(--font-ui); font-size: 13px; letter-spacing: .04em; color: var(--ink); font-variant-numeric: lining-nums; }
 .grab { display: none; }
 
-@container (max-width: 1000px) { .legend-body { grid-template-columns: repeat(2, auto); } }
+@container (max-width: 1000px) { .legend-body { grid-template-columns: repeat(2, minmax(0, auto)); } .legend li { white-space: normal; } }
 @container (max-width: 640px) { .legend-body, .dlegend { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
   .brand h1 { font-size: 23px; }
@@ -1066,17 +1068,22 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
         <summary>Легенда</summary>
         <div class="legend-body">
           <div>
-            <h3>Дома</h3>
-            <ul id="legend-houses"></ul>
-          </div>
-          <div>
-            <h3>Положение</h3>
+            <h3>Карточки</h3>
             <ul>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-K" x="1.5" y="1.5" width="27" height="13" rx="4"/></svg><span class="sw-label">Король; номер — порядок</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-C" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Претендент на трон</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-R" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Бастард</span></li>
+              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="h-stk"><rect class="sw" x="1" y="1" width="28" height="14" rx="4"/></g><g class="h-targ"><rect class="lg-alt" x="22" y="1" width="6" height="14" rx="3"/></g></svg><span class="sw-label">Полоса справа — дом по слухам</span></li>
               <li class="h-targ"><svg width="30" height="16" aria-hidden="true"><g class="wing" transform="translate(8,3)"><path d="M0 9.5 C2 4.5 6 1 13.5 0 C11.3 2 11.3 3.6 13.5 4.6 C10.8 4.9 10.3 6.2 11.3 7.8 C8.2 7 5 7.8 3 10 Z"/></g></svg><span class="sw-label">Всадник дракона</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="scr-ico" transform="translate(8,2)"><rect x="0.5" y="0.5" width="13" height="9" rx="2"/><path d="M4 12h6M7 9.5v2.5"/></g></svg><span class="sw-label">В экранизации иначе (режим «Экранизации»)</span></li>
+              <li class="h-none"><svg width="30" height="20" aria-hidden="true"><g class="tog" transform="translate(15,10)"><circle r="8.5"/><text y="0.5">−</text></g></svg><span class="sw-label">Свернуть ветвь; «+» — развернуть</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Полосы домов</h3>
+            <ul>
+              <li class="h-none"><span class="lg-sig" id="lg-sig-great"></span><span class="sw-label">Великий дом — большой герб</span></li>
+              <li class="h-none"><span class="lg-sig" id="lg-sig-minor"></span><span class="sw-label">Малый дом — герб меньше</span></li>
             </ul>
             <h3 class="lg-sub">Шкала времени</h3>
             <ul>
@@ -8007,7 +8014,7 @@ const V_HOUSES = [
   };
 })();
 
-/* Запуск: подзаголовок в шапке, дома в легенде, затем старт приложения. */
+/* Запуск: подзаголовок в шапке, образцы гербов в легенде, затем старт приложения. */
 (function () {
   const order = App.bandOrder().filter(b => !b.liege).map(b => b.house);
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
@@ -8015,10 +8022,11 @@ const V_HOUSES = [
   sub.textContent = App.housesLabel() + ' · ' + App.plural(PEOPLE.length, 'человек', 'человека', 'человек') +
     (typeof DRAGONS !== 'undefined' ? ' · ' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') : '') + ' · от Исхода Эйнара до Войны пяти королей';
   sub.title = 'Дома: ' + order.map(h => HOUSES[h].band).join(', ') + '. Годы — от Завоевания Эйгона.';
-  const legendHouses = order.concat(['bf', 'seed', 'oth']);
-  document.getElementById('legend-houses').innerHTML = legendHouses.map(h =>
-    '<li class="h-' + h + '"><svg width="30" height="16" aria-hidden="true"><rect class="sw" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">' +
-    (HOUSES[h].band || (h === 'bf' ? 'Блэкфайры' : h === 'seed' ? 'Семя дракона' : 'Другие дома')) + '</span></li>').join('');
+  // Легенда: образцы гербов великого и малого дома (список домов не нужен — цвета видны на полосах и в фильтре)
+  const minor1 = App.bandOrder().find(b => b.liege);
+  document.getElementById('lg-sig-great').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG('targ', 4, 0, 22) + '</svg>';
+  if (minor1) document.getElementById('lg-sig-minor').innerHTML = '<svg width="30" height="26" aria-hidden="true">' + App.sigilSVG(minor1.house, 8, 6, 15) + '</svg>';
+  else document.getElementById('lg-sig-minor').closest('li').remove();
   App.start();
 })();
 

@@ -72,17 +72,22 @@
         <summary>Легенда</summary>
         <div class="legend-body">
           <div>
-            <h3>Дома</h3>
-            <ul id="legend-houses"></ul>
-          </div>
-          <div>
-            <h3>Положение</h3>
+            <h3>Карточки</h3>
             <ul>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-K" x="1.5" y="1.5" width="27" height="13" rx="4"/></svg><span class="sw-label">Король; номер — порядок</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-C" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Претендент на трон</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-R" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Бастард</span></li>
+              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="h-stk"><rect class="sw" x="1" y="1" width="28" height="14" rx="4"/></g><g class="h-targ"><rect class="lg-alt" x="22" y="1" width="6" height="14" rx="3"/></g></svg><span class="sw-label">Полоса справа — дом по слухам</span></li>
               <li class="h-targ"><svg width="30" height="16" aria-hidden="true"><g class="wing" transform="translate(8,3)"><path d="M0 9.5 C2 4.5 6 1 13.5 0 C11.3 2 11.3 3.6 13.5 4.6 C10.8 4.9 10.3 6.2 11.3 7.8 C8.2 7 5 7.8 3 10 Z"/></g></svg><span class="sw-label">Всадник дракона</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="scr-ico" transform="translate(8,2)"><rect x="0.5" y="0.5" width="13" height="9" rx="2"/><path d="M4 12h6M7 9.5v2.5"/></g></svg><span class="sw-label">В экранизации иначе (режим «Экранизации»)</span></li>
+              <li class="h-none"><svg width="30" height="20" aria-hidden="true"><g class="tog" transform="translate(15,10)"><circle r="8.5"/><text y="0.5">−</text></g></svg><span class="sw-label">Свернуть ветвь; «+» — развернуть</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Полосы домов</h3>
+            <ul>
+              <li class="h-none"><span class="lg-sig" id="lg-sig-great"></span><span class="sw-label">Великий дом — большой герб</span></li>
+              <li class="h-none"><span class="lg-sig" id="lg-sig-minor"></span><span class="sw-label">Малый дом — герб меньше</span></li>
             </ul>
             <h3 class="lg-sub">Шкала времени</h3>
             <ul>
