@@ -1,0 +1,27 @@
+{
+  "title": "Крейкхоллы",
+  "about": "Дом Крейкхоллов (Крейкхолл), знаменосцы Ланнистеров.",
+  "groups": [
+    {
+      "title": "Крейкхоллы при Таргариенах",
+      "people": [
+        {"id":"clarent","name":"Кларент Крейкхолл","full":"Сир Кларент Крейкхолл","en":"Clarent Crakehall","hs":"crk","k":"T","d":"130"},
+        {"id":"roland_kg","name":"Роланд Крейкхолл","full":"Сир Роланд Крейкхолл, рыцарь Королевской гвардии","en":"Roland Crakehall","hs":"crk","k":"T","wiki":"Roland Crakehall (Kingsguard)"}
+      ]
+    },
+    {
+      "title": "Крейкхолл в конце третьего века",
+      "people": [
+        {"id":"sumner","name":"Самнер Крейкхолл","en":"Sumner Crakehall","hs":"crk","k":"T","d":"281–283"},
+        {"id":"roland_c","name":"Роланд Крейкхолл","full":"Роланд Крейкхолл, лорд Крейкхолла","en":"Roland Crakehall","hs":"crk","k":"T","p":"sumner","par":["sumner (вероятно)"],"unc":1,"wiki":"Roland Crakehall (lord)"},
+        {"id":"tybolt","name":"Тибольт Крейкхолл","full":"Сир Тибольт Крейкхолл","en":"Tybolt Crakehall","hs":"crk","k":"T","p":"roland_c","par":["roland_c","жена не названа"]},
+        {"id":"lyle_c","name":"Лайл Крейкхолл","full":"Сир Лайл Крейкхолл, Могучий Вепрь","en":"Lyle Crakehall","al":["Могучий Вепрь"],"hs":"crk","k":"T","p":"roland_c","par":["roland_c","жена не названа"]},
+        {"id":"merlon","name":"Мерлон Крейкхолл","full":"Сир Мерлон Крейкхолл","en":"Merlon Crakehall","hs":"crk","k":"T","p":"roland_c","par":["roland_c","жена не названа"]},
+        {"id":"burton","name":"Бёртон Крейкхолл","full":"Сир Бёртон Крейкхолл","en":"Burton Crakehall","hs":"crk","k":"T","p":"sumner","par":["sumner (вероятно)"],"unc":1,"d":"299"},
+        {"id":"amarei","name":"Амарея Крейкхолл","en":"Amarei Crakehall","fem":1,"hs":"crk","k":"T","d":"264/265","sp":[["walder_fr","третья жена"]]},
+        {"id":"melesa","name":"Мелеса Крейкхолл","en":"Melesa Crakehall","fem":1,"hs":"crk","k":"T","sp":[["lyonel_fr"]]},
+        {"id":"shiera_c","name":"Шира Крейкхолл","en":"Shiera Crakehall","fem":1,"hs":"crk","k":"T","b":"не позднее 273","sp":[["Дамион Ланнистер"]]}
+      ]
+    }
+  ]
+}

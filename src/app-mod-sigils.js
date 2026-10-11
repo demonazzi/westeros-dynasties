@@ -12,6 +12,8 @@
     '<path d="M27 45 C24 39 21 36 19 31 M32 44 V27 M37 45 C40 39 43 36 45 31" stroke="' + c + '" stroke-width="3.2" fill="none" stroke-linecap="round"/>' +
     '<path d="M14.5 29.5 L20.5 27 L22 32 Z M29 22 L35 22 L32 28 Z M49.5 29.5 L43.5 27 L42 32 Z" fill="' + c + '"/>' +
     '<path d="M36 53 C40 57 36 61 41 63" stroke="' + c + '" stroke-width="2.6" fill="none" stroke-linecap="round"/>';
+  // у каждого герба своя обрезка: общий id ломается, если первый такой герб лежит в скрытом блоке
+  let clipN = 0;
   const FIG = {
     targ: dragon,
     bf: dragon,
@@ -170,7 +172,8 @@
       const lion = 'M22 60 L24 46 C20 44 19 38 22 34 C20 30 22 25 26 24 C26 20 30 18 33 20 C37 19 40 22 39 26 C42 28 43 33 41 37 L44 40 C46 36 50 35 51 39 C48 39 47 42 45 45 C44 50 42 55 41 60 H36 L35 52 H29 L28 60 Z';
       let cells = '';
       for (let r = 0; r < 12; r++) for (let q = 0; q < 10; q++) if ((r + q) % 2) cells += 'M' + (17 + q * 4) + ' ' + (17 + r * 4) + ' h4 v4 h-4 Z ';
-      return '<clipPath id="osg-lion"><path d="' + lion + '"/></clipPath><path d="' + lion + '" fill="' + c + '"/><path d="' + cells + '" fill="#D4A82E" clip-path="url(#osg-lion)"/>';
+      const id = 'osg-lion-' + (++clipN);
+      return '<clipPath id="' + id + '"><path d="' + lion + '"/></clipPath><path d="' + lion + '" fill="' + c + '"/><path d="' + cells + '" fill="#D4A82E" clip-path="url(#' + id + ')"/>';
     },
     // красное яблоко на золотом (Фоссовеи)
     fos: (f, c) =>
@@ -182,6 +185,44 @@
     oak: (f, c) => {
       const leaf = (x, y, a) => '<g transform="translate(' + x + ' ' + y + ') rotate(' + a + ')"><path d="M0 -11 C3 -9 2 -7 4 -6 C6 -5 5 -2 3 -1 C6 0 6 3 3 3.5 C5 5 4 8 1 8 L0.6 11 H-0.6 L-1 8 C-4 8 -5 5 -3 3.5 C-6 3 -6 0 -3 -1 C-5 -2 -6 -5 -4 -6 C-2 -7 -3 -9 0 -11 Z" fill="' + c + '"/><path d="M0 -9 V10" stroke="' + f + '" stroke-width=".7" opacity=".6"/></g>';
       return leaf(22, 31, -20) + leaf(42, 31, 20) + leaf(32, 50, 0);
+    },
+    // шесть белых раковин (3-2-1) на песчаном поле (Вестерлинги)
+    wes: (f, c) => {
+      const shell = (x, y) => '<g transform="translate(' + x + ' ' + y + ') scale(.88)"><path d="M-2 5 L-3.6 7 H3.6 L2 5 Z" fill="' + c + '"/>' +
+        '<path d="M0 5.6 L-6.3 -1 C-6.8 -4.6 -3.6 -6.8 0 -6.8 C3.6 -6.8 6.8 -4.6 6.3 -1 Z" fill="' + c + '"/>' +
+        '<path d="M0 5 L-4.8 -4.8 M0 5 L-2.4 -6.3 M0 5 V-6.7 M0 5 L2.4 -6.3 M0 5 L4.8 -4.8" stroke="' + f + '" stroke-width=".8" opacity=".6"/></g>';
+      return shell(19.5, 26) + shell(32, 26) + shell(44.5, 26) + shell(25.75, 40) + shell(38.25, 40) + shell(32, 54);
+    },
+    // чёрно-белый пятнистый вепрь на коричневом (Крейкхоллы)
+    crk: (f, c) => {
+      const boar = 'M13 42 C13 39 16 37 19 36.5 L21 30.5 L23.5 34 C27 30 33 28.5 40 29 C46 29.5 50 33.5 50.5 39 L54 36.5 L52.5 41 C52 45.5 50 48.5 47.5 50 L47.5 58 H43.5 L42.5 51.5 C38 52.5 32 52.5 28 51.5 L27 58 H23 L23 50 C20 48.5 17.5 46 15.5 45 Z';
+      let stripes = '';
+      for (let i = 0; i < 9; i++) stripes += 'M' + (20 + i * 4.5) + ' 26 l-7 34 ';
+      const id = 'crk-boar-' + (++clipN);
+      return '<clipPath id="' + id + '"><path d="' + boar + '"/></clipPath><path d="' + boar + '" fill="' + c + '"/>' +
+        '<path d="' + stripes + '" stroke="#EDEBE6" stroke-width="1.6" clip-path="url(#' + id + ')" opacity=".85"/>' +
+        '<path d="M25 31.5 l1 -3.5 l1.2 3 l1.3 -3.6 l1.2 3.3 l1.4 -3.6 l1.2 3.3 l1.4 -3.4 l1.2 3.2 l1.5 -3 l1 2.9" stroke="' + c + '" stroke-width="1.3" fill="none"/>' +
+        '<path d="M16.5 43.5 C15.5 40.5 17.5 39 19 40" stroke="#F4F1EA" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+        '<circle cx="19.5" cy="38.6" r=".9" fill="' + f + '"/>';
+    },
+    // три серебряные галеры (2-1) на синем в красно-золотой кайме (Фарманы)
+    far: (f, c) => {
+      const galley = (x, y) => '<g transform="translate(' + x + ' ' + y + ')"><path d="M-9.5 2 H9.5 L7 6 H-6.5 Z" fill="' + c + '"/>' +
+        '<path d="M9.5 2 C11 1 11.5 -0.5 11 -2" stroke="' + c + '" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
+        '<path d="M0 2 V-9.5" stroke="' + c + '" stroke-width="1.2"/><path d="M-5.5 -8.5 H5.5 L4.5 0.5 H-4.5 Z" fill="' + c + '"/>' +
+        '<path d="M-5.5 6 l-1.6 3 M-2 6 l-1.2 3 M1.5 6 l-0.8 3 M5 6 l-0.4 3" stroke="' + c + '" stroke-width="1" stroke-linecap="round"/></g>';
+      return '<path d="' + SHIELD + '" fill="none" stroke="#D9A63A" stroke-width="10"/>' +
+        '<path d="' + SHIELD + '" fill="none" stroke="#B3261E" stroke-width="10" stroke-dasharray="7 7"/>' +
+        galley(22.5, 31) + galley(41.5, 31) + galley(32, 50);
+    },
+    // три пурпурные сливы (2-1) на золотом (Пламмы)
+    plm: (f, c) => {
+      const plum = (x, y) => '<g transform="translate(' + x + ' ' + y + ')"><path d="M0 -5.5 C0 -8 1 -9.5 2.5 -10.5" stroke="#5A3B22" stroke-width="1.3" fill="none" stroke-linecap="round"/>' +
+        '<path d="M1.5 -8 C4.5 -11 8.5 -10 9 -8 C6 -6.5 3.5 -6.5 1.5 -8 Z" fill="#3C7A35"/>' +
+        '<ellipse cx="0" cy="1" rx="6.6" ry="7.4" fill="' + c + '"/>' +
+        '<path d="M0 -5.8 C-2.2 -1.5 -2.2 3.5 0 8" stroke="' + f + '" stroke-width=".8" fill="none" opacity=".35"/>' +
+        '<path d="M-4 -1.5 C-4 -3.5 -3 -4.5 -2 -4.8" stroke="#fff" stroke-width="1.2" fill="none" opacity=".4" stroke-linecap="round"/></g>';
+      return plum(22.5, 32) + plum(41.5, 32) + plum(32, 51);
     },
     // ступенчатая белая башня, увенчанная огнём
     hgt: (f, c) =>

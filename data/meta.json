@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak","wes","crk","far","plm"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -19,6 +19,10 @@
     {"house":"osg","liege":"tyr","roots":[["ormond",7],["clarice",10],["eustace",13]]},
     {"house":"fos","liege":"tyr","roots":[["florence",7],["owen_f",11],["steffon_fs",15],["raymun_f",15],["jon_f",18],["tanton",19],["bryan_fs",19],["edwyd",19],["franklyn",19],["jeyne_fs",19],["leonette",19]]},
     {"house":"oak","liege":"tyr","roots":[["alys_oak",7],["torgen",8],["arthor_oak",8],["oak_lord73",9],["olyvar_oak",13],["gwayne_oak",15],["arwyn",18]]},
+    {"house":"wes","liege":"lan","roots":[["wes_lord43",6],["harrold_w",9],["roland_wl",10],["ormond_w",15],["elys_w",18],["gawen_w",18]]},
+    {"house":"crk","liege":"lan","roots":[["clarent",11],["roland_kg",15],["sumner",17],["amarei",17],["melesa",19],["shiera_c",19]]},
+    {"house":"far","liege":"lan","roots":[["far_lord43",6],["far_lord130",10],["alysanne_f",16],["far_par19",18]]},
+    {"house":"plm","liege":"lan","roots":[["ossifer",14],["petyr_pl",15],["maynard",15],["philip_pl",18],["ben_pl",19]]},
     {"house":"roy","liege":"arr","roots":[["allard",8],["yorbert",10],["willam_r",11],["gunthor_r",11],["alyssa_r",12],["lorra",15],["perra",17],["benedict",17],["yohn",18],["nestor",18],["jeyne_r",18],["kyle_r",18],["ryella",19]]},
     {"house":"bae","liege":"arr","roots":[["bae_ss",16]]},
     {"house":"cor","liege":"arr","roots":[["gawen",6],["qarl",8],["cor_lord9",9],["gwayne_c",14],["cor_lord17",17]]},
@@ -75,7 +79,11 @@
     "pea": {"name":"Дом Пиков","band":"Пики","motto":"Звёздный Пик","sigil":{"field":"#D9782A","charge":"#17161A"}},
     "osg": {"name":"Дом Осгреев","band":"Осгреи","motto":"Оплот","sigil":{"field":"#F0EEE8","charge":"#2E6B33"}},
     "fos": {"name":"Дом Фоссовеев","band":"Фоссовеи","motto":"Сидрхолл · «Вкус славы»","sigil":{"field":"#D9A63A","charge":"#B3261E"}},
-    "oak": {"name":"Дом Окхартов","band":"Окхарты","motto":"Старый Дуб · «Наши корни глубоки»","sigil":{"field":"#D9A63A","charge":"#2E6B33"}}
+    "oak": {"name":"Дом Окхартов","band":"Окхарты","motto":"Старый Дуб · «Наши корни глубоки»","sigil":{"field":"#D9A63A","charge":"#2E6B33"}},
+    "wes": {"name":"Дом Вестерлингов","band":"Вестерлинги","motto":"Скала · «Честь, а не почести»","sigil":{"field":"#C9AE7C","charge":"#F4F1EA"}},
+    "crk": {"name":"Дом Крейкхоллов","band":"Крейкхоллы","motto":"Крейкхолл · «Никто столь не свиреп»","sigil":{"field":"#6E4B2E","charge":"#17161A"}},
+    "far": {"name":"Дом Фарманов","band":"Фарманы","motto":"Светлый замок · «Оседлавшие ветер»","sigil":{"field":"#2D4C8C","charge":"#E6E7EA"}},
+    "plm": {"name":"Дом Пламмов","band":"Пламмы","motto":"«Попробуй меня»","sigil":{"field":"#D9A63A","charge":"#5B2A6E"}}
   },
   "gaps": [
     {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},
@@ -90,7 +98,7 @@
     {"house":"mar","from":"qoren","to":"dorne_p14","years":"≈ 40 лет","note":"правители Дорна между Алиандрой и отцом Марона не названы"},
     {"house":"mar","from":"dorne_p14","to":"dorne_p19","years":"≈ 60 лет","note":"правители Дорна между Мароном и матерью Дорана не названы"},
     {"house":"lan","from":"lyman","to":"lan_lord10","years":"","note":"Таймонд правил до близнецов, но что он их отец, в книгах не сказано"},
-    {"house":"lan","from":"lan_lord10","to":"gerold","years":"≈ 70 лет","note":"лорды Утёса между Лореоном и Джерольдом почти не названы"},
+    {"house":"lan","from":"lan_lord10","to":"gerold","years":"≈ 70 лет","note":"лорды Утёса между Лореоном и Герольдом почти не названы"},
     {"house":"tul","from":"edmyn","to":"grover","years":"","note":"родство лордов Риверрана в книгах не прослежено"},
     {"house":"tul","from":"elmo","to":"tul_lord17","years":"≈ 120 лет","note":"лорды Риверрана между Танцем драконов и отцом Хостера почти не названы"},
     {"house":"stk","from":"torrhen","to":"cregan","years":"≈ 100 лет","note":"девять лордов Винтерфелла между Торрхеном и Криганом здесь не показаны"},

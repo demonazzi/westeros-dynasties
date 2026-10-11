@@ -1,0 +1,26 @@
+{
+  "title": "Пламмы",
+  "about": "Дом Пламмов, знаменосцы Ланнистеров; замок их неизвестен.",
+  "groups": [
+    {
+      "title": "Пламмы при Таргариенах",
+      "people": [
+        {"id":"ossifer","name":"Оссифер Пламм","en":"Ossifer Plumm","hs":"plm","k":"T","d":"176","sp":[["elaena_b","176 г."]]},
+        {"id":"viserys_pl","name":"Визерис Пламм","en":"Viserys Plumm","hs":"plm","alt":"targ","k":"T","p":"ossifer","par":["ossifer (официально; по слухам — Эйгон IV)","elaena_b"]},
+        {"id":"plumm_sons","name":"Сыновья","full":"Сыновья Визериса Пламма","group":1,"hs":"plm","k":"T","p":"viserys_pl","par":["viserys_pl","жена не названа"],"wiki":"Viserys Plumm"},
+        {"id":"petyr_pl","name":"Петир Пламм","full":"Сир Петир Пламм","en":"Petyr Plumm","hs":"plm","k":"T"},
+        {"id":"maynard","name":"Мейнард Пламм","full":"Сир Мейнард Пламм","en":"Maynard Plumm","hs":"plm","k":"T"}
+      ]
+    },
+    {
+      "title": "Пламмы в конце третьего века",
+      "people": [
+        {"id":"philip_pl","name":"Филип Пламм","en":"Philip Plumm","hs":"plm","k":"T"},
+        {"id":"dennis_pl","name":"Деннис Пламм","full":"Сир Деннис Пламм","en":"Dennis Plumm","hs":"plm","k":"T","p":"philip_pl","par":["philip_pl"]},
+        {"id":"peter_pl","name":"Питер Пламм","full":"Сир Питер Пламм","en":"Peter Plumm","hs":"plm","k":"T","p":"philip_pl","par":["philip_pl"]},
+        {"id":"harwyn","name":"Харвин Пламм","full":"Сир Харвин Пламм, Твердокаменный","en":"Harwyn Plumm","al":["Твердокаменный"],"hs":"plm","k":"T","p":"philip_pl","par":["philip_pl"]},
+        {"id":"ben_pl","name":"Бен Пламм","full":"Бен Пламм, Бурый Бен","en":"Ben Plumm","al":["Бурый Бен"],"hs":"plm","k":"T","par":["по догадке Тириона — потомок младшего сына Визериса Пламма"]}
+      ]
+    }
+  ]
+}

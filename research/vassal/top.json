@@ -40,7 +40,7 @@
     "Lannister": [
       { "from": -10, "to": -2, "to_frac": 0.61, "liege": "independent", "why": "Короли Утёса (Лорен I Ланнистер)", "src": "Aegon's_Conquest", "verified": true },
       { "from": -2, "from_frac": 0.61, "to": 129, "to_frac": 0.17, "liege": "throne", "why": "На следующий день после Пламенного Поля Лорен отказался от короны и стал Хранителем Запада", "src": "Field_of_Fire", "verified": true, "inferred": "Пламенное Поле — «около 2 до З.Э.»" },
-      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "greens", "why": "Лорд Джейсон — за Эйгона II (брат Тиланд был мастером над монетой). Погиб в битве у Красного Зубца (130), дальше правила регент леди Джоанна", "src": "Jason_Lannister; Dance_of_the_Dragons", "verified": true },
+      { "from": 129, "from_frac": 0.17, "to": 131, "to_frac": 0.5, "liege": "greens", "why": "Лорд Джейсон — за Эйгона II (брат Тиланд был мастером над монетой). Погиб в битве у Красного Зубца (130), дальше правила регент леди Джоханна", "src": "Jason_Lannister; Dance_of_the_Dragons", "verified": true },
       { "from": 131, "from_frac": 0.5, "to": 282, "to_frac": 0.15, "liege": "throne", "why": "В 196 — за Дейерона II", "src": "First_Blackfyre_Rebellion", "verified": true },
       { "from": 282, "from_frac": 0.15, "to": 283, "to_frac": 0.35, "liege": "neutral", "why": "Тайвин отклонял призывы к оружию от обеих сторон", "src": "Robert's_Rebellion", "verified": true },
       { "from": 283, "from_frac": 0.35, "to": 283, "to_frac": 0.45, "liege": "rebels", "why": "Разорение Королевской Гавани: войско Тайвина вошло в город, Джейме убил Эйриса", "src": "Robert's_Rebellion", "verified": true },

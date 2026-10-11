@@ -26,14 +26,14 @@
         {"id":"aegon1","name":"Эйгон I","full":"Эйгон I Завоеватель","en":"Aegon the Conqueror","k":"K","n":1,"r":"1–37","p":"aerion_l","par":["aerion_l","valaena"],"d":"37","dr":"Балерион Чёрный Ужас","sp":[["visenya"],["rhaenys"]]},
         {"id":"rhaenys","name":"Рейенис","full":"Рейенис, жена Завоевателя","en":"Rhaenys","fem":1,"k":"T","p":"aerion_l","par":["aerion_l","valaena"],"d":"10","dr":"Мераксес","sp":[["aegon1"]]},
         {"id":"aenys1","name":"Эйнис I","en":"Aenys I","k":"K","n":2,"r":"37–42","p":"aegon1","par":["aegon1","rhaenys"],"b":"7","d":"42","sp":[["alyssa_v","22 г."]]},
-        {"id":"maegor1","name":"Мейгор I","full":"Мейгор I Жестокий","en":"Maegor the Cruel","k":"K","n":3,"r":"42–48","p":"aegon1","par":["aegon1","visenya"],"b":"12","d":"48","dr":"Балерион","sp":[["ceryse","25 г."],["Алис Харроуэй","39 г."],["Тианна с Башни"],["rhaena_a","47 г."],["Элинор Костейн","47 г."],["Джейн Вестерлинг","47 г."]]}
+        {"id":"maegor1","name":"Мейгор I","full":"Мейгор I Жестокий","en":"Maegor the Cruel","k":"K","n":3,"r":"42–48","p":"aegon1","par":["aegon1","visenya"],"b":"12","d":"48","dr":"Балерион","sp":[["ceryse","25 г."],["Алис Харроуэй","39 г."],["Тианна с Башни"],["rhaena_a","47 г."],["Элинор Костейн","47 г."],["jeyne_wm","47 г."]]}
       ]
     },
     {
       "title": "Дети Мейгора I",
       "people": [
         {"id":"maegor_son44","name":"Сын","full":"Мертворождённый сын Мейгора I и Алис Харроуэй","k":"T","p":"maegor1","par":["maegor1","Алис Харроуэй"],"b":"44","d":"44","wiki":"Alys Harroway"},
-        {"id":"maegor_child48","name":"Ребёнок","full":"Мертворождённый ребёнок Мейгора I и Джейн Вестерлинг","k":"T","p":"maegor1","par":["maegor1","Джейн Вестерлинг"],"b":"47/48","d":"47/48","wiki":"Jeyne Westerling (wife of Maegor I)"},
+        {"id":"maegor_child48","name":"Ребёнок","full":"Мертворождённый ребёнок Мейгора I и Джейн Вестерлинг","k":"T","p":"maegor1","par":["maegor1","jeyne_wm"],"b":"47/48","d":"47/48","wiki":"Jeyne Westerling (wife of Maegor I)"},
         {"id":"maegor_son48","name":"Сын","full":"Мертворождённый сын Мейгора I и Элинор Костейн","k":"T","p":"maegor1","par":["maegor1","Элинор Костейн"],"b":"48","d":"48","wiki":"Elinor Costayne"},
         {"id":"maegor_bastard","name":"Латник","full":"Латник, называвший себя бастардом Мейгора I","k":"R","p":"maegor1","par":["maegor1 (по словам матери)","дочь трактирщика"],"unc":1,"wiki":"Maegor I Targaryen"}
       ]
@@ -41,7 +41,7 @@
     {
       "title": "Дети Эйниса I и Алиссы Веларион",
       "people": [
-        {"id":"rhaena_a","name":"Рейена","full":"Рейена, дочь Эйниса I","en":"Rhaena","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"23","d":"73","sp":[["aegon_u","41 г."],["maegor1","47 г."],["Андроу Фарман"]],"wiki":"Rhaena Targaryen (daughter of Aenys I)"},
+        {"id":"rhaena_a","name":"Рейена","full":"Рейена, дочь Эйниса I","en":"Rhaena","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"23","d":"73","sp":[["aegon_u","41 г."],["maegor1","47 г."],["androw"]],"wiki":"Rhaena Targaryen (daughter of Aenys I)"},
         {"id":"aegon_u","name":"Эйгон","full":"Эйгон Некоронованный","en":"Aegon the Uncrowned","k":"C","p":"aenys1","par":["aenys1","alyssa_v"],"b":"26","d":"43","sp":[["rhaena_a","41 г."]],"wiki":"Aegon Targaryen (son of Aenys I)"},
         {"id":"aerea","name":"Эйрея","en":"Aerea","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"d":"56"},
         {"id":"rhaella_a","name":"Рейелла","full":"Рейелла, дочь Эйгона Некоронованного","en":"Rhaella","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"wiki":"Rhaella Targaryen (daughter of Aegon)"},
@@ -136,13 +136,11 @@
         {"id":"baelor1","name":"Бейелор I","full":"Бейелор I Благословенный","en":"Baelor the Blessed","k":"K","n":9,"r":"161–171","p":"aegon3","par":["aegon3","daenaera"],"b":"144","d":"171","sp":[["daena","брак расторгнут"]]},
         {"id":"daena","name":"Дейена","full":"Дейена Непокорная","en":"Daena the Defiant","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"145","sp":[["baelor1","брак расторгнут"]]},
         {"id":"rhaena_b","name":"Рейена","full":"Рейена, дочь Эйгона III","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"147","wiki":"Rhaena Targaryen (daughter of Aegon III)"},
-        {"id":"elaena_b","name":"Элейна","full":"Элейна, дочь Эйгона III","en":"Elaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"150","sp":[["alyn","возлюбленный","l"],["Оссифер Пламм","176 г."],["Роннел Пенроз"],["Майкл Манвуди"]],"wiki":"Elaena Targaryen"},
-        {"id":"viserys_pl","name":"Визерис Пламм","en":"Viserys Plumm","hs":"oth","h":"Пламмов","k":"T","p":"elaena_b","par":["Оссифер Пламм (по слухам — Эйгон IV)","elaena_b"]},
+        {"id":"elaena_b","name":"Элейна","full":"Элейна, дочь Эйгона III","en":"Elaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"150","sp":[["alyn","возлюбленный","l"],["ossifer","176 г."],["Роннел Пенроз"],["Майкл Манвуди"]],"wiki":"Elaena Targaryen"},
         {"id":"robin_pn","name":"Робин Пенроз","en":"Robin Penrose","hs":"oth","h":"Пенрозов","k":"T","p":"elaena_b","par":["Роннел Пенроз","elaena_b"],"b":"184–197"},
         {"id":"laena_pn","name":"Лейна Пенроз","en":"Laena Penrose","fem":1,"hs":"oth","h":"Пенрозов","k":"T","p":"elaena_b","par":["Роннел Пенроз","elaena_b"],"b":"185–198"},
         {"id":"jocelyn_pn","name":"Джоселин Пенроз","en":"Jocelyn Penrose","fem":1,"hs":"oth","h":"Пенрозов","k":"T","p":"elaena_b","par":["Роннел Пенроз","elaena_b"],"b":"186–199"},
-        {"id":"joy_pn","name":"Джой Пенроз","en":"Joy Penrose","fem":1,"hs":"oth","h":"Пенрозов","k":"T","p":"elaena_b","par":["Роннел Пенроз","elaena_b"],"b":"187–200"},
-        {"id":"plumm_sons","name":"Сыновья","full":"Сыновья Визериса Пламма","group":1,"hs":"oth","h":"Пламмов","k":"T","p":"viserys_pl","par":["viserys_pl","жена не названа"],"wiki":"Viserys Plumm"}
+        {"id":"joy_pn","name":"Джой Пенроз","en":"Joy Penrose","fem":1,"hs":"oth","h":"Пенрозов","k":"T","p":"elaena_b","par":["Роннел Пенроз","elaena_b"],"b":"187–200"}
       ]
     },
     {

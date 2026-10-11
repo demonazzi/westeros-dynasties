@@ -52,7 +52,7 @@
         {"id":"eddard","name":"Эддард Старк","en":"Eddard Stark","al":["Нед Старк"],"hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"d":"299","sp":[["catelyn"]],"wd":["theon"]},
         {"id":"lyanna","name":"Лианна Старк","en":"Lyanna Stark","fem":1,"hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"b":"266","d":"283","sp":[["robert","помолвка","b"],["rhaegar","в сериале — тайный брак"]]},
         {"id":"benjen","name":"Бенджен Старк","en":"Benjen Stark","hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"]},
-        {"id":"robb","name":"Робб Старк","en":"Robb Stark","al":["Молодой Волк"],"hs":"stk","k":"C","p":"eddard","par":["eddard","catelyn"],"b":"283","d":"299","kl":"Король Севера","sp":[["Джейна Вестерлинг","в сериале — Талиса"]]},
+        {"id":"robb","name":"Робб Старк","en":"Robb Stark","al":["Молодой Волк"],"hs":"stk","k":"C","p":"eddard","par":["eddard","catelyn"],"b":"283","d":"299","kl":"Король Севера","sp":[["jeyne_wr","в сериале — Талиса"]]},
         {"id":"jon","name":"Джон Сноу","en":"Jon Snow","hs":"stk","alt":"targ","k":"R","p":"eddard","par":["eddard (официально)","мать неизвестна: по словам Эддарда — Вилла, по слухам — Эшара Дейн или дочь рыбака","rhaegar (по теории)","lyanna (по теории)"],"rp":"rhaegar","unc":1,"b":"283"},
         {"id":"sansa","name":"Санса Старк","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"286","sp":[["joffrey_b","помолвка","b"],["tyrion","299 г."]]},
         {"id":"arya","name":"Арья Старк","en":"Arya Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"289"},
