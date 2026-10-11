@@ -1,0 +1,44 @@
+{
+  "title": "Бракены",
+  "about": "Дом Бракенов (Стоунхедж), знаменосцы Талли.",
+  "groups": [
+    {
+      "title": "Бракены при Мейгоре и в Танец драконов",
+      "people": [
+        {"id":"lyle_b","name":"Лайл Бракен","full":"Сир Лайл Бракен","en":"Lyle Bracken","hs":"brk","k":"T","d":"42"},
+        {"id":"olyver_b","name":"Оливер Бракен","full":"Сир Оливер Бракен","en":"Olyver Bracken","hs":"brk","k":"T","d":"50"},
+        {"id":"humfrey_b","name":"Хамфри Бракен","en":"Humfrey Bracken","hs":"brk","k":"T","sp":[["три жены"],["любовница-простолюдинка","","l"]]},
+        {"id":"amos_b","name":"Амос Бракен","full":"Сир Амос Бракен","en":"Amos Bracken","hs":"brk","k":"T","p":"humfrey_b","par":["humfrey_b"],"d":"129"},
+        {"id":"humfrey_kids","name":"Дети","full":"Другие дети Хамфри Бракена","group":1,"hs":"brk","k":"T","p":"humfrey_b","par":["humfrey_b"],"wiki":"Humfrey Bracken"},
+        {"id":"raylon","name":"Рейлон Риверс","full":"Сир Рейлон Риверс","en":"Raylon Rivers","hs":"brk","k":"R","p":"humfrey_b","par":["humfrey_b"]}
+      ]
+    },
+    {
+      "title": "Бракены при Эйгоне IV и Дейероне II",
+      "people": [
+        {"id":"brk_lord13","name":"Лорд Бракен","full":"Лорд Бракен, десница Эйгона IV","hs":"brk","k":"T","d":"178","wiki":"Barba Bracken"},
+        {"id":"barba","name":"Барба Бракен","en":"Barba Bracken","fem":1,"hs":"brk","k":"T","p":"brk_lord13","par":["brk_lord13"],"b":"155","sp":[["aegon4","любовница","l"]]},
+        {"id":"bethany_b","name":"Бетани Бракен","en":"Bethany Bracken","fem":1,"hs":"brk","k":"T","p":"brk_lord13","par":["brk_lord13"],"b":"не ранее 156","d":"178","sp":[["aegon4","любовница","l"]]},
+        {"id":"brk_lord16","name":"Лорд Бракен","full":"Лорд Бракен, отец Ото","hs":"brk","k":"T","wiki":"Otho Bracken"},
+        {"id":"otho_son","name":"Сын","full":"Старший сын лорда Бракена, брат Ото","hs":"brk","k":"T","p":"brk_lord16","par":["brk_lord16"],"d":"209","wiki":"Otho Bracken"},
+        {"id":"otho","name":"Ото Бракен","full":"Сир Ото Бракен","en":"Otho Bracken","hs":"brk","k":"T","p":"brk_lord16","par":["brk_lord16"]}
+      ]
+    },
+    {
+      "title": "Стоунхедж в конце третьего века",
+      "people": [
+        {"id":"brk_lord18","name":"Лорд Бракен","full":"Лорд Бракен, отец Джоноса","hs":"brk","k":"T","wiki":"Jonos Bracken"},
+        {"id":"jonos_b","name":"Джонос Бракен","en":"Jonos Bracken","hs":"brk","k":"T","p":"brk_lord18","par":["brk_lord18"],"sp":[["первая жена, имя не названа"],["вторая жена, имя не названа"],["третья жена, леди Бракен"]]},
+        {"id":"harry_r","name":"Гарри Риверс","en":"Harry Rivers","hs":"brk","k":"R","p":"jonos_b","par":["jonos_b (оспаривается)"],"unc":1,"d":"299"},
+        {"id":"barbara_b","name":"Барбара Бракен","en":"Barbara Bracken","fem":1,"hs":"brk","k":"T","p":"jonos_b","par":["jonos_b","первая жена Джоноса"]},
+        {"id":"jayne_b","name":"Джейн Бракен","en":"Jayne Bracken","fem":1,"hs":"brk","k":"T","p":"jonos_b","par":["jonos_b","первая жена Джоноса"]},
+        {"id":"catelyn_b","name":"Кейтилин Бракен","en":"Catelyn Bracken","fem":1,"hs":"brk","k":"T","p":"jonos_b","par":["jonos_b","третья жена Джоноса"]},
+        {"id":"bess_b","name":"Бесс Бракен","en":"Bess Bracken","fem":1,"hs":"brk","k":"T","p":"jonos_b","par":["jonos_b","третья жена Джоноса"]},
+        {"id":"alysanne_b","name":"Алисанна Бракен","en":"Alysanne Bracken","fem":1,"hs":"brk","k":"T","p":"jonos_b","par":["jonos_b","третья жена Джоноса"]},
+        {"id":"jonos_sib","name":"Брат или сестра","full":"Брат или сестра Джоноса Бракена","hs":"brk","k":"T","p":"brk_lord18","par":["brk_lord18"],"wiki":"Hendry Bracken"},
+        {"id":"hendry","name":"Хендри Бракен","en":"Hendry Bracken","hs":"brk","k":"T","p":"jonos_sib","par":["jonos_sib"],"d":"299"},
+        {"id":"brk_dau","name":"Дочь","full":"Дочь лорда Бракена, возможно сестра Джоноса","fem":1,"hs":"brk","k":"T","p":"brk_lord18","par":["brk_lord18 (возможно)"],"unc":1,"wiki":"Brynden Tully"}
+      ]
+    }
+  ]
+}

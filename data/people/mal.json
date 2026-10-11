@@ -1,0 +1,27 @@
+{
+  "title": "Маллистеры",
+  "about": "Дом Маллистеров (Сигард), знаменосцы Талли.",
+  "groups": [
+    {
+      "title": "Маллистеры до Роберта",
+      "people": [
+        {"id":"lymond","name":"Лаймонд Маллистер","en":"Lymond Mallister","hs":"mal","k":"T","d":"104–131"},
+        {"id":"raymun_mal","name":"Раймун Маллистер","full":"Сир Раймун Маллистер","en":"Raymun Mallister","hs":"mal","k":"T","p":"lymond","par":["lymond"]},
+        {"id":"jorah_mal","name":"Джорах Маллистер","en":"Jorah Mallister","hs":"mal","k":"T","d":"131"},
+        {"id":"joseth","name":"Джосет Маллистер","full":"Сир Джосет Маллистер","en":"Joseth Mallister","hs":"mal","k":"T"},
+        {"id":"desmond_mal","name":"Десмонд Маллистер","full":"Сир Десмонд Маллистер","en":"Desmond Mallister","hs":"mal","k":"T"}
+      ]
+    },
+    {
+      "title": "Сигард в конце третьего века",
+      "people": [
+        {"id":"mal_lord","name":"Лорд Маллистер","full":"Лорд Маллистер, отец Дениса","hs":"mal","k":"T","wiki":"Denys Mallister"},
+        {"id":"denys_mal","name":"Денис Маллистер","full":"Сир Денис Маллистер","en":"Denys Mallister","hs":"mal","k":"T","p":"mal_lord","par":["mal_lord"],"b":"≈231"},
+        {"id":"mal_sib","name":"Брат или сестра","full":"Брат или сестра Дениса Маллистера, родитель Джейсона","hs":"mal","k":"T","p":"mal_lord","par":["mal_lord"],"wiki":"Jason Mallister"},
+        {"id":"jason_mal","name":"Джейсон Маллистер","en":"Jason Mallister","hs":"mal","k":"T","p":"mal_sib","par":["mal_sib"]},
+        {"id":"patrek","name":"Патрек Маллистер","en":"Patrek Mallister","hs":"mal","k":"T","p":"jason_mal","par":["jason_mal"]},
+        {"id":"jeffory","name":"Джеффори Маллистер","full":"Сир Джеффори Маллистер","en":"Jeffory Mallister","hs":"mal","k":"T","d":"282"}
+      ]
+    }
+  ]
+}

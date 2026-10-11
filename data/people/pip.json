@@ -1,0 +1,30 @@
+{
+  "title": "Пайперы",
+  "about": "Дом Пайперов (Розовая Дева), знаменосцы Талли.",
+  "groups": [
+    {
+      "title": "Пайперы при Мейгоре и в Танец драконов",
+      "people": [
+        {"id":"pip_lord1","name":"Лорд Пайпер","full":"Лорд Пайпер, отец Джона и Мелони","hs":"pip","k":"T","wiki":"Melony Piper"},
+        {"id":"jon_p","name":"Джон Пайпер","en":"Jon Piper","hs":"pip","k":"T","p":"pip_lord1","par":["pip_lord1"]},
+        {"id":"jon_p_bros","name":"Братья","full":"Младшие братья Джона Пайпера","group":1,"hs":"pip","k":"T","p":"pip_lord1","par":["pip_lord1"],"wiki":"Jon Piper"},
+        {"id":"melony","name":"Мелони Пайпер","en":"Melony Piper","fem":1,"hs":"pip","k":"T","p":"pip_lord1","par":["pip_lord1"],"d":"43"},
+        {"id":"petyr_p","name":"Петир Пайпер","en":"Petyr Piper","hs":"pip","k":"T","d":"130"},
+        {"id":"petyr_child","name":"Ребёнок","full":"Ребёнок Петира Пайпера","hs":"pip","k":"T","p":"petyr_p","par":["petyr_p"],"wiki":"Petyr Piper"},
+        {"id":"petyr_gs","name":"Внуки","full":"Внуки Петира Пайпера","group":1,"hs":"pip","k":"T","p":"petyr_child","par":["petyr_child"],"wiki":"Petyr Piper"},
+        {"id":"stanton","name":"Стэнтон Пайпер","en":"Stanton Piper","hs":"pip","k":"T","par":["родство с Петиром не названо"],"d":"130"}
+      ]
+    },
+    {
+      "title": "Розовая Дева в конце третьего века",
+      "people": [
+        {"id":"pip_lord18","name":"Лорд Пайпер","full":"Лорд Пайпер, отец леди Пайпер","hs":"pip","k":"T","wiki":"Quellon Greyjoy"},
+        {"id":"lady_piper","name":"Леди Пайпер","full":"Леди Пайпер, жена Квеллона Грейджоя","fem":1,"hs":"pip","k":"T","p":"pip_lord18","par":["pip_lord18"],"d":"283/284","sp":[["quellon","третья жена"]],"wiki":"Quellon Greyjoy"},
+        {"id":"clement","name":"Клемент Пайпер","en":"Clement Piper","hs":"pip","k":"T"},
+        {"id":"marq","name":"Марк Пайпер","full":"Сир Марк Пайпер","en":"Marq Piper","hs":"pip","k":"T","p":"clement","par":["clement"]},
+        {"id":"lewys","name":"Льюис Пайпер","en":"Lewys Piper","hs":"pip","k":"T","p":"clement","par":["clement"]},
+        {"id":"pip_knights","name":"Пятеро рыцарей","full":"Пятеро рыцарей Пайперов","group":1,"hs":"pip","k":"T","par":["кузены и племянники лорда Клемента"],"wiki":"House Piper"}
+      ]
+    }
+  ]
+}

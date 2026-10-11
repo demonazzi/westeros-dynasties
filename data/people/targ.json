@@ -169,12 +169,12 @@
         {"id":"bellenora","name":"Белленора Отерис","en":"Bellenora Otherys","fem":1,"k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"161–170"},
         {"id":"narha","name":"Нарха Отерис","en":"Narha Otherys","fem":1,"k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"162–171"},
         {"id":"balerion_o","name":"Балерион Отерис","en":"Balerion Otherys","k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"163–172"},
-        {"id":"aegor","name":"Эйгор Риверс","full":"Эйгор Риверс, Жгучий Клинок","en":"Aegor Rivers, Bittersteel","k":"R","p":"aegon4","par":["aegon4","Барба Бракен"],"b":"172","sp":[["calla"]]},
+        {"id":"aegor","name":"Эйгор Риверс","full":"Эйгор Риверс, Жгучий Клинок","en":"Aegor Rivers, Bittersteel","k":"R","p":"aegon4","par":["aegon4","barba"],"b":"172","sp":[["calla"]]},
         {"id":"mya","name":"Мейя Риверс","en":"Mya Rivers","fem":1,"k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"172/173"},
         {"id":"gwenys","name":"Гвенис Риверс","en":"Gwenys Rivers","fem":1,"k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"173/174"},
         {"id":"brynden","name":"Бринден Риверс","full":"Бринден Риверс, Кровавый Ворон","en":"Brynden Rivers, Bloodraven","k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"175"},
         {"id":"shiera","name":"Шира","full":"Шира Звезда Морей","en":"Shiera Seastar","fem":1,"k":"R","p":"aegon4","par":["aegon4","Серенея из Лисса"],"b":"178–184"},
-        {"id":"butterwell_kids","name":"Бастарды","full":"Бастарды Эйгона IV от дочерей лорда Баттервелла","group":1,"k":"R","p":"aegon4","par":["aegon4 (по рассказам)","дочери лорда Баттервелла"],"unc":1,"wiki":"Aegon IV Targaryen"},
+        {"id":"butterwell_kids","name":"Бастарды","full":"Бастарды Эйгона IV от дочерей лорда Баттервелла","group":1,"k":"R","p":"aegon4","par":["aegon4 (по рассказам)","btw_gf_daus"],"unc":1,"wiki":"Aegon IV Targaryen"},
         {"id":"jeyne_lt","name":"Джейн Лотстон","en":"Jeyne Lothston","fem":1,"hs":"oth","h":"Лотстонов","k":"T","p":"aegon4","par":["Лукас Лотстон (официально)","Фалена Стокворт","aegon4 (по слухам)"],"unc":1,"b":"164"}
       ]
     },

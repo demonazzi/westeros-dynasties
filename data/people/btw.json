@@ -1,0 +1,25 @@
+{
+  "title": "Баттервеллы",
+  "about": "Дом Баттервеллов (Белые Стены), знаменосцы Талли.",
+  "groups": [
+    {
+      "title": "Баттервеллы при Мейгоре и Джейехерисе I",
+      "people": [
+        {"id":"alton_b","name":"Алтон Баттервелл","en":"Alton Butterwell","hs":"btw","k":"T"},
+        {"id":"alton_sis","name":"Сестра","full":"Сестра Алтона Баттервелла","fem":1,"hs":"btw","k":"T","wiki":"Alton Butterwell"},
+        {"id":"beatrice","name":"Беатрис Баттервелл","en":"Beatrice Butterwell","fem":1,"hs":"btw","k":"T"}
+      ]
+    },
+    {
+      "title": "Белые Стены",
+      "people": [
+        {"id":"btw_gf","name":"Лорд Баттервелл","full":"Лорд Баттервелл, десница Эйгона IV","hs":"btw","k":"T","wiki":"Ambrose Butterwell"},
+        {"id":"btw_gf_daus","name":"Три дочери","full":"Дочери лорда Баттервелла, деда Амброза","fem":1,"group":1,"hs":"btw","k":"T","p":"btw_gf","par":["btw_gf"],"wiki":"Aegon IV Targaryen"},
+        {"id":"btw_gf_son","name":"Сын","full":"Сын лорда Баттервелла, отец Амброза","hs":"btw","k":"T","p":"btw_gf","par":["btw_gf"],"wiki":"Ambrose Butterwell"},
+        {"id":"ambrose","name":"Амброз Баттервелл","en":"Ambrose Butterwell","hs":"btw","k":"T","p":"btw_gf_son","par":["btw_gf_son"],"b":"161/162","sp":[["первая жена, имя не названа"],["lady_butterwell","212 г."]]},
+        {"id":"ambrose_sons","name":"Три сына","full":"Сыновья Амброза Баттервелла","group":1,"hs":"btw","k":"T","p":"ambrose","par":["ambrose","первая жена Амброза"],"wiki":"Ambrose Butterwell"},
+        {"id":"ambrose_daus","name":"Три дочери","full":"Дочери Амброза Баттервелла","fem":1,"group":1,"hs":"btw","k":"T","p":"ambrose","par":["ambrose","первая жена Амброза"],"wiki":"Ambrose Butterwell"}
+      ]
+    }
+  ]
+}
