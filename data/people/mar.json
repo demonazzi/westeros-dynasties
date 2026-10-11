@@ -14,7 +14,9 @@
       "title": "Эпоха Танца драконов",
       "people": [
         {"id":"qoren","name":"Корен Мартелл","en":"Qoren Martell","hs":"mar","k":"T"},
-        {"id":"aliandra","name":"Алиандра Мартелл","en":"Aliandra Martell","fem":1,"hs":"mar","k":"T","p":"qoren","b":"115","sp":[["alyn","по слухам — возлюбленный","l"],["Драженко Рогаре","принц-консорт"]]}
+        {"id":"aliandra","name":"Алиандра Мартелл","en":"Aliandra Martell","fem":1,"hs":"mar","k":"T","p":"qoren","b":"115","sp":[["alyn","по слухам — возлюбленный","l"],["Драженко Рогаре","принц-консорт"]]},
+        {"id":"qyle","name":"Кайл Мартелл","en":"Qyle Martell","hs":"mar","k":"T","p":"qoren","par":["qoren"],"b":"116–132"},
+        {"id":"coryanne","name":"Корианна Мартелл","en":"Coryanne Martell","fem":1,"hs":"mar","k":"T","p":"qoren","par":["qoren"],"b":"116–132"}
       ]
     },
     {
@@ -22,7 +24,10 @@
       "people": [
         {"id":"dorne_p14","name":"Принц Дорна","full":"Принц Дорна, отец Мирии и Марона","hs":"mar","k":"T","wiki":"Maron Martell"},
         {"id":"myriah","name":"Мирия Мартелл","en":"Myriah Martell","fem":1,"hs":"mar","k":"T","p":"dorne_p14","sp":[["daeron2"]]},
-        {"id":"maron","name":"Марон Мартелл","en":"Maron Martell","hs":"mar","k":"T","p":"dorne_p14","sp":[["daenerys_n","187 г."]]}
+        {"id":"maron","name":"Марон Мартелл","en":"Maron Martell","hs":"mar","k":"T","p":"dorne_p14","sp":[["daenerys_n","187 г."]]},
+        {"id":"maron_son","name":"Сын","full":"Старший сын Марона Мартелла","hs":"mar","k":"T","p":"maron","par":["maron","daenerys_n"],"wiki":"Maron Martell"},
+        {"id":"maron_sons","name":"Сыновья","full":"Младшие сыновья Марона Мартелла","group":1,"hs":"mar","k":"T","p":"maron","par":["maron","daenerys_n"],"wiki":"Maron Martell"},
+        {"id":"maron_daus","name":"Дочери","full":"Дочери Марона Мартелла","fem":1,"group":1,"hs":"mar","k":"T","p":"maron","par":["maron","daenerys_n"],"wiki":"Maron Martell"}
       ]
     },
     {
@@ -31,6 +36,8 @@
         {"id":"dorne_p19","name":"Принцесса Дорна","full":"Принцесса Дорна, мать Дорана, Элии и Оберина","fem":1,"hs":"mar","k":"T","wiki":"Doran Martell"},
         {"id":"lewyn","name":"Левин Мартелл","en":"Lewyn Martell","hs":"mar","k":"T","d":"283"},
         {"id":"doran","name":"Доран Мартелл","en":"Doran Martell","hs":"mar","k":"T","p":"dorne_p19","b":"247","sp":[["Мелларио из Норвоса"]]},
+        {"id":"mors_m","name":"Морс Мартелл","full":"Морс Мартелл, брат Дорана","en":"Mors Martell","hs":"mar","k":"T","p":"dorne_p19","par":["dorne_p19"],"b":"248–257","d":"248–258","wiki":"Mors Martell (brother of Doran)"},
+        {"id":"olyvar","name":"Оливар Мартелл","en":"Olyvar Martell","hs":"mar","k":"T","p":"dorne_p19","par":["dorne_p19"],"b":"248–256","d":"248–257"},
         {"id":"elia","name":"Элия Мартелл","en":"Elia Martell","fem":1,"hs":"mar","k":"T","p":"dorne_p19","b":"257","d":"283","sp":[["rhaegar","280 г."]]},
         {"id":"oberyn","name":"Оберин Мартелл","en":"Oberyn Martell","al":["Красный Змей"],"hs":"mar","k":"T","p":"dorne_p19","b":"257","d":"300","sp":[["Эллария Сэнд","возлюбленная","l"]]},
         {"id":"arianne","name":"Арианна Мартелл","en":"Arianne Martell","fem":1,"hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"276"},

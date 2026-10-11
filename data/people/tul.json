@@ -5,14 +5,16 @@
     {
       "title": "",
       "people": [
-        {"id":"edmyn","name":"Эдмин Талли","en":"Edmyn Tully","hs":"tul","k":"T"}
+        {"id":"edmyn","name":"Эдмин Талли","en":"Edmyn Tully","hs":"tul","k":"T"},
+        {"id":"edmyn_daus","name":"Три дочери","full":"Три дочери Эдмина Талли","fem":1,"group":1,"hs":"tul","k":"T","p":"edmyn","par":["edmyn","жена не названа"],"wiki":"Edmyn Tully"}
       ]
     },
     {
       "title": "Танец драконов",
       "people": [
         {"id":"grover","name":"Гровер Талли","en":"Grover Tully","hs":"tul","k":"T"},
-        {"id":"elmo","name":"Элмо Талли","en":"Elmo Tully","hs":"tul","k":"T"},
+        {"id":"grover_son","name":"Сын","full":"Сын Гровера Талли, отец Элмо","hs":"tul","k":"T","p":"grover","par":["grover","жена не названа"],"wiki":"Grover Tully"},
+        {"id":"elmo","name":"Элмо Талли","en":"Elmo Tully","hs":"tul","k":"T","p":"grover_son","par":["grover_son","жена не названа"]},
         {"id":"kermit","name":"Кермит Талли","en":"Kermit Tully","hs":"tul","k":"T","p":"elmo"},
         {"id":"oscar","name":"Оскар Талли","en":"Oscar Tully","hs":"tul","k":"T","p":"elmo"}
       ]
@@ -23,9 +25,11 @@
         {"id":"tul_lord17","name":"Лорд Талли","full":"Лорд Талли, отец Хостера и Бриндена","hs":"tul","k":"T","wiki":"Hoster Tully"},
         {"id":"hoster","name":"Хостер Талли","en":"Hoster Tully","hs":"tul","k":"T","p":"tul_lord17","d":"299","sp":[["Миниса Уэнт","умерла в родах"]]},
         {"id":"brynden_t","name":"Бринден Талли","full":"Бринден Талли, Чёрная Рыба","en":"Brynden Tully, the Blackfish","al":["Чёрная Рыба"],"hs":"tul","k":"T","p":"tul_lord17"},
+        {"id":"hoster_sons","name":"Двое сыновей","full":"Старшие сыновья Хостера Талли","group":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"в младенчестве","wiki":"Hoster Tully"},
         {"id":"catelyn","name":"Кейтилин Талли","en":"Catelyn Tully","fem":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"299","sp":[["brandon_r","помолвка","b"],["eddard"]]},
         {"id":"lysa","name":"Лиза Талли","en":"Lysa Tully","fem":1,"hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"300","sp":[["jon_a"],["Петир Бейлиш"]]},
-        {"id":"edmure","name":"Эдмур Талли","en":"Edmure Tully","hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"sp":[["roslin_fr","299 г."]]}
+        {"id":"edmure","name":"Эдмур Талли","en":"Edmure Tully","hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"sp":[["roslin_fr","299 г."]]},
+        {"id":"hoster_son","name":"Сын","full":"Последний сын Хостера Талли","hs":"tul","k":"T","p":"hoster","par":["hoster","Миниса Уэнт"],"d":"при рождении","wiki":"Hoster Tully"}
       ]
     }
   ]

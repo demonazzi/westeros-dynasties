@@ -28,8 +28,13 @@
       "title": "Время книг",
       "people": [
         {"id":"tytos_bw","name":"Титос Блэквуд","en":"Tytos Blackwood","hs":"bw","k":"T"},
+        {"id":"brynden_bw","name":"Бринден Блэквуд","en":"Brynden Blackwood","hs":"bw","k":"T","p":"tytos_bw","par":["tytos_bw","жена не названа"],"b":"не позднее 282"},
         {"id":"lucas_bw","name":"Лукас Блэквуд","en":"Lucas Blackwood","hs":"bw","k":"T","p":"tytos_bw","d":"299"},
-        {"id":"hoster_bw","name":"Хостер Блэквуд","en":"Hoster Blackwood","hs":"bw","k":"T","p":"tytos_bw"}
+        {"id":"hoster_bw","name":"Хостер Блэквуд","en":"Hoster Blackwood","hs":"bw","k":"T","p":"tytos_bw"},
+        {"id":"edmund_bw","name":"Эдмунд Блэквуд","en":"Edmund Blackwood","hs":"bw","k":"T","p":"tytos_bw","par":["tytos_bw","жена не названа"],"b":"287/288"},
+        {"id":"alyn_bw","name":"Алин Блэквуд","en":"Alyn Blackwood","hs":"bw","k":"T","p":"tytos_bw","par":["tytos_bw","жена не названа"],"b":"288–291"},
+        {"id":"bethany_bw","name":"Бетани Блэквуд","en":"Bethany Blackwood","fem":1,"hs":"bw","k":"T","p":"tytos_bw","par":["tytos_bw","жена не названа"],"b":"291/292"},
+        {"id":"robert_bw","name":"Роберт Блэквуд","en":"Robert Blackwood","hs":"bw","k":"T","p":"tytos_bw","par":["tytos_bw","жена не названа"],"b":"292–300","d":"300"}
       ]
     }
   ]
