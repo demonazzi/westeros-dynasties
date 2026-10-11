@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -13,6 +13,11 @@
     {"house":"arr","roots":[["sharra",5],["hubert",6],["joffrey_a",10],["isembard",10],["donnel",14],["alys_r",15],["jasper",17],["denys",19]]},
     {"house":"tul","roots":[["edmyn",6],["grover",9],["tul_lord17",17]]},
     {"house":"fry","liege":"tul","roots":[["forrest_fr",10],["sabitha_fr",10],["fr_lord14",14],["alys_fr",17],["jyanna_fr",17],["theo_fr",18]]},
+    {"house":"roy","liege":"arr","roots":[["allard",8],["yorbert",10],["willam_r",11],["gunthor_r",11],["alyssa_r",12],["lorra",15],["perra",17],["benedict",17],["yohn",18],["nestor",18],["jeyne_r",18],["kyle_r",18],["ryella",19]]},
+    {"house":"bae","liege":"arr","roots":[["bae_ss",16]]},
+    {"house":"cor","liege":"arr","roots":[["gawen",6],["qarl",8],["cor_lord9",9],["gwayne_c",14],["cor_lord17",17]]},
+    {"house":"way","liege":"arr","roots":[["wild_wyl",14],["way_lord",16],["marsella",18],["carolei",19]]},
+    {"house":"har","liege":"arr","roots":[["humfrey_hd",15],["hardyng_kn",18],["deana",18]]},
     {"house":"brk","liege":"tul","roots":[["lyle_b",7],["olyver_b",7],["humfrey_b",10],["brk_lord13",12],["brk_lord16",15],["brk_lord18",17]]},
     {"house":"mal","liege":"tul","roots":[["lymond",9],["jorah_mal",10],["joseth",15],["desmond_mal",15],["mal_lord",16],["jeffory",18]]},
     {"house":"btw","liege":"tul","roots":[["alton_b",8],["alton_sis",8],["beatrice",9],["btw_gf",11]]},
@@ -53,7 +58,12 @@
     "brk": {"name":"Дом Бракенов","band":"Бракены","motto":"Стоунхедж","sigil":{"field":"#6B4A2B","charge":"#B3261E"}},
     "mal": {"name":"Дом Маллистеров","band":"Маллистеры","motto":"Сигард · «Над прочими»","sigil":{"field":"#3A2E6E","charge":"#DCDDE2"}},
     "btw": {"name":"Дом Баттервеллов","band":"Баттервеллы","motto":"Белые Стены","sigil":{"field":"#3F7D3A","charge":"#F3F1E8"}},
-    "pip": {"name":"Дом Пайперов","band":"Пайперы","motto":"Розовая Дева · «Храбры и прекрасны»","sigil":{"field":"#2D4C8C","charge":"#E9A0BC"}}
+    "pip": {"name":"Дом Пайперов","band":"Пайперы","motto":"Розовая Дева · «Храбры и прекрасны»","sigil":{"field":"#2D4C8C","charge":"#E9A0BC"}},
+    "roy": {"name":"Дом Ройсов","band":"Ройсы","motto":"Рунный Камень · «Мы помним»","sigil":{"field":"#B48A52","charge":"#191714"}},
+    "bae": {"name":"Дом Бейлишей","band":"Бейлиши","motto":"Пальцы","sigil":{"field":"#3E7D4A","charge":"#E4E5E8"}},
+    "cor": {"name":"Дом Корбреев","band":"Корбреи","motto":"Дом Сердец","sigil":{"field":"#EFEDE8","charge":"#18171A"}},
+    "way": {"name":"Дом Уэйнвудов","band":"Уэйнвуды","motto":"Железная Дубрава","sigil":{"field":"#356B3A","charge":"#151515"}},
+    "har": {"name":"Дом Хардингов","band":"Хардинги","motto":"Долина Аррен","sigil":{"field":"#F2F0EC","charge":"#B3261E"}}
   },
   "gaps": [
     {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},

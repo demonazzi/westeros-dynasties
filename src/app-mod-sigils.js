@@ -105,6 +105,46 @@
       '<path d="M31 26.5 H35 L37 36 L42 50 C38 52 30 52 25 50 L30 36 Z" fill="' + c + '"/>' +
       '<path d="M31.5 28 L22 23 M34.5 28 L43 33" stroke="' + c + '" stroke-width="2.3" stroke-linecap="round"/>' +
       '<path d="M30.5 50.5 L29 60 M34.5 50.5 L38 59" stroke="' + c + '" stroke-width="2.3" stroke-linecap="round"/>',
+    // чёрные железные заклёпки на бронзе в кайме из рун (Ройсы)
+    roy: (f, c) => {
+      let out = '<path d="' + INNER + '" fill="none" stroke="' + c + '" stroke-width="1.2" opacity=".7"/>';
+      const runes = ['M14 22 v5 l2 -2', 'M20 19 l2 4 l2 -4', 'M47 22 v5 l-2 -2', 'M41 19 l-2 4 l-2 -4', 'M13 34 l3 2 l-3 2', 'M51 34 l-3 2 l3 2', 'M15 46 v4 h2', 'M49 46 v4 h-2', 'M22 58 l2 -3 l2 3', 'M40 58 l-2 -3 l-2 3'];
+      runes.forEach(r => { out += '<path d="' + r + '" stroke="' + c + '" stroke-width="1.1" fill="none" stroke-linecap="round"/>'; });
+      [[25, 28], [32, 28], [39, 28], [25, 36], [32, 36], [39, 36], [25, 44], [32, 44], [39, 44], [32, 52]].forEach(([x, y]) => {
+        out += '<circle cx="' + x + '" cy="' + y + '" r="2.6" fill="' + c + '"/><circle cx="' + (x - 0.8) + '" cy="' + (y - 0.8) + '" r=".8" fill="' + f + '" opacity=".6"/>';
+      });
+      return out;
+    },
+    // серебряные пересмешники на зелёном (Бейлиши)
+    bae: (f, c) => {
+      const bird = (x, y, s) => '<g transform="translate(' + x + ' ' + y + ') scale(' + s + ')"><path d="M0 0 C3 -3 8 -3 10 0 L14 -1 L11 2 C9 5 4 6 0 4 L-5 6 L-3 2 Z" fill="' + c + '"/><path d="M3 0 C5 -5 9 -6 11 -6 C9 -3 8 -1 6 0 Z" fill="' + c + '" opacity=".85"/><circle cx="9.5" cy="-0.5" r=".6" fill="' + f + '"/></g>';
+      return bird(16, 30, 1) + bird(34, 27, 1) + bird(25, 44, 1.1) + bird(18, 57, .8) + bird(37, 56, .8);
+    },
+    // три чёрных ворона с красными сердцами на белом (Корбреи)
+    cor: (f, c) => {
+      const raven = (x, y) => '<g transform="translate(' + x + ' ' + y + ')"><path d="M0 0 C-3 -5 -9 -7 -12 -6 C-9 -4 -8 -2 -7 0 C-9 0 -11 1 -12 3 L-6 3 C-4 5 0 5 2 3 L7 1 L4 0 C4 -2 2 -3 0 -2 Z" fill="' + c + '"/><path d="M-1 6 c-1.4 -1.4 -3 0 -1.6 1.4 l1.6 1.6 l1.6 -1.6 c1.4 -1.4 -0.2 -2.8 -1.6 -1.4 Z" fill="#B3261E"/></g>';
+      return raven(24, 25) + raven(46, 25) + raven(35, 44);
+    },
+    // чёрное сломанное колесо на зелёном (Уэйнвуды)
+    way: (f, c) => {
+      let out = '<path d="M32 26 A14 14 0 1 1 20 33" stroke="' + c + '" stroke-width="4" fill="none"/><circle cx="32" cy="40" r="3.6" fill="' + c + '"/>';
+      for (let i = 0; i < 8; i++) {
+        if (i === 5) continue;
+        const a = i * Math.PI / 4;
+        out += '<path d="M' + (32 + Math.cos(a) * 3.5).toFixed(1) + ' ' + (40 + Math.sin(a) * 3.5).toFixed(1) + ' L' + (32 + Math.cos(a) * 13).toFixed(1) + ' ' + (40 + Math.sin(a) * 13).toFixed(1) + '" stroke="' + c + '" stroke-width="2.2"/>';
+      }
+      return out + '<path d="M19 30 L16 27 M21 29 L19 25" stroke="' + c + '" stroke-width="2" stroke-linecap="round"/>';
+    },
+    // красные и белые ромбы (Хардинги)
+    har: (f, c) => {
+      let out = '';
+      // красные ромбы встык; белые ромбы — промежутки между ними
+      for (let r = 0; r < 5; r++) for (let q = 0; q < 7; q++) {
+        const x = 2 + q * 10, y = 10 + r * 16;
+        out += '<path d="M' + x + ' ' + y + ' l5 8 l-5 8 l-5 -8 Z" fill="' + c + '"/>';
+      }
+      return out;
+    },
     // ступенчатая белая башня, увенчанная огнём
     hgt: (f, c) =>
       '<path d="M20 63 H44 V58 H20 Z M22 57 H42 L41 45 H23 Z M21 45 H43 V42 H21 Z M25 41 H39 L38 32 H26 Z M24 32 H40 V29.5 H24 Z M27.5 29 H36.5 L35.5 24.5 H28.5 Z" fill="' + c + '"/>' +

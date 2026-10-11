@@ -1,0 +1,29 @@
+{
+  "title": "Корбреи",
+  "about": "Дом Корбреев (Дом Сердец), знаменосцы Арренов.",
+  "groups": [
+    {
+      "title": "Корбреи при Таргариенах",
+      "people": [
+        {"id":"gawen","name":"Гавен Корбрей","full":"Сир Гавен Корбрей","en":"Gawen Corbray","hs":"cor","k":"T"},
+        {"id":"qarl","name":"Кварл Корбрей","en":"Qarl Corbray","hs":"cor","k":"T","d":"59"},
+        {"id":"cor_lord9","name":"Лорд Корбрей","full":"Лорд Корбрей, отец Леовина и Корвина","hs":"cor","k":"T","wiki":"Leowyn Corbray"},
+        {"id":"leowyn","name":"Леовин Корбрей","en":"Leowyn Corbray","hs":"cor","k":"T","p":"cor_lord9","par":["cor_lord9"],"b":"не позднее 99","d":"133"},
+        {"id":"quenton_cb","name":"Квентон Корбрей","en":"Quenton Corbray","hs":"cor","k":"T","p":"leowyn","par":["leowyn"]},
+        {"id":"corwyn_c","name":"Корвин Корбрей","full":"Сир Корвин Корбрей","en":"Corwyn Corbray","hs":"cor","k":"T","p":"cor_lord9","par":["cor_lord9"],"d":"135","sp":[["первая жена, имя не названа"],["rhaena_d","второй брак"]]},
+        {"id":"corwyn_daus","name":"Две дочери","full":"Дочери Корвина Корбрея","fem":1,"group":1,"hs":"cor","k":"T","p":"corwyn_c","par":["corwyn_c","первая жена Корвина"],"wiki":"Corwyn Corbray"},
+        {"id":"gwayne_c","name":"Гвейн Корбрей","full":"Сир Гвейн Корбрей","en":"Gwayne Corbray","hs":"cor","k":"T"}
+      ]
+    },
+    {
+      "title": "Дом Сердец в конце третьего века",
+      "people": [
+        {"id":"cor_lord17","name":"Лорд Корбрей","full":"Лорд Корбрей, отец Лионеля","hs":"cor","k":"T","wiki":"Lyonel Corbray"},
+        {"id":"lyonel_c","name":"Лионель Корбрей","en":"Lyonel Corbray","hs":"cor","k":"T","p":"cor_lord17","par":["cor_lord17"],"b":"≈260","sp":[["первая жена, имя не названа"],["дочь богатого купца из Чаячьего города","вторая жена"]]},
+        {"id":"lyonel_baby","name":"Ребёнок","full":"Ребёнок Лионеля Корбрея","hs":"cor","k":"T","p":"lyonel_c","par":["lyonel_c","первая жена Лионеля"],"d":"в младенчестве","wiki":"Lyonel Corbray"},
+        {"id":"lyn","name":"Лин Корбрей","full":"Сир Лин Корбрей","en":"Lyn Corbray","hs":"cor","k":"T","p":"cor_lord17","par":["cor_lord17"],"b":"261–268"},
+        {"id":"lucas_c","name":"Лукас Корбрей","full":"Сир Лукас Корбрей","en":"Lucas Corbray","hs":"cor","k":"T","p":"cor_lord17","par":["cor_lord17"]}
+      ]
+    }
+  ]
+}

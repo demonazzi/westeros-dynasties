@@ -1,0 +1,23 @@
+{
+  "title": "Уэйнвуды",
+  "about": "Дом Уэйнвудов (Железная Дубрава), знаменосцы Арренов.",
+  "groups": [
+    {
+      "title": "Уэйнвуды",
+      "people": [
+        {"id":"wild_wyl","name":"Уил Уэйнвуд","full":"Дикий Уил Уэйнвуд","en":"Wyl Waynwood","al":["Дикий Уил"],"hs":"way","k":"T","d":"196","wiki":"Wild Wyl Waynwood"},
+        {"id":"way_lord","name":"Лорд Уэйнвуд","full":"Лорд Уэйнвуд, отец Эллиса","hs":"way","k":"T","wiki":"Elys Waynwood"},
+        {"id":"elys","name":"Эллис Уэйнвуд","full":"Сир Эллис Уэйнвуд","en":"Elys Waynwood","hs":"way","k":"T","p":"way_lord","par":["way_lord"],"b":"не позднее 251","sp":[["alys_j"]]},
+        {"id":"anya_par","name":"Брат или сестра","full":"Брат или сестра Эллиса, родитель Аньи Уэйнвуд","hs":"way","k":"T","p":"way_lord","par":["way_lord"],"wiki":"Anya Waynwood"},
+        {"id":"anya","name":"Анья Уэйнвуд","en":"Anya Waynwood","fem":1,"hs":"way","k":"T","p":"anya_par","par":["anya_par"],"sp":[["лорд Элешем","умер"]]},
+        {"id":"morton","name":"Мортон Уэйнвуд","full":"Сир Мортон Уэйнвуд","en":"Morton Waynwood","hs":"way","k":"T","p":"anya","par":["anya"]},
+        {"id":"roland_w","name":"Роланд Уэйнвуд","full":"Сир Роланд Уэйнвуд","en":"Roland Waynwood","hs":"way","k":"T","p":"morton","par":["morton"],"b":"274–281"},
+        {"id":"donnel_w","name":"Доннел Уэйнвуд","full":"Сир Доннел Уэйнвуд","en":"Donnel Waynwood","hs":"way","k":"T","p":"anya","par":["anya"],"b":"277/278"},
+        {"id":"wallace_w","name":"Уоллес Уэйнвуд","full":"Сир Уоллес Уэйнвуд","en":"Wallace Waynwood","hs":"way","k":"T","p":"anya","par":["anya"],"b":"278–283"},
+        {"id":"anya_daus","name":"Дочери","full":"Дочери Аньи Уэйнвуд","fem":1,"group":1,"hs":"way","k":"T","p":"anya","par":["anya"],"wiki":"Anya Waynwood"},
+        {"id":"marsella","name":"Марселла Уэйнвуд","en":"Marsella Waynwood","fem":1,"hs":"way","k":"T","sp":[["stevron_fr","третья жена; умерла в родах"]]},
+        {"id":"carolei","name":"Каролея Уэйнвуд","en":"Carolei Waynwood","fem":1,"hs":"way","k":"T","sp":[["geremy_fr"]]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Ройсы",
+  "about": "Дом Ройсов из Рунного Камня и младшая ветвь из Лунных Врат, знаменосцы Арренов.",
+  "groups": [
+    {
+      "title": "Ройсы при Таргариенах",
+      "people": [
+        {"id":"allard","name":"Аллард Ройс","en":"Allard Royce","hs":"roy","k":"T"},
+        {"id":"alayne_r","name":"Алейна Ройс","en":"Alayne Royce","fem":1,"hs":"roy","k":"T","p":"allard","par":["allard"]},
+        {"id":"yorbert","name":"Йорберт Ройс","en":"Yorbert Royce","hs":"roy","k":"T","d":"101–103"},
+        {"id":"rhea","name":"Рея Ройс","en":"Rhea Royce","fem":1,"hs":"roy","k":"T","p":"yorbert","par":["yorbert (возможно)"],"unc":1,"d":"115","sp":[["daemon","97 г."]]},
+        {"id":"willam_r","name":"Виллам Ройс","full":"Сир Виллам Ройс","en":"Willam Royce","hs":"roy","k":"T"},
+        {"id":"gunthor_r","name":"Гунтор Ройс","full":"Гунтор Ройс, Бронзовый Великан","en":"Gunthor Royce","al":["Бронзовый Великан"],"hs":"roy","k":"T"},
+        {"id":"alyssa_r","name":"Алисса Ройс","en":"Alyssa Royce","fem":1,"hs":"roy","k":"T"}
+      ]
+    },
+    {
+      "title": "Ройсы — жёны других домов",
+      "people": [
+        {"id":"lorra","name":"Лорра Ройс","en":"Lorra Royce","fem":1,"hs":"roy","k":"T","sp":[["beron"]]},
+        {"id":"perra","name":"Перра Ройс","en":"Perra Royce","fem":1,"hs":"roy","k":"T","sp":[["walder_fr","первая жена"]]},
+        {"id":"benedict","name":"Бенедикт Ройс","en":"Benedict Royce","hs":"roy","k":"T","sp":[["jocelyn_s"]]},
+        {"id":"benedict_daus","name":"Три дочери","full":"Дочери Бенедикта Ройса и Джослин Старк","fem":1,"group":1,"hs":"roy","k":"T","p":"benedict","par":["benedict","jocelyn_s"],"wiki":"Benedict Royce"},
+        {"id":"jeyne_r","name":"Джейн Ройс","en":"Jeyne Royce","fem":1,"hs":"roy","k":"T","sp":[["jon_a","первая жена; умерла в родах"]]},
+        {"id":"ryella","name":"Риэлла Ройс","en":"Ryella Royce","fem":1,"hs":"roy","k":"T","sp":[["arwood_fr"]]}
+      ]
+    },
+    {
+      "title": "Рунный Камень и Лунные Врата в конце третьего века",
+      "people": [
+        {"id":"kyle_r","name":"Кайл Ройс","en":"Kyle Royce","hs":"roy","k":"T","d":"282"},
+        {"id":"yohn","name":"Джон Ройс","full":"Джон Ройс, Бронзовый Джон","en":"Yohn Royce","al":["Бронзовый Джон"],"hs":"roy","k":"T","b":"не позднее 265","sp":[["жена, имя не названа"]]},
+        {"id":"andar","name":"Андар Ройс","full":"Сир Андар Ройс","en":"Andar Royce","hs":"roy","k":"T","p":"yohn","par":["yohn"],"b":"не позднее 277"},
+        {"id":"robar","name":"Робар Ройс","full":"Сир Робар Ройс, Красный Робар","en":"Robar Royce","al":["Красный Робар"],"hs":"roy","k":"T","p":"yohn","par":["yohn"],"b":"277/278","d":"299"},
+        {"id":"waymar","name":"Уэймар Ройс","full":"Сир Уэймар Ройс","en":"Waymar Royce","hs":"roy","k":"T","p":"yohn","par":["yohn"],"b":"278/279","d":"297"},
+        {"id":"ysilla","name":"Изилла Ройс","en":"Ysilla Royce","fem":1,"hs":"roy","k":"T","p":"yohn","par":["yohn"]},
+        {"id":"yohn_daus","name":"Дочери","full":"Другие дочери Джона Ройса","fem":1,"group":1,"hs":"roy","k":"T","p":"yohn","par":["yohn"],"wiki":"Yohn Royce"},
+        {"id":"nestor","name":"Нестор Ройс","en":"Nestor Royce","hs":"roy","k":"T","par":["родители не названы; кузен Бронзового Джона"],"sp":[["жена, умершая"]]},
+        {"id":"albar","name":"Албар Ройс","full":"Сир Албар Ройс","en":"Albar Royce","hs":"roy","k":"T","p":"nestor","par":["nestor"]},
+        {"id":"myranda","name":"Миранда Ройс","en":"Myranda Royce","fem":1,"hs":"roy","k":"T","p":"nestor","par":["nestor"],"b":"≈279","sp":[["муж, умерший"]]}
+      ]
+    }
+  ]
+}

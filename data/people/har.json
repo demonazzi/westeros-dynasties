@@ -1,0 +1,15 @@
+{
+  "title": "Хардинги",
+  "about": "Дом Хардингов, знаменосцы Уэйнвудов.",
+  "groups": [
+    {
+      "title": "Хардинги",
+      "people": [
+        {"id":"humfrey_hd","name":"Хамфри Хардинг","full":"Сир Хамфри Хардинг","en":"Humfrey Hardyng","hs":"har","k":"T","d":"209"},
+        {"id":"hardyng_kn","name":"Рыцарь Хардинг","full":"Хардинг, отец Гарольда","hs":"har","k":"T","wiki":"Harrold Hardyng"},
+        {"id":"alys_stone","name":"Алис Стоун","en":"Alys Stone","fem":1,"hs":"har","k":"R","p":"harrold","par":["harrold","Сисси"],"b":"298"},
+        {"id":"deana","name":"Дина Хардинг","en":"Deana Hardyng","fem":1,"hs":"har","k":"T","sp":[["walton_fr"]]}
+      ]
+    }
+  ]
+}

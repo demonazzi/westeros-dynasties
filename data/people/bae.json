@@ -1,0 +1,15 @@
+{
+  "title": "Бейлиши",
+  "about": "Дом Бейлишей (Пальцы, Харренхолл).",
+  "groups": [
+    {
+      "title": "Бейлиши",
+      "people": [
+        {"id":"bae_ss","name":"Бейлиш","full":"Наёмник Бейлиш","hs":"bae","k":"T","wiki":"House Baelish"},
+        {"id":"bae_hk","name":"Бейлиш","full":"Рыцарь Бейлиш, дед Петира","hs":"bae","k":"T","p":"bae_ss","par":["bae_ss"],"wiki":"House Baelish"},
+        {"id":"bae_lord","name":"Лорд Бейлиш","full":"Лорд Бейлиш, отец Петира","hs":"bae","k":"T","p":"bae_hk","par":["bae_hk"],"sp":[["Алейна"]],"wiki":"House Baelish"},
+        {"id":"petyr","name":"Петир Бейлиш","full":"Петир Бейлиш, Мизинец","en":"Petyr Baelish","al":["Мизинец"],"hs":"bae","k":"T","p":"bae_lord","par":["bae_lord","Алейна"],"b":"268","sp":[["lysa","300 г."]]}
+      ]
+    }
+  ]
+}

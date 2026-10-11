@@ -74,7 +74,7 @@
       "people": [
         {"id":"rhaenys_q","name":"Рейенис","full":"Рейенис, Королева, которой никогда не было","en":"Rhaenys, the Queen Who Never Was","fem":1,"k":"T","p":"aemon_j","par":["aemon_j","jocelyn"],"b":"74","d":"129","dr":"Мелейс","sp":[["corlys","90 г."]],"wiki":"Rhaenys Targaryen (daughter of Aemon)"},
         {"id":"viserys1","name":"Визерис I","en":"Viserys I","k":"K","n":5,"r":"103–129","p":"baelon_j","par":["baelon_j","alyssa_j"],"b":"77","d":"129","dr":"Балерион","sp":[["aemma","93 г."],["alicent","106 г."]]},
-        {"id":"daemon","name":"Деймон","full":"Деймон, Принц Города","en":"Daemon","k":"T","p":"baelon_j","par":["baelon_j","alyssa_j"],"b":"81","d":"130","dr":"Караксес","sp":[["Рея Ройс","97 г."],["laena","115 г."],["rhaenyra","120 г."]]},
+        {"id":"daemon","name":"Деймон","full":"Деймон, Принц Города","en":"Daemon","k":"T","p":"baelon_j","par":["baelon_j","alyssa_j"],"b":"81","d":"130","dr":"Караксес","sp":[["rhea","97 г."],["laena","115 г."],["rhaenyra","120 г."]]},
         {"id":"aegon_b","name":"Эйгон","full":"Эйгон, сын Бейлона","k":"T","p":"baelon_j","par":["baelon_j","alyssa_j"],"b":"84","d":"84","wiki":"Aegon Targaryen (son of Baelon)"},
         {"id":"saera_sons","name":"Сыновья","full":"Внебрачные сыновья Саэры","group":1,"k":"R","p":"saera","par":["разные отцы, один из них — триарх Волантиса","saera"],"wiki":"Saera Targaryen"},
         {"id":"gael_son","name":"Сын","full":"Мертворождённый сын Гаэль","k":"R","p":"gael","par":["странствующий певец","gael"],"b":"99","d":"99","wiki":"Gael Targaryen"}
@@ -97,7 +97,7 @@
       "title": "Дети Деймона и Лейны Веларион",
       "people": [
         {"id":"baela","name":"Бейла","en":"Baela","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","dr":"Лунная Плясунья","sp":[["jacaerys","помолвка","b"],["alyn"]]},
-        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","sp":[["lucerys","помолвка","b"],["Корвин Корбрей","первый муж, сир; погиб в 135 году"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
+        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","sp":[["lucerys","помолвка","b"],["corwyn_c","первый муж, сир; погиб в 135 году"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
         {"id":"son_laena","name":"Сын Лейны","full":"Сын Деймона и Лейны","k":"T","p":"daemon","par":["daemon","laena"],"b":"120","d":"120","wiki":"Laena Velaryon"}
       ]
     },
