@@ -1039,6 +1039,16 @@
 
   /* Представления: люди (древо домов) и те, что добавляют модули (драконы). Кнопки масштаба работают с текущим. */
   const hintEl = document.getElementById('hint');
+  // Подсказка вида исчезает после первого касания холста (перетащили, покрутили колесо, нажали) и больше
+  // в этом виде не показывается: на экране она закрывала древо. Запоминается в браузере, если он позволяет.
+  const hintSeen = new Set((() => { try { return JSON.parse(localStorage.getItem('hint-seen') || '[]'); } catch (e) { return []; } })());
+  const hintDone = e => {
+    const v = state.view;
+    if (hintSeen.has(v) || (e.target.closest && e.target.closest('.topbar, .panel, .legend, .zoom, .minimap'))) return;
+    hintSeen.add(v); hintEl.hidden = true;
+    try { localStorage.setItem('hint-seen', JSON.stringify([...hintSeen])); } catch (err) { /* хранилище недоступно */ }
+  };
+  ['pointerdown', 'wheel'].forEach(t => document.getElementById('canvas').addEventListener(t, hintDone, { passive: true }));
   const fitLabel = document.querySelector('#zoom-fit .label-wide');
   const linksBtnEl = document.getElementById('toggle-links');
   const lensbar = document.getElementById('lensbar');
@@ -1073,6 +1083,7 @@
     });
     linksBtnEl.hidden = !next.links;
     hintEl.innerHTML = next.hint;
+    hintEl.hidden = hintSeen.has(v);
     fitLabel.textContent = next.fitLabel || 'Всё';
     lensbar.hidden = !(App.lens && next.persons);
     document.getElementById('canvas').classList.toggle('has-scale', !!next.scale);
