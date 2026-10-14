@@ -11,7 +11,7 @@ d3 и шрифты: страница ничего не загружает из �
 ## Встроить на сайт
 
 ```html
-<iframe src="https://demonazzi.github.io/westeros-dynasties/?lang=en#h:stk" style="width:100%;height:800px;border:0"></iframe>
+<iframe src="https://demonazzi.github.io/westeros-dynasties/?lang=ru" style="width:100%;height:800px;border:0"></iframe>
 ```
 
 | адрес | что откроется |
