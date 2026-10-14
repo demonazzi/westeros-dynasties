@@ -3,7 +3,7 @@
    в карточке человека, из списка и из карточки дома во вкладке «Вассалитет». Проверяет историю (назад к человеку
    и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме (общий с «Вассалитетом») и его пометку ✎, сюзерена по вассалитету,
    королей краёв и претендентов, ярлыки полос у левого края,
-   английскую версию (английское название, под ним русское). */
+   английскую версию (английское название, без русского). */
 const { chromium } = require('/opt/npm-tools/node_modules/playwright');
 const fs = require('fs'), path = require('path');
 (async () => {
@@ -117,8 +117,8 @@ const fs = require('fs'), path = require('path');
   // 5 — английский
   p = await page();
   await p.goto(url + '?lang=en#h:bw'); await p.waitForTimeout(1500);
-  const en = await p.evaluate(() => ({ h2: document.querySelector('#panel h2').textContent, sub: document.querySelector('#panel .en').textContent }));
-  expect(en.h2 === 'House Blackwood' && en.sub === 'Дом Блэквудов', 'EN: английское название, под ним русское: ' + JSON.stringify(en));
+  const en = await p.evaluate(() => ({ h2: document.querySelector('#panel h2').textContent, sub: (document.querySelector('#panel .en') || {}).textContent }));
+  expect(en.h2 === 'House Blackwood' && en.sub === undefined, 'EN: английское название, русского под ним нет: ' + JSON.stringify(en));
   await b.close();
   if (bad.length) { console.log('КАРТОЧКА ДОМА — ОШИБКИ:\n' + bad.join('\n')); process.exit(1); }
   console.log('карточка дома в порядке: адрес, древо, хронология, список, вассалитет, карточка человека, история, подсветка, «Показать на древе», текст, английский');

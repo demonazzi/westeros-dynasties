@@ -4165,8 +4165,8 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
       '<div class="panel-top">' + medallion(p) + '<div>' +
         '<p class="eyebrow">' + eyebrowHtml(p) + '</p>' +
         '<h2>' + esc(p.full) + '</h2>' +
-        // второе имя под заголовком: в русском — английское, в английском — русское
-        ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
+        // в русской версии под именем — английское; в английской второго имени нет
+        (App.lang !== 'en' && p.en ? '<p class="en">' + esc(p.en) + '</p>' : '') +
       '</div></div>' +
       // в английском: перевод текста, если он есть; иначе русский с пометкой, что перевода пока нет
       (p.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
@@ -4831,7 +4831,7 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
       '<div class="panel-top">' + egg(d) + '<div>' +
         '<p class="eyebrow"><span>' + esc(App.t(d.sex === 'f' ? 'Дракон · самка' : d.sex === 'm' ? 'Дракон · самец' : 'Дракон')) + '</span>' + (origin ? ' · <span>' + esc(origin.name) + '</span>' : '') + '</p>' +
         '<h2>' + esc(d.full) + '</h2>' +
-        '<p class="en">' + esc(App.lang === 'en' ? (d.ruName || '') : d.en) + '</p>' +
+        (App.lang !== 'en' && d.en ? '<p class="en">' + esc(d.en) + '</p>' : '') +
       '</div></div>' +
       (d.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
       '<p class="note"' + (d.tUntranslated ? ' lang="ru"' : '') + '>' + esc(d.t) + '</p>' +
@@ -4969,9 +4969,9 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
       '</div>' +
       '<div class="panel-top">' + (App.sigilSVG ? App.sigilSVG(code, 0, 0, 64, 'medal') : '') + '<div>' +
         '<p class="eyebrow"><span>' + esc(kind) + '</span>' + (info ? ' · <span>' + esc(info.region) + '</span>' : '') + '</p>' +
-        // второе название под заголовком: в русском — английское, в английском — русское
+        // в русской версии под названием — английское; в английской второго названия нет
         '<h2>' + esc(App.lang === 'en' && H.name === H.ruName && info ? 'House ' + info.h.en : H.name) + '</h2>' +
-        (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
+        (App.lang !== 'en' && info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
       '</div></div>' +
       (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
       // текст о доме — texts/vassals.md, тот же, что во вкладке «Присяги»

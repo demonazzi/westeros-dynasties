@@ -382,7 +382,7 @@
       '<div class="panel-top">' + egg(d) + '<div>' +
         '<p class="eyebrow"><span>' + esc(App.t(d.sex === 'f' ? 'Дракон · самка' : d.sex === 'm' ? 'Дракон · самец' : 'Дракон')) + '</span>' + (origin ? ' · <span>' + esc(origin.name) + '</span>' : '') + '</p>' +
         '<h2>' + esc(d.full) + '</h2>' +
-        '<p class="en">' + esc(App.lang === 'en' ? (d.ruName || '') : d.en) + '</p>' +
+        (App.lang !== 'en' && d.en ? '<p class="en">' + esc(d.en) + '</p>' : '') +
       '</div></div>' +
       (d.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
       '<p class="note"' + (d.tUntranslated ? ' lang="ru"' : '') + '>' + esc(d.t) + '</p>' +

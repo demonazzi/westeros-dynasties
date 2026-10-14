@@ -51,9 +51,9 @@
       '</div>' +
       '<div class="panel-top">' + (App.sigilSVG ? App.sigilSVG(code, 0, 0, 64, 'medal') : '') + '<div>' +
         '<p class="eyebrow"><span>' + esc(kind) + '</span>' + (info ? ' · <span>' + esc(info.region) + '</span>' : '') + '</p>' +
-        // второе название под заголовком: в русском — английское, в английском — русское
+        // в русской версии под названием — английское; в английской второго названия нет
         '<h2>' + esc(App.lang === 'en' && H.name === H.ruName && info ? 'House ' + info.h.en : H.name) + '</h2>' +
-        (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
+        (App.lang !== 'en' && info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
       '</div></div>' +
       (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
       // текст о доме — texts/vassals.md, тот же, что во вкладке «Присяги»
