@@ -100,7 +100,8 @@ if (!crawl) { finish(); return; }
   const grab = async () => (await p.evaluate(() => {
     const out = [];
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    for (let n = w.nextNode(); n; n = w.nextNode()) if (!n.parentElement.closest('script,style')) out.push(n.nodeValue);
+    // подпись пунктира переносится по строкам — это куски строки данных (она переводится целиком), не ключи
+    for (let n = w.nextNode(); n; n = w.nextNode()) if (!n.parentElement.closest('script,style,.gap-note')) out.push(n.nodeValue);
     document.querySelectorAll('[title],[placeholder],[aria-label],[aria-valuetext]').forEach(el => ['title', 'placeholder', 'aria-label', 'aria-valuetext'].forEach(a => el.hasAttribute(a) && out.push(el.getAttribute(a))));
     return out;
   })).forEach(s => seen.add(norm(s)));

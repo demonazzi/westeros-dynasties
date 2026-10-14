@@ -5229,7 +5229,7 @@
  },
  "≈ 60 лет": {
   "en": "c. 60 years",
-  "ctx": "пропуск arr joffrey_a→donnel.years (и ещё 2)"
+  "ctx": "пропуск arr joffrey_a→donnel.years (и ещё 3)"
  },
  "около трёх поколений лордов Штормового Предела в книгах не названы": {
   "en": "about three generations of Lords of Storm's End are unnamed in the books",
@@ -5237,7 +5237,47 @@
  },
  "≈ 80 лет": {
   "en": "c. 80 years",
-  "ctx": "пропуск bar borros→lord_b208.years"
+  "ctx": "пропуск bar borros→lord_b208.years (и ещё 5)"
+ },
+ "лорды Каменной Ограды между ними в книгах не названы": {
+  "en": "the lords of Stone Hedge in between are not named in the books",
+  "ctx": "пропуск brk humfrey_b→brk_lord13.note (и ещё 2)"
+ },
+ "лорды Дома Сердец между ними в книгах не названы": {
+  "en": "the lords of Heart's Home in between are not named in the books",
+  "ctx": "пропуск cor qarl→cor_lord9.note (и ещё 1)"
+ },
+ "лорды Звездопада между ними в книгах не названы": {
+  "en": "the lords of Starfall in between are not named in the books",
+  "ctx": "пропуск day clarisse→day_lord17.note"
+ },
+ "≈ 220 лет": {
+  "en": "c. 220 years",
+  "ctx": "пропуск day clarisse→day_lord17.years"
+ },
+ "Хармон, возможно, и был отцом Саймона; в книгах не сказано": {
+  "en": "Harmon may have been Simon's father; the books do not say",
+  "ctx": "пропуск dnd harmon_d→dnd_lord54.note"
+ },
+ "лорды Чёрного Приюта между ними в книгах не названы": {
+  "en": "the lords of Blackhaven in between are not named in the books",
+  "ctx": "пропуск dnd simon_d→dnd_lord206.note (и ещё 1)"
+ },
+ "приложения расходятся в родстве позднейших Эстермонтов": {
+  "en": "the appendices disagree on how the later Estermonts are related",
+  "ctx": "пропуск est gunthor_e→eldon.note"
+ },
+ "лорды Нефрита между ними в книгах не названы": {
+  "en": "the lords of Greenstone in between are not named in the books",
+  "ctx": "пропуск est gunthor_e→est_lord17.note"
+ },
+ "лорды Светлого замка между ними в книгах не названы": {
+  "en": "the lords of Fair Castle in between are not named in the books",
+  "ctx": "пропуск far far_lord43→far_lord130.note (и ещё 1)"
+ },
+ "≈ 110 лет": {
+  "en": "c. 110 years",
+  "ctx": "пропуск far far_lord43→far_lord130.years (и ещё 1)"
  },
  "лорды Переправы между Форрестом и дедом Уолдера в книгах не названы": {
   "en": "The Lords of the Crossing between Forrest and Walder's grandfather are unnamed in the books.",
@@ -5280,16 +5320,28 @@
   "ctx": "пропуск lan lan_lord10→gerold.note"
  },
  "≈ 70 лет": {
-  "en": "≈ 70 years",
-  "ctx": "пропуск lan lan_lord10→gerold.years"
+  "en": "c. 70 years",
+  "ctx": "пропуск lan lan_lord10→gerold.years (и ещё 2)"
  },
  "Таймонд правил до близнецов, но что он их отец, в книгах не сказано": {
   "en": "Tymond ruled before the twins, but the books do not identify him as their father.",
   "ctx": "пропуск lan lyman→lan_lord10.note"
  },
+ "≈ 90 лет": {
+  "en": "c. 90 years",
+  "ctx": "пропуск mal jorah_mal→mal_lord.years"
+ },
+ "лорды Сигарда между ними в книгах не названы": {
+  "en": "the lords of Seagard in between are not named in the books",
+  "ctx": "пропуск mal raymun_mal→jorah_mal.note (и ещё 1)"
+ },
  "Десмонд — правнук Теомора; его отец и дед в книгах не названы": {
   "en": "Desmond was Theomore's great-grandson; his father and grandfather are unnamed in the books.",
   "ctx": "пропуск man theomore→desmond.note"
+ },
+ "лорды Белой Гавани между ними в книгах не названы": {
+  "en": "the lords of White Harbor in between are not named in the books",
+  "ctx": "пропуск man torrhen_m→wyman.note"
  },
  "правители Дорна между Мароном и матерью Дорана не названы": {
   "en": "the rulers of Dorne between Maron and Doran's mother are unnamed",
@@ -5307,6 +5359,58 @@
   "en": "c. 40 years",
   "ctx": "пропуск mar qoren→dorne_p14.years (и ещё 2)"
  },
+ "лорды Старого Дуба между ними в книгах не названы; Арвин — глава дома в конце века": {
+  "en": "the lords of Old Oak in between are not named in the books; Arwyn heads the house at the end of the century",
+  "ctx": "пропуск oak oak_lord73→arwyn.note"
+ },
+ "≈ 180 лет": {
+  "en": "c. 180 years",
+  "ctx": "пропуск oak oak_lord73→arwyn.years"
+ },
+ "лорды Старого Дуба между ними в книгах не названы": {
+  "en": "the lords of Old Oak in between are not named in the books",
+  "ctx": "пропуск oak torgen→oak_lord73.note"
+ },
+ "главы дома между ними в книгах не названы; Юстас — последний в своей линии": {
+  "en": "the heads of the house in between are not named in the books; Eustace is the last of his line",
+  "ctx": "пропуск osg ormond→eustace.note"
+ },
+ "≈ 140 лет": {
+  "en": "c. 140 years",
+  "ctx": "пропуск osg ormond→eustace.years (и ещё 2)"
+ },
+ "лорды Звёздного Пика между ними в книгах не названы": {
+  "en": "the lords of Starpike in between are not named in the books",
+  "ctx": "пропуск pea uther→pea_lord9.note (и ещё 2)"
+ },
+ "лорды Пергаментов между ними в книгах не названы": {
+  "en": "the lords of Parchments in between are not named in the books",
+  "ctx": "пропуск pen ronnel→pen_lord18.note"
+ },
+ "лорды Розовой Девы между ними в книгах не названы": {
+  "en": "the lords of Pinkmaiden in between are not named in the books",
+  "ctx": "пропуск pip jon_p→petyr_p.note (и ещё 2)"
+ },
+ "главы дома между ними в книгах не названы": {
+  "en": "the heads of the house in between are not named in the books",
+  "ctx": "пропуск plm ossifer→philip_pl.note"
+ },
+ "лорды Арбора между ними в книгах не названы": {
+  "en": "the lords of the Arbor in between are not named in the books",
+  "ctx": "пропуск red ryam→runceford.note"
+ },
+ "≈ 160 лет": {
+  "en": "c. 160 years",
+  "ctx": "пропуск red ryam→runceford.years (и ещё 2)"
+ },
+ "лорды Рунного Камня между ними в книгах не названы": {
+  "en": "the lords of Runestone in between are not named in the books",
+  "ctx": "пропуск roy allard→yorbert.note (и ещё 1)"
+ },
+ "Гунтор правил после Реи; как они связаны, в книгах не сказано": {
+  "en": "Gunthor ruled after Rhea; the books do not say how they were related",
+  "ctx": "пропуск roy rhea→gunthor_r.note"
+ },
  "Брандон — младший сын Кригана; ветвь сдвинута вправо, к его ровесникам": {
   "en": "Brandon was Cregan's younger son; his branch is shifted right to place him beside his contemporaries.",
   "ctx": "пропуск stk cregan→brandon_c.note"
@@ -5316,8 +5420,36 @@
   "ctx": "пропуск stk torrhen→cregan.note"
  },
  "≈ 100 лет": {
-  "en": "≈ 100 years",
-  "ctx": "пропуск stk torrhen→cregan.years"
+  "en": "c. 100 years",
+  "ctx": "пропуск stk torrhen→cregan.years (и ещё 1)"
+ },
+ "лорды Стокворта между ними в книгах не названы": {
+  "en": "the lords of Stokeworth in between are not named in the books",
+  "ctx": "пропуск stw alyn_s→stw_lord129.note"
+ },
+ "лорды Стокворта между ними в книгах не названы; Танда — сестра Мэнли Стокворта": {
+  "en": "the lords of Stokeworth in between are not named in the books; Tanda is Manly Stokeworth's sister",
+  "ctx": "пропуск stw stw_lord129→tanda.note"
+ },
+ "≈ 130 лет": {
+  "en": "c. 130 years",
+  "ctx": "пропуск stw stw_lord129→tanda.years (и ещё 2)"
+ },
+ "≈ 50 лет": {
+  "en": "c. 50 years",
+  "ctx": "пропуск swn gawen_s→manfred_s.years (и ещё 3)"
+ },
+ "лорды Каменного Шлема между ними в книгах не названы": {
+  "en": "the lords of Stonehelm in between are not named in the books",
+  "ctx": "пропуск swn swann_lord129→gawen_s.note (и ещё 2)"
+ },
+ "лорды Рогова Холма между ними в книгах не названы; Алан, возможно, сын Дональда": {
+  "en": "the lords of Horn Hill in between are not named in the books; Alan may have been Donald's son",
+  "ctx": "пропуск tar savage_sam→alan_t.note"
+ },
+ "лорды Рогова Холма между ними в книгах не названы": {
+  "en": "the lords of Horn Hill in between are not named in the books",
+  "ctx": "пропуск tar savage_sam→donald.note (и ещё 2)"
  },
  "родство лордов Риверрана в книгах не прослежено": {
   "en": "the books do not trace the relationships between the Lords of Riverrun",
@@ -5332,7 +5464,7 @@
   "ctx": "пропуск tyr leo_t→tyr_lord17.note"
  },
  "≈ 25 лет": {
-  "en": "≈ 25 years",
+  "en": "c. 25 years",
   "ctx": "пропуск tyr leo_t→tyr_lord17.years"
  },
  "лорды Хайгардена между Лионелем и Лео Длинным Шипом не названы": {
@@ -5340,7 +5472,7 @@
   "ctx": "пропуск tyr lyonel_t→leo_t.note"
  },
  "≈ 35 лет": {
-  "en": "≈ 35 years",
+  "en": "c. 35 years",
   "ctx": "пропуск tyr lyonel_t→leo_t.years"
  },
  "наследник Бертранда не назван, родство Маттоса не указано": {
@@ -5355,6 +5487,10 @@
   "en": "The Lords of Highgarden between Theo and Bertrand are unnamed in the books.",
   "ctx": "пропуск tyr theo→bertrand.note"
  },
+ "лорды Последнего Очага между ними в книгах не названы": {
+  "en": "the lords of Last Hearth in between are not named in the books",
+  "ctx": "пропуск umb jon_u2→osric.note"
+ },
  "родство Озрика и Хорфроста в книгах не прослежено": {
   "en": "The books do not establish the relationship between Osric and Hoarfrost.",
   "ctx": "пропуск umb osric→hoarfrost.note"
@@ -5365,7 +5501,11 @@
  },
  "≈ 120 лет": {
   "en": "c. 120 years",
-  "ctx": "пропуск vel alyn→lucerys_v.years (и ещё 2)"
+  "ctx": "пропуск vel alyn→lucerys_v.years (и ещё 4)"
+ },
+ "лорды Скалы между ними в книгах не названы": {
+  "en": "the lords of the Crag in between are not named in the books",
+  "ctx": "пропуск wes roland_wl→gawen_w.note"
  },
  "Игра престолов": {
   "en": "Game of Thrones",
