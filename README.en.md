@@ -187,3 +187,12 @@ actor's original name, note]]}`. Screen-vs-book differences are texts in `texts/
 
 Facts — A Wiki of Ice and Fire (awoiaf.westeros.org), after the books and official histories. Russian names —
 7kingdoms.ru. English texts were written separately, not translated from the Russian ones; only a few dozen added later by an AI are marked `✎`.
+
+## License
+
+[MIT](LICENSE): the code, data, texts and the built page may be used, changed and redistributed in any way, including
+commercially, as long as the attribution is kept — "© 2026 demonazzi" and the license text (for an embedded page,
+a link to this repository is enough).
+
+The world, characters and names of A Song of Ice and Fire belong to George R. R. Martin; the license covers only the
+work of this project. d3 (`tools/d3.min.js`, loaded from cdnjs on the page) is under its own ISC license.
