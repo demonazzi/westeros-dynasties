@@ -149,7 +149,7 @@
   const treeLayout = d3.tree().nodeSize([DX, DY]).separation((a, b) => a.parent === b.parent ? 1 : 1.3);
   // Пока древо тащат мышью, пальцем или крутят колесом, наведение на древо выключено (класс panning): иначе каждое
   // движение мыши перекрашивало подсветку и заставляло браузер заново раскладывать всё древо
-  // Пока древо едет само (переход к человеку, «Всё», клик по шкале), наведение тоже не обрабатывается (moving): карточки
+  // Пока древо едет само (переход к человеку, «Все дома», клик по шкале), наведение тоже не обрабатывается (moving): карточки
   // и линии проезжают под неподвижным указателем, и каждая перекрашивала бы подсветку на каждом кадре
   let panning = false, moving = false;
   // Переходы — прямой интерполяцией: «облёт» d3 по умолчанию на дальних переходах отъезжает, показывая разом всё
@@ -363,7 +363,7 @@
     let maxX = 0; allNodes.forEach(n => { maxX = Math.max(maxX, n.X); });
     const left = genMode ? -60 : App.timeLeft(), right = maxX + W + TOG + 80;
 
-    // Полосы домов
+    // Дома на древе
     layers.bands.selectAll('*').remove();
     bandBoxes.forEach(b => {
       const h = HOUSES[b.house];
@@ -945,8 +945,8 @@
     if (!p) {
       panel.classList.add('is-empty');
       panelContent.innerHTML =
-        '<div class="empty"><p class="eyebrow">' + App.housesLabel() + '</p><h2>Выберите человека на древе</h2>' +
-        '<p>Карточка покажет годы жизни, родителей, супругов, детей и хронологию. Древо подсветит линию предков, браки и второго родителя, даже если он из другого дома.</p>' +
+        '<div class="empty"><p class="eyebrow">' + App.housesLabel() + '</p><h2>Выберите персонажа</h2>' +
+        '<p>Нажмите на имя, чтобы открыть описание и семейные связи. Его предки и супруги будут подсвечены на древе.</p>' +
         '<p class="stats">' + PEOPLE.length + ' человек · ' + PAIRS.filter(e => e.type === 'm').length + ' браков на древе</p>' +
         '<p class="keys"><kbd>/</kbd> поиск · <kbd>Esc</kbd> закрыть · <kbd>Alt</kbd>+<kbd>←</kbd> назад</p></div>';
       App.translateDom(panelContent);
@@ -980,9 +980,9 @@
         ((App.lang === 'en' ? p.ruFull : p.en) ? '<p class="en">' + esc(App.lang === 'en' ? p.ruFull : p.en) + '</p>' : '') +
       '</div></div>' +
       // в английском: перевод текста, если он есть; иначе русский с пометкой, что перевода пока нет
-      (p.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      (p.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
       '<p class="note"' + (p.tUntranslated ? ' lang="ru"' : '') + '>' + esc(p.t || '') + '</p>' +
-      (p.ai ? '<p class="ai-mark" title="Текст написал Claude по A Wiki of Ice and Fire; автор его ещё правит">✎ Черновик Claude</p>' : '') +
+      (p.ai ? '<p class="ai-mark" title="Описание ещё редактируется">✎ Черновик</p>' : '') +
       (ev.length ? '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>' : esc(e.text)) + '</span></li>').join('') + '</ol>' : '') +
       '<dl class="facts">' +
@@ -999,7 +999,7 @@
         '<button type="button" class="btn locate" data-locate="' + p.id + '">Показать на древе</button>' +
         '<a class="btn" href="' + wikiUrl(p) + '" target="_blank" rel="noopener">A Wiki of Ice and Fire ↗</a>' +
       '</div>' +
-      '<p class="src">Источник: книги Мартина; даты сверены по A Wiki of Ice and Fire. Годы — от Завоевания.</p>';
+      '<p class="src">По книгам Мартина и A Wiki of Ice and Fire. Годы отсчитываются от Завоевания Эйгона.</p>';
     // прокрутка наверх — только если карточку прокручивали, и в следующем кадре: сброс прокрутки прямо здесь
     // заставлял браузер разложить всю страницу посреди обработки нажатия
     if (panelScrolled) { panelScrolled = false; requestAnimationFrame(() => { panel.scrollTop = 0; }); }
@@ -1151,7 +1151,7 @@
     linksBtnEl.hidden = !next.links;
     hintEl.innerHTML = next.hint;
     hintEl.hidden = hintSeen.has(v);
-    fitLabel.textContent = next.fitLabel || 'Всё';
+    fitLabel.textContent = next.fitLabel || 'Все дома';
     lensbar.hidden = !(App.lens && next.persons);
     document.getElementById('canvas').classList.toggle('has-scale', !!next.scale);
     document.getElementById('canvas').classList.toggle('has-gens', !!next.gens);
@@ -1184,8 +1184,8 @@
 
   App.registerView('people', {
     el: svg.node(), sel: svg, tab: document.getElementById('tab-people'), legend: document.getElementById('legend'),
-    persons: true, links: true, fitLabel: 'Всё', scale: 'free', gens: true,
-    hint: 'Тяните — двигать, колесо — масштаб, клик — карточка, <kbd>/</kbd> — поиск. Клик по шкале — перейти к этим годам.',
+    persons: true, links: true, fitLabel: 'Все дома', scale: 'free', gens: true,
+    hint: 'Перетаскивайте древо. Колесо меняет масштаб. Нажмите на имя — откроется карточка. <kbd>/</kbd> — поиск. Нажмите на шкалу, чтобы выбрать год.',
     zoomBy: k => svg.transition().duration(reduced ? 0 : 250).call(zoom.scaleBy, k),
     fit: () => fitAll(),
     fitIds: (ids, minK) => App.fitIds(ids, minK),

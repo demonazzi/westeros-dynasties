@@ -144,7 +144,7 @@
       '<section class="f-block f-block-great">' + blockHead('Великие дома', 'great') + '<div class="f-greats">' + App.bandOrder().filter(b => !b.liege).map(b => houseItem(b.house, true)).join('') + '</div></section>' +
       '<section class="f-block f-block-minor">' + blockHead('Малые дома', 'minor') + '<div class="f-regions">' + regionsNow().map(regionBox).join('') + '</div></section>' +
       '<p class="f-empty" hidden>Ничего не найдено</p>' +
-      '<fieldset class="f-kinds"' + (state.ridersOnly ? ' disabled' : '') + '><legend>Положение' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
+      '<fieldset class="f-kinds"' + (state.ridersOnly ? ' disabled' : '') + '><legend>Категория' + (state.ridersOnly ? ' <span class="f-note">— не учитывается, пока включены «Только всадники»</span>' : '') + '</legend>' + KINDS.map(([k, t]) =>
         '<label><input type="checkbox" data-kind="' + k + '"' + (state.kinds.has(k) ? ' checked' : '') + '>' + t + '</label>').join('') + '</fieldset>' +
       '<fieldset class="f-one"><legend>Драконы</legend><label><input type="checkbox" data-riders="1"' + (state.ridersOnly ? ' checked' : '') + '>Только всадники драконов</label></fieldset>' +
       '<div class="f-row f-foot"><button type="button" class="btn" data-freset="1">Сбросить</button></div>';

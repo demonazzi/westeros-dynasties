@@ -7,7 +7,7 @@ const D = require('./data');
 const E = JSON.parse(fs.readFileSync(path.join(process.argv[2], 'edited.json'), 'utf8'));
 const cur = D.load();
 const changed = { people: new Map(), dragons: new Map(), screen: new Map(), screenDragons: new Map(), vassals: new Map() };
-const take = (kind, id, was, now) => { if (typeof now === 'string' && now.trim() && now.trim() !== (was || '').trim()) changed[kind].set(id, { text: now.trim().replace(/\s+/g, ' '), ai: false }); };
+const take = (kind, id, was, now) => { if (typeof now === 'string' && now.trim() && now.trim() !== (was || '').trim()) changed[kind].set(id, { text: now.trim().split(/\n\s*\n/).map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n\n'), ai: false }); };
 const curP = new Map(cur.PEOPLE.map(p => [p.id, p]));
 (E.PEOPLE || []).forEach(p => { if (curP.has(p.id)) take('people', p.id, curP.get(p.id).t, p.t); });
 const curD = new Map(cur.DRAGONS.concat(cur.DRAGON_ORIGINS).map(d => [d.id, d]));

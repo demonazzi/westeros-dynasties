@@ -98,7 +98,7 @@
     return n + ' ' + (n === 1 ? sg : (pl || sg));
   };
   // какие поля данных переводятся на месте: всё, где есть кириллица, кроме разбираемого кодом и длинных текстов
-  const SKIP = new Set(['t', 'df', 'id', 'b', 'd', 'sp', 'par']);
+  const SKIP = new Set(['t', 'df', 'id', 'b', 'd', 'sp', 'par', 'ruName', 'ruFull']);  // ruName, ruFull — русское имя для подписи под английским, его не переводить
   const CYR = /[А-Яа-яЁё]/;
   const walk = v => {
     if (Array.isArray(v)) { v.forEach((x, i) => { if (typeof x === 'string') { if (CYR.test(x) && DD[x]) v[i] = DD[x]; } else walk(x); }); return; }
@@ -135,12 +135,12 @@
       if (d.t_en) { d.t = d.t_en; d.ai = d.ai_en ? 1 : 0; } else if (d.t) d.tUntranslated = true;
     });
     if (EXTRA_ && EXTRA_.screen) Object.values(EXTRA_.screen).forEach(o => {
-      if (o.df_en) o.df = o.df_en; else if (o.df) o.dfUntranslated = true;
+      if (o.df_en) { o.df = o.df_en; o.ai = o.ai_en ? 1 : 0; } else if (o.df) o.dfUntranslated = true;
       // актёры: [сериал, имя по-русски, имя по-английски] — в английском показываем английское
       (o.a || []).forEach(a => { if (a[2]) a[1] = a[2]; });
     });
     Object.values(G('HOUSES') || {}).forEach(h => { h.ruName = h.name; });
-    // текст о доме (texts/vassals.md) — общий у «Вассалитета» и карточки дома
+    // текст о доме (texts/vassals.md) — общий у вкладки «Присяги» и карточки дома
     (G('V_HOUSES') || []).forEach(h => { if (h.t_en) { h.t = h.t_en; h.ai = h.ai_en ? 1 : 0; } else if (h.t) h.tUntranslated = true; });
     const DS = G('DRAGON_SCREEN'), DSE = G('DRAGON_SCREEN_EN');
     if (DS && DSE) Object.keys(DSE).forEach(id => { DS[id] = DSE[id]; });

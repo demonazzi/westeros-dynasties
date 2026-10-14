@@ -58,6 +58,14 @@ Object.values(d.HOUSES).forEach(h => { String(h.motto || '').split(' · ').forEa
 const finish = composite => {
   const file = path.join(SRC, 'i18n', lang + '.json');
   const old = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+  // ключи, которые код передаёт в App.t не литералом, а из таблицы (формы дат, стороны в войне, подписи драконов…):
+  // извлечение их не видит, но строка есть в исходниках — переведённые такие ключи сохраняются
+  // (и значения данных, которые страница переводит через App.t: «при рождении», «в детстве»…) — переведённый ключ
+  // сохраняется, пока строка есть в исходниках или в собранной странице
+  const SRC_ALL = fs.readdirSync(SRC).filter(f => /\.(js|html)$/.test(f)).map(f => fs.readFileSync(path.join(SRC, f), 'utf8')).join('\n');
+  const DIST = path.join(ROOT, 'dist', 'targaryen-tree.html'), PAGE = fs.existsSync(DIST) ? fs.readFileSync(DIST, 'utf8') : '';
+  const q = k => JSON.stringify(k);
+  Object.keys(old).forEach(k => { if (old[k] && !keys.has(k) && !/[{}]/.test(k.replace(/\{\w+\}/g, '')) && (SRC_ALL.includes("'" + k + "'") || SRC_ALL.includes('>' + k + '<') || PAGE.includes(q(k)))) keys.add(k); });
   const out = {};
   [...keys].sort((a, b) => a.localeCompare(b, 'ru')).forEach(k => { out[k] = old[k] || ''; });
   fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -125,7 +133,10 @@ if (!crawl) { finish(); return; }
   // шаблоны с короткой русской частью («с {y}») не берём — под них подойдёт что угодно
   const tmpl = [...keys].filter(k => /\{\w+\}/.test(k) && (k.replace(/\{\w+\}/g, '').match(/[А-Яа-яЁё]/g) || []).length >= 5).map(k => new RegExp('^' + rxEsc(k).replace(/\{\w+\}/g, '.+?') + '$'));
   const forms = new Set([...keys].filter(k => k.includes('|')).flatMap(k => k.split('|')));
-  const covered = s => tmpl.some(rx => rx.test(s)) || (m => !!m && forms.has(m[1]))(s.match(/^\d+\s+(.+)$/));
+  const coveredOne = s => keys.has(s) || data.has(s) || dataPart.has(s) || yearOnly(s) || tmpl.some(rx => rx.test(s)) || (m => !!m && forms.has(m[1]))(s.match(/^\d+\s+(.+)$/));
+  // подпись из уже переводимых кусков через « · » («Ренли — король · 298 г.»); «дом Хэев» — строчное название дома
+  // в «Бастард · дом …», только по-русски (по-английски это «House …» из шаблона «Дом {h}»)
+  const covered = s => coveredOne(s) || (s.includes(' · ') && s.split(' · ').every(coveredOne)) || /^дом [А-ЯЁ]/.test(s);
   seen.forEach(s => {
     s = s.replace(/^[\s·]+|[\s·]+$/g, '');   // куски вокруг ссылки: «Бастард ·», «· Король Севера»
     if (!s || !CYR.test(s) || data.has(s) || dataPart.has(s) || keys.has(s) || yearOnly(s) || covered(s)) return;

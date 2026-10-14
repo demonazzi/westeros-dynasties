@@ -3,7 +3,7 @@
    — рамка на шкале: годы рождения тех, кто сейчас на экране (древо, список);
    — цветная полоса с подписью: годы жизни того, кто открыт в карточке;
    — на древе под шкалой — годы рождения для каждой колонки-поколения;
-   — клик по шкале переносит к этим годам; кнопка «Срез по году» включает ползунок. */
+   — клик по шкале переносит к этим годам; кнопка «Выбрать год» включает ползунок. */
 (function () {
   const App = window.App;
   const { byId, esc, state } = App;
@@ -20,7 +20,7 @@
   let pending = false, dragging = false, ghostX = null, hoverCol = null, last = null;
 
   const view = () => App.views[state.view] || {};
-  // у вида может быть свой год (вкладка «Вассалитет»): тогда ползунок всегда на шкале и не трогает срез по году на древе
+  // у вида может быть свой год (вкладка «Присяги»): тогда ползунок всегда на шкале и не трогает срез по году на древе
   const own = () => view().ownYear || null;
   const lum = hex => {
     const v = String(hex).replace('#', '').match(/../g);
@@ -30,7 +30,7 @@
   };
   const baseH = () => App.isNarrow() ? 50 : 68;
   const gensH = () => view().gens ? (App.isNarrow() ? 20 : 24) : 0;
-  // ряд отметок под шкалой (во вкладке «Вассалитет» — события)
+  // ряд отметок под шкалой (во вкладке «Присяги» — события)
   const marksH = () => view().scaleMarks && !App.isNarrow() ? 16 : 0;
   // ширина шкалы — из ResizeObserver: чтение clientWidth на каждом кадре движения древа заставляло браузер
   // заново раскладывать всю страницу (переход по линии брака заметно подтормаживал)
@@ -155,7 +155,7 @@
       if (inView(a, b)) {
         const g = ssvg.append('g').attr('class', 'ts-win');
         g.append('rect').attr('x', a - 3).attr('y', 1.5).attr('width', b - a + 6).attr('height', H - 3).attr('rx', 5);
-        g.append('title').text('Годы жизни тех, кто сейчас на экране: ' + range(win[0], win[1]));
+        g.append('title').text(App.t('Годы жизни на экране: {years}', { years: range(win[0], win[1]) }));
       }
     }
 
@@ -217,7 +217,7 @@
       if (t) g.append('text').attr('x', a + 5).attr('y', R0 + RH / 2 + 0.5).text(t);
       g.append('title').text(p.full + ' · ' + App.t(p.sex === 'f' ? 'правила {r}' : 'правил {r}', { r: p.r || p.rm }) + ' · ' + App.t('нажмите — открыть карточку'));
     });
-    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], App.t('Дальше книги не дошли: что было после 300 г., неизвестно'));
+    hatch(m.x(300) + 10, m.w, 'post', ['после книг — неизвестно', 'неизвестно', '?'], App.t('События после 300 года в опубликованных книгах пока не описаны'));
     gaps.forEach(gp => {
       const g = ssvg.append('g').attr('class', 'ts-gap');
       g.append('rect').attr('x', gp.x0).attr('y', 0).attr('width', gp.x1 - gp.x0).attr('height', H);
@@ -270,7 +270,7 @@
       if (subNode) ssvg.node().appendChild(subNode);
     }
 
-    // Отметки вида (во вкладке «Вассалитет» — события): ромбики в своём ряду под шкалой, нажатие — к событию
+    // Отметки вида (во вкладке «Присяги» — события): ромбики в своём ряду под шкалой, нажатие — к событию
     if (MH) {
       const mg = ssvg.append('g').attr('class', 'ts-marks').attr('transform', 'translate(0,' + (H + GH) + ')');
       mg.append('rect').attr('class', 'ts-marks-bg').attr('width', m.w).attr('height', MH);
@@ -290,7 +290,7 @@
     // Под шкалой на древе: годы рождения каждой колонки
     if (GH) drawGens(m, H, GH);
 
-    // Срез по году
+    // Выбрать год
     const sy = own() ? own().get() : state.year;
     if (sy != null) {
       const x = m.x(sy);
@@ -305,7 +305,7 @@
     if (hoverCol) showColSpan(hoverCol);
 
     svgEl.setAttribute('aria-valuenow', String(sy != null ? Math.round(sy) : 129));
-    svgEl.setAttribute('aria-valuetext', own() ? App.t('Год: {y}', { y: own().label(sy) }) : state.year != null ? App.t('Срез: {y}', { y: yearWord(state.year) }) : App.t('Срез по году выключен'));
+    svgEl.setAttribute('aria-valuetext', own() ? App.t('Год: {y}', { y: own().label(sy) }) : state.year != null ? App.t('Год: {y}', { y: yearWord(state.year) }) : App.t('Показаны все годы'));
   }
 
   function drawGens(m, H, GH) {
@@ -329,7 +329,7 @@
       if (px - tw / 2 - 6 < end || px + tw / 2 > m.w - 4) { lg.remove(); return; }
       lg.attr('transform', 'translate(' + px + ',' + (GH / 2) + ')');
       lg.insert('rect', 'text').attr('x', -tw / 2 - 7).attr('y', -GH / 2 + 3).attr('width', tw + 14).attr('height', GH - 6).attr('rx', (GH - 6) / 2);
-      lg.append('title').text(App.t('Колонка древа: здесь родились ≈ {years} ({n}). Наведите — годы подсветятся на шкале', { years: range(c.lo, c.hi), n: App.plural(c.n, 'человек', 'человека', 'человек') }));
+      lg.append('title').text(App.t('Рождения в колонке: ≈ {years} ({people}). Наведите, чтобы увидеть годы на шкале.', { years: range(c.lo, c.hi), people: App.plural(c.n, 'человек', 'человека', 'человек') }));
       lg.on('mouseenter', () => { hoverCol = c; showColSpan(c); }).on('mouseleave', () => { hoverCol = null; ssvg.select('g.ts-colspan').selectAll('*').remove(); });
       end = px + tw / 2 + 8;
     });
@@ -368,7 +368,7 @@
   function redraw() { if (pending) return; pending = true; raf(draw); }
   App.redrawScale = redraw;
 
-  /* ——— Срез по году ——— */
+  /* ——— Выбрать год ——— */
   function updateChip() {
     const y = state.year;
     chip.hidden = y == null || !!own();
@@ -377,7 +377,7 @@
     if (y == null) return;
     const t = App.yearText ? App.yearText(y) : { year: yearWord(y), alive: 0, king: '', era: '' };
     chipText.innerHTML = '<b>' + esc(t.year) + '</b><span>живых: ' + t.alive + '</span>' +
-      (t.king ? '<span>' + esc(App.t('на троне: {k}', { k: t.king })) + '</span>' : '') + (t.era ? '<span>' + esc(t.era) + '</span>' : '') +
+      (t.king ? '<span>' + esc(App.t('На троне: {name}', { name: t.king })) + '</span>' : '') + (t.era ? '<span>' + esc(t.era) + '</span>' : '') +
       '<span class="yc-tip">двигайте ползунок на шкале</span>';
   }
   function setYear(y) {

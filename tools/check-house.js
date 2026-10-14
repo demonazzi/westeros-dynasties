@@ -28,11 +28,13 @@ const fs = require('fs'), path = require('path');
   expect(/h-wes/.test(c.band), 'полоса Вестерлингов подсвечена: ' + c.band);
   const facts = await p.evaluate(() => ({ dts: [...document.querySelectorAll('#panel dt')].map(x => x.textContent), words: (document.querySelector('#panel .hc-words') || {}).textContent,
     seat: (document.querySelector('#panel .hc-seat') || {}).textContent, per: document.querySelectorAll('#panel .hc-periods li').length, empty: !!document.querySelector('#panel .hc-empty'),
-    notes: [...document.querySelectorAll('#panel .note')].map(x => x.textContent), want: V_HOUSES.find(h => h.id === HOUSES.wes.v).t, ai: !!document.querySelector('#panel .ai-mark') }));
+    notes: [...document.querySelectorAll('#panel .note')].map(x => x.textContent), want: V_HOUSES.find(h => h.id === HOUSES.wes.v).t,
+    wantAi: !!V_HOUSES.find(h => h.id === HOUSES.wes.v).ai, ai: !!document.querySelector('#panel .ai-mark') }));
   expect(facts.dts.includes('Сюзерен') && facts.dts.includes('На древе'), 'строки карточки: ' + facts.dts.join(','));
   expect(facts.words === '«Честь, а не почести»' && facts.seat === 'Скала', 'девиз и замок: ' + facts.words + ' / ' + facts.seat);
   expect(facts.per > 0, 'есть «Кому служил»');
-  expect(!facts.empty && facts.want && facts.notes.length === 1 && facts.notes[0] === facts.want && facts.ai, 'текст о доме из texts/vassals.md, один абзац, ✎: ' + JSON.stringify(facts.notes));
+  // текст о доме — из texts/vassals.md, абзацы через пустую строку — отдельными абзацами; ✎ — если текст черновой
+  expect(!facts.empty && facts.want && facts.notes.join('\n\n') === facts.want && facts.ai === facts.wantAi, 'текст о доме из texts/vassals.md по абзацам, ✎ по данным: ' + JSON.stringify(facts.notes).slice(0, 200));
   // «Показать на древе»: полоса в экране, масштаб читаемый
   await p.click('#panel [data-house-locate]'); await p.waitForTimeout(1300);
   const loc = await p.evaluate(() => { const k = d3.zoomTransform(App.svg.node()).k; const r = document.querySelector('g.h-wes .band-bg').getBoundingClientRect(); const s = App.svg.node().getBoundingClientRect(); return { k, top: r.top, bottom: r.bottom, sTop: s.top, sBottom: s.bottom }; });

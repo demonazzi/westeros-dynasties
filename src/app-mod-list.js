@@ -7,10 +7,10 @@
   const reopen = document.getElementById('reopen');
   let built = false;
 
-  const genLabel = g => g >= 6 ? 'Поколение ' + (g - 5) : 'До Завоевания';
+  const genLabel = g => g >= 6 ? App.t('Поколение {n}', { n: g - 5 }) : App.t('До Завоевания');
   const yearsLabel = (lo, hi) => {
     const f = y => y < 0 ? App.t('{n} до З.', { n: -y }) : String(y);
-    return 'рождения ≈ ' + (lo === hi ? f(lo) : f(lo) + '–' + f(hi));
+    return App.t('рождения ≈ {years}', { years: lo === hi ? f(lo) : f(lo) + '–' + f(hi) });
   };
   function item(p) {
     const dr = App.dragonsOf ? App.dragonsOf(p.id).length : 0;

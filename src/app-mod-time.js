@@ -82,22 +82,22 @@
      У войн from/to — дробные годы, чтобы полоса шла от начала до конца, одинаково на шкале и на вкладках:
      Танец драконов — от смерти Визериса I (начало 129 г.) до смерти Эйгона II (131 г.). */
   const ERAS = [
-    { y: -114, name: 'Исход Эйнара', p: 1 },
-    { y: -102, name: 'Рок Валирии', p: 3 },
-    { y: -2, y2: 1, name: 'Завоевание', p: 3 },
-    { y: 101, name: 'Великий совет', p: 2 },
-    { y: 129, y2: 131, from: 129.2, to: 131.6, name: 'Танец драконов', band: 1, p: 3 },
-    { y: 153, name: 'Умер последний дракон', p: 2 },
-    { y: 157, y2: 161, from: 157, to: 161.5, name: 'Поход на Дорн', band: 1, p: 1 },
-    { y: 187, name: 'Дорн в королевстве', p: 1 },
-    { y: 196, name: '1-е восстание Блэкфайров', p: 2 },
-    { y: 209, name: 'Великий весенний мор', p: 1 },
-    { y: 233, name: 'Великий совет', p: 1 },
-    { y: 259, name: 'Летний Замок', p: 2 },
-    { y: 260, name: 'Война девятигрошовых королей', p: 1 },
-    { y: 282, y2: 283, from: 282, to: 283.9, name: 'Восстание Роберта', band: 1, p: 3 },
-    { y: 289, name: 'Восстание Грейджоя', p: 1 },
-    { y: 298, y2: 300, from: 298.6, to: 300.9, name: 'Война пяти королей', band: 1, p: 3 }
+    { y: -114, name: App.t('Исход Эйнара'), p: 1 },
+    { y: -102, name: App.t('Рок Валирии'), p: 3 },
+    { y: -2, y2: 1, name: App.t('Завоевание'), p: 3 },
+    { y: 101, name: App.t('Великий совет'), p: 2 },
+    { y: 129, y2: 131, from: 129.2, to: 131.6, name: App.t('Танец драконов'), band: 1, p: 3 },
+    { y: 153, name: App.t('Умер последний дракон'), p: 2 },
+    { y: 157, y2: 161, from: 157, to: 161.5, name: App.t('Поход на Дорн'), band: 1, p: 1 },
+    { y: 187, name: App.t('Дорн в королевстве'), p: 1 },
+    { y: 196, name: App.t('1-е восстание Блэкфайров'), p: 2 },
+    { y: 209, name: App.t('Великий весенний мор'), p: 1 },
+    { y: 233, name: App.t('Великий совет'), p: 1 },
+    { y: 259, name: App.t('Летний Замок'), p: 2 },
+    { y: 260, name: App.t('Война девятигрошовых королей'), p: 1 },
+    { y: 282, y2: 283, from: 282, to: 283.9, name: App.t('Восстание Роберта'), band: 1, p: 3 },
+    { y: 289, name: App.t('Восстание Грейджоя'), p: 1 },
+    { y: 298, y2: 300, from: 298.6, to: 300.9, name: App.t('Война пяти королей'), band: 1, p: 3 }
   ];
   const eraSpan = e => e.band ? [e.from != null ? e.from : e.y, e.to != null ? e.to : e.y2 + 1] : [e.y, e.y];
   const eraAt = y => ERAS.find(e => e.y2 != null && y >= e.y && y <= e.y2 + 0.99);
@@ -115,7 +115,7 @@
   const X = d3.scaleLinear().domain([-180, -10, 302]).range([0, 440, 440 + 312 * 12]);
   const ROW = 30, BHEAD = 64, BGAP = 26, TOP = 30;
   let built = false, rows = new Map(), bandBoxes = [], width = 0, height = 0, builtKey = '';
-  // фильтр «Полосы домов»: скрытые дома не попадают в хронологию, как и на древо
+  // фильтр «Дома на древе»: скрытые дома не попадают в хронологию, как и на древо
   const hiddenKey = () => [...(state.hiddenHouses || [])].sort().join(',');
   const LAB = 8;
 
@@ -160,7 +160,7 @@
     gz.selectAll('*').remove();
     layout();
     ['bands', 'eras', 'mar', 'drops', 'lives', 'labels', 'slice'].forEach(k => { L_[k] = gz.append('g').attr('class', 'tl-' + k); });
-    // Полосы домов
+    // Дома на древе
     bandBoxes.forEach(b => {
       const g = L_.bands.append('g').attr('class', 'h-' + b.house + (b.minor ? ' band-minor' : ''));
       g.append('rect').attr('class', 'band-bg').attr('x', 0).attr('y', b.top).attr('width', width).attr('height', b.bottom - b.top).attr('rx', 18);
@@ -251,7 +251,7 @@
     });
     lives.on('click', (e, d) => App.select(d.p.id));
     lives.on('keydown', (e, d) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.select(d.p.id); } });
-    // Срез по году
+    // Выбрать год
     L_.slice.append('line').attr('class', 't-slice').attr('y1', TOP - 20).attr('y2', height - 20).attr('display', 'none');
     decorateTime();
   }
@@ -313,7 +313,7 @@
   App.registerView('time', {
     el, sel: tsvg, tab: document.getElementById('tab-time'), legend: document.getElementById('time-legend'),
     persons: true, links: false, fitLabel: 'К началу',
-    hint: 'Слева направо — годы. Линия — жизнь человека; вертикали — браки и рождение детей; пунктир — годы оценены.',
+    hint: 'Линия показывает годы жизни. Вертикальные отметки — браки и рождение детей, пунктир — приблизительные даты.',
     scale: 'sync',
     scaleGo: y => {
       const t = d3.zoomTransform(el), w = el.getBoundingClientRect().width || 1000;
@@ -354,7 +354,7 @@
     return startHashPrev ? startHashPrev(h) : false;
   };
 
-  /* ——— Срез по году: ползунок живёт на общей шкале (app-mod-timescale.js) ——— */
+  /* ——— Выбрать год: ползунок живёт на общей шкале (app-mod-timescale.js) ——— */
   state.year = null;
   App.hooks.decorate.push(() => state.year != null ? id => !aliveAt(id, state.year) : null);
   App.yearText = y => {

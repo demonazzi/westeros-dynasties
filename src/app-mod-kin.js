@@ -209,7 +209,7 @@
       const b = g0.append('g').attr('class', 'kbadge').attr('transform', 'translate(' + (CW - 16) + ',' + (CH / 2) + ')');
       b.append('circle').attr('r', 11);
       b.append('text').attr('y', 0.5).text('×' + d.rep);
-      b.append('title').text('Встречается в родословной ' + App.plural(d.rep, 'раз', 'раза', 'раз'));
+      b.append('title').text(App.t('Встречается в родословной: {n}', { n: App.plural(d.rep, 'раз', 'раза', 'раз') }));
     }
     if (p) g0.append('title').text(p.full + (d.rep > 1 ? ' · ' + App.t('встречается {k}', { k: App.plural(d.rep, 'раз', 'раза', 'раз') }) : ''));
     return g0;
@@ -351,17 +351,17 @@
     let html = '<h3>Повторы среди предков</h3>' +
       '<p>Из-за браков между родственниками один человек может занимать в родословной несколько мест. Считаем предков ' + esc(scope) + '.</p>' +
       '<dl class="kin-stats">' +
-        stat('Мест', places, '', 'Сколько мест для предков в ' + depth + ' поколениях: родители, деды и так далее') +
-        stat('Известно', known, '', 'Сколько из этих мест заняты людьми, которые есть в данных') +
-        stat('Разных', distinct, '', 'Сколько среди них разных людей') +
-        stat('Повторов', extra, known && extra ? Math.round(extra / known * 100) + '%' : '', 'Сколько мест занято людьми, которые уже встречались (доля от известных мест)') +
+        stat('Мест', places, '', App.t('Мест для предков в {n} поколениях: родители, деды и так далее', { n: depth })) +
+        stat('Известно', known, '', 'Места с известными предками') +
+        stat('Разных', distinct, '', 'Число разных предков') +
+        stat('Повторов', extra, known && extra ? Math.round(extra / known * 100) + '%' : '', 'Повторные появления предков и их доля среди известных мест') +
       '</dl>';
     if (reps.length) {
       const max = reps[0][1];
       html += '<p class="kin-sub">Чаще всего встречаются</p><ul class="kin-replist">' +
         reps.slice(0, 8).map(([x, cnt]) => '<li><button type="button" class="chip mini h-' + byId.get(x).house + '" data-rep="' + x + '">' + esc(byId.get(x).name) + '</button>' +
           '<span class="kbar" style="width:' + Math.max(12, Math.round(cnt / max * 100)) + '%" aria-hidden="true"></span><span class="cnt">' + App.plural(cnt, 'место', 'места', 'мест') + '</span></li>').join('') + '</ul>' +
-        '<p class="kin-tip muted-note">Наведите на имя — его места подсветятся золотым; нажмите — родословная перестроится вокруг него.</p>';
+        '<p class="kin-tip muted-note">Наведите на имя, чтобы увидеть все его повторы. Нажмите, чтобы открыть родословную этого человека.</p>';
     } else html += '<p class="kin-sub">Повторов нет</p><p>Все известные предки — разные люди.</p>';
     repBox.innerHTML = html;
   }
@@ -407,8 +407,8 @@
     if (animate && !App.reduced) ksvg.transition().duration(App.dur).call(kz.transform, t); else ksvg.call(kz.transform, t);
   }
   App.registerView('kin', {
-    el, sel: ksvg, tab: document.getElementById('tab-kin'), legend: document.getElementById('kin-legend'), persons: true, links: false, fitLabel: 'Вписать',
-    hint: 'Нажмите на человека — родословная перестроится вокруг него. Наведите — подсветятся все его повторы.',
+    el, sel: ksvg, tab: document.getElementById('tab-kin'), legend: document.getElementById('kin-legend'), persons: true, links: false, fitLabel: 'По размеру окна',
+    hint: 'Нажмите на имя, чтобы открыть его родословную. Наведение подсветит повторяющиеся карточки.',
     zoomBy: k => ksvg.transition().duration(App.reduced ? 0 : 250).call(kz.scaleBy, k),
     fit: () => fitKin(true),
     center: () => {},

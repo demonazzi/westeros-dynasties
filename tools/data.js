@@ -14,11 +14,11 @@ const C = JSON.stringify;
    ✎ в конце заголовка — текст написал Claude (черновик). Имя в заголовке только для чтения: его обновляет --sync. */
 const ENTRY = /^###\s+([a-z0-9_]+)(.*)$/;
 const AI_MARK = '✎';
-function parseMd(file) {
+function parseMd(file, preserveParagraphs = false) {
   const res = { entries: new Map(), dup: [], file };
   if (!fs.existsSync(file)) return res;
   let cur = null, comment = false;
-  const close = () => { if (cur) { cur.text = cur.lines.join(' ').replace(/\s+/g, ' ').trim(); delete cur.lines; } cur = null; };
+  const close = () => { if (cur) { cur.text = preserveParagraphs ? cur.lines.join('\n').trim().split(/\n\s*\n/).map(p => p.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n\n') : cur.lines.join(' ').replace(/\s+/g, ' ').trim(); delete cur.lines; } cur = null; };
   fs.readFileSync(file, 'utf8').split(/\r?\n/).forEach((l, i) => {
     if (comment || /^\s*<!--/.test(l)) { comment = !/-->/.test(l); close(); return; }
     const m = l.match(ENTRY);
@@ -147,7 +147,7 @@ function load() {
   const V = S.vassals;
   const V_HOUSES = V.houses.map(h => Object.assign({}, h));
   const vIds = new Set(V_HOUSES.map(h => h.id));
-  const vmd = useMd(parseMd(S.vassalsMd), vIds, 'data/vassals.json'), vmdE = useMd(parseMd(S.vassalsMdEn), vIds, 'data/vassals.json');
+  const vmd = useMd(parseMd(S.vassalsMd, true), vIds, 'data/vassals.json'), vmdE = useMd(parseMd(S.vassalsMdEn, true), vIds, 'data/vassals.json');
   V_HOUSES.forEach(h => {
     const e = vmd.entries.get(h.id);
     if (e && e.text) h.t = e.text;
@@ -226,7 +226,7 @@ function sync(override) {
   put(S.screenDragonsMd, renderMd('Драконы на экране: чем сериал отличается от книг', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: x.full || x.name }, pick(dsmd, 'screenDragons', x.id))) }))));
   put(S.screenDragonsMdEn, renderMd('Dragons on screen: how the shows differ from the books', D.groups.map(g => ({ title: g.title, items: g.dragons.map(x => Object.assign({ id: x.id, name: enName(x) }, keep(dsmdE, x.id))) })), MD_NOTE_EN));
   // дома (вкладка «Вассалитет» и карточка дома): по краям, как в data/vassals.json; в заголовке — название дома
-  const V = S.vassals, vmd = parseMd(S.vassalsMd), vmdE = parseMd(S.vassalsMdEn);
+  const V = S.vassals, vmd = parseMd(S.vassalsMd, true), vmdE = parseMd(S.vassalsMdEn, true);  // у домов текст в несколько абзацев
   const vGroups = V.regions.map(r => ({ r, hs: V.houses.filter(h => h.region === r.id) }));
   put(S.vassalsMd, renderMd('Дома Вестероса', vGroups.map(({ r, hs }) => ({ title: r.ru, items: hs.map(h => Object.assign({ id: h.id, name: h.ru }, pick(vmd, 'vassals', h.id))) }))));
   put(S.vassalsMdEn, renderMd('Houses of Westeros', vGroups.map(({ r, hs }) => ({ title: r.ru, items: hs.map(h => Object.assign({ id: h.id, name: 'House ' + h.en }, keep(vmdE, h.id))) })), MD_NOTE_EN));
@@ -242,3 +242,4 @@ if (require.main === module) {
   else if (a === '--check') { const d = load(); console.log('людей', d.PEOPLE.length, '· драконов', d.DRAGONS.length); if (d.problems.length) { console.log(d.problems.join('\n')); process.exit(1); } console.log('data/ и texts/ сходятся'); }
   else { console.log('node tools/data.js --emit | --sync | --check'); process.exit(2); }
 }
+

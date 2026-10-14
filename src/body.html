@@ -3,17 +3,17 @@
   <header class="bar">
     <div class="brand">
       <div class="brand-row"><h1>Династии Вестероса</h1>
-      <div class="lang-switch" role="group" aria-label="Язык интерфейса"><button type="button" class="lang-btn" data-lang="ru" aria-pressed="true">RU</button><button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English — заготовка, перевод ещё не сделан">EN</button></div></div>
+      <div class="lang-switch" role="group" aria-label="Язык интерфейса"><button type="button" class="lang-btn" data-lang="ru" aria-pressed="true">RU</button><button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English — перевод заполняется">EN</button></div></div>
       <p id="brand-sub">Таргариены и великие дома: родословная, драконы, хронология</p>
     </div>
     <div class="tools">
-      <div class="tabs" role="tablist" aria-label="Что показать">
+      <div class="tabs" role="tablist" aria-label="Разделы">
         <button type="button" role="tab" class="tab" id="tab-people" aria-selected="true">Древо</button>
         <button type="button" role="tab" class="tab" id="tab-dragons" aria-selected="false">Драконы</button>
         <button type="button" role="tab" class="tab" id="tab-time" aria-selected="false"><span class="t-long">Хронология</span><span class="t-short" aria-hidden="true">Годы</span></button>
         <button type="button" role="tab" class="tab" id="tab-kin" aria-selected="false"><span class="t-long">Родословная</span><span class="t-short" aria-hidden="true">Предки</span></button>
         <button type="button" role="tab" class="tab" id="tab-list" aria-selected="false">Список</button>
-        <button type="button" role="tab" class="tab" id="tab-vassal" aria-selected="false">Вассалитет</button>
+        <button type="button" role="tab" class="tab" id="tab-vassal" aria-selected="false">Присяги</button>
       </div>
       <form class="search" id="search-form" role="search" autocomplete="off">
         <label for="search-input" class="sr-only">Найти человека, дракона или актёра</label>
@@ -23,11 +23,11 @@
         <p id="search-msg" class="search-msg" role="status" hidden></p>
       </form>
       <div class="lens-menu">
-        <button type="button" class="btn" id="lens-btn" title="Линзы: Танец драконов, Железный трон, Блэкфайры, Великие советы" aria-haspopup="true" aria-expanded="false" aria-controls="lens-pop"><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="8" r="4.5"/><circle cx="10" cy="8" r="4.5"/></svg><span class="label-wide">Линзы</span></button>
-        <div class="menu" id="lens-pop" role="menu" aria-label="Линзы" hidden></div>
+        <button type="button" class="btn" id="lens-btn" title="Подсветить участников войн, правителей или претендентов" aria-haspopup="true" aria-expanded="false" aria-controls="lens-pop"><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="8" r="4.5"/><circle cx="10" cy="8" r="4.5"/></svg><span class="label-wide">Подсветка</span></button>
+        <div class="menu" id="lens-pop" role="menu" aria-label="Подсветка" hidden></div>
       </div>
       <div class="lens-menu">
-        <button type="button" class="btn" id="filter-btn" title="Фильтры: полосы домов и положение" aria-haspopup="true" aria-expanded="false" aria-controls="filter-pop"><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4.5 5.5V13l-3 1.5V8.5Z"/></svg><span class="label-wide">Фильтры</span><span class="fcount" id="filter-count" hidden></span></button>
+        <button type="button" class="btn" id="filter-btn" title="Выбрать дома и категории персонажей" aria-haspopup="true" aria-expanded="false" aria-controls="filter-pop"><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12l-4.5 5.5V13l-3 1.5V8.5Z"/></svg><span class="label-wide">Фильтры</span><span class="fcount" id="filter-count" hidden></span></button>
         <div class="menu filter-pop" id="filter-pop" role="dialog" aria-label="Фильтры" hidden></div>
       </div>
       <button type="button" class="btn" id="toggle-screen" aria-pressed="false" title="Кто есть в экранизациях и чем они отличаются от книг"><svg class="tv-ico" width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><rect x="1" y="1" width="14" height="9.5" rx="2"/><path d="M5 13.2h6M8 10.5v2.7"/></svg><span class="label-wide">Экранизации</span><span class="sr-only">Режим экранизаций</span></button>
@@ -49,7 +49,7 @@
         <div class="kin-head">
           <button type="button" class="btn back kin-back" id="kin-back" title="Назад (Alt + ←)" hidden></button>
           <div class="seg" id="kin-modes" role="group" aria-label="Вид родословной">
-            <button type="button" class="seg-btn" data-kin="hourglass" aria-pressed="true" title="Песочные часы: предки вверх, потомки вниз">Часы</button>
+            <button type="button" class="seg-btn" data-kin="hourglass" aria-pressed="true" title="Предки сверху, потомки снизу">Часы</button>
             <button type="button" class="seg-btn" data-kin="fan" aria-pressed="false" title="Веер предков">Веер</button>
           </div>
           <p class="kin-title" id="kin-title"></p>
@@ -66,12 +66,12 @@
       <div class="zoom" role="group" aria-label="Масштаб">
         <button type="button" class="btn btn-icon" id="zoom-out" aria-label="Уменьшить">−</button>
         <button type="button" class="btn btn-icon" id="zoom-in" aria-label="Увеличить">+</button>
-        <button type="button" class="btn" id="zoom-fit" aria-label="Показать все дома целиком"><span class="label-wide">Всё</span><span aria-hidden="true">⤢</span></button>
+        <button type="button" class="btn" id="zoom-fit" aria-label="Показать все дома целиком"><span class="label-wide">Все дома</span><span aria-hidden="true">⤢</span></button>
       </div>
       <div class="topbar" id="topbar">
-        <button type="button" class="yearbtn" id="year-btn" aria-pressed="false" title="Срез по году: кто был жив в выбранный год. Год двигают по шкале сверху"><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.4 1.6"/></svg>Срез по году</button>
-        <div class="yearchip" id="yearchip" hidden><span class="yc-label">Срез</span><span id="yearchip-text" role="status"></span><button type="button" class="btn btn-icon" id="yearchip-off" aria-label="Выключить срез по году" title="Выключить срез">×</button></div>
-        <p class="hint" id="hint">Тяните — двигать, колесо — масштаб, клик — карточка, <kbd>/</kbd> — поиск. Клик по шкале — перейти к этим годам.</p>
+        <button type="button" class="yearbtn" id="year-btn" aria-pressed="false" title="Показать тех, кто жил в выбранном году. Год можно выбрать на шкале."><svg class="tv-ico" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.6V8l2.4 1.6"/></svg>Выбрать год</button>
+        <div class="yearchip" id="yearchip" hidden><span class="yc-label">Год</span><span id="yearchip-text" role="status"></span><button type="button" class="btn btn-icon" id="yearchip-off" aria-label="Показать все годы" title="Показать все годы">×</button></div>
+        <p class="hint" id="hint">Перетаскивайте древо. Колесо меняет масштаб. Нажмите на имя — откроется карточка. <kbd>/</kbd> — поиск. Нажмите на шкалу, чтобы выбрать год.</p>
       </div>
       <div class="lensbar" id="lensbar" hidden><span id="lensbar-text"></span><button type="button" class="btn btn-icon" id="lensbar-close" aria-label="Сбросить подсветку">×</button></div>
       <details class="legend" id="legend">
@@ -83,14 +83,14 @@
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-K" x="1.5" y="1.5" width="27" height="13" rx="4"/></svg><span class="sw-label">Король; номер — порядок</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-C" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Претендент на трон</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><rect class="sw st-R" x="1" y="1" width="28" height="14" rx="4"/></svg><span class="sw-label">Бастард</span></li>
-              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="h-stk"><rect class="sw" x="1" y="1" width="28" height="14" rx="4"/></g><g class="h-targ"><rect class="lg-alt" x="22" y="1" width="6" height="14" rx="3"/></g></svg><span class="sw-label">Полоса справа — дом по слухам</span></li>
+              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="h-stk"><rect class="sw" x="1" y="1" width="28" height="14" rx="4"/></g><g class="h-targ"><rect class="lg-alt" x="22" y="1" width="6" height="14" rx="3"/></g></svg><span class="sw-label">Полоса справа — предполагаемый дом</span></li>
               <li class="h-targ"><svg width="30" height="16" aria-hidden="true"><g class="wing" transform="translate(8,3)"><path d="M0 9.5 C2 4.5 6 1 13.5 0 C11.3 2 11.3 3.6 13.5 4.6 C10.8 4.9 10.3 6.2 11.3 7.8 C8.2 7 5 7.8 3 10 Z"/></g></svg><span class="sw-label">Всадник дракона</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><g class="scr-ico" transform="translate(8,2)"><rect x="0.5" y="0.5" width="13" height="9" rx="2"/><path d="M4 12h6M7 9.5v2.5"/></g></svg><span class="sw-label">В экранизации иначе (режим «Экранизации»)</span></li>
               <li class="h-none"><svg width="30" height="20" aria-hidden="true"><g class="tog" transform="translate(15,10)"><circle r="8.5"/><text y="0.5">−</text></g></svg><span class="sw-label">Свернуть ветвь; «+» — развернуть</span></li>
             </ul>
           </div>
           <div>
-            <h3>Полосы домов</h3>
+            <h3>Дома на древе</h3>
             <ul>
               <li class="h-none"><span class="lg-sig" id="lg-sig-great"></span><span class="sw-label">Великий дом — большой герб</span></li>
               <li class="h-none"><span class="lg-sig" id="lg-sig-minor"></span><span class="sw-label">Малый дом — герб меньше</span></li>
@@ -109,9 +109,9 @@
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="link" d="M1 8H29"/></svg><span class="sw-label">Родитель — ребёнок</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="link unc" d="M1 8H29"/></svg><span class="sw-label">Родство по слухам</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="gap-link" d="M2 8H29"/></svg><span class="sw-label">Пропуск: поколения не названы</span></li>
-              <li class="h-none"><svg width="30" height="18" aria-hidden="true"><path class="union" style="opacity:1" d="M1 9H21"/><g class="knot" transform="translate(21,9)"><circle r="8"/><text y="0.5">⚭</text></g></svg><span class="sw-label">Брак: из узла выходят дети пары</span></li>
-              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="xlink" style="opacity:1" d="M1 8H29"/></svg><span class="sw-label">Брак между домами — приглушён, ярче у выбранного и под указателем</span></li>
-              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="xlink t-l" style="opacity:1" d="M2 8H29"/></svg><span class="sw-label">Помолвка или связь вне брака</span></li>
+              <li class="h-none"><svg width="30" height="18" aria-hidden="true"><path class="union" style="opacity:1" d="M1 9H21"/><g class="knot" transform="translate(21,9)"><circle r="8"/><text y="0.5">⚭</text></g></svg><span class="sw-label">Узел брака соединяет пару с её детьми</span></li>
+              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="xlink" style="opacity:1" d="M1 8H29"/></svg><span class="sw-label">Брак между домами; линия выделяется при выборе или наведении</span></li>
+              <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="xlink t-l" style="opacity:1" d="M2 8H29"/></svg><span class="sw-label">Помолвка или внебрачная связь</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="xlink t-w" style="opacity:1" d="M1 8H29"/></svg><span class="sw-label">Воспитанник</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="link path" d="M1 8H29"/></svg><span class="sw-label">Предки выбранного</span></li>
               <li class="h-none"><svg width="30" height="16" aria-hidden="true"><path class="second" d="M1 8H29"/></svg><span class="sw-label">Супруги и второй родитель</span></li>
@@ -124,14 +124,14 @@
         <div class="legend-body dlegend">
           <ul>
             <li><h3>Линии</h3></li>
-            <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="lf" x1="3" y1="8" x2="31" y2="8"/></svg><span class="sw-label">Жизнь в цвете дома</span></li>
-            <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="lf est" x1="3" y1="8" x2="31" y2="8"/></svg><span class="sw-label">Год рождения или смерти оценён</span></li>
+            <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="lf" x1="3" y1="8" x2="31" y2="8"/></svg><span class="sw-label">Годы жизни; цвет соответствует дому</span></li>
+            <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="lf est" x1="3" y1="8" x2="31" y2="8"/></svg><span class="sw-label">Дата рождения или смерти приблизительна</span></li>
             <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="reign" x1="3" y1="8" x2="31" y2="8"/></svg><span class="sw-label">Годы правления</span></li>
             <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><rect class="lg-sub" x="2" y="3" width="30" height="10" rx="5"/></svg><span class="sw-label">На шкале — жизнь выбранного</span></li>
           </ul>
           <ul>
             <li><h3>Отметки</h3></li>
-            <li><svg width="34" height="16" aria-hidden="true"><g class="t-mar"><line x1="17" y1="1" x2="17" y2="15"/><circle cx="17" cy="2.5" r="2.5"/><circle cx="17" cy="13.5" r="2.5"/></g></svg><span class="sw-label">Брак в год свадьбы</span></li>
+            <li><svg width="34" height="16" aria-hidden="true"><g class="t-mar"><line x1="17" y1="1" x2="17" y2="15"/><circle cx="17" cy="2.5" r="2.5"/><circle cx="17" cy="13.5" r="2.5"/></g></svg><span class="sw-label">Дата свадьбы</span></li>
             <li><svg width="34" height="16" aria-hidden="true"><path class="t-drop" d="M17 1V15"/><circle class="t-birth" cx="17" cy="2" r="2.4"/></svg><span class="sw-label">Рождение ребёнка</span></li>
             <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><line class="lf" x1="3" y1="8" x2="22" y2="8"/><path class="lf-arrow" d="M24 3 L32 8 L24 13 Z"/></svg><span class="sw-label">Жив на конец книг</span></li>
           </ul>
@@ -150,8 +150,8 @@
           <ul>
             <li><h3>Ветви и отметки</h3></li>
             <li><svg width="34" height="16" aria-hidden="true"><path class="d-branch" d="M3 2 C3 13 10 13 32 13"/></svg><span class="sw-label">Происхождение и родство</span></li>
-            <li><svg width="34" height="16" aria-hidden="true"><line class="d-fight" x1="17" y1="1" x2="17" y2="15"/><g class="d-kill" transform="translate(17,11)"><circle r="5"/><path d="M-2.2-2.2L2.2 2.2M2.2-2.2L-2.2 2.2"/></g></svg><span class="sw-label">Схватка: крест — кто погиб</span></li>
-            <li><svg width="34" height="16" aria-hidden="true"><path class="d-guess" d="M2 8H32"/></svg><span class="sw-label">Догадка, не подтверждено</span></li>
+            <li><svg width="34" height="16" aria-hidden="true"><line class="d-fight" x1="17" y1="1" x2="17" y2="15"/><g class="d-kill" transform="translate(17,11)"><circle r="5"/><path d="M-2.2-2.2L2.2 2.2M2.2-2.2L-2.2 2.2"/></g></svg><span class="sw-label">Крест отмечает погибшего в схватке</span></li>
+            <li><svg width="34" height="16" aria-hidden="true"><path class="d-guess" d="M2 8H32"/></svg><span class="sw-label">Не подтверждено в книгах</span></li>
           </ul>
         </div>
       </details>
@@ -175,10 +175,10 @@
           </ul>
           <ul>
             <li><h3>Отметки</h3></li>
-            <li class="h-none"><svg class="lg-bub" width="34" height="22" aria-hidden="true"><path class="b-chev" d="M14 6 L20 11 L14 16"/></svg><span class="sw-label">Знаменосцы свёрнуты — нажмите, чтобы раскрыть</span></li>
-            <li class="h-none"><svg class="lg-bub" width="34" height="22" aria-hidden="true"><path class="b-mark" d="M17 6 L21.5 11 L17 16 L12.5 11 Z"/></svg><span class="sw-label">Событие на шкале — ползунок к нему липнет</span></li>
-            <li class="h-none"><span class="vs-sw vs-sw-moved"></span><span class="sw-label">Вспышка — дом только что сменил сюзерена</span></li>
-            <li class="h-none"><span class="vs-flag">⚑</span><span class="sw-label">Присяга по событию (война, мятеж)</span></li>
+            <li class="h-none"><svg class="lg-bub" width="34" height="22" aria-hidden="true"><path class="b-chev" d="M14 6 L20 11 L14 16"/></svg><span class="sw-label">Нажмите на стрелку, чтобы показать вассалов</span></li>
+            <li class="h-none"><svg class="lg-bub" width="34" height="22" aria-hidden="true"><path class="b-mark" d="M17 6 L21.5 11 L17 16 L12.5 11 Z"/></svg><span class="sw-label">Ромб отмечает событие на шкале</span></li>
+            <li class="h-none"><span class="vs-sw vs-sw-moved"></span><span class="sw-label">Подсветка отмечает смену присяги</span></li>
+            <li class="h-none"><span class="vs-flag">⚑</span><span class="sw-label">Сторона в войне или мятеже</span></li>
             <li class="h-none"><svg class="lg-bub" width="34" height="22" aria-hidden="true"><circle class="b-house" cx="17" cy="11" r="10"/><text x="17" y="14">12</text></svg><span class="sw-label">В кругах: дом и число знаменосцев</span></li>
           </ul>
         </div>
@@ -190,7 +190,7 @@
             <li><h3>Карточки</h3></li>
             <li class="h-targ"><svg width="34" height="16" aria-hidden="true"><rect class="card" x="2" y="2" width="30" height="12" rx="4" style="stroke: var(--path); stroke-width: 2.6"/></svg><span class="sw-label">Выбранный человек — в центре</span></li>
             <li class="h-none"><svg width="34" height="16" aria-hidden="true"><rect x="2" y="2" width="30" height="12" rx="4" style="fill: var(--surface); stroke: var(--line); stroke-dasharray: 4 3"/></svg><span class="sw-label">Известен только по имени, на древе его нет</span></li>
-            <li class="h-none"><svg width="34" height="16" aria-hidden="true"><rect x="2" y="2" width="30" height="12" rx="4" style="fill: var(--ground); stroke: var(--rule); stroke-dasharray: 3 3"/></svg><span class="sw-label">Пустое место: предок неизвестен</span></li>
+            <li class="h-none"><svg width="34" height="16" aria-hidden="true"><rect x="2" y="2" width="30" height="12" rx="4" style="fill: var(--ground); stroke: var(--rule); stroke-dasharray: 3 3"/></svg><span class="sw-label">Пустая карточка — неизвестный предок</span></li>
           </ul>
           <ul>
             <li><h3>Повторы</h3></li>
@@ -202,7 +202,7 @@
       </details>
     </div>
     <div class="panel-resizer" id="panel-resizer" role="separator" aria-orientation="vertical" aria-label="Ширина карточки" aria-valuemin="320" aria-valuemax="820" aria-valuenow="440" tabindex="0" title="Тяните, чтобы изменить ширину карточки · двойной клик — ширина по умолчанию"></div>
-    <aside class="panel" id="panel" aria-label="Карточка персоны" aria-live="polite">
+    <aside class="panel" id="panel" aria-label="Карточка персонажа" aria-live="polite">
       <div class="panel-inner" id="panel-content"></div>
     </aside>
   </div>

@@ -4,26 +4,37 @@
 
 ## Крейкхоллы при Таргариенах
 
-### clarent · Clarent Crakehall
+### clarent · Clarent Crakehall ✎
+A western commander supporting Aegon II. He died at the Battle by the Lakeshore in 130 AC.
 
-### roland_kg · Roland Crakehall
+### roland_kg · Roland Crakehall ✎
+A Kingsguard knight who opposed Dunk at Ashford and later accompanied Bloodraven to Whitewalls.
 
 ## Крейкхолл в конце третьего века
 
-### sumner · Sumner Crakehall
+### sumner · Sumner Crakehall ✎
+Jaime spent four years as his squire. Merrett Frey also grew up at Crakehall.
 
-### roland_c · Roland Crakehall
+### roland_c · Roland Crakehall ✎
+He found Jaime on the throne after Aerys’s murder. Reports of his death at Oxcross proved false.
 
-### tybolt · Tybolt Crakehall
+### tybolt · Tybolt Crakehall ✎
+Heir to Crakehall.
 
-### lyle_c · Lyle Crakehall
+### lyle_c · Lyle Crakehall ✎
+Strongboar survived captivity and joined Jaime’s march to Riverrun. He was subsequently sent to find the Hound.
 
-### merlon · Merlon Crakehall
+### merlon · Merlon Crakehall ✎
+He helped receive Oberyn Martell when the prince arrived in King’s Landing.
 
-### burton · Burton Crakehall
+### burton · Burton Crakehall ✎
+His mace killed Beric Dondarrion, but Thoros revived him. The brotherhood later ambushed Burton’s force.
 
-### amarei · Amarei Crakehall
+### amarei · Amarei Crakehall ✎
+Her marriage brought Crakehall connections into the Frey family; Merrett was fostered with her kin.
 
-### melesa · Melesa Crakehall
+### melesa · Melesa Crakehall ✎
+Her marriage to Lyonel Frey was childless. Her exact place in the Crakehall family is unknown.
 
-### shiera_c · Shiera Crakehall
+### shiera_c · Shiera Crakehall ✎
+Shiera married Ser Damion Lannister, a cousin of the family's main branch. Their children are Lucion and Lanna.
