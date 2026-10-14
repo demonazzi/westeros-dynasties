@@ -47,6 +47,8 @@ def build():
                   '<style>:root{color-scheme:dark}body{margin:0;background:#131215;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>\n'
                   + page[:head_end] + '\n</head>\n<body>' + page[head_end:] + '\n</body>\n</html>\n')
     (DIST / 'targaryen-tree.html').write_text(standalone, encoding='utf-8')
+    # index.html в корне — та же страница для GitLab/GitHub Pages
+    (ROOT / 'index.html').write_text(standalone, encoding='utf-8')
     if PUBLISH and PUBLISH.parent.exists():
         shutil.copy(DIST / 'artifact.html', PUBLISH)
     print('built', len(page), 'bytes;', 'app:', APP)

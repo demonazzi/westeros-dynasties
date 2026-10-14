@@ -6,7 +6,7 @@
 ## Сборка и проверки
 
 ```
-python3 tools/build.py            # → dist/artifact.html (для публикации) и dist/targaryen-tree.html (отдельный файл)
+python3 tools/build.py            # → dist/artifact.html (для публикации), dist/targaryen-tree.html и index.html в корне (Pages)
 node tools/validate.js            # данные: ссылки, корни, дубликаты, тексты
 node tools/data.js --sync         # после правки data/: порядок и заголовки в texts/, разделы для новых людей
 node tools/smoke.js               # все вкладки в jsdom
