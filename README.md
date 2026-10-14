@@ -15,6 +15,7 @@ node tools/check-labels.js        # подписи и пунктиры ни на
 node tools/check-links.js         # связи между домами
 node tools/check-vassal.js        # вкладка «Вассалитет»
 node tools/check-minor.js         # малые дома: своя полоса, герб меньше; фильтр: блоки, края, «только», поиск
+node tools/check-tips.js          # подсказка у линии связи не залипает
 node tools/check-house.js         # карточка дома: открытие с древа, хронологии, списка, карточки человека; история
 node tools/check-i18n.js          # английский: имена, интерфейс, данные, тексты, возврат к русскому
 node tools/i18n-keys.js [en]      # строки интерфейса → src/i18n/en.json (обходит собранную страницу)

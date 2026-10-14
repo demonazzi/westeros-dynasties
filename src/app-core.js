@@ -353,6 +353,7 @@
   }
 
   function render() {
+    if (App.hideXTip) App.hideXTip();
     const links = App.layouts[state.mode]();
     visible = new Set(allNodes.map(n => n.data.id));
     computeKnots();
@@ -757,6 +758,13 @@
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
+  // подсказка у линии не должна залипать: pointerleave не приходит, если линию перерисовали или убрали из-под
+  // указателя (перестройка древа, фильтр, смена вкладки), или указатель ушёл с холста на панель или за окно —
+  // поэтому её снимает и любое движение не над линией, и уход с холста, и потеря фокуса окна
+  svg.on('pointermove.xtip', e => { if (xKey && !(e.target.closest && e.target.closest('.xhit, .xmark'))) xHover(null); });
+  canvasEl.addEventListener('pointerleave', () => { if (xKey) xHover(null); });
+  window.addEventListener('blur', () => { if (xKey) xHover(null); });
+  App.hideXTip = () => { if (xKey || !xtip.hidden) xHover(null); };
   App.xFar = xFar;
   App.drawCross = drawCross;
   // карточка под указателем: её связи с другими домами видны ярче
@@ -1131,6 +1139,7 @@
     if (state.view === v && !opts.force) return;
     const prev = App.views[state.view], next = App.views[v];
     if (!next) return;
+    if (App.hideXTip) App.hideXTip();
     if (prev && prev.sel) prev.sel.interrupt();
     state.view = v;
     Object.keys(App.views).forEach(k => {

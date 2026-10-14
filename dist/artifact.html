@@ -3536,6 +3536,7 @@ const I18N_DATA = {"en": {}};
   }
 
   function render() {
+    if (App.hideXTip) App.hideXTip();
     const links = App.layouts[state.mode]();
     visible = new Set(allNodes.map(n => n.data.id));
     computeKnots();
@@ -3940,6 +3941,13 @@ const I18N_DATA = {"en": {}};
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
+  // подсказка у линии не должна залипать: pointerleave не приходит, если линию перерисовали или убрали из-под
+  // указателя (перестройка древа, фильтр, смена вкладки), или указатель ушёл с холста на панель или за окно —
+  // поэтому её снимает и любое движение не над линией, и уход с холста, и потеря фокуса окна
+  svg.on('pointermove.xtip', e => { if (xKey && !(e.target.closest && e.target.closest('.xhit, .xmark'))) xHover(null); });
+  canvasEl.addEventListener('pointerleave', () => { if (xKey) xHover(null); });
+  window.addEventListener('blur', () => { if (xKey) xHover(null); });
+  App.hideXTip = () => { if (xKey || !xtip.hidden) xHover(null); };
   App.xFar = xFar;
   App.drawCross = drawCross;
   // карточка под указателем: её связи с другими домами видны ярче
@@ -4314,6 +4322,7 @@ const I18N_DATA = {"en": {}};
     if (state.view === v && !opts.force) return;
     const prev = App.views[state.view], next = App.views[v];
     if (!next) return;
+    if (App.hideXTip) App.hideXTip();
     if (prev && prev.sel) prev.sel.interrupt();
     state.view = v;
     Object.keys(App.views).forEach(k => {
@@ -5862,19 +5871,23 @@ const I18N_DATA = {"en": {}};
     ns.forEach(n => { x0 = Math.min(x0, n.X); x1 = Math.max(x1, n.X + App.W); });
     x0 -= 60; x1 += 80;
     const y0 = bb[0].top - 20, y1 = bb[bb.length - 1].bottom + 20;
-    const s = Math.min(200 / (x1 - x0), 170 / (y1 - y0));
-    MW = Math.round((x1 - x0) * s); MH = Math.round((y1 - y0) * s);
+    // пропорции древа сохраняются, пока карта не становится слишком узкой или низкой: когда домов на древе много,
+    // древо намного выше, чем шире, — тогда карта выше (до 45% экрана), а по ширине не уже 150 px (масштаб по осям разный)
+    const maxH = Math.max(170, Math.min(300, Math.round(App.viewSize().h * 0.45)));
+    const s = Math.min(200 / (x1 - x0), maxH / (y1 - y0));
+    MW = Math.max(150, Math.round((x1 - x0) * s)); MH = Math.max(60, Math.round((y1 - y0) * s));
+    const sx = MW / (x1 - x0), sy = MH / (y1 - y0);
     msvg.attr('viewBox', '0 0 ' + MW + ' ' + MH).attr('width', MW).attr('height', MH);
     const ox = 0, oy = 0;
-    geo = { x0, y0, s, ox, oy };
+    geo = { x0, y0, sx, sy, ox, oy };
     content.selectAll('*').remove();
     bb.forEach(b => content.append('rect').attr('class', 'mm-band h-' + b.house)
-      .attr('x', ox).attr('y', oy + (b.top - y0) * s).attr('width', (x1 - x0) * s).attr('height', Math.max(1, (b.bottom - b.top) * s)));
+      .attr('x', ox).attr('y', oy + (b.top - y0) * sy).attr('width', MW).attr('height', Math.max(1, (b.bottom - b.top) * sy)));
     const dim = App.dimmedFn ? App.dimmedFn() : () => false;
     content.selectAll('rect.mm-node').data(ns).join('rect')
       .attr('class', d => 'mm-node h-' + d.data.house + (dim(d.data.id) ? ' dim' : ''))
-      .attr('x', d => ox + (d.X - x0) * s).attr('y', d => oy + (d.Y - App.H / 2 - y0) * s)
-      .attr('width', Math.max(1.5, App.W * s)).attr('height', Math.max(1, App.H * s));
+      .attr('x', d => ox + (d.X - x0) * sx).attr('y', d => oy + (d.Y - App.H / 2 - y0) * sy)
+      .attr('width', Math.max(1.5, App.W * sx)).attr('height', Math.max(1, App.H * sy));
     drawSel();
     drawViewport(d3.zoomTransform(App.svg.node()));
   }
@@ -5885,7 +5898,7 @@ const I18N_DATA = {"en": {}};
     content.selectAll('circle.mm-sel').remove();
     if (state.selected && App.nodeById.has(state.selected)) {
       const n = App.nodeById.get(state.selected);
-      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', geo.ox + (n.X + App.W / 2 - geo.x0) * geo.s).attr('cy', geo.oy + (n.Y - geo.y0) * geo.s).attr('r', 3.5);
+      if (App.visible().has(n.data.id)) content.append('circle').attr('class', 'mm-sel').attr('cx', geo.ox + (n.X + App.W / 2 - geo.x0) * geo.sx).attr('cy', geo.oy + (n.Y - geo.y0) * geo.sy).attr('r', 3.5);
     }
   }
   function onSelect() {
@@ -5898,8 +5911,8 @@ const I18N_DATA = {"en": {}};
     if (!geo) return;
     const r = App.viewSize();
     const [ax, ay] = t.invert([0, 0]), [bx, by] = t.invert([r.w || 1000, r.h || 700]);
-    const x = geo.ox + (ax - geo.x0) * geo.s, y = geo.oy + (ay - geo.y0) * geo.s;
-    const w = (bx - ax) * geo.s, h = (by - ay) * geo.s;
+    const x = geo.ox + (ax - geo.x0) * geo.sx, y = geo.oy + (ay - geo.y0) * geo.sy;
+    const w = (bx - ax) * geo.sx, h = (by - ay) * geo.sy;
     const cx = Math.max(-2, Math.min(MW + 2, x)), cy = Math.max(-2, Math.min(MH + 2, y));
     vp.attr('x', cx).attr('y', cy).attr('width', Math.max(4, Math.min(MW + 2, x + w) - cx)).attr('height', Math.max(4, Math.min(MH + 2, y + h) - cy));
   }
@@ -5910,7 +5923,7 @@ const I18N_DATA = {"en": {}};
   function goTo(evt) {
     if (!geo) return;
     const pt = d3.pointer(evt, msvg.node());
-    const cx = geo.x0 + (pt[0] - geo.ox) / geo.s, cy = geo.y0 + (pt[1] - geo.oy) / geo.s;
+    const cx = geo.x0 + (pt[0] - geo.ox) / geo.sx, cy = geo.y0 + (pt[1] - geo.oy) / geo.sy;
     App.svg.interrupt().call(App.zoom.translateTo, cx, cy);
   }
   let dragging = false;
