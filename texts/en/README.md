@@ -13,7 +13,7 @@ or the **EN** button. Anything without an English string falls back to Russian.
 | Long texts about people, houses, dragons, screen-vs-book differences | `texts/en/people/<house>.md`, `vassals.md`, `dragons.md`, `screen.md`, `screen-dragons.md` |
 
 Names of people and dragons come from the `en` field in `data/`, not from these files.
-Almost all English texts are AI drafts translated from Russian and marked `✎`.
+English texts are translations of the Russian ones; only a few dozen added later by an AI are marked `✎`.
 
 ## Interface — `src/i18n/en.json`
 
