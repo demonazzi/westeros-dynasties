@@ -1285,6 +1285,8 @@
     } else {
       select('rhaenys_q', { push: false }); centerOn('rhaenys_q', 0.55, false);
     }
+    // открыта без адреса — адрес остаётся чистым; дальше он повторяет выбранное (ссылкой можно поделиться)
+    if (!startId) App.setHash('');
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitNames(layers.nodes.selectAll('g.node')));
   };
 })();
