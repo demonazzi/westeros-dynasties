@@ -33,15 +33,15 @@ const SEAT = { tar: 'Рогова Холма', red: 'Арбора', pea: 'Звё
   day: 'Звездопада', est: 'Нефрита', swn: 'Каменного Шлема', pen: 'Пергаментов', stw: 'Стокворта', dnd: 'Чёрного Приюта', roy: 'Рунного Камня',
   cor: 'Дома Сердец', brk: 'Каменной Ограды', mal: 'Сигарда', pip: 'Розовой Девы', umb: 'Последнего Очага', man: 'Белой Гавани' };
 const who = h => SEAT[h] ? 'лорды ' + SEAT[h] : 'главы дома';
-const STD = h => who(h) + ' между ними в книгах не названы';
+const STD = h => who(h) + ' этих лет в книгах не упоминаются';
 // [дом, от, к, особая подпись]
 const G = [
-  ['tar', 'savage_sam', 'donald'], ['tar', 'savage_sam', 'alan_t', 'лорды Рогова Холма между ними в книгах не названы; Алан, возможно, сын Дональда'],
+  ['tar', 'savage_sam', 'donald'], ['tar', 'savage_sam', 'alan_t', 'лорды Рогова Холма этих лет в книгах не упоминаются; Алан, возможно, сын Дональда'],
   ['tar', 'alan_t', 'samwyle'], ['tar', 'samwyle', 'tar_lord17'],
   ['red', 'ryam', 'runceford'],
   ['pea', 'uther', 'pea_lord9'], ['pea', 'unwin', 'gormon_p'], ['pea', 'gormon_p', 'titus_p'],
-  ['osg', 'ormond', 'eustace', 'главы дома между ними в книгах не названы; Юстас — последний в своей линии'],
-  ['oak', 'torgen', 'oak_lord73'], ['oak', 'oak_lord73', 'arwyn', 'лорды Старого Дуба между ними в книгах не названы; Арвин — глава дома в конце века'],
+  ['osg', 'ormond', 'eustace', 'главы дома этих лет в книгах не упоминаются; Юстас — последний в своей линии'],
+  ['oak', 'torgen', 'oak_lord73'], ['oak', 'oak_lord73', 'arwyn', 'лорды Старого Дуба этих лет в книгах не упоминаются; Арвин — глава дома в конце века'],
   ['wes', 'roland_wl', 'gawen_w'],
   ['far', 'far_lord43', 'far_lord130'], ['far', 'far_lord130', 'far_par19'],
   ['plm', 'ossifer', 'philip_pl'],
@@ -49,7 +49,7 @@ const G = [
   ['est', 'gunthor_e', 'est_lord17'], ['est', 'gunthor_e', 'eldon', 'приложения расходятся в родстве позднейших Эстермонтов'],
   ['swn', 'swann_lord129', 'gawen_s'], ['swn', 'gawen_s', 'manfred_s'], ['swn', 'manfred_s', 'gulian'],
   ['pen', 'ronnel', 'pen_lord18'],
-  ['stw', 'alyn_s', 'stw_lord129'], ['stw', 'stw_lord129', 'tanda', 'лорды Стокворта между ними в книгах не названы; Танда — сестра Мэнли Стокворта'],
+  ['stw', 'alyn_s', 'stw_lord129'], ['stw', 'stw_lord129', 'tanda', 'лорды Стокворта этих лет в книгах не упоминаются; Танда — сестра Мэнли Стокворта'],
   ['dnd', 'harmon_d', 'dnd_lord54', 'Хармон, возможно, и был отцом Саймона; в книгах не сказано'], ['dnd', 'simon_d', 'dnd_lord206'], ['dnd', 'manfred_d', 'beric'],
   ['roy', 'allard', 'yorbert'], ['roy', 'rhea', 'gunthor_r', 'Гунтор правил после Реи; как они связаны, в книгах не сказано'], ['roy', 'gunthor_r', 'yohn'],
   ['cor', 'qarl', 'cor_lord9'], ['cor', 'leowyn', 'cor_lord17'],
