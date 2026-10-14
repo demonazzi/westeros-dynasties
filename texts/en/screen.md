@@ -106,7 +106,7 @@
 
 ### brynden · Brynden Rivers, Bloodraven
 
-### aegon_r · Эйгон, сын Рейегара
+### aegon_r · Aegon
 
 ## «Игра престолов»: Старки
 
@@ -136,13 +136,13 @@
 
 ### renly · Renly Baratheon
 
-### shireen · Ширен Баратеон
+### shireen · Shireen Baratheon
 
 ### joffrey_b · Joffrey Baratheon
 
-### myrcella · Мирцелла Баратеон
+### myrcella · Myrcella Baratheon
 
-### tommen · Томмен I Баратеон
+### tommen · Tommen Baratheon
 
 ### gendry · Gendry
 

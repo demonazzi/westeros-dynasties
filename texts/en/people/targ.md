@@ -70,9 +70,9 @@
 
 ## Дети Джейехериса I и Алисанны
 
-### aegon_j · Эйгон, сын Джейехериса I
+### aegon_j · Aegon
 
-### daenerys_j · Дейенерис, дочь Джейехериса I
+### daenerys_j · Daenerys
 
 ### aemon_j · Aemon
 
@@ -80,19 +80,19 @@
 
 ### alyssa_j · Alyssa
 
-### maegelle · Септа Мейгелле
+### maegelle · Maegelle
 
 ### vaegon · Vaegon the Dragonless
 
-### daella_j · Дейелла, дочь Джейехериса I
+### daella_j · Daella
 
 ### saera · Saera
 
 ### viserra · Viserra
 
-### gaemon_j · Гейемон, сын Джейехериса I
+### gaemon_j · Gaemon
 
-### valerion · Валерион
+### valerion · Valerion
 
 ### gael · Gael
 
@@ -104,7 +104,7 @@
 
 ### daemon · Daemon
 
-### aegon_b · Эйгон, сын Бейлона
+### aegon_b · Aegon
 
 ### saera_sons · Внебрачные сыновья Саэры
 
@@ -116,7 +116,7 @@
 
 ### rhaenyra · Rhaenyra
 
-### baelon_v · Бейлон, Наследник на день
+### baelon_v · Baelon
 
 ### aegon2 · Aegon II
 
@@ -148,11 +148,11 @@
 
 ### viserys2 · Viserys II
 
-### visenya_r · Висенья, дочь Рейениры
+### visenya_r · Visenya
 
 ## Дети Эйгона II
 
-### jaehaerys_a · Джейехерис, сын Эйгона II
+### jaehaerys_a · Jaehaerys
 
 ### jaehaera · Jaehaera
 
@@ -176,7 +176,7 @@
 
 ### daena · Daena the Defiant
 
-### rhaena_b · Рейена, дочь Эйгона III
+### rhaena_b · Rhaena
 
 ### elaena_b · Elaena
 
@@ -194,7 +194,7 @@
 
 ### twins_n · Близнецы Нейерис
 
-### daenerys_n · Дейенерис, дочь Эйгона IV
+### daenerys_n · Daenerys
 
 ### naerys_twin · Мертворождённый сын Эйгона IV и Нейерис
 
@@ -232,23 +232,23 @@
 
 ## Блэкфайры
 
-### aegon_bf · Эйгон Блэкфайр
+### aegon_bf · Aegon Blackfyre
 
-### aemon_bf · Эймон Блэкфайр
+### aemon_bf · Aemon Blackfyre
 
-### daemon2_bf · Деймон II Блэкфайр
+### daemon2_bf · Daemon II Blackfyre
 
-### haegon · Хейгон I Блэкфайр
+### haegon · Haegon I Blackfyre
 
-### daemon3_bf · Деймон III Блэкфайр
+### daemon3_bf · Daemon III Blackfyre
 
 ### haegon_sons · Младшие сыновья Хейгона I Блэкфайра
 
-### aenys_bf · Эйнис Блэкфайр
+### aenys_bf · Aenys Blackfyre
 
 ### daemon_bf_sons · Двое младших сыновей Деймона I Блэкфайра
 
-### calla · Калла Блэкфайр
+### calla · Calla Blackfyre
 
 ### daemon_bf_daus · Младшие дочери Деймона I Блэкфайра
 
@@ -258,21 +258,21 @@
 
 ### baelor_b · Baelor Breakspear
 
-### valarr · Валарр, Молодой принц
+### valarr · Valarr
 
 ### valarr_sons · Мертворождённые сыновья Валарра
 
-### matarys · Матарис
+### matarys · Matarys
 
 ### aerys1 · Aerys I
 
-### rhaegel · Рейегель
+### rhaegel · Rhaegel
 
-### aelor · Эйлор
+### aelor · Aelor
 
-### aelora · Эйлора
+### aelora · Aelora
 
-### daenora · Дейенора
+### daenora · Daenora
 
 ### maekar1 · Maekar I
 
@@ -280,21 +280,21 @@
 
 ### daeron_dr · Daeron the Drunken
 
-### vaella_s · Вейелла Простушка
+### vaella_s · Vaella
 
 ### aerion_m · Aerion Brightflame
 
-### maegor_a · Мейгор, сын Эйриона
+### maegor_a · Maegor
 
 ### aemon_m · Maester Aemon
 
-### daella_m · Дейелла, дочь Мейкара I
+### daella_m · Daella
 
 ### daella_kids · Дети Дейеллы, дочери Мейкара I
 
 ### aegon5 · Aegon the Unlikely
 
-### rhae · Рейе
+### rhae · Rhae
 
 ### rhae_kids · Дети Рейе, дочери Мейкара I
 
@@ -306,7 +306,7 @@
 
 ### shaera · Shaera
 
-### daeron_e · Дейерон, сын Эйгона V
+### daeron_e · Daeron
 
 ### rhaelle · Rhaelle
 
@@ -320,15 +320,15 @@
 
 ### rhaegar · Rhaegar
 
-### shaena · Шейна, дочь Эйериса II
+### shaena · Shaena
 
-### daeron_a2 · Дейерон, сын Эйериса II
+### daeron_a2 · Daeron
 
 ### stillborn_a2 · Мертворождённый ребёнок Эйериса II и Рейеллы
 
-### aegon_a2 · Эйгон, сын Эйериса II
+### aegon_a2 · Aegon
 
-### jaehaerys_a2 · Джейехерис, сын Эйериса II
+### jaehaerys_a2 · Jaehaerys
 
 ### viserys3 · Viserys, the Beggar King
 
@@ -336,6 +336,6 @@
 
 ### rhaego · Rhaego
 
-### rhaenys_r · Рейенис, дочь Рейегара
+### rhaenys_r · Rhaenys
 
-### aegon_r · Эйгон, сын Рейегара
+### aegon_r · Aegon

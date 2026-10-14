@@ -6,6 +6,7 @@
       "title": "Танец драконов",
       "people": [
         {"id":"forrest_fr","name":"Форрест Фрей","en":"Forrest Frey","al":["Фрей-Дурашка"],"hs":"fry","k":"T","par":["родители не названы"],"d":"130","sp":[["sabitha_fr"]]},
+        {"id":"forrest_son","name":"Сын","full":"Сын Форреста Фрея","hs":"fry","k":"T","p":"forrest_fr","par":["forrest_fr","sabitha_fr"],"wiki":"Forrest Frey"},
         {"id":"sabitha_fr","name":"Сабита Випрен","en":"Sabitha Frey","al":["Сабита Фрей","леди Фрей"],"fem":1,"hs":"oth","h":"Випренов","k":"T","par":["урождённая Випрен; родители не названы"],"d":"136 или позже","sp":[["forrest_fr"]]}
       ]
     },
@@ -17,6 +18,7 @@
         {"id":"franklyn_fr","name":"Франклин Фрей","en":"Franklyn Frey","hs":"fry","k":"T","p":"fr_lord14","par":["fr_lord14"]},
         {"id":"addam_fr","name":"Аддам Фрей","en":"Addam Frey","hs":"fry","k":"T","p":"franklyn_fr","par":["franklyn_fr (возможно)","племянник лорда Фрея, отца Уолдера"],"unc":1},
         {"id":"lady_butterwell","name":"Леди Фрей","full":"Леди Фрей, жена Амброза Баттервелла","en":"Lady Butterwell","al":["леди Баттервелл"],"fem":1,"hs":"fry","k":"T","p":"fr_lord","par":["fr_lord"],"b":"196/197","sp":[["ambrose","212 г."]]},
+        {"id":"fr_lord_daughters","name":"Дочери","full":"Другие дочери лорда Фрея, отца Уолдера","fem":1,"group":1,"hs":"fry","k":"T","p":"fr_lord","par":["fr_lord","жена не названа"],"wiki":"Lady Butterwell"},
         {"id":"walder_fr","name":"Уолдер Фрей","full":"Уолдер Фрей, лорд Переправы","en":"Walder Frey","al":["Покойный лорд Фрей","Запоздалый лорд Фрей","Старый Фрей"],"hs":"fry","k":"T","p":"fr_lord","par":["fr_lord"],"b":"208","sp":[["perra","ум. в 239–249"],["cyrenna","ум. в 248–258"],["amarei","ум. в 264 или 265"],["Алисса Блэквуд","ум. в 269–278"],["Сарья Уэнт","бездетна; ум. в 269–278"],["Бетани Росби","ум. в 282, 283 или 284"],["Аннара Фарринг","ум. в 292–298"],["Жойез Эренфорд","298 г."]]}
       ]
     },
@@ -28,10 +30,14 @@
         {"id":"edwyn_fr","name":"Эдвин Фрей","en":"Edwyn Frey","hs":"fry","k":"T","p":"ryman_fr","par":["ryman_fr"],"b":"257–279","sp":[["Дженис Хантер"]]},
         {"id":"walda_fr_edwyn","name":"Уолда Фрей","full":"Уолда Фрей, дочь Эдвина","en":"Walda Frey","fem":1,"hs":"fry","k":"T","p":"edwyn_fr","par":["edwyn_fr","Дженис Хантер","walder_fr_ryman (по слухам)"],"rp":"walder_fr_ryman","unc":1,"b":"290/291","wiki":"Walda Frey (daughter of Edwyn)"},
         {"id":"walder_fr_ryman","name":"Уолдер Фрей","full":"Уолдер Фрей, сын Римана","en":"Walder Frey","al":["Чёрный Уолдер"],"hs":"fry","k":"T","p":"ryman_fr","par":["ryman_fr"],"b":"258–280","sp":[["Миленда Карон","по слухам","l"],["Аннара Фарринг","по слухам","l"],["amerei_fr","по слухам","l"],["walda_fr_walton","по слухам","l"],["Дженис Хантер","по слухам","l"]],"wiki":"Walder Frey (son of Ryman)"},
+        {"id":"black_walder_bast","name":"Бастарды","full":"Внебрачные дети Уолдера Фрея, сына Римана","group":1,"hs":"fry","k":"R","p":"walder_fr_ryman","par":["walder_fr_ryman"],"wiki":"Walder Frey (son of Ryman)"},
         {"id":"petyr_fr","name":"Петир Фрей","en":"Petyr Frey","al":["Петир Прыщ"],"hs":"fry","k":"T","p":"ryman_fr","par":["ryman_fr"],"b":"280","d":"300","sp":[["Миленда Карон"]]},
         {"id":"perra_fr","name":"Перра Фрей","en":"Perra Frey","fem":1,"hs":"fry","k":"T","p":"petyr_fr","par":["petyr_fr","Миленда Карон","walder_fr_ryman (по слухам)"],"rp":"walder_fr_ryman","unc":1,"b":"294"},
         {"id":"aegon_fr_stevron","name":"Эйгон Фрей","full":"Эйгон Фрей, сын Стеврона","en":"Aegon Frey","al":["Динь-Дон"],"hs":"fry","k":"T","p":"stevron_fr","par":["stevron_fr","Джейн Лидден"],"b":"≈249","d":"299","wiki":"Aegon Frey (son of Stevron)"},
         {"id":"maegelle_fr","name":"Мейгель Фрей","en":"Maegelle Frey","fem":1,"hs":"fry","k":"T","p":"stevron_fr","par":["stevron_fr","Джейн Лидден"],"b":"250–268","d":"не позднее 299","sp":[["Дафин Вэнс"]]},
+        {"id":"marianne_vance","name":"Марианна Вэнс","en":"Marianne Vance","fem":1,"hs":"oth","h":"Вэнсов","k":"T","p":"maegelle_fr","par":["maegelle_fr","Дафин Вэнс"]},
+        {"id":"walder_vance","name":"Уолдер Вэнс","en":"Walder Vance","hs":"oth","h":"Вэнсов","k":"T","p":"maegelle_fr","par":["maegelle_fr","Дафин Вэнс"]},
+        {"id":"patrek_vance","name":"Патрек Вэнс","en":"Patrek Vance","hs":"oth","h":"Вэнсов","k":"T","p":"maegelle_fr","par":["maegelle_fr","Дафин Вэнс"]},
         {"id":"walton_fr","name":"Уолтон Фрей","en":"Walton Frey","hs":"fry","k":"T","p":"stevron_fr","par":["stevron_fr","marsella"],"b":"250–268","sp":[["deana"]]},
         {"id":"steffon_fr","name":"Стеффон Фрей","en":"Steffon Frey","al":["Стеффон Сладкий"],"hs":"fry","k":"T","p":"walton_fr","par":["walton_fr","deana"],"b":"260–280"},
         {"id":"walda_fr_walton","name":"Уолда Фрей","full":"Уолда Фрей, дочь Уолтона","en":"Walda Frey","al":["Уолда Светлая"],"fem":1,"hs":"fry","k":"T","p":"walton_fr","par":["walton_fr","deana"],"b":"280/281","sp":[["walder_fr_ryman","по слухам","l"]],"wiki":"Walda Frey (daughter of Walton)"},
@@ -49,7 +55,10 @@
         {"id":"robert_fr_rhaegar","name":"Роберт Фрей","full":"Роберт Фрей, сын Рейгара","en":"Robert Frey","hs":"fry","k":"T","p":"rhaegar_fr","par":["rhaegar_fr","Джейн Бисбери"],"b":"286","wiki":"Robert Frey (son of Rhaegar)"},
         {"id":"walda_fr_rhaegar","name":"Уолда Фрей","full":"Уолда Фрей, дочь Рейгара","en":"Walda Frey","al":["Белая Уолда"],"fem":1,"hs":"fry","k":"T","p":"rhaegar_fr","par":["rhaegar_fr","Джейн Бисбери"],"b":"288/289","wiki":"Walda Frey (daughter of Rhaegar)"},
         {"id":"jonos_fr","name":"Джонос Фрей","en":"Jonos Frey","hs":"fry","k":"T","p":"rhaegar_fr","par":["rhaegar_fr","Джейн Бисбери"],"b":"291"},
-        {"id":"perriane_fr","name":"Перриана Фрей","en":"Perriane Frey","fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","perra"],"b":"239–249","sp":[["Леслин Хэй"]]}
+        {"id":"perriane_fr","name":"Перриана Фрей","en":"Perriane Frey","fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","perra"],"b":"239–249","sp":[["Леслин Хэй"]]},
+        {"id":"harys_haigh","name":"Харис Хэй","en":"Harys Haigh","hs":"oth","h":"Хэев","k":"T","p":"perriane_fr","par":["perriane_fr","Леслин Хэй"]},
+        {"id":"donnel_haigh","name":"Доннел Хэй","en":"Donnel Haigh","hs":"oth","h":"Хэев","k":"T","p":"perriane_fr","par":["perriane_fr","Леслин Хэй"]},
+        {"id":"alyn_haigh","name":"Алин Хэй","en":"Alyn Haigh","hs":"oth","h":"Хэев","k":"T","p":"perriane_fr","par":["perriane_fr","Леслин Хэй"]}
       ]
     },
     {
@@ -60,6 +69,8 @@
         {"id":"zia_fr","name":"Ция Фрей","en":"Zia Frey","fem":1,"hs":"fry","k":"T","p":"tytos_fr","par":["tytos_fr","Зои Блейнтри"],"b":"285"},
         {"id":"zachery_fr","name":"Захери Фрей","en":"Zachery Frey","hs":"fry","k":"T","p":"tytos_fr","par":["tytos_fr","Зои Блейнтри"],"b":"287"},
         {"id":"kyra_fr","name":"Кира Фрей","en":"Kyra Frey","fem":1,"hs":"fry","k":"T","p":"jared_fr","par":["jared_fr","alys_fr"],"b":"261–278","sp":[["Гарс Гудбрук"]]},
+        {"id":"walder_goodbrook","name":"Уолдер Гудбрук","en":"Walder Goodbrook","hs":"oth","h":"Гудбруков","k":"T","p":"kyra_fr","par":["kyra_fr","Гарс Гудбрук"]},
+        {"id":"jeyne_goodbrook","name":"Джейн Гудбрук","en":"Jeyne Goodbrook","fem":1,"hs":"oth","h":"Гудбруков","k":"T","p":"kyra_fr","par":["kyra_fr","Гарс Гудбрук"]},
         {"id":"luceon_fr","name":"Люцеон Фрей","en":"Luceon Frey","al":["септон Люцеон"],"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","cyrenna"],"b":"248–258"}
       ]
     },
@@ -73,16 +84,21 @@
         {"id":"alyn_fr","name":"Алин Фрей","en":"Alyn Frey","hs":"fry","k":"T","p":"arwood_fr","par":["arwood_fr","ryella"],"b":"295/296"},
         {"id":"hostella_fr","name":"Хостелла Фрей","en":"Hostella Frey","fem":1,"hs":"fry","k":"T","p":"arwood_fr","par":["arwood_fr","ryella"],"b":"299/300"},
         {"id":"lythene_fr","name":"Литен Фрей","en":"Lythene Frey","fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"249–259","sp":[["Люциас Випрен"]]},
+        {"id":"elyana_vypren","name":"Элиана Випрен","en":"Elyana Vypren","fem":1,"hs":"oth","h":"Випренов","k":"T","p":"lythene_fr","par":["lythene_fr","Люциас Випрен"]},
+        {"id":"damon_vypren","name":"Дамон Випрен","en":"Damon Vypren","hs":"oth","h":"Випренов","k":"T","p":"lythene_fr","par":["lythene_fr","Люциас Випрен"]},
         {"id":"symond_fr","name":"Саймонд Фрей","en":"Symond Frey","hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"252–260","d":"300","sp":[["Бетариос из Браавоса"]]},
         {"id":"alesander_fr","name":"Алесандер Фрей","en":"Alesander Frey","hs":"fry","k":"T","p":"symond_fr","par":["symond_fr","Бетариос из Браавоса"],"b":"263–281"},
         {"id":"alyx_fr","name":"Аликс Фрей","en":"Alyx Frey","fem":1,"hs":"fry","k":"T","p":"symond_fr","par":["symond_fr","Бетариос из Браавоса"],"b":"282"},
         {"id":"bradamar_fr","name":"Брадамар Фрей","en":"Bradamar Frey","hs":"fry","k":"T","p":"symond_fr","par":["symond_fr","Бетариос из Браавоса"],"b":"289"},
         {"id":"danwell_fr","name":"Данвелл Фрей","en":"Danwell Frey","hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"252–261","sp":[["Винафрея Уэнт"]]},
+        {"id":"danwell_stillborn","name":"Мертворождённые","full":"Мертворождённые дети Данвелла Фрея","group":1,"hs":"fry","k":"T","p":"danwell_fr","par":["danwell_fr","Винафрея Уэнт"],"d":"при рождении","wiki":"Danwell Frey"},
         {"id":"merrett_fr","name":"Мерретт Фрей","en":"Merrett Frey","al":["Безмозглый"],"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"262","d":"300","sp":[["Марийя Дарри","≈282 г."]]},
         {"id":"amerei_fr","name":"Амарея Фрей","en":"Amerei Frey","al":["Ами","Ами Открой Ворота"],"fem":1,"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"b":"282","sp":[["Пейт с Синего Зубца"],["lancel"]]},
         {"id":"walda_fr_merrett","name":"Уолда Фрей","full":"Уолда Фрей, дочь Мерретта","en":"Walda Frey","al":["Уолда Толстая","Уолда Болтон"],"fem":1,"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"b":"283/284","sp":[["roose","299 г."]],"wiki":"Walda Frey (daughter of Merrett)"},
         {"id":"marissa_fr","name":"Марисса Фрей","en":"Marissa Frey","fem":1,"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"b":"286"},
         {"id":"walder_fr_merrett","name":"Уолдер Фрей","full":"Уолдер Фрей, сын Мерретта","en":"Walder Frey","al":["Малый Уолдер"],"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"b":"291","d":"300","wiki":"Walder Frey (son of Merrett)"},
+        {"id":"merrett_dau_sb","name":"Дочь","full":"Мертворождённая дочь Меррета Фрея","fem":1,"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"d":"при рождении","wiki":"Merrett Frey"},
+        {"id":"merrett_dau_inf","name":"Дочь","full":"Дочь Меррета Фрея, умершая в младенчестве","fem":1,"hs":"fry","k":"T","p":"merrett_fr","par":["merrett_fr","Марийя Дарри"],"d":"в младенчестве","wiki":"Merrett Frey"},
         {"id":"geremy_fr","name":"Джереми Фрей","en":"Geremy Frey","hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"263/264","d":"289–299","sp":[["carolei"]]},
         {"id":"sandor_fr","name":"Сандор Фрей","en":"Sandor Frey","hs":"fry","k":"T","p":"geremy_fr","par":["geremy_fr","carolei"],"b":"287"},
         {"id":"cynthea_fr","name":"Синтия Фрей","en":"Cynthea Frey","fem":1,"hs":"fry","k":"T","p":"geremy_fr","par":["geremy_fr","carolei"],"b":"290"},
@@ -112,6 +128,9 @@
         {"id":"hoster_fr","name":"Хостер Фрей","en":"Hoster Frey","hs":"fry","k":"T","p":"whalen_fr","par":["whalen_fr","Сильва Пэг"],"b":"287"},
         {"id":"merianne_fr","name":"Мерианна Фрей","en":"Merianne Frey","al":["Мерри"],"fem":1,"hs":"fry","k":"T","p":"whalen_fr","par":["whalen_fr","Сильва Пэг"],"b":"288"},
         {"id":"morya_fr","name":"Морья Фрей","en":"Morya Frey","fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","Алисса Блэквуд"],"b":"268/269","sp":[["Флемент Бракс"]]},
+        {"id":"robert_brax","name":"Роберт Бракс","full":"Роберт Бракс, сын Флемента","en":"Robert Brax","hs":"oth","h":"Браксов","k":"T","p":"morya_fr","par":["morya_fr","Флемент Бракс"],"wiki":"Robert Brax (son of Flement)"},
+        {"id":"walder_brax","name":"Уолдер Бракс","en":"Walder Brax","hs":"oth","h":"Браксов","k":"T","p":"morya_fr","par":["morya_fr","Флемент Бракс"]},
+        {"id":"jon_brax","name":"Джон Бракс","en":"Jon Brax","hs":"oth","h":"Браксов","k":"T","p":"morya_fr","par":["morya_fr","Флемент Бракс"]},
         {"id":"tyta_fr","name":"Тита Фрей","en":"Tyta Frey","al":["Тита Дева"],"fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","Алисса Блэквуд"],"b":"269/270"}
       ]
     },

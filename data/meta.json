@@ -45,7 +45,7 @@
     {"house":"kar","liege":"stk","roots":[["alys_kk",14],["lysara",16],["arnolf",17],["rickard_k",18]]},
     {"house":"man","liege":"stk","roots":[["theomore",7],["desmond",9],["jeyne_m",12],["myriame",15],["wyman",17],["marlon",17],["donella",18]]},
     {"house":"mor","liege":"stk","roots":[["mor_lord",16]]},
-    {"house":"stk","roots":[["torrhen",6],["cregan",11],["brandon_c",14]]},
+    {"house":"stk","roots":[["torrhen",6],["cregan",11],["lynara",11],["brandon_c",14]]},
     {"house":"gry","roots":[["vickon",6],["gry_lord10",10],["alton",13],["torwyn",14],["loron",15],["dagon",16],["alannys",19],["quenton_c",19],["dagon_d",19]]}
   ],
   "houses": {
@@ -56,7 +56,7 @@
     "arr": {"v":"arryn","name":"Дом Арренов","band":"Аррены","motto":"Орлиное Гнездо · «Высокий как честь»","sigil":{"field":"#7DB2E2","charge":"#FBF8EF"}},
     "hgt": {"v":"hightower","name":"Дом Хайтауэров","band":"Хайтауэры","motto":"Староместо · «Мы освещаем путь»","sigil":{"field":"#7F8582","charge":"#FBF8F0"}},
     "mar": {"v":"martell","name":"Дом Мартеллов","band":"Мартеллы","motto":"Солнечное Копьё · «Непреклонные, несгибаемые, несдающиеся»","sigil":{"field":"#E2731E","charge":"#9E1B24"}},
-    "bw": {"v":"blackwood","name":"Дом Блэквудов","band":"Блэквуды","motto":"Древорон · девиз в книгах не назван","sigil":{"field":"#8E1C1F","charge":"#F4F1EA"}},
+    "bw": {"v":"blackwood","name":"Дом Блэквудов","band":"Блэквуды","motto":"Древорон","sigil":{"field":"#8E1C1F","charge":"#F4F1EA"}},
     "lan": {"v":"lannister","name":"Дом Ланнистеров","band":"Ланнистеры","motto":"Утёс Кастерли · «Услышь мой рёв!»","sigil":{"field":"#8E1B22","charge":"#E6B530"}},
     "tul": {"v":"tully","name":"Дом Талли","band":"Талли","motto":"Риверран · «Семья, долг, честь»","sigil":{"field":"#2F4FA0","charge":"#DCE1EA"}},
     "stk": {"v":"stark","name":"Дом Старков","band":"Старки","motto":"Винтерфелл · «Зима близко»","sigil":{"field":"#E6E9EC","charge":"#46515C"}},

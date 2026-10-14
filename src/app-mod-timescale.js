@@ -329,7 +329,7 @@
       if (px - tw / 2 - 6 < end || px + tw / 2 > m.w - 4) { lg.remove(); return; }
       lg.attr('transform', 'translate(' + px + ',' + (GH / 2) + ')');
       lg.insert('rect', 'text').attr('x', -tw / 2 - 7).attr('y', -GH / 2 + 3).attr('width', tw + 14).attr('height', GH - 6).attr('rx', (GH - 6) / 2);
-      lg.append('title').text('Колонка древа: здесь родились ≈ ' + range(c.lo, c.hi) + ' (' + App.plural(c.n, 'человек', 'человека', 'человек') + '). Наведите — годы подсветятся на шкале');
+      lg.append('title').text(App.t('Колонка древа: здесь родились ≈ {years} ({n}). Наведите — годы подсветятся на шкале', { years: range(c.lo, c.hi), n: App.plural(c.n, 'человек', 'человека', 'человек') }));
       lg.on('mouseenter', () => { hoverCol = c; showColSpan(c); }).on('mouseleave', () => { hoverCol = null; ssvg.select('g.ts-colspan').selectAll('*').remove(); });
       end = px + tw / 2 + 8;
     });
@@ -377,7 +377,7 @@
     if (y == null) return;
     const t = App.yearText ? App.yearText(y) : { year: yearWord(y), alive: 0, king: '', era: '' };
     chipText.innerHTML = '<b>' + esc(t.year) + '</b><span>живых: ' + t.alive + '</span>' +
-      (t.king ? '<span>на троне: ' + esc(t.king) + '</span>' : '') + (t.era ? '<span>' + esc(t.era) + '</span>' : '') +
+      (t.king ? '<span>' + esc(App.t('на троне: {k}', { k: t.king })) + '</span>' : '') + (t.era ? '<span>' + esc(t.era) + '</span>' : '') +
       '<span class="yc-tip">двигайте ползунок на шкале</span>';
   }
   function setYear(y) {

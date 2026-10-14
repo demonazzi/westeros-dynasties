@@ -5,7 +5,7 @@
     {
       "title": "Завоевание и Джейехерис I",
       "people": [
-        {"id":"loren","name":"Лорен Ланнистер","full":"Лорен I Ланнистер, Последний","en":"Loren the Last","hs":"lan","k":"T","wiki":"Loren I Lannister"},
+        {"id":"loren","name":"Лорен Ланнистер","full":"Лорен I Ланнистер, Последний","en":"Loren the Last","hs":"lan","k":"T","kl":"Король Утёса","wiki":"Loren I Lannister"},
         {"id":"lyman","name":"Лайман Ланнистер","en":"Lyman Lannister","hs":"lan","k":"T","p":"loren","par":["loren (предположительно)"],"unc":1,"d":"59","sp":[["Джокаста Тарбек"]]},
         {"id":"loren_sons","name":"Сыновья","full":"Другие сыновья Лорена Ланнистера","group":1,"hs":"lan","k":"T","p":"loren","par":["loren","жена не названа"],"wiki":"Loren I Lannister"},
         {"id":"tymond","name":"Таймонд Ланнистер","en":"Tymond Lannister","hs":"lan","k":"T","p":"lyman","par":["lyman (вероятно)"],"unc":1},

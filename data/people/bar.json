@@ -10,12 +10,12 @@
         {"id":"raymont","name":"Реймонт Баратеон","full":"Сир Реймонт Баратеон","en":"Raymont Baratheon","hs":"bar","k":"T","p":"orys","par":["orys","Аргелла Дюррандон"]},
         {"id":"orys_son","name":"Отец Рогара","full":"Отец Рогара Баратеона","hs":"bar","k":"T","p":"orys","wiki":"Rogar Baratheon"},
         {"id":"rogar","name":"Рогар Баратеон","en":"Rogar Baratheon","hs":"bar","k":"T","p":"orys_son","d":"62","sp":[["первая жена, имя не названо"],["alyssa_v","49 г."]]},
-        {"id":"borys_b","name":"Борис Баратеон","full":"Сир Борис Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Borys Baratheon"},
-        {"id":"garon_b","name":"Гарон Баратеон","full":"Сир Гарон Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Garon Baratheon"},
+        {"id":"borys_b","name":"Борис Баратеон","full":"Сир Борис Баратеон","en":"Borys Baratheon","hs":"bar","k":"T","p":"orys_son","wiki":"Borys Baratheon"},
+        {"id":"garon_b","name":"Гарон Баратеон","full":"Сир Гарон Баратеон","en":"Garon Baratheon","hs":"bar","k":"T","p":"orys_son","wiki":"Garon Baratheon"},
         {"id":"garon_kids","name":"Дети","full":"Дети сира Гарона Баратеона","group":1,"hs":"bar","k":"T","p":"garon_b","par":["garon_b","жена не названа"],"wiki":"Garon Baratheon"},
-        {"id":"ronnal_b","name":"Роннал Баратеон","full":"Сир Роннал Баратеон","hs":"bar","k":"T","p":"orys_son","wiki":"Ronnal Baratheon"},
+        {"id":"ronnal_b","name":"Роннал Баратеон","full":"Сир Роннал Баратеон","en":"Ronnal Baratheon","hs":"bar","k":"T","p":"orys_son","wiki":"Ronnal Baratheon"},
         {"id":"ronnal_kids","name":"Дети","full":"Дети сира Роннала Баратеона","group":1,"hs":"bar","k":"T","p":"ronnal_b","par":["ronnal_b","жена не названа"],"wiki":"Ronnal Baratheon"},
-        {"id":"orryn_b","name":"Оррин Баратеон","full":"Сир Оррин Баратеон","hs":"bar","k":"T","p":"orys_son","sp":[["alysanne","несостоявшийся брак, 49 г.","b"],["дочь тирошийского архонта"]],"wiki":"Orryn Baratheon"},
+        {"id":"orryn_b","name":"Оррин Баратеон","full":"Сир Оррин Баратеон","en":"Orryn Baratheon","hs":"bar","k":"T","p":"orys_son","sp":[["alysanne","несостоявшийся брак, 49 г.","b"],["дочь тирошийского архонта"]],"wiki":"Orryn Baratheon"},
         {"id":"orryn_sons","name":"Сыновья","full":"Сыновья сира Оррина Баратеона","group":1,"hs":"bar","k":"T","p":"orryn_b","par":["orryn_b","дочь тирошийского архонта"],"wiki":"Orryn Baratheon"},
         {"id":"boremund","name":"Боремунд Баратеон","en":"Boremund Baratheon","hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"51"},
         {"id":"jocelyn","name":"Джоселин Баратеон","en":"Jocelyn Baratheon","fem":1,"hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"54","sp":[["aemon_j","70 г."]]},
@@ -39,8 +39,8 @@
         {"id":"stannis","name":"Станнис Баратеон","en":"Stannis Baratheon","hs":"bar","k":"C","p":"steffon","par":["steffon","cassana"],"b":"264","sp":[["Селиса Флорент"]]},
         {"id":"renly","name":"Ренли Баратеон","en":"Renly Baratheon","hs":"bar","k":"C","p":"steffon","par":["steffon","cassana"],"b":"277","d":"299","sp":[["margaery"]]},
         {"id":"joffrey_b","name":"Джоффри I","full":"Джоффри I Баратеон","en":"Joffrey Baratheon","hs":"bar","k":"K","r":"298–300","su":"tommen","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"286","d":"300","sp":[["margaery"]],"pr":"robert"},
-        {"id":"myrcella","name":"Мирцелла","full":"Мирцелла Баратеон","fem":1,"hs":"bar","k":"T","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"290","sp":[["trystane","помолвка","b"]],"wiki":"Myrcella Baratheon"},
-        {"id":"tommen","name":"Томмен I","full":"Томмен I Баратеон","hs":"bar","k":"K","rm":"на троне с 300","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"291","sp":[["margaery"]],"pr":"joffrey_b","wiki":"Tommen Baratheon"},
+        {"id":"myrcella","name":"Мирцелла","full":"Мирцелла Баратеон","en":"Myrcella Baratheon","fem":1,"hs":"bar","k":"T","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"290","sp":[["trystane","помолвка","b"]],"wiki":"Myrcella Baratheon"},
+        {"id":"tommen","name":"Томмен I","full":"Томмен I Баратеон","en":"Tommen Baratheon","hs":"bar","k":"K","rm":"на троне с 300","p":"robert","par":["robert (официально)","cersei","jaime (на деле)"],"rp":"jaime","unc":1,"b":"291","sp":[["margaery"]],"pr":"joffrey_b","wiki":"Tommen Baratheon"},
         {"id":"mya_stone","name":"Мия Стоун","en":"Mya Stone","fem":1,"hs":"bar","k":"R","p":"robert"},
         {"id":"gendry","name":"Джендри","en":"Gendry","hs":"bar","k":"R","p":"robert"},
         {"id":"edric","name":"Эдрик Шторм","en":"Edric Storm","hs":"bar","k":"R","p":"robert","par":["robert","Делена Флорент"]},
@@ -48,7 +48,7 @@
         {"id":"barra","name":"Барра","en":"Barra","fem":1,"hs":"bar","k":"R","p":"robert","d":"298"},
         {"id":"robert_twins","name":"Близнецы","full":"Близнецы Роберта Баратеона","group":1,"hs":"bar","k":"R","p":"robert","par":["robert","служанка в Утёсе Кастерли"],"b":"295","d":"в младенчестве","wiki":"Robert I Baratheon"},
         {"id":"robert_others","name":"Ещё девять бастардов","full":"Ещё девять бастардов Роберта Баратеона","group":1,"hs":"bar","k":"R","p":"robert","par":["robert"],"wiki":"Robert I Baratheon"},
-        {"id":"shireen","name":"Ширен","full":"Ширен Баратеон","fem":1,"hs":"bar","k":"T","p":"stannis","par":["stannis","Селиса Флорент"],"b":"289","wiki":"Shireen Baratheon"}
+        {"id":"shireen","name":"Ширен","full":"Ширен Баратеон","en":"Shireen Baratheon","fem":1,"hs":"bar","k":"T","p":"stannis","par":["stannis","Селиса Флорент"],"b":"289","wiki":"Shireen Baratheon"}
       ]
     }
   ]

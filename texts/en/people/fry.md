@@ -6,6 +6,8 @@
 
 ### forrest_fr · Forrest Frey
 
+### forrest_son · Сын Форреста Фрея
+
 ### sabitha_fr · Sabitha Frey
 
 ## Лорды Переправы до Уолдера
@@ -19,6 +21,8 @@
 ### addam_fr · Addam Frey
 
 ### lady_butterwell · Lady Butterwell
+
+### fr_lord_daughters · Другие дочери лорда Фрея, отца Уолдера
 
 ### walder_fr · Walder Frey
 
@@ -34,6 +38,8 @@
 
 ### walder_fr_ryman · Walder Frey
 
+### black_walder_bast · Внебрачные дети Уолдера Фрея, сына Римана
+
 ### petyr_fr · Petyr Frey
 
 ### perra_fr · Perra Frey
@@ -41,6 +47,12 @@
 ### aegon_fr_stevron · Aegon Frey
 
 ### maegelle_fr · Maegelle Frey
+
+### marianne_vance · Marianne Vance
+
+### walder_vance · Walder Vance
+
+### patrek_vance · Patrek Vance
 
 ### walton_fr · Walton Frey
 
@@ -78,6 +90,12 @@
 
 ### perriane_fr · Perriane Frey
 
+### harys_haigh · Harys Haigh
+
+### donnel_haigh · Donnel Haigh
+
+### alyn_haigh · Alyn Haigh
+
 ## Дети лорда Уолдера и Сиренны Сванн с потомками
 
 ### jared_fr · Jared Frey
@@ -89,6 +107,10 @@
 ### zachery_fr · Zachery Frey
 
 ### kyra_fr · Kyra Frey
+
+### walder_goodbrook · Walder Goodbrook
+
+### jeyne_goodbrook · Jeyne Goodbrook
 
 ### luceon_fr · Luceon Frey
 
@@ -108,6 +130,10 @@
 
 ### lythene_fr · Lythene Frey
 
+### elyana_vypren · Elyana Vypren
+
+### damon_vypren · Damon Vypren
+
 ### symond_fr · Symond Frey
 
 ### alesander_fr · Alesander Frey
@@ -118,6 +144,8 @@
 
 ### danwell_fr · Danwell Frey
 
+### danwell_stillborn · Мертворождённые дети Данвелла Фрея
+
 ### merrett_fr · Merrett Frey
 
 ### amerei_fr · Amerei Frey
@@ -127,6 +155,10 @@
 ### marissa_fr · Marissa Frey
 
 ### walder_fr_merrett · Walder Frey
+
+### merrett_dau_sb · Мертворождённая дочь Меррета Фрея
+
+### merrett_dau_inf · Дочь Меррета Фрея, умершая в младенчестве
 
 ### geremy_fr · Geremy Frey
 
@@ -177,6 +209,12 @@
 ### merianne_fr · Merianne Frey
 
 ### morya_fr · Morya Frey
+
+### robert_brax · Robert Brax
+
+### walder_brax · Walder Brax
+
+### jon_brax · Jon Brax
 
 ### tyta_fr · Tyta Frey
 

@@ -17,25 +17,30 @@
     const L = App.life ? ps.map(p => App.life(p.id)).filter(Boolean) : [];
     const a = L.length ? Math.round(Math.min(...L.map(x => x.b))) : null;
     const b = L.length ? Math.round(Math.max(...L.map(x => (x.alive ? 300 : x.d)))) : null;
-    return { n: ps.length, a, b, kings: ps.filter(p => p.k === 'K') };
+    // короли: Железного трона (k K) и своих краёв (титул kl: «Король Севера»…); претенденты на трон — отдельно
+    return { n: ps.length, a, b, kings: ps.filter(p => p.k === 'K' || p.kl), claim: ps.filter(p => p.k === 'C' && !p.kl) };
   }
   const houseChip = h => '<li><button type="button" class="chip h-' + h + '" data-house="' + h + '">' + esc(HOUSES[h].band) + '</button></li>';
 
   function renderHousePanel(code) {
     const H = HOUSES[code];
+    const t = App.t;
     if (!H) return;
     const band = BANDS.find(b => b.house === code) || {};
     const info = H.v && App.vHouseInfo ? App.vHouseInfo(H.v) : null;
     const st = stats(code);
-    const liege = band.liege;
+    // сюзерен: у малого дома — по полосе; у дома из «12» без полосы-сюзерена (Веларионы, Хайтауэры, Блэквуды) — по вассалитету
+    const vLiege = !band.liege && info && !info.h.great && info.h.liege ? info.h.liege : null;
+    const liege = band.liege || (vLiege && HOUSES_BY_V.get(vLiege)) || null;
+    const liegeName = vLiege && !liege ? ((App.vHouseInfo(vLiege) || {}).h || {}).ru : null;
+    const kind = band.liege ? t('Малый дом') : info && !info.h.great ? t('Дом') : t('Великий дом');
     const vassals = BANDS.filter(b => b.liege === code).map(b => b.house).sort((x, y) => HOUSES[x].band.localeCompare(HOUSES[y].band, 'ru'));
     const first = band.roots && band.roots.length ? band.roots[0][0] : null;
-    // «Замок · «Девиз»»; у Пламмов — только девиз, у Блэквудов вместо девиза пометка
+    // «Замок · «Девиз»»; у Пламмов — только девиз, у домов без девиза в книгах — только замок
     const parts = String(H.motto || '').split(' · ').filter(Boolean), isWords = x => /^[«"“]/.test(x);
     const words = parts.find(isWords), seat = parts.filter(x => !isWords(x)).join(' · ');
     const yw = App.yearWord;
     const back = state.history.length ? App.historyLabel(state.history[state.history.length - 1]) : null;
-    const t = App.t;
     panel.classList.remove('is-empty');
     panelContent.className = 'panel-inner house-card h-' + code;
     panelContent.innerHTML =
@@ -45,7 +50,7 @@
         '<button type="button" class="btn btn-icon close" id="panel-close" aria-label="Закрыть карточку">×</button>' +
       '</div>' +
       '<div class="panel-top">' + (App.sigilSVG ? App.sigilSVG(code, 0, 0, 64, 'medal') : '') + '<div>' +
-        '<p class="eyebrow"><span>' + esc(liege ? t('Малый дом') : t('Великий дом')) + '</span>' + (info ? ' · <span>' + esc(info.region) + '</span>' : '') + '</p>' +
+        '<p class="eyebrow"><span>' + esc(kind) + '</span>' + (info ? ' · <span>' + esc(info.region) + '</span>' : '') + '</p>' +
         // второе название под заголовком: в русском — английское, в английском — русское
         '<h2>' + esc(App.lang === 'en' && H.name === H.ruName && info ? 'House ' + info.h.en : H.name) + '</h2>' +
         (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
@@ -54,9 +59,10 @@
       // текст о доме — texts/vassals.md, тот же, что во вкладке «Вассалитет»
       (info && info.textHtml ? info.textHtml : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
       '<dl class="facts">' +
-        (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : '') +
+        (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : liegeName ? App.row('Сюзерен', esc(liegeName)) : '') +
         (vassals.length ? App.row('Знаменосцы на древе', '<ul class="refs">' + vassals.map(houseChip).join('') + '</ul>') : '') +
         (st.kings.length ? App.row('Короли', App.list(st.kings.map(p => App.chip(p.id)))) : '') +
+        (st.claim.length ? App.row('Претенденты на трон', App.list(st.claim.map(p => App.chip(p.id)))) : '') +
         (first && byId.has(first) ? App.row('Первый на древе', App.list([App.chip(first)])) : '') +
         App.row('На древе', '<span>' + esc(App.plural(st.n, 'человек', 'человека', 'человек')) + '</span>' + (st.a != null ? ' · <span>' + esc((st.a < 0 ? yw(st.a) : st.a) + '–' + yw(st.b)) + '</span>' : '')) +
         (info && (info.from != null || info.to != null) ? App.row('Годы дома', esc((info.from != null ? t('с {y}', { y: info.yearWord(info.from) }) : '') + (info.from != null && info.to != null ? ' ' : '') + (info.to != null ? t('по {y}', { y: info.yearWord(info.to - 0.001) }) : ''))) : '') +
@@ -108,10 +114,52 @@
     if (!b) return;
     const ns = App.allNodes().filter(n => App.bandOf(n.data.id) === code);
     if (!ns.length) return;
-    const x0 = Math.min(...ns.map(n => n.X)), x1 = Math.max(...ns.map(n => n.X)) + App.W;
-    App.fitBox(x0 - 80, b.top - 20, x1 + 60, b.bottom, 0.5, true);
+    let x0 = Math.min(...ns.map(n => n.X)) - 80;
+    const x1 = Math.max(...ns.map(n => n.X)) + App.W + 60;
+    // заголовок полосы (герб и название) стоит у левого края полосы: захватить и его, если он недалеко от первых людей дома
+    // (вписывается вместе с ними в ширину экрана при читаемом масштабе) — иначе начать с людей
+    const head = b.hx0 - 30;
+    if (head < x0 && (x0 - head) * 0.5 < App.viewSize().w * 0.55) x0 = head;
+    App.fitBox(x0, b.top - 20, x1, b.bottom, 0.5, true);
   }
   App.locateBand = locate;
+
+  /* Ярлыки полос у левого края экрана. Заголовок полосы (герб и название) стоит у левого края древа; когда древо
+     сдвинуто вправо и заголовок ушёл за экран, у края видимой части полосы появляется маленький ярлык — герб и название.
+     Клик открывает карточку дома. Ярлыки — вне масштабируемой группы: размер постоянный, двигаются только по высоте. */
+  const PIN_TOP = 64, PIN_BOTTOM = 70;
+  let pinG = null, pins = [];
+  function buildPins() {
+    if (!pinG) pinG = App.svg.append('g').attr('class', 'band-pins');
+    pinG.selectAll('*').remove();
+    pins = App.bandBoxes().map(b => {
+      const g = pinG.append('g').attr('class', 'band-pin h-' + b.house).style('display', 'none');
+      g.append('title').text(App.t('Открыть карточку дома'));
+      const r = g.append('rect').attr('class', 'pin-bg').attr('x', 0).attr('y', -13).attr('height', 26).attr('rx', 13);
+      g.append('g').html(App.sigilSVG ? App.sigilSVG(b.house, 7, -10, 20) : '');
+      const tx = g.append('text').attr('class', 'pin-title').attr('x', 32).attr('y', 4.5).text(HOUSES[b.house].band);
+      r.attr('width', 32 + tx.node().getComputedTextLength() + 12);
+      g.on('click', e => { e.stopPropagation(); openHouse(b.house); });
+      return { b, g };
+    });
+    placePins();
+  }
+  function placePins(t) {
+    if (!pins.length) return;
+    t = t || d3.zoomTransform(App.svg.node());
+    const { h } = App.viewSize();
+    pins.forEach(({ b, g }) => {
+      const headRight = t.x + t.k * (b.hx0 + b.tx + (b.headW || 200));
+      const top = t.y + t.k * b.top, bottom = t.y + t.k * b.bottom;
+      // заголовок виден — ярлык не нужен; полоса вне экрана по высоте — тоже
+      const y = Math.max(top + 18, PIN_TOP);
+      const show = headRight < 0 && bottom > PIN_TOP + 30 && y < Math.min(bottom - 10, h - PIN_BOTTOM);
+      g.style('display', show ? null : 'none');
+      if (show) g.attr('transform', 'translate(10,' + y + ')');
+    });
+  }
+  App.hooks.afterRender.push(buildPins);
+  App.hooks.afterZoom.push(placePins);
 
   panel.addEventListener('click', e => {
     const h = e.target.closest('[data-house]');

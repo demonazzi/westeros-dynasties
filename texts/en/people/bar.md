@@ -12,17 +12,17 @@
 
 ### rogar · Rogar Baratheon
 
-### borys_b · Сир Борис Баратеон
+### borys_b · Borys Baratheon
 
-### garon_b · Сир Гарон Баратеон
+### garon_b · Garon Baratheon
 
 ### garon_kids · Дети сира Гарона Баратеона
 
-### ronnal_b · Сир Роннал Баратеон
+### ronnal_b · Ronnal Baratheon
 
 ### ronnal_kids · Дети сира Роннала Баратеона
 
-### orryn_b · Сир Оррин Баратеон
+### orryn_b · Orryn Baratheon
 
 ### orryn_sons · Сыновья сира Оррина Баратеона
 
@@ -70,9 +70,9 @@
 
 ### joffrey_b · Joffrey Baratheon
 
-### myrcella · Мирцелла Баратеон
+### myrcella · Myrcella Baratheon
 
-### tommen · Томмен I Баратеон
+### tommen · Tommen Baratheon
 
 ### mya_stone · Mya Stone
 
@@ -88,4 +88,4 @@
 
 ### robert_others · Ещё девять бастардов Роберта Баратеона
 
-### shireen · Ширен Баратеон
+### shireen · Shireen Baratheon

@@ -52,9 +52,9 @@
 
 ### jon_a · Jon Arryn
 
-### ronnel_j · Роннел Аррен, брат Джона
+### ronnel_j · Ronnel Arryn
 
-### alys_j · Алис Аррен, сестра Джона
+### alys_j · Alys Arryn
 
 ### jon_a_dau · Мертворождённая дочь Джона Аррена
 

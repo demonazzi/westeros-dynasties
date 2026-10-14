@@ -5,7 +5,7 @@
     {
       "title": "Завоевание",
       "people": [
-        {"id":"torrhen","name":"Торрхен Старк","full":"Торрхен Старк, Король, преклонивший колено","en":"Torrhen Stark, the King Who Knelt","hs":"stk","k":"T"},
+        {"id":"torrhen","name":"Торрхен Старк","full":"Торрхен Старк, Король, преклонивший колено","en":"Torrhen Stark, the King Who Knelt","hs":"stk","k":"T","kl":"Король Севера"},
         {"id":"torrhen_sons","name":"Сыновья","full":"Сыновья Торрхена Старка","group":1,"hs":"stk","k":"T","p":"torrhen","par":["torrhen","жена не названа"],"wiki":"Torrhen Stark"},
         {"id":"torrhen_d","name":"Дочь Торрхена","full":"Дочь Торрхена Старка","fem":1,"hs":"stk","k":"T","p":"torrhen","sp":[["ronnel_k","брак устроила королева Рейенис"]],"wiki":"Torrhen Stark"}
       ]
@@ -13,14 +13,15 @@
     {
       "title": "Криган Старк и его дети",
       "people": [
-        {"id":"cregan","name":"Криган Старк","full":"Криган Старк, Волк Севера","en":"Cregan Stark","al":["Старик Севера"],"hs":"stk","k":"T","b":"108","sp":[["Арра Норрей","умерла в родах, 128 г."],["alysanne_bw","132 г."],["Линара Старк"]]},
+        {"id":"cregan","name":"Криган Старк","full":"Криган Старк, Волк Севера","en":"Cregan Stark","al":["Старик Севера"],"hs":"stk","k":"T","b":"108","sp":[["Арра Норрей","умерла в родах, 128 г."],["alysanne_bw","132 г."],["lynara"]]},
+        {"id":"lynara","name":"Линара Старк","en":"Lynara Stark","fem":1,"hs":"stk","k":"T","sp":[["cregan"]],"wiki":"Lynara Stark"},
         {"id":"rickon_c","name":"Рикон Старк","full":"Рикон Старк, сын Кригана","en":"Rickon Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","Арра Норрей"],"b":"128","d":"157","sp":[["jeyne_m"]],"wiki":"Rickon Stark (son of Cregan)"},
-        {"id":"jonnel","name":"Джоннел Старк","en":"Jonnel Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","Линара Старк"],"sp":[["sansa_c"]]},
-        {"id":"edric_c","name":"Эдрик Старк","full":"Эдрик Старк, сын Кригана","en":"Edric Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","Линара Старк"],"sp":[["serena_c"]],"wiki":"Edric Stark (son of Cregan)"},
-        {"id":"lyanna_c","name":"Лианна Старк","full":"Лианна Старк, дочь Кригана","en":"Lyanna Stark","fem":1,"hs":"stk","k":"T","p":"cregan","par":["cregan","Линара Старк"],"b":"138–181","wiki":"Lyanna Stark (daughter of Cregan)"},
-        {"id":"barthogan","name":"Бартоган Старк","en":"Barthogan Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","Линара Старк"]},
+        {"id":"jonnel","name":"Джоннел Старк","en":"Jonnel Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"sp":[["sansa_c"]]},
+        {"id":"edric_c","name":"Эдрик Старк","full":"Эдрик Старк, сын Кригана","en":"Edric Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"sp":[["serena_c"]],"wiki":"Edric Stark (son of Cregan)"},
+        {"id":"lyanna_c","name":"Лианна Старк","full":"Лианна Старк, дочь Кригана","en":"Lyanna Stark","fem":1,"hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"b":"138–181","wiki":"Lyanna Stark (daughter of Cregan)"},
+        {"id":"barthogan","name":"Бартоган Старк","en":"Barthogan Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"]},
         {"id":"cregan_daughters","name":"Дочери Кригана","full":"Сарра, Алис, Рейя и Мирия Старк","group":1,"hs":"stk","k":"T","p":"cregan","par":["cregan","alysanne_bw"],"wiki":"Cregan Stark"},
-        {"id":"sansa_c","name":"Санса Старк","full":"Санса Старк, дочь Рикона","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"sp":[["jonnel"]],"wiki":"Sansa Stark (daughter of Rickon)"},
+        {"id":"sansa_c","name":"Санса Старк","full":"Санса Старк, дочь Рикона","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"sp":[["jonnel"]],"wiki":"Sansa Stark (daughter of Rickon)"},
         {"id":"serena_c","name":"Серена Старк","en":"Serena Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"sp":[["edric_c"],["jon_u2"]]},
         {"id":"torrhen_e","name":"Торрхен Старк","full":"Торрхен Старк, сын Эдрика","en":"Torrhen Stark","hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"],"wiki":"Edric Stark (son of Cregan)"},
         {"id":"cregard","name":"Кригард Старк","en":"Cregard Stark","hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"]},
@@ -31,7 +32,7 @@
     {
       "title": "Младшая ветвь: от Брандона, сына Кригана, до Эддарда",
       "people": [
-        {"id":"brandon_c","name":"Брандон Старк","full":"Брандон Старк, сын Кригана","en":"Brandon Stark","hs":"stk","k":"T","par":["cregan","Линара Старк"],"sp":[["alys_kk"]],"wiki":"Brandon Stark (son of Cregan)"},
+        {"id":"brandon_c","name":"Брандон Старк","full":"Брандон Старк, сын Кригана","en":"Brandon Stark","hs":"stk","k":"T","par":["cregan","lynara"],"sp":[["alys_kk"]],"wiki":"Brandon Stark (son of Cregan)"},
         {"id":"rodwell","name":"Родвелл Старк","en":"Rodwell Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"sp":[["myriame"]]},
         {"id":"beron","name":"Берон Старк","en":"Beron Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"sp":[["lorra"]]},
         {"id":"arsa","name":"Арса Старк","en":"Arsa Stark","fem":1,"hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"b":"173–213"},

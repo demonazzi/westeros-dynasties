@@ -15,35 +15,35 @@
   const throneOrder = App.tKings.map(p => p.id);
   for (let p = byId.get('robert'); p; p = p.su ? byId.get(p.su) : null) throneOrder.push(p.id);
   const LENSES = [
-    { id: 'dance', name: 'Танец драконов', sub: 'чёрные и зелёные, 129–131 гг.',
-      note: 'Гражданская война за трон после смерти Визериса I.', focus: ['rhaenyra', 'daemon', 'aegon2', 'aemond', 'helaena', 'jacaerys', 'lucerys', 'joffrey', 'daeron_d', 'aegon3'],
+    { id: 'dance', name: App.t('Танец драконов'), sub: App.t('чёрные и зелёные, 129–131 гг.'),
+      note: App.t('Гражданская война за трон после смерти Визериса I.'), focus: ['rhaenyra', 'daemon', 'aegon2', 'aemond', 'helaena', 'jacaerys', 'lucerys', 'joffrey', 'daeron_d', 'aegon3'],
       groups: {
         black: ['rhaenyra', 'daemon', 'jacaerys', 'lucerys', 'joffrey', 'aegon3', 'viserys2', 'rhaenys_q', 'corlys', 'baela', 'rhaena_d', 'addam', 'alyn', 'cregan', 'samwell_bw', 'alysanne_bw', 'benjicot', 'elmo', 'kermit', 'oscar', 'jeyne'],
         green: ['aegon2', 'helaena', 'aemond', 'daeron_d', 'jaehaerys_a', 'jaehaera', 'maelor', 'alicent', 'otto', 'gwayne', 'ormund_h', 'jason_l', 'tyland', 'borros']
       } },
-    { id: 'throne', name: 'Железный трон', sub: 'путь короны от Эйгона I до Томмена',
-      note: 'Стрелки ведут от короля к преемнику.', focus: ['aegon1', 'aenys1', 'maegor1', 'jaehaerys1', 'viserys1', 'aegon2', 'aegon3'],
+    { id: 'throne', name: App.t('Железный трон'), sub: App.t('путь короны от Эйгона I до Томмена'),
+      note: App.t('Стрелки ведут от короля к преемнику.'), focus: ['aegon1', 'aenys1', 'maegor1', 'jaehaerys1', 'viserys1', 'aegon2', 'aegon3'],
       groups: {
         king: kings.map(p => p.id),
         claim: PEOPLE.filter(p => p.k === 'C' || (p.k === 'B' && p.cl)).map(p => p.id)
       }, path: throneOrder },
-    { id: 'blackfyre', name: 'Восстания Блэкфайров', sub: '196–260 гг.',
-      note: 'Пять восстаний потомков Деймона Блэкфайра, бастарда Эйгона IV.', focus: ['daemon_bf', 'aegor', 'brynden', 'daeron2', 'baelor_b', 'maekar1'],
+    { id: 'blackfyre', name: App.t('Восстания Блэкфайров'), sub: App.t('196–260 гг.'),
+      note: App.t('Пять восстаний потомков Деймона Блэкфайра, бастарда Эйгона IV.'), focus: ['daemon_bf', 'aegor', 'brynden', 'daeron2', 'baelor_b', 'maekar1'],
       groups: {
         rebel: PEOPLE.filter(p => p.k === 'B').map(p => p.id).concat(['aegor']),
         loyal: ['daeron2', 'baelor_b', 'maekar1', 'brynden', 'aerys1', 'aegon5', 'jaehaerys2', 'ormund']
       } },
-    { id: 'council101', name: 'Великий совет 101 г.', sub: 'наследник Джейехериса I',
-      note: 'Лорды выбрали Визериса, внука по мужской линии, а не Лейнора, сына Рейенис.',
+    { id: 'council101', name: App.t('Великий совет 101 г.'), sub: App.t('наследник Джейехериса I'),
+      note: App.t('Лорды выбрали Визериса, внука по мужской линии, а не Лейнора, сына Рейенис.'),
       groups: { chosen: ['viserys1'], cand: ['laenor', 'rhaenys_q'], host: ['jaehaerys1'] } },
-    { id: 'council233', name: 'Великий совет 233 г.', sub: 'наследник Мейкара I',
-      note: 'Корону предложили мейстеру Эймону; он отказался, и выбрали его младшего брата Эгга.',
+    { id: 'council233', name: App.t('Великий совет 233 г.'), sub: App.t('наследник Мейкара I'),
+      note: App.t('Корону предложили мейстеру Эймону; он отказался, и выбрали его младшего брата Эгга.'),
       groups: { chosen: ['aegon5'], cand: ['aemon_m', 'maegor_a', 'vaella_s'] } }
   ];
   // черновики: описания и отличия от книг, которые написал Claude и которые автор ещё правит
   const SCR = (typeof EXTRA !== 'undefined' && EXTRA.screen) || {};
-  LENSES.push({ id: 'ai', name: 'Тексты Claude', sub: 'черновики описаний для правки',
-    note: 'Подсвечены люди, чьё описание или отличия от книг написал Claude.', focus: ['luthor', 'mace', 'olenna', 'garth_t', 'moryn'],
+  LENSES.push({ id: 'ai', name: App.t('Тексты Claude'), sub: App.t('черновики описаний для правки'),
+    note: App.t('Подсвечены люди, чьё описание или отличия от книг написал Claude.'), focus: ['luthor', 'mace', 'olenna', 'garth_t', 'moryn'],
     groups: { ai: PEOPLE.filter(p => p.ai || (SCR[p.id] && SCR[p.id].ai)).map(p => p.id) } });
   LENSES.forEach(l => Object.keys(l.groups).forEach(g => { l.groups[g] = l.groups[g].filter(has); }));
   App.LENSES = LENSES;

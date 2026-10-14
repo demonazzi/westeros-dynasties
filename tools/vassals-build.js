@@ -119,11 +119,21 @@ const out = [];
 houses.forEach((h, id) => {
   let segs;
   if (TOPSEG[id]) {
-    segs = TOPSEG[id].slice();
+    segs = TOPSEG[id].map(g => Object.assign({}, g));
     // у дома из top.json добавить военные стороны из региональных данных (например, Фреи за «чёрных»)
     if (!h.great) normSegs(h).filter(g => CLAIMANT.has(g.liege) && !segs.some(t => CLAIMANT.has(t.liege) && t.s < g.e && g.s < t.e)).forEach(g => segs.push(g));
   } else segs = normSegs(h);
   segs.sort((a, b) => a.s - b.s);
+  // сторона в войне — не раньше, чем претендент объявил себя (за «чёрных» — с коронации Рейениры, а не со смерти
+  // Визериса I): до того дом служит прежнему сюзерену. Иначе в эти дни у дома «сюзерен не указан»
+  segs.forEach((g, k) => {
+    const c = CLAIMANT.has(g.liege) && (CL[g.liege] || []).find(c => c.s < g.e && g.s < c.e);
+    if (!c || g.s >= c.s) return;
+    const prev = segs[k - 1];
+    if (prev && prev.e >= g.s - 1e-9) prev.e = c.s;
+    g.s = c.s;
+  });
+
   let s = h.from != null ? h.from : -Infinity, e = h.to != null ? h.to + 1 : Infinity;
   if (h.from != null && h.from >= 298) s = h.from + 0.5;
   if (TOPSEG[id] && h.to != null) e = Math.max(...TOPSEG[id].map(g => g.e));
@@ -134,6 +144,33 @@ houses.forEach((h, id) => {
     id, en: h.en, ru: h.ru, region: h.region, seat: h.seat_ru || null, great: !!h.great,
     ex: [isFinite(s) ? r2(s) : null, isFinite(e) ? r2(e) : null], liege,
     al: segs.map(g => [r2(g.s), r2(g.e), g.liege, g.why]), page: h.page
+  });
+});
+// стыки с жизнью сюзерена: присяга дому, который пресёкся чуть раньше конца присяги (Гарднеры — Пламенное поле,
+// Тиреллы — сдача Хайгардена), заканчивается с ним; сюзерен по умолчанию, появившийся чуть позже конца последней
+// присяги (Баратеоны с Драконьего Камня, 284 г.), — прежняя присяга тянется до него
+const exOf = new Map(out.map(h => [h.id, h.ex]));
+out.forEach(h => {
+  // короткая щель (до года) между соседними присягами, когда закрыть её некому (сюзерена по умолчанию нет или его
+  // дома в эти годы нет): до стороны в войне — тянуть прежнюю присягу, иначе — начать следующую раньше
+  const D0 = h.liege && exOf.get(h.liege);
+  for (let k = 1; k < h.al.length; k++) {
+    const A = h.al[k - 1], B = h.al[k];
+    if (!(B[0] > A[1] && B[0] - A[1] <= 1)) continue;
+    if (D0 && (D0[0] == null || D0[0] <= A[1]) && (D0[1] == null || D0[1] >= B[0])) continue;
+    if (CLAIMANT.has(B[2])) A[1] = B[0]; else B[0] = A[1];
+  }
+  h.al.forEach((g, k) => {
+    const L = exOf.get(g[2]);
+    if (!L || L[1] == null || !(L[1] < g[1]) || g[1] - L[1] > 0.1 || L[1] <= g[0]) return;
+    const next = h.al[k + 1];
+    if (next && Math.abs(next[0] - g[1]) < 1e-9) next[0] = L[1];
+    g[1] = L[1];
+  });
+  const D = h.liege && exOf.get(h.liege);
+  if (D && D[0] != null) h.al.forEach((g, k) => {
+    const next = h.al[k + 1];
+    if (g[1] < D[0] && D[0] - g[1] <= 1 && (!next || next[0] >= D[0])) g[1] = D[0];
   });
 });
 out.sort((a, b) => REGIONS.findIndex(r => r[0] === a.region) - REGIONS.findIndex(r => r[0] === b.region) || (b.great - a.great) || a.ru.localeCompare(b.ru, 'ru'));

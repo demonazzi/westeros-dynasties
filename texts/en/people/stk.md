@@ -14,6 +14,8 @@
 
 ### cregan · Cregan Stark
 
+### lynara · Lynara Stark
+
 ### rickon_c · Rickon Stark
 
 ### jonnel · Jonnel Stark
@@ -26,7 +28,7 @@
 
 ### cregan_daughters · Сарра, Алис, Рейя и Мирия Старк
 
-### sansa_c · Санса Старк, дочь Рикона
+### sansa_c · Sansa Stark
 
 ### serena_c · Serena Stark
 

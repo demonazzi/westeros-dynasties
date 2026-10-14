@@ -1028,3 +1028,8 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
 .lv-head button.lv-card::after { content: none; }
 .lv-head button.lv-card:hover { color: var(--ink); }
 .vs-card { margin: 16px 0 4px; }
+.band-pin { cursor: pointer; }
+.band-pin .pin-bg { fill: var(--surface); fill-opacity: .92; stroke: var(--hc); stroke-opacity: .55; }
+.band-pin:hover .pin-bg { stroke-opacity: 1; }
+.band-pin .pin-title { font: 600 13px var(--font-ui); fill: var(--hc); }
+#tree.panning .band-pin { pointer-events: none; }

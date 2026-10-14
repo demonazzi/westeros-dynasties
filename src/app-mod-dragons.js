@@ -207,7 +207,7 @@
       const x = X(d.h);
       L.branch.append('path').attr('class', 'd-branch d-parent')
         .attr('d', 'M' + x + ',' + (p.y + 7) + ' C' + x + ',' + (c.y - 10) + ' ' + x + ',' + (c.y - 10) + ' ' + (x + 2) + ',' + c.y)
-        .append('title').text(d.name + ' вылупилась из яйца ' + (DR.get(d.par).name === 'Сиракс' ? 'Сиракс' : DR.get(d.par).name));
+        .append('title').text(App.t('{d} вылупилась из яйца {m}', { d: d.name, m: DR.get(d.par).name }));
     });
     // Догадка: яйца Дейенерис — от Пламени Мечты
     const df = rowOf.get('dreamfyre'), es = rowOf.get('o:essos');
@@ -215,7 +215,7 @@
       const x0 = X(54), x1 = es.x - es.w / 2;
       const p = L.branch.append('path').attr('class', 'd-guess')
         .attr('d', 'M' + x0 + ',' + (df.y + 6) + ' C' + x0 + ',' + (es.y - 60) + ' ' + (x1 - 120) + ',' + es.y + ' ' + x1 + ',' + es.y);
-      p.append('title').text('Догадка: яйца Дейенерис могли быть яйцами Пламени Мечты, украденными Элиссой Фарман в 54 г. В книгах не подтверждено.');
+      p.append('title').text(App.t('Догадка: яйца Дейенерис могли быть яйцами Пламени Мечты, украденными Элиссой Фарман в 54 г. В книгах не подтверждено.'));
       L.branch.append('text').attr('class', 'd-guess-label').attr('x', x1 - 16).attr('y', es.y - 22).attr('text-anchor', 'end').text('догадка: украденные яйца Пламени Мечты?');
     }
 

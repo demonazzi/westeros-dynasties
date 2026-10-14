@@ -1,7 +1,8 @@
 /* Карточка дома в настоящем браузере.
    Открывается: по адресу #h:код, кликом по гербу и названию полосы на древе и в хронологии, по названию дома
    в карточке человека, из списка и из карточки дома во вкладке «Вассалитет». Проверяет историю (назад к человеку
-   и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме (общий с «Вассалитетом») и его пометку ✎,
+   и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме (общий с «Вассалитетом») и его пометку ✎, сюзерена по вассалитету,
+   королей краёв и претендентов, ярлыки полос у левого края,
    английскую версию (английское название, под ним русское). */
 const { chromium } = require('/opt/npm-tools/node_modules/playwright');
 const fs = require('fs'), path = require('path');
@@ -93,6 +94,22 @@ const fs = require('fs'), path = require('path');
   expect(await p.evaluate(() => (document.querySelector('#panel .note') || {}).textContent === 'Проверочный текст.'), 'тот же текст во «Вассалитете»');
   await p.evaluate(() => { const h = V_HOUSES.find(x => x.id === HOUSES.pip.v); h.t = ''; App.openHouse('pip'); }); await p.waitForTimeout(400);
   expect(await p.evaluate(() => !!document.querySelector('#panel .hc-empty') && !document.querySelector('#panel .note')), 'без текста — пометка «ещё не написан»');
+  await p.close();
+
+  // 4б — дом из «12», который по вассалитету чей-то знаменосец; короли краёв и претенденты
+  p = await page();
+  await p.goto(url + '#h:bw'); await p.waitForTimeout(1500);
+  const bw = await p.evaluate(() => ({ eb: document.querySelector('#panel .eyebrow').textContent, rows: [...document.querySelectorAll('#panel .facts > div')].map(d => d.querySelector('dt').textContent + ':' + d.querySelector('dd').textContent.trim()) }));
+  expect(bw.eb === 'Дом · Речные земли' && bw.rows.includes('Сюзерен:Талли'), 'Блэквуды — «Дом», сюзерен Талли по вассалитету: ' + JSON.stringify(bw));
+  const kings = await p.evaluate(() => Object.fromEntries(['stk', 'lan', 'arr', 'gry', 'bar'].map(h => { App.openHouse(h); return [h, [...document.querySelectorAll('#panel .facts > div')].filter(d => /Короли|Претенденты/.test(d.querySelector('dt').textContent)).map(d => d.querySelector('dt').textContent + ':' + [...d.querySelectorAll('[data-id]')].map(x => x.dataset.id).join(',')).join(' | ')]; })));
+  expect(/Короли:.*torrhen.*robb/.test(kings.stk) && /loren/.test(kings.lan) && /ronnel_k/.test(kings.arr) && /balon.*euron|euron.*balon/.test(kings.gry) && /Претенденты на трон:.*stannis/.test(kings.bar), 'короли краёв и претенденты: ' + JSON.stringify(kings));
+  // ярлык полосы у левого края: заголовок за экраном — ярлык виден и открывает карточку
+  await p.evaluate(() => App.select('robb', { center: true })); await p.waitForTimeout(1200);
+  const pin = await p.evaluate(() => { const g = [...document.querySelectorAll('.band-pin')].find(g => g.style.display !== 'none' && /h-stk/.test(g.getAttribute('class'))); if (!g) return null; const r = g.getBoundingClientRect(); return [r.x + r.width / 2, r.y + r.height / 2]; });
+  expect(!!pin, 'у Робба заголовок Старков за экраном — виден ярлык «Старки»');
+  if (pin) { await p.mouse.click(pin[0], pin[1]); await p.waitForTimeout(500); expect(await p.evaluate(() => App.state.house === 'stk'), 'ярлык открывает карточку дома'); }
+  await p.evaluate(() => App.fitAll()); await p.waitForTimeout(1200);
+  expect(await p.evaluate(() => ![...document.querySelectorAll('.band-pin')].some(g => g.style.display !== 'none')), '«Всё» — заголовки видны, ярлыков нет');
   await p.close();
 
   // 5 — английский

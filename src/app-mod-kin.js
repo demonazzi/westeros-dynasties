@@ -381,7 +381,7 @@
     const h = state.history, last = h.length ? h[h.length - 1] : null;
     const ok = !!last && !last.startsWith('d:') && byId.has(last);
     backBtn.hidden = !ok;
-    if (ok) { backBtn.textContent = '← ' + App.historyLabel(last); backBtn.setAttribute('aria-label', 'Назад: ' + byId.get(last).full); }
+    if (ok) { backBtn.textContent = '← ' + App.historyLabel(last); backBtn.setAttribute('aria-label', App.t('Назад: {name}', { name: byId.get(last).full })); }
   }
   backBtn.addEventListener('click', () => App.goBack());
   App.hooks.select.push(() => { if (state.view === 'kin') updateBack(); });
