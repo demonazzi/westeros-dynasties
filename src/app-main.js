@@ -1,5 +1,6 @@
 /* Запуск: подзаголовок в шапке, образцы гербов в легенде, затем старт приложения. */
 (function () {
+  document.title = App.t('Династии Вестероса');
   const order = App.bandOrder().filter(b => !b.liege).map(b => b.house);
   /* Подзаголовок: сколько всего на древе и какой отрезок истории оно охватывает. */
   const sub = document.getElementById('brand-sub');

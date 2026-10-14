@@ -4,10 +4,15 @@
 
 ## Хардинги
 
-### humfrey_hd · Humfrey Hardyng
+### humfrey_hd · Humfrey Hardyng ✎
+Aerion injured him and killed his horse at Ashford. Humfrey later defended Dunk in the trial of seven, dying from his wounds.
 
-### hardyng_kn · Хардинг, отец Гарольда
+### hardyng_kn · Хардинг, отец Гарольда ✎
+A landed knight; the surviving references give no further personal history.
 
-### alys_stone · Alys Stone
+### alys_stone · Alys Stone ✎
+Alys is Harrold Hardyng's natural daughter by Cissy, a servant of House Waynwood. She is two years old in the released Winds of Winter chapter. Harry abandoned her mother, whom Lady Anya Waynwood later married to one of the Waynwood men-at-arms.
 
-### deana · Deana Hardyng
+### deana · Deana Hardyng ✎
+Deana married Walton Frey and has three children, Steffon, Walda, and Bryan. Her relationship to Harrold Hardyng, the heir to the Vale, is unknown.
+

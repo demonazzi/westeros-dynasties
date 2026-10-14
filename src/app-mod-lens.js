@@ -1,4 +1,4 @@
-/* Линзы: Танец драконов, путь Железного трона, восстания Блэкфайров, Великие советы. Линза приглушает всех, кроме участников, и окрашивает стороны. */
+/* Подсветка: Танец драконов, путь Железного трона, восстания Блэкфайров, Великие советы. Линза приглушает всех, кроме участников, и окрашивает стороны. */
 (function () {
   const App = window.App;
   const { byId, esc, state } = App;
@@ -9,7 +9,7 @@
     king: 'Король на Железном троне', claim: 'Претендент',
     rebel: 'Блэкфайры и их сторонники', loyal: 'Защитники Таргариенов',
     chosen: 'Избран', cand: 'Другие претенденты', host: 'Созвал совет',
-    ai: 'Текст — черновик Claude'
+    ai: 'Черновик описания'
   };
   const kings = PEOPLE.filter(p => p.k === 'K');
   const throneOrder = App.tKings.map(p => p.id);
@@ -42,8 +42,8 @@
   ];
   // черновики: описания и отличия от книг, которые написал Claude и которые автор ещё правит
   const SCR = (typeof EXTRA !== 'undefined' && EXTRA.screen) || {};
-  LENSES.push({ id: 'ai', name: 'Тексты Claude', sub: 'черновики описаний для правки',
-    note: 'Подсвечены люди, чьё описание или отличия от книг написал Claude.', focus: ['luthor', 'mace', 'olenna', 'garth_t', 'moryn'],
+  LENSES.push({ id: 'ai', name: 'Черновики', sub: 'описания, ожидающие проверки',
+    note: 'Подсвечены персонажи с черновыми описаниями.', focus: ['luthor', 'mace', 'olenna', 'garth_t', 'moryn'],
     groups: { ai: PEOPLE.filter(p => p.ai || (SCR[p.id] && SCR[p.id].ai)).map(p => p.id) } });
   LENSES.forEach(l => Object.keys(l.groups).forEach(g => { l.groups[g] = l.groups[g].filter(has); }));
   App.LENSES = LENSES;
@@ -55,7 +55,7 @@
   function renderMenu() {
     pop.innerHTML = LENSES.map(l =>
       '<button type="button" role="menuitemradio" aria-checked="' + (current === l.id) + '" data-lens="' + l.id + '"><b>' + esc(l.name) + '</b><span>' + esc(l.sub) + '</span></button>').join('') +
-      '<button type="button" role="menuitemradio" aria-checked="' + (current == null) + '" data-lens=""><b>Без линзы</b><span>показать всех</span></button>';
+      '<button type="button" role="menuitemradio" aria-checked="' + (current == null) + '" data-lens=""><b>Без подсветки</b><span>показать всех</span></button>';
   }
   function openMenu(open) {
     pop.hidden = !open;

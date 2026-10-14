@@ -41,7 +41,7 @@
     }));
   };
 
-  /* Всё, что страница дорисовывает потом (вкладки, всплывающие подсказки, легенды, карточки), переводится само:
+  /* Все дома, что страница дорисовывает потом (вкладки, всплывающие подсказки, легенды, карточки), переводится само:
      наблюдатель смотрит на новые узлы и переведёт целые подписи, которые есть в словаре. Составные строки
      (с именами и годами внутри) в коде собираются через App.t с подстановками. В русском наблюдателя нет. */
   App.autoTranslate = root => {
@@ -135,12 +135,12 @@
       if (d.t_en) { d.t = d.t_en; d.ai = d.ai_en ? 1 : 0; } else if (d.t) d.tUntranslated = true;
     });
     if (EXTRA_ && EXTRA_.screen) Object.values(EXTRA_.screen).forEach(o => {
-      if (o.df_en) o.df = o.df_en; else if (o.df) o.dfUntranslated = true;
+      if (o.df_en) { o.df = o.df_en; o.ai = o.ai_en ? 1 : 0; } else if (o.df) o.dfUntranslated = true;
       // актёры: [сериал, имя по-русски, имя по-английски] — в английском показываем английское
       (o.a || []).forEach(a => { if (a[2]) a[1] = a[2]; });
     });
     Object.values(G('HOUSES') || {}).forEach(h => { h.ruName = h.name; });
-    // текст о доме (texts/vassals.md) — общий у «Вассалитета» и карточки дома
+    // текст о доме (texts/vassals.md) — общий у «Присягиа» и карточки дома
     (G('V_HOUSES') || []).forEach(h => { if (h.t_en) { h.t = h.t_en; h.ai = h.ai_en ? 1 : 0; } else if (h.t) h.tUntranslated = true; });
     const DS = G('DRAGON_SCREEN'), DSE = G('DRAGON_SCREEN_EN');
     if (DS && DSE) Object.keys(DSE).forEach(id => { DS[id] = DSE[id]; });

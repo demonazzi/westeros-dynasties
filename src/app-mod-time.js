@@ -115,7 +115,7 @@
   const X = d3.scaleLinear().domain([-180, -10, 302]).range([0, 440, 440 + 312 * 12]);
   const ROW = 30, BHEAD = 64, BGAP = 26, TOP = 30;
   let built = false, rows = new Map(), bandBoxes = [], width = 0, height = 0, builtKey = '';
-  // фильтр «Полосы домов»: скрытые дома не попадают в хронологию, как и на древо
+  // фильтр «Дома на древе»: скрытые дома не попадают в хронологию, как и на древо
   const hiddenKey = () => [...(state.hiddenHouses || [])].sort().join(',');
   const LAB = 8;
 
@@ -160,7 +160,7 @@
     gz.selectAll('*').remove();
     layout();
     ['bands', 'eras', 'mar', 'drops', 'lives', 'labels', 'slice'].forEach(k => { L_[k] = gz.append('g').attr('class', 'tl-' + k); });
-    // Полосы домов
+    // Дома на древе
     bandBoxes.forEach(b => {
       const g = L_.bands.append('g').attr('class', 'h-' + b.house + (b.minor ? ' band-minor' : ''));
       g.append('rect').attr('class', 'band-bg').attr('x', 0).attr('y', b.top).attr('width', width).attr('height', b.bottom - b.top).attr('rx', 18);
@@ -251,7 +251,7 @@
     });
     lives.on('click', (e, d) => App.select(d.p.id));
     lives.on('keydown', (e, d) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.select(d.p.id); } });
-    // Срез по году
+    // Выбрать год
     L_.slice.append('line').attr('class', 't-slice').attr('y1', TOP - 20).attr('y2', height - 20).attr('display', 'none');
     decorateTime();
   }
@@ -313,7 +313,7 @@
   App.registerView('time', {
     el, sel: tsvg, tab: document.getElementById('tab-time'), legend: document.getElementById('time-legend'),
     persons: true, links: false, fitLabel: 'К началу',
-    hint: 'Слева направо — годы. Линия — жизнь человека; вертикали — браки и рождение детей; пунктир — годы оценены.',
+    hint: 'Линия показывает годы жизни. Вертикальные отметки — браки и рождение детей, пунктир — приблизительные даты.',
     scale: 'sync',
     scaleGo: y => {
       const t = d3.zoomTransform(el), w = el.getBoundingClientRect().width || 1000;
@@ -354,7 +354,7 @@
     return startHashPrev ? startHashPrev(h) : false;
   };
 
-  /* ——— Срез по году: ползунок живёт на общей шкале (app-mod-timescale.js) ——— */
+  /* ——— Выбрать год: ползунок живёт на общей шкале (app-mod-timescale.js) ——— */
   state.year = null;
   App.hooks.decorate.push(() => state.year != null ? id => !aliveAt(id, state.year) : null);
   App.yearText = y => {

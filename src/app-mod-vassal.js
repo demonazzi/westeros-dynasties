@@ -1,4 +1,4 @@
-/* Вкладка «Вассалитет»: кто кому фактически служит в выбранный момент.
+/* Вкладка «Присяги»: кто кому фактически служит в выбранный момент.
    Сверху — год, эпоха и её события (на шкале они стоят ромбиками, ползунок к ним липнет). Ниже — два вида на выбор:
    список (корона и стороны → дома со знаменосцами; знаменосцы свёрнуты по умолчанию) и круги (размер круга — сколько
    домов служит). Живёт отдельно от древа: свой год и своя карточка дома.
@@ -167,7 +167,7 @@
     return p ? p.name : '';
   }
   function liegeName(t, y) {
-    if (t == null) return 'не указан';
+    if (t == null) return App.t('не указан');
     if (H.has(t)) return H.get(t).ru;
     if (t === 'throne') return 'Железный трон';
     if (t === 'independent') return 'никому — независимы';
@@ -226,15 +226,15 @@
         '<label class="vs-era-wrap"><span class="sr-only">Эпоха</span><select id="vs-era" class="vs-era">' + ERAS.map((e, i) => '<option value="' + i + '">' + esc(e.name) + '</option>').join('') + '</select></label>' +
         '<p class="vs-status" id="vs-status"></p>' +
         '<div class="seg vs-mode" role="group" aria-label="Вид">' +
-          '<button type="button" class="seg-btn" data-mode="list" title="Списком: дома по сюзеренам, знаменосцы свёрнуты">Список</button>' +
-          '<button type="button" class="seg-btn" data-mode="bub" title="Кругами: размер круга — сколько домов служит">Круги</button>' +
+          '<button type="button" class="seg-btn" data-mode="list" title="Список домов по присяге; вассалы раскрываются стрелкой">Список</button>' +
+          '<button type="button" class="seg-btn" data-mode="bub" title="Размер круга соответствует числу вассальных домов">Круги</button>' +
         '</div>' +
       '</div>' +
       '<div class="vs-evbar"><div class="vs-evs" id="vs-evs" role="toolbar" aria-label="События эпохи"></div>' +
         '<button type="button" class="btn vs-all" id="vs-all" aria-pressed="false">Раскрыть всё</button>' +
         '<input type="search" id="vs-q" placeholder="Найти дом" aria-label="Найти дом" autocomplete="off"></div>' +
       '<div class="vs-list-view" id="vs-list" tabindex="-1"></div>' +
-      '<div class="vs-stage" id="vs-stage"><svg id="vs-bub" role="group" aria-label="Кто кому служит: короны и стороны, внутри — дома. Нажмите на дом — карточка"></svg></div>' +
+      '<div class="vs-stage" id="vs-stage"><svg id="vs-bub" role="group" aria-label="Дома сгруппированы по присяге в выбранном году. Нажмите на название, чтобы открыть карточку."></svg></div>' +
       '<div class="vs-tip" id="vs-tip" hidden></div>';
     built = true;
     listEl = el.querySelector('#vs-list'); stageEl = el.querySelector('#vs-stage'); bubSvg = el.querySelector('#vs-bub'); tipEl = el.querySelector('#vs-tip');
@@ -281,7 +281,7 @@
     if (!quiet || !last) draw();
     markQuery();
   }
-  const hintText = () => '← → — события, Shift + ← → — каждая перемена · ' + (mode === 'bub' ? 'круг — карточка дома, «остальные» — списком' : 'шеврон — знаменосцы, имя — карточка');
+  const hintText = () => App.t('← → — события · Shift + ← → — смены присяги') + ' · ' + App.t(mode === 'bub' ? 'Нажмите на круг, чтобы открыть дом; «Остальные» откроет список' : 'Стрелка раскрывает вассалов, название открывает карточку');
   const JSDOM = /jsdom/i.test(navigator.userAgent);       // проверки без браузера: размеров нет, берутся условные
   function resize(force) {
     const w = stageEl.clientWidth || (JSDOM ? 960 : 0), h = stageEl.clientHeight || (JSDOM ? 480 : 0);
@@ -329,7 +329,7 @@
     if (key === 'throne') {
       const contested = ['blacks', 'greens'].some(k => claimantAt(k, S.y)), king = kingAt(S.y);
       Object.assign(o, { name: 'Железный трон', cls: S.y < 283.45 ? 'targ' : 'bar', group: 'Напрямую короне',
-        sub: contested ? 'престол оспаривается: здесь дома, чья сторона не указана' : king ? 'на троне: ' + king : 'трон пуст: Эйрис убит, Роберт ещё не коронован' });
+        sub: contested ? 'престол оспаривается: здесь дома, чья сторона не указана' : king ? App.t('На троне: {name}', { name: king }) : 'трон пуст: Эйрис убит, Роберт ещё не коронован' });
       o.sig = o.cls;
     } else if (c) {
       const [a, b] = splitName(c.ru);
@@ -342,7 +342,7 @@
     } else {
       Object.assign(o, { cls: 'none', group: 'Дома',
         name: key === 'indep' ? 'Сами по себе' : key === 'neutral' ? 'Вне войны' : 'Сюзерен не указан',
-        sub: key === 'indep' ? 'дома, которые в этот момент не признают ничьей власти' : key === 'neutral' ? 'держат нейтралитет' : 'в источниках не сказано, кому служил дом в эти годы' });
+        sub: key === 'indep' ? 'дома, которые в этот момент не признают ничьей власти' : key === 'neutral' ? 'держат нейтралитет' : 'Присяга в эти годы неизвестна' });
     }
     return o;
   }
@@ -457,7 +457,7 @@
     if (n.kind === 'group') return '<b>' + esc(n.name) + '</b> · ' + App.plural(n.cnt, 'дом', 'дома', 'домов') + '<br><span class="vs-tip-hint">нажмите — показать списком</span>';
     if (n.kind === 'root' && !n.id) return '<b>' + esc(n.full || n.name) + '</b>' + (n.tip ? '<br>' + esc(n.tip) : '') + '<br>' + App.plural(n.cnt, 'дом', 'дома', 'домов');
     const h = H.get(n.id), L = S.info.get(n.id);
-    let s = '<b>' + esc(h.ru) + '</b>' + (h.seat ? ' · ' + esc(h.seat) : '') + '<br><span class="vs-tip-y">' + esc(REG.get(h.region).ru) + (h.great ? ' · великий дом' : '') + '</span>';
+    let s = '<b>' + esc(h.ru) + '</b>' + (h.seat ? ' · ' + esc(h.seat) : '') + '<br><span class="vs-tip-y">' + esc(REG.get(h.region).ru) + (h.great ? ' · ' + App.t('Великий дом') : '') + '</span>';
     if (n.kind !== 'root') s += '<br>служит: <b>' + esc(liegeName(L ? L.to : null, S.y)) + '</b>' + (L && L.own ? ' ⚑' : '');
     if (L && L.own && L.why) s += '<br><span class="vs-tip-why">' + esc(tidy(L.why)) + '</span>';
     if (n.cnt) s += '<br>' + App.plural(n.cnt, 'знаменосец', 'знаменосца', 'знаменосцев');
@@ -776,9 +776,9 @@
     fadeEvs();
     const n = exact ? evDiff()[EVS.indexOf(exact)] : 0;
     const king = S.y >= THRONE_START && !['blacks', 'greens'].some(k => claimantAt(k, S.y)) ? kingAt(S.y) : '';
-    statusEl.innerHTML = (exact ? '<b>' + esc(exact.desc) + '</b>' : cur ? 'после события: <b>' + esc(cur.name) + '</b> · ' + esc(yearWord(cur.t)) : 'до высадки Эйгона') +
-      (n ? '<span class="vs-st-n">' + App.plural(n, 'дом сменил', 'дома сменили', 'домов сменили') + ' сюзерена</span>' : '') +
-      (king ? '<span>на троне: ' + esc(king) + '</span>' : '');
+    statusEl.innerHTML = (exact ? '<b>' + esc(exact.desc) + '</b>' : cur ? esc(App.t('После события: {event}', { event: '' })) + '<b>' + esc(cur.name) + '</b> · ' + esc(yearWord(cur.t)) : App.t('до высадки Эйгона')) +
+      (n ? '<span class="vs-st-n">' + esc(App.t('{n} смен присяги', { n })) + '</span>' : '') +
+      (king ? '<span>' + esc(App.t('На троне: {name}', { name: king })) + '</span>' : '');
   }
 
   /* ——— Отрисовка ——— */
@@ -798,9 +798,9 @@
       const king = kingAt(S.y);
       if (king && !['blacks', 'greens'].some(k => claimantAt(k, S.y))) {
         const th = mode === 'list' ? listEl.querySelector('.vs-realm[data-key="throne"] .vs-realm-sub') : null;
-        if (th) th.textContent = 'на троне: ' + king;
+        if (th) th.textContent = App.t('На троне: {name}', { name: king });
         const r = layout && layout.byKey.get('r:throne');
-        if (r && mode === 'bub' && r.sub !== 'на троне: ' + king) { r.sub = 'на троне: ' + king; placeLabels(); }
+        if (r && mode === 'bub' && r.sub !== App.t('На троне: {name}', { name: king })) { r.sub = App.t('На троне: {name}', { name: king }); placeLabels(); }
       }
     }
     if (App.redrawScale) App.redrawScale();
@@ -836,9 +836,9 @@
   // текст о доме — texts/vassals.md; тот же абзац показывает и карточка дома на древе
   function houseText(h) {
     if (!h.t) return '';
-    return (h.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
-      '<p class="note vs-note"' + (h.tUntranslated ? ' lang="ru"' : '') + '>' + esc(h.t) + '</p>' +
-      (h.ai ? '<p class="ai-mark" title="Текст написал Claude; автор его ещё правит">✎ Черновик Claude</p>' : '');
+    return (h.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
+      h.t.split(/\n\s*\n/).map(p => '<p class="note vs-note"' + (h.tUntranslated ? ' lang="ru"' : '') + '>' + esc(p) + '</p>').join('') +
+      (h.ai ? '<p class="ai-mark" title="Описание ещё редактируется">✎ Черновик</p>' : '');
   }
   // для карточки дома на древе: край, годы и «кому служил» по периодам
   App.vHouseInfo = id => {
@@ -854,8 +854,8 @@
       panelContent.className = 'panel-inner h-none vassal';
       panel.classList.add('is-empty');
       panelContent.innerHTML = '<div class="empty"><p class="eyebrow">' + App.plural(V_HOUSES.length, 'дом', 'дома', 'домов') + ' Вестероса</p><h2>Выберите дом</h2>' +
-        '<p>Год двигают ползунок на шкале, события под ним и кнопки ‹ ›: ромбики на шкале — события, ползунок к ним липнет. Shift + стрелки — к каждой перемене.</p>' +
-        '<p>Списком: знаменосцы свёрнуты, шеврон раскрывает их, имя открывает карточку. Кругами: размер круга — сколько домов служит. Вспышка — дом только что сменил сюзерена, ⚑ — присяга по событию.</p>' +
+        '<p>Выберите год на шкале или событие под ней. Кнопки ‹ › переходят между событиями; Shift + стрелки — между всеми изменениями присяг.</p>' +
+        '<p>В списке стрелка раскрывает вассалов, название открывает карточку дома. В круговой схеме размер круга зависит от числа вассальных домов. Подсветка отмечает смену присяги, ⚑ — участие в войне или мятеже.</p>' +
         '<p class="stats">Источник — A Wiki of Ice and Fire, русские названия — 7kingdoms.ru</p></div>';
       return;
     }
@@ -864,12 +864,12 @@
     const S = last || snapshot(year);
     const now = S.kids.get(h.id) || [];
     const per = periods(h);
-    const life = h.ex[0] != null || h.ex[1] != null ? '<p class="vs-life">' + (h.ex[0] != null ? 'с ' + yearWord(h.ex[0]) : '') + (h.ex[0] != null && h.ex[1] != null ? ' ' : '') + (h.ex[1] != null ? 'по ' + yearWord(h.ex[1] - 0.001) : '') + '</p>' : '';
+    const life = h.ex[0] != null || h.ex[1] != null ? '<p class="vs-life">' + (h.ex[0] != null ? App.t('с {y}', { y: yearWord(h.ex[0]) }) : '') + (h.ex[0] != null && h.ex[1] != null ? ' ' : '') + (h.ex[1] != null ? App.t('по {y}', { y: yearWord(h.ex[1] - 0.001) }) : '') + '</p>' : '';
     panelContent.innerHTML =
       '<span class="grab" aria-hidden="true"></span>' +
       '<div class="panel-nav"><span></span><button type="button" class="btn btn-icon close" id="panel-close" aria-label="Закрыть карточку">×</button></div>' +
       '<div class="panel-top' + (h.great ? '' : ' no-medal') + '">' + (h.great && App.sigilSVG ? App.sigilSVG(clsOf(h), 0, 0, 64, 'medal') : '') + '<div>' +
-        '<p class="eyebrow">' + esc(REG.get(h.region).ru) + (h.great ? ' · великий дом' : '') + '</p>' +
+        '<p class="eyebrow">' + esc(REG.get(h.region).ru) + (h.great ? ' · ' + App.t('Великий дом') : '') + '</p>' +
         '<h2>' + esc(h.ru) + '</h2><p class="en">House ' + esc(h.en) + (h.seat ? ' · ' + esc(h.seat) : '') + '</p>' + life +
       '</div></div>' +
       houseText(h) +
@@ -877,7 +877,7 @@
       '<ol class="events vs-periods">' + per.map(p => '<li' + (p.a <= year && year < p.b ? ' class="now"' : '') + '><span class="ev-year">' + span(p.a, p.b) + '</span><span class="ev-text">' +
         (p.to && H.has(p.to) ? '<button type="button" class="linkish" data-vh="' + p.to + '">' + esc(liegeName(p.to, p.a)) + '</button>' : esc(liegeName(p.to, p.a))) +
         (p.why ? '<span class="ref-note block">' + esc(tidy(p.why)) + '</span>' : '') + '</span></li>').join('') + '</ol>' +
-      (now.length ? '<h3 class="sec">Знаменосцы в ' + esc(yearWord(year)) + '</h3><ul class="refs">' + now.map(id => '<li><button type="button" class="chip h-' + REGCLS[H.get(id).region] + '" data-vh="' + id + '">' + esc(H.get(id).ru) + '</button></li>').join('') + '</ul>' : '') +
+      (now.length ? '<h3 class="sec">' + esc(App.t('Знаменосцы в {year}', { year: yearWord(year) })) + '</h3><ul class="refs">' + now.map(id => '<li><button type="button" class="chip h-' + REGCLS[H.get(id).region] + '" data-vh="' + id + '">' + esc(H.get(id).ru) + '</button></li>').join('') + '</ul>' : '') +
       (App.houseByV && App.houseByV(h.id) ? '<div class="panel-actions vs-card"><button type="button" class="btn" data-house="' + App.houseByV(h.id) + '">Карточка дома на древе</button></div>' : '') +
       '<p class="vs-src"><a href="https://awoiaf.westeros.org/index.php/' + encodeURIComponent(h.page) + '" target="_blank" rel="noopener">Статья на A Wiki of Ice and Fire ↗</a></p>';
   }

@@ -1,6 +1,6 @@
 /* Карточка дома: открывается с древа и из хронологии (герб и название полосы), из карточки человека (название дома)
-   и из списка. Показывает герб, замок и девиз, текст о доме (texts/vassals.md — тот же, что во «Вассалитете»), край, сюзерена и знаменосцев на древе,
-   королей и сколько людей дома на древе, а по вкладке «Вассалитет» — кому дом служил. В истории — «h:код», в адресе — #h:код. */
+   и из списка. Показывает герб, замок и девиз, текст о доме (texts/vassals.md — тот же, что во «Присягие»), край, сюзерена и знаменосцев на древе,
+   королей и сколько людей дома на древе, а по вкладке «Присяги» — кому дом служил. В истории — «h:код», в адресе — #h:код. */
 (function () {
   const App = window.App;
   const { byId, esc, state } = App;
@@ -51,8 +51,8 @@
         (App.lang === 'en' ? '<p class="en" lang="ru">' + esc(H.ruName || '') + '</p>' : info ? '<p class="en">House ' + esc(info.h.en) + '</p>' : '') +
       '</div></div>' +
       (seat || words ? '<p class="hc-motto">' + (words ? '<span class="hc-words">' + esc(words) + '</span>' : '') + (seat ? '<span class="hc-seat">' + esc(seat) + '</span>' : '') + '</p>' : '') +
-      // текст о доме — texts/vassals.md, тот же, что во вкладке «Вассалитет»
-      (info && info.textHtml ? info.textHtml : '<p class="hc-empty">Текст о доме ещё не написан.</p>') +
+      // текст о доме — texts/vassals.md, тот же, что во вкладке «Присяги»
+      (info && info.textHtml ? info.textHtml : '<p class="hc-empty">Описание дома пока не добавлено.</p>') +
       '<dl class="facts">' +
         (liege ? App.row('Сюзерен', '<ul class="refs">' + houseChip(liege) + '</ul>') : '') +
         (vassals.length ? App.row('Знаменосцы на древе', '<ul class="refs">' + vassals.map(houseChip).join('') + '</ul>') : '') +
@@ -67,7 +67,7 @@
           (p.why ? '<span class="ref-note block">' + esc(p.why) + '</span>' : '') + '</span></li>').join('') + '</ol>' : '') +
       '<div class="panel-actions">' +
         '<button type="button" class="btn" data-house-locate="' + code + '">Показать на древе</button>' +
-        (info ? '<button type="button" class="btn" data-house-vassal="' + esc(H.v) + '">Во вкладке «Вассалитет»</button>' : '') +
+        (info ? '<button type="button" class="btn" data-house-vassal="' + esc(H.v) + '">Во вкладке «Присяги»</button>' : '') +
         (info ? '<a class="btn" href="https://awoiaf.westeros.org/index.php/' + encodeURIComponent(info.h.page || ('House ' + info.h.en)) + '" target="_blank" rel="noopener">A Wiki of Ice and Fire ↗</a>' : '') +
       '</div>';
     panel.scrollTop = 0;

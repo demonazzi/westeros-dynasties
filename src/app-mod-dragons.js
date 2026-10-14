@@ -95,7 +95,7 @@
   App.registerView('dragons', {
     el: dsvgEl2, sel: dsvg, tab: document.getElementById('tab-dragons'), legend: document.getElementById('dragon-legend'),
     persons: false, links: false, fitLabel: 'К началу',
-    hint: 'Слева направо — годы. Полоса — жизнь дракона, под ней — всадники. Нажмите на дракона — откроется карточка.',
+    hint: 'Полоса показывает годы жизни дракона, под ней указаны всадники. Нажмите на имя, чтобы открыть описание.',
     scale: 'sync',
     scaleGo: y => {
       const t = d3.zoomTransform(dsvgEl), w = dsvgEl.getBoundingClientRect().width || 1000;
@@ -295,7 +295,7 @@
     markYear();
     if (App.redrawScale) App.redrawScale();
   }
-  /* Срез по году: живые в этот год драконы остаются яркими. */
+  /* Выбрать год: живые в этот год драконы остаются яркими. */
   let sliceLine = null;
   const aliveIn = (d, y) => d.h - (d.ha ? 3 : 0) <= y && y <= (d.dx || d.end);
   function markYear() {
@@ -359,7 +359,7 @@
       const riders = new Set(DRAGONS.flatMap(riderIds));
       panelContent.innerHTML =
         '<div class="empty"><p class="eyebrow">' + App.plural(DRAGONS.length, 'дракон', 'дракона', 'драконов') + '</p><h2>Выберите дракона</h2>' +
-        '<p>Полоса показывает жизнь дракона в его цветах, под ней — всадники в цветах их домов. Ветви слева ведут от Валирии, Драконьей Горы и яиц в колыбелях; крестами отмечены схватки.</p>' +
+        '<p>Цвет полосы соответствует дракону, цвет линии всадника — его дому. Слева показано происхождение драконов, крестами отмечены погибшие в схватках.</p>' +
         '<p class="stats">' + App.plural(riders.size, 'всадник', 'всадника', 'всадников') + ' есть на древе людей · ' + App.plural(DRAGON_FIGHTS.length, 'схватка', 'схватки', 'схваток') + '</p></div>';
       return;
     }
@@ -384,7 +384,7 @@
         '<h2>' + esc(d.full) + '</h2>' +
         '<p class="en">' + esc(App.lang === 'en' ? (d.ruName || '') : d.en) + '</p>' +
       '</div></div>' +
-      (d.tUntranslated ? '<p class="tr-missing">Перевода пока нет — ниже русский текст.</p>' : '') +
+      (d.tUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
       '<p class="note"' + (d.tUntranslated ? ' lang="ru"' : '') + '>' + esc(d.t) + '</p>' +
       '<ol class="events">' + ev.map(e => '<li><span class="ev-year">' + esc(e.label) + '</span><span class="ev-text">' +
         (e.ref ? '<button type="button" class="linkish" data-id="' + e.ref + '">' + esc(e.text) + '</button>'
@@ -404,7 +404,7 @@
         '<button type="button" class="btn" data-action="locateDragon" data-dragon="' + d.id + '">Показать на шкале</button>' +
         '<a class="btn" href="https://awoiaf.westeros.org/index.php?title=Special:Search&go=Go&search=' + encodeURIComponent(d.en.split(',')[0].replace(/ the .*$/, '')) + '" target="_blank" rel="noopener">A Wiki of Ice and Fire ↗</a>' +
       '</div>' +
-      '<p class="src">Источник: «Пламя и кровь» и «Песнь льда и огня»; сверено по A Wiki of Ice and Fire. Годы — от Завоевания.</p>';
+      '<p class="src">По «Пламени и крови» и «Песни льда и огня», с уточнениями по A Wiki of Ice and Fire. Годы отсчитываются от Завоевания Эйгона.</p>';
     panel.scrollTop = 0;
   }
   App.renderDragonPanel = renderDragonPanel;

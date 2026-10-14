@@ -1,0 +1,30 @@
+{
+  "descriptions": {
+    "dragons": [
+      33,
+      33
+    ],
+    "screen-dragons": [
+      7,
+      7
+    ],
+    "screen": [
+      71,
+      71
+    ],
+    "vassals": [
+      426,
+      426
+    ],
+    "people": [
+      1003,
+      1003
+    ]
+  },
+  "interface_keys": 1039,
+  "data_keys": 2150,
+  "missing": [],
+  "cyrillic": [],
+  "over_limit": [],
+  "protected_source_files": 101
+}

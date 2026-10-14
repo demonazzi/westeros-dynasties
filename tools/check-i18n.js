@@ -24,7 +24,7 @@ const fs = require('fs'), path = require('path');
     const robb = App.byId.get('robb');
     return { lang: App.lang, html: document.documentElement.lang, name: robb.name, ru: robb.ruName, h2: document.querySelector('#panel h2').textContent,
       sub: (document.querySelector('#panel .en') || {}).textContent, pressed: document.querySelector('.lang-btn[data-lang="en"]').getAttribute('aria-pressed'),
-      miss: !!document.querySelector('#panel .tr-missing'), t: App.t('строка без перевода'), fill: App.t('{a} из {b}', { a: 1, b: 2 }),
+      miss: !!document.querySelector('#panel > .panel-inner > .tr-missing'), translated: !!robb.t_en, t: App.t('строка без перевода'), fill: App.t('{a} из {b}', { a: 1, b: 2 }),
       card: [...document.querySelectorAll('#tree g.node')].some(n => n.textContent.includes('Robb Stark')) };
   });
   expect(en.lang === 'en' && en.html === 'en', 'язык en и <html lang="en">');
@@ -32,7 +32,7 @@ const fs = require('fs'), path = require('path');
   expect(en.h2 === 'Robb Stark' && en.sub === 'Робб Старк', 'карточка: английское имя, под ним русское (' + en.h2 + ' / ' + en.sub + ')');
   expect(en.card, 'на древе английское имя');
   expect(en.pressed === 'true', 'переключатель отмечает EN');
-  expect(en.miss, 'над русским текстом — пометка, что перевода нет');
+  expect(en.miss === !en.translated, 'пометка соответствует наличию перевода основного описания');
   expect(en.t === 'строка без перевода' && en.fill === '1 из 2', 'непереведённое — по-русски, подстановки работают');
   await p.click('.lang-btn[data-lang="ru"]'); await p.waitForTimeout(1200);
   const ru = await p.evaluate(() => ({ lang: App.lang, name: App.byId.get('robb').name, hash: location.hash }));

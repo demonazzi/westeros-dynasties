@@ -13,7 +13,7 @@
   function actorsList(list) {
     return '<ul class="actors">' + list.map(([s, ru, en, note]) =>
       '<li><span class="series s-' + s + '">' + esc(SERIES[s].name) + '</span>' +
-      '<span class="actor">' + esc(ru) + ' <span class="lat">' + esc(en) + '</span>' +
+      '<span class="actor">' + esc(ru) + (ru === en ? '' : ' <span class="lat">' + esc(en) + '</span>') +
       (note ? '<span class="ref-note">' + esc(note) + '</span>' : '') + '</span></li>').join('') + '</ul>';
   }
   App.hooks.panel.push(p => {
@@ -21,7 +21,8 @@
     if (!e) return state.screen ? '<section class="screen-sec quiet"><h3 class="sec-h">В экранизации</h3><p class="muted">В экранизациях этого персонажа нет или он мелькает без имени.</p></section>' : '';
     return '<section class="screen-sec"><h3 class="sec-h">В экранизации</h3>' +
       (e.a && e.a.length ? actorsList(e.a) : '<p class="muted">В экранизациях этого персонажа нет.</p>') +
-      (e.df ? '<p class="diff"><span class="diff-h">Отличия от книг' + (e.ai ? ' <span class="ai-mark inline" title="Текст написал Claude; автор его ещё правит">✎ черновик Claude</span>' : '') + '</span>' + esc(e.df) + '</p>' : '') +
+      (e.dfUntranslated ? '<p class="tr-missing">Это описание пока доступно только по-русски.</p>' : '') +
+      (e.df ? '<p class="diff"' + (e.dfUntranslated ? ' lang="ru"' : '') + '><span class="diff-h">Отличия от книг' + (e.ai ? ' <span class="ai-mark inline" title="Описание ещё редактируется">✎ черновик</span>' : '') + '</span>' + esc(e.df) + '</p>' : '') +
       '</section>';
   });
   App.hooks.dragonPanel && App.hooks.dragonPanel.push(d => DS[d.id]
