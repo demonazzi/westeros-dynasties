@@ -4,7 +4,7 @@
    2) с тестовыми словарями (window.__I18N_TEST): подписи интерфейса, шаблоны с подстановками и формы числа,
       строки данных (дом, девиз, приписка к браку, человек без карточки), годы «не позднее N», английский текст человека,
       подписи, дорисованные позже (фильтры, другие вкладки). */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();

@@ -1,5 +1,5 @@
 /* Проверка подписей в настоящем браузере: заголовки домов, подписи пропусков и пунктир не наезжают на карточки и друг на друга. */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();

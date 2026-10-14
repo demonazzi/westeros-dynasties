@@ -1,5 +1,5 @@
 /* Скриншоты собранной страницы: d3 подставляется локально, шрифты — системные. node tools/shot.js [name] [width] [height] [js] [theme] */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..');
 (async () => {

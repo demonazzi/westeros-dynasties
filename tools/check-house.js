@@ -4,7 +4,7 @@
    и обратно), подсветку полосы, «Показать на древе» (полоса в экране и читаема), текст о доме (общий с «Вассалитетом») и его пометку ✎, сюзерена по вассалитету,
    королей краёв и претендентов, ярлыки полос у левого края,
    английскую версию (английское название, без русского). */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();

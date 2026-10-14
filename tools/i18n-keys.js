@@ -91,7 +91,7 @@ const finish = composite => {
 
 if (!crawl) { finish(); return; }
 (async () => {
-  const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+  const { chromium } = require('./pw');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1600, height: 900 } });
   await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });

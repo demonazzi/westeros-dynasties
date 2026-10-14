@@ -1,0 +1,9 @@
+{
+  "name": "westeros-dynasties-tools",
+  "private": true,
+  "description": "Сборка и проверки «Династий Вестероса»: npm install, затем npx playwright install chromium",
+  "devDependencies": {
+    "jsdom": "24.1.3",
+    "playwright": "1.56.0"
+  }
+}

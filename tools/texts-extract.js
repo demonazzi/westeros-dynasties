@@ -1,4 +1,4 @@
-const { chromium } = require('/opt/npm-tools/node_modules/playwright'); const fs = require('fs');
+const { chromium } = require('./pw'); const fs = require('fs');
 (async () => {
   const [file, out] = process.argv.slice(2);
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1400, height: 900 } });

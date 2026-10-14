@@ -1,102 +1,62 @@
-# Английская версия: что и как переводить
+# English version: files and format
 
-Сайт показывается по-английски, если в адресе `?lang=en` или нажата кнопка **EN** у названия. Всё, что ещё не
-переведено, показывается по-русски — так что переводить можно по частям, ничего не ломая.
+The site is Russian first; the English version comes from dictionaries and parallel texts. It opens with `?lang=en`
+or the **EN** button. Anything without an English string falls back to Russian.
 
-Переводить нужно четыре вещи. Каждую — только в своём файле, остальные файлы проекта не трогать.
+| What | File |
+|---|---|
+| Interface: buttons, tabs, legends, tooltips | `src/i18n/en.json` |
+| Short data strings: house names, words and seats, nicknames, notes on marriages, people without a card, allegiance reasons, gap notes | `texts/en/data.json` |
+| Long texts about people, houses, dragons, screen-vs-book differences | `texts/en/people/<house>.md`, `vassals.md`, `dragons.md`, `screen.md`, `screen-dragons.md` |
 
-| Что | Файл | Сколько |
-|---|---|---|
-| Интерфейс: кнопки, вкладки, легенды, подсказки | `src/i18n/en.json` | ~1100 строк |
-| Строки данных: дома, девизы, замки, прозвища, приписки к бракам, люди без карточки, вассалитет, драконы | `texts/en/data.json` | ~2150 строк |
-| Тексты о людях | `texts/en/people/*.md` (по файлу на дом) | 1003 раздела, ~33 000 слов по-русски |
-| Тексты о домах (вкладка «Присяги» и карточка дома) | `texts/en/vassals.md` | 426 разделов; русские в `texts/vassals.md` ещё чистятся — переводить после чистки |
-| Тексты о драконах и отличия экранизаций | `texts/en/dragons.md`, `texts/en/screen.md`, `texts/en/screen-dragons.md` | 33 + 71 + 7 разделов |
+Names of people and dragons come from the `en` field in `data/`, not from these files.
+Almost all English texts are AI drafts translated from Russian and marked `✎`.
 
-Имена людей и драконов переводить не нужно: они уже есть в данных (поле `en`, как на A Wiki of Ice and Fire).
-Имена групповых и безымянных карточек («Двое сыновей», «Лорд Харлоу, отец Родрика») — в `texts/en/data.json`.
+## Interface — `src/i18n/en.json`
 
-## Общие правила
-
-- **Каноничные английские названия — с A Wiki of Ice and Fire** (awoiaf.westeros.org), а не обратный перевод
-  с русского. «Меч Зари» — Sword of the Morning, «Горный Приют» — High Hermitage, «Танец драконов» —
-  the Dance of the Dragons, «Красный Змей» — the Red Viper, «Звездопад» — Starfall, «Десять Башен» — Ten Towers.
-  Дома — `House Stark`, полосы домов — `Starks`/`Lannisters`… как в английских книгах.
-- **Факты не менять.** Переводится то, что написано по-русски. Если факт кажется неверным — не исправлять молча,
-  а выписать отдельным списком (id и что смущает).
-- **Годы:** `130 AC`, `20 BC` (до Завоевания), «не позднее 27» — `by 27` (годы в данных переводятся сами, их не трогать).
-- Кавычки «ёлочки» → английские `"…"`. Тире — как в английском (`—`).
-- Не уверен(а) — оставь пустым: на сайте останется русский, это лучше неверного перевода.
-
-## 1. Интерфейс — `src/i18n/en.json`
-
-Пары «русская строка → перевод». Заполнять **только значения**, ключ (слева) не менять никогда: по нему сайт
-находит перевод.
+`"Russian string": "English"`. Edit only the values; the key is how the site finds the string.
 ```json
 "Показать на древе": "Show on tree",
 "видно {n} из {all}": "{n} of {all} shown",
-"дом|дома|домов": "house|houses",
+"дом|дома|домов": "house|houses"
 ```
-- `{n}`, `{name}`, `{a}` и другие метки в фигурных скобках — оставить как есть, можно переставить.
-- Ключ с тремя формами через `|` («дом|дома|домов») — формы числа. Перевод — две формы через `|`:
-  единственное и множественное (`house|houses`). Число подставится само.
-- Некоторые ключи — куски одной фразы, разрезанной значком или ссылкой (например, «Тяните — двигать, колесо —
-  масштаб, клик — карточка,» и «— поиск. Клик по шкале — перейти к этим годам.»). Переводить так, чтобы они
-  читались вместе.
-- Надписи кнопок — примерно той же длины, иначе поедет шапка.
+Placeholders in braces must stay (they may move). A key with three forms split by `|` is a Russian plural; the value
+has two forms, singular and plural.
 
-## 2. Строки данных — `texts/en/data.json`
+## Data strings — `texts/en/data.json`
 
 ```json
-"Утёс Кастерли · «Услышь мой рёв!»": { "en": "Casterly Rock · \"Hear Me Roar!\"", "ctx": "дом lan.motto" },
-"Бриони": { "en": "Briony", "ctx": "человек joy_hill «Джой Хилл».par" },
+"Утёс Кастерли · «Услышь мой рёв!»": { "en": "Casterly Rock · \"Hear Me Roar!\"", "ctx": "дом lan.motto" }
 ```
-- Заполнять **только `en`**. Ключ и `ctx` не менять. `ctx` — где строка встречается (человек, дом, поле), чтобы
-  понять, о чём она; «(и ещё N)» — та же строка есть ещё в N местах, перевод один на все.
-- Подсказки по полям (последнее слово в `ctx`):
-  - `name`, `full` — имя карточки; `al` — прозвище; `kl` — титул;
-  - `motto` — «Замок · «Девиз»» → `Seat · "Words"` (если девиза нет — только замок);
-  - `band` — подпись полосы дома (`Lannisters`), `name` у дома — `House Lannister`;
-  - `h` — дом во множественном числе родительного падежа («Редвинов»): переводить просто фамилией (`Redwyne`),
-    сайт сам напишет `House Redwyne`;
-  - `.sp (приписка к браку)` — короткая приписка («вторая жена», «помолвка расторгнута»);
-  - `.sp (супруг без карточки)`, `.par` — имя человека без своей карточки или пояснение («жена, имя не названа» →
-    `wife, name unknown`); `(приписка к ссылке)` — пояснение в скобках при ссылке («вероятно» → `probably`);
-  - `вассалитет: …` — почему дом присягнул (поле `al`); `seat` — замок, `ru` — название дома (`Starks`).
-- Приписки вида «47 г.» и годы рождения/смерти сюда не попадают — они переводятся сами.
+Edit only `en`. `ctx` says where the string is used (person or house id and field); one translation covers every place.
+An empty `en` shows the Russian string. Years in data are translated automatically and never appear here.
 
-## 3. Тексты — `texts/en/**/*.md`
+## Texts — `texts/en/**/*.md`
 
-Каждый раздел начинается служебным заголовком; текст пишется строками **под** ним:
 ```markdown
 ### joy_hill · Joy Hill ✎
-Bastard daughter of Gerion Lannister by the commoner Briony, born in 288 AC.
+Text — lines under the heading.
 ```
-- Заголовок `### id · Name` **не менять** (id — ключ, имя подставляется само). Единственное, что можно и нужно
-  добавить в заголовок, — знак ✎ в конце: он помечает текст, написанный нейросетью (черновик).
-- Пустой раздел — на сайте показывается русский текст с пометкой «перевода пока нет».
-- Источник — русский текст того же id в `texts/people/<тот же файл>.md` (`texts/vassals.md`, `texts/dragons.md`,
-  `texts/screen.md`…). В `vassals.md` заголовок английского раздела — `### stark · House Stark`.
-  Длина и тон — как у оригинала (у людей 1–4 предложения), энциклопедично, прошедшее время.
-- Строки `#`, `##` и комментарий `<!-- … -->` — служебные, их не трогать.
-- Переводить удобно по одному файлу (дому) за раз.
+- The heading `### id · Name` is technical: do not change the id; the name is filled in from `en`. Sections are created
+  by `node tools/data.js --sync`; do not add, delete or reorder them by hand.
+- `✎` at the end of the heading marks an AI draft, labelled on the site; remove it and the label disappears.
+- Plain text, no Markdown. One paragraph for a person; houses may have several, separated by a blank line.
+- An empty section shows the Russian text with a note that there is no translation yet.
 
-## Проверка
+## After editing
 
 ```
-node tools/data.js --check     # тексты и data/ сходятся (нет лишних или повреждённых разделов)
-python3 tools/build.py         # сборка
-node tools/check-i18n.js       # английский включается, переводы подхватываются
+node tools/data.js --check     # texts and data/ match
+python3 tools/build.py
+node tools/check-i18n.js       # English switches on and picks up translations
 ```
-Потом открыть `dist/targaryen-tree.html?lang=en` и посмотреть глазами.
 
-## Для разработчика: как появляются новые строки
+## Where new strings come from
 
-После правок кода или данных:
 ```
-node tools/i18n-keys.js        # новые строки интерфейса → src/i18n/en.json (готовые переводы сохраняются)
-node tools/i18n-data.js        # новые строки данных → texts/en/data.json
-node tools/data.js --sync      # новые люди и драконы → пустые разделы в texts/en/
+node tools/i18n-keys.js        # new interface strings → src/i18n/en.json (existing translations are kept)
+node tools/i18n-data.js        # new data strings → texts/en/data.json
+node tools/data.js --sync      # new people, houses, dragons → empty sections in texts/ and texts/en/
 ```
-`i18n-keys.js` в конце печатает «составные» подписи — где русский склеен с именем или годом и потому не переводится
-целиком; их собирают в коде через `App.t('… {name} …', { name })`.
+`i18n-keys.js` also lists "composite" labels where Russian is glued to a name or a year; build those in code with
+`App.t('… {name} …', { name })`.

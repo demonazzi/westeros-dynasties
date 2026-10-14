@@ -1,6 +1,6 @@
 /* Подсказка у линии связи между домами не залипает: снимается, когда указатель ушёл с линии на пустое место, на панель,
    когда древо перестроилось под неподвижным указателем и при смене вкладки. */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();

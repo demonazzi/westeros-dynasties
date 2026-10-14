@@ -1,5 +1,5 @@
 /* Проверка шкалы в настоящем браузере: рамка обзора, полоса выбранного и подписи колонок совпадают с тем, что видно на экране. */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();

@@ -1,6 +1,6 @@
 /* Проверка связей между домами в настоящем браузере: каждый значок брака и каждая линия отзываются на наведение
    (подсказка с обоими именами, подсветка обоих концов) и на нажатие (переход к дальнему концу); значки не лежат на карточках. */
-const { chromium } = require('/opt/npm-tools/node_modules/playwright');
+const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
   const b = await chromium.launch();
