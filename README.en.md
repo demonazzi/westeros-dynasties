@@ -186,4 +186,4 @@ actor's original name, note]]}`. Screen-vs-book differences are texts in `texts/
 ## Where the data comes from
 
 Facts — A Wiki of Ice and Fire (awoiaf.westeros.org), after the books and official histories. Russian names —
-7kingdoms.ru. English texts are translations of the Russian ones; only a few dozen added later by an AI are marked `✎`.
+7kingdoms.ru. English texts were written separately, not translated from the Russian ones; only a few dozen added later by an AI are marked `✎`.
