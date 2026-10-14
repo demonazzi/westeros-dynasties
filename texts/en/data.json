@@ -5237,11 +5237,15 @@
  },
  "≈ 80 лет": {
   "en": "c. 80 years",
-  "ctx": "пропуск bar borros→lord_b208.years (и ещё 5)"
+  "ctx": "пропуск bar borros→lord_b208.years (и ещё 6)"
  },
  "лорды Каменной Ограды этих лет в книгах не упоминаются": {
   "en": "the lords of Stone Hedge in between are not named in the books",
   "ctx": "пропуск brk humfrey_b→brk_lord13.note (и ещё 2)"
+ },
+ "главы дома этих лет в книгах не упоминаются": {
+  "en": "the heads of the house in between are not named in the books",
+  "ctx": "пропуск btw alton_b→btw_gf.note (и ещё 1)"
  },
  "лорды Дома Сердец этих лет в книгах не упоминаются": {
   "en": "the lords of Heart's Home in between are not named in the books",
@@ -5321,7 +5325,11 @@
  },
  "≈ 70 лет": {
   "en": "c. 70 years",
-  "ctx": "пропуск lan lan_lord10→gerold.years (и ещё 2)"
+  "ctx": "пропуск lan lan_lord10→gerold.years (и ещё 3)"
+ },
+ "отец Таймонда в книгах не упоминается": {
+  "en": "Tymond's father is not mentioned in the books",
+  "ctx": "пропуск lan lyman→tymond.note"
  },
  "Таймонд правил до близнецов, но был ли он их отцом, в книгах не сказано": {
   "en": "Tymond ruled before the twins, but the books do not say whether he was their father",
@@ -5361,7 +5369,7 @@
  },
  "≈ 180 лет": {
   "en": "c. 180 years",
-  "ctx": "пропуск oak oak_lord73→arwyn.years"
+  "ctx": "пропуск oak oak_lord73→arwyn.years (и ещё 1)"
  },
  "лорды Старого Дуба этих лет в книгах не упоминаются": {
   "en": "the lords of Old Oak in between are not named in the books",
@@ -5387,17 +5395,13 @@
   "en": "the lords of Pinkmaiden in between are not named in the books",
   "ctx": "пропуск pip jon_p→petyr_p.note (и ещё 2)"
  },
- "главы дома этих лет в книгах не упоминаются": {
-  "en": "the heads of the house in between are not named in the books",
-  "ctx": "пропуск plm ossifer→philip_pl.note"
- },
  "лорды Арбора этих лет в книгах не упоминаются": {
   "en": "the lords of the Arbor in between are not named in the books",
   "ctx": "пропуск red ryam→runceford.note"
  },
  "≈ 160 лет": {
   "en": "c. 160 years",
-  "ctx": "пропуск red ryam→runceford.years (и ещё 2)"
+  "ctx": "пропуск red ryam→runceford.years (и ещё 1)"
  },
  "лорды Рунного Камня этих лет в книгах не упоминаются": {
   "en": "the lords of Runestone in between are not named in the books",
@@ -5493,7 +5497,7 @@
  },
  "лорды Скалы этих лет в книгах не упоминаются": {
   "en": "the lords of the Crag in between are not named in the books",
-  "ctx": "пропуск wes roland_wl→gawen_w.note"
+  "ctx": "пропуск wes wes_lord43→roland_wl.note (и ещё 1)"
  },
  "Игра престолов": {
   "en": "Game of Thrones",
