@@ -124,6 +124,13 @@ body { background: var(--ground); color: var(--ink); font-family: var(--font-ui)
   padding-block: 12px; padding-inline: 16px;
   background: var(--surface); border-bottom: 1px solid var(--rule);
 }
+.bar { position: relative; padding-right: 60px; }
+/* ссылка на репозиторий: правый верхний угол, в строке заголовка; подсказка — своя, не системная */
+.gh-link { position: absolute; top: 12px; right: 16px; width: 30px; height: 28px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 9px; color: var(--muted); }
+.gh-link:hover { color: var(--ink); background: var(--ground); }
+.gh-link:focus-visible { outline: 2px solid var(--path); outline-offset: 2px; }
+.gh-link::after { content: attr(data-tip); position: absolute; top: calc(100% + 7px); right: 0; white-space: nowrap; font: 600 12px var(--font-ui); letter-spacing: .02em; color: var(--surface); background: var(--ink); padding: 4px 9px; border-radius: 7px; opacity: 0; pointer-events: none; transition: opacity .12s; z-index: 20; }
+.gh-link:hover::after, .gh-link:focus-visible::after { opacity: 1; }
 .brand { display: grid; gap: 2px; min-width: 0; margin-right: auto; }
 .brand h1 { font-family: var(--font-display); font-weight: 400; font-size: 27px; line-height: 1.05; margin: 0; letter-spacing: .01em; text-wrap: balance; }
 .brand p { margin: 0; font-size: 13px; color: var(--muted); font-variant-numeric: lining-nums; }
