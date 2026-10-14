@@ -4547,10 +4547,9 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
       /* модуль сам открыл нужное представление */
     } else if (byId.has(startId)) {
       select(startId, { push: false }); centerOn(startId, App.isNarrow() ? 0.75 : 0.9, false);
-    } else if (App.isNarrow()) {
-      renderPanel(null); centerOn('rhaenys_q', 0.6, false);
     } else {
-      select('rhaenys_q', { push: false }); centerOn('rhaenys_q', 0.55, false);
+      // без адреса никто не выбран: справа — «Выберите персонажа», древо — с начала Таргариенов
+      renderPanel(null); centerOn('rhaenys_q', App.isNarrow() ? 0.6 : 0.55, false);
     }
     // открыта без адреса — адрес остаётся чистым; дальше он повторяет выбранное (ссылкой можно поделиться)
     if (!startId) App.setHash('');
