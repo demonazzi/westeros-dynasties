@@ -191,10 +191,10 @@
     {
       "title": "Дети Дейерона II и Мирии Мартелл",
       "people": [
-        {"id":"baelor_b","name":"Бейелор","full":"Бейелор Сломи Копьё","en":"Baelor Breakspear","k":"T","p":"daeron2","par":["daeron2","myriah"],"b":"170","d":"209","sp":[["Джена Дондаррион"]]},
-        {"id":"valarr","name":"Валарр","full":"Валарр, Молодой принц","en":"Valarr","k":"T","p":"baelor_b","par":["baelor_b","Джена Дондаррион"],"d":"209","sp":[["Кира из Тироша"]],"wiki":"Valarr Targaryen"},
+        {"id":"baelor_b","name":"Бейелор","full":"Бейелор Сломи Копьё","en":"Baelor Breakspear","k":"T","p":"daeron2","par":["daeron2","myriah"],"b":"170","d":"209","sp":[["jena_d"]]},
+        {"id":"valarr","name":"Валарр","full":"Валарр, Молодой принц","en":"Valarr","k":"T","p":"baelor_b","par":["baelor_b","jena_d"],"d":"209","sp":[["Кира из Тироша"]],"wiki":"Valarr Targaryen"},
         {"id":"valarr_sons","name":"Двое сыновей","full":"Мертворождённые сыновья Валарра","group":1,"k":"T","p":"valarr","par":["valarr","Кира из Тироша"],"d":"при рождении","wiki":"Valarr Targaryen"},
-        {"id":"matarys","name":"Матарис","en":"Matarys","k":"T","p":"baelor_b","par":["baelor_b","Джена Дондаррион"],"d":"209","wiki":"Matarys Targaryen"},
+        {"id":"matarys","name":"Матарис","en":"Matarys","k":"T","p":"baelor_b","par":["baelor_b","jena_d"],"d":"209","wiki":"Matarys Targaryen"},
         {"id":"aerys1","name":"Эйерис I","en":"Aerys I","k":"K","n":13,"r":"209–221","p":"daeron2","par":["daeron2","myriah"],"b":"172","d":"221","sp":[["aelinor"]]},
         {"id":"rhaegel","name":"Рейегель","en":"Rhaegel","k":"T","p":"daeron2","par":["daeron2","myriah"],"sp":[["alys_r"]],"wiki":"Rhaegel Targaryen"},
         {"id":"aelor","name":"Эйлор","en":"Aelor","k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"wiki":"Aelor Targaryen"},

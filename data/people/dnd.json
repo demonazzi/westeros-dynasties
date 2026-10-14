@@ -1,0 +1,29 @@
+{
+  "title": "Дондаррионы",
+  "about": "Дом Дондаррионов (Чёрный Приют в Дорнийских марках), знаменосцы Баратеонов.",
+  "groups": [
+    {
+      "title": "Штормовые короли и Таргариены",
+      "people": [
+        {"id":"bastard_bh","name":"Бастард из Чёрного Приюта","en":"Bastard of Blackhaven","hs":"dnd","k":"R","d":"-2","wiki":"Bastard of Blackhaven"},
+        {"id":"harmon_d","name":"Хармон Дондаррион","full":"Хармон Дондаррион, Безносый","en":"Harmon Dondarrion","al":["Безносый"],"hs":"dnd","k":"T"},
+        {"id":"dnd_lord54","name":"Лорд Дондаррион","full":"Лорд Дондаррион, отец Саймона","hs":"dnd","k":"T","wiki":"Simon Dondarrion"},
+        {"id":"simon_d","name":"Саймон Дондаррион","full":"Сир Саймон Дондаррион","en":"Simon Dondarrion","hs":"dnd","k":"T","p":"dnd_lord54","par":["dnd_lord54"],"b":"не позднее 40"}
+      ]
+    },
+    {
+      "title": "При Дейероне II",
+      "people": [
+        {"id":"jena_d","name":"Джена Дондаррион","en":"Jena Dondarrion","fem":1,"hs":"dnd","k":"T","b":"131–181","d":"183 или позже","sp":[["baelor_b"]]},
+        {"id":"dnd_lord206","name":"Лорд Дондаррион","full":"Лорд Дондаррион, отец Манфреда","hs":"dnd","k":"T","wiki":"Manfred Dondarrion"},
+        {"id":"manfred_d","name":"Манфред Дондаррион","full":"Сир Манфред Дондаррион","en":"Manfred Dondarrion","hs":"dnd","k":"T","p":"dnd_lord206","par":["dnd_lord206"]}
+      ]
+    },
+    {
+      "title": "Конец третьего века",
+      "people": [
+        {"id":"beric","name":"Берик Дондаррион","full":"Берик Дондаррион, Лорд-Молния","en":"Beric Dondarrion","al":["Лорд-Молния","Лорд-покойник"],"hs":"dnd","k":"T","b":"276/277","d":"299","sp":[["allyria","помолвка","b"]]}
+      ]
+    }
+  ]
+}

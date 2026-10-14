@@ -62,7 +62,7 @@ const fs = require('fs'), path = require('path');
   expect(t2.dts.includes('Parents'), 'подписи карточки: ' + t2.dts);
   expect(t2.ref === 'Briony', 'человек без карточки — из словаря данных: ' + t2.ref);
   expect(t2.motto === 'Casterly Rock · "Hear Me Roar!"', 'девиз дома из словаря данных: ' + t2.motto);
-  expect(/^12 houses and 33 minor/.test(t2.sub), 'формы числа и шаблон в подзаголовке: ' + t2.sub);
+  expect(/^12 houses and \d+ minor/.test(t2.sub), 'формы числа и шаблон в подзаголовке: ' + t2.sub);
   expect(t2.date === 'by 27' && t2.yw === '130 AC', 'годы: ' + t2.date + ' / ' + t2.yw);
   expect(t2.robbNote === 'Talisa in the show', 'приписка к браку: ' + t2.robbNote);
   await p.evaluate(() => document.getElementById('filter-btn').click()); await p.waitForTimeout(200);

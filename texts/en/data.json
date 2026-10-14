@@ -867,14 +867,6 @@
   "en": "Their founder was a messenger of a Storm King. The Bastard of Blackhaven died fighting for Argilac in the Last Storm.",
   "ctx": "вассалитет: дом dondarrion.al"
  },
- "Дондаррионы": {
-  "en": "Dondarrion",
-  "ctx": "вассалитет: дом dondarrion.ru"
- },
- "Чёрный Приют": {
-  "en": "Blackhaven",
-  "ctx": "вассалитет: дом dondarrion.seat"
- },
  "Доннигеры": {
   "en": "Donniger",
   "ctx": "вассалитет: дом donniger.ru"
@@ -4095,6 +4087,18 @@
   "en": "House Dayne",
   "ctx": "дом day.name"
  },
+ "Дондаррионы": {
+  "en": "Dondarrion",
+  "ctx": "дом dnd.band (и ещё 1)"
+ },
+ "Чёрный Приют": {
+  "en": "Blackhaven",
+  "ctx": "дом dnd.motto (и ещё 1)"
+ },
+ "Дом Дондаррионов": {
+  "en": "House Dondarrion",
+  "ctx": "дом dnd.name"
+ },
  "Дом Дюррандонов": {
   "en": "House Durrandon",
   "ctx": "дом dur.name"
@@ -5527,10 +5531,6 @@
   "en": "Drazenko Rogare",
   "ctx": "человек aliandra «Алиандра Мартелл».sp (супруг без карточки)"
  },
- "Берик Дондаррион": {
-  "en": "Beric Dondarrion",
-  "ctx": "человек allyria «Аллирия Дейн».sp (супруг без карточки)"
- },
  "Блаженный": {
   "en": "the Holy Fool",
   "ctx": "человек alton «Алтон Грейджой, Блаженный».al"
@@ -5741,11 +5741,7 @@
  },
  "помолвка": {
   "en": "betrothal",
-  "ctx": "человек baela «Бейла».sp (приписка к браку) (и ещё 11)"
- },
- "Джена Дондаррион": {
-  "en": "Jena Dondarrion",
-  "ctx": "человек baelor_b «Бейелор Сломи Копьё».sp (супруг без карточки) (и ещё 2)"
+  "ctx": "человек baela «Бейла».sp (приписка к браку) (и ещё 12)"
  },
  "Бейелор Светлая Улыбка": {
   "en": "Baelor Brightsmile",
@@ -5814,6 +5810,14 @@
  "Кровавый Бен": {
   "en": "Bloody Ben",
   "ctx": "человек benjicot «Бенджикот Блэквуд».al"
+ },
+ "Лорд-Молния": {
+  "en": "the Lightning Lord",
+  "ctx": "человек beric «Берик Дондаррион, Лорд-Молния».al"
+ },
+ "Лорд-покойник": {
+  "en": "Lord of Corpses",
+  "ctx": "человек beric «Берик Дондаррион, Лорд-Молния».al"
  },
  "родство с Тео не названо": {
   "en": "relationship to Theo unspecified",
@@ -6194,6 +6198,18 @@
  "Элеанора Мутон": {
   "en": "Eleanor Mooton",
   "ctx": "человек dickon «Дикон Тарли».sp (супруг без карточки)"
+ },
+ "Лорд Дондаррион, отец Манфреда": {
+  "en": "Lord Dondarrion, father of Manfred",
+  "ctx": "человек dnd_lord206 «Лорд Дондаррион, отец Манфреда».full"
+ },
+ "Лорд Дондаррион, отец Саймона": {
+  "en": "Lord Dondarrion, father of Simon",
+  "ctx": "человек dnd_lord54 «Лорд Дондаррион, отец Саймона».full"
+ },
+ "Лорд Дондаррион": {
+  "en": "Lord Dondarrion",
+  "ctx": "человек dnd_lord54 «Лорд Дондаррион, отец Саймона».name (и ещё 1)"
  },
  "Джейна Рован": {
   "en": "Jeyne Rowan",
@@ -6590,6 +6606,10 @@
  "Рыцарь Хардинг": {
   "en": "The Hardyng knight",
   "ctx": "человек hardyng_kn «Хардинг, отец Гарольда».name"
+ },
+ "Безносый": {
+  "en": "No-Nose",
+  "ctx": "человек harmon_d «Хармон Дондаррион, Безносый».al"
  },
  "Пьяный Гигант": {
   "en": "the Drunken Giant",

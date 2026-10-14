@@ -18,7 +18,7 @@
         {"id":"day_lord18","name":"Лорд Дейн","full":"Лорд Дейн, отец Эдрика","hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"wiki":"Edric Dayne"},
         {"id":"arthur_d","name":"Эртур Дейн","full":"Сир Эртур Дейн, Меч Зари","en":"Arthur Dayne","al":["Меч Зари"],"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"b":"не позднее 260","d":"283"},
         {"id":"ashara","name":"Эшара Дейн","en":"Ashara Dayne","fem":1,"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"b":"260","d":"283"},
-        {"id":"allyria","name":"Аллирия Дейн","en":"Allyria Dayne","fem":1,"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"sp":[["Берик Дондаррион","помолвка","b"]]},
+        {"id":"allyria","name":"Аллирия Дейн","en":"Allyria Dayne","fem":1,"hs":"day","k":"T","p":"day_lord17","par":["day_lord17"],"sp":[["beric","помолвка","b"]]},
         {"id":"edric_d","name":"Эдрик Дейн","en":"Edric Dayne","al":["Нед"],"hs":"day","k":"T","p":"day_lord18","par":["day_lord18"],"b":"287"},
         {"id":"gerold_d","name":"Герольд Дейн","full":"Сир Герольд Дейн, Тёмная Звезда","en":"Gerold Dayne","al":["Тёмная Звезда"],"hs":"day","k":"T","par":["Дейны из Горного Приюта; кузен Эртура"],"b":"270–274"}
       ]

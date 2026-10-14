@@ -49,7 +49,7 @@ Object.values(d.HOUSES).forEach(h => [h.name, h.band].forEach(n => n && names.ad
 d.V_HOUSES.forEach(h => names.add(h.ru));
 const nameList = [...names].filter(n => n.length >= 4);
 // \b в JS не видит границ кириллических слов — поэтому границы через соседние буквы
-const yearOnly = s => !s.replace(/[\d\s–—≈.,:;·()+\-†×№]+/g, ' ').replace(/(^|[^А-Яа-яЁё])(г|до|З|р|гг|лет|год|года)(?![А-Яа-яЁё])/g, '$1').trim();
+const yearOnly = s => !s.replace(/[\d\s–—≈.,:;·()+\-†×№\/]+/g, ' ').replace(/(^|[^А-Яа-яЁё])(г|до|З|р|гг|лет|год|года)(?![А-Яа-яЁё])/g, '$1').trim();
 // карточка дома показывает замок и девиз по отдельности, а в «Бастард · дом …» название дома строчное
 // (только для точного совпадения: «Пламя и кровь» внутри подписи — ещё не данные)
 const dataPart = new Set();
@@ -133,7 +133,10 @@ if (!crawl) { finish(); return; }
   // шаблоны с короткой русской частью («с {y}») не берём — под них подойдёт что угодно
   const tmpl = [...keys].filter(k => /\{\w+\}/.test(k) && (k.replace(/\{\w+\}/g, '').match(/[А-Яа-яЁё]/g) || []).length >= 5).map(k => new RegExp('^' + rxEsc(k).replace(/\{\w+\}/g, '.+?') + '$'));
   const forms = new Set([...keys].filter(k => k.includes('|')).flatMap(k => k.split('|')));
-  const coveredOne = s => keys.has(s) || data.has(s) || dataPart.has(s) || yearOnly(s) || tmpl.some(rx => rx.test(s)) || (m => !!m && forms.has(m[1]))(s.match(/^\d+\s+(.+)$/));
+  // шаблон, где все подстановки — числа («0 из 34» ← «{n} из {all}»)
+  const numShape = x => x.replace(/\{\w+\}/g, '#').replace(/\d+/g, '#');
+  const numKeys = new Set([...keys].filter(k => /\{\w+\}/.test(k)).map(numShape));
+  const coveredOne = s => keys.has(s) || numKeys.has(numShape(s)) || data.has(s) || dataPart.has(s) || yearOnly(s) || tmpl.some(rx => rx.test(s)) || (m => !!m && forms.has(m[1]))(s.match(/^\d+\s+(.+)$/));
   // подпись из уже переводимых кусков через « · » («Ренли — король · 298 г.»); «дом Хэев» — строчное название дома
   // в «Бастард · дом …», только по-русски (по-английски это «House …» из шаблона «Дом {h}»)
   const covered = s => coveredOne(s) || (s.includes(' · ') && s.split(' · ').every(coveredOne)) || /^дом [А-ЯЁ]/.test(s);

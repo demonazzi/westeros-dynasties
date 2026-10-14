@@ -1,6 +1,6 @@
 {
   "now_year": 300,
-  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak","wes","crk","far","plm","day","yrn","hlw","gdb","est","swn","pen","stw"],
+  "people_files": ["targ","vel","bar","arr","bw","gry","hgt","lan","mar","seed","stk","tul","tyr","fry","blt","umb","kar","man","mor","brk","mal","btw","pip","roy","bae","cor","way","har","tar","red","pea","osg","fos","oak","wes","crk","far","plm","day","yrn","hlw","gdb","est","swn","pen","stw","dnd"],
   "bands": [
     {"house":"targ","roots":[["aenar",0],["dragonseeds",11]]},
     {"house":"vel","roots":[["daemon_v0",5],["valaena",5],["lucerys_v",18]]},
@@ -31,6 +31,7 @@
     {"house":"swn","liege":"bar","roots":[["johanna_s",9],["swann_lord129",10],["gawen_s",14],["manfred_s",17],["cyrenna",17],["corenna",18],["gulian",18],["ravella",19],["jeyne_s",19]]},
     {"house":"pen","liege":"bar","roots":[["lucinda",11],["ronnel",14],["pen_lady196",14],["aelinor",15],["jon_pn",15],["pen_lord18",17]]},
     {"house":"stw","liege":"targ","roots":[["alyn_s",6],["stw_lord129",10],["falena",12],["maia",13],["samwell_s",15],["manly",17],["tanda",17]]},
+    {"house":"dnd","liege":"bar","roots":[["bastard_bh",6],["harmon_d",7],["dnd_lord54",7],["jena_d",14],["dnd_lord206",14],["beric",19]]},
     {"house":"roy","liege":"arr","roots":[["allard",8],["yorbert",10],["willam_r",11],["gunthor_r",11],["alyssa_r",12],["lorra",15],["perra",17],["benedict",17],["yohn",18],["nestor",18],["jeyne_r",18],["kyle_r",18],["ryella",19]]},
     {"house":"bae","liege":"arr","roots":[["bae_ss",16]]},
     {"house":"cor","liege":"arr","roots":[["gawen",6],["qarl",8],["cor_lord9",9],["gwayne_c",14],["cor_lord17",17]]},
@@ -99,7 +100,8 @@
     "est": {"v":"estermont","name":"Дом Эстермонтов","band":"Эстермонты","motto":"Нефрит","sigil":{"field":"#A9C9A0","charge":"#2E5A33"}},
     "swn": {"v":"swann","name":"Дом Сваннов","band":"Сванны","motto":"Каменный Шлем","sigil":{"field":"#F0EEE8","charge":"#17161A"}},
     "pen": {"v":"penrose","name":"Дом Пенрозов","band":"Пенрозы","motto":"Пергаменты · «Запишем наши деяния»","sigil":{"field":"#7A4A2A","charge":"#F0EEE8"}},
-    "stw": {"v":"stokeworth","name":"Дом Стоквортов","band":"Стокворты","motto":"Стокворт · «Гордимся преданностью»","sigil":{"field":"#2E6B33","charge":"#F4F1EA"}}
+    "stw": {"v":"stokeworth","name":"Дом Стоквортов","band":"Стокворты","motto":"Стокворт · «Гордимся преданностью»","sigil":{"field":"#2E6B33","charge":"#F4F1EA"}},
+    "dnd": {"v":"dondarrion","name":"Дом Дондаррионов","band":"Дондаррионы","motto":"Чёрный Приют","sigil":{"field":"#16151A","charge":"#8E5BC7"}}
   },
   "gaps": [
     {"house":"umb","from":"osric","to":"hoarfrost","years":"","note":"родство Озрика и Хорфроста в книгах не прослежено"},

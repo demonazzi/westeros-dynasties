@@ -680,8 +680,18 @@
     layers.x.selectAll('path.xlink').data(geo, d => d.key).join('path')
       .attr('class', d => 'xlink t-' + d.e.type)
       .attr('d', d => d.d);
+    // полоса наведения — ломаной по той же кривой: на очень длинных кривых (через всё древо) браузер проверяет попадание
+    // приближённо и местами промахивается мимо линии, по ломаной — точно
+    const flat = d => {
+      if (!d.pts) return d.d;
+      const P = d.pts, len = Math.hypot(P[1][0] - P[0][0], P[1][1] - P[0][1]) + Math.hypot(P[2][0] - P[1][0], P[2][1] - P[1][1]) + Math.hypot(P[3][0] - P[2][0], P[3][1] - P[2][1]);
+      const n = Math.max(8, Math.min(600, Math.ceil(len / 30)));
+      let out = 'M' + P[0][0] + ',' + P[0][1];
+      for (let i = 1; i <= n; i++) { const q = bez(P, i / n); out += ' L' + q[0].toFixed(1) + ',' + q[1].toFixed(1); }
+      return out;
+    };
     layers.x.selectAll('path.xhit').data(geo, d => d.key).join(enter => enter.append('path').attr('class', 'xhit').call(xEvents))
-      .attr('d', d => d.d);
+      .attr('d', flat);
     // Значок брака — в середине линии, но не на карточке, не на заголовке дома и не вплотную к другому значку
     const busy = allNodes.map(n => [n.X - 14, n.Y - H / 2 - 14, n.X + W + (hasKids(n) ? TOG + 10 : 0) + 14, n.Y + H / 2 + 14])
       .concat(knots.map(k => [k.x - 16, k.y - 16, k.x + 16, k.y + 16]))
