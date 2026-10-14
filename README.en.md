@@ -12,7 +12,7 @@ inside the file, d3 and fonts included: the page loads nothing from the network 
 ## Embedding
 
 ```html
-<iframe src="https://demonazzi.github.io/westeros-dynasties/?lang=en#h:stk" style="width:100%;height:800px;border:0"></iframe>
+<iframe src="https://demonazzi.github.io/westeros-dynasties/?lang=en" style="width:100%;height:800px;border:0"></iframe>
 ```
 
 | address | opens |
