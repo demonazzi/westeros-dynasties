@@ -6,15 +6,15 @@
       "title": "Харлоу",
       "people": [
         {"id":"theomore_h","name":"Теомор Харлоу","en":"Theomore Harlaw","hs":"hlw","k":"T"},
-        {"id":"sigfryd","name":"Зигфрид Харлоу","full":"Зигфрид Харлоу, Сребровласый","en":"Sigfryd Harlaw","al":["Сребровласый"],"hs":"hlw","k":"T","par":["внук Теомора Харлоу"]},
+        {"id":"sigfryd","name":"Зигфрид Харлоу","full":"Зигфрид Харлоу, Сребровласый","en":"Sigfryd Harlaw","al":["Сребровласый"],"hs":"hlw","k":"T","par":["внук Теомора Харлоу"],"alive":1},
         {"id":"har_lord","name":"Лорд Харлоу","full":"Лорд Харлоу, отец Родрика","hs":"hlw","k":"T","par":["правнук Теомора Харлоу"],"wiki":"Rodrik Harlaw"},
-        {"id":"gwynesse","name":"Гвинесса Харлоу","en":"Gwynesse Harlaw","fem":1,"hs":"hlw","k":"T","p":"har_lord","par":["har_lord"],"b":"не позднее 254","sp":[["муж, имя не названо","погиб у Светлого острова в Восстание Грейджоя"]]},
-        {"id":"rodrik_h","name":"Родрик Харлоу","full":"Родрик Харлоу, Чтец","en":"Rodrik Harlaw","al":["Чтец"],"hs":"hlw","k":"T","p":"har_lord","par":["har_lord"],"b":"не позднее 261","sp":[["жена, имя не названа","умерла"]]},
+        {"id":"gwynesse","name":"Гвинесса Харлоу","en":"Gwynesse Harlaw","fem":1,"hs":"hlw","k":"T","p":"har_lord","par":["har_lord"],"b":"не позднее 254","alive":1,"sp":[["муж, имя не названо","погиб у Светлого острова в Восстание Грейджоя"]]},
+        {"id":"rodrik_h","name":"Родрик Харлоу","full":"Родрик Харлоу, Чтец","en":"Rodrik Harlaw","al":["Чтец"],"hs":"hlw","k":"T","p":"har_lord","par":["har_lord"],"b":"не позднее 261","alive":1,"sp":[["жена, имя не названа","умерла"]]},
         {"id":"rodrik_sons","name":"Два сына","full":"Сыновья Родрика Харлоу","group":1,"hs":"hlw","k":"T","p":"rodrik_h","par":["rodrik_h","жена, имя не названа"],"d":"289","wiki":"Rodrik Harlaw"},
-        {"id":"harras","name":"Харрас Харлоу","full":"Сир Харрас Харлоу, Рыцарь","en":"Harras Harlaw","al":["Рыцарь"],"hs":"hlw","k":"T","par":["отец — Харлоу, мать — из Серреттов; кузен Родрика"]},
-        {"id":"hotho","name":"Хото Харлоу","full":"Хото Харлоу, Горбун","en":"Hotho Harlaw","al":["Горбун"],"hs":"hlw","k":"T","par":["кузен Родрика"],"sp":[["жена, имя не названа"]]},
-        {"id":"hotho_dau","name":"Дочь","full":"Дочь Хото Харлоу","fem":1,"hs":"hlw","k":"T","p":"hotho","par":["hotho","жена, имя не названа"],"wiki":"Hotho Harlaw"},
-        {"id":"boremund_h","name":"Боремунд Харлоу","full":"Боремунд Харлоу, Синий","en":"Boremund Harlaw","al":["Синий"],"hs":"hlw","k":"T","par":["кузен Родрика"]},
+        {"id":"harras","name":"Харрас Харлоу","full":"Сир Харрас Харлоу, Рыцарь","en":"Harras Harlaw","al":["Рыцарь"],"hs":"hlw","k":"T","par":["отец — Харлоу, мать — из Серреттов; кузен Родрика"],"alive":1},
+        {"id":"hotho","name":"Хото Харлоу","full":"Хото Харлоу, Горбун","en":"Hotho Harlaw","al":["Горбун"],"hs":"hlw","k":"T","par":["кузен Родрика"],"alive":1,"sp":[["жена, имя не названа"]]},
+        {"id":"hotho_dau","name":"Дочь","full":"Дочь Хото Харлоу","fem":1,"hs":"hlw","k":"T","p":"hotho","par":["hotho","жена, имя не названа"],"alive":1,"wiki":"Hotho Harlaw"},
+        {"id":"boremund_h","name":"Боремунд Харлоу","full":"Боремунд Харлоу, Синий","en":"Boremund Harlaw","al":["Синий"],"hs":"hlw","k":"T","par":["кузен Родрика"],"alive":1},
         {"id":"boremund_sons","name":"Три сына","full":"Сыновья Боремунда Харлоу","group":1,"hs":"hlw","k":"T","p":"boremund_h","par":["boremund_h"],"wiki":"Boremund Harlaw"}
       ]
     }

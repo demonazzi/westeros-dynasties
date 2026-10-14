@@ -1,0 +1,644 @@
+[
+ {
+  "id": "orys",
+  "house": "bar",
+  "ru": "Орис Баратеон",
+  "en": "Orys Baratheon",
+  "page": "Orys Baratheon",
+  "parents": [
+   "Aerion"
+  ],
+  "spouses": [
+   "Аргелла Дюррандон"
+  ],
+  "about": "One of Aegon the Conqueror's closest companions and his first Hand. He was believed to be Aegon's bastard half-brother, though the relationship was never proved. He defeated Argilac Durrandon, married his daughter Argell"
+ },
+ {
+  "id": "davos_b",
+  "house": "bar",
+  "ru": "Давос Баратеон",
+  "en": "Davos Baratheon",
+  "page": "Davos Baratheon",
+  "parents": [
+   "Orys Baratheon"
+  ],
+  "about": "Davos fought alongside Orys Baratheon in the Vulture Hunt of 37 AC. Orys died of his wounds on the journey home; Davos said his father was content after taking revenge on the Wyls for his lost hand. King Aenys rewarded D"
+ },
+ {
+  "id": "raymont",
+  "house": "bar",
+  "ru": "Реймонт Баратеон",
+  "en": "Raymont Baratheon",
+  "page": "Raymont Baratheon",
+  "parents": [
+   "Orys Baratheon"
+  ],
+  "about": "The World of Ice & Fire named him as the Kingsguard knight who saved Aenys I from assassins. In Fire & Blood, the king's defender in this episode remained unnamed."
+ },
+ {
+  "id": "orys_son",
+  "house": "bar",
+  "ru": "Отец Рогара",
+  "en": "",
+  "page": "Rogar Baratheon",
+  "parents": [
+   "Orys Baratheon"
+  ],
+  "about": "He cannot confidently be identified with any of Orys's named sons: this generation's exact genealogy is unknown."
+ },
+ {
+  "id": "borys_b",
+  "house": "bar",
+  "ru": "Борис Баратеон",
+  "en": "Borys Baratheon",
+  "page": "Borys Baratheon",
+  "parents": [
+   "Отец Рогара"
+  ],
+  "about": "Once considered Rogar's heir. Boremund's birth ended that prospect; he quarrelled with Rogar and went overseas. On returning, he joined the Vulture King and raided the stormlands. In 61 AC Jaehaerys I killed him in singl"
+ },
+ {
+  "id": "garon_b",
+  "house": "bar",
+  "ru": "Гарон Баратеон",
+  "en": "Garon Baratheon",
+  "page": "Garon Baratheon",
+  "parents": [
+   "Отец Рогара"
+  ],
+  "about": "He lost his wife during the Shivers epidemic."
+ },
+ {
+  "id": "ronnal_b",
+  "house": "bar",
+  "ru": "Роннал Баратеон",
+  "en": "Ronnal Baratheon",
+  "page": "Ronnal Baratheon",
+  "parents": [
+   "Отец Рогара"
+  ],
+  "about": "The Shivers killed his wife and sons. Two daughters survived the epidemic."
+ },
+ {
+  "id": "orryn_b",
+  "house": "bar",
+  "ru": "Оррин Баратеон",
+  "en": "Orryn Baratheon",
+  "page": "Orryn Baratheon",
+  "parents": [
+   "Отец Рогара"
+  ],
+  "spouses": [
+   "Good Queen Alysanne",
+   "дочь тирошийского архонта"
+  ],
+  "about": "He was considered as a possible husband for Alysanne, but she secretly married Jaehaerys. He later took part in an attempt to remove Rhaella Targaryen from Oldtown and use her claim to the throne. For this, he was exiled"
+ },
+ {
+  "id": "orryn_sons",
+  "house": "bar",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Orryn Baratheon",
+  "parents": [
+   "Orryn Baratheon"
+  ],
+  "about": "Orryn Baratheon's only recorded daughter was born to the Archon of Tyrosh's daughter. His paternity was questioned. Nothing is known of the child or her mother's fate after Orryn died in the Disputed Lands."
+ },
+ {
+  "id": "boremund",
+  "house": "bar",
+  "ru": "Боремунд Баратеон",
+  "en": "Boremund Baratheon",
+  "page": "Boremund Baratheon",
+  "born": "51",
+  "parents": [
+   "Rogar Baratheon",
+   "Alyssa Velaryon"
+  ],
+  "about": "He inherited Storm's End and supported the claims of his niece Rhaenys and her son Laenor. At the Great Council of 101 AC, he backed the Velaryons. His son Borros succeeded him but chose the greens during the Dance."
+ },
+ {
+  "id": "jocelyn",
+  "house": "bar",
+  "ru": "Джоселин Баратеон",
+  "en": "Jocelyn Baratheon",
+  "page": "Jocelyn Baratheon",
+  "born": "54",
+  "parents": [
+   "Rogar Baratheon",
+   "Alyssa Velaryon"
+  ],
+  "spouses": [
+   "Aemon"
+  ],
+  "about": "She was born after a difficult operation that cost Alyssa her life. She married Aemon, Jaehaerys I's heir. After he died, the king placed Baelon ahead of her daughter Rhaenys in the succession."
+ },
+ {
+  "id": "cassandra",
+  "house": "bar",
+  "ru": "Кассандра Баратеон",
+  "en": "Cassandra Baratheon",
+  "page": "Cassandra Baratheon",
+  "parents": [
+   "Borros Baratheon"
+  ],
+  "spouses": [
+   "Aegon II",
+   "сир Уолтер Браунхилл"
+  ],
+  "about": "After Helaena's death, she was betrothed to Aegon II, but he died before the wedding. She later married Walter Brownhill."
+ },
+ {
+  "id": "maris",
+  "house": "bar",
+  "ru": "Марис Баратеон",
+  "en": "Maris Baratheon",
+  "page": "Maris Baratheon",
+  "parents": [
+   "Borros Baratheon"
+  ],
+  "about": "According to the chronicle, her taunt prompted Aemond to pursue Lucerys. She later became a silent sister."
+ },
+ {
+  "id": "ellyn",
+  "house": "bar",
+  "ru": "Эллин Баратеон",
+  "en": "Ellyn Baratheon",
+  "page": "Ellyn Baratheon",
+  "parents": [
+   "Borros Baratheon"
+  ],
+  "about": "One of the Four Storms. She and her sisters were considered as possible brides for Aemond when their father negotiated an alliance with the greens."
+ },
+ {
+  "id": "floris",
+  "house": "bar",
+  "ru": "Флорис Баратеон",
+  "en": "Floris Baratheon",
+  "page": "Floris Baratheon",
+  "parents": [
+   "Borros Baratheon"
+  ],
+  "spouses": [
+   "лорд Таддеус Рован"
+  ],
+  "about": "She was considered as a possible bride for Aemond when the alliance with the greens was negotiated. She later married Lord Thaddeus Rowan."
+ },
+ {
+  "id": "royce",
+  "house": "bar",
+  "ru": "Ройс Баратеон",
+  "en": "Royce Baratheon",
+  "page": "Royce Baratheon",
+  "parents": [
+   "Borros Baratheon"
+  ],
+  "about": "Born after Borros's death, he inherited Storm's End. Elenda Caron ruled his lands during his minority."
+ },
+ {
+  "id": "lord_b208",
+  "house": "bar",
+  "ru": "Лорд Баратеон",
+  "en": "",
+  "page": "Gowen Baratheon",
+  "about": "Lord of Storm's End. His exact relationship to other generations of Baratheons is unknown."
+ },
+ {
+  "id": "bar_lord_son1",
+  "house": "bar",
+  "ru": "Сын",
+  "en": "",
+  "page": "Gowen Baratheon",
+  "parents": [
+   "Лорд Баратеон"
+  ],
+  "about": "An unnamed elder brother of Gowen Baratheon, who is described as the third son of a reigning Lord of Storm's End. One elder brother may have been Lyonel, the castle's heir in 209 AC, but that relationship is not confirme"
+ },
+ {
+  "id": "bar_lord_son2",
+  "house": "bar",
+  "ru": "Сын",
+  "en": "",
+  "page": "Gowen Baratheon",
+  "parents": [
+   "Лорд Баратеон"
+  ],
+  "about": "Gowen Baratheon's other unnamed elder brother. His existence follows from Gowen being the third son of the reigning Lord of Storm's End; no personal history is recorded."
+ },
+ {
+  "id": "gowen",
+  "house": "bar",
+  "ru": "Гоуэн Баратеон",
+  "en": "Gowen Baratheon",
+  "page": "Gowen Baratheon",
+  "parents": [
+   "Лорд Баратеон"
+  ],
+  "spouses": [
+   "Tya Lannister"
+  ],
+  "about": "His only known son died in infancy."
+ },
+ {
+  "id": "lyonel_d",
+  "house": "bar",
+  "ru": "Дочь Лайонела",
+  "en": "",
+  "page": "Lyonel Baratheon",
+  "parents": [
+   "Lyonel Baratheon, the Laughing Storm"
+  ],
+  "spouses": [
+   "Duncan the Small"
+  ],
+  "about": "Duncan Targaryen broke their betrothal to marry Jenny of Oldstones. Lyonel regarded this as an insult and rebelled."
+ },
+ {
+  "id": "stannis",
+  "house": "bar",
+  "ru": "Станнис Баратеон",
+  "en": "Stannis Baratheon",
+  "page": "Stannis Baratheon",
+  "born": "264",
+  "parents": [
+   "Steffon Baratheon",
+   "Cassana Estermont"
+  ],
+  "spouses": [
+   "Селиса Флорент"
+  ],
+  "about": "He held Storm's End through its siege during Robert's Rebellion. His brother granted him Dragonstone, and he served as master of ships. After Robert died, Stannis declared that Cersei's children were Jaime's and claimed "
+ },
+ {
+  "id": "myrcella",
+  "house": "bar",
+  "ru": "Мирцелла",
+  "en": "Myrcella Baratheon",
+  "page": "Myrcella Baratheon",
+  "born": "290",
+  "parents": [
+   "Robert Baratheon",
+   "Cersei Lannister",
+   "Jaime Lannister"
+  ],
+  "spouses": [
+   "Trystane Martell"
+  ],
+  "about": "Under Tyrion's agreement, she was sent to Dorne and betrothed to Trystane Martell. Arianne tried to crown her queen under Dornish succession law, which placed an elder daughter before a younger son. The plot failed, and "
+ },
+ {
+  "id": "tommen",
+  "house": "bar",
+  "ru": "Томмен I",
+  "en": "Tommen Baratheon",
+  "page": "Tommen Baratheon",
+  "born": "291",
+  "parents": [
+   "Robert Baratheon",
+   "Cersei Lannister",
+   "Jaime Lannister"
+  ],
+  "spouses": [
+   "Margaery Tyrell"
+  ],
+  "about": "He inherited the Iron Throne after Joffrey's death and married Margaery. Too young to rule independently, he became the focus of a struggle for influence between Cersei, the Tyrells and the royal council. In the publishe"
+ },
+ {
+  "id": "mya_stone",
+  "house": "bar",
+  "ru": "Мия Стоун",
+  "en": "Mya Stone",
+  "page": "Mya Stone",
+  "parents": [
+   "Robert Baratheon"
+  ],
+  "about": "She worked as a guide, leading mules along the mountain road to the Eyrie. She fell in love with Mychel Redfort, but he married a noblewoman. Robert visited her when she was a child, though Mya did not know that her fath"
+ },
+ {
+  "id": "gendry",
+  "house": "bar",
+  "ru": "Джендри",
+  "en": "Gendry",
+  "page": "Gendry",
+  "parents": [
+   "Robert Baratheon"
+  ],
+  "about": "He grew up as an armourer's apprentice, unaware that Robert was his father. After the king died, Yoren took him out of the capital with recruits for the Night's Watch. He befriended Arya, survived captivity at Harrenhal "
+ },
+ {
+  "id": "edric",
+  "house": "bar",
+  "ru": "Эдрик Шторм",
+  "en": "Edric Storm",
+  "page": "Edric Storm",
+  "parents": [
+   "Robert Baratheon"
+  ],
+  "about": "Son of Robert and Delena Florent, and the only bastard he openly acknowledged because of his mother's noble birth. He was raised at Storm's End under Cortnay Penrose's protection. After Stannis took the castle, he was br"
+ },
+ {
+  "id": "bella",
+  "house": "bar",
+  "ru": "Белла",
+  "en": "Bella",
+  "page": "Bella",
+  "parents": [
+   "Robert Baratheon"
+  ],
+  "about": "A girl from Stoney Sept who claimed to be Robert's bastard daughter. Her mother placed her conception during Robert's stay in the town in the rebellion. She met Arya and her companions at the Peach. Bella's account of he"
+ },
+ {
+  "id": "shireen",
+  "house": "bar",
+  "ru": "Ширен",
+  "en": "Shireen Baratheon",
+  "page": "Shireen Baratheon",
+  "born": "289",
+  "parents": [
+   "Stannis Baratheon"
+  ],
+  "about": "Childhood greyscale left marks on her face, but the disease was halted. She loved books and befriended Patchface, living under the protection of her father and his supporters. In the published novels she is at Castle Bla"
+ },
+ {
+  "id": "valaena",
+  "house": "vel",
+  "ru": "Валейна Веларион",
+  "en": "Valaena Velaryon",
+  "page": "Valaena Velaryon",
+  "spouses": [
+   "Aerion"
+  ],
+  "about": "Lady of Dragonstone before the Conquest, Valaena married Aerion Targaryen and bore Visenya, Aegon, and Rhaenys. Her own mother was a Targaryen. Her Velaryon ancestry later made Aenys's marriage to Alyssa a union between "
+ },
+ {
+  "id": "daemon_v0",
+  "house": "vel",
+  "ru": "Деймон Веларион",
+  "en": "Daemon Velaryon",
+  "page": "Daemon Velaryon",
+  "about": "Lord of Driftmark and Aegon the Conqueror's admiral. He supported the Targaryens during their invasion of Westeros and commanded their fleet. He died in the naval battle off Gulltown, where the Vale's forces defeated the"
+ },
+ {
+  "id": "aethan",
+  "house": "vel",
+  "ru": "Этан Веларион",
+  "en": "Aethan Velaryon",
+  "page": "Aethan Velaryon",
+  "parents": [
+   "Daemon Velaryon"
+  ],
+  "spouses": [
+   "Аларра Мэсси"
+  ],
+  "about": "He inherited Driftmark and command of the fleet after Daemon's death. He served as master of ships under Aegon I and his successors, and fought the pirate Sargoso Saan. His daughter Alyssa married Aenys I and became quee"
+ },
+ {
+  "id": "corlys_kg",
+  "house": "vel",
+  "ru": "Сир Корлис Веларион",
+  "en": "Ser Corlys Velaryon",
+  "page": "Corlys Velaryon (son of Daemon)",
+  "parents": [
+   "Daemon Velaryon"
+  ],
+  "about": "The first Lord Commander of the Kingsguard, founded under Aegon the Conqueror."
+ },
+ {
+  "id": "daemon_v",
+  "house": "vel",
+  "ru": "Деймон Веларион",
+  "en": "Daemon Velaryon",
+  "page": "Daemon Velaryon (son of Aethan)",
+  "parents": [
+   "Aethan Velaryon"
+  ],
+  "about": "Lord of Driftmark and commander of the royal fleet. He initially served Maegor but later abandoned him for Jaehaerys. Under the new king, he was master of ships and briefly Hand of the King. His eldest son Corwyn died be"
+ },
+ {
+  "id": "larissa",
+  "house": "vel",
+  "ru": "Ларисса Веларион",
+  "en": "Larissa Velaryon",
+  "page": "Larissa Velaryon",
+  "parents": [
+   "Другие сыновья Этана"
+  ],
+  "spouses": [
+   "лорд из дома Тартов"
+  ],
+  "about": "Rhaena Targaryen's first close friend was recalled to Driftmark to marry the Evenstar's second son. Widowed by 55 AC, Larissa lived with her daughter at Greenstone. Rhaena spent about a year there after the murder of her"
+ },
+ {
+  "id": "corwyn",
+  "house": "vel",
+  "ru": "Корвин Веларион",
+  "en": "Corwyn Velaryon",
+  "page": "Corwyn Velaryon",
+  "parents": [
+   "Daemon Velaryon"
+  ],
+  "about": "He died before Lord Daemon, so Driftmark passed directly to Corlys."
+ },
+ {
+  "id": "jorgen",
+  "house": "vel",
+  "ru": "Йорген Веларион",
+  "en": "Jorgen Velaryon",
+  "page": "Jorgen Velaryon",
+  "parents": [
+   "Daemon Velaryon"
+  ],
+  "about": "Jorgen accompanied Jaehaerys and Alysanne around Driftmark's shipyards in 50 AC alongside his brothers Corwyn and Victor. He may have been Daemon Velaryon's second son, who died of the Shivers in 59 AC, but the dead son'"
+ },
+ {
+  "id": "victor",
+  "house": "vel",
+  "ru": "Виктор Веларион",
+  "en": "Victor Velaryon",
+  "page": "Victor Velaryon",
+  "parents": [
+   "Daemon Velaryon"
+  ],
+  "about": "Victor and his brothers Jorgen and Corwyn escorted Jaehaerys and Alysanne on their visit to Driftmark's shipyards in 50 AC. He was one of Lord Daemon Velaryon's sons."
+ },
+ {
+  "id": "corlys_br1",
+  "house": "vel",
+  "ru": "Старший брат Корлиса",
+  "en": "",
+  "page": "Vaemond Velaryon",
+  "parents": [
+   "Corwyn Velaryon"
+  ],
+  "about": "Corlys Velaryon's unnamed brother was Vaemond's father. He was the elder of Corlys's two brothers; the younger fathered the silent five. His age relative to Corlys himself is not established."
+ },
+ {
+  "id": "corlys_br2",
+  "house": "vel",
+  "ru": "Другой брат Корлиса",
+  "en": "",
+  "page": "Silent five",
+  "parents": [
+   "Corwyn Velaryon"
+  ],
+  "about": "This branch's exact relationship to the Velaryon \"silent five\" is unknown."
+ },
+ {
+  "id": "daemion_v",
+  "house": "vel",
+  "ru": "Деймион Веларион",
+  "en": "Daemion Velaryon",
+  "page": "Daemion Velaryon",
+  "parents": [
+   "Vaemond Velaryon"
+  ],
+  "about": "After Corlys's death in 132 AC, Daemion and his brother Daeron challenged Alyn's succession to Driftmark. The regents rejected their claims. The brothers accepted the ruling and received land from Alyn in return for cont"
+ },
+ {
+  "id": "daeron_v",
+  "house": "vel",
+  "ru": "Дейерон Веларион",
+  "en": "Daeron Velaryon",
+  "page": "Daeron Velaryon",
+  "parents": [
+   "Vaemond Velaryon"
+  ],
+  "spouses": [
+   "Хейзел Харт"
+  ],
+  "about": "He fought in the Stepstones with Alyn Oakenfist's forces and died in a naval battle."
+ },
+ {
+  "id": "daenaera",
+  "house": "vel",
+  "ru": "Дейнейра Веларион",
+  "en": "Daenaera Velaryon",
+  "page": "Daenaera Velaryon",
+  "born": "127",
+  "parents": [
+   "Daeron Velaryon"
+  ],
+  "spouses": [
+   "Aegon the Dragonbane"
+  ],
+  "about": "She lost her parents young and was raised by Baela and Alyn. At the Maiden's Day Ball, Aegon III chose her as his second wife."
+ },
+ {
+  "id": "malentine",
+  "house": "vel",
+  "ru": "Малентин Веларион",
+  "en": "Malentine Velaryon",
+  "page": "Malentine Velaryon",
+  "parents": [
+   "Другой брат Корлиса"
+  ],
+  "about": "Viserys had his tongue cut out for accusing Rhaenyra's sons of bastardy. After the Dance, he joined a plot against Alyn Velaryon, disputing his right to Driftmark. He died after the conspiracy failed."
+ },
+ {
+  "id": "rhogar_v",
+  "house": "vel",
+  "ru": "Рогар Веларион",
+  "en": "Rhogar Velaryon",
+  "page": "Rhogar Velaryon",
+  "parents": [
+   "Другой брат Корлиса"
+  ],
+  "about": "Viserys ordered his tongue cut out for accusing Rhaenyra's sons of bastardy. He later joined a conspiracy against Alyn Velaryon and was captured."
+ },
+ {
+  "id": "alyn",
+  "house": "vel",
+  "ru": "Элин Веларион",
+  "en": "Alyn Velaryon, Oakenfist",
+  "page": "Alyn Velaryon, Oakenfist",
+  "parents": [
+   "Corlys Velaryon, the Sea Snake"
+  ],
+  "spouses": [
+   "Baela",
+   "Elaena"
+  ],
+  "about": "Marilda of Hull's son, whom she named as Laenor's child, while others believed Corlys was his father. He was legitimized as a Velaryon and inherited Driftmark after his brother Addam died. His naval campaigns earned him "
+ },
+ {
+  "id": "laena_a",
+  "house": "vel",
+  "ru": "Лейна",
+  "en": "Laena Velaryon",
+  "page": "Laena Velaryon (daughter of Alyn)",
+  "parents": [
+   "Alyn Velaryon, Oakenfist",
+   "Baela"
+  ],
+  "about": "She was given a dragon egg as a child. It hatched into a deformed creature that attacked her and was killed."
+ },
+ {
+  "id": "jon_w",
+  "house": "vel",
+  "ru": "Джон Уотерс",
+  "en": "Jon Waters",
+  "page": "Jon Waters",
+  "parents": [
+   "Alyn Velaryon, Oakenfist",
+   "Elaena"
+  ],
+  "about": "He became a renowned knight. His legitimate son added \"Long\" to the surname Waters, founding House Longwaters."
+ },
+ {
+  "id": "jeyne_w",
+  "house": "vel",
+  "ru": "Джейн Уотерс",
+  "en": "Jeyne Waters",
+  "page": "Jeyne Waters",
+  "parents": [
+   "Alyn Velaryon, Oakenfist",
+   "Elaena"
+  ],
+  "about": "Jeyne was one of the twins born from Elaena Targaryen's affair with Alyn Oakenfist. Her brother Jon became a knight and his descendants took the name Longwaters. Jeyne's own later life is unrecorded."
+ },
+ {
+  "id": "longwaters",
+  "house": "vel",
+  "ru": "Сын Джона Уотерса",
+  "en": "",
+  "page": "House Longwaters",
+  "parents": [
+   "Jon Waters"
+  ],
+  "about": "He added \"Long\" to his father's surname to emphasize that he had been born in wedlock, founding House Longwaters. A later descendant, Rennifer Longwaters, served as chief undergaoler of the Red Keep."
+ },
+ {
+  "id": "lucerys_v",
+  "house": "vel",
+  "ru": "Люцерис Веларион",
+  "en": "Lucerys Velaryon",
+  "page": "Lucerys Velaryon",
+  "spouses": [
+   "Реннифер Лонгвотерс"
+  ],
+  "about": "Lord of Driftmark and master of ships under Aerys II. At court he supported the king in his rivalry with his heir, Rhaegar."
+ },
+ {
+  "id": "aurane",
+  "house": "vel",
+  "ru": "Ауран Уотерс",
+  "en": "Aurane Waters",
+  "page": "Aurane Waters",
+  "parents": [
+   "Lucerys Velaryon"
+  ],
+  "about": "He fought for Stannis on the Blackwater and was captured. After swearing allegiance to Joffrey, he was appointed master of ships by Cersei. When she was arrested, he sailed away with the new royal fleet. Reports from the"
+ },
+ {
+  "id": "monterys",
+  "house": "vel",
+  "ru": "Монтерис Веларион",
+  "en": "Monterys Velaryon",
+  "page": "Monterys Velaryon",
+  "parents": [
+   "Monford Velaryon"
+  ],
+  "about": "He inherited Driftmark at about six after Monford died on the Blackwater."
+ }
+]

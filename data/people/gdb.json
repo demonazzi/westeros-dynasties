@@ -5,14 +5,14 @@
     {
       "title": "Гудбразеры",
       "people": [
-        {"id":"gunthor_g","name":"Гунтор Гудбразер","en":"Gunthor Goodbrother","hs":"gdb","k":"T","sp":[["lysa_f","солёная жена"]]},
-        {"id":"arthur_g","name":"Артур Гудбразер","en":"Arthur Goodbrother","hs":"gdb","k":"T"},
-        {"id":"gorold","name":"Горольд Гудбразер","en":"Gorold Goodbrother","hs":"gdb","k":"T","sp":[["жена, имя не названа"]]},
-        {"id":"greydon","name":"Грейдон Гудбразер","en":"Greydon Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283"},
-        {"id":"gormond","name":"Гормонд Гудбразер","en":"Gormond Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283"},
-        {"id":"gran_g","name":"Грен Гудбразер","en":"Gran Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283"},
-        {"id":"gysella","name":"Гизелла Гудбразер","en":"Gysella Goodbrother","fem":1,"hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"]},
-        {"id":"gwin","name":"Гвин Гудбразер","en":"Gwin Goodbrother","fem":1,"hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"]},
+        {"id":"gunthor_g","name":"Гунтор Гудбразер","en":"Gunthor Goodbrother","hs":"gdb","k":"T","ls":133,"sp":[["lysa_f","солёная жена"]]},
+        {"id":"arthur_g","name":"Артур Гудбразер","en":"Arthur Goodbrother","hs":"gdb","k":"T","ls":134},
+        {"id":"gorold","name":"Горольд Гудбразер","en":"Gorold Goodbrother","hs":"gdb","k":"T","alive":1,"sp":[["жена, имя не названа"]]},
+        {"id":"greydon","name":"Грейдон Гудбразер","en":"Greydon Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283","alive":1},
+        {"id":"gormond","name":"Гормонд Гудбразер","en":"Gormond Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283","alive":1},
+        {"id":"gran_g","name":"Грен Гудбразер","en":"Gran Goodbrother","hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"b":"282/283","alive":1},
+        {"id":"gysella","name":"Гизелла Гудбразер","en":"Gysella Goodbrother","fem":1,"hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"alive":1},
+        {"id":"gwin","name":"Гвин Гудбразер","en":"Gwin Goodbrother","fem":1,"hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"alive":1},
         {"id":"gorold_daus","name":"Десять дочерей","full":"Другие дочери Горольда Гудбразера","fem":1,"group":1,"hs":"gdb","k":"T","p":"gorold","par":["gorold","жена, имя не названа"],"wiki":"Gorold Goodbrother"}
       ]
     }

@@ -1,0 +1,324 @@
+[
+ {
+  "id": "aenar",
+  "url": "https://awoiaf.westeros.org/index.php/Aenar_the_Exile",
+  "claimed_died": "102 BC or after Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death as 102 BC or after, at Dragonstone; page says he ruled Dragonstone until his death, with no further detail."
+ },
+ {
+  "id": "daenys",
+  "url": "https://awoiaf.westeros.org/index.php/Daenys_the_Dreamer",
+  "claimed_died": "In or after 101 BC Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death as in or after 101 BC; page gives no account of her death. Parents and spouse match our data."
+ },
+ {
+  "id": "gaemon",
+  "url": "https://awoiaf.westeros.org/index.php/Gaemon_the_Glorious",
+  "claimed_died": "or after 101 BC Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death as or after 101 BC at Dragonstone; page gives no account of his death. Spouse Daenys matches our data."
+ },
+ {
+  "id": "aerion_l",
+  "url": "https://awoiaf.westeros.org/index.php/Aerion_Targaryen_(son_of_Daemion)",
+  "claimed_died": "27–2 BC Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives a death range of 27–2 BC at Dragonstone (bounds recorded in year and year2); page says he was succeeded by his son Aegon. Parent Daemion and spouse Valaena Velaryon match our data."
+ },
+ {
+  "id": "rhaella_a",
+  "url": "https://awoiaf.westeros.org/index.php/Rhaella_Targaryen_(daughter_of_Aegon)",
+  "claimed_died": "or after 73 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field reads or after 73 AC; page does not describe her death. Last shown alive at the 58 AC tourney in King's Landing. Parents match our data; wiki gives birth as 42 AC."
+ },
+ {
+  "id": "vaella_a",
+  "url": "https://awoiaf.westeros.org/index.php/Vaella_Targaryen_(daughter_of_Aenys_I)",
+  "claimed_died": "39 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Died in the cradle, not long after birth; infobox gives 39 AC for both birth and death. Parents and birth year match our data."
+ },
+ {
+  "id": "maegelle",
+  "url": "https://awoiaf.westeros.org/index.php/Maegelle_Targaryen",
+  "claimed_died": "96 AC Oldtown",
+  "claimed_status": "dead",
+  "claimed_note": "Page says she caught greyscale from the children she nursed and died in 96 AC at Oldtown. Born 62 AC and parents match our data."
+ },
+ {
+  "id": "vaegon",
+  "url": "https://awoiaf.westeros.org/index.php/Vaegon_Targaryen",
+  "claimed_died": "In or after 101 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field reads in or after 101 AC; body text says it is unknown whether he was alive during the Dance. Last appearance is the 101 AC Great Council. Born and parents match our data."
+ },
+ {
+  "id": "saera",
+  "url": "https://awoiaf.westeros.org/index.php/Saera_Targaryen",
+  "claimed_died": "In or after 101 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 101 AC; body text never says she died and places her alive in Volantis around 101 AC. Born and parents match our data."
+ },
+ {
+  "id": "baela",
+  "url": "https://awoiaf.westeros.org/index.php/Baela_Targaryen",
+  "claimed_died": "136–176 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is a calculated range, 136–176 AC (bounds in year and year2); body text gives no death and ends with her 136 AC pregnancy. Parents match; wiki lists only Alyn Velaryon as spouse, not Jacaerys."
+ },
+ {
+  "id": "daena",
+  "url": "https://awoiaf.westeros.org/index.php/Daena_the_Defiant",
+  "claimed_died": "In or after 172 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 172 AC; page gives no account of her death. Born 145 AC, parents and spouse Baelor match our data."
+ },
+ {
+  "id": "rhaena_b",
+  "url": "https://awoiaf.westeros.org/index.php/Rhaena_Targaryen_(daughter_of_Aegon_III)",
+  "claimed_died": "In or after 171 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 171 AC; page gives no account of her death. Born 147 AC and parents match our data; page says she became a septa, as ours does."
+ },
+ {
+  "id": "elaena_b",
+  "url": "https://awoiaf.westeros.org/index.php/Elaena_Targaryen",
+  "claimed_died": "In or after 220 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 220 AC; page gives no account of her death. Parents match. Wiki lists Plumm, Penrose and Manwoody as spouses, and Alyn Velaryon only as a lover, not a spouse."
+ },
+ {
+  "id": "aegor",
+  "url": "https://awoiaf.westeros.org/index.php/Aegor_Rivers",
+  "claimed_died": "241 AC (aged 69) Disputed Lands",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives 241 AC (aged 69) in the Disputed Lands, and the page says he died with a sword in his hand. Born 172 AC, parents and promised spouse Calla Blackfyre match our data."
+ },
+ {
+  "id": "shiera",
+  "url": "https://awoiaf.westeros.org/index.php/Shiera_Seastar",
+  "claimed_died": "In or after 211 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field reads in or after 211 AC; body text does not state a death. Born 178–184 AC and parent Aegon IV match our data; page says she never married, consistent with our data."
+ },
+ {
+  "id": "daemon2_bf",
+  "url": "https://awoiaf.westeros.org/index.php/Daemon_II_Blackfyre",
+  "claimed_died": "212–219 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is a range, 212–219 AC (bounds in year and year2); page says he died a few years later while a hostage in the Red Keep. Parent Daemon I Blackfyre matches our data."
+ },
+ {
+  "id": "rhaegel",
+  "url": "https://awoiaf.westeros.org/index.php/Rhaegel_Targaryen",
+  "claimed_died": "215 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives 215 AC; page says he died choking on a lamprey pie that year. Parents and spouse Alys Arryn match our data."
+ },
+ {
+  "id": "aelor",
+  "url": "https://awoiaf.westeros.org/index.php/Aelor_Targaryen",
+  "claimed_died": "217 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives 217 AC; page says he died in a freak accident at the hand of his sister-wife Aelora. Parents match our data; the wiki's born range 195–209 AC is not in our data."
+ },
+ {
+  "id": "aelora",
+  "url": "https://awoiaf.westeros.org/index.php/Aelora_Targaryen",
+  "claimed_died": "217–221 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is a range, 217–221 AC (bounds in year and year2); page says she took her own life after an attack at a masked ball. Parents match our data."
+ },
+ {
+  "id": "daenora",
+  "url": "https://awoiaf.westeros.org/index.php/Daenora_Targaryen",
+  "claimed_died": "In or after 232 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 232 AC; page gives no account of her death. Parents and spouse Aerion match our data, and the wiki's issue Maegor, born 232 AC, is consistent with ours."
+ },
+ {
+  "id": "daeron_dr",
+  "url": "https://awoiaf.westeros.org/index.php/Daeron_Targaryen_(son_of_Maekar_I)",
+  "claimed_died": "221–233 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is a range, 221–233 AC (bounds in year and year2); page says he died before 233 AC, reputedly of a pox. Born 190 or 191 AC, parents and spouse Kiera match our data."
+ },
+ {
+  "id": "shaera",
+  "url": "https://awoiaf.westeros.org/index.php/Shaera",
+  "claimed_died": "In or after 259 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field reads in or after 259 AC, but the page says her death date is unknown and last places her in King's Landing in 260 AC. Born 226 AC, parents and spouse Jaehaerys II match our data."
+ },
+ {
+  "id": "daeron_e",
+  "url": "https://awoiaf.westeros.org/index.php/Daeron_Targaryen_(son_of_Aegon_V)",
+  "claimed_died": "251 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives 251 AC; page says he was killed in battle quelling the Rat, Hawk and Pig rebellion, with Jeremy Norridge. Born 228 AC and parents match our data."
+ },
+ {
+  "id": "rhaelle",
+  "url": "https://awoiaf.westeros.org/index.php/Rhaelle_Targaryen",
+  "claimed_died": "In or after 246 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field is an estimate, in or after 246 AC; page gives no account of her death. Wed Ormund Baratheon in 245 AC, with son Steffon born in 246. Wiki gives birth as 229–233 AC against our 229–234."
+ },
+ {
+  "id": "torrhen",
+  "url": "https://awoiaf.westeros.org/index.php/Torrhen_Stark",
+  "claimed_died": "2 AC–49 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died gives the range 2 AC–49 AC with no source in the books; the page says he was entombed in Winterfell's crypts and surrendered the morning after the Trident."
+ },
+ {
+  "id": "cregan",
+  "url": "https://awoiaf.westeros.org/index.php/Cregan_Stark",
+  "claimed_died": "157–209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Still alive in 157 AC when his heir Rickon died at Sunspear; the Died range is a calculation and the exact death date is unknown."
+ },
+ {
+  "id": "lynara",
+  "url": "https://awoiaf.westeros.org/index.php/Lynara_Stark",
+  "claimed_died": "In or after 140 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate comes from an age-calculation page; the book text says nothing about her death or survival."
+ },
+ {
+  "id": "jonnel",
+  "url": "https://awoiaf.westeros.org/index.php/Jonnel_Stark",
+  "claimed_died": "157–209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Interred in Winterfell's crypts after his death (A Clash of Kings) and succeeded by Barthogan; no year or cause is given beyond the calculated Died range."
+ },
+ {
+  "id": "edric_c",
+  "url": "https://awoiaf.westeros.org/index.php/Edric_Stark_(son_of_Cregan)",
+  "claimed_died": "153–209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died range 153–209 AC comes from an age-calculation page; no book passage says how or when he died."
+ },
+ {
+  "id": "barthogan",
+  "url": "https://awoiaf.westeros.org/index.php/Barthogan_Stark",
+  "claimed_died": "184–209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Skagosi rebellion claimed thousands of lives, including his own, and he was buried in Winterfell's crypts; no year is given in the books."
+ },
+ {
+  "id": "sansa_c",
+  "url": "https://awoiaf.westeros.org/index.php/Sansa_Stark_(daughter_of_Rickon)",
+  "claimed_died": "In or before 209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "She was alive at her father Rickon's death in the Conquest of Dorne and was dead before Jonnel remarried; the 209 AC bound is a calculation."
+ },
+ {
+  "id": "serena_c",
+  "url": "https://awoiaf.westeros.org/index.php/Serena_Stark",
+  "claimed_died": "or after 154 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The only death information is the calculated Died field 'or after 154 AC'; the book text says only that she married twice."
+ },
+ {
+  "id": "arrana",
+  "url": "https://awoiaf.westeros.org/index.php/Arrana_Stark",
+  "claimed_died": "In or after 166 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation; no book text says how or when she died, and her marriage to Osric Umber gives no year."
+ },
+ {
+  "id": "argelle_s",
+  "url": "https://awoiaf.westeros.org/index.php/Argelle_Stark",
+  "claimed_died": "In or after 167 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation; no book text says how or when she died, and her marriage to Robard Cerwyn matches our data."
+ },
+ {
+  "id": "brandon_c",
+  "url": "https://awoiaf.westeros.org/index.php/Brandon_Stark_(son_of_Cregan)",
+  "claimed_died": "184 AC–212 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Buried in Winterfell's crypts (A Clash of Kings) and succeeded Barthogan under Daeron II; the 184–212 AC range is a calculation with no death year in the books."
+ },
+ {
+  "id": "rodwell",
+  "url": "https://awoiaf.westeros.org/index.php/Rodwell_Stark",
+  "claimed_died": "184–212 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Buried in Winterfell's crypts (A Clash of Kings) and succeeded by Beron; the 184–212 AC range is a calculation and the page gives no cause or year of death."
+ },
+ {
+  "id": "beron",
+  "url": "https://awoiaf.westeros.org/index.php/Beron_Stark",
+  "claimed_died": "212–226 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Gathering forces against Dagon Greyjoy's raiders in 212 AC (The Mystery Knight) and buried in Winterfell's crypts; the mortal wound is sourced only to a non-book Q&A, so it is not used."
+ },
+ {
+  "id": "donnor",
+  "url": "https://awoiaf.westeros.org/index.php/Donnor_Stark",
+  "claimed_died": "212–226 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Died without issue, so Willam inherited (World of Ice & Fire), and he is buried in Winterfell's crypts; the 212–226 AC range is a calculation marked as not confirmed."
+ },
+ {
+  "id": "artos",
+  "url": "https://awoiaf.westeros.org/index.php/Artos_the_Implacable",
+  "claimed_died": "226 AC or after",
+  "claimed_status": "dead",
+  "claimed_note": "Alive at the Long Lake battle in 226 AC, where he slew Raymun (A Dance with Dragons), and buried in Winterfell's crypts; the Died estimate is a calculation."
+ },
+ {
+  "id": "brandon_a",
+  "url": "https://awoiaf.westeros.org/index.php/Brandon_Stark_(son_of_Artos)",
+  "claimed_died": "In or after 209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation; the book text says only that he had children and gives no death or survival statement."
+ },
+ {
+  "id": "benjen_a",
+  "url": "https://awoiaf.westeros.org/index.php/Benjen_Stark_(son_of_Artos)",
+  "claimed_died": "In or after 209 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation; the book text says only that he had children and gives no death or survival statement."
+ },
+ {
+  "id": "rodrik_b",
+  "url": "https://awoiaf.westeros.org/index.php/Rodrik_Stark_(son_of_Beron)",
+  "claimed_died": "In or after ~214 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation whose Born range ends later (227 AC); the cited book only says he served with the Second Sons."
+ },
+ {
+  "id": "edwyle",
+  "url": "https://awoiaf.westeros.org/index.php/Edwyle_Stark",
+  "claimed_died": "229–262 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Buried in Winterfell's crypt and succeeded by his son Rickard (World of Ice & Fire); the 229–262 AC range is a calculation and no death year is given in the books."
+ },
+ {
+  "id": "jocelyn_s",
+  "url": "https://awoiaf.westeros.org/index.php/Jocelyn_Stark",
+  "claimed_died": "In or after 212 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died estimate is a wiki calculation; the books cited say only that she married Benedict Royce, had children, and had three daughters who wed Vale lordlings."
+ },
+ {
+  "id": "benjen",
+  "url": "https://awoiaf.westeros.org/index.php/Benjen_Stark",
+  "claimed_died": "298–300 AC beyond the Wall (presumed)",
+  "claimed_status": "dead",
+  "claimed_note": "The wiki says he is presumed dead beyond the Wall (A Feast for Crows appendix), with no confirmed death; this conflicts with our 'fate remains unknown' wording."
+ },
+ {
+  "id": "jon",
+  "url": "https://awoiaf.westeros.org/index.php/Jon_Snow",
+  "claimed_died": "",
+  "claimed_status": "unknown",
+  "claimed_note": "No Died field; the retrieved text shows him as Lord Commander mid-A Dance with Dragons and reports no death, but the page cut off before the book's end, so his final fate could not be read."
+ }
+]

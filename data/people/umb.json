@@ -6,7 +6,7 @@
       "title": "Амберы до Роберта",
       "people": [
         {"id":"jon_u2","name":"Джон Амбер","full":"Джон Амбер, муж Серены Старк","en":"Jon Umber","hs":"umb","k":"T","d":"141–208","sp":[["serena_c"]],"wiki":"Jon Umber (husband of Serena)"},
-        {"id":"osric","name":"Озрик Амбер","en":"Osric Umber","hs":"umb","k":"T","b":"не позднее 215","sp":[["arrana"]]},
+        {"id":"osric","name":"Озрик Амбер","en":"Osric Umber","hs":"umb","k":"T","b":"не позднее 215","d":"165–226","sp":[["arrana"]]},
         {"id":"osric_kids","name":"Дети","full":"Дети Озрика Амбера и Арраны Старк","group":1,"hs":"umb","k":"T","p":"osric","par":["osric","arrana"],"wiki":"Osric Umber"},
         {"id":"harmond","name":"Хармонд Амбер","full":"Хармонд Амбер, Пьяный Гигант","en":"Harmond Umber","al":["Пьяный Гигант"],"hs":"umb","k":"T"}
       ]
@@ -16,12 +16,12 @@
       "people": [
         {"id":"hoarfrost","name":"Хорфрост Амбер","en":"Hoarfrost Umber","hs":"umb","k":"T","b":"не позднее 231"},
         {"id":"hoarfrost_son","name":"Сын","full":"Сын Хорфроста, отец Большого Джона","hs":"umb","k":"T","p":"hoarfrost","par":["hoarfrost"],"wiki":"Hoarfrost Umber"},
-        {"id":"mors","name":"Морс Амбер","full":"Морс Воронье Мясо","en":"Mors Umber","al":["Воронье Мясо"],"hs":"umb","k":"T","p":"hoarfrost","par":["hoarfrost"],"b":"не позднее 244","sp":[["жена, умершая в родах"]]},
-        {"id":"hother","name":"Хозер Амбер","full":"Хозер Смерть Шлюхам","en":"Hother Umber","al":["Смерть Шлюхам"],"hs":"umb","k":"T","p":"hoarfrost","par":["hoarfrost"],"b":"не позднее 241"},
-        {"id":"greatjon","name":"Джон Амбер","full":"Большой Джон Амбер","en":"Jon Umber","al":["Большой Джон"],"hs":"umb","k":"T","p":"hoarfrost_son","par":["hoarfrost_son"]},
+        {"id":"mors","name":"Морс Амбер","full":"Морс Воронье Мясо","en":"Mors Umber","al":["Воронье Мясо"],"hs":"umb","k":"T","p":"hoarfrost","par":["hoarfrost"],"b":"не позднее 244","alive":1,"sp":[["жена, умершая в родах"]]},
+        {"id":"hother","name":"Хозер Амбер","full":"Хозер Смерть Шлюхам","en":"Hother Umber","al":["Смерть Шлюхам"],"hs":"umb","k":"T","p":"hoarfrost","par":["hoarfrost"],"b":"не позднее 241","alive":1},
+        {"id":"greatjon","name":"Джон Амбер","full":"Большой Джон Амбер","en":"Jon Umber","al":["Большой Джон"],"hs":"umb","k":"T","p":"hoarfrost_son","par":["hoarfrost_son"],"alive":1},
         {"id":"greatjon_bros","name":"Братья","full":"Братья Большого Джона Амбера","group":1,"hs":"umb","k":"T","p":"hoarfrost_son","par":["hoarfrost_son"],"wiki":"Jon Umber"},
         {"id":"mors_sons","name":"Сыновья","full":"Сыновья Морса Амбера","group":1,"hs":"umb","k":"T","p":"mors","par":["mors","жена, умершая в родах"],"d":"283","wiki":"Mors Umber"},
-        {"id":"mors_dau","name":"Дочь","full":"Дочь Морса Амбера","fem":1,"hs":"umb","k":"T","p":"mors","par":["mors","жена, умершая в родах"],"wiki":"Mors Umber"},
+        {"id":"mors_dau","name":"Дочь","full":"Дочь Морса Амбера","fem":1,"hs":"umb","k":"T","p":"mors","par":["mors","жена, умершая в родах"],"ls":270,"wiki":"Mors Umber"},
         {"id":"smalljon","name":"Джон Амбер","full":"Маленький Джон Амбер","en":"Jon Umber","al":["Маленький Джон"],"hs":"umb","k":"T","p":"greatjon","par":["greatjon","жена не названа"],"d":"299","wiki":"Jon Umber (son of Jon)"},
         {"id":"greatjon_sons","name":"Сыновья","full":"Младшие сыновья Большого Джона","group":1,"hs":"umb","k":"T","p":"greatjon","par":["greatjon","жена не названа"],"wiki":"Jon Umber"},
         {"id":"greatjon_daus","name":"Дочери","full":"Дочери Большого Джона","fem":1,"group":1,"hs":"umb","k":"T","p":"greatjon","par":["greatjon","жена не названа"],"wiki":"Jon Umber"}

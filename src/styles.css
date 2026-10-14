@@ -335,6 +335,11 @@ rect.lg-sub { fill: var(--hc); }
 .knot.path circle { stroke: var(--path); stroke-width: 2.4; }
 .knot.path text { fill: var(--path); }
 .node.dim, .knot.dim { opacity: .2; }
+/* срез по году: жив ли в этот год — неизвестно (год смерти не известен точно) */
+.node .unsure-ring { fill: none; stroke: none; pointer-events: none; }
+.node.unsure { opacity: .5; }
+.node.unsure .unsure-ring { stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 4 4; }
+.life.unsure { opacity: .45; }
 .link.dim, .union.dim, .xlink.dim, .xmark.dim { opacity: .08; }
 .spouse { fill: none; stroke: var(--path); stroke-width: 2; stroke-dasharray: 1.5 6; stroke-linecap: round; }
 .spouse.t-m { stroke-dasharray: 7 4; stroke-linecap: butt; }

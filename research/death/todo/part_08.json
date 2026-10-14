@@ -1,0 +1,535 @@
+[
+ {
+  "id": "jeyne_lt",
+  "house": "oth",
+  "ru": "Джейн Лотстон",
+  "en": "Jeyne Lothston",
+  "page": "Jeyne Lothston",
+  "born": "164",
+  "parents": [
+   "Falena Stokeworth",
+   "Aegon the Unworthy"
+  ],
+  "about": "Became Aegon IV's mistress at fourteen. Rumours also named him as her father. After catching a pox from the king, she and her family were quickly sent away from court."
+ },
+ {
+  "id": "alannys",
+  "house": "oth",
+  "ru": "Аланнис Харлоу",
+  "en": "Alannys Harlaw",
+  "page": "Alannys Harlaw",
+  "born": "227–262",
+  "parents": [
+   "Лорд Харлоу"
+  ],
+  "spouses": [
+   "Balon Greyjoy"
+  ],
+  "about": "She lost her elder sons during Balon's rebellion, while Theon was taken away as a hostage. She later moved to Ten Towers. Illness and grief clouded her memory: she sometimes forgot that Rodrik and Maron were dead and wai"
+ },
+ {
+  "id": "olenna",
+  "house": "oth",
+  "ru": "Оленна Редвин",
+  "en": "Olenna Redwyne",
+  "page": "Olenna Tyrell",
+  "born": "228",
+  "parents": [
+   "Runceford Redwyne"
+  ],
+  "spouses": [
+   "Daeron",
+   "Luthor Tyrell"
+  ],
+  "about": "The Queen of Thorns combined sharp speech with practical concern for her family’s position. She distrusted Mace’s judgment and tried to secure Sansa for Willas. Littlefinger’s account implicates her in Joffrey’s murder: "
+ },
+ {
+  "id": "marianne_vance",
+  "house": "oth",
+  "ru": "Марианна Вэнс",
+  "en": "Marianne Vance",
+  "page": "Marianne Vance",
+  "parents": [
+   "Maegelle Frey"
+  ],
+  "about": "Daughter of Ser Dafyn Vance and Maegelle Frey, a great-granddaughter of Lord Walder Frey."
+ },
+ {
+  "id": "walder_vance",
+  "house": "oth",
+  "ru": "Уолдер Вэнс",
+  "en": "Walder Vance",
+  "page": "Walder Vance",
+  "parents": [
+   "Maegelle Frey"
+  ],
+  "about": "Son of Ser Dafyn Vance and Maegelle Frey, a great-grandson of Lord Walder Frey."
+ },
+ {
+  "id": "patrek_vance",
+  "house": "oth",
+  "ru": "Патрек Вэнс",
+  "en": "Patrek Vance",
+  "page": "Patrek Vance",
+  "parents": [
+   "Maegelle Frey"
+  ],
+  "about": "Son of Ser Dafyn Vance and Maegelle Frey, a great-grandson of Lord Walder Frey."
+ },
+ {
+  "id": "harys_haigh",
+  "house": "oth",
+  "ru": "Харис Хэй",
+  "en": "Harys Haigh",
+  "page": "Harys Haigh",
+  "parents": [
+   "Perriane Frey"
+  ],
+  "about": "Son of Ser Leslyn Haigh and Perriane Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "donnel_haigh",
+  "house": "oth",
+  "ru": "Доннел Хэй",
+  "en": "Donnel Haigh",
+  "page": "Donnel Haigh",
+  "parents": [
+   "Perriane Frey"
+  ],
+  "about": "Son of Ser Leslyn Haigh and Perriane Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "alyn_haigh",
+  "house": "oth",
+  "ru": "Алин Хэй",
+  "en": "Alyn Haigh",
+  "page": "Alyn Haigh",
+  "parents": [
+   "Perriane Frey"
+  ],
+  "about": "Son of Ser Leslyn Haigh and Perriane Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "walder_goodbrook",
+  "house": "oth",
+  "ru": "Уолдер Гудбрук",
+  "en": "Walder Goodbrook",
+  "page": "Walder Goodbrook",
+  "parents": [
+   "Kyra Frey"
+  ],
+  "about": "Son of Ser Garse Goodbrook and Kyra Frey, a great-grandson of Lord Walder Frey."
+ },
+ {
+  "id": "jeyne_goodbrook",
+  "house": "oth",
+  "ru": "Джейн Гудбрук",
+  "en": "Jeyne Goodbrook",
+  "page": "Jeyne Goodbrook",
+  "parents": [
+   "Kyra Frey"
+  ],
+  "about": "Daughter of Ser Garse Goodbrook and Kyra Frey, a great-granddaughter of Lord Walder Frey."
+ },
+ {
+  "id": "elyana_vypren",
+  "house": "oth",
+  "ru": "Элиана Випрен",
+  "en": "Elyana Vypren",
+  "page": "Elyana Vypren",
+  "parents": [
+   "Lythene Frey"
+  ],
+  "about": "Daughter of Lord Lucias Vypren and Lythene Frey, a granddaughter of Lord Walder Frey."
+ },
+ {
+  "id": "damon_vypren",
+  "house": "oth",
+  "ru": "Дамон Випрен",
+  "en": "Damon Vypren",
+  "page": "Damon Vypren",
+  "parents": [
+   "Lythene Frey"
+  ],
+  "about": "Son of Lord Lucias Vypren and Lythene Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "robert_brax",
+  "house": "oth",
+  "ru": "Роберт Бракс",
+  "en": "Robert Brax",
+  "page": "Robert Brax (son of Flement)",
+  "parents": [
+   "Morya Frey"
+  ],
+  "about": "Son of Ser Flement Brax and Morya Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "walder_brax",
+  "house": "oth",
+  "ru": "Уолдер Бракс",
+  "en": "Walder Brax",
+  "page": "Walder Brax",
+  "parents": [
+   "Morya Frey"
+  ],
+  "about": "Son of Ser Flement Brax and Morya Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "jon_brax",
+  "house": "oth",
+  "ru": "Джон Бракс",
+  "en": "Jon Brax",
+  "page": "Jon Brax",
+  "parents": [
+   "Morya Frey"
+  ],
+  "about": "Son of Ser Flement Brax and Morya Frey, a grandson of Lord Walder Frey."
+ },
+ {
+  "id": "allard",
+  "house": "roy",
+  "ru": "Аллард Ройс",
+  "en": "Allard Royce",
+  "page": "Allard Royce",
+  "about": "Lord of Runestone early in Aenys’s reign."
+ },
+ {
+  "id": "alayne_r",
+  "house": "roy",
+  "ru": "Алейна Ройс",
+  "en": "Alayne Royce",
+  "page": "Alayne Royce",
+  "parents": [
+   "Allard Royce"
+  ],
+  "about": "One of Rhaena Targaryen’s companions."
+ },
+ {
+  "id": "willam_r",
+  "house": "roy",
+  "ru": "Виллам Ройс",
+  "en": "Willam Royce",
+  "page": "Willam Royce",
+  "about": "He died during the Dance, and the Valyrian steel sword Lamentation disappeared with him."
+ },
+ {
+  "id": "gunthor_r",
+  "house": "roy",
+  "ru": "Гунтор Ройс",
+  "en": "Gunthor Royce",
+  "page": "Gunthor Royce",
+  "about": "The Bronze Giant supported Arnold Arryn’s attempt to claim the Vale after Jeyne’s death."
+ },
+ {
+  "id": "alyssa_r",
+  "house": "roy",
+  "ru": "Алисса Ройс",
+  "en": "Alyssa Royce",
+  "page": "Alyssa Royce",
+  "about": "A possible bride considered for Aegon III."
+ },
+ {
+  "id": "lorra",
+  "house": "roy",
+  "ru": "Лорра Ройс",
+  "en": "Lorra Royce",
+  "page": "Lorra Royce",
+  "spouses": [
+   "Beron Stark"
+  ],
+  "about": "Lorra was Lady of Winterfell as Beron Stark's wife. They had seven children, five sons and two daughters. Their eldest sons, Donnor and Willam, subsequently became Lords of Winterfell in turn."
+ },
+ {
+  "id": "perra",
+  "house": "roy",
+  "ru": "Перра Ройс",
+  "en": "Perra Royce",
+  "page": "Perra Royce",
+  "spouses": [
+   "Walder Frey"
+  ],
+  "about": "Perra was Walder Frey's first wife and the mother of Stevron, Emmon, Aenys and Perriane. Her sons founded the elder branches of his extensive family. Her precise position within House Royce is unknown."
+ },
+ {
+  "id": "benedict",
+  "house": "roy",
+  "ru": "Бенедикт Ройс",
+  "en": "Benedict Royce",
+  "page": "Benedict Royce",
+  "spouses": [
+   "Jocelyn Stark"
+  ],
+  "about": "Benedict was a knight from a junior Royce branch and Raymar's younger son. He married Jocelyn Stark. Their three daughters married a Waynwood, a Corbray and possibly a Templeton. His connection to the Royces of the Gates"
+ },
+ {
+  "id": "jeyne_r",
+  "house": "roy",
+  "ru": "Джейн Ройс",
+  "en": "Jeyne Royce",
+  "page": "Jeyne Royce",
+  "spouses": [
+   "Jon Arryn"
+  ],
+  "about": "She died in childbirth; her daughter was stillborn."
+ },
+ {
+  "id": "ryella",
+  "house": "roy",
+  "ru": "Риэлла Ройс",
+  "en": "Ryella Royce",
+  "page": "Ryella Royce",
+  "spouses": [
+   "Arwood Frey"
+  ],
+  "about": "Ryella is Ser Arwood Frey's wife and the mother of Ryella, Androw, Alyn and Hostella. Her relationship to Yohn Royce and other known members of the house has not been established."
+ },
+ {
+  "id": "yohn",
+  "house": "roy",
+  "ru": "Джон Ройс",
+  "en": "Yohn Royce",
+  "page": "Yohn Royce",
+  "born": "не позднее 265",
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "Bronze Yohn favoured helping the Starks. After Lysa’s death he led opposition to Littlefinger, who divided the lords against him."
+ },
+ {
+  "id": "andar",
+  "house": "roy",
+  "ru": "Андар Ройс",
+  "en": "Andar Royce",
+  "page": "Andar Royce",
+  "born": "не позднее 277",
+  "parents": [
+   "Yohn Royce"
+  ],
+  "about": "Heir to Runestone."
+ },
+ {
+  "id": "ysilla",
+  "house": "roy",
+  "ru": "Изилла Ройс",
+  "en": "Ysilla Royce",
+  "page": "Ysilla Royce",
+  "parents": [
+   "Yohn Royce"
+  ],
+  "about": "Ysilla, Yohn Royce's daughter, married Mychel Redfort at his father Horton's insistence. Mychel had been in love with Mya Stone but submitted to his family's marriage plans."
+ },
+ {
+  "id": "nestor",
+  "house": "roy",
+  "ru": "Нестор Ройс",
+  "en": "Nestor Royce",
+  "page": "Nestor Royce",
+  "spouses": [
+   "жена, умершая"
+  ],
+  "about": "Littlefinger rewarded his support with hereditary possession of the Gates of the Moon."
+ },
+ {
+  "id": "albar",
+  "house": "roy",
+  "ru": "Албар Ройс",
+  "en": "Albar Royce",
+  "page": "Albar Royce",
+  "parents": [
+   "Nestor Royce"
+  ],
+  "about": "Heir to the Gates of the Moon."
+ },
+ {
+  "id": "myranda",
+  "house": "roy",
+  "ru": "Миранда Ройс",
+  "en": "Myranda Royce",
+  "page": "Myranda Royce",
+  "born": "≈279",
+  "parents": [
+   "Nestor Royce"
+  ],
+  "spouses": [
+   "муж, умерший"
+  ],
+  "about": "The young widow managed the Gates’ household and befriended Alayne. Her questions nearly exposed Sansa’s identity."
+ },
+ {
+  "id": "meria",
+  "house": "mar",
+  "ru": "Мерия Мартелл",
+  "en": "Meria Martell",
+  "page": "Meria Martell",
+  "about": "Princess of Dorne during the Conquest, called the Yellow Toad. She refused to acknowledge Aegon and Rhaenys, choosing to wear the invaders down rather than face their dragons in open battle. Under her rule, Dorne endured"
+ },
+ {
+  "id": "nymor",
+  "house": "mar",
+  "ru": "Нимор Мартелл",
+  "en": "Nymor Martell",
+  "page": "Nymor Martell",
+  "parents": [
+   "Meria Martell"
+  ],
+  "about": "He inherited Dorne after Meria's death. Seeking to end the war, he sent his daughter Deria to Aegon with Meraxes's skull and a sealed letter. After reading it, the king agreed to peace. Its contents are unknown, so expla"
+ },
+ {
+  "id": "deria",
+  "house": "mar",
+  "ru": "Дерия Мартелл",
+  "en": "Deria Martell",
+  "page": "Deria Martell",
+  "parents": [
+   "Nymor Martell"
+  ],
+  "about": "She represented Dorne in negotiations with Aegon the Conqueror. She brought Meraxes's skull and her father's letter to the capital, after which the First Dornish War ended. Despite a hostile reception, she completed her "
+ },
+ {
+  "id": "qoren",
+  "house": "mar",
+  "ru": "Корен Мартелл",
+  "en": "Qoren Martell",
+  "page": "Qoren Martell",
+  "about": "Prince of Dorne during Viserys I's reign and at the start of the Dance of the Dragons. He supported the Triarchy in the struggle for the Stepstones, fearing Targaryen and Velaryon power near the Dornish coast. During the"
+ },
+ {
+  "id": "aliandra",
+  "house": "mar",
+  "ru": "Алиандра Мартелл",
+  "en": "Aliandra Martell",
+  "page": "Aliandra Martell",
+  "born": "115",
+  "parents": [
+   "Qoren Martell"
+  ],
+  "spouses": [
+   "Alyn Velaryon, Oakenfist",
+   "Драженко Рогаре"
+  ],
+  "about": "She ruled Dorne after Qoren's death. A young and ambitious princess, she encouraged Dornish raids into the borderlands. She received Alyn Velaryon during his voyages. Accounts of their relationship differed, so a love af"
+ },
+ {
+  "id": "qyle",
+  "house": "mar",
+  "ru": "Кайл Мартелл",
+  "en": "Qyle Martell",
+  "page": "Qyle Martell",
+  "born": "116–132",
+  "parents": [
+   "Qoren Martell"
+  ],
+  "about": "During Aegon III's regency, he was considered as a possible husband for Baela Targaryen."
+ },
+ {
+  "id": "coryanne",
+  "house": "mar",
+  "ru": "Корианна Мартелл",
+  "en": "Coryanne Martell",
+  "page": "Coryanne Martell",
+  "born": "116–132",
+  "parents": [
+   "Qoren Martell"
+  ],
+  "about": "Coryanne was the younger sister of Aliandra and Qyle Martell. During Aegon III's regency, Aliandra's flirtation with Alyn Velaryon angered both her siblings, who resented the attention she gave the visiting lord."
+ },
+ {
+  "id": "dorne_p14",
+  "house": "mar",
+  "ru": "Принц Дорна",
+  "en": "",
+  "page": "Maron Martell",
+  "about": "Ruler of Dorne. He arranged Myriah's marriage to the future Daeron II; Maron later succeeded him in Dorne."
+ },
+ {
+  "id": "myriah",
+  "house": "mar",
+  "ru": "Мирия Мартелл",
+  "en": "Myriah Martell",
+  "page": "Myriah Martell",
+  "parents": [
+   "Принц Дорна"
+  ],
+  "spouses": [
+   "Daeron the Good"
+  ],
+  "about": "Her marriage to Daeron II helped replace years of war between Dorne and the crown with a dynastic alliance. She bore Baelor, Aerys, Rhaegel and Maekar. Through her children and relatives, she linked the royal court to th"
+ },
+ {
+  "id": "maron",
+  "house": "mar",
+  "ru": "Марон Мартелл",
+  "en": "Maron Martell",
+  "page": "Maron Martell",
+  "parents": [
+   "Принц Дорна"
+  ],
+  "spouses": [
+   "Daenerys"
+  ],
+  "about": "In 187 AC he married Daenerys, Daeron II's sister, securing Dorne's peaceful entry into the realm. His lands retained their own laws and titles, including succession without preference for sons over elder daughters."
+ },
+ {
+  "id": "maron_son",
+  "house": "mar",
+  "ru": "Сын",
+  "en": "",
+  "page": "Maron Martell",
+  "parents": [
+   "Maron Martell",
+   "Daenerys"
+  ],
+  "about": "Heir to Sunspear. His name is unknown."
+ },
+ {
+  "id": "dorne_p19",
+  "house": "mar",
+  "ru": "Принцесса Дорна",
+  "en": "",
+  "page": "Doran Martell",
+  "about": "Ruler of Dorne. She was a friend of Joanna Lannister and discussed marriages between their children. After Joanna died, she visited Casterly Rock, but Tywin refused the proposed matches and offered Tyrion as a husband fo"
+ },
+ {
+  "id": "doran",
+  "house": "mar",
+  "ru": "Доран Мартелл",
+  "en": "Doran Martell",
+  "page": "Doran Martell",
+  "born": "247",
+  "parents": [
+   "Принцесса Дорна"
+  ],
+  "spouses": [
+   "Мелларио из Норвоса"
+  ],
+  "about": "The ruling Prince of Dorne. Afflicted by gout, he acted cautiously, which many close to him mistook for inaction. He secretly prepared for a Targaryen restoration and revenge for his sister's death, but his plans depende"
+ },
+ {
+  "id": "arianne",
+  "house": "mar",
+  "ru": "Арианна Мартелл",
+  "en": "Arianne Martell",
+  "page": "Arianne Martell",
+  "born": "276",
+  "parents": [
+   "Doran Martell"
+  ],
+  "about": "Dorne's heir under its laws. Believing her father intended to give Quentyn the succession, she tried to crown Myrcella and pursue her own political plans. The plot failed, leaving Arys Oakheart dead and Myrcella wounded."
+ },
+ {
+  "id": "trystane",
+  "house": "mar",
+  "ru": "Тристан Мартелл",
+  "en": "Trystane Martell",
+  "page": "Trystane Martell",
+  "born": "286",
+  "parents": [
+   "Doran Martell"
+  ],
+  "spouses": [
+   "Myrcella Baratheon"
+  ],
+  "about": "He was betrothed to Myrcella under Doran's agreement with Tyrion. He lived in Dorne and took no part in Arianne's attempt to proclaim Myrcella queen."
+ }
+]

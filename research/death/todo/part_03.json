@@ -1,0 +1,717 @@
+[
+ {
+  "id": "aenar",
+  "house": "targ",
+  "ru": "Эйнар",
+  "en": "Aenar the Exile",
+  "page": "Aenar the Exile",
+  "about": "Heeding Daenys's dream of Valyria's destruction, Aenar sold his holdings and moved his household to Dragonstone in 114 BC. He brought his wealth and five dragons, including Balerion. Twelve years later the Doom destroyed"
+ },
+ {
+  "id": "daenys",
+  "house": "targ",
+  "ru": "Дейенис",
+  "en": "Daenys the Dreamer",
+  "page": "Daenys the Dreamer",
+  "parents": [
+   "Aenar the Exile"
+  ],
+  "spouses": [
+   "Gaemon the Glorious"
+  ],
+  "about": "Her dream of Valyria burning persuaded Aenar to leave the Freehold twelve years before the Doom. She became known as the Dreamer, and her prophetic writings were collected in Signs and Portents. Her marriage to Gaemon co"
+ },
+ {
+  "id": "gaemon",
+  "house": "targ",
+  "ru": "Гейемон",
+  "en": "Gaemon the Glorious",
+  "page": "Gaemon the Glorious",
+  "parents": [
+   "Aenar the Exile"
+  ],
+  "spouses": [
+   "Daenys the Dreamer"
+  ],
+  "about": "Succeeded Aenar as Lord of Dragonstone during the Century of Blood. Remembered as Gaemon the Glorious, he ruled with Daenys before the island passed to Aegon and Elaena."
+ },
+ {
+  "id": "aegon_l",
+  "house": "targ",
+  "ru": "Эйгон",
+  "en": "Aegon",
+  "page": "Aegon Targaryen (son of Gaemon)",
+  "parents": [
+   "Gaemon the Glorious",
+   "Daenys the Dreamer"
+  ],
+  "spouses": [
+   "Elaena"
+  ],
+  "about": "Ruled Dragonstone jointly with Elaena after Gaemon's death. Their son Maegon succeeded them during the Century of Blood."
+ },
+ {
+  "id": "elaena_l",
+  "house": "targ",
+  "ru": "Элейна",
+  "en": "Elaena",
+  "page": "Elaena Targaryen (daughter of Gaemon)",
+  "parents": [
+   "Gaemon the Glorious",
+   "Daenys the Dreamer"
+  ],
+  "spouses": [
+   "Aegon"
+  ],
+  "about": "Shared the rule of Dragonstone with Aegon during the Century of Blood. Their successor was Maegon."
+ },
+ {
+  "id": "gaemon_dau",
+  "house": "targ",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Gaemon Targaryen (son of Aenar)",
+  "parents": [
+   "Gaemon the Glorious",
+   "Daenys the Dreamer"
+  ],
+  "about": "Married a petty lord. A descendant of that marriage later put forward a claim at the Great Council of 101 AC."
+ },
+ {
+  "id": "maegon",
+  "house": "targ",
+  "ru": "Мейгон",
+  "en": "Maegon",
+  "page": "Maegon",
+  "parents": [
+   "Aegon",
+   "Elaena"
+  ],
+  "about": "Held Dragonstone after the joint rule of Aegon and Elaena. Aerys succeeded him."
+ },
+ {
+  "id": "aerys_l",
+  "house": "targ",
+  "ru": "Эйерис",
+  "en": "Aerys",
+  "page": "Aerys",
+  "parents": [
+   "Aegon",
+   "Elaena"
+  ],
+  "about": "Succeeded Maegon as Lord of Dragonstone. Aelyx, Baelon and Daemion later held the island in turn."
+ },
+ {
+  "id": "aelyx",
+  "house": "targ",
+  "ru": "Эйликс",
+  "en": "Aelyx",
+  "page": "Aelyx",
+  "parents": [
+   "Aerys"
+  ],
+  "about": "Inherited Dragonstone after Aerys. His rule was followed by Baelon's."
+ },
+ {
+  "id": "baelon_l",
+  "house": "targ",
+  "ru": "Бейлон",
+  "en": "Baelon",
+  "page": "Baelon",
+  "parents": [
+   "Aerys"
+  ],
+  "about": "Held Dragonstone between the lordships of Aelyx and Daemion, before the Conquest."
+ },
+ {
+  "id": "daemion",
+  "house": "targ",
+  "ru": "Деймион",
+  "en": "Daemion",
+  "page": "Daemion",
+  "parents": [
+   "Aerys"
+  ],
+  "about": "Ruled Dragonstone after Baelon and retained a maester there, a practice continued by his successors. Aerion inherited the island from him."
+ },
+ {
+  "id": "aerion_l",
+  "house": "targ",
+  "ru": "Эйрион",
+  "en": "Aerion",
+  "page": "Aerion Targaryen (son of Daemion)",
+  "parents": [
+   "Daemion"
+  ],
+  "spouses": [
+   "Valaena Velaryon"
+  ],
+  "about": "Held Dragonstone in the generation before the Conquest. His marriage to Valaena Velaryon produced the three future conquerors. Orys Baratheon was widely believed to be his bastard, although the surviving accounts do not "
+ },
+ {
+  "id": "maegor_bastard",
+  "house": "targ",
+  "ru": "Латник",
+  "en": "",
+  "page": "Maegor I Targaryen",
+  "parents": [
+   "Maegor the Cruel"
+  ],
+  "about": "Claimed the crown at the Great Council of 101 AC on his mother's assertion that Maegor had raped her. The lords accepted her account of the assault but rejected the claimant's alleged royal descent."
+ },
+ {
+  "id": "rhaella_a",
+  "house": "targ",
+  "ru": "Рейелла",
+  "en": "Rhaella",
+  "page": "Rhaella Targaryen (daughter of Aegon)",
+  "parents": [
+   "Aegon the Uncrowned",
+   "Rhaena"
+  ],
+  "about": "Entered religious life at Oldtown and became a septa. The chronicle notes a striking reversal in the twins' temperaments and preserves the suspicion that she and Aerea exchanged identities. It offers no conclusive proof "
+ },
+ {
+  "id": "vaella_a",
+  "house": "targ",
+  "ru": "Вейелла",
+  "en": "Vaella",
+  "page": "Vaella Targaryen (daughter of Aenys I)",
+  "born": "39",
+  "parents": [
+   "Aenys I",
+   "Alyssa Velaryon"
+  ],
+  "about": "Died in early childhood."
+ },
+ {
+  "id": "maegelle",
+  "house": "targ",
+  "ru": "Мейгелле",
+  "en": "Maegelle",
+  "page": "Maegelle Targaryen",
+  "born": "62",
+  "parents": [
+   "Jaehaerys the Conciliator",
+   "Good Queen Alysanne"
+  ],
+  "about": "A learned and compassionate septa, Maegelle helped reconcile Jaehaerys and Alysanne after their quarrels. She cared for children suffering from greyscale and eventually contracted it herself. She died at Oldtown in 96 AC"
+ },
+ {
+  "id": "vaegon",
+  "house": "targ",
+  "ru": "Вейегон",
+  "en": "Vaegon the Dragonless",
+  "page": "Vaegon the Dragonless",
+  "born": "63",
+  "parents": [
+   "Jaehaerys the Conciliator",
+   "Good Queen Alysanne"
+  ],
+  "about": "Uninterested in courtship or martial training, Vaegon found his place among the books of the Citadel. He became an archmaester and never claimed a dragon. After Baelon's death he advised Jaehaerys to convene a Great Coun"
+ },
+ {
+  "id": "saera",
+  "house": "targ",
+  "ru": "Саэра",
+  "en": "Saera",
+  "page": "Saera",
+  "born": "67",
+  "parents": [
+   "Jaehaerys the Conciliator",
+   "Good Queen Alysanne"
+  ],
+  "about": "Saera's relationships at court led to a bitter confrontation with Jaehaerys and confinement under the Faith's supervision. She escaped Oldtown for Lys and later owned a profitable pleasure house in Volantis. She did not "
+ },
+ {
+  "id": "baela",
+  "house": "targ",
+  "ru": "Бейла",
+  "en": "Baela",
+  "page": "Baela",
+  "born": "116",
+  "parents": [
+   "Daemon",
+   "Laena Velaryon"
+  ],
+  "spouses": [
+   "Jacaerys Velaryon",
+   "Alyn Velaryon, Oakenfist"
+  ],
+  "about": "Baela flew Moondancer against Aegon II and Sunfyre during the fall of Dragonstone. Her dragon died, but she survived the fight and captivity. After the war she rejected the husband chosen by the regents and married Alyn "
+ },
+ {
+  "id": "rhaena_d",
+  "house": "targ",
+  "ru": "Рейена",
+  "en": "Rhaena",
+  "page": "Rhaena Targaryen (daughter of Daemon)",
+  "born": "116",
+  "parents": [
+   "Daemon",
+   "Laena Velaryon"
+  ],
+  "spouses": [
+   "Lucerys Velaryon",
+   "Corwyn Corbray",
+   "Garmund Hightower"
+  ],
+  "about": "Sheltered in the Vale during the Dance, Rhaena finally obtained a living dragon when Morning hatched there. After the war she returned to court and married Corwyn Corbray. His killing at Runestone left her widowed. She l"
+ },
+ {
+  "id": "aegon2_son",
+  "house": "targ",
+  "ru": "Сын",
+  "en": "",
+  "page": "Aegon II Targaryen",
+  "born": "123",
+  "parents": [
+   "Aegon II"
+  ],
+  "about": "Mushroom claimed that Aegon fathered the boy on a woman of the Street of Silk whose maidenhead he had bought. No independent account establishes the parentage."
+ },
+ {
+  "id": "aegon2_dau",
+  "house": "targ",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Aegon II Targaryen",
+  "born": "123",
+  "parents": [
+   "Aegon II"
+  ],
+  "about": "Mushroom attributed the girl's birth to Aegon's relationship with one of Alicent's servants. The allegation of royal parentage is unconfirmed."
+ },
+ {
+  "id": "aemond_son",
+  "house": "targ",
+  "ru": "Сын",
+  "en": "",
+  "page": "Alys Rivers's son",
+  "parents": [
+   "Aemond One-Eye"
+  ],
+  "about": "Alys Rivers presented the boy as Aemond's legitimate son and a claimant to the throne. The surviving accounts do not establish that claim or reveal what ultimately became of him."
+ },
+ {
+  "id": "daena",
+  "house": "targ",
+  "ru": "Дейена",
+  "en": "Daena the Defiant",
+  "page": "Daena the Defiant",
+  "born": "145",
+  "parents": [
+   "Aegon the Dragonbane",
+   "Daenaera Velaryon"
+  ],
+  "spouses": [
+   "Baelor the Blessed"
+  ],
+  "about": "Daena resisted the confinement imposed on her and her sisters in the Maidenvault. She escaped its restrictions on several occasions and bore Aegon's son Daemon while refusing to identify the father publicly. After Baelor"
+ },
+ {
+  "id": "rhaena_b",
+  "house": "targ",
+  "ru": "Рейена",
+  "en": "Rhaena",
+  "page": "Rhaena Targaryen (daughter of Aegon III)",
+  "born": "147",
+  "parents": [
+   "Aegon the Dragonbane",
+   "Daenaera Velaryon"
+  ],
+  "about": "Confined in the Maidenvault with Daena and Elaena, Rhaena found comfort in the Faith rather than the adventures her sisters desired. After Baelor's death released them, she became a septa."
+ },
+ {
+  "id": "elaena_b",
+  "house": "targ",
+  "ru": "Элейна",
+  "en": "Elaena",
+  "page": "Elaena Targaryen",
+  "born": "150",
+  "parents": [
+   "Aegon the Dragonbane",
+   "Daenaera Velaryon"
+  ],
+  "spouses": [
+   "Alyn Velaryon, Oakenfist",
+   "Ossifer Plumm",
+   "Ronnel Penrose",
+   "Майкл Манвуди"
+  ],
+  "about": "Elaena spent her youth in the Maidenvault but later proved an able manager of money. During her marriage to Ronnel Penrose she effectively performed much of his work as master of coin. Her earlier relationship with Alyn "
+ },
+ {
+  "id": "daenerys_n",
+  "house": "targ",
+  "ru": "Дейенерис",
+  "en": "Daenerys",
+  "page": "Daenerys Targaryen (daughter of Aegon IV)",
+  "born": "172",
+  "parents": [
+   "Aegon the Unworthy",
+   "Naerys"
+  ],
+  "spouses": [
+   "Maron Martell"
+  ],
+  "about": "Her marriage to Maron Martell helped seal Dorne's peaceful entry into the Seven Kingdoms. At the Water Gardens, built as a wedding gift, she invited servants' children to play alongside the highborn. The gardens became a"
+ },
+ {
+  "id": "alysanne_mg",
+  "house": "targ",
+  "ru": "Алисанна",
+  "en": "Alysanne",
+  "page": "Alysanne (daughter of Aegon IV)",
+  "born": "155",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "After Aegon's relationship with Megette ended, she and her sisters were entrusted to the Faith to be raised as septas."
+ },
+ {
+  "id": "lily_mg",
+  "house": "targ",
+  "ru": "Лили",
+  "en": "Lily",
+  "page": "Lily",
+  "born": "156",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Placed in the Faith's care with her sisters to be raised as a septa after Aegon's separation from Megette."
+ },
+ {
+  "id": "willow_mg",
+  "house": "targ",
+  "ru": "Ива",
+  "en": "Willow",
+  "page": "Willow (daughter of Aegon IV)",
+  "born": "157",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Raised under the Faith's supervision as a future septa alongside her sisters."
+ },
+ {
+  "id": "rosey_mg",
+  "house": "targ",
+  "ru": "Рози",
+  "en": "Rosey",
+  "page": "Rosey (daughter of Aegon IV)",
+  "born": "158",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Entrusted to the Faith with her sisters for an upbringing intended to lead to life as a septa."
+ },
+ {
+  "id": "bellenora",
+  "house": "targ",
+  "ru": "Белленора Отерис",
+  "en": "Bellenora Otherys",
+  "page": "Bellenora Otherys",
+  "born": "161–170",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Bellenora became a celebrated courtesan in Braavos and inherited her mother's name, the Black Pearl. Her descent from Aegon was traditionally claimed, although Bellegere had other lovers and the paternity was not certain"
+ },
+ {
+  "id": "narha",
+  "house": "targ",
+  "ru": "Нарха Отерис",
+  "en": "Narha Otherys",
+  "page": "Narha Otherys",
+  "born": "162–171",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Born during Bellegere's long relationship with Aegon. The prince was credited as her father, but Bellegere's other relationships left that claim uncertain."
+ },
+ {
+  "id": "balerion_o",
+  "house": "targ",
+  "ru": "Балерион Отерис",
+  "en": "Balerion Otherys",
+  "page": "Balerion Otherys",
+  "born": "163–172",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Traditionally counted among Aegon's children by Bellegere Otherys. His mother's other lovers meant the prince's paternity could not be established with certainty."
+ },
+ {
+  "id": "aegor",
+  "house": "targ",
+  "ru": "Эйгор Риверс",
+  "en": "Aegor Rivers, Bittersteel",
+  "page": "Aegor Rivers, Bittersteel",
+  "born": "172",
+  "parents": [
+   "Aegon the Unworthy",
+   "Barba Bracken"
+  ],
+  "spouses": [
+   "Calla Blackfyre"
+  ],
+  "about": "Bittersteel backed Daemon Blackfyre and took the surviving family into exile after the Redgrass Field. He founded the Golden Company to keep displaced Westerosi fighters together and preserve the Blackfyre cause. His riv"
+ },
+ {
+  "id": "mya",
+  "house": "targ",
+  "ru": "Мейя Риверс",
+  "en": "Mya Rivers",
+  "page": "Mya Rivers",
+  "born": "172/173",
+  "parents": [
+   "Aegon the Unworthy",
+   "Melissa Blackwood"
+  ],
+  "about": "Included in Aegon IV's deathbed decree legitimizing his bastards."
+ },
+ {
+  "id": "gwenys",
+  "house": "targ",
+  "ru": "Гвенис Риверс",
+  "en": "Gwenys Rivers",
+  "page": "Gwenys Rivers",
+  "born": "173/174",
+  "parents": [
+   "Aegon the Unworthy",
+   "Melissa Blackwood"
+  ],
+  "about": "Legitimized with Aegon IV's other bastards by his final decree."
+ },
+ {
+  "id": "brynden",
+  "house": "targ",
+  "ru": "Бринден Риверс",
+  "en": "Brynden Rivers, Bloodraven",
+  "page": "Brynden Rivers, Bloodraven",
+  "born": "175",
+  "parents": [
+   "Aegon the Unworthy",
+   "Melissa Blackwood"
+  ],
+  "about": "Bloodraven used archers, spies and royal authority against the Blackfyres, later serving as Hand under Aerys I and Maekar. Aegon V sent him to the Wall for executing Aenys Blackfyre despite a promise of safe conduct. He "
+ },
+ {
+  "id": "shiera",
+  "house": "targ",
+  "ru": "Шира",
+  "en": "Shiera Seastar",
+  "page": "Shiera Seastar",
+  "born": "178–184",
+  "parents": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Shiera was renowned for her beauty, learning and mismatched eyes; tales also credited her with sorcery. She took Bloodraven as a lover but repeatedly declined marriage. Bittersteel also sought her favour, adding a person"
+ },
+ {
+  "id": "daemon2_bf",
+  "house": "targ",
+  "ru": "Деймон II",
+  "en": "Daemon II Blackfyre",
+  "page": "Daemon II Blackfyre",
+  "parents": [
+   "Daemon I Blackfyre"
+  ],
+  "about": "Travelled as John the Fiddler to the wedding tourney at Whitewalls in 212 AC. His supporters hoped a dragon egg would hatch and rally the realm to his claim. Bloodraven exposed the conspiracy before it became a sustained"
+ },
+ {
+  "id": "calla",
+  "house": "targ",
+  "ru": "Калла",
+  "en": "Calla Blackfyre",
+  "page": "Calla Blackfyre",
+  "parents": [
+   "Daemon I Blackfyre"
+  ],
+  "spouses": [
+   "Aegor Rivers, Bittersteel"
+  ],
+  "about": "Promised in marriage to Bittersteel as part of Daemon's alliance with his principal supporter. The surviving accounts do not confirm whether the wedding took place."
+ },
+ {
+  "id": "rhaegel",
+  "house": "targ",
+  "ru": "Рейегель",
+  "en": "Rhaegel",
+  "page": "Rhaegel Targaryen",
+  "parents": [
+   "Daeron the Good",
+   "Myriah Martell"
+  ],
+  "spouses": [
+   "Alys Arryn"
+  ],
+  "about": "A gentle prince troubled by periods of erratic behaviour, Rhaegel became heir during Aerys's childless reign. He died after choking on food in 215 AC. Aelor and then Aelora inherited his place in the succession, before t"
+ },
+ {
+  "id": "aelor",
+  "house": "targ",
+  "ru": "Эйлор",
+  "en": "Aelor",
+  "page": "Aelor Targaryen",
+  "parents": [
+   "Rhaegel",
+   "Alys Arryn"
+  ],
+  "about": "Became Prince of Dragonstone after Rhaegel's death. In 217 AC he died in an accident involving his twin and wife, Aelora. The brief surviving account does not explain the accident itself."
+ },
+ {
+  "id": "aelora",
+  "house": "targ",
+  "ru": "Эйлора",
+  "en": "Aelora",
+  "page": "Aelora Targaryen",
+  "parents": [
+   "Rhaegel",
+   "Alys Arryn"
+  ],
+  "about": "Blamed herself for the accident that killed Aelor and was overwhelmed by grief. For a time she stood as Aerys's heir. An attack at a masked ball was followed by her suicide, ending another branch's immediate claim to the"
+ },
+ {
+  "id": "daenora",
+  "house": "targ",
+  "ru": "Дейенора",
+  "en": "Daenora",
+  "page": "Daenora Targaryen",
+  "parents": [
+   "Rhaegel",
+   "Alys Arryn"
+  ],
+  "spouses": [
+   "Aerion Brightflame"
+  ],
+  "about": "Her marriage to Aerion produced Maegor in 232 AC. After Maekar's death, the infant's claim went before the Great Council. The lords preferred Aegon, fearing a long minority and the possibility that Maegor would inherit A"
+ },
+ {
+  "id": "daeron_dr",
+  "house": "targ",
+  "ru": "Дейерон",
+  "en": "Daeron the Drunken",
+  "page": "Daeron Targaryen (son of Maekar I)",
+  "born": "190/191",
+  "parents": [
+   "Maekar I",
+   "Dyanna Dayne"
+  ],
+  "spouses": [
+   "Кира из Тироша"
+  ],
+  "about": "Troubled by prophetic dreams, Daeron drank heavily to escape them. His false account of Duncan's conduct helped bring about the trial of seven at Ashford. He later married Kiera and had a daughter, Vaella, but died befor"
+ },
+ {
+  "id": "vaella_s",
+  "house": "targ",
+  "ru": "Вейелла",
+  "en": "Vaella",
+  "page": "Vaella Targaryen (daughter of Daeron)",
+  "born": "222",
+  "parents": [
+   "Daeron the Drunken"
+  ],
+  "about": "Her position in Daeron's branch gave Vaella a possible claim after Maekar's death. The Great Council of 233 AC dismissed it, describing her as unable to understand the duties of rule. Aegon was chosen instead."
+ },
+ {
+  "id": "maegor_a",
+  "house": "targ",
+  "ru": "Мейгор",
+  "en": "Maegor",
+  "page": "Maegor Targaryen (son of Aerion)",
+  "parents": [
+   "Aerion Brightflame",
+   "Daenora"
+  ],
+  "about": "Considered for the crown at the Great Council of 233 AC. The prospect of a prolonged regency and fear that he might resemble Aerion counted against him. The council selected Aegon V."
+ },
+ {
+  "id": "daella_m",
+  "house": "targ",
+  "ru": "Дейелла",
+  "en": "Daella",
+  "page": "Daella Targaryen (daughter of Maekar I)",
+  "born": "199",
+  "parents": [
+   "Maekar I",
+   "Dyanna Dayne"
+  ],
+  "about": "Married and had children. The surviving accounts do not identify her husband or trace that family further."
+ },
+ {
+  "id": "rhae",
+  "house": "targ",
+  "ru": "Рейе",
+  "en": "Rhae",
+  "page": "Rhae Targaryen",
+  "parents": [
+   "Maekar I",
+   "Dyanna Dayne"
+  ],
+  "about": "As a child she put a love potion in Egg's drink, hoping he would marry her rather than Daella. She later married and had children, but the identity of her husband is not recorded."
+ },
+ {
+  "id": "shaera",
+  "house": "targ",
+  "ru": "Шейра",
+  "en": "Shaera",
+  "page": "Shaera",
+  "born": "226",
+  "parents": [
+   "Aegon the Unlikely",
+   "Betha Blackwood"
+  ],
+  "spouses": [
+   "Jaehaerys II"
+  ],
+  "about": "Defied her betrothal to Luthor Tyrell by secretly marrying Jaehaerys. She became queen when he inherited the throne."
+ },
+ {
+  "id": "daeron_e",
+  "house": "targ",
+  "ru": "Дейерон",
+  "en": "Daeron",
+  "page": "Daeron Targaryen (son of Aegon V)",
+  "born": "228",
+  "parents": [
+   "Aegon the Unlikely",
+   "Betha Blackwood"
+  ],
+  "about": "Broke his betrothal to Olenna Redwyne. He remained close to Jeremy Norridge, with whom he fought in royal campaigns. Both were killed putting down a rebellion in 251 AC."
+ },
+ {
+  "id": "rhaelle",
+  "house": "targ",
+  "ru": "Рейелль",
+  "en": "Rhaelle",
+  "page": "Rhaelle",
+  "born": "229–234",
+  "parents": [
+   "Aegon the Unlikely",
+   "Betha Blackwood"
+  ],
+  "spouses": [
+   "Ormund Baratheon"
+  ],
+  "about": "Sent to Storm's End after Duncan's broken betrothal, Rhaelle later married Ormund Baratheon. The match repaired the crown's relationship with the Baratheons. Her descendants included Robert, whose descent through her sup"
+ },
+ {
+  "id": "daenerys",
+  "house": "targ",
+  "ru": "Дейенерис",
+  "en": "Daenerys Stormborn",
+  "page": "Daenerys Stormborn",
+  "born": "284",
+  "parents": [
+   "Aerys the Mad King",
+   "Rhaella"
+  ],
+  "spouses": [
+   "кхал Дрого",
+   "Хиздар зо Лорак"
+  ],
+  "about": "Raised in exile, Daenerys emerged from Drogo's funeral pyre with three living dragons. In Essos she challenged the slave trade, then tried to govern Meereen amid famine, siege and resistance from its former masters. Drog"
+ }
+]

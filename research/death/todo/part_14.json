@@ -1,0 +1,552 @@
+[
+ {
+  "id": "gunthor_e",
+  "house": "est",
+  "ru": "Гюнтор Эстермонт",
+  "en": "Gunthor Estermont",
+  "page": "Gunthor Estermont",
+  "about": "The heir to Greenstone rode in the Ashford tourney in 209 AC."
+ },
+ {
+  "id": "est_lord17",
+  "house": "est",
+  "ru": "Лорд Эстермонт",
+  "en": "",
+  "page": "Cassana Estermont",
+  "about": "Lord of Greenstone. Contradictory appendices make his identity and relation to Eldon uncertain."
+ },
+ {
+  "id": "eldon",
+  "house": "est",
+  "ru": "Элдон Эстермонт",
+  "en": "Eldon Estermont",
+  "page": "Eldon Estermont",
+  "born": "228–232",
+  "spouses": [
+   "первая жена, имя не названа",
+   "Сильва Сантагар"
+  ],
+  "about": "He accepted Joffrey after the Blackwater. His later marriage to Sylva Santagar was Doran’s punishment for her part in Arianne’s plot."
+ },
+ {
+  "id": "aemon_e",
+  "house": "est",
+  "ru": "Эймон Эстермонт",
+  "en": "Aemon Estermont",
+  "page": "Aemon Estermont",
+  "parents": [
+   "Eldon Estermont"
+  ],
+  "about": "He submitted to Joffrey after the Blackwater and subsequently attended Tommen’s court."
+ },
+ {
+  "id": "alyn_e",
+  "house": "est",
+  "ru": "Алин Эстермонт",
+  "en": "Alyn Estermont",
+  "page": "Alyn Estermont",
+  "parents": [
+   "Aemon Estermont"
+  ],
+  "about": "A knight attending Tommen’s court alongside Aemon Estermont."
+ },
+ {
+  "id": "lomas",
+  "house": "est",
+  "ru": "Ломас Эстермонт",
+  "en": "Lomas Estermont",
+  "page": "Lomas Estermont",
+  "parents": [
+   "Eldon Estermont"
+  ],
+  "about": "He remained with Stannis after the Blackwater and held Storm’s End. Sources disagree on his precise relationship to Eldon."
+ },
+ {
+  "id": "andrew_e",
+  "house": "est",
+  "ru": "Эндрю Эстермонт",
+  "en": "Andrew Estermont",
+  "page": "Andrew Estermont",
+  "parents": [
+   "Lomas Estermont"
+  ],
+  "about": "Stannis’s former squire led Edric Storm’s escort into exile, helping Davos keep the boy beyond Melisandre’s reach."
+ },
+ {
+  "id": "alys_kk",
+  "house": "kar",
+  "ru": "Алис Карстарк",
+  "en": "Alys Karstark",
+  "page": "Alys Karstark (wife of Brandon)",
+  "spouses": [
+   "Brandon Stark"
+  ],
+  "about": "Alys became Lady of Winterfell through her marriage to Brandon Stark, Cregan's youngest son. Their children were Rodwell, Beron, and Arsa. She is the historical Alys Karstark, distinct from Rickard's daughter who later f"
+ },
+ {
+  "id": "arnolf",
+  "house": "kar",
+  "ru": "Арнольф Карстарк",
+  "en": "Arnolf Karstark",
+  "page": "Arnolf Karstark",
+  "born": "не позднее 237",
+  "spouses": [
+   "жена, имя не названо"
+  ],
+  "about": "His apparent loyalty to Stannis concealed a Bolton plot to seize Karhold. In a published Winds of Winter chapter, Stannis exposed and arrested him."
+ },
+ {
+  "id": "cregan_k",
+  "house": "kar",
+  "ru": "Криган Карстарк",
+  "en": "Cregan Karstark",
+  "page": "Cregan Karstark",
+  "born": "не позднее 249",
+  "parents": [
+   "Arnolf Karstark"
+  ],
+  "spouses": [
+   "первая жена, имя не названа",
+   "вторая жена, имя не названа"
+  ],
+  "about": "He pursued Alys to the Wall to enforce a marriage. Jon confined him in an ice cell."
+ },
+ {
+  "id": "arthor",
+  "house": "kar",
+  "ru": "Артор Карстарк",
+  "en": "Arthor Karstark",
+  "page": "Arthor Karstark",
+  "born": "249/250",
+  "parents": [
+   "Arnolf Karstark"
+  ],
+  "about": "Stannis arrested him with Arnolf when their betrayal was discovered, in a published Winds of Winter chapter."
+ },
+ {
+  "id": "harrion",
+  "house": "kar",
+  "ru": "Харрион Карстарк",
+  "en": "Harrion Karstark",
+  "page": "Harrion Karstark",
+  "parents": [
+   "Rickard Karstark"
+  ],
+  "about": "Captivity kept him from ruling Karhold after Rickard’s execution. Arnolf hoped his own declared support for Stannis would cause the crown to kill Harrion."
+ },
+ {
+  "id": "alys_k",
+  "house": "kar",
+  "ru": "Алис Карстарк",
+  "en": "Alys Karstark",
+  "page": "Alys Karstark",
+  "born": "284/285",
+  "parents": [
+   "Rickard Karstark"
+  ],
+  "spouses": [
+   "Сигорн, магнар теннов"
+  ],
+  "about": "Flight to the Wall saved her from Cregan’s forced marriage. Jon arranged her marriage to Sigorn, giving her the Thenns’ protection against her scheming kin."
+ },
+ {
+  "id": "alton_b",
+  "house": "btw",
+  "ru": "Алтон Баттервелл",
+  "en": "Alton Butterwell",
+  "page": "Alton Butterwell",
+  "about": "Maegor’s master of coin proposed his widowed sister as a royal bride, pointing to her seven children as evidence of fertility."
+ },
+ {
+  "id": "alton_sis",
+  "house": "btw",
+  "ru": "Сестра",
+  "en": "",
+  "page": "Alton Butterwell",
+  "about": "Considered as a possible wife for Maegor because she had already borne seven children. He chose other brides."
+ },
+ {
+  "id": "beatrice",
+  "house": "btw",
+  "ru": "Беатрис Баттервелл",
+  "en": "Beatrice Butterwell",
+  "page": "Beatrice Butterwell",
+  "about": "She belonged to Princess Viserra’s circle of friends."
+ },
+ {
+  "id": "btw_gf",
+  "house": "btw",
+  "ru": "Лорд Баттервелл",
+  "en": "",
+  "page": "Ambrose Butterwell",
+  "about": "Aegon IV’s Hand and the first lord of Whitewalls. The dragon egg he received from the king later became a tourney prize."
+ },
+ {
+  "id": "btw_gf_son",
+  "house": "btw",
+  "ru": "Сын",
+  "en": "",
+  "page": "Ambrose Butterwell",
+  "parents": [
+   "Лорд Баттервелл"
+  ],
+  "about": "Ambrose Butterwell's unnamed father. Both Ambrose and his paternal grandfather served as Hand of the King; no separate account of the intervening generation survives."
+ },
+ {
+  "id": "ambrose",
+  "house": "btw",
+  "ru": "Амброз Баттервелл",
+  "en": "Ambrose Butterwell",
+  "page": "Ambrose Butterwell",
+  "born": "161/162",
+  "parents": [
+   "Сын"
+  ],
+  "spouses": [
+   "первая жена, имя не названа",
+   "Lady Butterwell"
+  ],
+  "about": "A cautious courtier whose caution failed him at Whitewalls. He had served Aegon IV as master of coin and Daeron II as Hand, and lost sons on both sides of the first Blackfyre rising. His second wedding supplied the occas"
+ },
+ {
+  "id": "elissa",
+  "house": "far",
+  "ru": "Элисса Фарман",
+  "en": "Elissa Farman",
+  "page": "Elissa Farman",
+  "born": "29",
+  "parents": [
+   "Marq Farman"
+  ],
+  "about": "The sea offered a freedom her family would not. She took three dragon eggs from Dragonstone and sold them in Braavos to fund Sun Chaser. Sailing as Alys Westhill, she found three islands beyond the Sunset Sea, then conti"
+ },
+ {
+  "id": "lysa_f",
+  "house": "far",
+  "ru": "Лиза Фарман",
+  "en": "Lysa Farman",
+  "page": "Lysa Farman",
+  "parents": [
+   "Лорд Фарман"
+  ],
+  "spouses": [
+   "Dalton Greyjoy",
+   "Gunthor Goodbrother"
+  ],
+  "about": "Dalton’s captive salt wife later became the subject of a fatal quarrel between Gunthor Goodbrother and Alester Wynch."
+ },
+ {
+  "id": "far_dau5",
+  "house": "far",
+  "ru": "Дочь",
+  "en": "",
+  "page": "House Farman",
+  "parents": [
+   "Лорд Фарман"
+  ],
+  "spouses": [
+   "Veron Greyjoy"
+  ],
+  "about": "A captive of Fair Isle given to Veron Greyjoy as a salt wife."
+ },
+ {
+  "id": "far_par19",
+  "house": "far",
+  "ru": "Фарман",
+  "en": "",
+  "page": "Sebaston Farman",
+  "about": "The unnamed parent connecting Sebaston and Jeyne Farman. Sebaston holds Fair Isle, while Jeyne is married to his bannerman Gareth Clifton. No personal history is supplied for their parent."
+ },
+ {
+  "id": "sebaston",
+  "house": "far",
+  "ru": "Себастон Фарман",
+  "en": "Sebaston Farman",
+  "page": "Sebaston Farman",
+  "parents": [
+   "Фарман"
+  ],
+  "about": "Lord of Faircastle and a Lannister bannerman."
+ },
+ {
+  "id": "jeyne_far",
+  "house": "far",
+  "ru": "Джейн Фарман",
+  "en": "Jeyne Farman",
+  "page": "Jeyne Farman",
+  "parents": [
+   "Фарман"
+  ],
+  "spouses": [
+   "Гарет Клифтон"
+  ],
+  "about": "She fled Maggy’s tent before hearing her fortune. Her later marriage to Gareth Clifton produced twelve children."
+ },
+ {
+  "id": "ormond_y",
+  "house": "yrn",
+  "ru": "Ормонд Айронвуд",
+  "en": "Ormond Yronwood",
+  "page": "Ormond Yronwood",
+  "parents": [
+   "Edgar Yronwood"
+  ],
+  "about": "After Edgar’s death, reconciliation with the Martells brought Quentyn to Yronwood as a ward."
+ },
+ {
+  "id": "anders",
+  "house": "yrn",
+  "ru": "Андерс Айронвуд",
+  "en": "Anders Yronwood",
+  "page": "Anders Yronwood",
+  "parents": [
+   "Ormond Yronwood"
+  ],
+  "about": "Quentyn’s foster father knighted him and sent Cletus on his eastern mission. Arianne suspected ambitions against her own inheritance."
+ },
+ {
+  "id": "yrn_bro",
+  "house": "yrn",
+  "ru": "Брат Андерса",
+  "en": "",
+  "page": "Archibald Yronwood",
+  "parents": [
+   "Ormond Yronwood"
+  ],
+  "about": "Anders Yronwood's unnamed brother was the father of Ser Archibald, who accompanied Quentyn Martell to Essos. His descent from Ormond Yronwood is not established."
+ },
+ {
+  "id": "ynys",
+  "house": "yrn",
+  "ru": "Инис Айронвуд",
+  "en": "Ynys Yronwood",
+  "page": "Ynys Yronwood",
+  "parents": [
+   "Anders Yronwood"
+  ],
+  "spouses": [
+   "Рион Аллирион"
+  ],
+  "about": "Quentyn Martell fell for the blonde, blue-eyed Ynys when he first arrived at Yronwood as a ward, but never told her. She later married Ryon Allyrion, heir to Godsgrace, and they have at least two sons."
+ },
+ {
+  "id": "gwyneth",
+  "house": "yrn",
+  "ru": "Гвинет Айронвуд",
+  "en": "Gwyneth Yronwood",
+  "page": "Gwyneth Yronwood",
+  "parents": [
+   "Anders Yronwood"
+  ],
+  "about": "At twelve, Gwyneth was a slight, dark-haired, dark-eyed girl in a family of fair-haired, blue-eyed relatives. Clever with her hands and quick with words, she hoped to marry Quentyn Martell when she grew older. Quentyn im"
+ },
+ {
+  "id": "archibald",
+  "house": "yrn",
+  "ru": "Арчибальд Айронвуд",
+  "en": "Archibald Yronwood",
+  "page": "Archibald Yronwood",
+  "born": "не позднее 281",
+  "parents": [
+   "Брат Андерса"
+  ],
+  "about": "He accompanied Quentyn to Meereen and burned his hands trying to extinguish the prince’s flames. After Quentyn’s death, Barristan gave him a mission to regain the Windblown’s support."
+ },
+ {
+  "id": "harmon_d",
+  "house": "dnd",
+  "ru": "Хармон Дондаррион",
+  "en": "Harmon Dondarrion",
+  "page": "Harmon Dondarrion",
+  "about": "Lord of Blackhaven under Aenys I. He dismissed the Vulture King's host as a rabble, but in 37 AC it took Blackhaven and the Vulture King cut off Harmon's nose. Later Harmon led the marcher lords in the Vulture Hunt that "
+ },
+ {
+  "id": "dnd_lord54",
+  "house": "dnd",
+  "ru": "Лорд Дондаррион",
+  "en": "",
+  "page": "Simon Dondarrion",
+  "about": "Lord of Blackhaven early in the reign of Jaehaerys I and father of Simon; his name is unknown."
+ },
+ {
+  "id": "simon_d",
+  "house": "dnd",
+  "ru": "Саймон Дондаррион",
+  "en": "Simon Dondarrion",
+  "page": "Simon Dondarrion",
+  "born": "не позднее 40",
+  "parents": [
+   "Лорд Дондаррион"
+  ],
+  "about": "Lord of Blackhaven under Jaehaerys I, a celebrated knight and singer. In 54 AC his songs so charmed the king and queen that they lingered at Blackhaven longer than planned; in 55 AC he won the tourney marking the complet"
+ },
+ {
+  "id": "dnd_lord206",
+  "house": "dnd",
+  "ru": "Лорд Дондаррион",
+  "en": "",
+  "page": "Manfred Dondarrion",
+  "about": "Lord of Blackhaven under Daeron II and father of Manfred. In 206 AC, together with Lord Caron, he drove another Vulture King out of the Red Mountains; his name is unknown."
+ },
+ {
+  "id": "manfred_d",
+  "house": "dnd",
+  "ru": "Манфред Дондаррион",
+  "en": "Manfred Dondarrion",
+  "page": "Manfred Dondarrion",
+  "parents": [
+   "Лорд Дондаррион"
+  ],
+  "about": "Son and heir of Lord Dondarrion under Daeron II; in 206 AC he fought beside his father against the Vulture King. At the Ashford tourney in 209 AC he refused to vouch for Duncan the Tall's knighthood and ignored his call "
+ },
+ {
+  "id": "harrold",
+  "house": "har",
+  "ru": "Гарольд Хардинг",
+  "en": "Harrold Hardyng, Harry the Heir",
+  "page": "Harrold Hardyng, Harry the Heir",
+  "born": "281/282",
+  "parents": [
+   "Рыцарь Хардинг",
+   "Младшая дочь Алис"
+  ],
+  "about": "His descent from Alys Arryn made him next in line to the Eyrie after Robert. He was raised by Anya Waynwood and knighted. Petyr Baelish intended to use a possible marriage between him and Sansa to advance his plans in th"
+ },
+ {
+  "id": "hardyng_kn",
+  "house": "har",
+  "ru": "Рыцарь Хардинг",
+  "en": "",
+  "page": "Harrold Hardyng",
+  "about": "A landed knight; the surviving references give no further personal history."
+ },
+ {
+  "id": "alys_stone",
+  "house": "har",
+  "ru": "Алис Стоун",
+  "en": "Alys Stone",
+  "page": "Alys Stone",
+  "born": "298",
+  "parents": [
+   "Harrold Hardyng, Harry the Heir"
+  ],
+  "about": "Alys is Harrold Hardyng's natural daughter by Cissy, a servant of House Waynwood. She is two years old in the released Winds of Winter chapter. Harry abandoned her mother, whom Lady Anya Waynwood later married to one of "
+ },
+ {
+  "id": "deana",
+  "house": "har",
+  "ru": "Дина Хардинг",
+  "en": "Deana Hardyng",
+  "page": "Deana Hardyng",
+  "spouses": [
+   "Walton Frey"
+  ],
+  "about": "Deana married Walton Frey and has three children, Steffon, Walda, and Bryan. Her relationship to Harrold Hardyng, the heir to the Vale, is unknown."
+ },
+ {
+  "id": "bae_ss",
+  "house": "bae",
+  "ru": "Бейлиш",
+  "en": "",
+  "page": "House Baelish",
+  "about": "A Braavosi sellsword who came to the Vale in Lord Corbray's service. The family's later knightly and landed branches grew from his descendants."
+ },
+ {
+  "id": "bae_hk",
+  "house": "bae",
+  "ru": "Бейлиш",
+  "en": "",
+  "page": "House Baelish",
+  "parents": [
+   "Бейлиш"
+  ],
+  "about": "A landless hedge knight who adopted the Titan's stone head as his arms, recalling the family's Braavosi origins."
+ },
+ {
+  "id": "bae_lord",
+  "house": "bae",
+  "ru": "Лорд Бейлиш",
+  "en": "",
+  "page": "House Baelish",
+  "parents": [
+   "Бейлиш"
+  ],
+  "spouses": [
+   "Алейна"
+  ],
+  "about": "Held a small tower and a few stony acres on the Fingers. His friendship with Hoster Tully, formed during the War of the Ninepenny Kings, secured Petyr a place at Riverrun as a ward. He died several years before the novel"
+ },
+ {
+  "id": "petyr",
+  "house": "bae",
+  "ru": "Петир Бейлиш",
+  "en": "Petyr Baelish",
+  "page": "Petyr Baelish",
+  "born": "268",
+  "parents": [
+   "Лорд Бейлиш"
+  ],
+  "spouses": [
+   "Lysa Tully"
+  ],
+  "about": "Littlefinger rose from a modest Vale estate through customs appointments to become master of coin. He betrayed Eddard Stark, brokered the Lannister–Tyrell alliance and helped arrange Joffrey's murder and Sansa's escape. "
+ },
+ {
+  "id": "roose",
+  "house": "blt",
+  "ru": "Русе Болтон",
+  "en": "Roose Bolton",
+  "page": "Roose Bolton",
+  "born": "не позднее 260",
+  "spouses": [
+   "первая жена, имя не названа",
+   "Бетани Рисвелл",
+   "Walda Frey"
+  ],
+  "about": "Soft-spoken and fond of leeching, Roose commanded Robb Stark's infantry while carefully preserving his own men. He conspired with the Freys and Lannisters, then personally killed Robb at the Red Wedding. Rewarded with th"
+ },
+ {
+  "id": "ramsay",
+  "house": "blt",
+  "ru": "Рамси Болтон",
+  "en": "Ramsay Bolton",
+  "page": "Ramsay Bolton",
+  "born": "не позднее 282",
+  "parents": [
+   "Roose Bolton"
+  ],
+  "spouses": [
+   "Donella Hornwood",
+   "«Арья Старк» — на деле Джейни Пуль"
+  ],
+  "about": "Ramsay forced Donella Hornwood into marriage and starved her to death to seize her lands. He destroyed the northern force outside Winterfell, burned the castle and tortured Theon into submission as Reek. Royal legitimiza"
+ },
+ {
+  "id": "ormond",
+  "house": "osg",
+  "ru": "Ормонд Осгрей",
+  "en": "Ormond Osgrey",
+  "page": "Ormond Osgrey",
+  "about": "Lord of Coldmoat before the Osgreys lost it under Maegor."
+ },
+ {
+  "id": "clarice",
+  "house": "osg",
+  "ru": "Клариса Осгрей",
+  "en": "Clarice Osgrey",
+  "page": "Clarice Osgrey",
+  "about": "Her harsh control of Daenaera’s household ended when Aegon III removed her."
+ },
+ {
+  "id": "nettles",
+  "house": "seed",
+  "ru": "Неттлс",
+  "en": "Nettles",
+  "page": "Nettles",
+  "born": "112/113",
+  "parents": [
+   "Dragonseeds"
+  ],
+  "about": "She won Sheepstealer by bringing him sheep rather than asserting noble ancestry. After fighting in the Gullet, she hunted Aemond with Daemon. Rumours about their intimacy helped turn Rhaenyra against her, but Daemon allo"
+ }
+]

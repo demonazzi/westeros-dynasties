@@ -1,0 +1,475 @@
+[
+ {
+  "id": "uther",
+  "house": "pea",
+  "ru": "Утер Пик",
+  "en": "Uther Peake",
+  "page": "Uther Peake",
+  "spouses": [
+   "Прунелла Селтигар"
+  ],
+  "about": "Lord of Starpike during Jaehaerys I’s reign."
+ },
+ {
+  "id": "pea_lord9",
+  "house": "pea",
+  "ru": "Лорд Пик",
+  "en": "",
+  "page": "Unwin Peake",
+  "about": "He supported Viserys at the Great Council of 101 AC."
+ },
+ {
+  "id": "unwin_dau1",
+  "house": "pea",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Unwin Peake",
+  "parents": [
+   "Unwin Peake"
+  ],
+  "about": "She died giving birth at twelve."
+ },
+ {
+  "id": "unwin_son2",
+  "house": "pea",
+  "ru": "Сын",
+  "en": "",
+  "page": "Unwin Peake",
+  "parents": [
+   "Unwin Peake"
+  ],
+  "about": "A Redwyne page and squire who drowned at twelve."
+ },
+ {
+  "id": "titus_u",
+  "house": "pea",
+  "ru": "Титус Пик",
+  "en": "Titus Peake",
+  "page": "Titus Peake (son of Unwin)",
+  "parents": [
+   "Unwin Peake"
+  ],
+  "about": "He died six days after being wounded at the Honeywine."
+ },
+ {
+  "id": "myrielle",
+  "house": "pea",
+  "ru": "Мириэль Пик",
+  "en": "Myrielle Peake",
+  "page": "Myrielle Peake",
+  "parents": [
+   "Unwin Peake"
+  ],
+  "about": "Lady Turnips failed to become queen despite Unwin’s efforts; Aegon chose Daenaera instead."
+ },
+ {
+  "id": "mervyn",
+  "house": "pea",
+  "ru": "Мервин Флауэрс",
+  "en": "Mervyn Flowers",
+  "page": "Mervyn Flowers",
+  "parents": [
+   "Лорд Пик"
+  ],
+  "about": "Unwin’s appointee to the Kingsguard was later accused in a court conspiracy."
+ },
+ {
+  "id": "pea_sib",
+  "house": "pea",
+  "ru": "Брат или сестра",
+  "en": "",
+  "page": "Amaury Peake",
+  "parents": [
+   "Лорд Пик"
+  ],
+  "about": "An unnamed sibling of Unwin Peake was the parent of Amaury Peake. Amaury was Unwin's nephew and received a place in the Kingsguard while his uncle held power."
+ },
+ {
+  "id": "amaury",
+  "house": "pea",
+  "ru": "Амори Пик",
+  "en": "Amaury Peake",
+  "page": "Amaury Peake",
+  "parents": [
+   "Брат или сестра"
+  ],
+  "about": "He received a white cloak with Unwin’s support."
+ },
+ {
+  "id": "gedmund",
+  "house": "pea",
+  "ru": "Гедмунд Пик",
+  "en": "Gedmund Peake",
+  "page": "Gedmund Peake",
+  "about": "Great-Axe served as lord admiral and master of ships during the regency."
+ },
+ {
+  "id": "titus_p",
+  "house": "pea",
+  "ru": "Титус Пик",
+  "en": "Titus Peake",
+  "page": "Titus Peake",
+  "spouses": [
+   "Марго Ланнистер"
+  ],
+  "about": "Lord of Starpike."
+ },
+ {
+  "id": "pea_exile",
+  "house": "pea",
+  "ru": "Пик",
+  "en": "",
+  "page": "Laswell Peake",
+  "about": "The father of the brothers Laswell, Torman and Pykewood Peake is unnamed. All three serve in the Golden Company. Their precise relationship to the Peakes of Starpike is unknown."
+ },
+ {
+  "id": "laswell",
+  "house": "pea",
+  "ru": "Ласвелл Пик",
+  "en": "Laswell Peake",
+  "page": "Laswell Peake",
+  "parents": [
+   "Пик"
+  ],
+  "about": "The exiled lord returned with the Golden Company, hoping to recover his family’s lands."
+ },
+ {
+  "id": "torman",
+  "house": "pea",
+  "ru": "Торман Пик",
+  "en": "Torman Peake",
+  "page": "Torman Peake",
+  "parents": [
+   "Пик"
+  ],
+  "about": "A member of the Golden Company."
+ },
+ {
+  "id": "pykewood",
+  "house": "pea",
+  "ru": "Пайквуд Пик",
+  "en": "Pykewood Peake",
+  "page": "Pykewood Peake",
+  "parents": [
+   "Пик"
+  ],
+  "about": "A knight serving in the Golden Company."
+ },
+ {
+  "id": "gry_lord17",
+  "house": "gry",
+  "ru": "Сын Дагона",
+  "en": "",
+  "page": "Quellon Greyjoy",
+  "parents": [
+   "Dagon Greyjoy"
+  ],
+  "about": "It is unknown whether he ruled the Iron Islands. His name is not given."
+ },
+ {
+  "id": "gry_lord10",
+  "house": "gry",
+  "ru": "Лорд Грейджой",
+  "en": "",
+  "page": "Dalton Greyjoy",
+  "about": "He died in 127 or 128 AC. Fifteen-year-old Dalton succeeded him."
+ },
+ {
+  "id": "goren",
+  "house": "gry",
+  "ru": "Горен Грейджой",
+  "en": "Goren Greyjoy",
+  "page": "Goren Greyjoy",
+  "parents": [
+   "Vickon Greyjoy"
+  ],
+  "about": "He inherited the islands in 33 AC and defeated a conspiracy by supporters of the Volmarks. He then assembled a hundred ships and crushed Lodos's rebellion. As his reward, he asked Aenys for permission to expel the septon"
+ },
+ {
+  "id": "toron",
+  "house": "gry",
+  "ru": "Торон Грейджой",
+  "en": "Toron Greyjoy",
+  "page": "Toron Greyjoy",
+  "born": "127",
+  "parents": [
+   "Dalton Greyjoy"
+  ],
+  "about": "He came to power as a child after Dalton's murder. Relatives seized him and executed his mother. Opponents put forward Rodrik and the pretender Sam Salt. Pyke withstood an attack by western forces in 134 AC, and Toron re"
+ },
+ {
+  "id": "rodrik_d",
+  "house": "gry",
+  "ru": "Родрик Грейджой",
+  "en": "Rodrik Greyjoy (son of Dalton)",
+  "page": "Rodrik Greyjoy (son of Dalton)",
+  "parents": [
+   "Dalton Greyjoy"
+  ],
+  "about": "After Dalton died, he was put forward as a rival to the young Toron. He was captured during the invasion by western forces. On Johanna's orders, he was gelded and given to her son Loreon as a fool."
+ },
+ {
+  "id": "alton",
+  "house": "gry",
+  "ru": "Алтон Грейджой",
+  "en": "Alton Greyjoy",
+  "page": "Alton Greyjoy",
+  "about": "Lord of the Iron Islands, called the Holy Fool. He dreamed of conquests far to the west of Lonely Light. Lists of rulers place him after Toron and before Torwyn; his exact dates are unknown."
+ },
+ {
+  "id": "torwyn",
+  "house": "gry",
+  "ru": "Торвин Грейджой",
+  "en": "Torwyn Greyjoy",
+  "page": "Torwyn Greyjoy",
+  "about": "He made a blood pact with Aegor Rivers, then betrayed him during one of the Blackfyre rebellions. The chronicle does not specify which rebellion. The dates of his rule are unknown."
+ },
+ {
+  "id": "loron",
+  "house": "gry",
+  "ru": "Лорон Грейджой",
+  "en": "Loron Greyjoy (lord)",
+  "page": "Loron Greyjoy (lord)",
+  "about": "Lord of the Iron Islands, called the Bard. His close friendship with Desmond Mallister ended tragically, but the details have not been revealed. Lists of rulers place him between Torwyn and Dagon."
+ },
+ {
+  "id": "euron",
+  "house": "gry",
+  "ru": "Эурон Грейджой",
+  "en": "Euron Greyjoy",
+  "page": "Euron Greyjoy",
+  "born": "256–268",
+  "parents": [
+   "Quellon Greyjoy"
+  ],
+  "spouses": [
+   "Фалия Флауэрс",
+   "Третья жена Виктариона"
+  ],
+  "about": "The Crow's Eye was exiled from the islands, but returned after Balon's death and won the kingsmoot by promising conquests and dragons. He captured the Shield Islands and sent Victarion to Daenerys with a horn. In a publi"
+ },
+ {
+  "id": "victarion",
+  "house": "gry",
+  "ru": "Виктарион Грейджой",
+  "en": "Victarion Greyjoy",
+  "page": "Victarion Greyjoy",
+  "born": "257–269",
+  "parents": [
+   "Quellon Greyjoy"
+  ],
+  "spouses": [
+   "Первая жена (имя не названо)",
+   "Вторая жена (имя не названо)",
+   "Третья жена (имя не названо)"
+  ],
+  "about": "Commander of the Iron Fleet. He supported Balon, then lost to Euron at the kingsmoot. Ordered to bring Daenerys back, he intended to marry her himself. During the voyage, the priest Moqorro saved his wounded hand and gai"
+ },
+ {
+  "id": "aeron",
+  "house": "gry",
+  "ru": "Эйрон Грейджой",
+  "en": "Aeron Greyjoy",
+  "page": "Aeron Greyjoy",
+  "born": "269–273",
+  "parents": [
+   "Quellon Greyjoy"
+  ],
+  "about": "After a dissolute youth, he became a stern priest of the Drowned God. Urrigon's death and Euron's abuse during childhood left lasting scars. He called the kingsmoot, hoping to prevent Euron from taking power, but failed."
+ },
+ {
+  "id": "asha",
+  "house": "gry",
+  "ru": "Аша Грейджой",
+  "en": "Asha Greyjoy",
+  "page": "Asha Greyjoy",
+  "born": "275/276",
+  "parents": [
+   "Balon Greyjoy",
+   "Alannys Harlaw"
+  ],
+  "spouses": [
+   "Эрик Айронмейкер"
+  ],
+  "about": "Captain of the Black Wind, trusted by Balon. She captured Deepwood Motte, then claimed power at the kingsmoot, offering peace on terms favourable to the islands. After Euron's victory, she fled an imposed marriage. Stann"
+ },
+ {
+  "id": "theon",
+  "house": "gry",
+  "ru": "Теон Грейджой",
+  "en": "Theon Greyjoy",
+  "page": "Theon Greyjoy",
+  "born": "278–279",
+  "parents": [
+   "Balon Greyjoy",
+   "Alannys Harlaw"
+  ],
+  "about": "He grew up as a hostage at Winterfell. Robb sent him to propose an alliance with Balon, but Theon chose his father and seized the Starks' castle. To conceal Bran and Rickon's escape, he killed two other boys. Captured by"
+ },
+ {
+  "id": "dagon_d",
+  "house": "gry",
+  "ru": "Дагон Грейджой",
+  "en": "Dagon Greyjoy (Drunkard)",
+  "page": "Dagon Greyjoy (Drunkard)",
+  "about": "Called the Drunkard. He left with Asha after the kingsmoot and advised joining Dagmer at Torrhen's Square. His fate after the defeat at Deepwood Motte is unknown."
+ },
+ {
+  "id": "humfrey_b",
+  "house": "brk",
+  "ru": "Хамфри Бракен",
+  "en": "Humfrey Bracken",
+  "page": "Humfrey Bracken",
+  "spouses": [
+   "три жены",
+   "любовница-простолюдинка"
+  ],
+  "about": "Stone Hedge initially backed Aegon II. Daemon’s capture of the castle forced Humfrey to submit; he later joined the army marching for Aegon III."
+ },
+ {
+  "id": "raylon",
+  "house": "brk",
+  "ru": "Рейлон Риверс",
+  "en": "Raylon Rivers",
+  "page": "Raylon Rivers",
+  "parents": [
+   "Humfrey Bracken"
+  ],
+  "about": "He brought the Burning Mill survivors home and surrendered when he discovered Daemon held the Bracken family."
+ },
+ {
+  "id": "barba",
+  "house": "brk",
+  "ru": "Барба Бракен",
+  "en": "Barba Bracken",
+  "page": "Barba Bracken",
+  "born": "155",
+  "parents": [
+   "Лорд Бракен"
+  ],
+  "spouses": [
+   "Aegon the Unworthy"
+  ],
+  "about": "Her father’s hopes of making her queen brought her dismissal from court after Aegor’s birth."
+ },
+ {
+  "id": "brk_lord16",
+  "house": "brk",
+  "ru": "Лорд Бракен",
+  "en": "",
+  "page": "Otho Bracken",
+  "about": "The unnamed lord of Stone Hedge was dying by 211 AC."
+ },
+ {
+  "id": "otho",
+  "house": "brk",
+  "ru": "Ото Бракен",
+  "en": "Otho Bracken",
+  "page": "Otho Bracken",
+  "parents": [
+   "Лорд Бракен"
+  ],
+  "about": "His killing of Quentyn Blackwood in 206 AC renewed the feud. He later became Stone Hedge’s heir."
+ },
+ {
+  "id": "brk_lord18",
+  "house": "brk",
+  "ru": "Лорд Бракен",
+  "en": "",
+  "page": "Jonos Bracken",
+  "about": "The unnamed Bracken shown here as Jonos's father. No name or separate history is recorded for him; Jonos himself holds Stone Hedge during the War of the Five Kings."
+ },
+ {
+  "id": "jonos_b",
+  "house": "brk",
+  "ru": "Джонос Бракен",
+  "en": "Jonos Bracken",
+  "page": "Jonos Bracken",
+  "parents": [
+   "Лорд Бракен"
+  ],
+  "spouses": [
+   "первая жена, имя не названа",
+   "вторая жена, имя не названа",
+   "третья жена, леди Бракен"
+  ],
+  "about": "Robb’s death brought him back to the Iron Throne. He then besieged Raventree Hall, using royal service to pursue Bracken claims against the Blackwoods. Jaime negotiated a surrender and reduced the lands Jonos demanded. H"
+ },
+ {
+  "id": "barbara_b",
+  "house": "brk",
+  "ru": "Барбара Бракен",
+  "en": "Barbara Bracken",
+  "page": "Barbara Bracken",
+  "parents": [
+   "Jonos Bracken"
+  ],
+  "about": "Barbara is Jonos Bracken's eldest daughter, born to his first wife. During the burning of Stone Hedge, Gregor Clegane raped one of Jonos's daughters. The victim is not identified, so it is uncertain whether she was Barba"
+ },
+ {
+  "id": "jayne_b",
+  "house": "brk",
+  "ru": "Джейн Бракен",
+  "en": "Jayne Bracken",
+  "page": "Jayne Bracken",
+  "parents": [
+   "Jonos Bracken"
+  ],
+  "about": "Jayne is Jonos Bracken's second daughter by his first wife. One of the five sisters was raped by Gregor Clegane when Stone Hedge was burned, but the account does not name her."
+ },
+ {
+  "id": "catelyn_b",
+  "house": "brk",
+  "ru": "Кейтилин Бракен",
+  "en": "Catelyn Bracken",
+  "page": "Catelyn Bracken",
+  "parents": [
+   "Jonos Bracken"
+  ],
+  "about": "Catelyn is Jonos Bracken's third daughter and the eldest born to his third wife. Gregor Clegane raped one of Jonos's five daughters during the burning of Stone Hedge; which sister suffered the assault is unknown."
+ },
+ {
+  "id": "bess_b",
+  "house": "brk",
+  "ru": "Бесс Бракен",
+  "en": "Bess Bracken",
+  "page": "Bess Bracken",
+  "parents": [
+   "Jonos Bracken"
+  ],
+  "about": "Bess is the fourth of Jonos Bracken's daughters, the second born to his third wife. She or one of her sisters was raped by Gregor Clegane during the burning of Stone Hedge; the victim's identity is left unspecified."
+ },
+ {
+  "id": "alysanne_b",
+  "house": "brk",
+  "ru": "Алисанна Бракен",
+  "en": "Alysanne Bracken",
+  "page": "Alysanne Bracken",
+  "parents": [
+   "Jonos Bracken"
+  ],
+  "about": "Alysanne is Jonos Bracken's youngest daughter, born to his third wife. The burning of Stone Hedge included Gregor Clegane's rape of one of the sisters, but the account does not establish that Alysanne was the victim."
+ },
+ {
+  "id": "jonos_sib",
+  "house": "brk",
+  "ru": "Брат или сестра",
+  "en": "",
+  "page": "Hendry Bracken",
+  "parents": [
+   "Лорд Бракен"
+  ],
+  "about": "Jonos Bracken's unnamed sibling, the parent of Hendry. Neither a name nor a gender is established. Hendry was killed by Lannister forces during the liberation of Stone Hedge in 299 AC."
+ },
+ {
+  "id": "brk_dau",
+  "house": "brk",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Brynden Tully",
+  "parents": [
+   "Лорд Бракен"
+  ],
+  "about": "Possibly the proposed bride whom Brynden Tully refused; her identity remains uncertain."
+ }
+]

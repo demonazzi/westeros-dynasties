@@ -1,0 +1,510 @@
+[
+ {
+  "id": "way_lord",
+  "house": "way",
+  "ru": "Лорд Уэйнвуд",
+  "en": "",
+  "page": "Elys Waynwood",
+  "about": "Lord of Ironoaks, otherwise unnamed."
+ },
+ {
+  "id": "elys",
+  "house": "way",
+  "ru": "Эллис Уэйнвуд",
+  "en": "Elys Waynwood",
+  "page": "Elys Waynwood",
+  "born": "не позднее 251",
+  "parents": [
+   "Лорд Уэйнвуд"
+  ],
+  "spouses": [
+   "Alys Arryn"
+  ],
+  "about": "A knight of Ironoaks."
+ },
+ {
+  "id": "anya_par",
+  "house": "way",
+  "ru": "Брат или сестра",
+  "en": "",
+  "page": "Anya Waynwood",
+  "parents": [
+   "Лорд Уэйнвуд"
+  ],
+  "about": "Lady Anya Waynwood's unnamed parent was a sibling of Ser Elys Waynwood."
+ },
+ {
+  "id": "anya",
+  "house": "way",
+  "ru": "Анья Уэйнвуд",
+  "en": "Anya Waynwood",
+  "page": "Anya Waynwood",
+  "parents": [
+   "Брат или сестра"
+  ],
+  "spouses": [
+   "лорд Элешем"
+  ],
+  "about": "Harry’s guardian opposed Littlefinger. His purchase of Waynwood debts helped secure her agreement to Harry’s betrothal to Alayne."
+ },
+ {
+  "id": "morton",
+  "house": "way",
+  "ru": "Мортон Уэйнвуд",
+  "en": "Morton Waynwood",
+  "page": "Morton Waynwood",
+  "parents": [
+   "Anya Waynwood"
+  ],
+  "about": "Heir to Ironoaks and a former suitor for Lysa Arryn."
+ },
+ {
+  "id": "roland_w",
+  "house": "way",
+  "ru": "Роланд Уэйнвуд",
+  "en": "Roland Waynwood",
+  "page": "Roland Waynwood",
+  "born": "274–281",
+  "parents": [
+   "Morton Waynwood"
+  ],
+  "about": "He arrives for the Winged Knights tourney in a published Winds of Winter chapter."
+ },
+ {
+  "id": "donnel_w",
+  "house": "way",
+  "ru": "Доннел Уэйнвуд",
+  "en": "Donnel Waynwood",
+  "page": "Donnel Waynwood",
+  "born": "277/278",
+  "parents": [
+   "Anya Waynwood"
+  ],
+  "about": "As Knight of the Gate, he commands the Bloody Gate’s defences."
+ },
+ {
+  "id": "wallace_w",
+  "house": "way",
+  "ru": "Уоллес Уэйнвуд",
+  "en": "Wallace Waynwood",
+  "page": "Wallace Waynwood",
+  "born": "278–283",
+  "parents": [
+   "Anya Waynwood"
+  ],
+  "about": "Recently knighted, he attends the Winged Knights tourney in a published Winds of Winter chapter."
+ },
+ {
+  "id": "marsella",
+  "house": "way",
+  "ru": "Марселла Уэйнвуд",
+  "en": "Marsella Waynwood",
+  "page": "Marsella Waynwood",
+  "spouses": [
+   "Stevron Frey"
+  ],
+  "about": "She died in childbirth."
+ },
+ {
+  "id": "carolei",
+  "house": "way",
+  "ru": "Каролея Уэйнвуд",
+  "en": "Carolei Waynwood",
+  "page": "Carolei Waynwood",
+  "spouses": [
+   "Geremy Frey"
+  ],
+  "about": "Geremy Frey's widow has two children living among the Waynwoods: Sandor squires for Donnel, while Cynthea is Lady Anya's ward. Carolei's precise relationship to the other known Waynwoods is unspecified."
+ },
+ {
+  "id": "johanna_s",
+  "house": "swn",
+  "ru": "Джоханна Сванн",
+  "en": "Johanna Swann",
+  "page": "Johanna Swann",
+  "born": "81–94",
+  "about": "Her uncle’s refusal to ransom her left her in Lysene slavery. She became an influential courtesan; a quarrel over her contributed to Sharako Lohar’s murder."
+ },
+ {
+  "id": "swann_lord129",
+  "house": "swn",
+  "ru": "Лорд Сванн",
+  "en": "",
+  "page": "Byron Swann",
+  "about": "The Lord of Stonehelm supported Aegon II during the Dance."
+ },
+ {
+  "id": "swann_son129",
+  "house": "swn",
+  "ru": "Сын",
+  "en": "",
+  "page": "House Swann",
+  "parents": [
+   "Лорд Сванн"
+  ],
+  "about": "The Lord of Stonehelm's eldest son lived during the Dance of the Dragons. His name is unrecorded; the chronicles instead describe his younger brother Byron's fatal attempt to kill a dragon."
+ },
+ {
+  "id": "gawen_s",
+  "house": "swn",
+  "ru": "Гавен Сванн",
+  "en": "Gawen Swann",
+  "page": "Gawen Swann",
+  "born": "не позднее 152",
+  "about": "Valarr defeated him at Ashford. He laughed at Dunk’s request for help in the trial of seven."
+ },
+ {
+  "id": "manfred_s",
+  "house": "swn",
+  "ru": "Манфред Сванн",
+  "en": "Manfred Swann",
+  "page": "Manfred Swann",
+  "about": "Young Barristan Selmy served him as a squire at Stonehelm."
+ },
+ {
+  "id": "gulian",
+  "house": "swn",
+  "ru": "Джулиан Сванн",
+  "en": "Gulian Swann",
+  "page": "Gulian Swann",
+  "born": "не позднее 259",
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "Illness kept him at Stonehelm while his sons served rival kings. A later appendix names Clifford instead, without explaining the change."
+ },
+ {
+  "id": "donnel_s",
+  "house": "swn",
+  "ru": "Доннел Сванн",
+  "en": "Donnel Swann",
+  "page": "Donnel Swann",
+  "parents": [
+   "Gulian Swann"
+  ],
+  "about": "He served Renly, then Stannis, then Joffrey after capture at the Blackwater. Jaime mockingly called him the Constant."
+ },
+ {
+  "id": "balon_s",
+  "house": "swn",
+  "ru": "Бейлон Сванн",
+  "en": "Balon Swann",
+  "page": "Balon Swann",
+  "parents": [
+   "Gulian Swann"
+  ],
+  "about": "His Kingsguard service took him from the Blackwater to Dorne with Gregor’s skull and Cersei’s secret order against Trystane. He was then sent after Darkstar."
+ },
+ {
+  "id": "ravella",
+  "house": "swn",
+  "ru": "Равелла Сванн",
+  "en": "Ravella Swann",
+  "page": "Ravella Swann",
+  "spouses": [
+   "Теомар Смоллвуд"
+  ],
+  "about": "She sheltered the brotherhood at Acorn Hall and gave Arya clothing, reproaching the men for exposing a child to war."
+ },
+ {
+  "id": "jeyne_s",
+  "house": "swn",
+  "ru": "Джейн Сванн",
+  "en": "Jeyne Swann",
+  "page": "Jeyne Swann",
+  "about": "Barristan freed her and her septa from the Kingswood Brotherhood."
+ },
+ {
+  "id": "edmyn",
+  "house": "tul",
+  "ru": "Эдмин Талли",
+  "en": "Edmyn Tully",
+  "page": "Edmyn Tully",
+  "about": "Lord of Riverrun and the first of the major river lords to openly support Aegon against Harren the Black. After Harrenhal fell, he received authority over the Trident. He served as Aegon I's Hand for two years, then retu"
+ },
+ {
+  "id": "grover",
+  "house": "tul",
+  "ru": "Гровер Талли",
+  "en": "Grover Tully",
+  "page": "Grover Tully",
+  "about": "The elderly Lord of Riverrun, who supported Viserys at the Great Council of 101 AC. At the start of the Dance, he wanted to side with Aegon II but was too ill to lead an army. His grandson Elmo delayed committing the hou"
+ },
+ {
+  "id": "grover_son",
+  "house": "tul",
+  "ru": "Сын",
+  "en": "",
+  "page": "Grover Tully",
+  "parents": [
+   "Grover Tully"
+  ],
+  "about": "An unnamed son of Grover Tully was Elmo's father. His descendants included Kermit and Oscar Tully, who fought in the Dance of the Dragons."
+ },
+ {
+  "id": "elmo",
+  "house": "tul",
+  "ru": "Элмо Талли",
+  "en": "Elmo Tully",
+  "page": "Elmo Tully",
+  "parents": [
+   "Сын"
+  ],
+  "about": "He managed the family's affairs during Grover's illness. After Grover died, he inherited Riverrun and sided with Rhaenyra. He brought an army into the closing stages of the war but fell ill after drinking bad water and d"
+ },
+ {
+  "id": "kermit",
+  "house": "tul",
+  "ru": "Кермит Талли",
+  "en": "Kermit Tully",
+  "page": "Kermit Tully",
+  "parents": [
+   "Elmo Tully"
+  ],
+  "about": "Lord of Riverrun at the end of the Dance of the Dragons. With his brother Oscar and Benjicot Blackwood, he led the young commanders of the blacks known as the Lads. He killed Borros Baratheon at the Battle of the Kingsro"
+ },
+ {
+  "id": "oscar",
+  "house": "tul",
+  "ru": "Оскар Талли",
+  "en": "Oscar Tully",
+  "page": "Oscar Tully",
+  "parents": [
+   "Elmo Tully"
+  ],
+  "about": "With Kermit and Benjicot Blackwood, he commanded the blacks' river army near the end of the Dance of the Dragons. They were known as the Lads."
+ },
+ {
+  "id": "tul_lord17",
+  "house": "tul",
+  "ru": "Лорд Талли",
+  "en": "",
+  "page": "Hoster Tully",
+  "about": "Lord of Riverrun."
+ },
+ {
+  "id": "brynden_t",
+  "house": "tul",
+  "ru": "Бринден Талли",
+  "en": "Brynden Tully, the Blackfish",
+  "page": "Brynden Tully, the Blackfish",
+  "parents": [
+   "Лорд Талли"
+  ],
+  "about": "The Blackfish. He refused an arranged marriage and served in the Vale as Knight of the Bloody Gate. When war broke out, he returned to his family and became one of Robb's principal commanders. He held Riverrun after the "
+ },
+ {
+  "id": "edmure",
+  "house": "tul",
+  "ru": "Эдмур Талли",
+  "en": "Edmure Tully",
+  "page": "Edmure Tully",
+  "parents": [
+   "Hoster Tully"
+  ],
+  "spouses": [
+   "Roslin Frey"
+  ],
+  "about": "He cared for the people of his lands, but did not always understand his commanders' wider plans. During the war, he defended the river crossings against Tywin, displeasing Robb. His marriage to Roslin Frey was meant to r"
+ },
+ {
+  "id": "mor_lord",
+  "house": "mor",
+  "ru": "Лорд Мормонт",
+  "en": "",
+  "page": "Jeor Mormont",
+  "about": "Longclaw’s former owner taught Jeor that a man would not lie before a heart tree."
+ },
+ {
+  "id": "jorah",
+  "house": "mor",
+  "ru": "Джорах Мормонт",
+  "en": "Jorah Mormont",
+  "page": "Jorah Mormont",
+  "born": "≈254",
+  "parents": [
+   "Jeor Mormont"
+  ],
+  "spouses": [
+   "Леди Гловер",
+   "Lynesse Hightower"
+  ],
+  "about": "Debt drove him to sell poachers into slavery and flee Ned Stark’s judgment. In exile he served Daenerys while informing Varys, then abandoned the spying too late to save her trust. Banished, he seized Tyrion as a hoped-f"
+ },
+ {
+  "id": "maege",
+  "house": "mor",
+  "ru": "Мейдж Мормонт",
+  "en": "Maege Mormont",
+  "page": "Maege Mormont",
+  "born": "239–259",
+  "parents": [
+   "Лорд Мормонт"
+  ],
+  "about": "Robb sent her and Galbart Glover into the Neck to contact Howland Reed before the Red Wedding. Her subsequent whereabouts are unknown."
+ },
+ {
+  "id": "alysane",
+  "house": "mor",
+  "ru": "Алисана Мормонт",
+  "en": "Alysane Mormont",
+  "page": "Alysane Mormont",
+  "born": "273–278",
+  "parents": [
+   "Maege Mormont"
+  ],
+  "about": "She helped recover Deepwood Motte for Stannis. A published Winds of Winter chapter sends her north with Justin Massey and Jeyne Poole."
+ },
+ {
+  "id": "alysane_dau",
+  "house": "mor",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Alysane Mormont",
+  "born": "≈291",
+  "parents": [
+   "Alysane Mormont"
+  ],
+  "about": "Alysane Mormont's elder child is a nine-year-old girl in A Dance with Dragons. Her father is unknown. Alysane, who is unmarried, jokes that Mormont women turn into bears and find mates in the woods; the children's actual"
+ },
+ {
+  "id": "alysane_son",
+  "house": "mor",
+  "ru": "Сын",
+  "en": "",
+  "page": "Alysane Mormont",
+  "born": "≈298",
+  "parents": [
+   "Alysane Mormont"
+  ],
+  "about": "Alysane Mormont's younger child is a two-year-old boy in A Dance with Dragons. He has a nine-year-old sister, and his father is not identified. His mother's tale of bear mates leaves the question of his parentage open."
+ },
+ {
+  "id": "lyra_m",
+  "house": "mor",
+  "ru": "Лира Мормонт",
+  "en": "Lyra Mormont",
+  "page": "Lyra Mormont",
+  "born": "274–288",
+  "parents": [
+   "Maege Mormont"
+  ],
+  "about": "Maege Mormont's third daughter accompanied her mother and Jorelle into the Neck to seek the crannogmen before the Red Wedding. Alysane later reports that both sisters are still with Maege."
+ },
+ {
+  "id": "jorelle",
+  "house": "mor",
+  "ru": "Джорель Мормонт",
+  "en": "Jorelle Mormont",
+  "page": "Jorelle Mormont",
+  "born": "275–289",
+  "parents": [
+   "Maege Mormont"
+  ],
+  "about": "Jorelle, called Jory, is Maege Mormont's fourth daughter. She and Lyra went with their mother into the Neck to find the crannogmen before the Red Wedding. Alysane subsequently says the sisters remain with Maege."
+ },
+ {
+  "id": "lyanna_m",
+  "house": "mor",
+  "ru": "Лианна Мормонт",
+  "en": "Lyanna Mormont",
+  "page": "Lyanna Mormont",
+  "born": "290",
+  "parents": [
+   "Maege Mormont"
+  ],
+  "about": "Her reply to Stannis insisted that Bear Island recognised only a King in the North named Stark."
+ },
+ {
+  "id": "theomore_h",
+  "house": "hlw",
+  "ru": "Теомор Харлоу",
+  "en": "Theomore Harlaw",
+  "page": "Theomore Harlaw",
+  "about": "The deaths of three infants led him to blame Harlaw Hall’s damp and build Ten Towers instead."
+ },
+ {
+  "id": "sigfryd",
+  "house": "hlw",
+  "ru": "Зигфрид Харлоу",
+  "en": "Sigfryd Harlaw",
+  "page": "Sigfryd Harlaw",
+  "about": "Silverhair hoped to inherit Ten Towers despite Rodrik’s choice of another heir."
+ },
+ {
+  "id": "har_lord",
+  "house": "hlw",
+  "ru": "Лорд Харлоу",
+  "en": "",
+  "page": "Rodrik Harlaw",
+  "about": "The unnamed Harlaw parent of Rodrik the Reader, Gwynesse, and Alannys. Rodrik later became head of the house and Lord of the Ten Towers. His father's name and personal history are unrecorded."
+ },
+ {
+  "id": "gwynesse",
+  "house": "hlw",
+  "ru": "Гвинесса Харлоу",
+  "en": "Gwynesse Harlaw",
+  "page": "Gwynesse Harlaw",
+  "born": "не позднее 254",
+  "parents": [
+   "Лорд Харлоу"
+  ],
+  "spouses": [
+   "муж, имя не названо"
+  ],
+  "about": "Widowed and back on Harlaw, she maintained that her seniority entitled her to Ten Towers."
+ },
+ {
+  "id": "rodrik_h",
+  "house": "hlw",
+  "ru": "Родрик Харлоу",
+  "en": "Rodrik Harlaw",
+  "page": "Rodrik Harlaw",
+  "born": "не позднее 261",
+  "parents": [
+   "Лорд Харлоу"
+  ],
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "The Reader opposed Balon’s rebellion and lost both sons in it. He backed Asha, then urged her to flee Euron’s victory. Even after submitting, he questioned the new king’s claims about Valyria."
+ },
+ {
+  "id": "harras",
+  "house": "hlw",
+  "ru": "Харрас Харлоу",
+  "en": "Harras Harlaw",
+  "page": "Harras Harlaw",
+  "about": "Rodrik’s chosen heir wielded Nightfall. Taking Grimston won him Greyshield, a vulnerable reward that also removed him from Harlaw."
+ },
+ {
+  "id": "hotho",
+  "house": "hlw",
+  "ru": "Хото Харлоу",
+  "en": "Hotho Harlaw",
+  "page": "Hotho Harlaw",
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "His gift of a rare book failed to secure Rodrik for his daughter. He next approached Victarion, then supported Euron."
+ },
+ {
+  "id": "hotho_dau",
+  "house": "hlw",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Hotho Harlaw",
+  "parents": [
+   "Hotho Harlaw"
+  ],
+  "about": "Hotho's unnamed daughter is twelve and fair-haired. Her father first tried to marry her to Rodrik the Reader, who refused. Before the kingsmoot he offered her to Victarion as a queen. Victarion promised to consider her a"
+ },
+ {
+  "id": "boremund_h",
+  "house": "hlw",
+  "ru": "Боремунд Харлоу",
+  "en": "Boremund Harlaw",
+  "page": "Boremund Harlaw",
+  "about": "The master of Harridan Hill supported Asha at the kingsmoot."
+ }
+]

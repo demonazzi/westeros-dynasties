@@ -7,14 +7,14 @@
       "people": [
         {"id":"gyles_y","name":"Джайлс Айронвуд","full":"Сир Джайлс Айронвуд","en":"Gyles Yronwood","hs":"yrn","k":"T","d":"130"},
         {"id":"edgar_y","name":"Эдгар Айронвуд","en":"Edgar Yronwood","hs":"yrn","k":"T","d":"273–275"},
-        {"id":"ormond_y","name":"Ормонд Айронвуд","en":"Ormond Yronwood","hs":"yrn","k":"T","p":"edgar_y","par":["edgar_y"]},
-        {"id":"anders","name":"Андерс Айронвуд","full":"Андерс Айронвуд, Королевская Кровь","en":"Anders Yronwood","hs":"yrn","k":"T","p":"ormond_y","par":["ormond_y"]},
+        {"id":"ormond_y","name":"Ормонд Айронвуд","en":"Ormond Yronwood","hs":"yrn","k":"T","p":"edgar_y","par":["edgar_y"],"alive":1},
+        {"id":"anders","name":"Андерс Айронвуд","full":"Андерс Айронвуд, Королевская Кровь","en":"Anders Yronwood","hs":"yrn","k":"T","p":"ormond_y","par":["ormond_y"],"alive":1},
         {"id":"yrn_bro","name":"Брат Андерса","full":"Брат Андерса Айронвуда, отец Арчибальда","hs":"yrn","k":"T","p":"ormond_y","par":["ormond_y"],"unc":1,"wiki":"Archibald Yronwood"},
-        {"id":"ynys","name":"Инис Айронвуд","en":"Ynys Yronwood","fem":1,"hs":"yrn","k":"T","p":"anders","par":["anders"],"sp":[["Рион Аллирион"]]},
+        {"id":"ynys","name":"Инис Айронвуд","en":"Ynys Yronwood","fem":1,"hs":"yrn","k":"T","p":"anders","par":["anders"],"alive":1,"sp":[["Рион Аллирион"]]},
         {"id":"ynys_sons","name":"Сыновья","full":"Сыновья Инис Айронвуд и Риона Аллириона","group":1,"hs":"yrn","k":"T","p":"ynys","par":["ynys","Рион Аллирион"],"wiki":"Ynys Yronwood"},
         {"id":"cletus","name":"Клетус Айронвуд","full":"Сир Клетус Айронвуд","en":"Cletus Yronwood","hs":"yrn","k":"T","p":"anders","par":["anders"],"d":"300"},
-        {"id":"gwyneth","name":"Гвинет Айронвуд","en":"Gwyneth Yronwood","fem":1,"hs":"yrn","k":"T","p":"anders","par":["anders"]},
-        {"id":"archibald","name":"Арчибальд Айронвуд","full":"Сир Арчибальд Айронвуд, Здоровяк","en":"Archibald Yronwood","al":["Здоровяк","Зеленорыл"],"hs":"yrn","k":"T","p":"yrn_bro","par":["yrn_bro"],"b":"не позднее 281"}
+        {"id":"gwyneth","name":"Гвинет Айронвуд","en":"Gwyneth Yronwood","fem":1,"hs":"yrn","k":"T","p":"anders","par":["anders"],"alive":1},
+        {"id":"archibald","name":"Арчибальд Айронвуд","full":"Сир Арчибальд Айронвуд, Здоровяк","en":"Archibald Yronwood","al":["Здоровяк","Зеленорыл"],"hs":"yrn","k":"T","p":"yrn_bro","par":["yrn_bro"],"b":"не позднее 281","alive":1}
       ]
     }
   ]

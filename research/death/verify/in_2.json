@@ -1,0 +1,324 @@
+[
+ {
+  "id": "tyr_lord17",
+  "url": "https://awoiaf.westeros.org/index.php/Luthor_Tyrell",
+  "claimed_died": "255–281 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died is 255–281 AC; text says he rode off a cliff to his death while hawking, and Olenna is called his widow in ASOS."
+ },
+ {
+  "id": "orys",
+  "url": "https://awoiaf.westeros.org/index.php/Orys_Baratheon",
+  "claimed_died": "37 AC between Stonehelm and Storm's End",
+  "claimed_status": "dead",
+  "claimed_note": "Wounded in the Vulture Hunt and died on the march home in 37 AC; the page lists Aerion as a rumored father and Argella as spouse, matching our data."
+ },
+ {
+  "id": "raymont",
+  "url": "https://awoiaf.westeros.org/index.php/Raymont_Baratheon",
+  "claimed_died": "41–48 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives a death range of 41–48 AC (read as between those years) with no event described; the page notes his canonicity is unclear."
+ },
+ {
+  "id": "borys_b",
+  "url": "https://awoiaf.westeros.org/index.php/Borys_Baratheon",
+  "claimed_died": "61 AC the Red Mountains of Dorne",
+  "claimed_status": "dead",
+  "claimed_note": "Cut down by Jaehaerys I with Blackfyre in the Red Mountains of Dorne in 61 AC; the page names no parents, only calls him a grandson of Orys, which fits our data."
+ },
+ {
+  "id": "garon_b",
+  "url": "https://awoiaf.westeros.org/index.php/Garon_Baratheon",
+  "claimed_died": "or after 73 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death 'or after 73 AC' but the page never describes it; its last dated event is 73 AC, and it notes his wife died of the Shivers, as in our data."
+ },
+ {
+  "id": "ronnal_b",
+  "url": "https://awoiaf.westeros.org/index.php/Ronnal_Baratheon",
+  "claimed_died": "59 AC or 60 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Died of the Shivers at Storm's End in the winter of 59–60 AC, with his wife and sons; the page calls him a younger brother of Rogar, which fits our parent entry."
+ },
+ {
+  "id": "orryn_b",
+  "url": "https://awoiaf.westeros.org/index.php/Orryn_Baratheon",
+  "claimed_died": "In or after 51 AC the Disputed Lands",
+  "claimed_status": "dead",
+  "claimed_note": "Slain in the Disputed Lands in a battle against the Men of Valor after exile and service in Tyrosh and Myr; the page names only the Archon's daughter as his wife, not Alysanne."
+ },
+ {
+  "id": "boremund",
+  "url": "https://awoiaf.westeros.org/index.php/Boremund_Baratheon",
+  "claimed_died": "101–129 AC",
+  "claimed_status": "dead",
+  "claimed_note": "No cause given; the succession table has him as Lord of Storm's End from 62 AC to '101/129', then son Borros. The page gives birth as 52 AC, while our data says 51."
+ },
+ {
+  "id": "jocelyn",
+  "url": "https://awoiaf.westeros.org/index.php/Jocelyn_Baratheon",
+  "claimed_died": "92–129 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Widowed in 92 AC when Aemon was killed on Tarth, and the page says she had died by the start of the Dance (129 AC); birth 54 AC and spouse Aemon match our data."
+ },
+ {
+  "id": "floris",
+  "url": "https://awoiaf.westeros.org/index.php/Floris_Baratheon",
+  "claimed_died": "134 AC or 135 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Page says she died in childbirth in 134 or 135 AC, leaving her husband Lord Thaddeus Rowan in mourning, which matches our spouse entry."
+ },
+ {
+  "id": "stannis",
+  "url": "https://awoiaf.westeros.org/index.php/Stannis_Baratheon",
+  "claimed_died": "",
+  "claimed_status": "alive",
+  "claimed_note": "No Died field; the readable page runs only to A Storm of Swords, where he is alive and no death is reported, and the later sections could not be fetched. Birth 264 AC, parents and spouse match our data."
+ },
+ {
+  "id": "valaena",
+  "url": "https://awoiaf.westeros.org/index.php/Valaena_Velaryon",
+  "claimed_died": "In or after 26 BC Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death in or after 26 BC at Dragonstone with no event described; the page's spouse Aerion Targaryen matches our data."
+ },
+ {
+  "id": "daemon_v0",
+  "url": "https://awoiaf.westeros.org/index.php/Daemon_Velaryon",
+  "claimed_died": "2 BC Gulltown",
+  "claimed_status": "dead",
+  "claimed_note": "Died in the battle in the waters off Gulltown in 2 BC, matching our data; this page is about the first Daemon, and the Daemon son of Aethan has his own page."
+ },
+ {
+  "id": "aethan",
+  "url": "https://awoiaf.westeros.org/index.php/Aethan_Velaryon",
+  "claimed_died": "42–47 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives death 42–47 AC, and the page says he passed away during the reign of Maegor I with no later event datable; spouse Alarra Massey matches our data."
+ },
+ {
+  "id": "corlys_kg",
+  "url": "https://awoiaf.westeros.org/index.php/Corlys_Velaryon_(son_of_Daemon)",
+  "claimed_died": "10–48 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox range 10–48 AC starts at the Kingsguard's founding and may reflect service; the page confirms he was the first Lord Commander, served until the end of his days, and was son of Daemon Velaryon."
+ },
+ {
+  "id": "daemon_v",
+  "url": "https://awoiaf.westeros.org/index.php/Daemon_Velaryon_(son_of_Aethan)",
+  "claimed_died": "77–89 AC (aged 88)",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 77–89 AC and the text says he passed away at 88 and was succeeded by grandson Corlys after outliving his eldest son, matching our data; the succession box gives his tenure as ending 77/90."
+ },
+ {
+  "id": "corwyn",
+  "url": "https://awoiaf.westeros.org/index.php/Corwyn_Velaryon",
+  "claimed_died": "54–90 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 54–90 AC with no event described; the page says he predeceased his father Daemon, leaving his eldest son Corlys to succeed, which matches our data."
+ },
+ {
+  "id": "jorgen",
+  "url": "https://awoiaf.westeros.org/index.php/Jorgen_Velaryon",
+  "claimed_died": "59 AC (possibly) Driftmark",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox marks his 59 AC death at Driftmark as 'possibly', and the page only tentatively links Jorgen to the Shivers death of Daemon's second son in 59 AC; last shown with his brothers at the 50 AC shipyard visit."
+ },
+ {
+  "id": "daeron_v",
+  "url": "https://awoiaf.westeros.org/index.php/Daeron_Velaryon",
+  "claimed_died": "133 AC Stepstones",
+  "claimed_status": "dead",
+  "claimed_note": "Page says he died in 133 AC when his ship True Heart sank in battle against the Braavosi in the Stepstones, matching our data; father Vaemond and spouse Hazel Harte also match."
+ },
+ {
+  "id": "daenaera",
+  "url": "https://awoiaf.westeros.org/index.php/Daenaera_Velaryon",
+  "claimed_died": "In or after 150 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The 150 AC bound is an age estimate, and the page says it is unknown whether she outlived Aegon III (d. 157 AC); she wed him on the last day of 133 AC, matching our data."
+ },
+ {
+  "id": "malentine",
+  "url": "https://awoiaf.westeros.org/index.php/Malentine_Velaryon",
+  "claimed_died": "132 AC Castle Driftmark",
+  "claimed_status": "dead",
+  "claimed_note": "Slain in the failed 132 AC attempt on Alyn at Castle Driftmark, matching our data; the page names no parents and only links him to Corlys's unnamed youngest brother."
+ },
+ {
+  "id": "rhogar_v",
+  "url": "https://awoiaf.westeros.org/index.php/Rhogar_Velaryon",
+  "claimed_died": "or after 132 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Captured after the failed 132 AC plot against Alyn and condemned to death, but he chose the black; the Died field is 'or after 132 AC' and no death date is given."
+ },
+ {
+  "id": "alyn",
+  "url": "https://awoiaf.westeros.org/index.php/Alyn_Velaryon,_Oakenfist",
+  "claimed_died": "171–176 AC at sea",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox says he disappeared at sea circa 171–176 AC; the page lists his father as Laenor officially and Corlys only as rumored, and Elaena as a lover rather than a spouse, both conflicting with our parent and spouse entries."
+ },
+ {
+  "id": "lucerys_v",
+  "url": "https://awoiaf.westeros.org/index.php/Lucerys_Velaryon_(master_of_ships)",
+  "claimed_died": "281 AC–298 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Died field gives 281–298 AC, while the text calls his fate in Robert's Rebellion unknown; the page names no spouse, so our 'Renniffer Longwaters' spouse is not confirmed. This is the master of ships, matching our 'under Aerys II' description."
+ },
+ {
+  "id": "manfred_h",
+  "url": "https://awoiaf.westeros.org/index.php/Manfred_Hightower_(son_of_Addam)",
+  "claimed_died": "41 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 41 AC; the House Hightower page says he was succeeded by his son Martyn in 41 AC, and dates his objection to Ceryse's marriage to 39 AC."
+ },
+ {
+  "id": "martyn_h",
+  "url": "https://awoiaf.westeros.org/index.php/Martyn_Hightower",
+  "claimed_died": "41–48 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 41–48 AC; the page says he died through unspecified circumstances by the end of Maegor's reign (48 AC), and that he opened Oldtown's gates to Maegor in 43 AC. Father Manfred matches our data."
+ },
+ {
+  "id": "morgan_h",
+  "url": "https://awoiaf.westeros.org/index.php/Morgan_Hightower",
+  "claimed_died": "43 AC or 44 AC on the road to Honeyholt",
+  "claimed_status": "dead",
+  "claimed_note": "Page says he was cut down and butchered on the road to Honeyholt by Warrior's Sons loyal to Ser Joffrey Doggett; he was arrested with the Warrior's Sons in 43 AC. Father Manfred matches our data."
+ },
+ {
+  "id": "hgt_lord9",
+  "url": "https://awoiaf.westeros.org/index.php/Ormund_Hightower",
+  "claimed_died": "130 AC, Tumbleton",
+  "claimed_status": "dead",
+  "claimed_note": "Unnamed in our data; identified as Ormund Hightower from the parent link and the Oldtown lordship, as the wiki gives him the greens' leadership for Aegon II, not an explicit endorsement of Otto's plan. Killed at the First Battle of Tumbleton in 130 AC."
+ },
+ {
+  "id": "lyonel_h",
+  "url": "https://awoiaf.westeros.org/index.php/Lyonel_Hightower",
+  "claimed_died": "143 AC or after",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 143 AC or after; the page says he is known to have ruled Oldtown until at least 143 AC. Father Ormund and spouse Samantha Tarly match our data."
+ },
+ {
+  "id": "loren",
+  "url": "https://awoiaf.westeros.org/index.php/Loren_I_Lannister",
+  "claimed_died": "In or before 42 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or before 42 AC'; the page says he was captured after the Field of Fire and gives no year for the battle. Warden of the West after submitting to Aegon matches our data."
+ },
+ {
+  "id": "tymond",
+  "url": "https://awoiaf.westeros.org/index.php/Tymond_Lannister",
+  "claimed_died": "101–129 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 101–129 AC; the page dates him alive only to the 101 AC Great Council. Conflict: the page gives his father as an unnamed Lord Lannister and his birth as 60 AC, while the House Lannister page says Lyman died in 59 AC, so our parent Lyman Lannister does not fit those dates."
+ },
+ {
+  "id": "loreon",
+  "url": "https://awoiaf.westeros.org/index.php/Loreon_Lannister_(son_of_Jason)",
+  "claimed_died": "136–196 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 136–196 AC; the page gives no death event and no dated evidence of life. Its Born 126 AC conflicts with the Died start of 136 AC, and the page does not explain it. Parents Jason and Johanna match our data."
+ },
+ {
+  "id": "tygett",
+  "url": "https://awoiaf.westeros.org/index.php/Tygett_Lannister",
+  "claimed_died": "In or after 285 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or after 285 AC'; the page says he eventually died of a pox, as our data says. Spouse Darlessa Marbrand matches our data."
+ },
+ {
+  "id": "gerion",
+  "url": "https://awoiaf.westeros.org/index.php/Gerion_Lannister",
+  "claimed_died": "In or after 291 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or after 291 AC'; the page never says he died, only that he has never returned since his ship left Lannisport around 291 AC. Our data's disappearance at sea matches. Parents Tytos match."
+ },
+ {
+  "id": "cersei",
+  "url": "https://awoiaf.westeros.org/index.php/Cersei_Lannister",
+  "claimed_died": "",
+  "claimed_status": "alive",
+  "claimed_note": "No Died field; she is a POV character in A Feast for Crows and A Dance with Dragons with no fate given, and the latest dated event is 295 AC. Conflict: the infobox lists Jaime only as a lover, not a spouse, while our data lists him as a spouse."
+ },
+ {
+  "id": "hubert",
+  "url": "https://awoiaf.westeros.org/index.php/Hubert_Arryn",
+  "claimed_died": "37–54 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 37–54 AC; the text never states his death, and the succession table gives 54 AC against Darnold's tenure, so the range is unclear. Spouse Lady Royce matches our data's House Royce wife."
+ },
+ {
+  "id": "rodrik",
+  "url": "https://awoiaf.westeros.org/index.php/Rodrik_Arryn",
+  "claimed_died": "82–97 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 82–97 AC; the page says he is known to have ruled the Vale until at least 82 AC. Parents Rymond and spouse Daella Targaryen match our data."
+ },
+ {
+  "id": "arnold",
+  "url": "https://awoiaf.westeros.org/index.php/Arnold_Arryn",
+  "claimed_died": "In or after 136 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or after 136 AC'; the page does not describe his death and says he eluded Corwyn and fled to Runestone. Eldric's page names Arnold as his father, which supports this entry."
+ },
+ {
+  "id": "eldric",
+  "url": "https://awoiaf.westeros.org/index.php/Eldric_Arryn",
+  "claimed_died": "134 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 134 AC; the page says Ser Corwyn Corbray ordered his execution after the claimants refused his ruling. Father Arnold matches our data."
+ },
+ {
+  "id": "joffrey_a",
+  "url": "https://awoiaf.westeros.org/index.php/Joffrey_Arryn",
+  "claimed_died": "136–196 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 136–196 AC; the page gives no cause or death event, and its succession box has him from 134 AC with no end date. Parents are not named on the page."
+ },
+ {
+  "id": "alys_r",
+  "url": "https://awoiaf.westeros.org/index.php/Alys_Arryn_(wife_of_Rhaegel)",
+  "claimed_died": "In or after 196 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or after 196 AC'; the page gives no death details or dated appearance. Spouse Prince Rhaegel matches our data."
+ },
+ {
+  "id": "jasper",
+  "url": "https://awoiaf.westeros.org/index.php/Jasper_Arryn",
+  "claimed_died": "In or before 263 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 'In or before 263 AC', sourced to an age calculation rather than the text; the page gives no cause of death or other detail."
+ },
+ {
+  "id": "ronnel_j",
+  "url": "https://awoiaf.westeros.org/index.php/Ronnel_Arryn_(son_of_Jasper)",
+  "claimed_died": "~235–263 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died ~235–263 AC; the page says he died of a bad belly around the time his son Elbert was born. Father Jasper and spouse Lady Belmore match our data."
+ },
+ {
+  "id": "alys_j",
+  "url": "https://awoiaf.westeros.org/index.php/Alys_Arryn",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "No Died field; the page says she died not long after having her ninth child, with no year. Born ~219–251 AC, father Jasper and spouse Elys Waynwood match our data."
+ },
+ {
+  "id": "denys_son",
+  "url": "https://awoiaf.westeros.org/index.php/Denys_Arryn",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "Unnamed in our data; the Denys Arryn page says his wife and son both died shortly after Denys was slain at the Battle of the Bells in 283 AC, which fits this entry by context. The son has no page of his own."
+ },
+ {
+  "id": "alayne_r",
+  "url": "https://awoiaf.westeros.org/index.php/Alayne_Royce",
+  "claimed_died": "54 AC, Dragonstone",
+  "claimed_status": "dead",
+  "claimed_note": "Page says she died at the end of 54 AC at Dragonstone, poisoned by Androw Farman per Fire & Blood; infobox Died field also gives Dragonstone as place. Father Allard Royce matches our data."
+ }
+]

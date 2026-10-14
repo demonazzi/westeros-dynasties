@@ -60,21 +60,48 @@
       if (L.b == null) L.b = genYear(App.genOf(p.id));
       if (p.pre && L.be) L.b = Math.min(L.b, -20);
       if (L.d == null && L.young) { L.d = L.b + L.young; L.de = true; }
-      if (L.d == null) {
+      // точно жив до L.sure: известный год смерти, нижняя граница («не ранее 101»), события из книг (дети, брак,
+      // правление, ls — последний год, когда человек точно жив); от L.sure до L.end — жив ли, неизвестно
+      const known = Math.max(-Infinity, ...kidsOf(p).map(q => LIFE.get(q.id)).filter(k => !k.be).map(k => k.b),
+        L.rb == null ? -Infinity : L.rb, L.ra == null ? -Infinity : L.ra, L.mar == null ? -Infinity : L.mar, p.ls == null ? -Infinity : +p.ls,
+        ...(p.ev || []).map(e => num(e[0])).filter(v => v != null));
+      const ds = String(p.d || ''), d = num(p.d);
+      const two = /^(-?\d+)\s*[–\/]\s*(-?\d+)$/.exec(ds);
+      let lo = null, hi = null;
+      if (p.alive) { L.d = 300; L.alive = true; L.de = false; lo = hi = 300; }
+      else if (L.young) lo = hi = L.d;
+      else if (/^(не ранее|после) |или позже$/.test(ds)) lo = d;
+      else if (/^не позднее /.test(ds)) hi = d;
+      else if (two) { lo = +two[1]; hi = +two[2]; }
+      else if (d != null) lo = hi = d;
+      if (hi == null) {
         const lastKid = Math.max(-Infinity, ...kidsOf(p).map(q => LIFE.get(q.id).b).filter(v => v != null));
-        const floor = Math.max(L.b + 20, lastKid, L.rb || -Infinity, L.mar || -Infinity);
-        if (L.b >= 228 && !p.pre) { L.d = 300; L.alive = true; L.de = false; }
-        else L.d = Math.min(299, Math.max(floor, L.b + 55));
+        const floor = Math.max(L.b + 20, lastKid, L.rb || -Infinity, L.mar || -Infinity, lo == null ? -Infinity : lo);
+        hi = L.b >= 228 && !p.pre ? 300 : Math.min(299, Math.max(floor, L.b + 55));
+        if (lo != null) hi = Math.max(hi, lo);
       }
+      if (L.d == null || lo != null && hi > lo && d === lo) { L.d = hi; L.de = true; }
+      L.sure = Math.min(hi, Math.max(L.b, lo == null ? -Infinity : lo, known));
+      L.end = hi;
       // оценка по цепочке родни может уехать за 300 г. — рождение не позже 299
       if (L.be && L.b > 299) L.b = 299;
       if (L.d < L.b) L.d = L.b + 1;
+      if (L.end < L.b) L.end = L.b + 1;
+      if (L.sure < L.b) L.sure = L.b;
     });
     KINGS = PEOPLE.filter(p => p.k === 'K' && LIFE.get(p.id).ra != null).sort((a, b) => LIFE.get(a.id).ra - LIFE.get(b.id).ra);
   }
   let KINGS = [];
   App.life = id => { ensureLife(); return LIFE.get(id); };
-  const aliveAt = (id, y) => { ensureLife(); const L = LIFE.get(id); return !!L && L.b <= y && y <= L.d; };
+  // в год y: 'unborn' ещё не родился, 'alive' точно жив, 'unsure' жив ли — неизвестно, 'dead' уже умер
+  const lifeState = (id, y) => {
+    ensureLife();
+    const L = LIFE.get(id);
+    if (!L || y < L.b) return 'unborn';
+    return y <= L.sure ? 'alive' : y <= Math.max(L.end, L.d) ? 'unsure' : 'dead';
+  };
+  App.lifeState = lifeState;
+  const aliveAt = (id, y) => { const s = lifeState(id, y); return s === 'alive' || s === 'unsure'; };
   App.aliveAt = aliveAt;
 
   /* ——— Эпохи ——— */
@@ -275,7 +302,9 @@
     const dimmers = App.hooks.decorate.map(f => f()).filter(Boolean);
     const yearDim = state.year != null ? id => !aliveAt(id, state.year) : null;
     const dimmed = id => dimmers.some(fn => fn(id)) || (yearDim && yearDim(id));
+    const unsure = App.yearUnsure();
     gz.selectAll('g.life')
+      .classed('unsure', d => !!unsure && !dimmed(d.p.id) && unsure(d.p.id))
       .classed('selected', d => d.p.id === sel)
       .classed('rel', d => !!rel && rel.has(d.p.id) && d.p.id !== sel)
       .classed('far', d => !!rel && !rel.has(d.p.id))
@@ -357,12 +386,14 @@
   /* ——— Выбрать год: ползунок живёт на общей шкале (app-mod-timescale.js) ——— */
   state.year = null;
   App.hooks.decorate.push(() => state.year != null ? id => !aliveAt(id, state.year) : null);
+  App.yearUnsure = () => state.year != null ? id => lifeState(id, state.year) === 'unsure' : null;
   App.yearText = y => {
     ensureLife();
-    const alive = PEOPLE.filter(p => aliveAt(p.id, y) && !p.group).length;
+    const live = PEOPLE.filter(p => !p.group).map(p => lifeState(p.id, y));
+    const alive = live.filter(s => s === 'alive').length, unsure = live.filter(s => s === 'unsure').length;
     const king = KINGS.find(p => { const L = LIFE.get(p.id); return L.ra <= y && y < (L.rb != null ? L.rb : 301); });
     const era = eraAt(y);
-    return { year: App.yearWord(y), alive, king: king ? king.name : '', era: era ? era.name : '' };
+    return { year: App.yearWord(y), alive, unsure, king: king ? king.name : '', era: era ? era.name : '' };
   };
 
   App.smokeTime = () => {

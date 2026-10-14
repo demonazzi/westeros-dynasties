@@ -1,0 +1,464 @@
+[
+ {
+  "id": "torrhen",
+  "house": "stk",
+  "ru": "Торрхен Старк",
+  "en": "Torrhen Stark, the King Who Knelt",
+  "page": "Torrhen Stark, the King Who Knelt",
+  "about": "Reports of Harrenhal and the Field of Fire persuaded him to submit rather than expose his army to dragons."
+ },
+ {
+  "id": "torrhen_d",
+  "house": "stk",
+  "ru": "Дочь Торрхена",
+  "en": "",
+  "page": "Torrhen Stark",
+  "parents": [
+   "Torrhen Stark, the King Who Knelt"
+  ],
+  "spouses": [
+   "Ronnel Arryn, the King Who Flew"
+  ],
+  "about": "Her marriage to Ronnel Arryn ended when Jonos seized the Eyrie and murdered the family."
+ },
+ {
+  "id": "cregan",
+  "house": "stk",
+  "ru": "Криган Старк",
+  "en": "Cregan Stark",
+  "page": "Cregan Stark",
+  "born": "108",
+  "spouses": [
+   "Арра Норрей",
+   "Alysanne Blackwood",
+   "Lynara Stark"
+  ],
+  "about": "The Pact of Ice and Fire committed him to Rhaenyra’s cause. He reached King’s Landing after both rival monarchs were dead, then investigated Aegon II’s poisoning despite having opposed him. During the Hour of the Wolf he"
+ },
+ {
+  "id": "lynara",
+  "house": "stk",
+  "ru": "Линара Старк",
+  "en": "Lynara Stark",
+  "page": "Lynara Stark",
+  "spouses": [
+   "Cregan Stark"
+  ],
+  "about": "Third wife of Lord Cregan Stark and his distant cousin, descended from a younger son of Lord Brandon the Boisterous Stark. She bore Cregan five children: Jonnel, Edric, Lyanna, Barthogan and Brandon; the main line of Hou"
+ },
+ {
+  "id": "jonnel",
+  "house": "stk",
+  "ru": "Джоннел Старк",
+  "en": "Jonnel Stark",
+  "page": "Jonnel Stark",
+  "parents": [
+   "Cregan Stark",
+   "Lynara Stark"
+  ],
+  "spouses": [
+   "Sansa Stark"
+  ],
+  "about": "One-Eye inherited Winterfell and married Sansa to unite family branches. Neither marriage produced children."
+ },
+ {
+  "id": "edric_c",
+  "house": "stk",
+  "ru": "Эдрик Старк",
+  "en": "Edric Stark",
+  "page": "Edric Stark (son of Cregan)",
+  "parents": [
+   "Cregan Stark",
+   "Lynara Stark"
+  ],
+  "spouses": [
+   "Serena Stark"
+  ],
+  "about": "Cregan Stark's third son, by Lynara Stark, married his niece Serena, Rickon's daughter. They had the twins Torrhen and Cregard and two daughters, Arrana and Argelle. After Jonnel, Winterfell passed to Edric's younger bro"
+ },
+ {
+  "id": "lyanna_c",
+  "house": "stk",
+  "ru": "Лианна Старк",
+  "en": "Lyanna Stark",
+  "page": "Lyanna Stark (daughter of Cregan)",
+  "born": "138–181",
+  "parents": [
+   "Cregan Stark",
+   "Lynara Stark"
+  ],
+  "about": "Lyanna was Cregan Stark's only daughter by his third wife, Lynara. Her brothers were Jonnel, Edric, Barthogan and Brandon."
+ },
+ {
+  "id": "barthogan",
+  "house": "stk",
+  "ru": "Бартоган Старк",
+  "en": "Barthogan Stark",
+  "page": "Barthogan Stark",
+  "parents": [
+   "Cregan Stark",
+   "Lynara Stark"
+  ],
+  "about": "Black Sword died suppressing rebellion on Skagos, leaving no children."
+ },
+ {
+  "id": "sansa_c",
+  "house": "stk",
+  "ru": "Санса Старк",
+  "en": "Sansa Stark",
+  "page": "Sansa Stark (daughter of Rickon)",
+  "parents": [
+   "Rickon Stark",
+   "Jeyne Manderly"
+  ],
+  "spouses": [
+   "Jonnel Stark"
+  ],
+  "about": "Her marriage to Jonnel united two succession lines but remained childless."
+ },
+ {
+  "id": "serena_c",
+  "house": "stk",
+  "ru": "Серена Старк",
+  "en": "Serena Stark",
+  "page": "Serena Stark",
+  "parents": [
+   "Rickon Stark",
+   "Jeyne Manderly"
+  ],
+  "spouses": [
+   "Edric Stark",
+   "Jon Umber"
+  ],
+  "about": "Widowed after marriage to an Umber lord, she married Edric Stark and had four children."
+ },
+ {
+  "id": "torrhen_e",
+  "house": "stk",
+  "ru": "Торрхен Старк",
+  "en": "Torrhen Stark",
+  "page": "Edric Stark (son of Cregan)",
+  "parents": [
+   "Edric Stark",
+   "Serena Stark"
+  ],
+  "about": "Torrhen was Edric and Serena Stark's son and the elder twin of Cregard. He and his siblings, including Arrana and Argelle, belonged to the branch passed over in Winterfell's succession after Jonnel Stark."
+ },
+ {
+  "id": "cregard",
+  "house": "stk",
+  "ru": "Кригард Старк",
+  "en": "Cregard Stark",
+  "page": "Cregard Stark",
+  "parents": [
+   "Edric Stark",
+   "Serena Stark"
+  ],
+  "about": "Cregard was the younger twin son of Edric and Serena Stark, after Torrhen. He also had two sisters, Arrana and Argelle. No marriage or children are recorded for him."
+ },
+ {
+  "id": "arrana",
+  "house": "stk",
+  "ru": "Аррана Старк",
+  "en": "Arrana Stark",
+  "page": "Arrana Stark",
+  "parents": [
+   "Edric Stark",
+   "Serena Stark"
+  ],
+  "spouses": [
+   "Osric Umber"
+  ],
+  "about": "Edric and Serena Stark's elder daughter married Lord Osric Umber of Last Hearth. They had children, whose names are unknown."
+ },
+ {
+  "id": "argelle_s",
+  "house": "stk",
+  "ru": "Аргелла Старк",
+  "en": "Argelle Stark",
+  "page": "Argelle Stark",
+  "parents": [
+   "Edric Stark",
+   "Serena Stark"
+  ],
+  "about": "Argelle, Edric and Serena Stark's younger daughter, married Lord Robard Cerwyn and had children whose names are unrecorded. Her marriage connected this Stark branch to Winterfell's neighbours at Castle Cerwyn."
+ },
+ {
+  "id": "brandon_c",
+  "house": "stk",
+  "ru": "Брандон Старк",
+  "en": "Brandon Stark",
+  "page": "Brandon Stark (son of Cregan)",
+  "parents": [
+   "Cregan Stark",
+   "Lynara Stark"
+  ],
+  "spouses": [
+   "Alys Karstark"
+  ],
+  "about": "He succeeded after Barthogan’s death on Skagos."
+ },
+ {
+  "id": "rodwell",
+  "house": "stk",
+  "ru": "Родвелл Старк",
+  "en": "Rodwell Stark",
+  "page": "Rodwell Stark",
+  "parents": [
+   "Brandon Stark",
+   "Alys Karstark"
+  ],
+  "spouses": [
+   "Myriame Manderly"
+  ],
+  "about": "His childless death passed Winterfell to Beron."
+ },
+ {
+  "id": "beron",
+  "house": "stk",
+  "ru": "Берон Старк",
+  "en": "Beron Stark",
+  "page": "Beron Stark",
+  "parents": [
+   "Brandon Stark",
+   "Alys Karstark"
+  ],
+  "spouses": [
+   "Lorra Royce"
+  ],
+  "about": "War with Dagon’s ironborn left him mortally wounded."
+ },
+ {
+  "id": "arsa",
+  "house": "stk",
+  "ru": "Арса Старк",
+  "en": "Arsa Stark",
+  "page": "Arsa Stark",
+  "born": "173–213",
+  "parents": [
+   "Brandon Stark",
+   "Alys Karstark"
+  ],
+  "about": "Arsa was Brandon Stark and Alys Karstark's only daughter. Her elder brothers, Rodwell and Beron, ruled Winterfell in succession. She also had a half-brother, Brandon's natural son Lonnel Snow."
+ },
+ {
+  "id": "lonnel_snow",
+  "house": "stk",
+  "ru": "Лоннел Сноу",
+  "en": "Lonnel Snow",
+  "page": "Lonnel Snow",
+  "born": "152–195",
+  "parents": [
+   "Brandon Stark"
+  ],
+  "about": "Lonnel, also called Lonny, was Brandon Stark's natural son by Wylla Fenn. He was older than Brandon's legitimate children with Alys Karstark: Rodwell, Beron and Arsa."
+ },
+ {
+  "id": "donnor",
+  "house": "stk",
+  "ru": "Доннор Старк",
+  "en": "Donnor Stark",
+  "page": "Donnor Stark",
+  "parents": [
+   "Beron Stark"
+  ],
+  "about": "His childless death made Willam Lord of Winterfell."
+ },
+ {
+  "id": "artos",
+  "house": "stk",
+  "ru": "Артос Старк",
+  "en": "Artos the Implacable",
+  "page": "Artos the Implacable",
+  "parents": [
+   "Beron Stark"
+  ],
+  "spouses": [
+   "Lysara Karstark"
+  ],
+  "about": "He continued the Long Lake battle and killed Raymun Redbeard."
+ },
+ {
+  "id": "brandon_a",
+  "house": "stk",
+  "ru": "Брандон Старк",
+  "en": "Brandon Stark",
+  "page": "Brandon Stark (son of Artos)",
+  "parents": [
+   "Artos the Implacable",
+   "Lysara Karstark"
+  ],
+  "about": "Brandon was the elder twin son of Artos Stark and Lysara Karstark, before Benjen. He had children, but neither their names nor their mother's identity is recorded."
+ },
+ {
+  "id": "benjen_a",
+  "house": "stk",
+  "ru": "Бенджен Старк",
+  "en": "Benjen Stark",
+  "page": "Benjen Stark (son of Artos)",
+  "parents": [
+   "Artos the Implacable",
+   "Lysara Karstark"
+  ],
+  "about": "Benjen was the younger twin son of Artos Stark and Lysara Karstark. Like his brother Brandon, he had children, but the descendants of this branch are unnamed."
+ },
+ {
+  "id": "berena",
+  "house": "stk",
+  "ru": "Берена Старк",
+  "en": "Berena Stark",
+  "page": "Berena Stark",
+  "parents": [
+   "Beron Stark",
+   "Lorra Royce"
+  ],
+  "about": "Berena was Beron Stark and Lorra Royce's elder daughter and fourth child. Her brothers Donnor and Willam became Lords of Winterfell, while her youngest brother Rodrik was known as the Wandering Wolf."
+ },
+ {
+  "id": "alysanne_s",
+  "house": "stk",
+  "ru": "Алисанна Старк",
+  "en": "Alysanne Stark",
+  "page": "Beron Stark",
+  "parents": [
+   "Beron Stark",
+   "Lorra Royce"
+  ],
+  "about": "Alysanne was the younger daughter of Beron Stark and Lorra Royce, with a sister, Berena, and five brothers. Donnor and Willam both became Lords of Winterfell. No marriage or children are recorded for Alysanne."
+ },
+ {
+  "id": "errold",
+  "house": "stk",
+  "ru": "Эррольд Старк",
+  "en": "Errold Stark",
+  "page": "Errold Stark",
+  "parents": [
+   "Beron Stark",
+   "Lorra Royce"
+  ],
+  "about": "Errold was Beron Stark and Lorra Royce's fourth son. His elder brothers Donnor and Willam ruled Winterfell, and his younger brother Rodrik served with the Second Sons."
+ },
+ {
+  "id": "rodrik_b",
+  "house": "stk",
+  "ru": "Родрик Старк",
+  "en": "Rodrik Stark",
+  "page": "Beron Stark",
+  "parents": [
+   "Beron Stark",
+   "Lorra Royce"
+  ],
+  "about": "Beron Stark and Lorra Royce's youngest son was known as the Wandering Wolf. He served with the Second Sons and married Arya Flint of the northern mountain clans. They had two daughters, Branda and Lyarra; through Lyarra,"
+ },
+ {
+  "id": "edwyle",
+  "house": "stk",
+  "ru": "Эдвил Старк",
+  "en": "Edwyle Stark",
+  "page": "Edwyle Stark",
+  "parents": [
+   "Willam Stark",
+   "Melantha Blackwood"
+  ],
+  "spouses": [
+   "Марна Локе"
+  ],
+  "about": "Lord of Winterfell."
+ },
+ {
+  "id": "jocelyn_s",
+  "house": "stk",
+  "ru": "Джослин Старк",
+  "en": "Jocelyn Stark",
+  "page": "Jocelyn Stark",
+  "parents": [
+   "Willam Stark",
+   "Melantha Blackwood"
+  ],
+  "spouses": [
+   "Benedict Royce"
+  ],
+  "about": "Willam Stark and Melantha Blackwood's only daughter married Benedict Royce of a junior branch. Their three daughters married into the Waynwoods, Corbrays and possibly the Templetons. Catelyn raised these relatives as pot"
+ },
+ {
+  "id": "benjen",
+  "house": "stk",
+  "ru": "Бенджен Старк",
+  "en": "Benjen Stark",
+  "page": "Benjen Stark",
+  "parents": [
+   "Rickard Stark"
+  ],
+  "about": "He joined the Night's Watch after Robert's Rebellion. He became First Ranger and helped Jon adjust to Castle Black. He went ranging beyond the Wall and never returned. His fate remains unknown in the books; he cannot be "
+ },
+ {
+  "id": "jon",
+  "house": "stk",
+  "ru": "Джон Сноу",
+  "en": "Jon Snow",
+  "page": "Jon Snow",
+  "born": "283",
+  "parents": [
+   "Eddard Stark",
+   "Rhaegar",
+   "Lyanna Stark"
+  ],
+  "about": "Raised at Winterfell as Eddard Stark's acknowledged bastard, Jon joined the Night's Watch and became Lord Commander. His efforts to prepare for the Others and allow wildlings through the Wall provoked resistance among hi"
+ },
+ {
+  "id": "sansa",
+  "house": "stk",
+  "ru": "Санса Старк",
+  "en": "Sansa Stark",
+  "page": "Sansa Stark",
+  "born": "286",
+  "parents": [
+   "Eddard Stark",
+   "Catelyn Tully"
+  ],
+  "spouses": [
+   "Joffrey Baratheon",
+   "Tyrion Lannister"
+  ],
+  "about": "She initially dreamed of an elegant courtly life. After her father's fall, she became a Lannister hostage, endured Joffrey's cruelty and was forced to marry Tyrion. Petyr Baelish helped her escape after Joffrey's poisoni"
+ },
+ {
+  "id": "arya",
+  "house": "stk",
+  "ru": "Арья Старк",
+  "en": "Arya Stark",
+  "page": "Arya Stark",
+  "born": "289",
+  "parents": [
+   "Eddard Stark",
+   "Catelyn Tully"
+  ],
+  "about": "She preferred weapons training to courtly conventions. After her father's execution, she fled the capital and travelled through the war in the riverlands, changing names and falling captive. She reached Braavos and began"
+ },
+ {
+  "id": "bran",
+  "house": "stk",
+  "ru": "Бран Старк",
+  "en": "Bran Stark",
+  "page": "Bran Stark",
+  "born": "290",
+  "parents": [
+   "Eddard Stark",
+   "Catelyn Tully"
+  ],
+  "about": "He lost the use of his legs when Jaime pushed him from a tower. After Winterfell fell, he travelled beyond the Wall with Hodor, Jojen and Meera Reed. He discovered his abilities as a warg and became a pupil of the ancien"
+ },
+ {
+  "id": "rickon",
+  "house": "stk",
+  "ru": "Рикон Старк",
+  "en": "Rickon Stark",
+  "page": "Rickon Stark",
+  "born": "295",
+  "parents": [
+   "Eddard Stark",
+   "Catelyn Tully"
+  ],
+  "about": "He survived Winterfell's fall alongside Bran. When their companions separated, he left with Osha and his direwolf Shaggydog. According to Wex, they were heading for Skagos."
+ }
+]

@@ -5,7 +5,7 @@
     {
       "title": "Пенрозы при Таргариенах",
       "people": [
-        {"id":"lucinda","name":"Люсинда Пенроз","en":"Lucinda Penrose","fem":1,"hs":"pen","k":"T","b":"103–133"},
+        {"id":"lucinda","name":"Люсинда Пенроз","en":"Lucinda Penrose","fem":1,"hs":"pen","k":"T","b":"103–133","ls":133},
         {"id":"ronnel","name":"Роннел Пенроз","en":"Ronnel Penrose","hs":"pen","k":"T","d":"188–209","sp":[["elaena_b"]]},
         {"id":"robin_pn","name":"Робин Пенроз","en":"Robin Penrose","hs":"pen","k":"T","p":"ronnel","par":["ronnel","elaena_b"],"b":"184–197"},
         {"id":"laena_pn","name":"Лейна Пенроз","en":"Laena Penrose","fem":1,"hs":"pen","k":"T","p":"ronnel","par":["ronnel","elaena_b"],"b":"185–198"},
@@ -13,7 +13,7 @@
         {"id":"joy_pn","name":"Джой Пенроз","en":"Joy Penrose","fem":1,"hs":"pen","k":"T","p":"ronnel","par":["ronnel","elaena_b"],"b":"187–200"},
         {"id":"pen_lady196","name":"Леди Пенроз","full":"Леди Пенроз, мать сыновей, павших у Мандера","fem":1,"hs":"pen","k":"T","wiki":"Quentyn Ball"},
         {"id":"pen_sons196","name":"Сыновья","full":"Сыновья леди Пенроз","group":1,"hs":"pen","k":"T","p":"pen_lady196","par":["pen_lady196"],"d":"196","wiki":"Quentyn Ball"},
-        {"id":"aelinor","name":"Эйлинор Пенроз","en":"Aelinor Penrose","fem":1,"hs":"pen","k":"T","sp":[["aerys1"]]},
+        {"id":"aelinor","name":"Эйлинор Пенроз","en":"Aelinor Penrose","fem":1,"hs":"pen","k":"T","ls":209,"sp":[["aerys1"]]},
         {"id":"jon_pn","name":"Джон Пенроз","full":"Сир Джон Пенроз","en":"Jon Penrose","hs":"pen","k":"T"}
       ]
     },

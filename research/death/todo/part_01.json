@@ -1,0 +1,744 @@
+[
+ {
+  "id": "forrest_son",
+  "house": "fry",
+  "ru": "Сын",
+  "en": "",
+  "page": "Forrest Frey",
+  "parents": [
+   "Forrest Frey",
+   "Sabitha Frey"
+  ],
+  "about": "Son of Ser Forrest Frey and Sabitha Vypren; he became Lord of the Crossing after his father's death in 130 AC. His name is not known."
+ },
+ {
+  "id": "fr_lord14",
+  "house": "fry",
+  "ru": "Лорд Фрей",
+  "en": "House Frey",
+  "page": "House Frey",
+  "about": "An unnamed ancestor shown as the father of Lord Frey and Ser Franklyn. His grandson Walder was still a small child at the Whitewalls tourney in 212 AC. No name or individual history is recorded for this earlier generatio"
+ },
+ {
+  "id": "franklyn_fr",
+  "house": "fry",
+  "ru": "Франклин Фрей",
+  "en": "Franklyn Frey",
+  "page": "Franklyn Frey",
+  "parents": [
+   "House Frey"
+  ],
+  "about": "At Whitewalls he unhorsed Harbert Paege after five passes, but lost his next contest to John the Fiddler—the disguised Daemon II Blackfyre."
+ },
+ {
+  "id": "addam_fr",
+  "house": "fry",
+  "ru": "Аддам Фрей",
+  "en": "Addam Frey",
+  "page": "Addam Frey",
+  "parents": [
+   "Franklyn Frey"
+  ],
+  "about": "A promising young jouster, he was unhorsed by Uthor Underleaf at Whitewalls. His cousin, the bride at the wedding tourney, fainted when he fell."
+ },
+ {
+  "id": "lady_butterwell",
+  "house": "fry",
+  "ru": "Леди Фрей",
+  "en": "Lady Butterwell",
+  "page": "Lady Butterwell",
+  "born": "196/197",
+  "parents": [
+   "Lord Frey"
+  ],
+  "spouses": [
+   "Ambrose Butterwell"
+  ],
+  "about": "Her wedding to Ambrose Butterwell at fifteen provided cover for Daemon II's conspiracy. Its failure cost the household Whitewalls and most of its fortune; Bloodraven allowed Ambrose to retain a tenth of his wealth."
+ },
+ {
+  "id": "walder_fr",
+  "house": "fry",
+  "ru": "Уолдер Фрей",
+  "en": "Walder Frey",
+  "page": "Walder Frey",
+  "born": "208",
+  "parents": [
+   "Lord Frey"
+  ],
+  "spouses": [
+   "Perra Royce",
+   "Cyrenna Swann",
+   "Amarei Crakehall",
+   "Алисса Блэквуд",
+   "Сарья Уэнт",
+   "Бетани Росби",
+   "Аннара Фарринг",
+   "Жойез Эренфорд"
+  ],
+  "about": "Walder made the Twins' bridge a bargaining tool, withholding his support until he could name his price. He arrived too late to fight at the Trident, then demanded a marriage pact before letting Robb cross. When Robb marr"
+ },
+ {
+  "id": "edwyn_fr",
+  "house": "fry",
+  "ru": "Эдвин Фрей",
+  "en": "Edwyn Frey",
+  "page": "Edwyn Frey",
+  "born": "257–279",
+  "parents": [
+   "Ryman Frey"
+  ],
+  "spouses": [
+   "Дженис Хантер"
+  ],
+  "about": "His hidden mail helped Catelyn realise that the wedding feast was a trap. Jaime later put him in command outside Riverrun after dismissing Ryman. Cold and deeply suspicious of Black Walder, Edwyn viewed his brother as a "
+ },
+ {
+  "id": "walda_fr_edwyn",
+  "house": "fry",
+  "ru": "Уолда Фрей",
+  "en": "Walda Frey",
+  "page": "Walda Frey (daughter of Edwyn)",
+  "born": "290/291",
+  "parents": [
+   "Edwyn Frey",
+   "Walder Frey"
+  ],
+  "about": "Her place in the succession was complicated by the family's preference for male heirs. Rumours of her mother's affair with Black Walder also raised questions about her parentage, but the books do not confirm them."
+ },
+ {
+  "id": "walder_fr_ryman",
+  "house": "fry",
+  "ru": "Уолдер Фрей",
+  "en": "Walder Frey",
+  "page": "Walder Frey (son of Ryman)",
+  "born": "258–280",
+  "parents": [
+   "Ryman Frey"
+  ],
+  "spouses": [
+   "Миленда Карон",
+   "Аннара Фарринг",
+   "Amerei Frey",
+   "Walda Frey",
+   "Дженис Хантер"
+  ],
+  "about": "Black Walder fought for Robb before taking part in the Red Wedding. He forced Jason Mallister to surrender Seagard by threatening Patrek's life. Resolute and quick to anger, he frightened even his relatives and refused t"
+ },
+ {
+  "id": "perra_fr",
+  "house": "fry",
+  "ru": "Перра Фрей",
+  "en": "Perra Frey",
+  "page": "Perra Frey",
+  "born": "294",
+  "parents": [
+   "Petyr Frey",
+   "Walder Frey"
+  ],
+  "about": "Petyr's death left her fatherless. Rumours at the Twins suggested that Black Walder might be her biological father, but no confirmation followed."
+ },
+ {
+  "id": "walton_fr",
+  "house": "fry",
+  "ru": "Уолтон Фрей",
+  "en": "Walton Frey",
+  "page": "Walton Frey",
+  "born": "250–268",
+  "parents": [
+   "Stevron Frey",
+   "Marsella Waynwood"
+  ],
+  "spouses": [
+   "Deana Hardyng"
+  ],
+  "about": "A knight whose life is recorded mainly through the family genealogy; no separate deeds are described."
+ },
+ {
+  "id": "steffon_fr",
+  "house": "fry",
+  "ru": "Стеффон Фрей",
+  "en": "Steffon Frey",
+  "page": "Steffon Frey",
+  "born": "260–280",
+  "parents": [
+   "Walton Frey",
+   "Deana Hardyng"
+  ],
+  "about": "Known within the family as Steffon the Sweet."
+ },
+ {
+  "id": "walda_fr_walton",
+  "house": "fry",
+  "ru": "Уолда Фрей",
+  "en": "Walda Frey",
+  "page": "Walda Frey (daughter of Walton)",
+  "born": "280/281",
+  "parents": [
+   "Walton Frey",
+   "Deana Hardyng"
+  ],
+  "spouses": [
+   "Walder Frey"
+  ],
+  "about": "Fair Walda was considered one of the family's prettiest young women. Relatives expected Roose Bolton to choose her, but he preferred Fat Walda's larger dowry. She sat beside Robb at the Red Wedding. Rumours linking her t"
+ },
+ {
+  "id": "bryan_fr",
+  "house": "fry",
+  "ru": "Брайан Фрей",
+  "en": "Bryan Frey",
+  "page": "Bryan Frey",
+  "born": "281–291",
+  "parents": [
+   "Walton Frey",
+   "Deana Hardyng"
+  ],
+  "about": "Served as a squire."
+ },
+ {
+  "id": "emmon_fr",
+  "house": "fry",
+  "ru": "Эммон Фрей",
+  "en": "Emmon Frey",
+  "page": "Emmon Frey",
+  "born": "237/238",
+  "parents": [
+   "Walder Frey",
+   "Perra Royce"
+  ],
+  "spouses": [
+   "Genna Lannister"
+  ],
+  "about": "Long resident at Casterly Rock, Emmon received Riverrun as a reward for the Red Wedding. Jaime secured the castle's surrender without an assault and corrected Emmon's belief that the grant made him ruler of all the river"
+ },
+ {
+  "id": "tywin_fr",
+  "house": "fry",
+  "ru": "Тайвин Фрей",
+  "en": "Tywin Frey",
+  "page": "Tywin Frey",
+  "born": "287/288",
+  "parents": [
+   "Cleos Frey"
+  ],
+  "about": "Called Ty, he stood to inherit Emmon's newly granted Riverrun. A proposed marriage to Edmure and Roslin's child, should she have a daughter, would link the new ruling family with the dispossessed Tullys."
+ },
+ {
+  "id": "willem_fr",
+  "house": "fry",
+  "ru": "Виллем Фрей",
+  "en": "Willem Frey",
+  "page": "Willem Frey",
+  "born": "289/290",
+  "parents": [
+   "Cleos Frey"
+  ],
+  "about": "Served as a page at Ashemark."
+ },
+ {
+  "id": "lyonel_fr",
+  "house": "fry",
+  "ru": "Лионель Фрей",
+  "en": "Lyonel Frey",
+  "page": "Lyonel Frey",
+  "born": "258–283",
+  "parents": [
+   "Emmon Frey",
+   "Genna Lannister"
+  ],
+  "spouses": [
+   "Melesa Crakehall"
+  ],
+  "about": "A knight of the Riverrun branch. The books provide little about his activities beyond the family records."
+ },
+ {
+  "id": "walder_fr_emmon",
+  "house": "fry",
+  "ru": "Уолдер Фрей",
+  "en": "Walder Frey",
+  "page": "Walder Frey (son of Emmon)",
+  "born": "285",
+  "parents": [
+   "Emmon Frey",
+   "Genna Lannister"
+  ],
+  "about": "Known as Red Walder, he was fostered at Casterly Rock. Sources describe him as either a page or a squire."
+ },
+ {
+  "id": "aegon_fr_aenys",
+  "house": "fry",
+  "ru": "Эйгон Фрей",
+  "en": "Aegon Frey",
+  "page": "Aegon Frey (son of Aenys)",
+  "born": "250–273",
+  "parents": [
+   "Aenys Frey"
+  ],
+  "about": "Called Bloodborn, he became an outlaw. His crimes and later fate are not described."
+ },
+ {
+  "id": "robert_fr_rhaegar",
+  "house": "fry",
+  "ru": "Роберт Фрей",
+  "en": "Robert Frey",
+  "page": "Robert Frey (son of Rhaegar)",
+  "born": "286",
+  "parents": [
+   "Rhaegar Frey"
+  ],
+  "about": "Born in 286 AC, Robert is Rhaegar Frey's eldest son by Jeyne Beesbury. One of Lord Walder's great-grandchildren, he is the older brother of White Walda and Jonos."
+ },
+ {
+  "id": "walda_fr_rhaegar",
+  "house": "fry",
+  "ru": "Уолда Фрей",
+  "en": "Walda Frey",
+  "page": "Walda Frey (daughter of Rhaegar)",
+  "born": "288/289",
+  "parents": [
+   "Rhaegar Frey"
+  ],
+  "about": "Known as White Walda. Her mother died of a wasting illness; her father disappeared after his visit to White Harbor."
+ },
+ {
+  "id": "jonos_fr",
+  "house": "fry",
+  "ru": "Джонос Фрей",
+  "en": "Jonos Frey",
+  "page": "Jonos Frey",
+  "born": "291",
+  "parents": [
+   "Rhaegar Frey"
+  ],
+  "about": "Jonos, born in 291 AC, is Rhaegar Frey's younger son by Jeyne Beesbury. Robert and White Walda are his older siblings."
+ },
+ {
+  "id": "perriane_fr",
+  "house": "fry",
+  "ru": "Перриана Фрей",
+  "en": "Perriane Frey",
+  "page": "Perriane Frey",
+  "born": "239–249",
+  "parents": [
+   "Walder Frey",
+   "Perra Royce"
+  ],
+  "spouses": [
+   "Леслин Хэй"
+  ],
+  "about": "Perriane is Walder Frey's eldest daughter by Perra Royce. She married Ser Leslyn Haigh and has three sons: Harys, Donnel, and Alyn."
+ },
+ {
+  "id": "zia_fr",
+  "house": "fry",
+  "ru": "Ция Фрей",
+  "en": "Zia Frey",
+  "page": "Zia Frey",
+  "born": "285",
+  "parents": [
+   "Tytos Frey"
+  ],
+  "about": "Zia was born in 285 AC to Tytos Frey and Zhoe Blanetree. Her brother Zachery studies at the sept in Oldtown."
+ },
+ {
+  "id": "zachery_fr",
+  "house": "fry",
+  "ru": "Захери Фрей",
+  "en": "Zachery Frey",
+  "page": "Zachery Frey",
+  "born": "287",
+  "parents": [
+   "Tytos Frey"
+  ],
+  "about": "Trained at a sept in Oldtown."
+ },
+ {
+  "id": "kyra_fr",
+  "house": "fry",
+  "ru": "Кира Фрей",
+  "en": "Kyra Frey",
+  "page": "Kyra Frey",
+  "born": "261–278",
+  "parents": [
+   "Jared Frey",
+   "Alys Frey"
+  ],
+  "spouses": [
+   "Гарс Гудбрук"
+  ],
+  "about": "Lost her husband and brother during the Red Wedding. Her father later disappeared in the North."
+ },
+ {
+  "id": "luceon_fr",
+  "house": "fry",
+  "ru": "Люцеон Фрей",
+  "en": "Luceon Frey",
+  "page": "Luceon Frey",
+  "born": "248–258",
+  "parents": [
+   "Walder Frey",
+   "Cyrenna Swann"
+  ],
+  "about": "A septon at the Great Sept of Baelor and a member of the Most Devout, Luceon came close to becoming High Septon. He was nine votes short when armed sparrows stormed the election and forced the council to choose their own"
+ },
+ {
+  "id": "hosteen_fr",
+  "house": "fry",
+  "ru": "Хостин Фрей",
+  "en": "Hosteen Frey",
+  "page": "Hosteen Frey",
+  "born": "248–258",
+  "parents": [
+   "Walder Frey",
+   "Amarei Crakehall"
+  ],
+  "spouses": [
+   "Беллена Хоик"
+  ],
+  "about": "A strong fighter with little judgement as a commander, Hosteen killed Lucas Blackwood at the Red Wedding and later led Frey troops north. After Little Walder's murder, he wounded Wyman Manderly in the ensuing brawl. Roos"
+ },
+ {
+  "id": "arwood_fr",
+  "house": "fry",
+  "ru": "Арвуд Фрей",
+  "en": "Arwood Frey",
+  "page": "Arwood Frey",
+  "born": "260–282",
+  "parents": [
+   "Hosteen Frey"
+  ],
+  "spouses": [
+   "Ryella Royce"
+  ],
+  "about": "Visited Saltpans after its devastation, then remained at Darry among the Frey relatives supporting Amerei and Lancel's household."
+ },
+ {
+  "id": "ryella_fr",
+  "house": "fry",
+  "ru": "Риэлла Фрей",
+  "en": "Ryella Frey",
+  "page": "Ryella Frey",
+  "born": "294",
+  "parents": [
+   "Arwood Frey",
+   "Ryella Royce"
+  ],
+  "about": "Ryella, born in 294 AC, is Arwood Frey's eldest child by Ryella Royce. She shares her mother's name and has younger twin brothers, Androw and Alyn."
+ },
+ {
+  "id": "androw_fr",
+  "house": "fry",
+  "ru": "Андроу Фрей",
+  "en": "Androw Frey",
+  "page": "Androw Frey",
+  "born": "295/296",
+  "parents": [
+   "Arwood Frey",
+   "Ryella Royce"
+  ],
+  "about": "Androw is one of Arwood Frey and Ryella Royce's twin sons, born in 295 or 296 AC. His twin is Alyn; their sisters are Ryella and Hostella."
+ },
+ {
+  "id": "alyn_fr",
+  "house": "fry",
+  "ru": "Алин Фрей",
+  "en": "Alyn Frey",
+  "page": "Alyn Frey",
+  "born": "295/296",
+  "parents": [
+   "Arwood Frey",
+   "Ryella Royce"
+  ],
+  "about": "Alyn is Androw Frey's twin, a son of Arwood Frey and Ryella Royce born in 295 or 296 AC. His sisters are Ryella and Hostella."
+ },
+ {
+  "id": "hostella_fr",
+  "house": "fry",
+  "ru": "Хостелла Фрей",
+  "en": "Hostella Frey",
+  "page": "Hostella Frey",
+  "born": "299/300",
+  "parents": [
+   "Arwood Frey",
+   "Ryella Royce"
+  ],
+  "about": "A newborn by the events of A Dance with Dragons."
+ },
+ {
+  "id": "lythene_fr",
+  "house": "fry",
+  "ru": "Литен Фрей",
+  "en": "Lythene Frey",
+  "page": "Lythene Frey",
+  "born": "249–259",
+  "parents": [
+   "Walder Frey",
+   "Amarei Crakehall"
+  ],
+  "spouses": [
+   "Люциас Випрен"
+  ],
+  "about": "Lythene is Walder's second daughter and his only daughter by Amarei Crakehall. She married Lord Lucias Vypren and has two children, Elyana and Damon."
+ },
+ {
+  "id": "alesander_fr",
+  "house": "fry",
+  "ru": "Алесандер Фрей",
+  "en": "Alesander Frey",
+  "page": "Alesander Frey",
+  "born": "263–281",
+  "parents": [
+   "Symond Frey"
+  ],
+  "about": "A singer sent away from the Twins before Edmure's wedding. Catelyn noticed that he, Olyvar and Perwyn were all absent, an omission that heightened her unease before the massacre."
+ },
+ {
+  "id": "alyx_fr",
+  "house": "fry",
+  "ru": "Аликс Фрей",
+  "en": "Alyx Frey",
+  "page": "Alyx Frey",
+  "born": "282",
+  "parents": [
+   "Symond Frey"
+  ],
+  "about": "Presented to Robb among the Frey women and attended Edmure's wedding."
+ },
+ {
+  "id": "bradamar_fr",
+  "house": "fry",
+  "ru": "Брадамар Фрей",
+  "en": "Bradamar Frey",
+  "page": "Bradamar Frey",
+  "born": "289",
+  "parents": [
+   "Symond Frey"
+  ],
+  "about": "Sent to Braavos to be fostered by the merchant Oro Tendyris."
+ },
+ {
+  "id": "danwell_fr",
+  "house": "fry",
+  "ru": "Данвелл Фрей",
+  "en": "Danwell Frey",
+  "page": "Danwell Frey",
+  "born": "252–261",
+  "parents": [
+   "Walder Frey",
+   "Amarei Crakehall"
+  ],
+  "spouses": [
+   "Винафрея Уэнт"
+  ],
+  "about": "Helped negotiate Catelyn's crossing agreement. Captured on the Green Fork and later ransomed, he took part in the Red Wedding and subsequently met Jaime at Darry. Miscarriages and stillbirths left his marriage childless."
+ },
+ {
+  "id": "amerei_fr",
+  "house": "fry",
+  "ru": "Амарея Фрей",
+  "en": "Amerei Frey",
+  "page": "Amerei Frey",
+  "born": "282",
+  "parents": [
+   "Merrett Frey"
+  ],
+  "spouses": [
+   "Пейт с Синего Зубца",
+   "Lancel Lannister"
+  ],
+  "about": "Gatehouse Ami became Lady of Darry after marrying Lancel, her first husband having been killed. Lancel never consummated the marriage and abandoned both wife and lordship for the Warrior's Sons. Amerei remained at the ca"
+ },
+ {
+  "id": "walda_fr_merrett",
+  "house": "fry",
+  "ru": "Уолда Фрей",
+  "en": "Walda Frey",
+  "page": "Walda Frey (daughter of Merrett)",
+  "born": "283/284",
+  "parents": [
+   "Merrett Frey"
+  ],
+  "spouses": [
+   "Roose Bolton"
+  ],
+  "about": "Roose chose Fat Walda because Walder offered her weight in silver as a dowry. She accompanied him north and was pregnant by the events at Winterfell. Roose expected Ramsay to threaten any legitimate son she bore."
+ },
+ {
+  "id": "marissa_fr",
+  "house": "fry",
+  "ru": "Марисса Фрей",
+  "en": "Marissa Frey",
+  "page": "Marissa Frey",
+  "born": "286",
+  "parents": [
+   "Merrett Frey"
+  ],
+  "about": "Maester Brenett shaved her head. She attended Edmure's wedding and later moved to Darry with her mother."
+ },
+ {
+  "id": "sandor_fr",
+  "house": "fry",
+  "ru": "Сандор Фрей",
+  "en": "Sandor Frey",
+  "page": "Sandor Frey",
+  "born": "287",
+  "parents": [
+   "Geremy Frey",
+   "Carolei Waynwood"
+  ],
+  "about": "Served as Donnel Waynwood's squire."
+ },
+ {
+  "id": "cynthea_fr",
+  "house": "fry",
+  "ru": "Синтия Фрей",
+  "en": "Cynthea Frey",
+  "page": "Cynthea Frey",
+  "born": "290",
+  "parents": [
+   "Geremy Frey",
+   "Carolei Waynwood"
+  ],
+  "about": "Fostered in the Vale with Anya Waynwood."
+ },
+ {
+  "id": "raymund_fr",
+  "house": "fry",
+  "ru": "Раймунд Фрей",
+  "en": "Raymund Frey",
+  "page": "Raymund Frey",
+  "born": "264/265",
+  "parents": [
+   "Walder Frey",
+   "Amarei Crakehall"
+  ],
+  "spouses": [
+   "Беони Бисбери"
+  ],
+  "about": "Participated in the Red Wedding. The Smalljon struck him with a leg of mutton while trying to protect Robb. After the king's murder and Catelyn's killing of Jinglebell, Raymund slit her throat."
+ },
+ {
+  "id": "robert_fr_raymund",
+  "house": "fry",
+  "ru": "Роберт Фрей",
+  "en": "Robert Frey",
+  "page": "Robert Frey (son of Raymund)",
+  "born": "283",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "A novice at the Citadel who had forged two links of his chain."
+ },
+ {
+  "id": "malwyn_fr",
+  "house": "fry",
+  "ru": "Мальвин Фрей",
+  "en": "Malwyn Frey",
+  "page": "Malwyn Frey",
+  "born": "284",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "Apprenticed to an alchemist in Lys."
+ },
+ {
+  "id": "serra_fr",
+  "house": "fry",
+  "ru": "Серра Фрей",
+  "en": "Serra Frey",
+  "page": "Serra Frey",
+  "born": "285",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "Presented to Robb at the Twins with her twin sister before Edmure's wedding."
+ },
+ {
+  "id": "sarra_fr",
+  "house": "fry",
+  "ru": "Сарра Фрей",
+  "en": "Sarra Frey",
+  "page": "Sarra Frey",
+  "born": "285",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "Presented to Robb at the Twins with her twin sister before Edmure's wedding."
+ },
+ {
+  "id": "cersei_fr",
+  "house": "fry",
+  "ru": "Серсея Фрей",
+  "en": "Cersei Frey",
+  "page": "Cersei Frey",
+  "born": "292/293",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "Called Little Bee because of her Beesbury mother. She was among the Frey girls presented to Robb before Edmure's wedding."
+ },
+ {
+  "id": "jaime_fr",
+  "house": "fry",
+  "ru": "Джейме Фрей",
+  "en": "Jaime Frey",
+  "page": "Jaime Frey",
+  "born": "299/300",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "An infant during the events of A Dance with Dragons."
+ },
+ {
+  "id": "tywin_fr_raymund",
+  "house": "fry",
+  "ru": "Тайвин Фрей",
+  "en": "Tywin Frey",
+  "page": "Tywin Frey (son of Raymund)",
+  "born": "299/300",
+  "parents": [
+   "Raymund Frey"
+  ],
+  "about": "An infant during the events of A Dance with Dragons."
+ },
+ {
+  "id": "lothar_fr",
+  "house": "fry",
+  "ru": "Лотар Фрей",
+  "en": "Lothar Frey",
+  "page": "Lothar Frey",
+  "born": "264–266",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Леонелла Леффорд"
+  ],
+  "about": "Lame from birth, Lothar managed the Twins and handled delicate negotiations. He brought the demand that Edmure marry Roslin, then helped Roose organise the Red Wedding. He chose The Rains of Castamere as the signal, hid "
+ },
+ {
+  "id": "tysane_fr",
+  "house": "fry",
+  "ru": "Тисана Фрей",
+  "en": "Tysane Frey",
+  "page": "Tysane Frey",
+  "born": "292",
+  "parents": [
+   "Lothar Frey"
+  ],
+  "about": "Tysane, born in 292 AC, is the eldest daughter of Lame Lothar Frey and Leonella Lefford. Her younger sisters are Walda, Emberlei, and Leana."
+ },
+ {
+  "id": "walda_fr_lothar",
+  "house": "fry",
+  "ru": "Уолда Фрей",
+  "en": "Walda Frey",
+  "page": "Walda Frey (daughter of Lothar)",
+  "born": "294/295",
+  "parents": [
+   "Lothar Frey"
+  ],
+  "about": "Born in 294 or 295 AC, Walda is Lothar Frey's second daughter by Leonella Lefford. She is distinct from both Roose Bolton's wife, Fat Walda, and Edwyn Frey's daughter of the same name."
+ }
+]

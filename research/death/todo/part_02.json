@@ -1,0 +1,434 @@
+[
+ {
+  "id": "emberlei_fr",
+  "house": "fry",
+  "ru": "Эмберлея Фрей",
+  "en": "Emberlei Frey",
+  "page": "Emberlei Frey",
+  "born": "296/297",
+  "parents": [
+   "Lothar Frey"
+  ],
+  "about": "Emberlei is Lothar Frey's third daughter by Leonella Lefford, born in 296 or 297 AC. She is younger than Tysane and Walda and older than Leana."
+ },
+ {
+  "id": "leana_fr",
+  "house": "fry",
+  "ru": "Лиана Фрей",
+  "en": "Leana Frey",
+  "page": "Leana Frey",
+  "born": "299/300",
+  "parents": [
+   "Lothar Frey"
+  ],
+  "about": "An infant during the events of A Dance with Dragons."
+ },
+ {
+  "id": "jammos_fr",
+  "house": "fry",
+  "ru": "Джеммос Фрей",
+  "en": "Jammos Frey",
+  "page": "Jammos Frey",
+  "born": "265–267",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Саллея Пэг"
+  ],
+  "about": "A knight whose individual activities are scarcely described."
+ },
+ {
+  "id": "walder_fr_jammos",
+  "house": "fry",
+  "ru": "Уолдер Фрей",
+  "en": "Walder Frey",
+  "page": "Walder Frey (son of Jammos)",
+  "born": "291",
+  "parents": [
+   "Jammos Frey"
+  ],
+  "about": "Big Walder was fifty-two days older than Little Walder, despite being the smaller boy. Both were wards at Winterfell before becoming Ramsay's squires. Big Walder was more cautious and seldom joined his cousin's cruelties"
+ },
+ {
+  "id": "dickon_fr",
+  "house": "fry",
+  "ru": "Дикон Фрей",
+  "en": "Dickon Frey",
+  "page": "Dickon Frey",
+  "born": "294",
+  "parents": [
+   "Jammos Frey"
+  ],
+  "about": "Dickon and his twin Mathis were born in 294 AC to Jammos Frey and Sallei Paege. Big Walder, fostered at Winterfell, is their elder brother."
+ },
+ {
+  "id": "mathis_fr",
+  "house": "fry",
+  "ru": "Матис Фрей",
+  "en": "Mathis Frey",
+  "page": "Mathis Frey",
+  "born": "294",
+  "parents": [
+   "Jammos Frey"
+  ],
+  "about": "Mathis is Dickon Frey's twin, born in 294 AC to Jammos Frey and Sallei Paege. Their older brother is Big Walder."
+ },
+ {
+  "id": "whalen_fr",
+  "house": "fry",
+  "ru": "Уэйлен Фрей",
+  "en": "Whalen Frey",
+  "page": "Whalen Frey",
+  "born": "267/268",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Сильва Пэг"
+  ],
+  "about": "Helped Walder negotiate with Catelyn. At the Red Wedding he passed out while trying to keep pace with the Greatjon's drinking. Walder Rivers later identified him as one of the men involved in killing Grey Wind."
+ },
+ {
+  "id": "hoster_fr",
+  "house": "fry",
+  "ru": "Хостер Фрей",
+  "en": "Hoster Frey",
+  "page": "Hoster Frey",
+  "born": "287",
+  "parents": [
+   "Whalen Frey"
+  ],
+  "about": "Served as Damon Paege's squire."
+ },
+ {
+  "id": "merianne_fr",
+  "house": "fry",
+  "ru": "Мерианна Фрей",
+  "en": "Merianne Frey",
+  "page": "Merianne Frey",
+  "born": "288",
+  "parents": [
+   "Whalen Frey"
+  ],
+  "about": "Called Merry within the family. When presenting the Frey girls to Robb, Walder forgot her name and mocked her in front of the guests."
+ },
+ {
+  "id": "morya_fr",
+  "house": "fry",
+  "ru": "Морья Фрей",
+  "en": "Morya Frey",
+  "page": "Morya Frey",
+  "born": "268/269",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Флемент Бракс"
+  ],
+  "about": "Morya is Walder Frey's third daughter and his eldest daughter by Alyssa Blackwood. She married Ser Flement Brax; their sons are Robert, Walder, and Jon."
+ },
+ {
+  "id": "tyta_fr",
+  "house": "fry",
+  "ru": "Тита Фрей",
+  "en": "Tyta Frey",
+  "page": "Tyta Frey",
+  "born": "269/270",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Known as Tyta the Maid. She was among the Frey women presented to Robb before Edmure's wedding."
+ },
+ {
+  "id": "perwyn_fr",
+  "house": "fry",
+  "ru": "Первин Фрей",
+  "en": "Perwyn Frey",
+  "page": "Perwyn Frey",
+  "born": "269–278",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Escorted Catelyn on her mission to Renly and Storm's End. He left Riverrun with the other Freys after Robb married, but was absent from the Red Wedding. Daven Lannister later spoke of him as a decent man."
+ },
+ {
+  "id": "della_fr",
+  "house": "fry",
+  "ru": "Делла Фрей",
+  "en": "Della Frey",
+  "page": "Della Frey",
+  "born": "296",
+  "parents": [
+   "Benfrey Frey",
+   "Jyanna Frey"
+  ],
+  "about": "Known as Deaf Della."
+ },
+ {
+  "id": "osmund_fr",
+  "house": "fry",
+  "ru": "Осмунд Фрей",
+  "en": "Osmund Frey",
+  "page": "Osmund Frey",
+  "born": "297",
+  "parents": [
+   "Benfrey Frey",
+   "Jyanna Frey"
+  ],
+  "about": "Osmund, born in 297 AC, is the younger child of Benfrey Frey and his wife and cousin Jyanna. His elder sister is Della."
+ },
+ {
+  "id": "willamen_fr",
+  "house": "fry",
+  "ru": "Вилламен Фрей",
+  "en": "Willamen Frey",
+  "page": "Willamen Frey",
+  "born": "272–280",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Completed his studies at the Citadel, took his vows and served the Hunters as maester at Longbow Hall."
+ },
+ {
+  "id": "olyvar_fr",
+  "house": "fry",
+  "ru": "Оливар Фрей",
+  "en": "Olyvar Frey",
+  "page": "Olyvar Frey",
+  "born": "281",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "A loyal squire who fought in Robb's battle guard in the Whispering Wood. He wanted to remain with the king after the broken marriage pact, but his family made him return. He was away from the Twins when the Red Wedding t"
+ },
+ {
+  "id": "roslin_fr",
+  "house": "fry",
+  "ru": "Рослин Фрей",
+  "en": "Roslin Frey",
+  "page": "Roslin Frey",
+  "born": "282/283",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Edmure Tully"
+  ],
+  "about": "Her marriage to Edmure was presented as reconciliation, while the feast concealed a massacre. Edmure later said she knew the plan and had been forced to comply, explaining her tears. Pregnant afterwards, she prayed for a"
+ },
+ {
+  "id": "arwyn_fr",
+  "house": "fry",
+  "ru": "Арвин Фрей",
+  "en": "Arwyn Frey",
+  "page": "Arwyn Frey",
+  "born": "285",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "about": "Presented to Robb before Edmure's wedding. Rumours of Annara's affair with Black Walder cast doubt on her parentage, but the claim remained unconfirmed."
+ },
+ {
+  "id": "wendel_fr",
+  "house": "fry",
+  "ru": "Вендел Фрей",
+  "en": "Wendel Frey",
+  "page": "Wendel Frey",
+  "born": "286",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "about": "A Mallister page at Seagard who stayed there after Black Walder forced its surrender. Rumours about his parentage were never confirmed."
+ },
+ {
+  "id": "colmar_fr",
+  "house": "fry",
+  "ru": "Колмар Фрей",
+  "en": "Colmar Frey",
+  "page": "Colmar Frey",
+  "born": "288",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "about": "Intended for the Faith, he was training to become a septon."
+ },
+ {
+  "id": "waltyr_fr",
+  "house": "fry",
+  "ru": "Уолтир Фрей",
+  "en": "Waltyr Frey",
+  "page": "Waltyr Frey",
+  "born": "289",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "about": "Known as Tyr. Big Walder disliked him and omitted him when counting possible heirs to the Twins. Rumours surrounding his parentage remained unconfirmed."
+ },
+ {
+  "id": "elmar_fr",
+  "house": "fry",
+  "ru": "Элмар Фрей",
+  "en": "Elmar Frey",
+  "page": "Elmar Frey",
+  "born": "290",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "spouses": [
+   "Arya Stark"
+  ],
+  "about": "Betrothed to Arya under the crossing agreement, he lost the match when Robb married Jeyne Westerling. At Harrenhal he complained about losing his princess to Arya herself, failing to recognise her beneath her servant's d"
+ },
+ {
+  "id": "shirei_fr",
+  "house": "fry",
+  "ru": "Ширея Фрей",
+  "en": "Shirei Frey",
+  "page": "Shirei Frey",
+  "born": "292/293",
+  "parents": [
+   "Walder Frey",
+   "Walder Frey"
+  ],
+  "about": "Among the girls presented to Robb at the Twins. Claims that Black Walder was her father remained rumours."
+ },
+ {
+  "id": "walder_rv",
+  "house": "fry",
+  "ru": "Уолдер Риверс",
+  "en": "Walder Rivers",
+  "page": "Walder Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "spouses": [
+   "леди Чарлтон"
+  ],
+  "about": "An experienced knight trusted with military duties despite his bastardy. He accompanied Lothar to the negotiations at Riverrun and commanded the attack on the northern camps during the Red Wedding. He later served in the"
+ },
+ {
+  "id": "aemon_rv",
+  "house": "fry",
+  "ru": "Эймон Риверс",
+  "en": "Aemon Rivers",
+  "page": "Aemon Rivers",
+  "parents": [
+   "Walder Rivers"
+  ],
+  "about": "A knight born within marriage, though Lord Walder still dismissed him for being a bastard's son."
+ },
+ {
+  "id": "walda_rv_aemon",
+  "house": "fry",
+  "ru": "Уолда Риверс",
+  "en": "Walda Rivers",
+  "page": "Walda Rivers (daughter of Aemon)",
+  "born": "294/295",
+  "parents": [
+   "Aemon Rivers"
+  ],
+  "about": "Approached Robb alongside her legitimate relatives when the Frey women were presented. Lord Walder mocked her ancestry and sent her away."
+ },
+ {
+  "id": "walda_rv",
+  "house": "fry",
+  "ru": "Уолда Риверс",
+  "en": "Walda Rivers",
+  "page": "Walda Rivers",
+  "parents": [
+   "Walder Rivers"
+  ],
+  "about": "Her place in the family lists is uncertain. The reference may describe Aemon's daughter rather than a separate girl."
+ },
+ {
+  "id": "melwys_rv",
+  "house": "fry",
+  "ru": "Мелвис Риверс",
+  "en": "Melwys Rivers",
+  "page": "Melwys Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Served House Rosby as a maester."
+ },
+ {
+  "id": "jeyne_rv",
+  "house": "fry",
+  "ru": "Джейн Риверс",
+  "en": "Jeyne Rivers",
+  "page": "Jeyne Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Jeyne is one of Lord Walder Frey's natural daughters. Her mother is unidentified. She bears the Riverlands bastard surname Rivers."
+ },
+ {
+  "id": "martyn_rv",
+  "house": "fry",
+  "ru": "Мартин Риверс",
+  "en": "Martyn Rivers",
+  "page": "Martyn Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Commanded the riverlands outriders while Robb campaigned in the west and escorted Catelyn towards Riverrun. After Robb broke the marriage pact, Martyn left with the other Freys."
+ },
+ {
+  "id": "ryger_rv",
+  "house": "fry",
+  "ru": "Ригер Риверс",
+  "en": "Ryger Rivers",
+  "page": "Ryger Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Tried to restrain Walder's rudeness to Catelyn during the crossing negotiations. Walder silenced him with an insult about his common-born mother."
+ },
+ {
+  "id": "ronel_rv",
+  "house": "fry",
+  "ru": "Ронел Риверс",
+  "en": "Ronel Rivers",
+  "page": "Ronel Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Captured on the Green Fork, he was held at Harrenhal until ransomed. He later served in Roose Bolton's army alongside Aenys."
+ },
+ {
+  "id": "mellara_rv",
+  "house": "fry",
+  "ru": "Меллара Риверс",
+  "en": "Mellara Rivers",
+  "page": "Mellara Rivers",
+  "parents": [
+   "Walder Frey"
+  ],
+  "about": "Mellara is a bastard daughter of Walder Frey. Her mother's identity is unknown. She bears the Riverlands surname Rivers."
+ },
+ {
+  "id": "jyanna_fr",
+  "house": "fry",
+  "ru": "Джианна Фрей",
+  "en": "Jyanna Frey",
+  "page": "Jyanna Frey",
+  "spouses": [
+   "Benfrey Frey"
+  ],
+  "about": "Widowed when Benfrey died of his Red Wedding wound."
+ },
+ {
+  "id": "theo_fr",
+  "house": "fry",
+  "ru": "Тео Фрей",
+  "en": "Theo Frey",
+  "page": "Theo Frey",
+  "about": "Competed in the Hand's tourney at King's Landing. His precise place in the Frey genealogy is not established."
+ }
+]

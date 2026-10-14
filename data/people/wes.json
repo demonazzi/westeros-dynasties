@@ -9,18 +9,18 @@
         {"id":"jeyne_wm","name":"Джейн Вестерлинг","full":"Джейн Вестерлинг, жена Мейгора I","en":"Jeyne Westerling","fem":1,"hs":"wes","k":"T","p":"wes_lord43","par":["wes_lord43"],"b":"не позднее 27","d":"47/48","sp":[["Алин Тарбек","первый муж; пал под Божьим Оком"],["maegor1","47 г."]],"wiki":"Jeyne Westerling (wife of Maegor I)"},
         {"id":"harrold_w","name":"Гаррольд Вестерлинг","full":"Сир Гаррольд Вестерлинг","en":"Harrold Westerling","hs":"wes","k":"T","d":"112"},
         {"id":"roland_wl","name":"Роланд Вестерлинг","en":"Roland Westerling","hs":"wes","k":"T","d":"133"},
-        {"id":"johanna_w","name":"Джоханна Вестерлинг","en":"Johanna Westerling","al":["Джоханна Ланнистер"],"fem":1,"hs":"wes","k":"T","p":"roland_wl","par":["roland_wl"],"sp":[["jason_l"]]},
-        {"id":"ormond_w","name":"Ормонд Вестерлинг","full":"Сир Ормонд Вестерлинг","en":"Ormond Westerling","hs":"wes","k":"T"}
+        {"id":"johanna_w","name":"Джоханна Вестерлинг","en":"Johanna Westerling","al":["Джоханна Ланнистер"],"fem":1,"hs":"wes","k":"T","p":"roland_wl","par":["roland_wl"],"ls":130,"sp":[["jason_l"]]},
+        {"id":"ormond_w","name":"Ормонд Вестерлинг","full":"Сир Ормонд Вестерлинг","en":"Ormond Westerling","hs":"wes","k":"T","ls":209}
       ]
     },
     {
       "title": "Скала в конце третьего века",
       "people": [
         {"id":"elys_w","name":"Элис Вестерлинг","full":"Сир Элис Вестерлинг","en":"Elys Westerling","hs":"wes","k":"T"},
-        {"id":"gawen_w","name":"Гавен Вестерлинг","en":"Gawen Westerling","hs":"wes","k":"T","sp":[["Сибелла Спайсер"]]},
+        {"id":"gawen_w","name":"Гавен Вестерлинг","en":"Gawen Westerling","hs":"wes","k":"T","alive":1,"sp":[["Сибелла Спайсер"]]},
         {"id":"raynald","name":"Рейнальд Вестерлинг","full":"Сир Рейнальд Вестерлинг","en":"Raynald Westerling","hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"не позднее 282","d":"299"},
-        {"id":"jeyne_wr","name":"Джейн Вестерлинг","full":"Джейн Вестерлинг, жена Робба Старка","en":"Jeyne Westerling","fem":1,"hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"283","sp":[["robb","299 г."]]},
-        {"id":"eleyna_w","name":"Элейна Вестерлинг","en":"Eleyna Westerling","fem":1,"hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"287"},
+        {"id":"jeyne_wr","name":"Джейн Вестерлинг","full":"Джейн Вестерлинг, жена Робба Старка","en":"Jeyne Westerling","fem":1,"hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"283","alive":1,"sp":[["robb","299 г."]]},
+        {"id":"eleyna_w","name":"Элейна Вестерлинг","en":"Eleyna Westerling","fem":1,"hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"287","alive":1},
         {"id":"rollam","name":"Роллам Вестерлинг","en":"Rollam Westerling","hs":"wes","k":"T","p":"gawen_w","par":["gawen_w","Сибелла Спайсер"],"b":"290"}
       ]
     }

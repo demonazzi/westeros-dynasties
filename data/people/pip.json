@@ -20,9 +20,9 @@
       "people": [
         {"id":"pip_lord18","name":"Лорд Пайпер","full":"Лорд Пайпер, отец леди Пайпер","hs":"pip","k":"T","wiki":"Quellon Greyjoy"},
         {"id":"lady_piper","name":"Леди Пайпер","full":"Леди Пайпер, жена Квеллона Грейджоя","fem":1,"hs":"pip","k":"T","p":"pip_lord18","par":["pip_lord18"],"d":"283/284","sp":[["quellon","третья жена"]],"wiki":"Quellon Greyjoy"},
-        {"id":"clement","name":"Клемент Пайпер","en":"Clement Piper","hs":"pip","k":"T"},
-        {"id":"marq","name":"Марк Пайпер","full":"Сир Марк Пайпер","en":"Marq Piper","hs":"pip","k":"T","p":"clement","par":["clement"]},
-        {"id":"lewys","name":"Льюис Пайпер","en":"Lewys Piper","hs":"pip","k":"T","p":"clement","par":["clement"]},
+        {"id":"clement","name":"Клемент Пайпер","en":"Clement Piper","hs":"pip","k":"T","alive":1},
+        {"id":"marq","name":"Марк Пайпер","full":"Сир Марк Пайпер","en":"Marq Piper","hs":"pip","k":"T","p":"clement","par":["clement"],"alive":1},
+        {"id":"lewys","name":"Льюис Пайпер","en":"Lewys Piper","hs":"pip","k":"T","p":"clement","par":["clement"],"alive":1},
         {"id":"pip_knights","name":"Пятеро рыцарей","full":"Пятеро рыцарей Пайперов","group":1,"hs":"pip","k":"T","par":["кузены и племянники лорда Клемента"],"wiki":"House Piper"}
       ]
     }

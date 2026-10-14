@@ -1,0 +1,562 @@
+[
+ {
+  "id": "wes_lord43",
+  "house": "wes",
+  "ru": "Лорд Вестерлинг",
+  "en": "",
+  "page": "Jeyne Westerling (wife of Maegor I)",
+  "about": "A supporter of Aegon the Uncrowned against Maegor."
+ },
+ {
+  "id": "johanna_w",
+  "house": "wes",
+  "ru": "Джоханна Вестерлинг",
+  "en": "Johanna Westerling",
+  "page": "Johanna Westerling",
+  "parents": [
+   "Roland Westerling"
+  ],
+  "spouses": [
+   "Jason Lannister"
+  ],
+  "about": "Jason’s death left her governing Casterly Rock for Loreon. Dalton’s raids devastated the coast, but she later defeated ironborn forces and carried the war to their islands."
+ },
+ {
+  "id": "ormond_w",
+  "house": "wes",
+  "ru": "Ормонд Вестерлинг",
+  "en": "Ormond Westerling",
+  "page": "Ormond Westerling",
+  "about": "He appears at Ashford in The Hedge Knight’s graphic adaptation."
+ },
+ {
+  "id": "elys_w",
+  "house": "wes",
+  "ru": "Элис Вестерлинг",
+  "en": "Elys Westerling",
+  "page": "Elys Westerling",
+  "about": "He entered the throne room with Roland Crakehall and found Jaime after Aerys’s murder."
+ },
+ {
+  "id": "gawen_w",
+  "house": "wes",
+  "ru": "Гавен Вестерлинг",
+  "en": "Gawen Westerling",
+  "page": "Gawen Westerling",
+  "spouses": [
+   "Сибелла Спайсер"
+  ],
+  "about": "Captivity kept him away when Jeyne married Robb. Pardoned after the Red Wedding, he later helped urge Riverrun’s surrender."
+ },
+ {
+  "id": "jeyne_wr",
+  "house": "wes",
+  "ru": "Джейн Вестерлинг",
+  "en": "Jeyne Westerling",
+  "page": "Jeyne Westerling",
+  "born": "283",
+  "parents": [
+   "Gawen Westerling"
+  ],
+  "spouses": [
+   "Robb Stark"
+  ],
+  "about": "Tending Robb’s wounds led to a marriage that broke his Frey betrothal. Left at Riverrun, she survived the Red Wedding. Sybell had secretly prevented pregnancy, leaving Robb without an heir. Jeyne still mourned him when t"
+ },
+ {
+  "id": "eleyna_w",
+  "house": "wes",
+  "ru": "Элейна Вестерлинг",
+  "en": "Eleyna Westerling",
+  "page": "Eleyna Westerling",
+  "born": "287",
+  "parents": [
+   "Gawen Westerling"
+  ],
+  "about": "She joined Robb’s household and survived Riverrun’s siege before returning west."
+ },
+ {
+  "id": "rollam",
+  "house": "wes",
+  "ru": "Роллам Вестерлинг",
+  "en": "Rollam Westerling",
+  "page": "Rollam Westerling",
+  "born": "290",
+  "parents": [
+   "Gawen Westerling"
+  ],
+  "about": "Robb’s squire became the presumed heir to the Crag after Raynald’s disappearance."
+ },
+ {
+  "id": "viserys_pl",
+  "house": "plm",
+  "ru": "Визерис Пламм",
+  "en": "Viserys Plumm",
+  "page": "Viserys Plumm",
+  "parents": [
+   "Ossifer Plumm",
+   "Elaena"
+  ],
+  "about": "Recognised as Ossifer’s heir despite rumours that Aegon IV fathered him. The circumstances invite suspicion, but no proof establishes the claim."
+ },
+ {
+  "id": "petyr_pl",
+  "house": "plm",
+  "ru": "Петир Пламм",
+  "en": "Petyr Plumm",
+  "page": "Petyr Plumm",
+  "about": "A competitor in the Ashford tourney in 209 AC."
+ },
+ {
+  "id": "maynard",
+  "house": "plm",
+  "ru": "Мейнард Пламм",
+  "en": "Maynard Plumm",
+  "page": "Maynard Plumm",
+  "about": "At Whitewalls he helped Dunk and showed unusual knowledge of Bloodraven’s intentions. His disappearance before the royal forces arrived, together with hints about his appearance, suggests Bloodraven in disguise. The iden"
+ },
+ {
+  "id": "philip_pl",
+  "house": "plm",
+  "ru": "Филип Пламм",
+  "en": "Philip Plumm",
+  "page": "Philip Plumm",
+  "about": "Head of House Plumm during the War of the Five Kings."
+ },
+ {
+  "id": "dennis_pl",
+  "house": "plm",
+  "ru": "Деннис Пламм",
+  "en": "Dennis Plumm",
+  "page": "Dennis Plumm",
+  "parents": [
+   "Philip Plumm"
+  ],
+  "about": "Tywin sent him and his brothers to search the riverlands for Jaime."
+ },
+ {
+  "id": "peter_pl",
+  "house": "plm",
+  "ru": "Питер Пламм",
+  "en": "Peter Plumm",
+  "page": "Peter Plumm",
+  "parents": [
+   "Philip Plumm"
+  ],
+  "about": "He joined his brothers in Tywin’s search for Jaime."
+ },
+ {
+  "id": "harwyn",
+  "house": "plm",
+  "ru": "Харвин Пламм",
+  "en": "Harwyn Plumm",
+  "page": "Harwyn Plumm",
+  "parents": [
+   "Philip Plumm"
+  ],
+  "about": "Hardstone cleared outlaws from Darry and commanded its garrison. He favoured a warhammer and spoke little."
+ },
+ {
+  "id": "ben_pl",
+  "house": "plm",
+  "ru": "Бен Пламм",
+  "en": "Ben Plumm",
+  "page": "Ben Plumm",
+  "about": "Brown Ben led the Second Sons from Daenerys’s service to Yunkai’s, fearing her defeat. Published Winds of Winter chapters show Tyrion persuading him to change sides again. Daenerys’s dragons accepted his presence unusual"
+ },
+ {
+  "id": "joffrey_d",
+  "house": "day",
+  "ru": "Джоффри Дейн",
+  "en": "Joffrey Dayne",
+  "page": "Joffrey Dayne",
+  "about": "His invasion reached Oldtown but failed to take it. Visenya retaliated by burning Starfall."
+ },
+ {
+  "id": "clarisse",
+  "house": "day",
+  "ru": "Кларисса Дейн",
+  "en": "Clarisse Dayne",
+  "page": "Clarisse Dayne",
+  "about": "Maegor rejected Benifer’s proposal that he marry the Lady of Starfall to detach her lands from Dorne."
+ },
+ {
+  "id": "ulrick",
+  "house": "day",
+  "ru": "Ульрик Дейн",
+  "en": "Ulrick Dayne",
+  "page": "Ulrick Dayne",
+  "about": "A celebrated Sword of the Morning. Eustace Osgrey nevertheless rated Daemon Blackfyre above him."
+ },
+ {
+  "id": "day_lord17",
+  "house": "day",
+  "ru": "Лорд Дейн",
+  "en": "",
+  "page": "Ashara Dayne",
+  "about": "The unnamed Lord of Starfall in the generation before Robert’s Rebellion."
+ },
+ {
+  "id": "day_lord18",
+  "house": "day",
+  "ru": "Лорд Дейн",
+  "en": "",
+  "page": "Edric Dayne",
+  "parents": [
+   "Лорд Дейн"
+  ],
+  "about": "The unnamed Lord of Starfall during Robert’s reign."
+ },
+ {
+  "id": "allyria",
+  "house": "day",
+  "ru": "Аллирия Дейн",
+  "en": "Allyria Dayne",
+  "page": "Allyria Dayne",
+  "parents": [
+   "Лорд Дейн"
+  ],
+  "spouses": [
+   "Beric Dondarrion"
+  ],
+  "about": "Betrothed to Beric Dondarrion. His repeated deaths left him unable to remember her hair colour."
+ },
+ {
+  "id": "edric_d",
+  "house": "day",
+  "ru": "Эдрик Дейн",
+  "en": "Edric Dayne",
+  "page": "Edric Dayne",
+  "born": "287",
+  "parents": [
+   "Лорд Дейн"
+  ],
+  "about": "Beric’s young squire befriended Arya while riding with the brotherhood. He believed his wet nurse Wylla was Jon Snow’s mother."
+ },
+ {
+  "id": "gerold_d",
+  "house": "day",
+  "ru": "Герольд Дейн",
+  "en": "Gerold Dayne",
+  "page": "Gerold Dayne",
+  "born": "270–274",
+  "about": "Darkstar escaped the failed plot to crown Myrcella. Doran blamed him for mutilating her; Hotah, Obara and Balon Swann were sent after him."
+ },
+ {
+  "id": "gunthor_g",
+  "house": "gdb",
+  "ru": "Гунтор Гудбразер",
+  "en": "Gunthor Goodbrother",
+  "page": "Gunthor Goodbrother",
+  "spouses": [
+   "Lysa Farman"
+  ],
+  "about": "After Dalton’s murder, a quarrel over Lysa Farman ended with him killing Alester Wynch. Their occupation forces faced revolt on Fair Isle."
+ },
+ {
+  "id": "arthur_g",
+  "house": "gdb",
+  "ru": "Артур Гудбразер",
+  "en": "Arthur Goodbrother",
+  "page": "Arthur Goodbrother",
+  "about": "He killed the Reach’s lord admiral Leo Costayne during the invasion of the Iron Islands."
+ },
+ {
+  "id": "gorold",
+  "house": "gdb",
+  "ru": "Горольд Гудбразер",
+  "en": "Gorold Goodbrother",
+  "page": "Gorold Goodbrother",
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "The Lord of Hammerhorn could muster a substantial fleet. He accepted Euron at the kingsmoot and joined the attack on the Shields."
+ },
+ {
+  "id": "greydon",
+  "house": "gdb",
+  "ru": "Грейдон Гудбразер",
+  "en": "Greydon Goodbrother",
+  "page": "Greydon Goodbrother",
+  "born": "282/283",
+  "parents": [
+   "Gorold Goodbrother"
+  ],
+  "about": "Sent to inform the family’s other branches of Balon Greyjoy’s death."
+ },
+ {
+  "id": "gormond",
+  "house": "gdb",
+  "ru": "Гормонд Гудбразер",
+  "en": "Gormond Goodbrother",
+  "page": "Gormond Goodbrother",
+  "born": "282/283",
+  "parents": [
+   "Gorold Goodbrother"
+  ],
+  "about": "He brought Aeron the news that Balon had died."
+ },
+ {
+  "id": "gran_g",
+  "house": "gdb",
+  "ru": "Грен Гудбразер",
+  "en": "Gran Goodbrother",
+  "page": "Gran Goodbrother",
+  "born": "282/283",
+  "parents": [
+   "Gorold Goodbrother"
+  ],
+  "about": "Gran is tall and difficult to distinguish from his identical brothers, Greydon and Gormond. He admits Aeron Greyjoy to Hammerhorn when the priest comes to speak with Gorold after Balon's death."
+ },
+ {
+  "id": "gysella",
+  "house": "gdb",
+  "ru": "Гизелла Гудбразер",
+  "en": "Gysella Goodbrother",
+  "page": "Gysella Goodbrother",
+  "parents": [
+   "Gorold Goodbrother"
+  ],
+  "about": "Gysella is one of Gorold Goodbrother's twelve daughters. She is at Hammerhorn when Aeron Greyjoy arrives, but her father sends her and her sister Gwin away before speaking with the Damphair."
+ },
+ {
+  "id": "gwin",
+  "house": "gdb",
+  "ru": "Гвин Гудбразер",
+  "en": "Gwin Goodbrother",
+  "page": "Gwin Goodbrother",
+  "parents": [
+   "Gorold Goodbrother"
+  ],
+  "about": "Gwin is present at Hammerhorn when Aeron visits Gorold to discuss Balon's death and Euron's return. Gorold dismisses her and Gysella from the room before their conversation."
+ },
+ {
+  "id": "stw_lord129",
+  "house": "stw",
+  "ru": "Лорд Стокворт",
+  "en": "",
+  "page": "House Stokeworth",
+  "about": "Imprisonment made him abandon Rhaenyra for Aegon II. Rhaenyra executed him when she took the capital."
+ },
+ {
+  "id": "stw_dau129",
+  "house": "stw",
+  "ru": "Дочь",
+  "en": "",
+  "page": "House Stokeworth",
+  "parents": [
+   "Лорд Стокворт"
+  ],
+  "about": "Rhaenyra considered making her heir, but Corlys persuaded the queen to preserve male succession."
+ },
+ {
+  "id": "stw_son129",
+  "house": "stw",
+  "ru": "Сын",
+  "en": "",
+  "page": "House Stokeworth",
+  "parents": [
+   "Лорд Стокворт"
+  ],
+  "about": "He inherited Stokeworth after Corlys opposed granting it to his elder sister."
+ },
+ {
+  "id": "falena",
+  "house": "stw",
+  "ru": "Фалена Стокворт",
+  "en": "Falena Stokeworth",
+  "page": "Falena Stokeworth",
+  "born": "125",
+  "spouses": [
+   "Aegon the Unworthy",
+   "Лукас Лотстон"
+  ],
+  "about": "Aegon’s first mistress was married off to Lucas Lothston. She later brought her young daughter Jeyne into the same king’s bed."
+ },
+ {
+  "id": "maia",
+  "house": "stw",
+  "ru": "Майя Стокворт",
+  "en": "Maia Stokeworth",
+  "page": "Maia Stokeworth",
+  "about": "She accused Viserys II of poisoning Baelor to seize the crown. The accusation is unproven."
+ },
+ {
+  "id": "samwell_s",
+  "house": "stw",
+  "ru": "Сэмвелл Стокворт",
+  "en": "Samwell Stokeworth",
+  "page": "Samwell Stokeworth",
+  "about": "A competitor at Ashford in 209 AC."
+ },
+ {
+  "id": "lollys",
+  "house": "stw",
+  "ru": "Лоллис Стокворт",
+  "en": "Lollys Stokeworth",
+  "page": "Lollys Stokeworth",
+  "born": "265",
+  "parents": [
+   "Tanda Stokeworth"
+  ],
+  "spouses": [
+   "Бронн"
+  ],
+  "about": "Raped during the King’s Landing riot, she later married Bronn. Tanda’s death and Falyse’s removal made her Lady of Stokeworth."
+ },
+ {
+  "id": "tyrion_t",
+  "house": "stw",
+  "ru": "Тирион Дубильный",
+  "en": "Tyrion Tanner",
+  "page": "Tyrion Tanner",
+  "born": "300",
+  "parents": [
+   "Lollys Stokeworth"
+  ],
+  "about": "Bronn named him after Tyrion Lannister, angering Cersei."
+ },
+ {
+  "id": "pip_lord1",
+  "house": "pip",
+  "ru": "Лорд Пайпер",
+  "en": "",
+  "page": "Melony Piper",
+  "about": "Lord of Pinkmaiden, otherwise unnamed in the record."
+ },
+ {
+  "id": "jon_p",
+  "house": "pip",
+  "ru": "Джон Пайпер",
+  "en": "Jon Piper",
+  "page": "Jon Piper",
+  "parents": [
+   "Лорд Пайпер"
+  ],
+  "about": "Lord of Pinkmaiden during Maegor’s reign."
+ },
+ {
+  "id": "petyr_child",
+  "house": "pip",
+  "ru": "Ребёнок",
+  "en": "",
+  "page": "Petyr Piper",
+  "parents": [
+   "Petyr Piper"
+  ],
+  "about": "Lord Petyr Piper, who died at Acorn Hall during the Dance of the Dragons, had at least one child. The child's name and sex are unknown."
+ },
+ {
+  "id": "pip_lord18",
+  "house": "pip",
+  "ru": "Лорд Пайпер",
+  "en": "",
+  "page": "Quellon Greyjoy",
+  "about": "Lord of Pinkmaiden; his personal history is not recorded."
+ },
+ {
+  "id": "clement",
+  "house": "pip",
+  "ru": "Клемент Пайпер",
+  "en": "Clement Piper",
+  "page": "Clement Piper",
+  "about": "Lannister raids devastated his lands at the beginning of the war."
+ },
+ {
+  "id": "marq",
+  "house": "pip",
+  "ru": "Марк Пайпер",
+  "en": "Marq Piper",
+  "page": "Marq Piper",
+  "parents": [
+   "Clement Piper"
+  ],
+  "about": "He raided Lannister forces with Karyl Vance. The Red Wedding left him captive, later accused of resisting the Freys."
+ },
+ {
+  "id": "lewys",
+  "house": "pip",
+  "ru": "Льюис Пайпер",
+  "en": "Lewys Piper",
+  "page": "Lewys Piper",
+  "parents": [
+   "Clement Piper"
+  ],
+  "about": "A young squire of House Piper."
+ },
+ {
+  "id": "roland_kg",
+  "house": "crk",
+  "ru": "Роланд Крейкхолл",
+  "en": "Roland Crakehall",
+  "page": "Roland Crakehall (Kingsguard)",
+  "about": "A Kingsguard knight who opposed Dunk at Ashford and later accompanied Bloodraven to Whitewalls."
+ },
+ {
+  "id": "roland_c",
+  "house": "crk",
+  "ru": "Роланд Крейкхолл",
+  "en": "Roland Crakehall",
+  "page": "Roland Crakehall (lord)",
+  "parents": [
+   "Sumner Crakehall"
+  ],
+  "about": "He found Jaime on the throne after Aerys’s murder. Reports of his death at Oxcross proved false."
+ },
+ {
+  "id": "tybolt",
+  "house": "crk",
+  "ru": "Тибольт Крейкхолл",
+  "en": "Tybolt Crakehall",
+  "page": "Tybolt Crakehall",
+  "parents": [
+   "Roland Crakehall"
+  ],
+  "about": "Heir to Crakehall."
+ },
+ {
+  "id": "lyle_c",
+  "house": "crk",
+  "ru": "Лайл Крейкхолл",
+  "en": "Lyle Crakehall",
+  "page": "Lyle Crakehall",
+  "parents": [
+   "Roland Crakehall"
+  ],
+  "about": "Strongboar survived captivity and joined Jaime’s march to Riverrun. He was subsequently sent to find the Hound."
+ },
+ {
+  "id": "merlon",
+  "house": "crk",
+  "ru": "Мерлон Крейкхолл",
+  "en": "Merlon Crakehall",
+  "page": "Merlon Crakehall",
+  "parents": [
+   "Roland Crakehall"
+  ],
+  "about": "He helped receive Oberyn Martell when the prince arrived in King’s Landing."
+ },
+ {
+  "id": "melesa",
+  "house": "crk",
+  "ru": "Мелеса Крейкхолл",
+  "en": "Melesa Crakehall",
+  "page": "Melesa Crakehall",
+  "spouses": [
+   "Lyonel Frey"
+  ],
+  "about": "Her marriage to Lyonel Frey was childless. Her exact place in the Crakehall family is unknown."
+ },
+ {
+  "id": "shiera_c",
+  "house": "crk",
+  "ru": "Шира Крейкхолл",
+  "en": "Shiera Crakehall",
+  "page": "Shiera Crakehall",
+  "born": "не позднее 273",
+  "spouses": [
+   "Дамион Ланнистер"
+  ],
+  "about": "Shiera married Ser Damion Lannister, a cousin of the family's main branch. Their children are Lucion and Lanna."
+ }
+]

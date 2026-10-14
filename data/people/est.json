@@ -5,14 +5,14 @@
     {
       "title": "Эстермонты",
       "people": [
-        {"id":"gunthor_e","name":"Гюнтор Эстермонт","full":"Сир Гюнтор Эстермонт","en":"Gunthor Estermont","hs":"est","k":"T"},
+        {"id":"gunthor_e","name":"Гюнтор Эстермонт","full":"Сир Гюнтор Эстермонт","en":"Gunthor Estermont","hs":"est","k":"T","ls":209},
         {"id":"est_lord17","name":"Лорд Эстермонт","full":"Лорд Эстермонт, отец Кассаны","hs":"est","k":"T","wiki":"Cassana Estermont"},
         {"id":"cassana","name":"Кассана Эстермонт","en":"Cassana Estermont","fem":1,"hs":"est","k":"T","p":"est_lord17","par":["est_lord17"],"d":"278/279","sp":[["steffon"]]},
-        {"id":"eldon","name":"Элдон Эстермонт","en":"Eldon Estermont","hs":"est","k":"T","b":"228–232","sp":[["первая жена, имя не названа"],["Сильва Сантагар","вторая жена"]]},
-        {"id":"aemon_e","name":"Эймон Эстермонт","full":"Сир Эймон Эстермонт","en":"Aemon Estermont","hs":"est","k":"T","p":"eldon","par":["eldon","первая жена, имя не названа"]},
-        {"id":"alyn_e","name":"Алин Эстермонт","full":"Сир Алин Эстермонт","en":"Alyn Estermont","hs":"est","k":"T","p":"aemon_e","par":["aemon_e"]},
-        {"id":"lomas","name":"Ломас Эстермонт","full":"Сир Ломас Эстермонт","en":"Lomas Estermont","hs":"est","k":"T","p":"eldon","par":["eldon (по «Танцу с драконами»; по «Пиру стервятников» — брат)"],"unc":1},
-        {"id":"andrew_e","name":"Эндрю Эстермонт","full":"Сир Эндрю Эстермонт","en":"Andrew Estermont","hs":"est","k":"T","p":"lomas","par":["lomas"]}
+        {"id":"eldon","name":"Элдон Эстермонт","en":"Eldon Estermont","hs":"est","k":"T","b":"228–232","alive":1,"sp":[["первая жена, имя не названа"],["Сильва Сантагар","вторая жена"]]},
+        {"id":"aemon_e","name":"Эймон Эстермонт","full":"Сир Эймон Эстермонт","en":"Aemon Estermont","hs":"est","k":"T","p":"eldon","par":["eldon","первая жена, имя не названа"],"alive":1},
+        {"id":"alyn_e","name":"Алин Эстермонт","full":"Сир Алин Эстермонт","en":"Alyn Estermont","hs":"est","k":"T","p":"aemon_e","par":["aemon_e"],"alive":1},
+        {"id":"lomas","name":"Ломас Эстермонт","full":"Сир Ломас Эстермонт","en":"Lomas Estermont","hs":"est","k":"T","p":"eldon","par":["eldon (по «Танцу с драконами»; по «Пиру стервятников» — брат)"],"unc":1,"alive":1},
+        {"id":"andrew_e","name":"Эндрю Эстермонт","full":"Сир Эндрю Эстермонт","en":"Andrew Estermont","hs":"est","k":"T","p":"lomas","par":["lomas"],"alive":1}
       ]
     }
   ]

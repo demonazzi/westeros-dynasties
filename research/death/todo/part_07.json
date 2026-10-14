@@ -1,0 +1,656 @@
+[
+ {
+  "id": "manfred_h",
+  "house": "hgt",
+  "ru": "Манфред Хайтауэр",
+  "en": "Manfred Hightower",
+  "page": "Manfred Hightower (son of Addam)",
+  "about": "Lord of Oldtown during the Conquest. He chose to acknowledge Aegon, preserving his city and his house's influence. His daughter Ceryse became Maegor Targaryen's first wife."
+ },
+ {
+  "id": "martyn_h",
+  "house": "hgt",
+  "ru": "Мартин Хайтауэр",
+  "en": "Martyn Hightower",
+  "page": "Martyn Hightower (son of Manfred)",
+  "parents": [
+   "Manfred Hightower"
+  ],
+  "about": "He became Lord of Oldtown in 41 AC, during the Targaryens' struggle against the Faith Militant."
+ },
+ {
+  "id": "morgan_h",
+  "house": "hgt",
+  "ru": "Морган Хайтауэр",
+  "en": "Morgan Hightower",
+  "page": "Morgan Hightower",
+  "parents": [
+   "Manfred Hightower"
+  ],
+  "about": "A knight of the Warrior's Sons, the Faith's military order that rebelled against the Targaryens."
+ },
+ {
+  "id": "hgt_lord8",
+  "house": "hgt",
+  "ru": "Лорд Хайтауэр",
+  "en": "",
+  "page": "House Hightower",
+  "about": "Lord of Oldtown."
+ },
+ {
+  "id": "hgt_lord9",
+  "house": "hgt",
+  "ru": "Лорд Хайтауэр",
+  "en": "",
+  "page": "House Hightower",
+  "parents": [
+   "Лорд Хайтауэр"
+  ],
+  "about": "Lord of Oldtown. He supported Otto's plans to place Aegon II on the throne."
+ },
+ {
+  "id": "lyonel_h",
+  "house": "hgt",
+  "ru": "Лайонел Хайтауэр",
+  "en": "Lyonel Hightower",
+  "page": "Lyonel Hightower (son of Ormund)",
+  "parents": [
+   "Ormund Hightower"
+  ],
+  "spouses": [
+   "Samantha Tarly"
+  ],
+  "about": "He inherited Oldtown after Ormund's death. He initially wanted to continue the war but agreed to peace. He became involved with his father's widow, Samantha Tarly. The High Septon long refused to let them marry, though t"
+ },
+ {
+  "id": "martyn_ho",
+  "house": "hgt",
+  "ru": "Мартин Хайтауэр",
+  "en": "Martyn Hightower",
+  "page": "Martyn Hightower (son of Ormund)",
+  "born": "115–126",
+  "parents": [
+   "Ormund Hightower"
+  ],
+  "about": "He served as a squire during Aegon III's reign."
+ },
+ {
+  "id": "garmund",
+  "house": "hgt",
+  "ru": "Гармунд Хайтауэр",
+  "en": "Garmund Hightower",
+  "page": "Garmund Hightower",
+  "parents": [
+   "Ormund Hightower"
+  ],
+  "spouses": [
+   "Rhaena"
+  ],
+  "about": "During the Dance he served as a page and cupbearer at Highgarden. He later married Rhaena Targaryen; they had six daughters."
+ },
+ {
+  "id": "bethany_h",
+  "house": "hgt",
+  "ru": "Бетани Хайтауэр",
+  "en": "Bethany Hightower",
+  "page": "Bethany Hightower",
+  "parents": [
+   "Ormund Hightower"
+  ],
+  "about": "After Jaehaera died, she was proposed as a new wife for Aegon III. The king chose Daenaera Velaryon, and the marriage never took place."
+ },
+ {
+  "id": "leyton",
+  "house": "hgt",
+  "ru": "Лейтон Хайтауэр",
+  "en": "Leyton Hightower",
+  "page": "Leyton Hightower",
+  "spouses": [
+   "Рия Флорент"
+  ],
+  "about": "Lord of Oldtown and head of one of the Reach's wealthiest houses, bearing the title Voice of Oldtown. He had not left the Hightower for years, remaining there with his eldest daughter Malora. Stories about their studies "
+ },
+ {
+  "id": "baelor_h",
+  "house": "hgt",
+  "ru": "Бейелор Хайтауэр",
+  "en": "Baelor Hightower",
+  "page": "Baelor Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Ронда Рован"
+  ],
+  "about": "Brightsmile, the heir to Oldtown. In his youth, he was considered as a possible husband for Elia Martell, but the marriage did not take place."
+ },
+ {
+  "id": "malora",
+  "house": "hgt",
+  "ru": "Малора Хайтауэр",
+  "en": "Malora Hightower",
+  "page": "Malora Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "about": "Known as the Mad Maid. She lived with her father at the top of the Hightower, away from ordinary court life. In Oldtown, people said they were studying sorcery and seeking a way to protect the city. These stories did not"
+ },
+ {
+  "id": "alerie",
+  "house": "hgt",
+  "ru": "Алерия Хайтауэр",
+  "en": "Alerie Hightower",
+  "page": "Alerie Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Mace Tyrell"
+  ],
+  "about": "She came to King's Landing with the Tyrells and joined Margaery's household."
+ },
+ {
+  "id": "garth_h",
+  "house": "hgt",
+  "ru": "Гарт Хайтауэр",
+  "en": "Garth Hightower",
+  "page": "Garth Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "about": "A knight known as Greysteel."
+ },
+ {
+  "id": "denyse_h",
+  "house": "hgt",
+  "ru": "Дениза Хайтауэр",
+  "en": "Denyse Hightower",
+  "page": "Denyse Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Desmond Redwyne"
+  ],
+  "about": "Denyse married Ser Desmond Redwyne and has a son, Denys. She is a daughter of Leyton Hightower."
+ },
+ {
+  "id": "leyla_h",
+  "house": "hgt",
+  "ru": "Лейла Хайтауэр",
+  "en": "Leyla Hightower",
+  "page": "Leyla Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Джон Каппс"
+  ],
+  "about": "Leyla is a daughter of Lord Leyton Hightower of Oldtown and the wife of Ser Jon Cupps."
+ },
+ {
+  "id": "alysanne_h",
+  "house": "hgt",
+  "ru": "Алисанна Хайтауэр",
+  "en": "Alysanne Hightower",
+  "page": "Alysanne Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Артур Амброз"
+  ],
+  "about": "Alysanne, a daughter of Leyton Hightower, married Lord Arthur Ambrose. Their son is Ser Alyn Ambrose."
+ },
+ {
+  "id": "lynesse",
+  "house": "hgt",
+  "ru": "Линесс Хайтауэр",
+  "en": "Lynesse Hightower",
+  "page": "Lynesse Hightower",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Jorah Mormont"
+  ],
+  "about": "Accustomed to Oldtown's wealth, she was unhappy on Bear Island. Jorah ruined himself trying to provide the life she wanted and began selling poachers into slavery. In exile in Lys, she left him for the wealthy merchant T"
+ },
+ {
+  "id": "gunthor",
+  "house": "hgt",
+  "ru": "Гюнтор Хайтауэр",
+  "en": "Gunthor Hightower",
+  "page": "Gunthor Hightower",
+  "born": "271–285",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "spouses": [
+   "Jeyne Fossoway"
+  ],
+  "about": "A knight of Oldtown."
+ },
+ {
+  "id": "humfrey_h",
+  "house": "hgt",
+  "ru": "Хамфри Хайтауэр",
+  "en": "Humfrey Hightower",
+  "page": "Humfrey Hightower",
+  "born": "272–285",
+  "parents": [
+   "Leyton Hightower"
+  ],
+  "about": "A knight of Oldtown."
+ },
+ {
+  "id": "loren",
+  "house": "lan",
+  "ru": "Лорен Ланнистер",
+  "en": "Loren the Last",
+  "page": "Loren I Lannister",
+  "about": "Defeat at the Field of Fire ended his kingship. Submission to Aegon preserved Casterly Rock and made him Warden of the West."
+ },
+ {
+  "id": "tymond",
+  "house": "lan",
+  "ru": "Таймонд Ланнистер",
+  "en": "Tymond Lannister",
+  "page": "Tymond Lannister",
+  "parents": [
+   "Lyman Lannister"
+  ],
+  "about": "Daella rejected him as a husband, disliking his reputation with women."
+ },
+ {
+  "id": "lan_lord10",
+  "house": "lan",
+  "ru": "Лорд Ланнистер",
+  "en": "",
+  "page": "House Lannister",
+  "about": "Lord of Casterly Rock, otherwise unnamed."
+ },
+ {
+  "id": "cerelle_l",
+  "house": "lan",
+  "ru": "Сирелла Ланнистер",
+  "en": "Cerelle Lannister",
+  "page": "Cerelle Lannister (daughter of Jason)",
+  "parents": [
+   "Jason Lannister",
+   "Johanna Westerling"
+  ],
+  "about": "In 133 AC, Johanna Lannister put forward Cerelle and her sister Tyshara as possible brides for Aegon III. Both were unmarried and of suitable noble birth. Aegon eventually married Daenaera Velaryon."
+ },
+ {
+  "id": "tyshara",
+  "house": "lan",
+  "ru": "Тишара Ланнистер",
+  "en": "Tyshara Lannister",
+  "page": "Tyshara Lannister",
+  "born": "103–121",
+  "parents": [
+   "Jason Lannister",
+   "Johanna Westerling"
+  ],
+  "about": "Tyshara was considered as a bride for Aegon III. After the Maiden's Day Ball, she was found in bed with a groom and said he had climbed through her window. The scandal ended her prospects of becoming queen. Rumour blamed"
+ },
+ {
+  "id": "loreon",
+  "house": "lan",
+  "ru": "Лореон Ланнистер",
+  "en": "Loreon Lannister",
+  "page": "Loreon Lannister",
+  "parents": [
+   "Jason Lannister",
+   "Johanna Westerling"
+  ],
+  "about": "He inherited as a small child while his mother confronted ironborn attacks on the west."
+ },
+ {
+  "id": "tya",
+  "house": "lan",
+  "ru": "Тия Ланнистер",
+  "en": "Tya Lannister",
+  "page": "Tya Lannister",
+  "spouses": [
+   "Gowen Baratheon"
+  ],
+  "about": "Her only known son died in infancy."
+ },
+ {
+  "id": "damon_l",
+  "house": "lan",
+  "ru": "Дамон Ланнистер",
+  "en": "Damon Lannister",
+  "page": "Damon Lannister (son of Jason)",
+  "born": "244/245",
+  "parents": [
+   "Jason Lannister"
+  ],
+  "spouses": [
+   "Элла Ланнистер"
+  ],
+  "about": "Damon was Jason Lannister's only child by his first wife, Alys Stackspear, who died giving birth to him in 244 or 245 AC. He married Ella Lannister of Lannisport. Their son Damion later became castellan of Casterly Rock."
+ },
+ {
+  "id": "genna",
+  "house": "lan",
+  "ru": "Дженна Ланнистер",
+  "en": "Genna Lannister",
+  "page": "Genna Lannister",
+  "parents": [
+   "Tytos Lannister"
+  ],
+  "spouses": [
+   "Emmon Frey"
+  ],
+  "about": "Plain-spoken and politically observant, she understood her brothers without idealising them. Emmon’s grant of Riverrun brought her into its disputed inheritance. Her conversations with Jaime weigh what Tywin’s death has "
+ },
+ {
+  "id": "tygett",
+  "house": "lan",
+  "ru": "Тигетт Ланнистер",
+  "en": "Tygett Lannister",
+  "page": "Tygett Lannister",
+  "parents": [
+   "Tytos Lannister"
+  ],
+  "spouses": [
+   "Дарлесса Марбранд"
+  ],
+  "about": "A capable warrior who struggled with Tywin’s dominance. He died of the pox."
+ },
+ {
+  "id": "gerion",
+  "house": "lan",
+  "ru": "Герион Ланнистер",
+  "en": "Gerion Lannister",
+  "page": "Gerion Lannister",
+  "parents": [
+   "Tytos Lannister"
+  ],
+  "about": "His humour made him especially welcome to Tyrion. He sailed east to recover Brightroar and disappeared on the voyage towards Valyria. No return or recovered remains established his fate."
+ },
+ {
+  "id": "joy_hill",
+  "house": "lan",
+  "ru": "Джой Хилл",
+  "en": "Joy Hill",
+  "page": "Joy Hill",
+  "born": "288",
+  "parents": [
+   "Gerion Lannister"
+  ],
+  "about": "Born in 288 AC to Gerion Lannister and a common woman named Briony, Joy was still a small child when her father disappeared at sea. Jaime thinks of her as a sweet, lonely girl. As part of his agreement with the Freys, Ty"
+ },
+ {
+  "id": "cersei",
+  "house": "lan",
+  "ru": "Серсея Ланнистер",
+  "en": "Cersei Lannister",
+  "page": "Cersei Lannister",
+  "born": "266",
+  "parents": [
+   "Tywin Lannister",
+   "Joanna Lannister"
+  ],
+  "spouses": [
+   "Robert Baratheon",
+   "Jaime Lannister"
+  ],
+  "about": "All three of her known children were fathered by Jaime; protecting that secret drives many of her decisions. After Robert's death, she seeks to rule through her sons and remove rivals. Her restoration of the Faith Milita"
+ },
+ {
+  "id": "jaime",
+  "house": "lan",
+  "ru": "Джейме Ланнистер",
+  "en": "Jaime Lannister",
+  "page": "Jaime Lannister",
+  "born": "266",
+  "parents": [
+   "Tywin Lannister",
+   "Joanna Lannister"
+  ],
+  "about": "He joined the Kingsguard while still a youth. He killed Aerys II to prevent the destruction of the capital, earning the name Kingslayer while leaving his motives unexplained for years. Losing his right hand forces him to"
+ },
+ {
+  "id": "tyrion",
+  "house": "lan",
+  "ru": "Тирион Ланнистер",
+  "en": "Tyrion Lannister",
+  "page": "Tyrion Lannister",
+  "born": "273",
+  "parents": [
+   "Tywin Lannister",
+   "Joanna Lannister"
+  ],
+  "spouses": [
+   "Тиша",
+   "Sansa Stark"
+  ],
+  "about": "Educated and quick-witted, he nevertheless faces contempt because of his stature. He served as acting Hand and played a major part in defending the capital on the Blackwater. Accused of Joffrey's murder, he escaped after"
+ },
+ {
+  "id": "lancel",
+  "house": "lan",
+  "ru": "Лансель Ланнистер",
+  "en": "Lancel Lannister",
+  "page": "Lancel Lannister",
+  "parents": [
+   "Kevan Lannister"
+  ],
+  "about": "At Cersei’s direction he supplied Robert with strong wine during the fatal hunt. He later became her lover, but injury and guilt drove him towards the Faith. Abandoning his marriage and lands for the Warrior’s Sons made "
+ },
+ {
+  "id": "martyn_l",
+  "house": "lan",
+  "ru": "Мартин Ланнистер",
+  "en": "Martyn Lannister",
+  "page": "Martyn Lannister",
+  "born": "285–287",
+  "parents": [
+   "Kevan Lannister"
+  ],
+  "about": "A squire taken captive by northern forces."
+ },
+ {
+  "id": "janei",
+  "house": "lan",
+  "ru": "Жанея Ланнистер",
+  "en": "Janei Lannister",
+  "page": "Janei Lannister",
+  "born": "296/297",
+  "parents": [
+   "Kevan Lannister"
+  ],
+  "about": "Janei is Kevan Lannister and Dorna Swyft's youngest child and only daughter, born in 296 or 297 AC. Her older brothers are Lancel, Willem and Martyn. She is still a small child during the War of the Five Kings."
+ },
+ {
+  "id": "sharra",
+  "house": "arr",
+  "ru": "Шарра Аррен",
+  "en": "Sharra Arryn",
+  "page": "Sharra Arryn",
+  "about": "Queen regent of Mountain and Vale. She relied on the mountains and castles to defend her realm, but Visenya flew Vhagar straight to the Eyrie. Seeing Ronnel beside her, Sharra accepted Aegon's rule without a battle."
+ },
+ {
+  "id": "hubert",
+  "house": "arr",
+  "ru": "Хьюберт Аррен",
+  "en": "Hubert Arryn",
+  "page": "Hubert Arryn",
+  "spouses": [
+   "дама из дома Ройсов"
+  ],
+  "about": "He received the Eyrie after Ronnel's death and Jonos's execution. He was their cousin, though the precise degree of kinship is unknown."
+ },
+ {
+  "id": "rodrik",
+  "house": "arr",
+  "ru": "Родрик Аррен",
+  "en": "Rodrik Arryn",
+  "page": "Rodrik Arryn",
+  "born": "44",
+  "parents": [
+   "Rymond Arryn"
+  ],
+  "spouses": [
+   "первая жена",
+   "Daella"
+  ],
+  "about": "Lord of the Eyrie, which he inherited at ten after his father and uncle died. He served for many years as Jaehaerys I's master of laws. After being widowed, he married Princess Daella, who gave birth to Aemma and died so"
+ },
+ {
+  "id": "elys_a",
+  "house": "arr",
+  "ru": "Элис Аррен",
+  "en": "Elys Arryn",
+  "page": "Elys Arryn",
+  "parents": [
+   "Rodrik Arryn"
+  ],
+  "about": "Elys was three years older than her stepmother, Daella Targaryen, and the two clashed immediately. When the pregnant princess kept bursting into tears, Elys complained about her to Queen Alysanne. Daella died giving birt"
+ },
+ {
+  "id": "amanda_a",
+  "house": "arr",
+  "ru": "Аманда Аррен",
+  "en": "Amanda Arryn",
+  "page": "Amanda Arryn",
+  "parents": [
+   "Rodrik Arryn"
+  ],
+  "about": "Amanda helped her stepmother Daella Targaryen correspond with Queen Alysanne, writing most of the princess's letters. Daella later died in childbirth, leaving Amanda a younger half-sister, Aemma Arryn."
+ },
+ {
+  "id": "rodrik_s2",
+  "house": "arr",
+  "ru": "Второй сын Родрика",
+  "en": "",
+  "page": "Arnold Arryn",
+  "parents": [
+   "Rodrik Arryn"
+  ],
+  "about": "This branch's exact place among Rodrik Arryn's descendants is unknown."
+ },
+ {
+  "id": "arnold",
+  "house": "arr",
+  "ru": "Арнольд Аррен",
+  "en": "Arnold Arryn, the Mad Heir",
+  "page": "Arnold Arryn, the Mad Heir",
+  "parents": [
+   "Второй сын Родрика"
+  ],
+  "about": "He twice tried to remove Jeyne from power and was imprisoned. After her death, his branch of the family again contested the succession to the Eyrie."
+ },
+ {
+  "id": "eldric",
+  "house": "arr",
+  "ru": "Элдрик Аррен",
+  "en": "Eldric Arryn",
+  "page": "Eldric Arryn",
+  "parents": [
+   "Arnold Arryn, the Mad Heir"
+  ],
+  "about": "After Jeyne's death, he claimed the Eyrie against her chosen successor, Joffrey. Corwyn Corbray captured and executed him during the war for the Vale."
+ },
+ {
+  "id": "joffrey_a",
+  "house": "arr",
+  "ru": "Джоффри Аррен",
+  "en": "Joffrey Arryn",
+  "page": "Joffrey Arryn",
+  "about": "A distant relative of Jeyne Arryn and Knight of the Bloody Gate. She named him her heir in her will, but other branches of the family refused to accept her choice. After her death, he had to fight for the Eyrie. The crow"
+ },
+ {
+  "id": "isembard",
+  "house": "arr",
+  "ru": "Изембард Аррен",
+  "en": "Isembard Arryn",
+  "page": "Isembard Arryn",
+  "about": "A wealthy Arryn of Gulltown. After Jeyne's death, he claimed the Eyrie against Joffrey and Arnold's supporters."
+ },
+ {
+  "id": "donnel",
+  "house": "arr",
+  "ru": "Доннел Аррен",
+  "en": "Donnel Arryn",
+  "page": "Donnel Arryn",
+  "about": "Lord of the Eyrie under Daeron II. During the First Blackfyre Rebellion, he commanded the royal army's vanguard at the Redgrass Field; Gwayne Corbray's reinforcements helped save him from defeat. In 209 AC he closed the "
+ },
+ {
+  "id": "alys_r",
+  "house": "arr",
+  "ru": "Алис Аррен",
+  "en": "Alys Arryn",
+  "page": "Alys Arryn (wife of Rhaegel)",
+  "spouses": [
+   "Rhaegel"
+  ],
+  "about": "Her marriage to Rhaegel placed her family in the royal succession. She bore the twins Aelor and Aelora and a younger daughter, Daenora. After Rhaegel's death, her children stood in the line of succession to Aerys I. Thro"
+ },
+ {
+  "id": "jasper",
+  "house": "arr",
+  "ru": "Джаспер Аррен",
+  "en": "Jasper Arryn",
+  "page": "Jasper Arryn",
+  "about": "Lord of the Eyrie."
+ },
+ {
+  "id": "ronnel_j",
+  "house": "arr",
+  "ru": "Роннел Аррен",
+  "en": "Ronnel Arryn",
+  "page": "Ronnel Arryn (son of Jasper)",
+  "parents": [
+   "Jasper Arryn"
+  ],
+  "spouses": [
+   "дама из дома Белморов"
+  ],
+  "about": "Keeper of the Gates of the Moon. He died of a sickness of the belly before Robert's Rebellion. His son Elbert became Jon Arryn's heir but was executed by Aerys II."
+ },
+ {
+  "id": "alys_j",
+  "house": "arr",
+  "ru": "Алис Аррен",
+  "en": "Alys Arryn",
+  "page": "Alys Arryn (sister of Jon)",
+  "born": "219–251",
+  "parents": [
+   "Jasper Arryn"
+  ],
+  "spouses": [
+   "Elys Waynwood"
+  ],
+  "about": "Sister of Jon and Ronnel Arryn, and wife of Ser Elys Waynwood. She bore a son and eight daughters, but most of their lines died out or could not provide an heir to the Eyrie. Her youngest daughter became Harrold Hardyng'"
+ },
+ {
+  "id": "robert_a",
+  "house": "arr",
+  "ru": "Роберт Аррен",
+  "en": "Robert Arryn, Sweetrobin",
+  "page": "Robert Arryn",
+  "born": "292",
+  "parents": [
+   "Jon Arryn",
+   "Lysa Tully"
+  ],
+  "about": "He inherited the Eyrie after his father's death but remained a sickly child dependent on the adults around him. After his mother was killed, he came under Petyr Baelish's control. In the books he is called Robert; the te"
+ },
+ {
+  "id": "denys_son",
+  "house": "arr",
+  "ru": "Сын Дениса",
+  "en": "",
+  "page": "Denys Arryn",
+  "parents": [
+   "Denys Arryn",
+   "Старшая дочь Алис"
+  ],
+  "about": "He died soon after Denys was killed at the Battle of the Bells. His death ended this branch of claimants to the Eyrie."
+ }
+]

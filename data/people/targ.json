@@ -5,9 +5,9 @@
     {
       "title": "Таргариены: владыки Драконьего Камня",
       "people": [
-        {"id":"aenar","name":"Эйнар","full":"Эйнар Изгнанник","en":"Aenar the Exile","k":"T","pre":1},
-        {"id":"daenys","name":"Дейенис","full":"Дейенис Сновидица","en":"Daenys the Dreamer","fem":1,"k":"T","pre":1,"p":"aenar","sp":[["gaemon"]]},
-        {"id":"gaemon","name":"Гейемон","full":"Гейемон Славный","en":"Gaemon the Glorious","k":"T","pre":1,"p":"aenar","sp":[["daenys"]]},
+        {"id":"aenar","name":"Эйнар","full":"Эйнар Изгнанник","en":"Aenar the Exile","k":"T","pre":1,"d":"не ранее -102"},
+        {"id":"daenys","name":"Дейенис","full":"Дейенис Сновидица","en":"Daenys the Dreamer","fem":1,"k":"T","pre":1,"p":"aenar","d":"не ранее -101","sp":[["gaemon"]]},
+        {"id":"gaemon","name":"Гейемон","full":"Гейемон Славный","en":"Gaemon the Glorious","k":"T","pre":1,"p":"aenar","d":"не ранее -101","sp":[["daenys"]]},
         {"id":"aegon_l","name":"Эйгон","full":"Эйгон, лорд Драконьего Камня","en":"Aegon","k":"T","pre":1,"p":"gaemon","par":["gaemon","daenys"],"sp":[["elaena_l"]],"wiki":"Aegon Targaryen (son of Gaemon)"},
         {"id":"elaena_l","name":"Элейна","full":"Элейна, леди Драконьего Камня","en":"Elaena","fem":1,"k":"T","pre":1,"p":"gaemon","par":["gaemon","daenys"],"sp":[["aegon_l"]],"wiki":"Elaena Targaryen (daughter of Gaemon)"},
         {"id":"gaemon_dau","name":"Дочь","full":"Младшая дочь Гейемона Славного","fem":1,"k":"T","pre":1,"p":"gaemon","par":["gaemon","daenys"],"wiki":"Gaemon Targaryen (son of Aenar)"},
@@ -16,7 +16,7 @@
         {"id":"aelyx","name":"Эйликс","en":"Aelyx","k":"T","pre":1,"p":"aerys_l"},
         {"id":"baelon_l","name":"Бейлон","full":"Бейлон, лорд Драконьего Камня","en":"Baelon","k":"T","pre":1,"p":"aerys_l"},
         {"id":"daemion","name":"Деймион","en":"Daemion","k":"T","pre":1,"p":"aerys_l"},
-        {"id":"aerion_l","name":"Эйрион","full":"Эйрион, отец Завоевателя","en":"Aerion","k":"T","pre":1,"p":"daemion","sp":[["valaena"]],"wiki":"Aerion Targaryen (son of Daemion)"}
+        {"id":"aerion_l","name":"Эйрион","full":"Эйрион, отец Завоевателя","en":"Aerion","k":"T","pre":1,"p":"daemion","d":"-27–-2","sp":[["valaena"]],"wiki":"Aerion Targaryen (son of Daemion)"}
       ]
     },
     {
@@ -44,11 +44,11 @@
         {"id":"rhaena_a","name":"Рейена","full":"Рейена, дочь Эйниса I","en":"Rhaena","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"23","d":"73","sp":[["aegon_u","41 г."],["maegor1","47 г."],["androw"]],"wiki":"Rhaena Targaryen (daughter of Aenys I)"},
         {"id":"aegon_u","name":"Эйгон","full":"Эйгон Некоронованный","en":"Aegon the Uncrowned","k":"C","p":"aenys1","par":["aenys1","alyssa_v"],"b":"26","d":"43","sp":[["rhaena_a","41 г."]],"wiki":"Aegon Targaryen (son of Aenys I)"},
         {"id":"aerea","name":"Эйрея","en":"Aerea","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"d":"56"},
-        {"id":"rhaella_a","name":"Рейелла","full":"Рейелла, дочь Эйгона Некоронованного","en":"Rhaella","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"wiki":"Rhaella Targaryen (daughter of Aegon)"},
+        {"id":"rhaella_a","name":"Рейелла","full":"Рейелла, дочь Эйгона Некоронованного","en":"Rhaella","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"d":"не ранее 73","ls":58,"wiki":"Rhaella Targaryen (daughter of Aegon)"},
         {"id":"viserys_a","name":"Визерис","full":"Визерис, сын Эйниса I","en":"Viserys","k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"29","d":"44","wiki":"Viserys Targaryen (son of Aenys I)"},
         {"id":"jaehaerys1","name":"Джейехерис I","full":"Джейехерис I Миротворец","en":"Jaehaerys the Conciliator","k":"K","n":4,"r":"48–103","p":"aenys1","par":["aenys1","alyssa_v"],"b":"34","d":"103","dr":"Вермитор","sp":[["alysanne"]]},
         {"id":"alysanne","name":"Алисанна","full":"Алисанна, Добрая королева","en":"Good Queen Alysanne","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"36","d":"100","dr":"Среброкрылая","sp":[["jaehaerys1"]]},
-        {"id":"vaella_a","name":"Вейелла","full":"Вейелла, дочь Эйниса I","en":"Vaella","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"39","wiki":"Vaella Targaryen (daughter of Aenys I)"}
+        {"id":"vaella_a","name":"Вейелла","full":"Вейелла, дочь Эйниса I","en":"Vaella","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"39","d":"39","wiki":"Vaella Targaryen (daughter of Aenys I)"}
       ]
     },
     {
@@ -59,10 +59,10 @@
         {"id":"aemon_j","name":"Эймон","full":"Эймон, сын Джейехериса I","en":"Aemon","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"55","d":"92","dr":"Караксес","sp":[["jocelyn","70 г."]],"wiki":"Aemon Targaryen (son of Jaehaerys I)"},
         {"id":"baelon_j","name":"Бейлон","full":"Бейлон Отважный","en":"Baelon the Brave","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"57","d":"101","dr":"Вхагар","sp":[["alyssa_j","75 г."]],"wiki":"Baelon Targaryen (son of Jaehaerys I)"},
         {"id":"alyssa_j","name":"Алисса","full":"Алисса, дочь Джейехериса I","en":"Alyssa","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"60","d":"84","dr":"Мелейс","sp":[["baelon_j","75 г."]],"wiki":"Alyssa Targaryen"},
-        {"id":"maegelle","name":"Мейгелле","full":"Септа Мейгелле","en":"Maegelle","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"62","wiki":"Maegelle Targaryen"},
-        {"id":"vaegon","name":"Вейегон","full":"Вейегон Бездраконный","en":"Vaegon the Dragonless","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"63"},
+        {"id":"maegelle","name":"Мейгелле","full":"Септа Мейгелле","en":"Maegelle","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"62","d":"96","wiki":"Maegelle Targaryen"},
+        {"id":"vaegon","name":"Вейегон","full":"Вейегон Бездраконный","en":"Vaegon the Dragonless","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"63","d":"не ранее 101"},
         {"id":"daella_j","name":"Дейелла","full":"Дейелла, дочь Джейехериса I","en":"Daella","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"64","d":"82","sp":[["rodrik","80 г."]],"wiki":"Daella Targaryen (daughter of Jaehaerys I)"},
-        {"id":"saera","name":"Саэра","en":"Saera","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"67"},
+        {"id":"saera","name":"Саэра","en":"Saera","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"67","d":"не ранее 101"},
         {"id":"viserra","name":"Визерра","en":"Viserra","fem":1,"k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"71","d":"87"},
         {"id":"gaemon_j","name":"Гейемон","full":"Гейемон, сын Джейехериса I","en":"Gaemon","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"73","d":"73","wiki":"Gaemon Targaryen (son of Jaehaerys I)"},
         {"id":"valerion","name":"Валерион","en":"Valerion","k":"T","p":"jaehaerys1","par":["jaehaerys1","alysanne"],"b":"77","d":"78","wiki":"Valerion Targaryen"},
@@ -96,8 +96,8 @@
     {
       "title": "Дети Деймона и Лейны Веларион",
       "people": [
-        {"id":"baela","name":"Бейла","en":"Baela","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","dr":"Лунная Плясунья","sp":[["jacaerys","помолвка","b"],["alyn"]]},
-        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","sp":[["lucerys","помолвка","b"],["corwyn_c","первый муж, сир; погиб в 135 году"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
+        {"id":"baela","name":"Бейла","en":"Baela","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","d":"136–176","dr":"Лунная Плясунья","sp":[["jacaerys","помолвка","b"],["alyn"]]},
+        {"id":"rhaena_d","name":"Рейена","full":"Рейена, дочь Деймона","en":"Rhaena","fem":1,"k":"T","p":"daemon","par":["daemon","laena"],"b":"116","ls":136,"sp":[["lucerys","помолвка","b"],["corwyn_c","первый муж, сир; погиб в 135 году"],["garmund"]],"wiki":"Rhaena Targaryen (daughter of Daemon)"},
         {"id":"son_laena","name":"Сын Лейны","full":"Сын Деймона и Лейны","k":"T","p":"daemon","par":["daemon","laena"],"b":"120","d":"120","wiki":"Laena Velaryon"}
       ]
     },
@@ -126,7 +126,7 @@
     {
       "title": "Сын Эймонда",
       "people": [
-        {"id":"aemond_son","name":"Сын","full":"Сын Алис Риверс, мнимый сын Эймонда","k":"R","p":"aemond","par":["aemond (по словам матери)","Алис Риверс"],"unc":1,"wiki":"Alys Rivers's son"}
+        {"id":"aemond_son","name":"Сын","full":"Сын Алис Риверс, мнимый сын Эймонда","k":"R","p":"aemond","par":["aemond (по словам матери)","Алис Риверс"],"unc":1,"ls":132,"wiki":"Alys Rivers's son"}
       ]
     },
     {
@@ -134,9 +134,9 @@
       "people": [
         {"id":"daeron1","name":"Дейерон I","full":"Дейерон I Юный Дракон","en":"Daeron the Young Dragon","k":"K","n":8,"r":"157–161","p":"aegon3","par":["aegon3","daenaera"],"b":"143","d":"161"},
         {"id":"baelor1","name":"Бейелор I","full":"Бейелор I Благословенный","en":"Baelor the Blessed","k":"K","n":9,"r":"161–171","p":"aegon3","par":["aegon3","daenaera"],"b":"144","d":"171","sp":[["daena","брак расторгнут"]]},
-        {"id":"daena","name":"Дейена","full":"Дейена Непокорная","en":"Daena the Defiant","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"145","sp":[["baelor1","брак расторгнут"]]},
-        {"id":"rhaena_b","name":"Рейена","full":"Рейена, дочь Эйгона III","en":"Rhaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"147","wiki":"Rhaena Targaryen (daughter of Aegon III)"},
-        {"id":"elaena_b","name":"Элейна","full":"Элейна, дочь Эйгона III","en":"Elaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"150","sp":[["alyn","возлюбленный","l"],["ossifer","176 г."],["ronnel"],["Майкл Манвуди"]],"wiki":"Elaena Targaryen"}
+        {"id":"daena","name":"Дейена","full":"Дейена Непокорная","en":"Daena the Defiant","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"145","d":"не ранее 172","sp":[["baelor1","брак расторгнут"]]},
+        {"id":"rhaena_b","name":"Рейена","full":"Рейена, дочь Эйгона III","en":"Rhaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"147","d":"не ранее 171","wiki":"Rhaena Targaryen (daughter of Aegon III)"},
+        {"id":"elaena_b","name":"Элейна","full":"Элейна, дочь Эйгона III","en":"Elaena","fem":1,"k":"T","p":"aegon3","par":["aegon3","daenaera"],"b":"150","d":"не ранее 220","sp":[["alyn","возлюбленный","l"],["ossifer","176 г."],["ronnel"],["Майкл Манвуди"]],"wiki":"Elaena Targaryen"}
       ]
     },
     {
@@ -152,7 +152,7 @@
       "people": [
         {"id":"daeron2","name":"Дейерон II","full":"Дейерон II Добрый","en":"Daeron the Good","k":"K","n":12,"r":"184–209","p":"aegon4","par":["aegon4","naerys"],"b":"153","d":"209","sp":[["myriah"]]},
         {"id":"twins_n","name":"Близнецы","full":"Близнецы Нейерис","group":1,"k":"T","p":"aegon4","par":["aegon4","naerys"],"b":"161","d":"161","wiki":"Naerys Targaryen"},
-        {"id":"daenerys_n","name":"Дейенерис","full":"Дейенерис, дочь Эйгона IV","en":"Daenerys","fem":1,"k":"T","p":"aegon4","par":["aegon4","naerys"],"b":"172","sp":[["maron"]],"wiki":"Daenerys Targaryen (daughter of Aegon IV)"},
+        {"id":"daenerys_n","name":"Дейенерис","full":"Дейенерис, дочь Эйгона IV","en":"Daenerys","fem":1,"k":"T","p":"aegon4","par":["aegon4","naerys"],"b":"172","ls":187,"sp":[["maron"]],"wiki":"Daenerys Targaryen (daughter of Aegon IV)"},
         {"id":"naerys_twin","name":"Сын","full":"Мертворождённый сын Эйгона IV и Нейерис","k":"T","p":"aegon4","par":["aegon4","naerys"],"b":"172","d":"172","wiki":"Naerys Targaryen"},
         {"id":"naerys_last","name":"Ребёнок","full":"Последний ребёнок Эйгона IV и Нейерис","k":"T","p":"aegon4","par":["aegon4","naerys"],"b":"179","d":"179","wiki":"Naerys Targaryen"},
         {"id":"daemon_bf","name":"Деймон I Блэкфайр","en":"Daemon I Blackfyre","k":"B","cl":1,"p":"aegon4","par":["aegon4","daena"],"b":"170","d":"196","sp":[["Рохана из Тироша","184 г."]]},
@@ -163,13 +163,13 @@
         {"id":"bellenora","name":"Белленора Отерис","en":"Bellenora Otherys","fem":1,"k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"161–170"},
         {"id":"narha","name":"Нарха Отерис","en":"Narha Otherys","fem":1,"k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"162–171"},
         {"id":"balerion_o","name":"Балерион Отерис","en":"Balerion Otherys","k":"R","p":"aegon4","par":["aegon4 (сомнительно)","Беллигер Отерис"],"unc":1,"b":"163–172"},
-        {"id":"aegor","name":"Эйгор Риверс","full":"Эйгор Риверс, Жгучий Клинок","en":"Aegor Rivers, Bittersteel","k":"R","p":"aegon4","par":["aegon4","barba"],"b":"172","sp":[["calla"]]},
+        {"id":"aegor","name":"Эйгор Риверс","full":"Эйгор Риверс, Жгучий Клинок","en":"Aegor Rivers, Bittersteel","k":"R","p":"aegon4","par":["aegon4","barba"],"b":"172","d":"241","sp":[["calla"]]},
         {"id":"mya","name":"Мейя Риверс","en":"Mya Rivers","fem":1,"k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"172/173"},
         {"id":"gwenys","name":"Гвенис Риверс","en":"Gwenys Rivers","fem":1,"k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"173/174"},
-        {"id":"brynden","name":"Бринден Риверс","full":"Бринден Риверс, Кровавый Ворон","en":"Brynden Rivers, Bloodraven","k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"175"},
-        {"id":"shiera","name":"Шира","full":"Шира Звезда Морей","en":"Shiera Seastar","fem":1,"k":"R","p":"aegon4","par":["aegon4","Серенея из Лисса"],"b":"178–184"},
+        {"id":"brynden","name":"Бринден Риверс","full":"Бринден Риверс, Кровавый Ворон","en":"Brynden Rivers, Bloodraven","k":"R","p":"aegon4","par":["aegon4","melissa_bw"],"b":"175","alive":1},
+        {"id":"shiera","name":"Шира","full":"Шира Звезда Морей","en":"Shiera Seastar","fem":1,"k":"R","p":"aegon4","par":["aegon4","Серенея из Лисса"],"b":"178–184","d":"не ранее 211"},
         {"id":"butterwell_kids","name":"Бастарды","full":"Бастарды Эйгона IV от дочерей лорда Баттервелла","group":1,"k":"R","p":"aegon4","par":["aegon4 (по рассказам)","btw_gf_daus"],"unc":1,"wiki":"Aegon IV Targaryen"},
-        {"id":"jeyne_lt","name":"Джейн Лотстон","en":"Jeyne Lothston","fem":1,"hs":"oth","h":"Лотстонов","k":"T","p":"aegon4","par":["Лукас Лотстон (официально)","falena","aegon4 (по слухам)"],"unc":1,"b":"164"}
+        {"id":"jeyne_lt","name":"Джейн Лотстон","en":"Jeyne Lothston","fem":1,"hs":"oth","h":"Лотстонов","k":"T","p":"aegon4","par":["Лукас Лотстон (официально)","falena","aegon4 (по слухам)"],"unc":1,"b":"164","ls":178}
       ]
     },
     {
@@ -177,7 +177,7 @@
       "people": [
         {"id":"aegon_bf","name":"Эйгон Блэкфайр","en":"Aegon Blackfyre","k":"B","p":"daemon_bf","par":["daemon_bf","Рохана из Тироша"],"b":"184","d":"196","wiki":"Aegon Blackfyre"},
         {"id":"aemon_bf","name":"Эймон Блэкфайр","en":"Aemon Blackfyre","k":"B","p":"daemon_bf","par":["daemon_bf","Рохана из Тироша"],"b":"184","d":"196","wiki":"Aemon Blackfyre"},
-        {"id":"daemon2_bf","name":"Деймон II","full":"Деймон II Блэкфайр","en":"Daemon II Blackfyre","k":"B","cl":1,"p":"daemon_bf","par":["daemon_bf","Рохана из Тироша"],"wiki":"Daemon II Blackfyre"},
+        {"id":"daemon2_bf","name":"Деймон II","full":"Деймон II Блэкфайр","en":"Daemon II Blackfyre","k":"B","cl":1,"p":"daemon_bf","par":["daemon_bf","Рохана из Тироша"],"d":"212–219","wiki":"Daemon II Blackfyre"},
         {"id":"haegon","name":"Хейгон I","full":"Хейгон I Блэкфайр","en":"Haegon I Blackfyre","k":"B","cl":1,"p":"daemon_bf","par":["daemon_bf","Рохана из Тироша"],"b":"190–193","d":"219","wiki":"Haegon I Blackfyre"},
         {"id":"daemon3_bf","name":"Деймон III","full":"Деймон III Блэкфайр","en":"Daemon III Blackfyre","k":"B","cl":1,"p":"haegon","par":["haegon","мать не названа"],"d":"236","wiki":"Daemon III Blackfyre"},
         {"id":"haegon_sons","name":"Сыновья","full":"Младшие сыновья Хейгона I Блэкфайра","group":1,"k":"B","p":"haegon","par":["haegon","мать не названа"],"wiki":"Haegon I Blackfyre"},
@@ -196,20 +196,20 @@
         {"id":"valarr_sons","name":"Двое сыновей","full":"Мертворождённые сыновья Валарра","group":1,"k":"T","p":"valarr","par":["valarr","Кира из Тироша"],"d":"при рождении","wiki":"Valarr Targaryen"},
         {"id":"matarys","name":"Матарис","en":"Matarys","k":"T","p":"baelor_b","par":["baelor_b","jena_d"],"d":"209","wiki":"Matarys Targaryen"},
         {"id":"aerys1","name":"Эйерис I","en":"Aerys I","k":"K","n":13,"r":"209–221","p":"daeron2","par":["daeron2","myriah"],"b":"172","d":"221","sp":[["aelinor"]]},
-        {"id":"rhaegel","name":"Рейегель","en":"Rhaegel","k":"T","p":"daeron2","par":["daeron2","myriah"],"sp":[["alys_r"]],"wiki":"Rhaegel Targaryen"},
-        {"id":"aelor","name":"Эйлор","en":"Aelor","k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"wiki":"Aelor Targaryen"},
-        {"id":"aelora","name":"Эйлора","en":"Aelora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"wiki":"Aelora Targaryen"},
-        {"id":"daenora","name":"Дейенора","en":"Daenora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"sp":[["aerion_m"]],"wiki":"Daenora Targaryen"},
+        {"id":"rhaegel","name":"Рейегель","en":"Rhaegel","k":"T","p":"daeron2","par":["daeron2","myriah"],"d":"215","sp":[["alys_r"]],"wiki":"Rhaegel Targaryen"},
+        {"id":"aelor","name":"Эйлор","en":"Aelor","k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"217","wiki":"Aelor Targaryen"},
+        {"id":"aelora","name":"Эйлора","en":"Aelora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"217–221","wiki":"Aelora Targaryen"},
+        {"id":"daenora","name":"Дейенора","en":"Daenora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"не ранее 232","sp":[["aerion_m"]],"wiki":"Daenora Targaryen"},
         {"id":"maekar1","name":"Мейкар I","en":"Maekar I","k":"K","n":14,"r":"221–233","p":"daeron2","par":["daeron2","myriah"],"d":"233","sp":[["dyanna"]]}
       ]
     },
     {
       "title": "Дети Мейкара I и Дианны Дейн",
       "people": [
-        {"id":"daeron_dr","name":"Дейерон","full":"Дейерон Пьяница","en":"Daeron the Drunken","k":"T","p":"maekar1","par":["maekar1","dyanna"],"b":"190/191","sp":[["Кира из Тироша"]],"wiki":"Daeron Targaryen (son of Maekar I)"},
-        {"id":"vaella_s","name":"Вейелла","full":"Вейелла Простушка","en":"Vaella","fem":1,"k":"T","p":"daeron_dr","par":["daeron_dr","Кира из Тироша"],"b":"222","wiki":"Vaella Targaryen (daughter of Daeron)"},
+        {"id":"daeron_dr","name":"Дейерон","full":"Дейерон Пьяница","en":"Daeron the Drunken","k":"T","p":"maekar1","par":["maekar1","dyanna"],"b":"190/191","d":"221–233","sp":[["Кира из Тироша"]],"wiki":"Daeron Targaryen (son of Maekar I)"},
+        {"id":"vaella_s","name":"Вейелла","full":"Вейелла Простушка","en":"Vaella","fem":1,"k":"T","p":"daeron_dr","par":["daeron_dr","Кира из Тироша"],"b":"222","ls":233,"wiki":"Vaella Targaryen (daughter of Daeron)"},
         {"id":"aerion_m","name":"Эйрион","full":"Эйрион Яркое Пламя","en":"Aerion Brightflame","k":"T","p":"maekar1","par":["maekar1","dyanna"],"b":"191–194","d":"232","sp":[["daenora"]],"wiki":"Aerion Targaryen"},
-        {"id":"maegor_a","name":"Мейгор","full":"Мейгор, сын Эйриона","en":"Maegor","k":"T","p":"aerion_m","par":["aerion_m","daenora"],"wiki":"Maegor Targaryen (son of Aerion)"},
+        {"id":"maegor_a","name":"Мейгор","full":"Мейгор, сын Эйриона","en":"Maegor","k":"T","p":"aerion_m","par":["aerion_m","daenora"],"ls":233,"wiki":"Maegor Targaryen (son of Aerion)"},
         {"id":"aemon_m","name":"Эймон","full":"Мейстер Эймон","en":"Maester Aemon","k":"T","p":"maekar1","par":["maekar1","dyanna"],"b":"198","d":"300","wiki":"Aemon Targaryen (son of Maekar I)"},
         {"id":"daella_m","name":"Дейелла","full":"Дейелла, дочь Мейкара I","en":"Daella","fem":1,"k":"T","p":"maekar1","par":["maekar1","dyanna"],"b":"199","wiki":"Daella Targaryen (daughter of Maekar I)"},
         {"id":"daella_kids","name":"Дети","full":"Дети Дейеллы, дочери Мейкара I","group":1,"hs":"oth","h":"отца не назван","k":"T","p":"daella_m","par":["отец не назван","daella_m"],"wiki":"Daella Targaryen (daughter of Maekar I)"},
@@ -223,9 +223,9 @@
       "people": [
         {"id":"duncan","name":"Дункан","full":"Дункан Малый, Принц Стрекоз","en":"Duncan the Small","k":"T","p":"aegon5","par":["aegon5","betha"],"b":"220–224","d":"259","sp":[["lyonel_d","разорванная помолвка","b"],["Дженни из Старых Камней","239 г."]],"wiki":"Duncan Targaryen"},
         {"id":"jaehaerys2","name":"Джейехерис II","en":"Jaehaerys II","k":"K","n":16,"r":"259–262","p":"aegon5","par":["aegon5","betha"],"b":"225","d":"262","sp":[["shaera","240 г."]]},
-        {"id":"shaera","name":"Шейра","en":"Shaera","fem":1,"k":"T","p":"aegon5","par":["aegon5","betha"],"b":"226","sp":[["jaehaerys2","240 г."]]},
-        {"id":"daeron_e","name":"Дейерон","full":"Дейерон, сын Эйгона V","en":"Daeron","k":"T","p":"aegon5","par":["aegon5","betha"],"b":"228","wiki":"Daeron Targaryen (son of Aegon V)"},
-        {"id":"rhaelle","name":"Рейелль","en":"Rhaelle","fem":1,"k":"T","p":"aegon5","par":["aegon5","betha"],"b":"229–234","sp":[["ormund","245 г."]]}
+        {"id":"shaera","name":"Шейра","en":"Shaera","fem":1,"k":"T","p":"aegon5","par":["aegon5","betha"],"b":"226","d":"не ранее 259","sp":[["jaehaerys2","240 г."]]},
+        {"id":"daeron_e","name":"Дейерон","full":"Дейерон, сын Эйгона V","en":"Daeron","k":"T","p":"aegon5","par":["aegon5","betha"],"b":"228","d":"251","wiki":"Daeron Targaryen (son of Aegon V)"},
+        {"id":"rhaelle","name":"Рейелль","en":"Rhaelle","fem":1,"k":"T","p":"aegon5","par":["aegon5","betha"],"b":"229–234","d":"не ранее 246","sp":[["ormund","245 г."]]}
       ]
     },
     {
@@ -245,7 +245,7 @@
         {"id":"aegon_a2","name":"Эйгон","full":"Эйгон, сын Эйериса II","en":"Aegon","k":"T","p":"aerys2","par":["aerys2","rhaella"],"b":"272","d":"273","wiki":"Aegon Targaryen (son of Aerys II)"},
         {"id":"jaehaerys_a2","name":"Джейехерис","full":"Джейехерис, сын Эйериса II","en":"Jaehaerys","k":"T","p":"aerys2","par":["aerys2","rhaella"],"b":"274","d":"274","wiki":"Jaehaerys Targaryen (son of Aerys II)"},
         {"id":"viserys3","name":"Визерис III","full":"Визерис, Король-попрошайка","en":"Viserys, the Beggar King","k":"C","p":"aerys2","par":["aerys2","rhaella"],"b":"276","d":"298"},
-        {"id":"daenerys","name":"Дейенерис","full":"Дейенерис Бурерождённая","en":"Daenerys Stormborn","al":["Мать драконов","Дени"],"fem":1,"k":"C","p":"aerys2","par":["aerys2","rhaella"],"b":"284","dr":"Дрогон, Рейегаль, Визерион","sp":[["кхал Дрого"],["Хиздар зо Лорак","в книгах"]]},
+        {"id":"daenerys","name":"Дейенерис","full":"Дейенерис Бурерождённая","en":"Daenerys Stormborn","al":["Мать драконов","Дени"],"fem":1,"k":"C","p":"aerys2","par":["aerys2","rhaella"],"b":"284","alive":1,"dr":"Дрогон, Рейегаль, Визерион","sp":[["кхал Дрого"],["Хиздар зо Лорак","в книгах"]]},
         {"id":"rhaego","name":"Рейго","en":"Rhaego","k":"T","p":"daenerys","par":["кхал Дрого","daenerys"],"b":"299","d":"299"},
         {"id":"rhaenys_r","name":"Рейенис","full":"Рейенис, дочь Рейегара","en":"Rhaenys","fem":1,"k":"T","p":"rhaegar","par":["rhaegar","elia"],"b":"280","d":"283","wiki":"Rhaenys Targaryen (daughter of Rhaegar)"},
         {"id":"aegon_r","name":"Эйгон","full":"Эйгон, сын Рейегара","en":"Aegon","al":["Молодой Гриф","Эйгон VI"],"k":"T","p":"rhaegar","par":["rhaegar","elia"],"b":"281","d":"283","wiki":"Aegon Targaryen (son of Rhaegar)"}

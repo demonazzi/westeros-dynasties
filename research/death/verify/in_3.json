@@ -1,0 +1,324 @@
+[
+ {
+  "id": "willam_r",
+  "url": "https://awoiaf.westeros.org/index.php/Willam_Royce",
+  "claimed_died": "130 AC, King's Landing",
+  "claimed_status": "dead",
+  "claimed_note": "Killed by a mob in 130 AC during the storming of the Dragonpit, one of the Seven Who Rode; Lamentation was lost with him, matching our data. Parents are not clear on the page."
+ },
+ {
+  "id": "lorra",
+  "url": "https://awoiaf.westeros.org/index.php/Lorra_Royce",
+  "claimed_died": "In or after 190 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the bound only; page describes no death or events. Spouse Beron Stark matches our data."
+ },
+ {
+  "id": "perra",
+  "url": "https://awoiaf.westeros.org/index.php/Perra_Royce",
+  "claimed_died": "239–249 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 239-249 AC; page describes no death or events. Spouse Walder Frey matches our data."
+ },
+ {
+  "id": "benedict",
+  "url": "https://awoiaf.westeros.org/index.php/Benedict_Royce",
+  "claimed_died": "or after ~211 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the bound only; page describes no death event or events he took part in. Spouse Jocelyn Stark matches our data."
+ },
+ {
+  "id": "jeyne_r",
+  "url": "https://awoiaf.westeros.org/index.php/Jeyne_Royce",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "History section says she died in childbirth, with a stillborn daughter (AGoT appendix); no year given. Spouse Jon Arryn matches our data."
+ },
+ {
+  "id": "meria",
+  "url": "https://awoiaf.westeros.org/index.php/Meria_Martell",
+  "claimed_died": "13 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 13 AC; page says she passed away then, after the Dornish war had gone on for some time. Son Nymor succeeded her, matching our data."
+ },
+ {
+  "id": "nymor",
+  "url": "https://awoiaf.westeros.org/index.php/Nymor_Martell",
+  "claimed_died": "13–23 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 13-23 AC; page shows him sending Deria with the letter in 13 AC, and daughter Deria succeeding him by 23 AC. Matches our data."
+ },
+ {
+  "id": "deria",
+  "url": "https://awoiaf.westeros.org/index.php/Deria_Martell",
+  "claimed_died": "37 AC–49 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 37-49 AC; page's last described event is her denouncing the Vulture King in 37 AC. Father Nymor matches; page's spouse entries are garbled."
+ },
+ {
+  "id": "qoren",
+  "url": "https://awoiaf.westeros.org/index.php/Qoren_Martell",
+  "claimed_died": "129–132 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died range 129-132 AC; page says by 132 AC he had passed away and his eldest child Aliandra succeeded him. Page says he refused Otto Hightower's request for support, which our data does not mention."
+ },
+ {
+  "id": "aliandra",
+  "url": "https://awoiaf.westeros.org/index.php/Aliandra_Martell",
+  "claimed_died": "136–158 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died range 136-158 AC; last described event is her husband Drazenko Rogare's death in 135 AC. Born 115 AC and father Qoren match our data. Page calls Alyn Velaryon a rumored lover, not a spouse as our data lists."
+ },
+ {
+  "id": "dorne_p14",
+  "url": "https://awoiaf.westeros.org/index.php/Prince_of_Dorne_(father_of_Maron)",
+  "claimed_died": "161–174 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died range 161-174 AC; page names him Nymeros Martell, says he betrothed his daughter and heir Myriah to Baelor's cousin Daeron in 161 AC, and Maron had succeeded him by 174 AC. Matches our data; our entry's page 'Maron Martell' was the wrong page."
+ },
+ {
+  "id": "myriah",
+  "url": "https://awoiaf.westeros.org/index.php/Myriah_Martell",
+  "claimed_died": "184 AC or after",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died '184 AC or after'; her only dated event is the 161 AC betrothal to Daeron II. Spouse Daeron II and parent Prince of Dorne match our data."
+ },
+ {
+  "id": "dorne_p19",
+  "url": "https://awoiaf.westeros.org/index.php/Princess_of_Dorne_(mother_of_Doran)",
+  "claimed_died": "279 AC or 280 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died '279 AC or 280 AC'; page says she died before Elia's 280 AC marriage, after her deathbed talk with Oberyn in 279 AC. Friendship with Joanna Lannister and Casterly Rock visit match our data. Our entry's page 'Doran Martell' was the wrong page."
+ },
+ {
+  "id": "unwin_dau1",
+  "url": "https://awoiaf.westeros.org/index.php/Unwin_Peake",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "Unwin Peake's page says his oldest daughter, after a marriage, died in childbirth at age twelve; no year is given."
+ },
+ {
+  "id": "unwin_son2",
+  "url": "https://awoiaf.westeros.org/index.php/Unwin_Peake",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "Unwin Peake's page says his second son, squiring with the Redwynes, died at twelve in a sailing accident (our entry says drowned); no year is given."
+ },
+ {
+  "id": "titus_u",
+  "url": "https://awoiaf.westeros.org/index.php/Titus_Peake_(son_of_Unwin)",
+  "claimed_died": "130 AC near the Honeywine",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 130 AC; the page says he was knighted after the Honeywine and died six days later in a skirmish with broken men while scouting, not that he was wounded there (conflicts with our entry)."
+ },
+ {
+  "id": "mervyn",
+  "url": "https://awoiaf.westeros.org/index.php/Mervyn_Flowers",
+  "claimed_died": "135 AC, King's Landing",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 135 AC in King's Landing; the page says he killed Ser Marston Waters, then was beaten to death by others after killing two stableboys and a man-at-arms, with no trial described (our entry says he was accused in a court conspiracy)."
+ },
+ {
+  "id": "amaury",
+  "url": "https://awoiaf.westeros.org/index.php/Amaury_Peake",
+  "claimed_died": "135 AC, Maegor's Holdfast, King's Landing",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 135 AC at Maegor's Holdfast; the page says he was killed by Sandoq the Shadow during the attempt to seize the keep and arrest Lady Larra, and his corpse fell onto the spikes below the drawbridge."
+ },
+ {
+  "id": "gry_lord17",
+  "url": "https://awoiaf.westeros.org/index.php/Quellon_Greyjoy",
+  "claimed_died": "283 AC, the mouth of the Mander",
+  "claimed_status": "dead",
+  "claimed_note": "Page names him Quellon Greyjoy, Lord of the Iron Islands, who died at sea in the battle at the Mander's mouth in 283 AC (our entry says his name is not given and rule is unknown); the infobox calls him son of Dagon while the text says grandson."
+ },
+ {
+  "id": "brk_lord16",
+  "url": "https://awoiaf.westeros.org/index.php/Otho_Bracken",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "Entry is Otho's unnamed father; the Otho page says the father was slowly dying in 211 AC and Otho succeeded him as Lord of Stone Hedge in 211/212 AC, but gives no exact death year or name."
+ },
+ {
+  "id": "robert_rw",
+  "url": "https://awoiaf.westeros.org/index.php/Robert_Redwyne",
+  "claimed_died": "89 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 89 AC (Fire & Blood); he followed his father Manfryd, who died in 89 AC, into the grave soon thereafter."
+ },
+ {
+  "id": "ryam",
+  "url": "https://awoiaf.westeros.org/index.php/Ryam_Redwyne",
+  "claimed_died": "105 AC King's Landing, the crownlands",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 105 AC in King's Landing; the History section says he served Viserys I until he died in 105 AC."
+ },
+ {
+  "id": "bw_lord10",
+  "url": "https://awoiaf.westeros.org/index.php/Samwell_Blackwood",
+  "claimed_died": "129 AC the Burning Mill",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died 129 AC at the Burning Mill, where Ser Amos slew him in single combat; he is the Lord of Raventree Hall and father of Benjicot, as in our data."
+ },
+ {
+  "id": "alysanne_bw",
+  "url": "https://awoiaf.westeros.org/index.php/Alysanne_Blackwood",
+  "claimed_died": "136–179 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 136–179 AC, recorded as before 179; the body says only that she died at an unspecified later point during Cregan's rule. Father and spouse Cregan Stark match our data."
+ },
+ {
+  "id": "benjicot",
+  "url": "https://awoiaf.westeros.org/index.php/Benjicot_Blackwood",
+  "claimed_died": "136–206 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 136–206 AC, recorded as before 206; the body has no death statement, only that he had a long life and a 138 AC event. Father Samwell matches our data."
+ },
+ {
+  "id": "betha",
+  "url": "https://awoiaf.westeros.org/index.php/Betha_Blackwood",
+  "claimed_died": "In or after 239 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field 'In or after 239 AC'; the page gives no death account, and her title tenure begins in 233 AC. Spouse Aegon the Unlikely matches our data."
+ },
+ {
+  "id": "donald",
+  "url": "https://awoiaf.westeros.org/index.php/Donald_Tarly",
+  "claimed_died": "112–130 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field gives the range 112–130 AC, recorded as before 130; the body gives no death account. Lord of Horn Hill and wife Jeyne Rowan match our data."
+ },
+ {
+  "id": "samantha",
+  "url": "https://awoiaf.westeros.org/index.php/Samantha_Tarly",
+  "claimed_died": "143 AC or after",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field '143 AC or after'; the last dated event is the 136 AC trip to King's Landing with Lyonel. Father Donald and both Hightower spouses match our data."
+ },
+ {
+  "id": "jeyne_m",
+  "url": "https://awoiaf.westeros.org/index.php/Jeyne_Manderly",
+  "claimed_died": "In or after 141 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field 'In or after 141 AC', with no account of her death. Spouse Rickon Stark matches our data."
+ },
+ {
+  "id": "myriame",
+  "url": "https://awoiaf.westeros.org/index.php/Myriame_Manderly",
+  "claimed_died": "In or after 152 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field 'In or after 152 AC', with no account of her death. Spouse Rodwell Stark and no issue match our data."
+ },
+ {
+  "id": "marsella",
+  "url": "https://awoiaf.westeros.org/index.php/Marsella_Waynwood",
+  "claimed_died": "250–299 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The History section says she died in childbed; the infobox death range 250–299 AC is calculated, and the year shown is its upper bound."
+ },
+ {
+  "id": "grover",
+  "url": "https://awoiaf.westeros.org/index.php/Grover_Tully",
+  "claimed_died": "130 AC Riverrun",
+  "claimed_status": "dead",
+  "claimed_note": "The page says he died of apoplexy at Riverrun in 130 AC, soon after the Second Battle of Tumbleton."
+ },
+ {
+  "id": "elmo",
+  "url": "https://awoiaf.westeros.org/index.php/Elmo_Tully",
+  "claimed_died": "131 AC",
+  "claimed_status": "dead",
+  "claimed_note": "He died after drinking bad water on the march toward King's Landing, 49 days after succeeding his grandfather; the infobox's 'son of Grover Tully' conflicts with the text naming Grover as grandfather."
+ },
+ {
+  "id": "kermit",
+  "url": "https://awoiaf.westeros.org/index.php/Kermit_Tully",
+  "claimed_died": "or after 136 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The infobox Died field reads 'or after 136 AC', but the page describes no death, only his killing of Borros Baratheon."
+ },
+ {
+  "id": "oscar",
+  "url": "https://awoiaf.westeros.org/index.php/Oscar_Tully",
+  "claimed_died": "or after 131 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The infobox Died field reads 'or after 131 AC', a calculated estimate; the text describes no death."
+ },
+ {
+  "id": "tul_lord17",
+  "url": "https://awoiaf.westeros.org/index.php/Hoster_Tully",
+  "claimed_died": "299 AC Riverrun, the riverlands",
+  "claimed_status": "dead",
+  "claimed_note": "The page says he died at Riverrun in 299 AC after being bedridden and ill since 296 AC."
+ },
+ {
+  "id": "osric",
+  "url": "https://awoiaf.westeros.org/index.php/Osric_Umber",
+  "claimed_died": "165–226 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died is the wiki's own range 165–226 AC, so the upper bound is 226; the text does not describe his death. Born 'or before 215' and spouse Arrana Stark match our data; the 'latter half of the second century' title period sits oddly with the 226 bound."
+ },
+ {
+  "id": "cor_lord17",
+  "url": "https://awoiaf.westeros.org/index.php/Lyonel_Corbray",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "The Lyonel Corbray page says Lord Corbray was wounded at the Trident and later died, leaving Lady Forlorn to Lyn and the lands to Lyonel; no cause or year is given and the page has no Died field."
+ },
+ {
+  "id": "wes_lord43",
+  "url": "https://awoiaf.westeros.org/index.php/Jeyne_Westerling_(wife_of_Maegor_I)",
+  "claimed_died": "47 AC or 48 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox gives 47 AC or 48 AC; the page says she died soon after giving birth to a stillborn child, with no exact year in the text. Page lists her spouses as Alyn Tarbeck and Maegor I, and her birth as in or before 27 AC; the entry has no born or spouse data to conflict with."
+ },
+ {
+  "id": "viserys_pl",
+  "url": "https://awoiaf.westeros.org/index.php/Viserys_Plumm",
+  "claimed_died": "In or after 212 AC",
+  "claimed_status": "dead",
+  "claimed_note": "Infobox Died field reads In or after 212 AC; the page gives no account of how he died. Parents Ossifer Plumm and Elaena match, with Aegon IV as the rumoured father. Page gives birth as 176 or 177 AC, which the entry does not record."
+ },
+ {
+  "id": "day_lord18",
+  "url": "https://awoiaf.westeros.org/index.php/Lord_Dayne_(father_of_Edric)",
+  "claimed_died": "286–295 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Edric Dayne page names his father as Lord Dayne, so the entry's page was read via Lord Dayne (father of Edric): the infobox gives 286–295 AC as a range and the text says he died during Robert's early reign, with no exact year. Born in or before 259 AC; parent link matches."
+ },
+ {
+  "id": "stw_lord129",
+  "url": "https://awoiaf.westeros.org/index.php/House_Stokeworth",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "The house page does not name him and has no Died field; it says Rhaenyra had him beheaded for his disloyalty after he tried to swear fealty again following the fall of King's Landing in 130 AC, so the death is after that year. Page reports no other years."
+ },
+ {
+  "id": "est_lord17",
+  "url": "https://awoiaf.westeros.org/index.php/Lord_Estermont",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "The page says Lord Estermont \"has apparently passed away\" and Eldon is now Lord of Greenstone (A Feast for Crows appendix); no year is given. Our page field \"Cassana Estermont\" names his daughter, so it was the wrong page; last shown at Tyrion's trial in A Storm of Swords."
+ },
+ {
+  "id": "alys_kk",
+  "url": "https://awoiaf.westeros.org/index.php/Alys_Karstark_(wife_of_Brandon)",
+  "claimed_died": "In or after 173 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died field is a calculated estimate and the page never narrates her death; its birth estimate (in or before 183 AC) is later than this bound, a clear conflict with the data. Spouse Brandon Stark shows no conflict."
+ },
+ {
+  "id": "ormond_y",
+  "url": "https://awoiaf.westeros.org/index.php/Ormond_Yronwood",
+  "claimed_died": "281 AC–299 AC",
+  "claimed_status": "dead",
+  "claimed_note": "The Died range is a calculated estimate and the page never describes his death; A Feast for Crows still treats him as the living lord of Yronwood, which conflicts with the range. Parent Edgar is not contradicted."
+ },
+ {
+  "id": "bae_lord",
+  "url": "https://awoiaf.westeros.org/index.php/House_Baelish",
+  "claimed_died": "",
+  "claimed_status": "dead",
+  "claimed_note": "The page says Lord Baelish died several years before 298 AC, with Petyr succeeding him as lord; no exact year is given. His wife Alayne matches our data."
+ }
+]

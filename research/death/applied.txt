@@ -1,0 +1,657 @@
+forrest_son      unknown                              {"ls":130}
+fr_lord14        unknown                              {"ls":212}
+franklyn_fr      unknown                              {"ls":212}
+addam_fr         unknown                              {"ls":212}
+lady_butterwell  unknown                              {"ls":212}
+walder_fr        alive                                {"alive":1}
+edwyn_fr         alive                                {"alive":1}
+walda_fr_edwyn   alive                                {"alive":1}
+walder_fr_ryman  alive                                {"alive":1}
+perra_fr         alive                                {"alive":1}
+walton_fr        alive                                {"alive":1}
+steffon_fr       alive                                {"alive":1}
+walda_fr_walton  alive                                {"alive":1}
+bryan_fr         alive                                {"alive":1}
+emmon_fr         alive                                {"alive":1}
+tywin_fr         alive                                {"alive":1}
+willem_fr        alive                                {"alive":1}
+lyonel_fr        unknown                              {}
+walder_fr_emmon  alive                                {"alive":1}
+aegon_fr_aenys   alive                                {"alive":1}
+robert_fr_rhaegar alive                                {"alive":1}
+walda_fr_rhaegar alive                                {"alive":1}
+jonos_fr         alive                                {"alive":1}
+perriane_fr      alive                                {"alive":1}
+zia_fr           alive                                {"alive":1}
+zachery_fr       alive                                {"alive":1}
+kyra_fr          alive                                {"alive":1}
+luceon_fr        alive                                {"alive":1}
+hosteen_fr       alive                                {"alive":1}
+arwood_fr        alive                                {"alive":1}
+ryella_fr        alive                                {"alive":1}
+androw_fr        alive                                {"alive":1}
+alyn_fr          alive                                {"alive":1}
+hostella_fr      alive                                {"alive":1}
+lythene_fr       alive                                {"alive":1}
+alesander_fr     alive                                {"alive":1}
+alyx_fr          alive                                {"alive":1}
+bradamar_fr      alive                                {"alive":1}
+danwell_fr       alive                                {"alive":1}
+amerei_fr        unknown                              {}
+walda_fr_merrett unknown                              {}
+marissa_fr       unknown                              {}
+sandor_fr        alive                                {"alive":1}
+cynthea_fr       alive                                {"alive":1}
+raymund_fr       alive                                {"alive":1}
+robert_fr_raymund alive                                {"alive":1}
+malwyn_fr        alive                                {"alive":1}
+serra_fr         unknown                              {}
+sarra_fr         unknown                              {}
+cersei_fr        unknown                              {}
+jaime_fr         unknown                              {}
+tywin_fr_raymund alive                                {"alive":1}
+lothar_fr        unknown                              {}
+tysane_fr        unknown                              {}
+walda_fr_lothar  unknown                              {}
+emberlei_fr      alive                                {"alive":1}
+leana_fr         alive                                {"alive":1}
+jammos_fr        alive                                {"alive":1}
+walder_fr_jammos alive                                {"alive":1}
+dickon_fr        alive                                {"alive":1}
+mathis_fr        alive                                {"alive":1}
+whalen_fr        alive                                {"alive":1}
+hoster_fr        alive                                {"alive":1}
+merianne_fr      alive                                {"alive":1}
+morya_fr         alive                                {"alive":1}
+tyta_fr          alive                                {"alive":1}
+perwyn_fr        alive                                {"alive":1}
+della_fr         alive                                {"alive":1}
+osmund_fr        alive                                {"alive":1}
+willamen_fr      alive                                {"alive":1}
+olyvar_fr        alive                                {"alive":1}
+roslin_fr        alive                                {"alive":1}
+arwyn_fr         alive                                {"alive":1}
+wendel_fr        alive                                {"alive":1}
+colmar_fr        alive                                {"alive":1}
+waltyr_fr        alive                                {"alive":1}
+elmar_fr         alive                                {"alive":1}
+shirei_fr        alive                                {"alive":1}
+walder_rv        alive                                {"alive":1}
+aemon_rv         alive                                {"alive":1}
+walda_rv_aemon   alive                                {"alive":1}
+walda_rv         alive                                {"alive":1}
+melwys_rv        alive                                {"alive":1}
+jeyne_rv         alive                                {"alive":1}
+martyn_rv        alive                                {"alive":1}
+ryger_rv         alive                                {"alive":1}
+ronel_rv         alive                                {"alive":1}
+mellara_rv       alive                                {"alive":1}
+jyanna_fr        alive                                {"alive":1}
+theo_fr          alive                                {"alive":1}
+aenar            dead    102 BC or after Dragonstone  {"d":"не ранее -102"}
+daenys           dead    In or after 101 BC Dragonstone {"d":"не ранее -101"}
+gaemon           dead    or after 101 BC Dragonstone  {"d":"не ранее -101"}
+aegon_l          unknown                              {}
+elaena_l         unknown                              {}
+gaemon_dau       unknown                              {}
+maegon           unknown                              {}
+aerys_l          unknown                              {}
+aelyx            unknown                              {}
+baelon_l         unknown                              {}
+daemion          unknown                              {}
+aerion_l         dead    27–2 BC Dragonstone          {"d":"-27–-2"}
+maegor_bastard   unknown                              {}
+rhaella_a        dead    or after 73 AC               {"d":"не ранее 73","ls":58}
+vaella_a         dead    39 AC                        {"d":"39"}
+maegelle         dead    96 AC Oldtown                {"d":"96"}
+vaegon           dead    In or after 101 AC           {"d":"не ранее 101"}
+saera            dead    In or after 101 AC           {"d":"не ранее 101"}
+baela            dead    136–176 AC                   {"d":"136–176"}
+rhaena_d         unknown                              {"ls":136}
+aegon2_son       unknown                              {}
+aegon2_dau       unknown                              {}
+aemond_son       unknown                              {"ls":132}
+daena            dead    In or after 172 AC           {"d":"не ранее 172"}
+rhaena_b         dead    In or after 171 AC           {"d":"не ранее 171"}
+elaena_b         dead    In or after 220 AC           {"d":"не ранее 220"}
+daenerys_n       unknown                              {"ls":187}
+alysanne_mg      unknown                              {}
+lily_mg          unknown                              {}
+willow_mg        unknown                              {}
+rosey_mg         unknown                              {}
+bellenora        unknown                              {}
+narha            unknown                              {}
+balerion_o       unknown                              {}
+aegor            dead    241 AC (aged 69) Disputed Lands {"d":"241"}
+mya              unknown                              {}
+gwenys           unknown                              {}
+brynden          alive                                {"alive":1}
+shiera           dead    In or after 211 AC           {"d":"не ранее 211"}
+daemon2_bf       dead    212–219 AC                   {"d":"212–219"}
+calla            unknown                              {}
+rhaegel          dead    215 AC                       {"d":"215"}
+aelor            dead    217 AC                       {"d":"217"}
+aelora           dead    217–221 AC                   {"d":"217–221"}
+daenora          dead    In or after 232 AC           {"d":"не ранее 232"}
+daeron_dr        dead    221–233 AC                   {"d":"221–233"}
+vaella_s         unknown                              {"ls":233}
+maegor_a         unknown                              {"ls":233}
+daella_m         unknown                              {}
+rhae             unknown                              {}
+shaera           dead    In or after 259 AC           {"d":"не ранее 259"}
+daeron_e         dead    251 AC                       {"d":"251"}
+rhaelle          dead    In or after 246 AC           {"d":"не ранее 246"}
+daenerys         alive                                {"alive":1}
+torrhen          dead    2 AC–49 AC                   {"d":"2–49"}
+torrhen_d        unknown                              {}
+cregan           dead    157–209 AC                   {"d":"157–209"}
+lynara           dead    In or after 140 AC           {"d":"не ранее 140"}
+jonnel           dead    157–209 AC                   {"d":"157–209"}
+edric_c          dead    153–209 AC                   {"d":"153–209"}
+lyanna_c         unknown                              {}
+barthogan        dead    184–209 AC                   {"d":"184–209"}
+sansa_c          dead    In or before 209 AC          {"d":"не позднее 209"}
+serena_c         dead    or after 154 AC              {"d":"не ранее 154"}
+torrhen_e        unknown                              {}
+cregard          unknown                              {}
+arrana           dead    In or after 166 AC           {"d":"не ранее 166"}
+argelle_s        dead    In or after 167 AC           {"d":"не ранее 167"}
+brandon_c        dead    184 AC–212 AC                {"d":"184–212"}
+rodwell          dead    184–212 AC                   {"d":"184–212"}
+beron            dead    212–226 AC                   {"d":"212–226"}
+arsa             unknown                              {}
+lonnel_snow      unknown                              {}
+donnor           dead    212–226 AC                   {"d":"212–226"}
+artos            dead    226 AC or after              {"d":"не ранее 226"}
+brandon_a        dead    In or after 209 AC           {"d":"не ранее 209"}
+benjen_a         dead    In or after 209 AC           {"d":"не ранее 209"}
+berena           unknown                              {}
+alysanne_s       unknown                              {}
+errold           unknown                              {}
+rodrik_b         dead    In or after ~214 AC          {"d":"не ранее 214"}
+edwyle           dead    229–262 AC                   {"d":"229–262"}
+jocelyn_s        dead    In or after 212 AC           {"d":"не ранее 212"}
+benjen           unknown 298–300 AC beyond the Wall (presumed) {"ls":298}
+jon              alive                                {"alive":1}
+sansa            alive                                {"alive":1}
+arya             alive                                {"alive":1}
+bran             alive                                {"alive":1}
+rickon           alive                                {"alive":1}
+tyr_lord17       unknown 255–281 AC                   {}
+theo             unknown                              {"ls":10}
+bertrand_son     unknown                              {"ls":59}
+martyn_t         unknown                              {"ls":59}
+leo_t            unknown                              {"ls":212}
+mace             alive                                {"alive":1}
+mina             alive                                {"alive":1}
+janna            alive                                {"alive":1}
+garth_t          alive                                {"alive":1}
+garse            alive                                {"alive":1}
+garrett          alive                                {"alive":1}
+moryn            alive                                {"alive":1}
+gormon           alive                                {"alive":1}
+leo_m            alive                                {"alive":1}
+theodore         alive                                {"alive":1}
+medwick          alive                                {"alive":1}
+olene            alive                                {"alive":1}
+elinor           alive                                {"alive":1}
+luthor_th        alive                                {"alive":1}
+olymer           alive                                {"alive":1}
+raymund          alive                                {"alive":1}
+rickard_t        alive                                {"alive":1}
+megga            alive                                {"alive":1}
+normund          alive                                {"alive":1}
+victaria         alive                                {"alive":1}
+leo_v            alive                                {"alive":1}
+alla             alive                                {"alive":1}
+leona            alive                                {"alive":1}
+lyonel_l         alive                                {"alive":1}
+lucas            alive                                {"alive":1}
+lorent           alive                                {"alive":1}
+willas           alive                                {"alive":1}
+garlan           alive                                {"alive":1}
+loras            alive                                {"alive":1}
+margaery         alive                                {"alive":1}
+orys             dead    37 AC between Stonehelm and Storm's End {"d":"37"}
+davos_b          unknown                              {"ls":37}
+raymont          dead    41–48 AC                     {"d":"41–48"}
+orys_son         unknown                              {}
+borys_b          dead    61 AC the Red Mountains of Dorne {"d":"61"}
+garon_b          dead    or after 73 AC               {"d":"не ранее 73"}
+ronnal_b         dead    59 AC or 60 AC               {"d":"59/60"}
+orryn_b          dead    In or after 51 AC the Disputed Lands {"d":"не ранее 51"}
+orryn_sons       unknown                              {}
+boremund         dead    101–129 AC                   {"d":"101–129"}
+jocelyn          dead    92–129 AC                    {"d":"92–129"}
+cassandra        unknown                              {"ls":136}
+maris            unknown                              {}
+ellyn            unknown                              {}
+floris           dead    134 AC or 135 AC             {"d":"134/135"}
+royce            unknown                              {}
+lord_b208        unknown                              {}
+bar_lord_son1    unknown                              {}
+bar_lord_son2    unknown                              {}
+gowen            unknown                              {"ls":208}
+lyonel_d         unknown                              {"ls":237}
+stannis          alive                                {"alive":1}
+myrcella         alive                                {"alive":1}
+tommen           alive                                {"alive":1}
+mya_stone        alive                                {"alive":1}
+gendry           alive                                {"alive":1}
+edric            alive                                {"alive":1}
+bella            alive                                {"alive":1}
+shireen          alive                                {"alive":1}
+valaena          dead    In or after 26 BC Dragonstone {"d":"не ранее -26"}
+daemon_v0        dead    2 BC Gulltown                {"d":"-2"}
+aethan           dead    42–47 AC                     {"d":"42–47"}
+corlys_kg        dead    10–48 AC                     {"d":"10–48"}
+daemon_v         dead    77–89 AC (aged 88)           {"d":"77–89"}
+larissa          unknown                              {"ls":56}
+corwyn           dead    54–90 AC                     {"d":"54–90"}
+jorgen           dead    59 AC (possibly) Driftmark   {"d":"59","ls":50}
+victor           unknown                              {"ls":50}
+corlys_br1       unknown                              {}
+corlys_br2       unknown                              {}
+daemion_v        unknown                              {"ls":132}
+daeron_v         dead    133 AC Stepstones            {"d":"133"}
+daenaera         dead    In or after 150 AC           {"d":"не ранее 150","ls":133}
+malentine        dead    132 AC Castle Driftmark      {"d":"132"}
+rhogar_v         dead    or after 132 AC              {"d":"не ранее 132"}
+alyn             dead    171–176 AC at sea            {"d":"171–176"}
+laena_a          unknown                              {"ls":135}
+jon_w            unknown                              {}
+jeyne_w          unknown                              {}
+longwaters       unknown                              {}
+lucerys_v        dead    281 AC–298 AC                {"d":"281–298"}
+aurane           alive                                {"alive":1}
+monterys         alive                                {"alive":1}
+manfred_h        dead    41 AC                        {"d":"41","ls":39}
+martyn_h         dead    41–48 AC                     {"d":"41–48"}
+morgan_h         dead    43 AC or 44 AC on the road to Honeyholt {"d":"43/44"}
+hgt_lord8        unknown                              {"ls":103}
+hgt_lord9        unknown 130 AC, Tumbleton            {}
+lyonel_h         dead    143 AC or after              {"d":"не ранее 143"}
+martyn_ho        unknown                              {}
+garmund          unknown                              {}
+bethany_h        unknown                              {}
+leyton           alive                                {"alive":1}
+baelor_h         alive                                {"alive":1}
+malora           alive                                {"alive":1}
+alerie           alive                                {"alive":1}
+garth_h          alive                                {"alive":1}
+denyse_h         alive                                {"alive":1}
+leyla_h          alive                                {"alive":1}
+alysanne_h       alive                                {"alive":1}
+lynesse          alive                                {"alive":1}
+gunthor          alive                                {"alive":1}
+humfrey_h        alive                                {"alive":1}
+loren            dead    In or before 42 AC           {"d":"не позднее 42"}
+tymond           dead    101–129 AC                   {"d":"101–129"}
+lan_lord10       unknown                              {}
+cerelle_l        unknown                              {"ls":133}
+tyshara          unknown                              {"ls":133}
+loreon           dead    136–196 AC                   {"d":"136–196"}
+tya              unknown                              {"ls":208}
+damon_l          unknown                              {}
+genna            alive                                {"alive":1}
+tygett           dead    In or after 285 AC           {"d":"не ранее 285"}
+gerion           dead    In or after 291 AC           {"d":"не ранее 291"}
+joy_hill         alive                                {"alive":1}
+cersei           alive                                {"alive":1}
+jaime            alive                                {"alive":1}
+tyrion           alive                                {"alive":1}
+lancel           alive                                {"alive":1}
+martyn_l         unknown                              {}
+janei            unknown                              {}
+sharra           unknown                              {}
+hubert           dead    37–54 AC                     {"d":"37–54"}
+rodrik           dead    82–97 AC                     {"d":"82–97"}
+elys_a           unknown                              {}
+amanda_a         unknown                              {}
+rodrik_s2        unknown                              {}
+arnold           dead    In or after 136 AC           {"d":"не ранее 136"}
+eldric           dead    134 AC                       {"d":"134"}
+joffrey_a        dead    136–196 AC                   {"d":"136–196"}
+isembard         unknown                              {"ls":136}
+donnel           unknown                              {"ls":209}
+alys_r           dead    In or after 196 AC           {"d":"не ранее 196"}
+jasper           dead    In or before 263 AC          {"d":"не позднее 263"}
+ronnel_j         dead    ~235–263 AC                  {"d":"235–263"}
+alys_j           dead                                 {}
+robert_a         alive                                {"alive":1}
+denys_son        dead                                 {"d":"после 283"}
+jeyne_lt         unknown                              {"ls":178}
+alannys          alive                                {"alive":1}
+olenna           alive                                {"alive":1}
+marianne_vance   alive                                {"alive":1}
+walder_vance     unknown                              {}
+patrek_vance     unknown                              {}
+harys_haigh      alive                                {"alive":1}
+donnel_haigh     alive                                {"alive":1}
+alyn_haigh       alive                                {"alive":1}
+walder_goodbrook unknown                              {}
+jeyne_goodbrook  unknown                              {}
+elyana_vypren    unknown                              {}
+damon_vypren     alive                                {"alive":1}
+robert_brax      alive                                {"alive":1}
+walder_brax      unknown                              {}
+jon_brax         unknown                              {}
+allard           unknown                              {"ls":37}
+alayne_r         dead    54 AC, Dragonstone           {"d":"54"}
+willam_r         dead    130 AC, King's Landing       {"d":"130"}
+gunthor_r        unknown                              {"ls":136}
+alyssa_r         unknown                              {"ls":133}
+lorra            dead    In or after 190 AC           {"d":"не ранее 190"}
+perra            dead    239–249 AC                   {"d":"239–249"}
+benedict         dead    or after ~211 AC             {"d":"не ранее 211"}
+jeyne_r          dead                                 {}
+ryella           unknown                              {}
+yohn             alive                                {"alive":1}
+andar            alive                                {"alive":1}
+ysilla           alive                                {"alive":1}
+nestor           alive                                {"alive":1}
+albar            alive                                {"alive":1}
+myranda          alive                                {"alive":1}
+meria            dead    13 AC                        {"d":"13"}
+nymor            dead    13–23 AC                     {"d":"13–23"}
+deria            dead    37 AC–49 AC                  {"d":"37–49"}
+qoren            dead    129–132 AC                   {"d":"129–132"}
+aliandra         dead    136–158 AC                   {"d":"136–158","ls":135}
+qyle             unknown                              {}
+coryanne         unknown                              {}
+dorne_p14        dead    161–174 AC                   {"d":"161–174"}
+myriah           dead    184 AC or after              {"d":"не ранее 184","ls":161}
+maron            unknown                              {"ls":187}
+maron_son        unknown                              {}
+dorne_p19        dead    279 AC or 280 AC             {"d":"279/280"}
+doran            alive                                {"alive":1}
+arianne          alive                                {"alive":1}
+trystane         alive                                {"alive":1}
+uther            unknown                              {"ls":55}
+pea_lord9        unknown                              {}
+unwin_dau1       dead                                 {}
+unwin_son2       dead                                 {}
+titus_u          dead    130 AC near the Honeywine    {"d":"130"}
+myrielle         unknown                              {"ls":130}
+mervyn           dead    135 AC, King's Landing       {"d":"135"}
+pea_sib          unknown                              {}
+amaury           dead    135 AC, Maegor's Holdfast, King's Landing {"d":"135"}
+gedmund          unknown                              {"ls":135}
+titus_p          unknown                              {}
+pea_exile        unknown                              {}
+laswell          alive                                {"alive":1}
+torman           alive                                {"alive":1}
+pykewood         alive                                {"alive":1}
+gry_lord17       unknown 283 AC, the mouth of the Mander {}
+gry_lord10       unknown                              {}
+goren            unknown                              {"ls":37}
+toron            unknown                              {"ls":134}
+rodrik_d         unknown                              {"ls":134}
+alton            unknown                              {}
+torwyn           unknown                              {}
+loron            unknown                              {}
+euron            alive                                {"alive":1}
+victarion        alive                                {"alive":1}
+aeron            alive                                {"alive":1}
+asha             alive                                {"alive":1}
+theon            alive                                {"alive":1}
+dagon_d          unknown                              {}
+humfrey_b        unknown                              {}
+raylon           unknown                              {}
+barba            unknown                              {"ls":172}
+brk_lord16       dead                                 {"d":"211/212"}
+otho             unknown                              {"ls":212}
+brk_lord18       unknown                              {}
+jonos_b          alive                                {"alive":1}
+barbara_b        alive                                {"alive":1}
+jayne_b          alive                                {"alive":1}
+catelyn_b        alive                                {"alive":1}
+bess_b           alive                                {"alive":1}
+alysanne_b       alive                                {"alive":1}
+jonos_sib        unknown                              {}
+brk_dau          unknown                              {}
+horas            alive                                {"alive":1}
+hobber           alive                                {"alive":1}
+desmera          alive                                {"alive":1}
+robert_rw        dead    89 AC                        {"d":"89"}
+rickard_rw       unknown                              {"ls":73}
+ryam             dead    105 AC King's Landing, the crownlands {"d":"105"}
+patricia         unknown                              {}
+runceford        unknown                              {}
+runceford_son    unknown                              {}
+paxter           alive                                {"alive":1}
+desmond_rw       unknown                              {}
+denys_rw         alive                                {"alive":1}
+bethany_rw       unknown                              {}
+bw_lord10        dead    129 AC the Burning Mill      {"d":"129"}
+alysanne_bw      dead    136–179 AC                   {"d":"136–179"}
+benjicot         dead    136–206 AC                   {"d":"136–206"}
+melissa_bw       unknown                              {"ls":177}
+melantha         unknown                              {}
+betha            dead    In or after 239 AC           {"d":"не ранее 239","ls":233}
+tytos_bw         alive                                {"alive":1}
+brynden_bw       alive                                {"alive":1}
+hoster_bw        alive                                {"alive":1}
+edmund_bw        alive                                {"alive":1}
+alyn_bw          alive                                {"alive":1}
+bethany_bw       alive                                {"alive":1}
+savage_sam       unknown                              {}
+donald           dead    112–130 AC                   {"d":"112–130"}
+samantha         dead    143 AC or after              {"d":"не ранее 143","ls":136}
+sansara          unknown                              {}
+alan_t           unknown                              {}
+samwyle          unknown                              {"ls":209}
+tar_lord17       unknown                              {}
+randyll          alive                                {"alive":1}
+samwell          alive                                {"alive":1}
+talla            alive                                {"alive":1}
+dickon           alive                                {"alive":1}
+mara_m           unknown                              {"ls":55}
+jessamyn_m       unknown                              {"ls":58}
+torrhen_m        unknown                              {"ls":136}
+jeyne_m          dead    In or after 141 AC           {"d":"не ранее 141"}
+myriame          dead    In or after 152 AC           {"d":"не ранее 152"}
+wyman            alive                                {"alive":1}
+wylis            alive                                {"alive":1}
+wynafryd         alive                                {"alive":1}
+wylla_m          alive                                {"alive":1}
+marlon           alive                                {"alive":1}
+way_lord         unknown                              {}
+elys             unknown                              {}
+anya_par         unknown                              {}
+anya             alive                                {"alive":1}
+morton           alive                                {"alive":1}
+roland_w         alive                                {"alive":1}
+donnel_w         alive                                {"alive":1}
+wallace_w        alive                                {"alive":1}
+marsella         dead    250–299 AC                   {"d":"250–299"}
+carolei          unknown                              {}
+johanna_s        unknown                              {"ls":131}
+swann_lord129    unknown                              {}
+swann_son129     unknown                              {}
+gawen_s          unknown                              {"ls":209}
+manfred_s        unknown                              {}
+gulian           unknown                              {"ls":299}
+donnel_s         alive                                {"alive":1}
+balon_s          alive                                {"alive":1}
+ravella          alive                                {"alive":1}
+jeyne_s          unknown                              {"ls":299}
+edmyn            unknown                              {"ls":9}
+grover           dead    130 AC Riverrun              {"d":"130"}
+grover_son       unknown                              {}
+elmo             dead    131 AC                       {"d":"131"}
+kermit           dead    or after 136 AC              {"d":"не ранее 136"}
+oscar            dead    or after 131 AC              {"d":"не ранее 131"}
+tul_lord17       unknown 299 AC Riverrun, the riverlands {}
+brynden_t        alive                                {"alive":1}
+edmure           alive                                {"alive":1}
+mor_lord         unknown                              {}
+jorah            alive                                {"alive":1}
+maege            alive                                {"alive":1}
+alysane          alive                                {"alive":1}
+alysane_dau      alive                                {"alive":1}
+alysane_son      alive                                {"alive":1}
+lyra_m           alive                                {"alive":1}
+jorelle          alive                                {"alive":1}
+lyanna_m         alive                                {"alive":1}
+theomore_h       unknown                              {}
+sigfryd          alive                                {"alive":1}
+har_lord         unknown                              {}
+gwynesse         alive                                {"alive":1}
+rodrik_h         alive                                {"alive":1}
+harras           alive                                {"alive":1}
+hotho            alive                                {"alive":1}
+hotho_dau        alive                                {"alive":1}
+boremund_h       alive                                {"alive":1}
+lucinda          unknown                              {"ls":133}
+robin_pn         unknown                              {}
+laena_pn         unknown                              {}
+jocelyn_pn       unknown                              {}
+joy_pn           unknown                              {}
+pen_lady196      unknown                              {}
+aelinor          unknown                              {"ls":209}
+jon_pn           unknown                              {}
+pen_lord18       unknown                              {}
+osric            dead    165–226 AC                   {"d":"165–226"}
+harmond          unknown                              {}
+hoarfrost        unknown                              {}
+hoarfrost_son    unknown                              {}
+mors             alive                                {"alive":1}
+hother           alive                                {"alive":1}
+greatjon         alive                                {"alive":1}
+mors_dau         unknown                              {"ls":270}
+raymun_mal       unknown                              {}
+joseth           unknown                              {"ls":209}
+desmond_mal      unknown                              {}
+mal_lord         unknown                              {}
+denys_mal        alive                                {"alive":1}
+mal_sib          unknown                              {}
+jason_mal        alive                                {"alive":1}
+patrek           alive                                {"alive":1}
+gawen            unknown                              {}
+cor_lord9        unknown                              {}
+quenton_cb       unknown                              {"ls":136}
+gwayne_c         unknown                              {"ls":196}
+cor_lord17       dead                                 {"d":"после 283"}
+lyonel_c         alive                                {"alive":1}
+lyn              alive                                {"alive":1}
+lucas_c          unknown                              {}
+florence         unknown                              {}
+steffon_fs       unknown                              {"ls":209}
+tanton           alive                                {"alive":1}
+franklyn         alive                                {"alive":1}
+leonette         alive                                {"alive":1}
+raymun_f         unknown                              {"ls":209}
+jon_f            unknown                              {}
+jeyne_fs         unknown                              {}
+alys_oak         unknown                              {"ls":12}
+torgen           unknown                              {"ls":58}
+arthor_oak       unknown                              {}
+oak_lord73       unknown                              {"ls":73}
+denys_oak        unknown                              {"ls":73}
+oak_son73        unknown                              {"ls":73}
+gwayne_oak       unknown                              {"ls":209}
+arwyn            alive                                {"alive":1}
+wes_lord43       unknown 47 AC or 48 AC               {}
+johanna_w        unknown                              {"ls":130}
+ormond_w         unknown                              {"ls":209}
+elys_w           unknown                              {}
+gawen_w          alive                                {"alive":1}
+jeyne_wr         alive                                {"alive":1}
+eleyna_w         alive                                {"alive":1}
+rollam           unknown                              {}
+viserys_pl       dead    In or after 212 AC           {"d":"не ранее 212"}
+petyr_pl         unknown                              {"ls":209}
+maynard          unknown                              {}
+philip_pl        alive                                {"alive":1}
+dennis_pl        alive                                {"alive":1}
+peter_pl         alive                                {"alive":1}
+harwyn           alive                                {"alive":1}
+ben_pl           alive                                {"alive":1}
+joffrey_d        unknown                              {"ls":10}
+clarisse         unknown                              {}
+ulrick           unknown                              {}
+day_lord17       unknown                              {}
+day_lord18       dead    286–295 AC                   {"d":"286–295"}
+allyria          unknown                              {}
+edric_d          alive                                {"alive":1}
+gerold_d         alive                                {"alive":1}
+gunthor_g        unknown                              {"ls":133}
+arthur_g         unknown                              {"ls":134}
+gorold           alive                                {"alive":1}
+greydon          alive                                {"alive":1}
+gormond          alive                                {"alive":1}
+gran_g           alive                                {"alive":1}
+gysella          alive                                {"alive":1}
+gwin             alive                                {"alive":1}
+stw_lord129      dead                                 {}
+stw_dau129       unknown                              {}
+stw_son129       unknown                              {}
+falena           unknown                              {"ls":178}
+maia             unknown                              {}
+samwell_s        unknown                              {"ls":209}
+lollys           alive                                {"alive":1}
+tyrion_t         alive                                {"alive":1}
+pip_lord1        unknown 43 AC the Gods Eye           {}
+jon_p            unknown                              {}
+petyr_child      unknown                              {}
+pip_lord18       unknown                              {}
+clement          alive                                {"alive":1}
+marq             alive                                {"alive":1}
+lewys            alive                                {"alive":1}
+roland_kg        unknown                              {"ls":209}
+roland_c         alive                                {"alive":1}
+tybolt           unknown                              {}
+lyle_c           alive                                {"alive":1}
+merlon           alive                                {"alive":1}
+melesa           unknown                              {}
+shiera_c         alive                                {"alive":1}
+gunthor_e        unknown                              {"ls":209}
+est_lord17       dead                                 {}
+eldon            alive                                {"alive":1}
+aemon_e          alive                                {"alive":1}
+alyn_e           alive                                {"alive":1}
+lomas            alive                                {"alive":1}
+andrew_e         alive                                {"alive":1}
+alys_kk          dead    In or after 173 AC           {"d":"не ранее 173"}
+arnolf           alive                                {"alive":1}
+cregan_k         alive                                {"alive":1}
+arthor           alive                                {"alive":1}
+harrion          alive                                {"alive":1}
+alys_k           alive                                {"alive":1}
+alton_b          unknown                              {"ls":48}
+alton_sis        unknown                              {}
+beatrice         unknown                              {"ls":87}
+btw_gf           unknown                              {}
+btw_gf_son       unknown                              {}
+ambrose          unknown                              {"ls":212}
+elissa           unknown                              {"ls":59}
+lysa_f           unknown                              {"ls":133}
+far_dau5         unknown                              {}
+far_par19        unknown                              {}
+sebaston         alive                                {"alive":1}
+jeyne_far        alive                                {"alive":1}
+ormond_y         alive   281 AC–299 AC                {"alive":1}
+anders           alive                                {"alive":1}
+yrn_bro          unknown                              {}
+ynys             alive                                {"alive":1}
+gwyneth          alive                                {"alive":1}
+archibald        alive                                {"alive":1}
+harmon_d         unknown                              {"ls":37}
+dnd_lord54       unknown                              {"ls":54}
+simon_d          unknown                              {"ls":61}
+dnd_lord206      unknown                              {"ls":206}
+manfred_d        unknown                              {"ls":209}
+harrold          alive                                {"alive":1}
+hardyng_kn       unknown                              {}
+alys_stone       alive                                {"alive":1}
+deana            alive                                {"alive":1}
+bae_ss           unknown                              {}
+bae_hk           unknown                              {}
+bae_lord         dead                                 {"d":"не позднее 298"}
+petyr            alive                                {"alive":1}
+roose            alive                                {"alive":1}
+ramsay           alive                                {"alive":1}
+ormond           unknown                              {}
+clarice          unknown                              {"ls":135}
+nettles          unknown                              {"ls":134}

@@ -1,0 +1,499 @@
+[
+ {
+  "id": "lucinda",
+  "house": "pen",
+  "ru": "Люсинда Пенроз",
+  "en": "Lucinda Penrose",
+  "page": "Lucinda Penrose",
+  "born": "103–133",
+  "about": "Outlaws mutilated her nose during a hunt. Later Daenaera’s companion, she confessed to wishing the queen dead and became a septa."
+ },
+ {
+  "id": "robin_pn",
+  "house": "pen",
+  "ru": "Робин Пенроз",
+  "en": "Robin Penrose",
+  "page": "Robin Penrose",
+  "born": "184–197",
+  "parents": [
+   "Ronnel Penrose",
+   "Elaena"
+  ],
+  "about": "Robin was Ronnel Penrose and Elaena Targaryen's eldest child and only son. He was presumably the Penrose heir, although this has not been confirmed. His younger sisters were Laena, Jocelyn and Joy."
+ },
+ {
+  "id": "laena_pn",
+  "house": "pen",
+  "ru": "Лейна Пенроз",
+  "en": "Laena Penrose",
+  "page": "Laena Penrose",
+  "born": "185–198",
+  "parents": [
+   "Ronnel Penrose",
+   "Elaena"
+  ],
+  "about": "Laena was the eldest daughter of Ronnel Penrose and Elaena Targaryen, with an older brother, Robin, and two younger sisters. Her mother handled the crown's finances while Ronnel formally held the office of master of coin"
+ },
+ {
+  "id": "jocelyn_pn",
+  "house": "pen",
+  "ru": "Джоселин Пенроз",
+  "en": "Jocelyn Penrose",
+  "page": "Jocelyn Penrose",
+  "born": "186–199",
+  "parents": [
+   "Ronnel Penrose",
+   "Elaena"
+  ],
+  "about": "Jocelyn was Ronnel Penrose and Elaena Targaryen's second daughter, younger than Robin and Laena and older than Joy."
+ },
+ {
+  "id": "joy_pn",
+  "house": "pen",
+  "ru": "Джой Пенроз",
+  "en": "Joy Penrose",
+  "page": "Joy Penrose",
+  "born": "187–200",
+  "parents": [
+   "Ronnel Penrose",
+   "Elaena"
+  ],
+  "about": "Joy was the youngest daughter of Ronnel Penrose and Elaena Targaryen, after Robin, Laena and Jocelyn."
+ },
+ {
+  "id": "pen_lady196",
+  "house": "pen",
+  "ru": "Леди Пенроз",
+  "en": "",
+  "page": "Quentyn Ball",
+  "about": "Fireball killed her sons at the Mander crossing, sparing the youngest out of pity for her."
+ },
+ {
+  "id": "aelinor",
+  "house": "pen",
+  "ru": "Эйлинор Пенроз",
+  "en": "Aelinor Penrose",
+  "page": "Aelinor Penrose",
+  "spouses": [
+   "Aerys I"
+  ],
+  "about": "Her childless marriage to Aerys was reportedly unconsummated. He refused advice to set her aside; she prayed daily for a child."
+ },
+ {
+  "id": "jon_pn",
+  "house": "pen",
+  "ru": "Джон Пенроз",
+  "en": "Jon Penrose",
+  "page": "Jon Penrose",
+  "about": "He unhorsed Tybolt Lannister at Ashford but lost their ensuing fight despite breaking Tybolt’s sword."
+ },
+ {
+  "id": "pen_lord18",
+  "house": "pen",
+  "ru": "Лорд Пенроз",
+  "en": "",
+  "page": "Cortnay Penrose",
+  "about": "An elderly, ailing lord at the outbreak of the War of the Five Kings."
+ },
+ {
+  "id": "osric",
+  "house": "umb",
+  "ru": "Озрик Амбер",
+  "en": "Osric Umber",
+  "page": "Osric Umber",
+  "born": "не позднее 215",
+  "spouses": [
+   "Arrana Stark"
+  ],
+  "about": "Lord of Last Hearth in an earlier generation."
+ },
+ {
+  "id": "harmond",
+  "house": "umb",
+  "ru": "Хармонд Амбер",
+  "en": "Harmond Umber",
+  "page": "Harmond Umber",
+  "about": "The Drunken Giant helped defeat Raymun Redbeard’s wildlings at the Long Lake."
+ },
+ {
+  "id": "hoarfrost",
+  "house": "umb",
+  "ru": "Хорфрост Амбер",
+  "en": "Hoarfrost Umber",
+  "page": "Hoarfrost Umber",
+  "born": "не позднее 231",
+  "about": "The Lord of Last Hearth known as Hoarfrost."
+ },
+ {
+  "id": "hoarfrost_son",
+  "house": "umb",
+  "ru": "Сын",
+  "en": "",
+  "page": "Hoarfrost Umber",
+  "parents": [
+   "Hoarfrost Umber"
+  ],
+  "about": "Hoarfrost Umber's unnamed son was the father of the Greatjon and a brother of Mors Crowfood and Hother Whoresbane."
+ },
+ {
+  "id": "mors",
+  "house": "umb",
+  "ru": "Морс Амбер",
+  "en": "Mors Umber",
+  "page": "Mors Umber",
+  "born": "не позднее 244",
+  "parents": [
+   "Hoarfrost Umber"
+  ],
+  "spouses": [
+   "жена, умершая в родах"
+  ],
+  "about": "Crowfood joined Stannis with boys and old men. His scouts helped Theon and Jeyne after their escape from Winterfell."
+ },
+ {
+  "id": "hother",
+  "house": "umb",
+  "ru": "Хозер Амбер",
+  "en": "Hother Umber",
+  "page": "Hother Umber",
+  "born": "не позднее 241",
+  "parents": [
+   "Hoarfrost Umber"
+  ],
+  "about": "He brought Umber men to the Boltons while the Freys held the Greatjon hostage."
+ },
+ {
+  "id": "greatjon",
+  "house": "umb",
+  "ru": "Джон Амбер",
+  "en": "Jon Umber",
+  "page": "Jon Umber",
+  "parents": [
+   "Сын"
+  ],
+  "about": "Grey Wind took two fingers during his first quarrel with Robb. He became a fierce supporter and first hailed him King in the North. At the Red Wedding, even drunkenness did not make him easy to overpower; the Freys captu"
+ },
+ {
+  "id": "mors_dau",
+  "house": "umb",
+  "ru": "Дочь",
+  "en": "",
+  "page": "Mors Umber",
+  "parents": [
+   "Mors Umber"
+  ],
+  "about": "Wildlings carried her away in 270 AC. Her later fate is unknown."
+ },
+ {
+  "id": "raymun_mal",
+  "house": "mal",
+  "ru": "Раймун Маллистер",
+  "en": "Raymun Mallister",
+  "page": "Raymun Mallister",
+  "parents": [
+   "Lymond Mallister"
+  ],
+  "about": "A knight of Seagard."
+ },
+ {
+  "id": "joseth",
+  "house": "mal",
+  "ru": "Джосет Маллистер",
+  "en": "Joseth Mallister",
+  "page": "Joseth Mallister",
+  "about": "He rode at Ashford in 209 AC and was knocked unconscious early in the tourney."
+ },
+ {
+  "id": "desmond_mal",
+  "house": "mal",
+  "ru": "Десмонд Маллистер",
+  "en": "Desmond Mallister",
+  "page": "Desmond Mallister",
+  "about": "His friendship with Loron Greyjoy was remembered as tragic; the details remain untold."
+ },
+ {
+  "id": "mal_lord",
+  "house": "mal",
+  "ru": "Лорд Маллистер",
+  "en": "",
+  "page": "Denys Mallister",
+  "about": "Lord of Seagard, otherwise unnamed in the surviving references."
+ },
+ {
+  "id": "denys_mal",
+  "house": "mal",
+  "ru": "Денис Маллистер",
+  "en": "Denys Mallister",
+  "page": "Denys Mallister",
+  "born": "≈231",
+  "parents": [
+   "Лорд Маллистер"
+  ],
+  "about": "The experienced commander of the Shadow Tower withdrew from the election after Sam persuaded him to support Jon Snow."
+ },
+ {
+  "id": "mal_sib",
+  "house": "mal",
+  "ru": "Брат или сестра",
+  "en": "",
+  "page": "Jason Mallister",
+  "parents": [
+   "Лорд Маллистер"
+  ],
+  "about": "Jason Mallister's unnamed parent was a sibling of Denys Mallister. This branch connects the Lord of Seagard to his uncle, the long-serving commander of the Shadow Tower."
+ },
+ {
+  "id": "jason_mal",
+  "house": "mal",
+  "ru": "Джейсон Маллистер",
+  "en": "Jason Mallister",
+  "page": "Jason Mallister",
+  "parents": [
+   "Брат или сестра"
+  ],
+  "about": "He killed Rodrik Greyjoy defending Seagard, then fought for Robb. Threats to execute his captive son finally forced him to surrender his castle to the Freys."
+ },
+ {
+  "id": "patrek",
+  "house": "mal",
+  "ru": "Патрек Маллистер",
+  "en": "Patrek Mallister",
+  "page": "Patrek Mallister",
+  "parents": [
+   "Jason Mallister"
+  ],
+  "about": "He rode with Robb’s companions in the Whispering Wood. Captivity after the Red Wedding made him the Freys’ leverage against Seagard."
+ },
+ {
+  "id": "gawen",
+  "house": "cor",
+  "ru": "Гавен Корбрей",
+  "en": "Gawen Corbray",
+  "page": "Gawen Corbray",
+  "about": "Chosen by Visenya to train Maegor on Dragonstone, Gawen had a reputation as one of the realm's most dangerous knights. The young prince took readily to swordplay under his instruction."
+ },
+ {
+  "id": "cor_lord9",
+  "house": "cor",
+  "ru": "Лорд Корбрей",
+  "en": "",
+  "page": "Leowyn Corbray",
+  "about": "The unnamed Lord of Heart's Home and father of Leowyn and Corwyn Corbray. Impressed by his younger son's prowess, he gave Corwyn the family's Valyrian steel sword, Lady Forlorn."
+ },
+ {
+  "id": "quenton_cb",
+  "house": "cor",
+  "ru": "Квентон Корбрей",
+  "en": "Quenton Corbray",
+  "page": "Quenton Corbray",
+  "parents": [
+   "Leowyn Corbray"
+  ],
+  "about": "After succeeding Leowyn at Heart's Home, Quenton backed Joffrey Arryn in the dispute over the Eyrie. The killing of his uncle Corwyn at Runestone committed the Corbrays to that cause. He attended the gathering to choose "
+ },
+ {
+  "id": "gwayne_c",
+  "house": "cor",
+  "ru": "Гвейн Корбрей",
+  "en": "Gwayne Corbray",
+  "page": "Gwayne Corbray",
+  "about": "At the Redgrass Field, Gwayne fought Daemon Blackfyre with Lady Forlorn for almost an hour. Daemon broke through his helm, leaving him blinded and badly wounded, then stopped to arrange his treatment. That delay gave Blo"
+ },
+ {
+  "id": "cor_lord17",
+  "house": "cor",
+  "ru": "Лорд Корбрей",
+  "en": "",
+  "page": "Lyonel Corbray",
+  "about": "Wounded at the Trident, Lord Corbray was carried to the maesters by Lyonel while Lyn took up Lady Forlorn and led a charge against the Dornishmen. On his death, the lord left the sword to Lyn and the lands and title to L"
+ },
+ {
+  "id": "lyonel_c",
+  "house": "cor",
+  "ru": "Лионель Корбрей",
+  "en": "Lyonel Corbray",
+  "page": "Lyonel Corbray",
+  "born": "≈260",
+  "parents": [
+   "Лорд Корбрей"
+  ],
+  "spouses": [
+   "первая жена, имя не названа",
+   "дочь богатого купца из Чаячьего города"
+  ],
+  "about": "Lyonel inherited Heart's Home but resented losing Lady Forlorn to Lyn. His first child died in infancy, leaving his brother as heir. Littlefinger arranged his second marriage to a wealthy Gulltown merchant's daughter; he"
+ },
+ {
+  "id": "lyn",
+  "house": "cor",
+  "ru": "Лин Корбрей",
+  "en": "Lyn Corbray",
+  "page": "Lyn Corbray",
+  "born": "261–268",
+  "parents": [
+   "Лорд Корбрей"
+  ],
+  "about": "Lyn carried Lady Forlorn at the Trident, killed the wounded Lewyn Martell and received the sword when his father died. A reckless and dangerous swordsman, he later joined the Lords Declarant and threatened Littlefinger d"
+ },
+ {
+  "id": "lucas_c",
+  "house": "cor",
+  "ru": "Лукас Корбрей",
+  "en": "Lucas Corbray",
+  "page": "Lucas Corbray",
+  "parents": [
+   "Лорд Корбрей"
+  ],
+  "about": "A knight of House Corbray named in the appendices of A Feast for Crows and A Dance with Dragons."
+ },
+ {
+  "id": "florence",
+  "house": "fos",
+  "ru": "Флоренс Фоссовей",
+  "en": "Florence Fossoway",
+  "page": "Florence Fossoway",
+  "spouses": [
+   "Martyn Tyrell"
+  ],
+  "about": "The Apple Counter handled the finances nominally entrusted to Martyn Tyrell under Jaehaerys."
+ },
+ {
+  "id": "steffon_fs",
+  "house": "fos",
+  "ru": "Стеффон Фоссовей",
+  "en": "Steffon Fossoway",
+  "page": "Steffon Fossoway",
+  "about": "At Ashford he abandoned Dunk for Aerion’s promised lordship. Raymun answered the betrayal by founding the green-apple branch."
+ },
+ {
+  "id": "tanton",
+  "house": "fos",
+  "ru": "Тантон Фоссовей",
+  "en": "Tanton Fossoway",
+  "page": "Tanton Fossoway",
+  "about": "A knight of Cider Hall during the War of the Five Kings."
+ },
+ {
+  "id": "franklyn",
+  "house": "fos",
+  "ru": "Франклин Флауэрс",
+  "en": "Franklyn Flowers",
+  "page": "Franklyn Flowers",
+  "about": "A Golden Company sellsword claiming birth at Cider Hall, where, he said, a knight’s son raped his mother."
+ },
+ {
+  "id": "leonette",
+  "house": "fos",
+  "ru": "Леонетта Фоссовей",
+  "en": "Leonette Fossoway",
+  "page": "Leonette Fossoway",
+  "spouses": [
+   "Garlan Tyrell"
+  ],
+  "about": "Garlan’s wife treated Sansa kindly at court. Her exact Fossoway branch is not identified."
+ },
+ {
+  "id": "raymun_f",
+  "house": "fos",
+  "ru": "Раймун Фоссовей",
+  "en": "Raymun Fossoway",
+  "page": "Raymun Fossoway",
+  "about": "Steffon’s defection made him seek his own knighthood so he could defend Dunk. His green apple distinguished a new branch of House Fossoway."
+ },
+ {
+  "id": "jon_f",
+  "house": "fos",
+  "ru": "Джон Фоссовей",
+  "en": "Jon Fossoway",
+  "page": "Jon Fossoway",
+  "spouses": [
+   "Janna Tyrell"
+  ],
+  "about": "An amiable knight of the green-apple Fossoways."
+ },
+ {
+  "id": "jeyne_fs",
+  "house": "fos",
+  "ru": "Джейна Фоссовей",
+  "en": "Jeyne Fossoway",
+  "page": "Jeyne Fossoway",
+  "spouses": [
+   "Gunthor Hightower"
+  ],
+  "about": "Jeyne belongs to the green-apple Fossoways of New Barrel and is married to Ser Gunthor Hightower."
+ },
+ {
+  "id": "alys_oak",
+  "house": "oak",
+  "ru": "Алис Окхарт",
+  "en": "Alys Oakheart",
+  "page": "Alys Oakheart",
+  "about": "Wyl raiders attacked her wedding, killed Lord Oakheart and sold her into slavery."
+ },
+ {
+  "id": "torgen",
+  "house": "oak",
+  "ru": "Торген Окхарт",
+  "en": "Torgen Oakheart",
+  "page": "Torgen Oakheart",
+  "about": "He sheltered Septon Moon, then accepted Jaehaerys after Maegor’s death."
+ },
+ {
+  "id": "arthor_oak",
+  "house": "oak",
+  "ru": "Артор Окхарт",
+  "en": "Arthor Oakheart",
+  "page": "Arthor Oakheart",
+  "about": "Ryam Redwyne unhorsed him at the King’s Landing tourney in 58 AC."
+ },
+ {
+  "id": "oak_lord73",
+  "house": "oak",
+  "ru": "Лорд Окхарт",
+  "en": "",
+  "page": "Denys Oakheart",
+  "about": "His son’s birth occasioned a tourney at Old Oak in 73 AC."
+ },
+ {
+  "id": "denys_oak",
+  "house": "oak",
+  "ru": "Денис Окхарт",
+  "en": "Denys Oakheart",
+  "page": "Denys Oakheart",
+  "parents": [
+   "Лорд Окхарт"
+  ],
+  "about": "Prince Baelon unhorsed him at Old Oak’s tourney in 73 AC."
+ },
+ {
+  "id": "oak_son73",
+  "house": "oak",
+  "ru": "Сын",
+  "en": "",
+  "page": "Denys Oakheart",
+  "born": "73",
+  "parents": [
+   "Лорд Окхарт"
+  ],
+  "about": "A tourney celebrated his birth at Old Oak."
+ },
+ {
+  "id": "gwayne_oak",
+  "house": "oak",
+  "ru": "Гвейн Окхарт",
+  "en": "Gwayne Oakheart",
+  "page": "Gwayne Oakheart",
+  "about": "A competitor at the Ashford tourney in 209 AC."
+ },
+ {
+  "id": "arwyn",
+  "house": "oak",
+  "ru": "Арвин Окхарт",
+  "en": "Arwyn Oakheart",
+  "page": "Arwyn Oakheart",
+  "spouses": [
+   "муж, умерший"
+  ],
+  "about": "Lady of Old Oak, small and slight. Her late husband had remained hostile to the Dornish."
+ }
+]

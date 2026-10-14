@@ -9,7 +9,7 @@
         {"id":"far_son43","name":"Сын","full":"Старший сын лорда Фармана","hs":"far","k":"T","p":"far_lord43","par":["far_lord43"],"d":"43","wiki":"Marq Farman"},
         {"id":"marq_f","name":"Марк Фарман","en":"Marq Farman","hs":"far","k":"T","p":"far_lord43","par":["far_lord43"],"b":"4","d":"50"},
         {"id":"franklyn_f","name":"Франклин Фарман","full":"Сир Франклин Фарман","en":"Franklyn Farman","hs":"far","k":"T","p":"marq_f","par":["marq_f"],"b":"16–31","d":"55–88"},
-        {"id":"elissa","name":"Элисса Фарман","en":"Elissa Farman","al":["Алис Вестхилл"],"fem":1,"hs":"far","k":"T","p":"marq_f","par":["marq_f"],"b":"29"},
+        {"id":"elissa","name":"Элисса Фарман","en":"Elissa Farman","al":["Алис Вестхилл"],"fem":1,"hs":"far","k":"T","p":"marq_f","par":["marq_f"],"b":"29","ls":59},
         {"id":"androw","name":"Эндроу Фарман","en":"Androw Farman","hs":"far","k":"T","p":"marq_f","par":["marq_f"],"b":"32","d":"54","sp":[["rhaena_a","49 г."]]}
       ]
     },
@@ -18,7 +18,7 @@
       "people": [
         {"id":"far_lord130","name":"Лорд Фарман","full":"Лорд Фарман, отец Лизы","hs":"far","k":"T","d":"не позднее 133","wiki":"Lysa Farman"},
         {"id":"far_sons130","name":"Сыновья","full":"Сыновья лорда Фармана, выкупленные с отцом","group":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"wiki":"House Farman"},
-        {"id":"lysa_f","name":"Лиза Фарман","en":"Lysa Farman","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["dalton","солёная жена"],["gunthor_g","солёная жена"]]},
+        {"id":"lysa_f","name":"Лиза Фарман","en":"Lysa Farman","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"ls":133,"sp":[["dalton","солёная жена"],["gunthor_g","солёная жена"]]},
         {"id":"far_daus3","name":"Три дочери","full":"Три другие дочери лорда Фармана, солёные жёны Дальтона","fem":1,"group":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["dalton","солёные жёны"]],"wiki":"House Farman"},
         {"id":"far_dau5","name":"Дочь","full":"Пятая дочь лорда Фармана, солёная жена Верона","fem":1,"hs":"far","k":"T","p":"far_lord130","par":["far_lord130"],"sp":[["veron","солёная жена"]],"wiki":"House Farman"}
       ]
@@ -28,8 +28,8 @@
       "people": [
         {"id":"alysanne_f","name":"Алисанна Фарман","en":"Alysanne Farman","fem":1,"hs":"far","k":"T","d":"не позднее 219","sp":[["gerold","первая жена; детей не было"]]},
         {"id":"far_par19","name":"Фарман","full":"Фарман, отец Себастона и Джейн","hs":"far","k":"T","wiki":"Sebaston Farman"},
-        {"id":"sebaston","name":"Себастон Фарман","en":"Sebaston Farman","hs":"far","k":"T","p":"far_par19","par":["far_par19"]},
-        {"id":"jeyne_far","name":"Джейн Фарман","en":"Jeyne Farman","fem":1,"hs":"far","k":"T","p":"far_par19","par":["far_par19"],"sp":[["Гарет Клифтон"]]}
+        {"id":"sebaston","name":"Себастон Фарман","en":"Sebaston Farman","hs":"far","k":"T","p":"far_par19","par":["far_par19"],"alive":1},
+        {"id":"jeyne_far","name":"Джейн Фарман","en":"Jeyne Farman","fem":1,"hs":"far","k":"T","p":"far_par19","par":["far_par19"],"alive":1,"sp":[["Гарет Клифтон"]]}
       ]
     }
   ]

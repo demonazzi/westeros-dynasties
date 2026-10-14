@@ -10,9 +10,9 @@
         {"id":"stw_lord129","name":"Лорд Стокворт","full":"Лорд Стокворт в Танец драконов","hs":"stw","k":"T","wiki":"House Stokeworth"},
         {"id":"stw_dau129","name":"Дочь","full":"Дочь казнённого лорда Стокворта","fem":1,"hs":"stw","k":"T","p":"stw_lord129","par":["stw_lord129"],"wiki":"House Stokeworth"},
         {"id":"stw_son129","name":"Сын","full":"Сын казнённого лорда Стокворта","hs":"stw","k":"T","p":"stw_lord129","par":["stw_lord129"],"wiki":"House Stokeworth"},
-        {"id":"falena","name":"Фалена Стокворт","en":"Falena Stokeworth","fem":1,"hs":"stw","k":"T","b":"125","sp":[["aegon4","любовница","l"],["Лукас Лотстон","151 г."]]},
+        {"id":"falena","name":"Фалена Стокворт","en":"Falena Stokeworth","fem":1,"hs":"stw","k":"T","b":"125","ls":178,"sp":[["aegon4","любовница","l"],["Лукас Лотстон","151 г."]]},
         {"id":"maia","name":"Майя Стокворт","en":"Maia Stokeworth","fem":1,"hs":"stw","k":"T"},
-        {"id":"samwell_s","name":"Сэмвелл Стокворт","full":"Сир Сэмвелл Стокворт","en":"Samwell Stokeworth","hs":"stw","k":"T"}
+        {"id":"samwell_s","name":"Сэмвелл Стокворт","full":"Сир Сэмвелл Стокворт","en":"Samwell Stokeworth","hs":"stw","k":"T","ls":209}
       ]
     },
     {
@@ -21,8 +21,8 @@
         {"id":"manly","name":"Мэнли Стокворт","en":"Manly Stokeworth","hs":"stw","k":"T","par":["брат Танды (по семейной таблице)"],"d":"283–298"},
         {"id":"tanda","name":"Танда Стокворт","en":"Tanda Stokeworth","fem":1,"hs":"stw","k":"T","d":"300","sp":[["муж, имя не назван"]]},
         {"id":"falyse","name":"Фалиса Стокворт","en":"Falyse Stokeworth","fem":1,"hs":"stw","k":"T","p":"tanda","par":["tanda","муж, имя не назван"],"b":"не позднее 264","d":"300","sp":[["Бальман Берч"]]},
-        {"id":"lollys","name":"Лоллис Стокворт","en":"Lollys Stokeworth","fem":1,"hs":"stw","k":"T","p":"tanda","par":["tanda","муж, имя не назван"],"b":"265","sp":[["Бронн"]]},
-        {"id":"tyrion_t","name":"Тирион Дубильный","en":"Tyrion Tanner","hs":"stw","k":"T","p":"lollys","par":["lollys","отец неизвестен"],"b":"300","wiki":"Tyrion Tanner"}
+        {"id":"lollys","name":"Лоллис Стокворт","en":"Lollys Stokeworth","fem":1,"hs":"stw","k":"T","p":"tanda","par":["tanda","муж, имя не назван"],"b":"265","alive":1,"sp":[["Бронн"]]},
+        {"id":"tyrion_t","name":"Тирион Дубильный","en":"Tyrion Tanner","hs":"stw","k":"T","p":"lollys","par":["lollys","отец неизвестен"],"b":"300","alive":1,"wiki":"Tyrion Tanner"}
       ]
     }
   ]

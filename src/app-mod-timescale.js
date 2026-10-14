@@ -376,7 +376,8 @@
     yearBtn.setAttribute('aria-pressed', String(y != null));
     if (y == null) return;
     const t = App.yearText ? App.yearText(y) : { year: yearWord(y), alive: 0, king: '', era: '' };
-    chipText.innerHTML = '<b>' + esc(t.year) + '</b><span>живых: ' + t.alive + '</span>' +
+    chipText.innerHTML = '<b>' + esc(t.year) + '</b><span>' + esc(App.t('живых: {n}', { n: t.alive })) + '</span>' +
+      (t.unsure ? '<span title="' + esc(App.t('год смерти не известен точно')) + '">' + esc(App.t('под вопросом: {n}', { n: t.unsure })) + '</span>' : '') +
       (t.king ? '<span>' + esc(App.t('На троне: {name}', { name: t.king })) + '</span>' : '') + (t.era ? '<span>' + esc(t.era) + '</span>' : '') +
       '<span class="yc-tip">двигайте ползунок на шкале</span>';
   }

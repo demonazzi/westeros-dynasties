@@ -1,0 +1,524 @@
+[
+ {
+  "id": "horas",
+  "house": "red",
+  "ru": "Хорас Редвин",
+  "en": "Horas Redwyne",
+  "page": "Horas Redwyne",
+  "born": "не позднее 282",
+  "parents": [
+   "Paxter Redwyne",
+   "Mina Tyrell"
+  ],
+  "about": "His detention at court constrained Paxter’s choices during the war."
+ },
+ {
+  "id": "hobber",
+  "house": "red",
+  "ru": "Хоббер Редвин",
+  "en": "Hobber Redwyne",
+  "page": "Hobber Redwyne",
+  "born": "не позднее 282",
+  "parents": [
+   "Paxter Redwyne",
+   "Mina Tyrell"
+  ],
+  "about": "Held at court alongside Horas, keeping Paxter from openly opposing the crown."
+ },
+ {
+  "id": "desmera",
+  "house": "red",
+  "ru": "Десмера Редвин",
+  "en": "Desmera Redwyne",
+  "page": "Desmera Redwyne",
+  "born": "283",
+  "parents": [
+   "Paxter Redwyne",
+   "Mina Tyrell"
+  ],
+  "about": "Her substantial dowry attracted prospective husbands. Randyll Tarly considered marrying her to Samwell, then abandoned the plan after visiting the Arbor. The Tyrells later discussed a match with Daven Lannister, who was "
+ },
+ {
+  "id": "robert_rw",
+  "house": "red",
+  "ru": "Роберт Редвин",
+  "en": "Robert Redwyne",
+  "page": "Robert Redwyne",
+  "parents": [
+   "Manfryd Redwyne"
+  ],
+  "about": "Commander of the King’s Landing City Watch."
+ },
+ {
+  "id": "rickard_rw",
+  "house": "red",
+  "ru": "Рикард Редвин",
+  "en": "Rickard Redwyne",
+  "page": "Rickard Redwyne",
+  "parents": [
+   "Manfryd Redwyne"
+  ],
+  "about": "A knight distinguished in tourneys."
+ },
+ {
+  "id": "ryam",
+  "house": "red",
+  "ru": "Райам Редвин",
+  "en": "Ryam Redwyne",
+  "page": "Ryam Redwyne",
+  "parents": [
+   "Manfryd Redwyne"
+  ],
+  "about": "A renowned jouster and Lord Commander who proved an unsuccessful Hand. He returned to the Kingsguard after dismissal."
+ },
+ {
+  "id": "patricia",
+  "house": "red",
+  "ru": "Патриция Редвин",
+  "en": "Patricia Redwyne",
+  "page": "Patricia Redwyne",
+  "about": "Considered as a possible bride for Aegon III."
+ },
+ {
+  "id": "runceford",
+  "house": "red",
+  "ru": "Рансфорд Редвин",
+  "en": "Runceford Redwyne",
+  "page": "Runceford Redwyne",
+  "spouses": [
+   "жена, имя не названа"
+  ],
+  "about": "Lord of the Arbor."
+ },
+ {
+  "id": "runceford_son",
+  "house": "red",
+  "ru": "Сын",
+  "en": "",
+  "page": "Paxter Redwyne",
+  "parents": [
+   "Runceford Redwyne"
+  ],
+  "about": "Runceford Redwyne's unnamed son was Olenna's brother and Paxter's father. He links Runceford's generation to the branch represented by Paxter and his children on the Arbor."
+ },
+ {
+  "id": "paxter",
+  "house": "red",
+  "ru": "Пакстер Редвин",
+  "en": "Paxter Redwyne",
+  "page": "Paxter Redwyne",
+  "born": "не позднее 269",
+  "parents": [
+   "Сын"
+  ],
+  "spouses": [
+   "Mina Tyrell"
+  ],
+  "about": "His sons’ detention at court prevented open support for Renly. After the Tyrell alliance, he blockaded Dragonstone, then sailed to defend the Reach from ironborn attacks."
+ },
+ {
+  "id": "desmond_rw",
+  "house": "red",
+  "ru": "Десмонд Редвин",
+  "en": "Desmond Redwyne",
+  "page": "Desmond Redwyne",
+  "spouses": [
+   "Denyse Hightower"
+  ],
+  "about": "A knight of the Arbor."
+ },
+ {
+  "id": "denys_rw",
+  "house": "red",
+  "ru": "Денис Редвин",
+  "en": "Denys Redwyne",
+  "page": "Denys Redwyne",
+  "parents": [
+   "Desmond Redwyne",
+   "Denyse Hightower"
+  ],
+  "about": "Denys is a squire, the son of Ser Desmond Redwyne and Denyse Hightower. His mother belongs to Oldtown's ruling family."
+ },
+ {
+  "id": "bethany_rw",
+  "house": "red",
+  "ru": "Бетани Редвин",
+  "en": "Bethany Redwyne",
+  "page": "Bethany Redwyne",
+  "spouses": [
+   "Матис Рован"
+  ],
+  "about": "Hoster Tully wanted his brother Brynden to marry Bethany, but Brynden refused despite the Lord of Riverrun's insistence. She later married Mathis Rowan, Lord of Goldengrove, and had three children with him."
+ },
+ {
+  "id": "bw_lord10",
+  "house": "bw",
+  "ru": "Лорд Блэквуд",
+  "en": "",
+  "page": "Samwell Blackwood",
+  "about": "Lord of Raventree Hall."
+ },
+ {
+  "id": "alysanne_bw",
+  "house": "bw",
+  "ru": "Алисанна Блэквуд",
+  "en": "Alysanne Blackwood",
+  "page": "Alysanne Blackwood",
+  "parents": [
+   "Лорд Блэквуд"
+  ],
+  "spouses": [
+   "Cregan Stark"
+  ],
+  "about": "Black Aly. A skilled archer, she fought for the blacks and was credited with killing Amos Bracken with an arrow. After the war, she helped secure a pardon for Corlys Velaryon and negotiated with Cregan Stark over the fat"
+ },
+ {
+  "id": "benjicot",
+  "house": "bw",
+  "ru": "Бенджикот Блэквуд",
+  "en": "Benjicot Blackwood",
+  "page": "Benjicot Blackwood",
+  "parents": [
+   "Samwell Blackwood"
+  ],
+  "about": "He inherited Raventree Hall at eleven. Despite his age, he fought in several decisive battles of the Dance for Rhaenyra and earned the name Bloody Ben. With the young Tullys, he was among the commanders known as the Lads"
+ },
+ {
+  "id": "melissa_bw",
+  "house": "bw",
+  "ru": "Мелисса Блэквуд",
+  "en": "Melissa Blackwood",
+  "page": "Melissa Blackwood",
+  "spouses": [
+   "Aegon the Unworthy"
+  ],
+  "about": "One of Aegon IV's mistresses. She bore Mya, Gwenys and Brynden Rivers, the future Bloodraven. Despite her position, she was well liked at court, including by Naerys."
+ },
+ {
+  "id": "melantha",
+  "house": "bw",
+  "ru": "Меланта Блэквуд",
+  "en": "Melantha Blackwood",
+  "page": "Melantha Blackwood",
+  "spouses": [
+   "Willam Stark"
+  ],
+  "about": "Melantha became Lady of Winterfell as Willam Stark's second wife, following Lyanne Glover's death. Their children were Edwyle and Jocelyn."
+ },
+ {
+  "id": "betha",
+  "house": "bw",
+  "ru": "Бета Блэквуд",
+  "en": "Betha Blackwood",
+  "page": "Betha Blackwood",
+  "spouses": [
+   "Aegon the Unlikely"
+  ],
+  "about": "She married Aegon for love before he was chosen as king. Her strong character earned her the name Black Betha. She later tried to stop her children from marrying in defiance of the crown's agreements with the great house"
+ },
+ {
+  "id": "tytos_bw",
+  "house": "bw",
+  "ru": "Титос Блэквуд",
+  "en": "Tytos Blackwood",
+  "page": "Tytos Blackwood",
+  "about": "Lord of Raventree Hall during the War of the Five Kings and a supporter of the Tullys and Robb Stark. He helped free Edmure and supported Robb's proclamation as king. After the northern alliance was defeated, he continue"
+ },
+ {
+  "id": "brynden_bw",
+  "house": "bw",
+  "ru": "Бринден Блэквуд",
+  "en": "Brynden Blackwood",
+  "page": "Brynden Blackwood",
+  "born": "не позднее 282",
+  "parents": [
+   "Tytos Blackwood"
+  ],
+  "about": "Heir to Raventree Hall."
+ },
+ {
+  "id": "hoster_bw",
+  "house": "bw",
+  "ru": "Хостер Блэквуд",
+  "en": "Hoster Blackwood",
+  "page": "Hoster Blackwood",
+  "parents": [
+   "Tytos Blackwood"
+  ],
+  "about": "Named after Hoster Tully. A tall young man who loved books and knew the history of the riverlands well. After Raventree Hall surrendered, he was handed over to Jaime Lannister as a hostage. In their conversations, he exp"
+ },
+ {
+  "id": "edmund_bw",
+  "house": "bw",
+  "ru": "Эдмунд Блэквуд",
+  "en": "Edmund Blackwood",
+  "page": "Edmund Blackwood",
+  "born": "287/288",
+  "parents": [
+   "Tytos Blackwood"
+  ],
+  "about": "Known to his family as Ben, Edmund is adventurous, according to his father. During the settlement at Raventree, Tytos offered him as Jaime Lannister's hostage and suggested he become Jaime's squire. Jaime already had eno"
+ },
+ {
+  "id": "alyn_bw",
+  "house": "bw",
+  "ru": "Алин Блэквуд",
+  "en": "Alyn Blackwood",
+  "page": "Alyn Blackwood",
+  "born": "288–291",
+  "parents": [
+   "Tytos Blackwood"
+  ],
+  "about": "Alyn is Tytos Blackwood's fifth son of Raventree Hall, younger than Edmund and older than Bethany. He was born between 288 and 291 AC."
+ },
+ {
+  "id": "bethany_bw",
+  "house": "bw",
+  "ru": "Бетани Блэквуд",
+  "en": "Bethany Blackwood",
+  "page": "Bethany Blackwood",
+  "born": "291/292",
+  "parents": [
+   "Tytos Blackwood"
+  ],
+  "about": "Bethany is a gentle, often laughing girl who has never traveled more than a day's ride from Raventree Hall. Jonos Bracken urged Jaime to take her hostage because Tytos doted on his only daughter. Her father resisted, and"
+ },
+ {
+  "id": "savage_sam",
+  "house": "tar",
+  "ru": "Сэмвелл Тарли",
+  "en": "Samwell Tarly",
+  "page": "Samwell Tarly (Savage Sam)",
+  "about": "His exploits in the Vulture Hunt earned him the name Savage Sam."
+ },
+ {
+  "id": "donald",
+  "house": "tar",
+  "ru": "Дональд Тарли",
+  "en": "Donald Tarly",
+  "page": "Donald Tarly",
+  "spouses": [
+   "Джейна Рован"
+  ],
+  "about": "Lord of Horn Hill."
+ },
+ {
+  "id": "samantha",
+  "house": "tar",
+  "ru": "Саманта Тарли",
+  "en": "Samantha Tarly",
+  "page": "Samantha Tarly",
+  "parents": [
+   "Donald Tarly"
+  ],
+  "spouses": [
+   "Ormund Hightower",
+   "Lyonel Hightower"
+  ],
+  "about": "Her relationship with her stepson Lyonel scandalised the High Septon. His successor permitted their marriage and legitimised their children; Samantha helped govern Oldtown."
+ },
+ {
+  "id": "sansara",
+  "house": "tar",
+  "ru": "Сансара Тарли",
+  "en": "Sansara Tarly",
+  "page": "Sansara Tarly",
+  "parents": [
+   "Donald Tarly"
+  ],
+  "about": "A prospective bride considered for Aegon III."
+ },
+ {
+  "id": "alan_t",
+  "house": "tar",
+  "ru": "Алан Тарли",
+  "en": "Alan Tarly",
+  "page": "Alan Tarly",
+  "about": "A supporter of Rhaenyra during the Dance. His possible identity with her earlier suitor is uncertain."
+ },
+ {
+  "id": "samwyle",
+  "house": "tar",
+  "ru": "Сэмвиль Тарли",
+  "en": "Samwyle Tarly",
+  "page": "Samwyle Tarly",
+  "about": "The heir to Horn Hill attended the Ashford tourney."
+ },
+ {
+  "id": "tar_lord17",
+  "house": "tar",
+  "ru": "Лорд Тарли",
+  "en": "",
+  "page": "Randyll Tarly",
+  "about": "Denys Mallister once unhorsed him at a tourney."
+ },
+ {
+  "id": "randyll",
+  "house": "tar",
+  "ru": "Рендилл Тарли",
+  "en": "Randyll Tarly",
+  "page": "Randyll Tarly",
+  "parents": [
+   "Лорд Тарли"
+  ],
+  "spouses": [
+   "Мелесса Флорент"
+  ],
+  "about": "A capable commander whose discipline could be brutal. He defeated Robert at Ashford, then later forced Sam into the Watch under threat of death. In Tyrell service he restored order at Maidenpool and helped besiege Dragon"
+ },
+ {
+  "id": "samwell",
+  "house": "tar",
+  "ru": "Сэмвелл Тарли",
+  "en": "Samwell Tarly",
+  "page": "Samwell Tarly",
+  "born": "283",
+  "parents": [
+   "Randyll Tarly"
+  ],
+  "about": "Threatened with death by his father, he found refuge in the Watch. Fear did not prevent him killing an Other with dragonglass or helping Gilly escape Craster. He also helped secure Jon’s election by persuading rival cand"
+ },
+ {
+  "id": "talla",
+  "house": "tar",
+  "ru": "Талла Тарли",
+  "en": "Talla Tarly",
+  "page": "Talla Tarly",
+  "parents": [
+   "Randyll Tarly"
+  ],
+  "about": "Talla was one of three daughters born to Randyll Tarly and Melessa Florent during the three years between Samwell's birth and Dickon's."
+ },
+ {
+  "id": "dickon",
+  "house": "tar",
+  "ru": "Дикон Тарли",
+  "en": "Dickon Tarly",
+  "page": "Dickon Tarly",
+  "born": "287–290",
+  "parents": [
+   "Randyll Tarly"
+  ],
+  "spouses": [
+   "Элеанора Мутон"
+  ],
+  "about": "Sam’s departure made him Horn Hill’s heir. Marriage to Eleanor Mooton connected him with Maidenpool’s succession."
+ },
+ {
+  "id": "mara_m",
+  "house": "man",
+  "ru": "Мара Мандерли",
+  "en": "Mara Manderly",
+  "page": "Mara Manderly",
+  "parents": [
+   "Theomore Manderly"
+  ],
+  "about": "She attended Alysanne on Dragonstone early in Jaehaerys’s reign."
+ },
+ {
+  "id": "jessamyn_m",
+  "house": "man",
+  "ru": "Джессамина Мандерли",
+  "en": "Jessamyn Manderly",
+  "page": "Jessamyn Manderly",
+  "parents": [
+   "Theomore Manderly"
+  ],
+  "about": "Alysanne’s cupbearer during the queen’s visit to the North."
+ },
+ {
+  "id": "torrhen_m",
+  "house": "man",
+  "ru": "Торрхен Мандерли",
+  "en": "Torrhen Manderly",
+  "page": "Torrhen Manderly",
+  "born": "не позднее 111",
+  "parents": [
+   "Desmond Manderly"
+  ],
+  "about": "Service to the blacks led to a regency seat and later the Handship. Aegon III dismissed him on coming of age."
+ },
+ {
+  "id": "jeyne_m",
+  "house": "man",
+  "ru": "Джейн Мандерли",
+  "en": "Jeyne Manderly",
+  "page": "Jeyne Manderly",
+  "born": "не позднее 149",
+  "spouses": [
+   "Rickon Stark"
+  ],
+  "about": "Jeyne married Rickon Stark, Cregan's eldest son and heir, and had two daughters, Sansa and Serena. Her parentage within House Manderly is unknown; the suggestion that Torrhen Manderly was her father remains uncertain."
+ },
+ {
+  "id": "myriame",
+  "house": "man",
+  "ru": "Мириам Мандерли",
+  "en": "Myriame Manderly",
+  "page": "Myriame Manderly",
+  "born": "не позднее 212",
+  "spouses": [
+   "Rodwell Stark"
+  ],
+  "about": "Myriame was Lady of Winterfell as the wife of Rodwell Stark. Their marriage was childless, and Rodwell was succeeded by his younger brother Beron."
+ },
+ {
+  "id": "wyman",
+  "house": "man",
+  "ru": "Виман Мандерли",
+  "en": "Wyman Manderly",
+  "page": "Wyman Manderly",
+  "born": "239–242",
+  "spouses": [
+   "жена, умершая около 291 года"
+  ],
+  "about": "His appetites and outward submission disguised a careful effort to restore the Starks. Once Wylis was safely home, Wyman sent Davos to find Rickon on Skagos. Three Frey guests vanished on the journey to Ramsay’s wedding,"
+ },
+ {
+  "id": "wylis",
+  "house": "man",
+  "ru": "Вилис Мандерли",
+  "en": "Wylis Manderly",
+  "page": "Wylis Manderly",
+  "born": "251–263",
+  "parents": [
+   "Wyman Manderly"
+  ],
+  "spouses": [
+   "Леона Вулфилд"
+  ],
+  "about": "His release from captivity freed Wyman to act against the Boltons without endangering his surviving son."
+ },
+ {
+  "id": "wynafryd",
+  "house": "man",
+  "ru": "Винафрид Мандерли",
+  "en": "Wynafryd Manderly",
+  "page": "Wynafryd Manderly",
+  "born": "280/281",
+  "parents": [
+   "Wylis Manderly"
+  ],
+  "about": "Her betrothed, Rhaegar Frey, vanished after leaving White Harbor for Winterfell."
+ },
+ {
+  "id": "wylla_m",
+  "house": "man",
+  "ru": "Вилла Мандерли",
+  "en": "Wylla Manderly",
+  "page": "Wylla Manderly",
+  "born": "284/285",
+  "parents": [
+   "Wylis Manderly"
+  ],
+  "about": "Her green braids stood out at court. She openly defended the family’s Stark allegiance when the Freys demanded Davos’s death."
+ },
+ {
+  "id": "marlon",
+  "house": "man",
+  "ru": "Марлон Мандерли",
+  "en": "Marlon Manderly",
+  "page": "Marlon Manderly",
+  "about": "Commander of White Harbor’s garrison."
+ }
+]

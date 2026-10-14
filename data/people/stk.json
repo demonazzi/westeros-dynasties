@@ -5,7 +5,7 @@
     {
       "title": "Завоевание",
       "people": [
-        {"id":"torrhen","name":"Торрхен Старк","full":"Торрхен Старк, Король, преклонивший колено","en":"Torrhen Stark, the King Who Knelt","hs":"stk","k":"T","kl":"Король Севера"},
+        {"id":"torrhen","name":"Торрхен Старк","full":"Торрхен Старк, Король, преклонивший колено","en":"Torrhen Stark, the King Who Knelt","hs":"stk","k":"T","d":"2–49","kl":"Король Севера"},
         {"id":"torrhen_sons","name":"Сыновья","full":"Сыновья Торрхена Старка","group":1,"hs":"stk","k":"T","p":"torrhen","par":["torrhen","жена не названа"],"wiki":"Torrhen Stark"},
         {"id":"torrhen_d","name":"Дочь Торрхена","full":"Дочь Торрхена Старка","fem":1,"hs":"stk","k":"T","p":"torrhen","sp":[["ronnel_k","брак устроила королева Рейенис"]],"wiki":"Torrhen Stark"}
       ]
@@ -13,52 +13,52 @@
     {
       "title": "Криган Старк и его дети",
       "people": [
-        {"id":"cregan","name":"Криган Старк","full":"Криган Старк, Волк Севера","en":"Cregan Stark","al":["Старик Севера"],"hs":"stk","k":"T","b":"108","sp":[["Арра Норрей","умерла в родах, 128 г."],["alysanne_bw","132 г."],["lynara"]]},
-        {"id":"lynara","name":"Линара Старк","en":"Lynara Stark","fem":1,"hs":"stk","k":"T","sp":[["cregan"]],"wiki":"Lynara Stark"},
+        {"id":"cregan","name":"Криган Старк","full":"Криган Старк, Волк Севера","en":"Cregan Stark","al":["Старик Севера"],"hs":"stk","k":"T","b":"108","d":"157–209","sp":[["Арра Норрей","умерла в родах, 128 г."],["alysanne_bw","132 г."],["lynara"]]},
+        {"id":"lynara","name":"Линара Старк","en":"Lynara Stark","fem":1,"hs":"stk","k":"T","d":"не ранее 140","sp":[["cregan"]],"wiki":"Lynara Stark"},
         {"id":"rickon_c","name":"Рикон Старк","full":"Рикон Старк, сын Кригана","en":"Rickon Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","Арра Норрей"],"b":"128","d":"157","sp":[["jeyne_m"]],"wiki":"Rickon Stark (son of Cregan)"},
-        {"id":"jonnel","name":"Джоннел Старк","en":"Jonnel Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"sp":[["sansa_c"]]},
-        {"id":"edric_c","name":"Эдрик Старк","full":"Эдрик Старк, сын Кригана","en":"Edric Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"sp":[["serena_c"]],"wiki":"Edric Stark (son of Cregan)"},
+        {"id":"jonnel","name":"Джоннел Старк","en":"Jonnel Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"d":"157–209","sp":[["sansa_c"]]},
+        {"id":"edric_c","name":"Эдрик Старк","full":"Эдрик Старк, сын Кригана","en":"Edric Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"d":"153–209","sp":[["serena_c"]],"wiki":"Edric Stark (son of Cregan)"},
         {"id":"lyanna_c","name":"Лианна Старк","full":"Лианна Старк, дочь Кригана","en":"Lyanna Stark","fem":1,"hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"b":"138–181","wiki":"Lyanna Stark (daughter of Cregan)"},
-        {"id":"barthogan","name":"Бартоган Старк","en":"Barthogan Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"]},
+        {"id":"barthogan","name":"Бартоган Старк","en":"Barthogan Stark","hs":"stk","k":"T","p":"cregan","par":["cregan","lynara"],"d":"184–209"},
         {"id":"cregan_daughters","name":"Дочери Кригана","full":"Сарра, Алис, Рейя и Мирия Старк","group":1,"hs":"stk","k":"T","p":"cregan","par":["cregan","alysanne_bw"],"wiki":"Cregan Stark"},
-        {"id":"sansa_c","name":"Санса Старк","full":"Санса Старк, дочь Рикона","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"sp":[["jonnel"]],"wiki":"Sansa Stark (daughter of Rickon)"},
-        {"id":"serena_c","name":"Серена Старк","en":"Serena Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"sp":[["edric_c"],["jon_u2"]]},
+        {"id":"sansa_c","name":"Санса Старк","full":"Санса Старк, дочь Рикона","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"d":"не позднее 209","sp":[["jonnel"]],"wiki":"Sansa Stark (daughter of Rickon)"},
+        {"id":"serena_c","name":"Серена Старк","en":"Serena Stark","fem":1,"hs":"stk","k":"T","p":"rickon_c","par":["rickon_c","jeyne_m"],"d":"не ранее 154","sp":[["edric_c"],["jon_u2"]]},
         {"id":"torrhen_e","name":"Торрхен Старк","full":"Торрхен Старк, сын Эдрика","en":"Torrhen Stark","hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"],"wiki":"Edric Stark (son of Cregan)"},
         {"id":"cregard","name":"Кригард Старк","en":"Cregard Stark","hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"]},
-        {"id":"arrana","name":"Аррана Старк","en":"Arrana Stark","fem":1,"hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"],"sp":[["osric"]]},
-        {"id":"argelle_s","name":"Аргелла Старк","en":"Argelle Stark","fem":1,"hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"]}
+        {"id":"arrana","name":"Аррана Старк","en":"Arrana Stark","fem":1,"hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"],"d":"не ранее 166","sp":[["osric"]]},
+        {"id":"argelle_s","name":"Аргелла Старк","en":"Argelle Stark","fem":1,"hs":"stk","k":"T","p":"edric_c","par":["edric_c","serena_c"],"d":"не ранее 167"}
       ]
     },
     {
       "title": "Младшая ветвь: от Брандона, сына Кригана, до Эддарда",
       "people": [
-        {"id":"brandon_c","name":"Брандон Старк","full":"Брандон Старк, сын Кригана","en":"Brandon Stark","hs":"stk","k":"T","par":["cregan","lynara"],"sp":[["alys_kk"]],"wiki":"Brandon Stark (son of Cregan)"},
-        {"id":"rodwell","name":"Родвелл Старк","en":"Rodwell Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"sp":[["myriame"]]},
-        {"id":"beron","name":"Берон Старк","en":"Beron Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"sp":[["lorra"]]},
+        {"id":"brandon_c","name":"Брандон Старк","full":"Брандон Старк, сын Кригана","en":"Brandon Stark","hs":"stk","k":"T","par":["cregan","lynara"],"d":"184–212","sp":[["alys_kk"]],"wiki":"Brandon Stark (son of Cregan)"},
+        {"id":"rodwell","name":"Родвелл Старк","en":"Rodwell Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"d":"184–212","sp":[["myriame"]]},
+        {"id":"beron","name":"Берон Старк","en":"Beron Stark","hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"d":"212–226","sp":[["lorra"]]},
         {"id":"arsa","name":"Арса Старк","en":"Arsa Stark","fem":1,"hs":"stk","k":"T","p":"brandon_c","par":["brandon_c","alys_kk"],"b":"173–213"},
         {"id":"lonnel_snow","name":"Лоннел Сноу","en":"Lonnel Snow","hs":"stk","k":"R","p":"brandon_c","par":["brandon_c","Уилла Фенн"],"b":"152–195"},
-        {"id":"donnor","name":"Доннор Старк","en":"Donnor Stark","hs":"stk","k":"T","p":"beron"},
+        {"id":"donnor","name":"Доннор Старк","en":"Donnor Stark","hs":"stk","k":"T","p":"beron","d":"212–226"},
         {"id":"willam_s","name":"Уиллам Старк","en":"Willam Stark","hs":"stk","k":"T","p":"beron","d":"226","sp":[["melantha"]]},
-        {"id":"artos","name":"Артос Старк","full":"Артос Старк, Непреклонный","en":"Artos the Implacable","hs":"stk","k":"T","p":"beron","sp":[["lysara"]]},
-        {"id":"brandon_a","name":"Брандон Старк","full":"Брандон Старк, сын Артоса","en":"Brandon Stark","hs":"stk","k":"T","p":"artos","par":["artos","lysara"],"wiki":"Brandon Stark (son of Artos)"},
-        {"id":"benjen_a","name":"Бенджен Старк","full":"Бенджен Старк, сын Артоса","en":"Benjen Stark","hs":"stk","k":"T","p":"artos","par":["artos","lysara"],"wiki":"Benjen Stark (son of Artos)"},
+        {"id":"artos","name":"Артос Старк","full":"Артос Старк, Непреклонный","en":"Artos the Implacable","hs":"stk","k":"T","p":"beron","d":"не ранее 226","sp":[["lysara"]]},
+        {"id":"brandon_a","name":"Брандон Старк","full":"Брандон Старк, сын Артоса","en":"Brandon Stark","hs":"stk","k":"T","p":"artos","par":["artos","lysara"],"d":"не ранее 209","wiki":"Brandon Stark (son of Artos)"},
+        {"id":"benjen_a","name":"Бенджен Старк","full":"Бенджен Старк, сын Артоса","en":"Benjen Stark","hs":"stk","k":"T","p":"artos","par":["artos","lysara"],"d":"не ранее 209","wiki":"Benjen Stark (son of Artos)"},
         {"id":"berena","name":"Берена Старк","en":"Berena Stark","fem":1,"hs":"stk","k":"T","p":"beron","par":["beron","lorra"]},
         {"id":"alysanne_s","name":"Алисанна Старк","full":"Алисанна Старк, дочь Берона","en":"Alysanne Stark","fem":1,"hs":"stk","k":"T","p":"beron","par":["beron","lorra"],"wiki":"Beron Stark"},
         {"id":"errold","name":"Эррольд Старк","en":"Errold Stark","hs":"stk","k":"T","p":"beron","par":["beron","lorra"]},
-        {"id":"rodrik_b","name":"Родрик Старк","full":"Родрик Старк, сын Берона","en":"Rodrik Stark","hs":"stk","k":"T","p":"beron","par":["beron","lorra"],"wiki":"Beron Stark"},
-        {"id":"edwyle","name":"Эдвил Старк","en":"Edwyle Stark","hs":"stk","k":"T","p":"willam_s","par":["willam_s","melantha"],"sp":[["Марна Локе"]]},
-        {"id":"jocelyn_s","name":"Джослин Старк","en":"Jocelyn Stark","fem":1,"hs":"stk","k":"T","p":"willam_s","par":["willam_s","melantha"],"sp":[["benedict"]]},
+        {"id":"rodrik_b","name":"Родрик Старк","full":"Родрик Старк, сын Берона","en":"Rodrik Stark","hs":"stk","k":"T","p":"beron","par":["beron","lorra"],"d":"не ранее 214","wiki":"Beron Stark"},
+        {"id":"edwyle","name":"Эдвил Старк","en":"Edwyle Stark","hs":"stk","k":"T","p":"willam_s","par":["willam_s","melantha"],"d":"229–262","sp":[["Марна Локе"]]},
+        {"id":"jocelyn_s","name":"Джослин Старк","en":"Jocelyn Stark","fem":1,"hs":"stk","k":"T","p":"willam_s","par":["willam_s","melantha"],"d":"не ранее 212","sp":[["benedict"]]},
         {"id":"rickard","name":"Рикард Старк","en":"Rickard Stark","hs":"stk","k":"T","p":"edwyle","par":["edwyle","Марна Локе"],"d":"282","sp":[["Лиарра Старк"]]},
         {"id":"brandon_r","name":"Брандон Старк","full":"Брандон Старк, сын Рикарда","en":"Brandon Stark","hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"d":"282","wiki":"Brandon Stark (son of Rickard)"},
         {"id":"eddard","name":"Эддард Старк","en":"Eddard Stark","al":["Нед Старк"],"hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"d":"299","sp":[["catelyn"]],"wd":["theon"]},
         {"id":"lyanna","name":"Лианна Старк","en":"Lyanna Stark","fem":1,"hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"b":"266","d":"283","sp":[["robert","помолвка","b"],["rhaegar","в сериале — тайный брак"]]},
-        {"id":"benjen","name":"Бенджен Старк","en":"Benjen Stark","hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"]},
+        {"id":"benjen","name":"Бенджен Старк","en":"Benjen Stark","hs":"stk","k":"T","p":"rickard","par":["rickard","Лиарра Старк"],"ls":298},
         {"id":"robb","name":"Робб Старк","en":"Robb Stark","al":["Молодой Волк"],"hs":"stk","k":"C","p":"eddard","par":["eddard","catelyn"],"b":"283","d":"299","kl":"Король Севера","sp":[["jeyne_wr","в сериале — Талиса"]]},
-        {"id":"jon","name":"Джон Сноу","en":"Jon Snow","hs":"stk","alt":"targ","k":"R","p":"eddard","par":["eddard (официально)","мать неизвестна: по словам Эддарда — Вилла, по слухам — Эшара Дейн или дочь рыбака","rhaegar (по теории)","lyanna (по теории)"],"rp":"rhaegar","unc":1,"b":"283"},
-        {"id":"sansa","name":"Санса Старк","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"286","sp":[["joffrey_b","помолвка","b"],["tyrion","299 г."]]},
-        {"id":"arya","name":"Арья Старк","en":"Arya Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"289"},
-        {"id":"bran","name":"Бран Старк","full":"Брандон «Бран» Старк","en":"Bran Stark","hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"290","wiki":"Bran Stark"},
-        {"id":"rickon","name":"Рикон Старк","full":"Рикон Старк, сын Эддарда","en":"Rickon Stark","hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"295"}
+        {"id":"jon","name":"Джон Сноу","en":"Jon Snow","hs":"stk","alt":"targ","k":"R","p":"eddard","par":["eddard (официально)","мать неизвестна: по словам Эддарда — Вилла, по слухам — Эшара Дейн или дочь рыбака","rhaegar (по теории)","lyanna (по теории)"],"rp":"rhaegar","unc":1,"b":"283","alive":1},
+        {"id":"sansa","name":"Санса Старк","en":"Sansa Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"286","alive":1,"sp":[["joffrey_b","помолвка","b"],["tyrion","299 г."]]},
+        {"id":"arya","name":"Арья Старк","en":"Arya Stark","fem":1,"hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"289","alive":1},
+        {"id":"bran","name":"Бран Старк","full":"Брандон «Бран» Старк","en":"Bran Stark","hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"290","alive":1,"wiki":"Bran Stark"},
+        {"id":"rickon","name":"Рикон Старк","full":"Рикон Старк, сын Эддарда","en":"Rickon Stark","hs":"stk","k":"T","p":"eddard","par":["eddard","catelyn"],"b":"295","alive":1}
       ]
     }
   ]

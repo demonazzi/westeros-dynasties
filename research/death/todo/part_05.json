@@ -1,0 +1,438 @@
+[
+ {
+  "id": "tyr_lord17",
+  "house": "tyr",
+  "ru": "Лорд Тирелл",
+  "en": "",
+  "page": "Luthor Tyrell",
+  "about": "Luthor Tyrell and his brothers Gormon, Garth, and Moryn had a father whose name is not recorded."
+ },
+ {
+  "id": "theo",
+  "house": "tyr",
+  "ru": "Тео Тирелл",
+  "en": "Theo Tyrell",
+  "page": "Theo Tyrell",
+  "parents": [
+   "Harlan Tyrell"
+  ],
+  "about": "He succeeded after Harlen’s disappearance during the First Dornish War."
+ },
+ {
+  "id": "bertrand_son",
+  "house": "tyr",
+  "ru": "Сын",
+  "en": "",
+  "page": "Bertrand Tyrell",
+  "parents": [
+   "Bertrand Tyrell"
+  ],
+  "about": "He inherited Highgarden after Bertrand’s fatal fall."
+ },
+ {
+  "id": "martyn_t",
+  "house": "tyr",
+  "ru": "Мартин Тирелл",
+  "en": "Martyn Tyrell",
+  "page": "Martyn Tyrell",
+  "born": "не позднее 43",
+  "parents": [
+   "Bertrand Tyrell"
+  ],
+  "spouses": [
+   "Florence Fossoway"
+  ],
+  "about": "Florence’s accounting made his tenure as master of coin effective."
+ },
+ {
+  "id": "leo_t",
+  "house": "tyr",
+  "ru": "Лео Тирелл",
+  "en": "Leo Tyrell (Longthorn)",
+  "page": "Leo Tyrell (Longthorn)",
+  "about": "Longthorn defeated Blackfyre rebels in the Reach but arrived too late for the Redgrass Field. His prowess in the lists made him an Ashford champion; he upheld Aerion’s demand for a trial of seven. Rumours later spoke of "
+ },
+ {
+  "id": "mace",
+  "house": "tyr",
+  "ru": "Мейс Тирелл",
+  "en": "Mace Tyrell",
+  "page": "Mace Tyrell",
+  "born": "256–263",
+  "parents": [
+   "Luthor Tyrell",
+   "Olenna Redwyne"
+  ],
+  "spouses": [
+   "Alerie Hightower"
+  ],
+  "about": "His shift from Renly to the Lannisters made the Tyrell army crucial to the Blackwater victory and secured Margaery’s royal marriages. As Tommen’s Hand, he defended that gain against the Faith’s arrest of his daughter. He"
+ },
+ {
+  "id": "mina",
+  "house": "tyr",
+  "ru": "Мина Тирелл",
+  "en": "Mina Tyrell",
+  "page": "Mina Tyrell",
+  "born": "246–270",
+  "parents": [
+   "Luthor Tyrell",
+   "Olenna Redwyne"
+  ],
+  "spouses": [
+   "Paxter Redwyne"
+  ],
+  "about": "Mina became Lady of the Arbor through her marriage to her first cousin Paxter Redwyne. They have twin sons, Horas and Hobber, and a daughter, Desmera. Her mother Olenna's Redwyne ancestry made this another marriage betwe"
+ },
+ {
+  "id": "janna",
+  "house": "tyr",
+  "ru": "Янна Тирелл",
+  "en": "Janna Tyrell",
+  "page": "Janna Fossoway",
+  "born": "247–282",
+  "parents": [
+   "Luthor Tyrell",
+   "Olenna Redwyne"
+  ],
+  "spouses": [
+   "Jon Fossoway"
+  ],
+  "about": "Married to Jon Fossoway of the green-apple branch, Janna joined Margaery's company in King's Landing. She went hawking with her niece and took part in the friendly conversations through which the Tyrell women drew Sansa "
+ },
+ {
+  "id": "garth_t",
+  "house": "tyr",
+  "ru": "Гарт Тирелл",
+  "en": "Garth Tyrell",
+  "page": "Garth Tyrell",
+  "parents": [
+   "Лорд Тирелл"
+  ],
+  "about": "Cersei blocked his promised appointment as master of coin."
+ },
+ {
+  "id": "garse",
+  "house": "tyr",
+  "ru": "Гарс Флауэрс",
+  "en": "Garse Flowers",
+  "page": "Garse Flowers",
+  "parents": [
+   "Garth Tyrell"
+  ],
+  "about": "Mace proposed a City Watch post after Garth’s appointment failed."
+ },
+ {
+  "id": "garrett",
+  "house": "tyr",
+  "ru": "Гарретт Флауэрс",
+  "en": "Garrett Flowers",
+  "page": "Garrett Flowers",
+  "parents": [
+   "Garth Tyrell"
+  ],
+  "about": "Offered for the City Watch when Garth’s council appointment fell through."
+ },
+ {
+  "id": "moryn",
+  "house": "tyr",
+  "ru": "Морин Тирелл",
+  "en": "Moryn Tyrell",
+  "page": "Moryn Tyrell",
+  "parents": [
+   "Лорд Тирелл"
+  ],
+  "about": "Commander of Oldtown’s City Watch."
+ },
+ {
+  "id": "gormon",
+  "house": "tyr",
+  "ru": "Гормон Тирелл",
+  "en": "Gormon Tyrell",
+  "page": "Gormon Tyrell",
+  "parents": [
+   "Лорд Тирелл"
+  ],
+  "about": "Tywin reversed his election to replace Pycelle as Grand Maester."
+ },
+ {
+  "id": "leo_m",
+  "house": "tyr",
+  "ru": "Лео Тирелл",
+  "en": "Leo Tyrell (son of Moryn)",
+  "page": "Leo Tyrell (son of Moryn)",
+  "parents": [
+   "Moryn Tyrell"
+  ],
+  "about": "Lazy Leo preferred gambling and drink to study at the Citadel. His family’s standing sheltered his insults and breaches of discipline. Sam remembered his cruelty from childhood, and the other novices had little reason to"
+ },
+ {
+  "id": "theodore",
+  "house": "tyr",
+  "ru": "Теодор Тирелл",
+  "en": "Theodore Tyrell",
+  "page": "Theodore Tyrell",
+  "parents": [
+   "Luthor Tyrell (son of Moryn)"
+  ],
+  "spouses": [
+   "Лия Серри"
+  ],
+  "about": "A knight of a younger Tyrell branch."
+ },
+ {
+  "id": "medwick",
+  "house": "tyr",
+  "ru": "Медвик Тирелл",
+  "en": "Medwick Tyrell",
+  "page": "Medwick Tyrell",
+  "parents": [
+   "Luthor Tyrell (son of Moryn)"
+  ],
+  "about": "A maester of the Citadel."
+ },
+ {
+  "id": "olene",
+  "house": "tyr",
+  "ru": "Олин Тирелл",
+  "en": "Olene Tyrell",
+  "page": "Olene Tyrell",
+  "parents": [
+   "Luthor Tyrell (son of Moryn)"
+  ],
+  "spouses": [
+   "Лео Блэкбар"
+  ],
+  "about": "Olene married Ser Leo Blackbar of the Reach. She belongs to a collateral Tyrell branch: her father is Ser Luthor, Moryn's son, and her mother is Elyn Norridge."
+ },
+ {
+  "id": "elinor",
+  "house": "tyr",
+  "ru": "Элинор Тирелл",
+  "en": "Elinor Tyrell",
+  "page": "Elinor Tyrell",
+  "born": "≈286",
+  "parents": [
+   "Theodore Tyrell"
+  ],
+  "spouses": [
+   "Алин Амброз"
+  ],
+  "about": "Margaery’s companion, arrested by the Faith and released into Tarly’s custody pending trial."
+ },
+ {
+  "id": "luthor_th",
+  "house": "tyr",
+  "ru": "Лютор Тирелл",
+  "en": "Luthor Tyrell (son of Theodore)",
+  "page": "Luthor Tyrell (son of Theodore)",
+  "parents": [
+   "Theodore Tyrell"
+  ],
+  "about": "A squire of House Tyrell."
+ },
+ {
+  "id": "olymer",
+  "house": "tyr",
+  "ru": "Олимер Тирелл",
+  "en": "Olymer Tyrell",
+  "page": "Olymer Tyrell",
+  "parents": [
+   "Quentin Tyrell"
+  ],
+  "spouses": [
+   "Лиза Медоуз"
+  ],
+  "about": "A knight of a younger Tyrell branch."
+ },
+ {
+  "id": "raymund",
+  "house": "tyr",
+  "ru": "Раймунд Тирелл",
+  "en": "Raymund Tyrell",
+  "page": "Raymund Tyrell",
+  "parents": [
+   "Olymer Tyrell"
+  ],
+  "about": "Raymund belongs to Ser Quentin's branch of the Tyrell family. He is Olymer and Lysa Meadows's son and a brother of Rickard and Megga."
+ },
+ {
+  "id": "rickard_t",
+  "house": "tyr",
+  "ru": "Рикард Тирелл",
+  "en": "Rickard Tyrell",
+  "page": "Rickard Tyrell",
+  "parents": [
+   "Olymer Tyrell"
+  ],
+  "about": "Rickard is a son of Olymer Tyrell and Lysa Meadows, who belong to a collateral branch of the family. His sister Megga accompanies Margaery."
+ },
+ {
+  "id": "megga",
+  "house": "tyr",
+  "ru": "Мегга Тирелл",
+  "en": "Megga Tyrell",
+  "page": "Megga Tyrell",
+  "born": "≈286",
+  "parents": [
+   "Olymer Tyrell"
+  ],
+  "about": "Margaery’s companion shared her arrest and conditional release into Tarly’s custody."
+ },
+ {
+  "id": "normund",
+  "house": "tyr",
+  "ru": "Нормунд Тирелл",
+  "en": "Normund Tyrell",
+  "page": "Normund Tyrell",
+  "about": "Maester at Blackcrown."
+ },
+ {
+  "id": "victaria",
+  "house": "tyr",
+  "ru": "Виктария Тирелл",
+  "en": "Victaria Tyrell",
+  "page": "Victaria Tyrell",
+  "born": "не позднее 279",
+  "parents": [
+   "Victor Tyrell"
+  ],
+  "spouses": [
+   "Джон Бульвер"
+  ],
+  "about": "Dowager Lady of Blackcrown after Jon Bulwer’s death."
+ },
+ {
+  "id": "leo_v",
+  "house": "tyr",
+  "ru": "Лео Тирелл",
+  "en": "Leo Tyrell (son of Victor)",
+  "page": "Leo Tyrell (son of Victor)",
+  "parents": [
+   "Victor Tyrell"
+  ],
+  "spouses": [
+   "Алис Бисбери"
+  ],
+  "about": "A knight of a younger Tyrell branch."
+ },
+ {
+  "id": "alla",
+  "house": "tyr",
+  "ru": "Элла Тирелл",
+  "en": "Alla Tyrell",
+  "page": "Alla Tyrell",
+  "born": "≈286",
+  "parents": [
+   "Leo Tyrell (son of Victor)"
+  ],
+  "about": "Her fine singing voice marked Margaery’s companion; the Faith arrested her with the queen."
+ },
+ {
+  "id": "leona",
+  "house": "tyr",
+  "ru": "Леона Тирелл",
+  "en": "Leona Tyrell",
+  "page": "Leona Tyrell",
+  "parents": [
+   "Leo Tyrell (son of Victor)"
+  ],
+  "about": "Leona is one of Ser Leo Tyrell and Alys Beesbury's daughters, making her a distant relative of Highgarden's ruling family. Her sister Alla serves among Margaery's companions."
+ },
+ {
+  "id": "lyonel_l",
+  "house": "tyr",
+  "ru": "Лионель Тирелл",
+  "en": "Lyonel Tyrell (son of Leo)",
+  "page": "Lyonel Tyrell (son of Leo)",
+  "parents": [
+   "Leo Tyrell (son of Victor)"
+  ],
+  "about": "The eldest son of Ser Leo Tyrell and Alys Beesbury belongs to a collateral branch of the house. He appears in the books' family listings and is distinct from Lord Lyonel, who lived during the Dance of the Dragons."
+ },
+ {
+  "id": "lucas",
+  "house": "tyr",
+  "ru": "Лукас Тирелл",
+  "en": "Lucas Tyrell",
+  "page": "Lucas Tyrell",
+  "parents": [
+   "Leo Tyrell (son of Victor)"
+  ],
+  "about": "Lucas is one of Ser Leo Tyrell and Alys Beesbury's children, alongside Alla, Leona, Lyonel, and Lorent. This branch is distantly related to the lords of Highgarden."
+ },
+ {
+  "id": "lorent",
+  "house": "tyr",
+  "ru": "Лорент Тирелл",
+  "en": "Lorent Tyrell (son of Leo)",
+  "page": "Lorent Tyrell (son of Leo)",
+  "parents": [
+   "Leo Tyrell (son of Victor)"
+  ],
+  "about": "Lorent is one of Ser Leo Tyrell and Alys Beesbury's sons, named in the family lists. He is a different person from the Tyrell steward of Highgarden who served during Aegon III's reign."
+ },
+ {
+  "id": "willas",
+  "house": "tyr",
+  "ru": "Уиллас Тирелл",
+  "en": "Willas Tyrell",
+  "page": "Willas Tyrell",
+  "born": "273–276",
+  "parents": [
+   "Mace Tyrell",
+   "Alerie Hightower"
+  ],
+  "about": "A tourney injury ended his riding career, but not his friendship with Oberyn, whose involvement he did not resent. Highgarden’s heir became known for learning, judgment and breeding animals. The planned marriage to Sansa"
+ },
+ {
+  "id": "garlan",
+  "house": "tyr",
+  "ru": "Гарлан Тирелл",
+  "en": "Garlan Tyrell",
+  "page": "Garlan Tyrell",
+  "born": "277",
+  "parents": [
+   "Mace Tyrell",
+   "Alerie Hightower"
+  ],
+  "spouses": [
+   "Leonette Fossoway"
+  ],
+  "about": "The Gallant’s courtesy accompanied considerable fighting skill. Wearing Renly’s armour at the Blackwater helped create the appearance of the dead king’s return. The crown rewarded him with the Florent lands. Ironborn att"
+ },
+ {
+  "id": "loras",
+  "house": "tyr",
+  "ru": "Лорас Тирелл",
+  "en": "Loras Tyrell",
+  "page": "Loras Tyrell",
+  "born": "282",
+  "parents": [
+   "Mace Tyrell",
+   "Alerie Hightower"
+  ],
+  "spouses": [
+   "Renly Baratheon"
+  ],
+  "about": "The Knight of Flowers excelled in tourneys and loved Renly. Grief led him to kill guards he blamed for Renly’s murder before entering the royal Kingsguard. Reports later described terrible wounds during Dragonstone’s cap"
+ },
+ {
+  "id": "margaery",
+  "house": "tyr",
+  "ru": "Маргери Тирелл",
+  "en": "Margaery Tyrell",
+  "page": "Margaery Tyrell",
+  "born": "283",
+  "parents": [
+   "Mace Tyrell",
+   "Alerie Hightower"
+  ],
+  "spouses": [
+   "Renly Baratheon",
+   "Joffrey Baratheon",
+   "Tommen Baratheon"
+  ],
+  "about": "Three royal marriages placed her family at the centre of court politics. She cultivated popular goodwill and kept relatives and companions around her, provoking Cersei’s fear of displacement. The rivalry ended in accusat"
+ }
+]

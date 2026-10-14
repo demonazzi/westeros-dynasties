@@ -110,6 +110,15 @@
     return '';
   }
   App.meta = meta;
+  // длинные годы не влезают в карточку («р. не позднее 262 · † не позднее 281»): границы — знаками, иначе сжать;
+  // полностью словами — в карточке человека
+  const shortDates = s => s.replace(/(\S+) (или позже|or later)/g, '≥$1').replace(/(не позднее|by) /g, '≤').replace(/(не ранее|no earlier than) /g, '≥').replace(/(после|after) /g, '>');
+  function fitMeta() {
+    const max = W - 22;
+    if (!this.getComputedTextLength || this.getComputedTextLength() <= max) return;
+    this.textContent = shortDates(this.textContent);
+    if (this.getComputedTextLength() > max) { this.setAttribute('textLength', max); this.setAttribute('lengthAdjust', 'spacingAndGlyphs'); }
+  }
   const houseName = p => p.house === 'oth' ? App.t('Дом {h}', { h: p.h }) : HOUSES[p.house].name;
   App.houseName = houseName;
   function kindLabel(p) {
@@ -424,13 +433,14 @@
         .attr('tabindex', 0).attr('role', 'button')
         .attr('aria-label', d => ariaLabel(d.data));
       g.append('rect').attr('class', 'halo').attr('x', -5).attr('y', -H / 2 - 5).attr('width', W + 10).attr('height', H + 10).attr('rx', 12);
+      g.append('rect').attr('class', 'unsure-ring').attr('x', -3).attr('y', -H / 2 - 3).attr('width', W + 6).attr('height', H + 6).attr('rx', 10);
       g.append('rect').attr('class', 'card').attr('x', 0).attr('y', -H / 2).attr('width', W).attr('height', H).attr('rx', 8);
       g.append('rect').attr('class', 'fbar').attr('x', 0).attr('y', -H / 2).attr('width', 6).attr('height', H).attr('rx', 3);
       // alt — дом по теории или слухам (Джон Сноу — Таргариен): полоса его цвета у правого края карточки
       g.filter(d => d.data.alt).append('rect').attr('class', 'altbar').attr('x', W - 6).attr('y', -H / 2).attr('width', 6).attr('height', H).attr('rx', 3)
         .style('fill', d => 'var(--' + d.data.alt + ')');
       g.append('text').attr('class', 'name').attr('x', 12).attr('y', d => meta(d.data) ? -3 : 5).text(d => d.data.name);
-      g.append('text').attr('class', 'meta').attr('x', 12).attr('y', 14).text(d => meta(d.data));
+      g.append('text').attr('class', 'meta').attr('x', 12).attr('y', 14).text(d => meta(d.data)).each(fitMeta);
       const b = g.filter(d => d.data.k === 'K' && d.data.n).append('g').attr('class', 'badge');
       b.append('rect').attr('x', W - 34).attr('y', -H / 2 + 7).attr('width', 26).attr('height', 17).attr('rx', 8.5);
       b.append('text').attr('x', W - 21).attr('y', -H / 2 + 19.5).text(d => d.data.n);
@@ -818,10 +828,21 @@
     const dimmers = App.hooks.decorate.map(f => f()).filter(Boolean);
     const dimmed = id => dimmers.some(fn => fn(id));
     App.dimmedFn = () => dimmed;
+    // срез по году: у кого год смерти не известен точно — жив ли в этот год, неизвестно
+    const unsure = App.yearUnsure ? App.yearUnsure() : null;
+    const unsureOf = id => !!unsure && !dimmed(id) && unsure(id);
     layers.nodes.selectAll('g.node')
       .classed('selected', d => d.data.id === sel)
       .classed('lineage', d => path.has(d.data.id) && d.data.id !== sel)
       .classed('dim', d => dimmed(d.data.id))
+      .classed('unsure', d => unsureOf(d.data.id))
+      .each(function (d) {
+        const on = unsureOf(d.data.id);
+        let t = this.querySelector(':scope > title.unsure-t');
+        if (on && !t) { t = document.createElementNS('http://www.w3.org/2000/svg', 'title'); t.setAttribute('class', 'unsure-t'); this.insertBefore(t, this.firstChild); }
+        if (on) t.textContent = App.t('жив ли в этот год — неизвестно');
+        else if (t) t.remove();
+      })
       .attr('data-faction', d => (App.lens && App.lens.cls && App.lens.cls.get(d.data.id)) || null)
       .attr('aria-pressed', d => d.data.id === sel ? 'true' : 'false');
     layers.links.selectAll('path.link')

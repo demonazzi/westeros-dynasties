@@ -6,9 +6,9 @@
       "title": "Редвины при Джейехерисе I",
       "people": [
         {"id":"manfryd","name":"Манфрид Редвин","en":"Manfryd Redwyne","hs":"red","k":"T","b":"не позднее 27","d":"89"},
-        {"id":"robert_rw","name":"Роберт Редвин","en":"Robert Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"]},
-        {"id":"rickard_rw","name":"Рикард Редвин","full":"Сир Рикард Редвин","en":"Rickard Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"]},
-        {"id":"ryam","name":"Райам Редвин","full":"Сир Райам Редвин","en":"Ryam Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"]},
+        {"id":"robert_rw","name":"Роберт Редвин","en":"Robert Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"],"d":"89"},
+        {"id":"rickard_rw","name":"Рикард Редвин","full":"Сир Рикард Редвин","en":"Rickard Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"],"ls":73},
+        {"id":"ryam","name":"Райам Редвин","full":"Сир Райам Редвин","en":"Ryam Redwyne","hs":"red","k":"T","p":"manfryd","par":["manfryd"],"d":"105"},
         {"id":"patricia","name":"Патриция Редвин","en":"Patricia Redwyne","fem":1,"hs":"red","k":"T"}
       ]
     },
@@ -17,9 +17,9 @@
       "people": [
         {"id":"runceford","name":"Рансфорд Редвин","en":"Runceford Redwyne","hs":"red","k":"T","sp":[["жена, имя не названа"]]},
         {"id":"runceford_son","name":"Сын","full":"Сын Рансфорда Редвина, отец Пакстера","hs":"red","k":"T","p":"runceford","par":["runceford"],"wiki":"Paxter Redwyne"},
-        {"id":"paxter","name":"Пакстер Редвин","en":"Paxter Redwyne","hs":"red","k":"T","p":"runceford_son","par":["runceford_son"],"b":"не позднее 269","sp":[["mina"]]},
+        {"id":"paxter","name":"Пакстер Редвин","en":"Paxter Redwyne","hs":"red","k":"T","p":"runceford_son","par":["runceford_son"],"b":"не позднее 269","alive":1,"sp":[["mina"]]},
         {"id":"desmond_rw","name":"Десмонд Редвин","full":"Сир Десмонд Редвин","en":"Desmond Redwyne","hs":"red","k":"T","sp":[["denyse_h"]]},
-        {"id":"denys_rw","name":"Денис Редвин","en":"Denys Redwyne","hs":"red","k":"T","p":"desmond_rw","par":["desmond_rw","denyse_h"]},
+        {"id":"denys_rw","name":"Денис Редвин","en":"Denys Redwyne","hs":"red","k":"T","p":"desmond_rw","par":["desmond_rw","denyse_h"],"alive":1},
         {"id":"bethany_rw","name":"Бетани Редвин","en":"Bethany Redwyne","fem":1,"hs":"red","k":"T","sp":[["Матис Рован"]]}
       ]
     }
