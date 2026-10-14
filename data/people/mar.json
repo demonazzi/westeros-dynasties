@@ -42,7 +42,7 @@
         {"id":"oberyn","name":"Оберин Мартелл","en":"Oberyn Martell","al":["Красный Змей"],"hs":"mar","k":"T","p":"dorne_p19","b":"257","d":"300","sp":[["Эллария Сэнд","возлюбленная","l"]]},
         {"id":"arianne","name":"Арианна Мартелл","en":"Arianne Martell","fem":1,"hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"276","alive":1},
         {"id":"quentyn","name":"Квентин Мартелл","en":"Quentyn Martell","hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"281","d":"300"},
-        {"id":"trystane","name":"Тристан Мартелл","en":"Trystane Martell","hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"286","alive":1,"sp":[["myrcella","помолвка","b"]]},
+        {"id":"trystane","name":"Тристан Мартелл","en":"Trystane Martell","hs":"mar","k":"T","p":"doran","par":["doran","Мелларио из Норвоса"],"b":"287","alive":1,"sp":[["myrcella","помолвка","b"]]},
         {"id":"sand_snakes","name":"Песчаные Змейки","full":"Песчаные Змейки, дочери Оберина","en":"Sand Snakes","group":1,"hs":"mar","k":"R","p":"oberyn"}
       ]
     }

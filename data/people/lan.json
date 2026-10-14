@@ -8,7 +8,7 @@
         {"id":"loren","name":"Лорен Ланнистер","full":"Лорен I Ланнистер, Последний","en":"Loren the Last","hs":"lan","k":"T","d":"не позднее 42","kl":"Король Утёса","wiki":"Loren I Lannister"},
         {"id":"lyman","name":"Лайман Ланнистер","en":"Lyman Lannister","hs":"lan","k":"T","p":"loren","par":["loren (предположительно)"],"unc":1,"d":"59","sp":[["Джокаста Тарбек"]]},
         {"id":"loren_sons","name":"Сыновья","full":"Другие сыновья Лорена Ланнистера","group":1,"hs":"lan","k":"T","p":"loren","par":["loren","жена не названа"],"wiki":"Loren I Lannister"},
-        {"id":"tymond","name":"Таймонд Ланнистер","en":"Tymond Lannister","hs":"lan","k":"T","p":"lyman","par":["lyman (вероятно)"],"unc":1,"d":"101–129"},
+        {"id":"tymond","name":"Таймонд Ланнистер","en":"Tymond Lannister","hs":"lan","k":"T","par":["отец — лорд Ланнистер, имя не названо"],"b":"60","d":"101–129"},
         {"id":"lyman_sons","name":"Сыновья","full":"Законные сыновья Лаймана Ланнистера","group":1,"hs":"lan","k":"T","p":"lyman","par":["lyman","Джокаста Тарбек"],"wiki":"Lyman Lannister"},
         {"id":"tyler_hill","name":"Тайлер Хилл","full":"Сир Тайлер Хилл","en":"Tyler Hill","hs":"lan","k":"R","p":"lyman","par":["lyman"],"b":"не позднее 28","d":"не ранее 50"}
       ]

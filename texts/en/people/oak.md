@@ -17,7 +17,7 @@ Ryam Redwyne unhorsed him at the King’s Landing tourney in 58 AC.
 His son’s birth occasioned a tourney at Old Oak in 73 AC.
 
 ### denys_oak · Denys Oakheart ✎
-Prince Baelon unhorsed him at Old Oak’s tourney in 73 AC.
+At Old Oak’s tourney in 73 AC he was defeated by a mystery knight who proved to be Prince Baelon.
 
 ### oak_son73 · Сын лорда Окхарта, рождённый в 73 году ✎
 A tourney celebrated his birth at Old Oak.

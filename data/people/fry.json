@@ -13,7 +13,7 @@
     {
       "title": "Лорды Переправы до Уолдера",
       "people": [
-        {"id":"fr_lord14","name":"Лорд Фрей","full":"Лорд Фрей, отец лорда Фрея и сира Франклина","en":"House Frey","hs":"fry","k":"T","ls":212},
+        {"id":"fr_lord14","name":"Лорд Фрей","full":"Лорд Фрей, отец лорда Фрея и сира Франклина","en":"House Frey","hs":"fry","k":"T"},
         {"id":"fr_lord","name":"Лорд Фрей","full":"Лорд Фрей, отец Уолдера","en":"Lord Frey","hs":"fry","k":"T","p":"fr_lord14","par":["fr_lord14"],"b":"не позднее 185","d":"212–252"},
         {"id":"franklyn_fr","name":"Франклин Фрей","en":"Franklyn Frey","hs":"fry","k":"T","p":"fr_lord14","par":["fr_lord14"],"ls":212},
         {"id":"addam_fr","name":"Аддам Фрей","en":"Addam Frey","hs":"fry","k":"T","p":"franklyn_fr","par":["franklyn_fr (возможно)","племянник лорда Фрея, отца Уолдера"],"unc":1,"ls":212},
@@ -84,7 +84,7 @@
         {"id":"alyn_fr","name":"Алин Фрей","en":"Alyn Frey","hs":"fry","k":"T","p":"arwood_fr","par":["arwood_fr","ryella"],"b":"295/296","alive":1},
         {"id":"hostella_fr","name":"Хостелла Фрей","en":"Hostella Frey","fem":1,"hs":"fry","k":"T","p":"arwood_fr","par":["arwood_fr","ryella"],"b":"299/300","alive":1},
         {"id":"lythene_fr","name":"Литен Фрей","en":"Lythene Frey","fem":1,"hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"249–259","alive":1,"sp":[["Люциас Випрен"]]},
-        {"id":"elyana_vypren","name":"Элиана Випрен","en":"Elyana Vypren","fem":1,"hs":"oth","h":"Випренов","k":"T","p":"lythene_fr","par":["lythene_fr","Люциас Випрен"]},
+        {"id":"elyana_vypren","name":"Элиана Випрен","en":"Elyana Vypren","fem":1,"hs":"oth","h":"Випренов","k":"T","p":"lythene_fr","par":["lythene_fr","Люциас Випрен"],"sp":[["Джон Уайлд"]]},
         {"id":"damon_vypren","name":"Дамон Випрен","en":"Damon Vypren","hs":"oth","h":"Випренов","k":"T","p":"lythene_fr","par":["lythene_fr","Люциас Випрен"],"alive":1},
         {"id":"symond_fr","name":"Саймонд Фрей","en":"Symond Frey","hs":"fry","k":"T","p":"walder_fr","par":["walder_fr","amarei"],"b":"252–260","d":"300","sp":[["Бетариос из Браавоса"]]},
         {"id":"alesander_fr","name":"Алесандер Фрей","en":"Alesander Frey","hs":"fry","k":"T","p":"symond_fr","par":["symond_fr","Бетариос из Браавоса"],"b":"263–281","alive":1},

@@ -1,6 +1,11 @@
 # Расхождения с древом, замеченные при вычитке смертей
 
-Заметки агентов (Sonnet/Haiku) по A Wiki of Ice and Fire против наших данных. Не применены — разбирать по одной, проверяя страницу.
+Заметки агентов (Sonnet/Haiku) по A Wiki of Ice and Fire против наших данных. Разобрано: 82 — ложные (у нас помолвка/связь `b`/`l`, уже стоит оговорка, агент не так прочёл древо, расхождения нет)
+или вики противоречит сама себе (Элмо, отец Квеллона — идём за текстом). Остальные 14 перепроверены по страницам
+(review/BRIEF.md → review/out.json) и исправлены: Алин (отец официально Лейнор, по слухам Корлис), Боремунд 52, Тристан 287,
+Таймонд (р. 60, отец — безымянный лорд Ланнистер, не Лайман; теперь корень полосы), Люцерис (жены Реннифер нет — это
+мужчина-тюремщик), тексты Титуса, Мервина, Клариссы, Бена Пламма, сына Анвина, Дениса Окхарта; дополнены Рейелла (р. 42),
+Эйлор (р. 195–209), Элиана Випрен (муж — сир Джон Уайлд).
 
 - `fr_lord14` (Лорд Фрей): Unnamed; House Frey page says only that Lord Frey attended the Whitewalls tourney in 212 AC with his daughters, his son Walder and his brother Ser Franklyn (page makes Franklyn his brother, not his son, which conflicts with our tree); no death given.
 - `lyonel_fr` (Лионель Фрей): Infobox has no Died field and the page gives no sentence about his fate or a datable appearance (infobox Born 258-283 AC); book appearances were not confirmed, so left unknown.

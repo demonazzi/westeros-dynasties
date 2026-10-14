@@ -23,16 +23,16 @@ She died giving birth at twelve.
 Both died in infancy.
 
 ### unwin_son2 · Второй сын Анвина Пика ✎
-A Redwyne page and squire who drowned at twelve.
+A Redwyne page and squire who died at twelve in a sailing accident.
 
 ### titus_u · Titus Peake ✎
-He died six days after being wounded at the Honeywine.
+Knighted after the Battle of the Honeywine, he was killed six days later in a skirmish with broken men while scouting.
 
 ### myrielle · Myrielle Peake ✎
 Lady Turnips failed to become queen despite Unwin’s efforts; Aegon chose Daenaera instead.
 
 ### mervyn · Mervyn Flowers ✎
-Unwin’s appointee to the Kingsguard was later accused in a court conspiracy.
+Unwin’s appointee to the Kingsguard. In 135 AC, when a palace conspiracy was uncovered, he killed Lord Commander Marston Waters, who tried to arrest him, and was beaten to death.
 
 ### pea_sib · Брат или сестра Анвина Пика, родитель Амори ✎
 An unnamed sibling of Unwin Peake was the parent of Amaury Peake. Amaury was Unwin's nephew and received a place in the Kingsguard while his uncle held power.

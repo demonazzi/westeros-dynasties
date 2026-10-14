@@ -44,7 +44,7 @@
         {"id":"rhaena_a","name":"Рейена","full":"Рейена, дочь Эйниса I","en":"Rhaena","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"23","d":"73","sp":[["aegon_u","41 г."],["maegor1","47 г."],["androw"]],"wiki":"Rhaena Targaryen (daughter of Aenys I)"},
         {"id":"aegon_u","name":"Эйгон","full":"Эйгон Некоронованный","en":"Aegon the Uncrowned","k":"C","p":"aenys1","par":["aenys1","alyssa_v"],"b":"26","d":"43","sp":[["rhaena_a","41 г."]],"wiki":"Aegon Targaryen (son of Aenys I)"},
         {"id":"aerea","name":"Эйрея","en":"Aerea","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"d":"56"},
-        {"id":"rhaella_a","name":"Рейелла","full":"Рейелла, дочь Эйгона Некоронованного","en":"Rhaella","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"d":"не ранее 73","ls":58,"wiki":"Rhaella Targaryen (daughter of Aegon)"},
+        {"id":"rhaella_a","name":"Рейелла","full":"Рейелла, дочь Эйгона Некоронованного","en":"Rhaella","fem":1,"k":"T","p":"aegon_u","par":["aegon_u","rhaena_a"],"b":"42","d":"не ранее 73","ls":58,"wiki":"Rhaella Targaryen (daughter of Aegon)"},
         {"id":"viserys_a","name":"Визерис","full":"Визерис, сын Эйниса I","en":"Viserys","k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"29","d":"44","wiki":"Viserys Targaryen (son of Aenys I)"},
         {"id":"jaehaerys1","name":"Джейехерис I","full":"Джейехерис I Миротворец","en":"Jaehaerys the Conciliator","k":"K","n":4,"r":"48–103","p":"aenys1","par":["aenys1","alyssa_v"],"b":"34","d":"103","dr":"Вермитор","sp":[["alysanne"]]},
         {"id":"alysanne","name":"Алисанна","full":"Алисанна, Добрая королева","en":"Good Queen Alysanne","fem":1,"k":"T","p":"aenys1","par":["aenys1","alyssa_v"],"b":"36","d":"100","dr":"Среброкрылая","sp":[["jaehaerys1"]]},
@@ -197,7 +197,7 @@
         {"id":"matarys","name":"Матарис","en":"Matarys","k":"T","p":"baelor_b","par":["baelor_b","jena_d"],"d":"209","wiki":"Matarys Targaryen"},
         {"id":"aerys1","name":"Эйерис I","en":"Aerys I","k":"K","n":13,"r":"209–221","p":"daeron2","par":["daeron2","myriah"],"b":"172","d":"221","sp":[["aelinor"]]},
         {"id":"rhaegel","name":"Рейегель","en":"Rhaegel","k":"T","p":"daeron2","par":["daeron2","myriah"],"d":"215","sp":[["alys_r"]],"wiki":"Rhaegel Targaryen"},
-        {"id":"aelor","name":"Эйлор","en":"Aelor","k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"217","wiki":"Aelor Targaryen"},
+        {"id":"aelor","name":"Эйлор","en":"Aelor","k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"b":"195–209","d":"217","wiki":"Aelor Targaryen"},
         {"id":"aelora","name":"Эйлора","en":"Aelora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"217–221","wiki":"Aelora Targaryen"},
         {"id":"daenora","name":"Дейенора","en":"Daenora","fem":1,"k":"T","p":"rhaegel","par":["rhaegel","alys_r"],"d":"не ранее 232","sp":[["aerion_m"]],"wiki":"Daenora Targaryen"},
         {"id":"maekar1","name":"Мейкар I","en":"Maekar I","k":"K","n":14,"r":"221–233","p":"daeron2","par":["daeron2","myriah"],"d":"233","sp":[["dyanna"]]}

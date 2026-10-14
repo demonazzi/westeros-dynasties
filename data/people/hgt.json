@@ -14,7 +14,7 @@
     {
       "title": "Отто, Алисента и их родня: Танец драконов",
       "people": [
-        {"id":"hgt_lord8","name":"Лорд Хайтауэр","full":"Лорд Хайтауэр, отец Отто","hs":"hgt","k":"T","ls":103,"wiki":"House Hightower"},
+        {"id":"hgt_lord8","name":"Лорд Хайтауэр","full":"Лорд Хайтауэр, отец Отто","hs":"hgt","k":"T","wiki":"House Hightower"},
         {"id":"hgt_lord9","name":"Лорд Хайтауэр","full":"Лорд Хайтауэр, брат Отто","hs":"hgt","k":"T","p":"hgt_lord8","wiki":"House Hightower"},
         {"id":"otto","name":"Отто Хайтауэр","en":"Otto Hightower","hs":"hgt","k":"T","p":"hgt_lord8","d":"129"},
         {"id":"alicent","name":"Алисента Хайтауэр","en":"Alicent Hightower","fem":1,"hs":"hgt","k":"T","p":"otto","b":"88","d":"133","sp":[["viserys1","106 г."]]},

@@ -17,7 +17,7 @@
         {"id":"ronnal_kids","name":"Сыновья","full":"Сыновья сира Роннала Баратеона","group":1,"hs":"bar","k":"T","p":"ronnal_b","par":["ronnal_b","жена не названа"],"wiki":"Ronnal Baratheon"},
         {"id":"orryn_b","name":"Оррин Баратеон","full":"Сир Оррин Баратеон","en":"Orryn Baratheon","hs":"bar","k":"T","p":"orys_son","d":"не ранее 51","sp":[["alysanne","несостоявшийся брак, 49 г.","b"],["дочь тирошийского архонта"]],"wiki":"Orryn Baratheon"},
         {"id":"orryn_sons","name":"Дочь","full":"Дочь сира Оррина Баратеона","fem":1,"hs":"bar","k":"T","p":"orryn_b","par":["orryn_b","дочь тирошийского архонта"],"wiki":"Orryn Baratheon"},
-        {"id":"boremund","name":"Боремунд Баратеон","en":"Boremund Baratheon","hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"51","d":"101–129"},
+        {"id":"boremund","name":"Боремунд Баратеон","en":"Boremund Baratheon","hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"52","d":"101–129"},
         {"id":"jocelyn","name":"Джоселин Баратеон","en":"Jocelyn Baratheon","fem":1,"hs":"bar","k":"T","p":"rogar","par":["rogar","alyssa_v"],"b":"54","d":"92–129","sp":[["aemon_j","70 г."]]},
         {"id":"borros","name":"Боррос Баратеон","en":"Borros Baratheon","hs":"bar","k":"T","p":"boremund","d":"131","sp":[["Эленда Карон"]]},
         {"id":"cassandra","name":"Кассандра Баратеон","en":"Cassandra Baratheon","fem":1,"hs":"bar","k":"T","p":"borros","par":["borros","Эленда Карон"],"ls":136,"sp":[["aegon2","помолвка","b"],["сир Уолтер Браунхилл"]]},

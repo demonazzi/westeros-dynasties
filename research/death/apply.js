@@ -22,6 +22,8 @@ const OVERRIDE = {
   tul_lord17: { status: 'unknown', last_alive: null }, gry_lord17: { status: 'unknown', last_alive: null },
   tyr_lord17: { status: 'unknown', last_alive: null }, wes_lord43: { status: 'unknown', last_alive: null },
   stw_lord129: { status: 'dead', died: '', year: null, last_alive: null },  // казнён Рейнирой, год на странице не назван
+  // турнир 212 г. и правление 101–103 гг. — о сыне, а не об этом человеке
+  fr_lord14: { last_alive: null }, hgt_lord8: { last_alive: null },
   jon: { status: 'alive', last_alive: 300 }, stannis: { status: 'alive', last_alive: 300 }, cersei: { status: 'alive', last_alive: 300 }
 };
 // умерли, но год на странице не назван: только граница, где она есть в тексте

@@ -8,7 +8,7 @@
 Lord of Coldmoat before the Osgreys lost it under Maegor.
 
 ### clarice · Clarice Osgrey ✎
-Her harsh control of Daenaera’s household ended when Aegon III removed her.
+Unwin Peake’s aunt, placed in charge of Queen Jaehaera’s household and then Daenaera’s. She stayed at court after Unwin resigned as Hand in 134 AC and was suspected in the plot of 135 AC.
 
 ### eustace · Eustace Osgrey ✎
 At ruined Standfast he mourned the house’s lost power and three sons killed for Daemon Blackfyre. He concealed that allegiance when employing Dunk against Coldmoat. Settlement of the dispute brought his marriage to Rohanne Webber.

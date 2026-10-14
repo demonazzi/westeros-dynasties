@@ -34,4 +34,4 @@ He joined his brothers in Tywin’s search for Jaime.
 Hardstone cleared outlaws from Darry and commanded its garrison. He favoured a warhammer and spoke little.
 
 ### ben_pl · Ben Plumm ✎
-Brown Ben led the Second Sons from Daenerys’s service to Yunkai’s, fearing her defeat. Published Winds of Winter chapters show Tyrion persuading him to change sides again. Daenerys’s dragons accepted his presence unusually readily. His claim to a little dragon blood may explain it, but the proposed connection through Viserys Plumm remains uncertain.
+Brown Ben led the Second Sons from Daenerys’s service to Yunkai’s, fearing her defeat. Daenerys’s dragons accepted his presence unusually readily. His claim to a little dragon blood may explain it, but the proposed connection through Viserys Plumm remains uncertain.
