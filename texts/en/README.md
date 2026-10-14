@@ -1,5 +1,8 @@
 # English version: files and format
 
+This covers only the translation files. How to edit the data (names, relations, marriages, houses, dragons,
+allegiances) is in the root [README.en.md](../../README.en.md).
+
 The site is Russian first; the English version comes from dictionaries and parallel texts. It opens with `?lang=en`
 or the **EN** button. Anything without an English string falls back to Russian.
 

@@ -161,10 +161,27 @@ with `### id · Name`; leave that line as is and write below it. `✎` at the en
 In code through `App.t('Russian string')`. After changes `node tools/i18n-keys.js` adds new strings to
 `src/i18n/en.json`; put the English there (the key is the Russian string, the value the English one).
 
-### Dragons, adaptations
+### Dragons
 
-Dragons — `data/dragons.json` (fields in `data/README.md`) and texts in `texts/dragons.md`. Actors —
-`data/screen.json`; screen-vs-book differences — `texts/screen.md`, `texts/screen-dragons.md`.
+`data/dragons.json`: `origins` — where dragons come from (`{"id","name","y"}`), `groups` — groups of dragons,
+`fights` — fights `{"a","b","y","place","both"}` (`a`, `b` — dragon ids, `both: 1` — both died).
+
+Dragon fields: `id`, `name`, `en`, `sex` (`f`/`m`), `o` — origin (id from `origins`), `par` — parent dragon;
+`h` — year hatched (`ha: 1` — approximate), `hl` — its label; `d` — year of death (the fraction only orders events
+within one year), `dl` — its label, `dk` — year of death when the exact one is unknown, `dx` — last year known alive,
+`alive: 1` — alive at the end of the books; `r` — riders: `[id or name, from year, to year, how, 1 — start approximate]`;
+`bond` — a bond without flight: `[id, how]`; `col` — two colours, main and accent; `cs` — where the colouring comes
+from (`book`, `art` — artist with Martin's team, `ill` — illustrations, `name` — from the name);
+`colour`, `size` — in words; `ev` — events `[year, text]`.
+
+A person's `dr` field is the dragon label on their card. A new dragon: add a record to a group, then
+`node tools/data.js --sync` (sections in `texts/dragons.md` and `texts/screen-dragons.md`) and `node tools/i18n-data.js`.
+
+### Adaptations
+
+`data/screen.json`: `series` — the shows (`got`, `hotd`, `kotsk`), `groups` — roles `{"id": person id, "a": [[show, actor in Russian,
+actor's original name, note]]}`. Screen-vs-book differences are texts in `texts/screen.md` (people) and
+`texts/screen-dragons.md` (dragons).
 
 ## Where the data comes from
 
