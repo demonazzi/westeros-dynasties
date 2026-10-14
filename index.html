@@ -135,11 +135,9 @@ body { background: var(--ground); color: var(--ink); font-family: var(--font-ui)
   padding-block: 12px; padding-inline: 16px;
   background: var(--surface); border-bottom: 1px solid var(--rule);
 }
-.bar { position: relative; padding-right: 60px; }
-/* ссылка на репозиторий: правый верхний угол, в строке заголовка; подсказка — своя, не системная */
-.gh-link { position: absolute; top: 12px; right: 16px; width: 30px; height: 28px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 9px; color: var(--muted); }
-.gh-link:hover { color: var(--ink); background: var(--ground); }
-.gh-link:focus-visible { outline: 2px solid var(--path); outline-offset: 2px; }
+/* ссылка на репозиторий: последняя в ряду кнопок, вровень с ними; подсказка — своя, не системная */
+.btn.gh-link { position: relative; color: var(--muted); }
+.btn.gh-link:hover { color: var(--ink); }
 .gh-link::after { content: attr(data-tip); position: absolute; top: calc(100% + 7px); right: 0; white-space: nowrap; font: 600 12px var(--font-ui); letter-spacing: .02em; color: var(--surface); background: var(--ink); padding: 4px 9px; border-radius: 7px; opacity: 0; pointer-events: none; transition: opacity .12s; z-index: 20; }
 .gh-link:hover::after, .gh-link:focus-visible::after { opacity: 1; }
 .brand { display: grid; gap: 2px; min-width: 0; margin-right: auto; }
@@ -1094,8 +1092,8 @@ button.vs-n:hover { background: var(--surface); color: var(--ink); }
       </div>
       <button type="button" class="btn" id="toggle-screen" aria-pressed="false" title="Кто есть в экранизациях и чем они отличаются от книг"><svg class="tv-ico" width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><rect x="1" y="1" width="14" height="9.5" rx="2"/><path d="M5 13.2h6M8 10.5v2.7"/></svg><span class="label-wide">Экранизации</span><span class="sr-only">Режим экранизаций</span></button>
       <button type="button" class="btn" id="toggle-links" aria-pressed="true" title="Связи между домами: браки, помолвки, воспитанники"><span class="dot" aria-hidden="true"></span><span class="label-wide">Связи</span><span class="sr-only">Показать связи между домами</span></button>
+      <a class="btn btn-icon gh-link" href="https://github.com/demonazzi/westeros-dynasties" target="_blank" rel="noopener" aria-label="Код проекта на GitHub" data-tip="made by demonazzi"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
     </div>
-    <a class="gh-link" href="https://github.com/demonazzi/westeros-dynasties" target="_blank" rel="noopener" aria-label="Код проекта на GitHub" data-tip="made by demonazzi"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </header>
 
   <div class="main">
