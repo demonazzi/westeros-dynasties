@@ -11,7 +11,7 @@ const ROOT = path.join(__dirname, '..');
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   await page.route('**/*', r => {
     const u = r.request().url();
-    if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' });
+    if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, '..', 'src', 'vendor', 'd3.min.js')), contentType: 'application/javascript' });
     if (u.startsWith('file:')) return r.continue();
     return r.abort();
   });

@@ -6,8 +6,8 @@ An interactive family tree of the Targaryens and the houses of Westeros: 12 grea
 Русская версия: [README.md](README.md). The project was written in Russian first: code comments, `data/README.md`
 and the source strings are in Russian; this file covers what you need to edit it.
 
-The page is a single HTML file with no server: `index.html` in the root (published by GitHub Pages). Only d3 7.8.5
-(cdnjs) and Google Fonts load from outside.
+The page is a single HTML file with no server: `index.html` in the root (published by GitHub Pages). Everything is
+inside the file, d3 and fonts included: the page loads nothing from the network and works offline.
 
 ## Embedding
 
@@ -60,7 +60,8 @@ data/vassals.json         allegiances — built from research/vassal/*.json, do 
 texts/                    long texts (Markdown): people/<house>.md, vassals.md (houses), dragons.md, screen*.md
 texts/en/                 the same in English + data.json (translations of short strings from data/)
 src/                      code: app-core.js (tree, card, search), app-mod-*.js (tabs and modules),
-                          app-mod-sigils.js (sigils), styles.css (house colours), i18n/en.json (English interface)
+                          app-mod-sigils.js (sigils), styles.css (house colours), i18n/en.json (English interface),
+                          vendor/d3.min.js and fonts/ — embedded into the page at build time
 tools/                    build, checks, text and translation sync
 research/                 raw collection and one-off scripts; do not re-run (except research/vassal/)
 ```
@@ -195,4 +196,5 @@ commercially, as long as the attribution is kept — "© 2026 demonazzi" and the
 a link to this repository is enough).
 
 The world, characters and names of A Song of Ice and Fire belong to George R. R. Martin; the license covers only the
-work of this project. d3 (`tools/d3.min.js`, loaded from cdnjs on the page) is under its own ISC license.
+work of this project. The embedded d3 7.8.5 (`src/vendor/d3.min.js`, ISC license) and the Alegreya, Alegreya Sans
+and Forum fonts (`src/fonts/`, SIL Open Font License, license texts alongside) are under their own licenses.

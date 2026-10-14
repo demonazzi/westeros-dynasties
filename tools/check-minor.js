@@ -3,7 +3,7 @@
 const fs = require('fs'), path = require('path');
 const { JSDOM, VirtualConsole } = require(path.join(__dirname, 'node_modules', 'jsdom'));
 let html = fs.readFileSync(path.join(__dirname, '..', 'dist', 'artifact.html'), 'utf8');
-html = html.replace(/<script src="https:\/\/cdnjs[^"]+"><\/script>/, () => '<script>' + fs.readFileSync(path.join(__dirname, 'd3.min.js'), 'utf8') + '</script>').replace(/<link[^>]+>/g, '');
+html = html.replace(/<script src="https:\/\/cdnjs[^"]+"><\/script>/, () => '<script>' + fs.readFileSync(path.join(__dirname, '..', 'src', 'vendor', 'd3.min.js'), 'utf8') + '</script>').replace(/<link[^>]+>/g, '');
 const vc = new VirtualConsole(); const errs = [];
 vc.on('jsdomError', e => { if (!/baseVal/.test(e.message)) errs.push(e.message); });
 const dom = new JSDOM('<!doctype html><html><body>' + html + '</body></html>', {

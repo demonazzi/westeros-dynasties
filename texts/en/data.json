@@ -5219,20 +5219,20 @@
   "en": "Wild dragons",
   "ctx": "дракон wild.name"
  },
- "родство Доннела и Джаспера в книгах не прослежено": {
+ "как связаны Доннел и Джаспер, в книгах не сказано": {
   "en": "the books do not trace the relationship between Donnel and Jasper",
   "ctx": "пропуск arr donnel→jasper.note"
  },
- "лорды Орлиного Гнезда между Джоффри и Доннелом в книгах не названы": {
-  "en": "the books do not name the Lords of the Eyrie between Joffrey and Donnel",
+ "лорды Орлиного Гнезда этих лет в книгах не упоминаются": {
+  "en": "the Lords of the Eyrie in these years are not mentioned in the books",
   "ctx": "пропуск arr joffrey_a→donnel.note"
  },
  "≈ 60 лет": {
   "en": "c. 60 years",
   "ctx": "пропуск arr joffrey_a→donnel.years (и ещё 3)"
  },
- "около трёх поколений лордов Штормового Предела в книгах не названы": {
-  "en": "about three generations of Lords of Storm's End are unnamed in the books",
+ "лорды Штормового Предела этих лет (около трёх поколений) в книгах не упоминаются": {
+  "en": "the Lords of Storm's End in these years (about three generations) are not mentioned in the books",
   "ctx": "пропуск bar borros→lord_b208.note"
  },
  "≈ 80 лет": {
@@ -5279,16 +5279,16 @@
   "en": "c. 110 years",
   "ctx": "пропуск far far_lord43→far_lord130.years (и ещё 1)"
  },
- "лорды Переправы между Форрестом и дедом Уолдера в книгах не названы": {
-  "en": "The Lords of the Crossing between Forrest and Walder's grandfather are unnamed in the books.",
+ "лорды Переправы этих лет в книгах не упоминаются": {
+  "en": "the Lords of the Crossing in these years are not mentioned in the books",
   "ctx": "пропуск fry forrest_fr→fr_lord14.note"
  },
- "порядок лордов дан списком без дат; родство не названо": {
+ "лорды названы списком, без дат и родства": {
   "en": "the lords are listed in order without dates or relationships",
   "ctx": "пропуск gry alton→torwyn.note (и ещё 2)"
  },
- "лорды Железных островов между Гореном и отцом Дальтона не названы": {
-  "en": "the Lords of the Iron Islands between Goren and Dalton's father are unnamed",
+ "лорды Железных островов этих лет в книгах не упоминаются": {
+  "en": "the Lords of the Iron Islands in these years are not mentioned in the books",
   "ctx": "пропуск gry goren→gry_lord10.note"
  },
  "≈ 75 лет": {
@@ -5299,32 +5299,32 @@
   "en": "Alton, Torwyn, Loron and Dagon are listed after Toron, without dates or relationships",
   "ctx": "пропуск gry toron→alton.note"
  },
- "лорды Хайтауэр между Лайонелом и Лейтоном почти не названы": {
-  "en": "few Hightower lords between Lyonel and Leyton are named",
+ "лорды Староместа этих лет в книгах почти не упоминаются": {
+  "en": "the Lords of Oldtown in these years are barely mentioned in the books",
   "ctx": "пропуск hgt hgt_lord8→leyton.note"
  },
- "как лорды Староместа этих лет связаны с отцом Отто, в книгах не прослежено": {
+ "как лорды Староместа этих лет связаны с отцом Отто, в книгах не сказано": {
   "en": "the books do not trace the relationship between the Lords of Oldtown of this period and Otto's father",
   "ctx": "пропуск hgt manfred_h→hgt_lord8.note"
  },
- "отец Родрика — правнук Теомора; промежуточные лорды в книгах не названы": {
-  "en": "Rodrik's father was Theomore's great-grandson; the intervening lords are unnamed in the books.",
+ "отец Родрика — правнук Теомора; лорды этих лет в книгах не упоминаются": {
+  "en": "Rodrik's father was Theomore's great-grandson; the lords in these years are not mentioned in the books",
   "ctx": "пропуск hlw theomore_h→har_lord.note"
  },
- "Зигфрид — внук Теомора; его отец в книгах не назван": {
+ "Зигфрид — внук Теомора; его отец в книгах не упоминается": {
   "en": "Sigfryd was Theomore's grandson; his father is unnamed in the books.",
   "ctx": "пропуск hlw theomore_h→sigfryd.note"
  },
- "лорды Утёса между Лореоном и Герольдом почти не названы": {
-  "en": "Few Lords of the Rock between Loreon and Gerold are named.",
+ "лорды Утёса этих лет в книгах почти не упоминаются": {
+  "en": "the Lords of Casterly Rock in these years are barely mentioned in the books",
   "ctx": "пропуск lan lan_lord10→gerold.note"
  },
  "≈ 70 лет": {
   "en": "c. 70 years",
   "ctx": "пропуск lan lan_lord10→gerold.years (и ещё 2)"
  },
- "Таймонд правил до близнецов, но что он их отец, в книгах не сказано": {
-  "en": "Tymond ruled before the twins, but the books do not identify him as their father.",
+ "Таймонд правил до близнецов, но был ли он их отцом, в книгах не сказано": {
+  "en": "Tymond ruled before the twins, but the books do not say whether he was their father",
   "ctx": "пропуск lan tymond→lan_lord10.note"
  },
  "≈ 90 лет": {
@@ -5335,7 +5335,7 @@
   "en": "the lords of Seagard in between are not named in the books",
   "ctx": "пропуск mal raymun_mal→jorah_mal.note (и ещё 1)"
  },
- "Десмонд — правнук Теомора; его отец и дед в книгах не названы": {
+ "Десмонд — правнук Теомора; его отец и дед в книгах не упоминаются": {
   "en": "Desmond was Theomore's great-grandson; his father and grandfather are unnamed in the books.",
   "ctx": "пропуск man theomore→desmond.note"
  },
@@ -5343,17 +5343,13 @@
   "en": "the lords of White Harbor in between are not named in the books",
   "ctx": "пропуск man torrhen_m→wyman.note"
  },
- "правители Дорна между Мароном и матерью Дорана не названы": {
-  "en": "the rulers of Dorne between Maron and Doran's mother are unnamed",
-  "ctx": "пропуск mar dorne_p14→dorne_p19.note"
- },
- "родство правителей Дорна до Корена в книгах не прослежено": {
+ "как связаны правители Дорна до Корена, в книгах не сказано": {
   "en": "the books do not trace the relationships between Dorne's rulers before Qoren",
   "ctx": "пропуск mar meria→qoren.note"
  },
- "правители Дорна между Алиандрой и отцом Марона не названы": {
-  "en": "the rulers of Dorne between Aliandra and Maron's father are unnamed",
-  "ctx": "пропуск mar qoren→dorne_p14.note"
+ "правители Дорна этих лет в книгах не упоминаются": {
+  "en": "the rulers of Dorne in these years are not mentioned in the books",
+  "ctx": "пропуск mar qoren→dorne_p14.note (и ещё 1)"
  },
  "≈ 40 лет": {
   "en": "c. 40 years",
@@ -5415,8 +5411,8 @@
   "en": "Brandon was Cregan's younger son; his branch is shifted right to place him beside his contemporaries.",
   "ctx": "пропуск stk cregan→brandon_c.note"
  },
- "девять лордов Винтерфелла между Торрхеном и Криганом здесь не показаны": {
-  "en": "Nine Lords of Winterfell between Torrhen and Cregan are not shown here.",
+ "девять лордов Винтерфелла этих лет на древе не показаны": {
+  "en": "nine Lords of Winterfell from these years are not shown on the tree",
   "ctx": "пропуск stk torrhen→cregan.note"
  },
  "≈ 100 лет": {
@@ -5451,52 +5447,44 @@
   "en": "the lords of Horn Hill in between are not named in the books",
   "ctx": "пропуск tar savage_sam→donald.note (и ещё 2)"
  },
- "родство лордов Риверрана в книгах не прослежено": {
-  "en": "the books do not trace the relationships between the Lords of Riverrun",
+ "как связаны лорды Риверрана этих лет, в книгах не сказано": {
+  "en": "the books do not say how the Lords of Riverrun in these years were related",
   "ctx": "пропуск tul edmyn→grover.note"
  },
- "лорды Риверрана между Танцем драконов и отцом Хостера почти не названы": {
-  "en": "few Lords of Riverrun between the Dance of the Dragons and Hoster's father are named",
+ "лорды Риверрана этих лет в книгах почти не упоминаются": {
+  "en": "the Lords of Riverrun in these years are barely mentioned in the books",
   "ctx": "пропуск tul elmo→tul_lord17.note"
- },
- "кто правил Хайгарденом между Лео Длинным Шипом и отцом Лютора, в книгах не сказано": {
-  "en": "The books do not name Highgarden's rulers between Leo Longthorn and Luthor's father.",
-  "ctx": "пропуск tyr leo_t→tyr_lord17.note"
  },
  "≈ 25 лет": {
   "en": "c. 25 years",
   "ctx": "пропуск tyr leo_t→tyr_lord17.years"
  },
- "лорды Хайгардена между Лионелем и Лео Длинным Шипом не названы": {
-  "en": "The Lords of Highgarden between Lyonel and Leo Longthorn are unnamed.",
-  "ctx": "пропуск tyr lyonel_t→leo_t.note"
- },
  "≈ 35 лет": {
   "en": "c. 35 years",
   "ctx": "пропуск tyr lyonel_t→leo_t.years"
  },
- "наследник Бертранда не назван, родство Маттоса не указано": {
+ "наследник Бертранда в книгах не упоминается; кем ему приходился Маттос, не сказано": {
   "en": "Bertrand's heir is unnamed; Matthos's relationship to him is unspecified.",
   "ctx": "пропуск tyr martyn_t→matthos.note"
  },
- "отец Лионеля не назван, родство с Маттосом не указано": {
+ "отец Лионеля в книгах не упоминается; кем Лионель приходился Маттосу, не сказано": {
   "en": "Lyonel's father is unnamed; his relationship to Matthos is unspecified.",
   "ctx": "пропуск tyr matthos→lyonel_t.note"
  },
- "лорды Хайгардена между Тео и Бертрандом в книгах не названы": {
-  "en": "The Lords of Highgarden between Theo and Bertrand are unnamed in the books.",
-  "ctx": "пропуск tyr theo→bertrand.note"
+ "лорды Хайгардена этих лет в книгах не упоминаются": {
+  "en": "the Lords of Highgarden in these years are not mentioned in the books",
+  "ctx": "пропуск tyr theo→bertrand.note (и ещё 2)"
  },
  "лорды Последнего Очага этих лет в книгах не упоминаются": {
   "en": "the lords of Last Hearth in between are not named in the books",
   "ctx": "пропуск umb jon_u2→osric.note"
  },
- "родство Озрика и Хорфроста в книгах не прослежено": {
+ "как связаны Озрик и Хорфрост, в книгах не сказано": {
   "en": "The books do not establish the relationship between Osric and Hoarfrost.",
   "ctx": "пропуск umb osric→hoarfrost.note"
  },
- "лорды Дрифтмарка между Элином и Люцерисом в книгах не названы": {
-  "en": "the books do not name the Lords of Driftmark between Alyn and Lucerys",
+ "лорды Дрифтмарка этих лет в книгах не упоминаются": {
+  "en": "the Lords of Driftmark in these years are not mentioned in the books",
   "ctx": "пропуск vel alyn→lucerys_v.note"
  },
  "≈ 120 лет": {

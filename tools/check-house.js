@@ -13,7 +13,7 @@ const fs = require('fs'), path = require('path');
   const page = async () => {
     const p = await b.newPage({ viewport: { width: 1600, height: 900 } });
     p.on('pageerror', e => bad.push('страница: ' + e.message));
-    await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
+    await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, '..', 'src', 'vendor', 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
     return p;
   };
   const card = p => p.evaluate(() => ({ house: App.state.house, sel: App.state.selected, hash: location.hash, view: App.state.view,

@@ -94,7 +94,7 @@ if (!crawl) { finish(); return; }
   const { chromium } = require('./pw');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1600, height: 900 } });
-  await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
+  await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, '..', 'src', 'vendor', 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
   await p.goto('file://' + path.join(ROOT, 'dist', 'targaryen-tree.html') + '?lang=ru'); await p.waitForTimeout(900);
   const seen = new Set();
   const grab = async () => (await p.evaluate(() => {

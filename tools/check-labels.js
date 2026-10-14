@@ -5,7 +5,7 @@ const fs = require('fs'), path = require('path');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1600, height: 900 } });
   const errs = []; p.on('pageerror', e => errs.push(e.message));
-  await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
+  await p.route('**/*', r => { const u = r.request().url(); if (u.includes('d3.min.js')) return r.fulfill({ body: fs.readFileSync(path.join(__dirname, '..', 'src', 'vendor', 'd3.min.js')), contentType: 'application/javascript' }); if (u.startsWith('file:')) return r.continue(); return r.abort(); });
   await p.goto('file://' + path.join(__dirname, '..', 'dist', 'targaryen-tree.html')); await p.waitForTimeout(700);
   // CHECK_PRE — js перед проверкой (например, другой вид или фильтр)
   if (process.env.CHECK_PRE) { await p.evaluate(process.env.CHECK_PRE); await p.waitForTimeout(300); }
@@ -23,6 +23,8 @@ const fs = require('fs'), path = require('path');
     for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
       const hg = el => el.closest('g.band-head');
       if (hg(labels[i]) && hg(labels[i]) === hg(labels[j])) continue;
+      // строки одной подписи пропуска стоят вплотную по замыслу; рамки шрифта у них перекрываются, буквы — нет
+      if (labels[i].parentNode === labels[j].parentNode && /gap-/.test(labels[i].getAttribute('class')) && /gap-/.test(labels[j].getAttribute('class'))) continue;
       if (hit(box(labels[i]), box(labels[j]), 2)) bad.push('древо: «' + name(labels[i]) + '» и «' + name(labels[j]) + '» наезжают друг на друга');
     }
     // Пунктир пропуска не проходит под текстом своей подписи
