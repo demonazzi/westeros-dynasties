@@ -1029,7 +1029,7 @@
       panelContent.innerHTML =
         '<div class="empty"><p class="eyebrow">' + App.housesLabel() + '</p><h2>Выберите персонажа</h2>' +
         '<p>Нажмите на имя, чтобы открыть описание и семейные связи. Его предки и супруги будут подсвечены на древе.</p>' +
-        '<p class="stats">' + PEOPLE.length + ' человек · ' + PAIRS.filter(e => e.type === 'm').length + ' браков на древе</p>' +
+        '<p class="stats">' + plural(PEOPLE.length, 'человек', 'человека', 'человек') + ' · ' + App.t('браков на древе: {n}', { n: PAIRS.filter(e => e.type === 'm').length }) + '</p>' +
         '<p class="keys"><kbd>/</kbd> поиск · <kbd>Esc</kbd> закрыть · <kbd>Alt</kbd>+<kbd>←</kbd> назад</p></div>';
       App.translateDom(panelContent);
       return;

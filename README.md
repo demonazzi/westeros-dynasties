@@ -44,6 +44,7 @@ node tools/check-vassal.js    # вкладка «Присяги»
 node tools/check-house.js     # карточка дома
 node tools/check-i18n.js      # английская версия
 node tools/check-tips.js      # подсказки у линий
+node tools/check-export.js    # «Сохранить картинкой»: PNG и SVG, экран и ветка
 node tools/check-scale.js     # шкала времени (запускать отдельно)
 node tools/check-links.js     # линии между домами: наведение, нажатие, проход через чужие карточки (≈10 минут)
 ```
