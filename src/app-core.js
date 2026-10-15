@@ -688,7 +688,8 @@
         }
         while (free.length < marks.length) free.push(n.Y + (free.length + 1) * SLOT);
         free.sort((p, q) => p - q);
-        marks.forEach((q, i) => { anchorAt.set(q.key + '@' + id, { id, x: kx, y: free[i], g: n.gen, band: n.band, mark: true }); put(kx, free[i]); });
+        const p0 = portOf(n);
+        marks.forEach((q, i) => { anchorAt.set(q.key + '@' + id, { id, x: kx, y: free[i], g: n.gen, band: n.band, mark: true, stem: [p0.x, p0.y] }); put(kx, free[i]); });
       }
       const ports = list.filter(q => !q.mark).sort(byOther);
       if (ports.length) {

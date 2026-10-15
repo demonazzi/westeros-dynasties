@@ -97,7 +97,8 @@
   }
 
   /* items: [{ key, A, B }], A и B — концы: { id, x, y — точка, откуда линия уходит вправо; g — колонка поколения;
-     band — дом полосы }. Возвращает Map key → { pts, d, len, from, to, under }. */
+     band — дом полосы; stem — [x, y] края карточки, если конец — значок брака: от него к значку идёт отвод }.
+     Возвращает Map key → { pts, d, len, from, to, under }. */
   function routeLines(items) {
     const out = new Map();
     const bands = App.bandBoxes();
@@ -216,9 +217,23 @@
         const x0 = Math.min(P[s - 1][0], P[s][0]), x1 = Math.max(P[s - 1][0], P[s][0]), y0 = Math.min(P[s - 1][1], P[s][1]), y1 = Math.max(P[s - 1][1], P[s][1]);
         cards.forEach(c => { if (x0 < c.r[2] && c.r[0] < x1 + 0.01 && y0 < c.r[3] && c.r[1] < y1 + 0.01 && under.indexOf(c.id) < 0) under.push(c.id); });
       }
+      // Отвод от карточки к значку брака: значок стоит в колонке значков, и без отвода между ним и карточкой
+      // (особенно без кнопки ветви) остаётся пустое место. Отвод — часть линии: на нём тоже работают наведение и нажатие.
+      let d = roundPath(P);
+      const sa = r.it.A.stem, sb = r.it.B.stem;
+      if (sa) {
+        const [x, y] = P[0], c = (x - sa[0]) / 2;
+        d = 'M' + sa[0] + ',' + sa[1] + ' C' + (sa[0] + c) + ',' + sa[1] + ' ' + (x - c) + ',' + y + ' ' + x + ',' + y + d.replace(/^M[^ ]+/, '');
+        P.unshift(sa.slice());
+      }
+      if (sb) {
+        const [x, y] = P[P.length - 1], c = (x - sb[0]) / 2;
+        d += ' C' + (x - c) + ',' + y + ' ' + (sb[0] + c) + ',' + sb[1] + ' ' + sb[0] + ',' + sb[1];
+        P.push(sb.slice());
+      }
       let len = 0;
       for (let s = 1; s < P.length; s++) len += Math.hypot(P[s][0] - P[s - 1][0], P[s][1] - P[s - 1][1]);
-      out.set(r.it.key, { pts: P, d: roundPath(P), len, from: r.it.A.id, to: r.it.B.id, under });
+      out.set(r.it.key, { pts: P, d, len, from: r.it.A.id, to: r.it.B.id, under });
     });
     return out;
   }
