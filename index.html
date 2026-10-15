@@ -6368,6 +6368,7 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
   const App = window.App;
   const { W, H, TOG, KG, KR } = App;
   const TURN = 60;          // цена поворота в другой коридор: лишний поворот должен окупаться длиной
+  const CROWD = 0.35;       // цена тесноты: за каждый пиксель чужих линий рядом на пути
   const HEAD_PEN = 4000;    // цена прохода через заголовок дома (герб, название, девиз)
   // шаг дорожек: полоса наведения у линии 14 px, при шаге 10 px у каждой линии остаётся своя середина
   const LANE = 10, LANE_MIN = 4, GLANE = 10, CORNER = 6;
@@ -6492,32 +6493,82 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     const vCost = (g, y1, l1, y2, l2) => Math.abs(y2 - y1) + HEAD_PEN * heads(g, l1, l2);
     const hCost = (g1, g2) => g1 === g2 ? 0 : Math.abs(cxm(g1) - cxm(g2)) + TURN;
 
-    // 1. Выбор пути: коридор начала → (промежуток → коридор)* → коридор конца
+    // Теснота: сколько пикселей линий уже лежит рядом. По вертикали — по кускам коридора (полоса дома или промежуток
+    // под ней): на каждом куске сумма длин уже проложенных участков; новый участок платит CROWD за каждый пиксель
+    // чужих линий на своём пути (при равномерном распределении внутри куска). По горизонтали — по отрезкам промежутка
+    // между серединами соседних коридоров: сколько линий уже идёт по отрезку.
+    const U = [];
+    bands.forEach((bd, k) => { U.push([bd.top, bd.bottom]); const g = gapOf(k); U.push([g[0], g[1]]); });
+    const unitAt = y => { let lo = 0, hi = U.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (U[m][0] <= y) lo = m; else hi = m - 1; } return lo; };
+    const occV = new Map(), prefV = new Map();
+    cols.forEach(g => { occV.set(g, new Float64Array(U.length)); prefV.set(g, new Float64Array(U.length + 1)); });
+    const remakeV = g => { const o = occV.get(g), p = prefV.get(g); for (let u = 0; u < U.length; u++) p[u + 1] = p[u] + o[u]; };
+    // чужие пиксели на участке [y1, y2] коридора g
+    const crowdV = (g, y1, y2) => {
+      const o = occV.get(g), p = prefV.get(g);
+      if (!o) return 0;
+      const a = Math.min(y1, y2), b = Math.max(y1, y2), ua = unitAt(a), ub = unitAt(b);
+      const part = (u, lo, hi) => { const L = U[u][1] - U[u][0]; return L > 0 ? o[u] * Math.max(0, Math.min(hi, U[u][1]) - Math.max(lo, U[u][0])) / L : 0; };
+      if (ua === ub) return part(ua, a, b);
+      return part(ua, a, b) + (p[ub] - p[ua + 1]) + part(ub, a, b);
+    };
+    const addV = (g, y1, y2, sign) => {
+      const o = occV.get(g);
+      if (!o) return;
+      const a = Math.min(y1, y2), b = Math.max(y1, y2);
+      for (let u = unitAt(a); u <= unitAt(b); u++) o[u] += sign * Math.max(0, Math.min(b, U[u][1]) - Math.max(a, U[u][0]));
+      remakeV(g);
+    };
+    const ci = new Map(cols.map((g, i) => [g, i]));
+    const seg = cols.slice(1).map((g, i) => cxm(g) - cxm(cols[i]));
+    const occH = [], prefH = [];
+    for (let j = 0; j < nb; j++) { occH.push(new Float64Array(seg.length)); prefH.push(new Float64Array(seg.length + 1)); }
+    const crowdH = (j, g1, g2) => { const a = Math.min(ci.get(g1), ci.get(g2)), b = Math.max(ci.get(g1), ci.get(g2)); return prefH[j][b] - prefH[j][a]; };
+    const addH = (j, g1, g2, sign) => {
+      const a = Math.min(ci.get(g1), ci.get(g2)), b = Math.max(ci.get(g1), ci.get(g2)), o = occH[j], p = prefH[j];
+      for (let i = a; i < b; i++) o[i] += sign * seg[i];
+      for (let i = 0; i < seg.length; i++) p[i + 1] = p[i] + o[i];
+    };
+    const legsOf = r => r.legs.map((g, i) => [g, i ? gapY(r.turns[i - 1]) : r.A.y, i < r.turns.length ? gapY(r.turns[i]) : r.B.y]);
+    const occupy = (r, sign) => {
+      legsOf(r).forEach(([g, y1, y2]) => addV(g, y1, y2, sign));
+      r.turns.forEach((j, i) => addH(j, r.legs[i], r.legs[i + 1], sign));
+    };
+
+    // 1. Выбор пути: коридор начала → (промежуток → коридор)* → коридор конца. Самые длинные линии прокладываются
+    // первыми, потом каждая линия ещё раз — уже зная, где лежат все остальные.
+    const plan = r => {
+      const { A, B } = r;
+      const ia = bi.get(A.band), ib = bi.get(B.band), la = ia + 0.5, lb = ib + 0.5;
+      const V = (g, y1, l1, y2, l2) => vCost(g, y1, l1, y2, l2) + CROWD * crowdV(g, y1, y2);
+      const Hc = (j, g1, g2) => hCost(g1, g2) + (g1 === g2 ? 0 : CROWD * crowdH(j, g1, g2));
+      let best = null;
+      const take = (cost, p) => { if (!best || cost < best.cost - 1e-6) best = { cost, p }; };
+      if (A.g === B.g) take(V(A.g, A.y, la, B.y, lb), []);
+      const jLo = Math.max(0, ia - 1), jHi = Math.min(ib, nb - 1);
+      for (let j1 = jLo; j1 <= jHi; j1++) {
+        const y1 = gapY(j1), l1 = j1 + 0.75, head = V(A.g, A.y, la, y1, l1);
+        if (A.g !== B.g) take(head + Hc(j1, A.g, B.g) + V(B.g, y1, l1, B.y, lb) + 0.001 * Math.abs(j1 - (ib - 1)), [{ j: j1, g: B.g }]);
+        for (let j2 = j1 + 1; j2 <= jHi; j2++) {
+          const y2 = gapY(j2), l2 = j2 + 0.75, tail = V(B.g, y2, l2, B.y, lb);
+          cols.forEach(gm => {
+            if (gm === A.g || gm === B.g) return;
+            take(head + Hc(j1, A.g, gm) + V(gm, y1, l1, y2, l2) + Hc(j2, gm, B.g) + tail, [{ j: j1, g: gm }, { j: j2, g: B.g }]);
+          });
+        }
+      }
+      r.legs = [A.g].concat(best.p.map(s => s.g)); r.turns = best.p.map(s => s.j);
+    };
     const routes = [];
     items.forEach(it => {
       let A = it.A, B = it.B, flip = false;
       if (!bi.has(A.band) || !bi.has(B.band)) return;
       if (bi.get(A.band) > bi.get(B.band)) { [A, B] = [B, A]; flip = true; }
-      const ia = bi.get(A.band), ib = bi.get(B.band), la = ia + 0.5, lb = ib + 0.5;
-      let best = null;
-      const take = (cost, plan) => { if (!best || cost < best.cost - 1e-6) best = { cost, plan }; };
-      if (A.g === B.g) take(vCost(A.g, A.y, la, B.y, lb), []);
-      const jLo = Math.max(0, ia - 1), jHi = Math.min(ib, nb - 1);
-      for (let j1 = jLo; j1 <= jHi; j1++) {
-        const y1 = gapY(j1), l1 = j1 + 0.75, head = vCost(A.g, A.y, la, y1, l1);
-        if (A.g !== B.g) take(head + hCost(A.g, B.g) + vCost(B.g, y1, l1, B.y, lb) + 0.001 * Math.abs(j1 - (ib - 1)), [{ j: j1, g: B.g }]);
-        for (let j2 = j1 + 1; j2 <= jHi; j2++) {
-          const y2 = gapY(j2), l2 = j2 + 0.75, tail = vCost(B.g, y2, l2, B.y, lb);
-          cols.forEach(gm => {
-            if (gm === A.g || gm === B.g) return;
-            take(head + hCost(A.g, gm) + vCost(gm, y1, l1, y2, l2) + hCost(gm, B.g) + tail, [{ j: j1, g: gm }, { j: j2, g: B.g }]);
-          });
-        }
-      }
-      if (!best) return;
-      const legs = [A.g].concat(best.plan.map(s => s.g)), turns = best.plan.map(s => s.j);
-      routes.push({ it, A, B, flip, legs, turns, lx: [], ty: [] });
+      routes.push({ it, A, B, flip, legs: [], turns: [], lx: [], ty: [] });
     });
+    const order = routes.slice().sort((p, q) => Math.abs(q.B.y - q.A.y) - Math.abs(p.B.y - p.A.y));
+    order.forEach(r => { plan(r); occupy(r, 1); });
+    if (CROWD) for (let pass = 0; pass < 1; pass++) order.forEach(r => { occupy(r, -1); plan(r); occupy(r, 1); });
 
     // 2. Дорожки в коридорах. Концы участков у промежутков пока берутся по середине промежутка.
     const vert = new Map();
