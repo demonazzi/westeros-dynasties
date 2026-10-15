@@ -153,6 +153,12 @@ body { background: var(--ground); color: var(--ink); font-family: var(--font-ui)
 .btn:focus-visible, .search input:focus-visible, .chip:focus-visible, .legend summary:focus-visible { outline: 2px solid var(--path); outline-offset: 2px; }
 .zoom { position: absolute; right: 16px; bottom: 16px; z-index: 3; display: flex; gap: 6px; }
 .zoom .btn { box-shadow: var(--ov-shadow); }
+/* Сохранить картинкой: меню открывается вверх, от кнопки вправо-влево */
+.export-menu { position: relative; }
+.menu.up { top: auto; bottom: calc(100% + 6px); left: auto; right: 0; min-width: 300px; }
+.menu.up button { padding-left: 12px; }
+.export-note { margin: 4px 12px 8px; font-size: 12.5px; color: var(--muted); max-width: 270px; }
+#export-btn[aria-busy="true"] { opacity: .5; cursor: progress; }
 .canvas:has(#list-view:not([hidden])) #zoom-in, .canvas:has(#list-view:not([hidden])) #zoom-out { display: none; }
 .canvas:has(#vassal-view:not([hidden])) #zoom-in, .canvas:has(#vassal-view:not([hidden])) #zoom-out { display: none; }
 .canvas:has(#vassal-view.mode-bub:not([hidden])) #zoom-fit { display: none; }

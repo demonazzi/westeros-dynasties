@@ -45,6 +45,7 @@ node tools/check-vassal.js    # Allegiances tab
 node tools/check-house.js     # house card
 node tools/check-i18n.js      # English version
 node tools/check-tips.js      # tooltips on lines
+node tools/check-export.js    # "Save as image": PNG and SVG, screen and branch
 node tools/check-scale.js     # time scale (run on its own)
 node tools/check-links.js     # lines between houses: hover, click, passing through other cards (≈10 minutes)
 ```
