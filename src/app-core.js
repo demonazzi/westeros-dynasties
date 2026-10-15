@@ -287,16 +287,6 @@
     App.bandOrderCost = { before: cost(blocks.map((_, i) => i)), after: best, order: ord.slice(), cost, stepwise };
   })();
 
-  /* Линия между домами: из низа верхней карточки в верх нижней. oa, ob — сдвиг конца от середины карточки,
-     чтобы линии из одной колонки не шли друг по другу. */
-  function crossGeom(a, b, oa = 0, ob = 0) {
-    const [u, v, ou, ov] = a.Y <= b.Y ? [a, b, oa, ob] : [b, a, ob, oa];
-    const x1 = u.X + W / 2 + ou, y1 = u.Y + H / 2, x2 = v.X + W / 2 + ov, y2 = v.Y - H / 2;
-    const k = Math.max(70, (y2 - y1) * 0.42);
-    return { d: 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + (y1 + k) + ' ' + x2 + ',' + (y2 - k) + ' ' + x2 + ',' + y2, mx: (x1 + x2) / 2, my: (y1 + y2) / 2, pts: [[x1, y1], [x1, y1 + k], [x2, y2 - k], [x2, y2]] };
-  }
-  App.crossGeom = crossGeom;
-
   /* Узлы браков: дети одной пары выходят из общего узла справа от родителя на древе. */
   let knots = [], knotOf = new Map(), knotByPair = new Map();
   App.knots = () => knots;
@@ -354,13 +344,6 @@
     const dx = Math.max(26, Math.abs(k.x - ox) * 0.5), dy = Math.max(22, Math.abs(ty - oy) * 0.55);
     return 'M' + ox + ',' + oy + ' C' + (ox + dx) + ',' + oy + ' ' + k.x + ',' + (ty + dir * dy) + ' ' + k.x + ',' + ty;
   }
-  function knotCross(o, k, oo = 0) {
-    const below = o.Y > k.y;
-    const x1 = o.X + W / 2 + oo, y1 = o.Y + (below ? -H / 2 : H / 2), y2 = k.y + (below ? KR : -KR);
-    const c = Math.max(70, Math.abs(y2 - y1) * 0.42) * (below ? 1 : -1);
-    return { d: 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + (y1 - c) + ' ' + k.x + ',' + (y2 + c) + ' ' + k.x + ',' + y2, mx: (x1 + k.x) / 2, my: (y1 + y2) / 2, pts: [[x1, y1], [x1, y1 - c], [k.x, y2 + c], [k.x, y2]] };
-  }
-
   function render() {
     if (App.hideXTip) App.hideXTip();
     const links = App.layouts[state.mode]();
@@ -451,7 +434,7 @@
       t.append('title');
       t.on('click', (e, d) => { e.stopPropagation(); toggle(d); });
       g.on('click', (e, d) => App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id));
-      g.on('pointerenter', (e, d) => peek(d.data.id)).on('pointerleave', () => peek(null));
+      g.on('pointerenter', (e, d) => { if (!e.buttons) peek(d.data.id); }).on('pointerleave', () => peek(null));
       g.on('keydown', (e, d) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id); }
         else if (e.key === 'ArrowRight' && d._children) { e.preventDefault(); toggle(d); }
@@ -665,55 +648,100 @@
     return e.type === 'w' ? t('Воспитанник: {b} у {a}', { a, b })
       : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? t('По теории: {b} — ребёнок {a}', { a, b }) : t('По слухам: {b} — ребёнок {a}', { a, b }))
       : t(X_KIND[e.type]) + ': ' + t('{a} и {b}', { a, b }); };
-  const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
+  /* Концы линий между домами — справа от карточки. Брак с детьми в этой полосе выходит из своего узла брака;
+     у каждого другого брака с другим домом — свой значок ⚭ в колонке значков, под узлами браков этого
+     человека; остальные связи (помолвки, связи, слухи, воспитанники) — от кнопки ветви, каждая на своей высоте,
+     в стороне от значков. Значки и выходы считаются для всех видимых связей, даже когда «Связи» выключены:
+     тогда подсветка выбранного идёт теми же путями. */
+  let anchorAt = new Map();
+  const portOf = n => ({ id: n.data.id, x: n.X + W + (hasKids(n) ? TOG : 4), y: n.Y, g: n.gen, band: n.band });
+  function crossAnchors(all) {
+    anchorAt = new Map();
+    const taken = new Map();
+    const col = x => Math.round(x);
+    const put = (x, y) => { const k = col(x); if (!taken.has(k)) taken.set(k, []); taken.get(k).push(y); };
+    knots.forEach(k => put(k.x, k.y));
+    const needs = new Map();
+    all.forEach(e => {
+      const key = e.a + '|' + e.b;
+      const k = e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(key);
+      [e.a, e.b].forEach(id => {
+        const n = nodeById.get(id);
+        if (k && k.s.data.id === id) { anchorAt.set(key + '@' + id, { id, x: k.x, y: k.y, g: n.gen, band: n.band, knot: k.key }); return; }
+        if (!needs.has(id)) needs.set(id, []);
+        needs.get(id).push({ key, mark: e.type === 'm', other: nodeById.get(id === e.a ? e.b : e.a) });
+      });
+    });
+    // сверху вниз — в порядке дальних концов: линия вверх берёт верхнее место, вниз — нижнее
+    const byOther = (p, q) => p.other.Y - q.other.Y || p.other.X - q.other.X;
+    const SLOT = 2 * KR + 6;
+    needs.forEach((list, id) => {
+      const n = nodeById.get(id), kx = n.X + W + TOG + KG;
+      const marks = list.filter(q => q.mark).sort(byOther);
+      if (marks.length) {
+        const busy = taken.get(col(kx)) || [];
+        const free = [];
+        // места по очереди: напротив карточки, ниже, выше, ещё ниже… — значки встают под узлами браков
+        for (let i = 0; free.length < marks.length && i < 40; i++) {
+          const cand = i % 2 ? n.Y + Math.ceil(i / 2) * SLOT : n.Y - (i / 2) * SLOT;
+          if (busy.concat(free).every(b => Math.abs(b - cand) >= SLOT - 0.5)) free.push(cand);
+        }
+        while (free.length < marks.length) free.push(n.Y + (free.length + 1) * SLOT);
+        free.sort((p, q) => p - q);
+        marks.forEach((q, i) => { anchorAt.set(q.key + '@' + id, { id, x: kx, y: free[i], g: n.gen, band: n.band, mark: true }); put(kx, free[i]); });
+      }
+      const ports = list.filter(q => !q.mark).sort(byOther);
+      if (ports.length) {
+        const busy = taken.get(col(kx)) || [], p0 = portOf(n);
+        const ys = [0, 12, -12, 6, -6, 18, -18].map(o => n.Y + o)
+          .filter(y => busy.every(b => Math.abs(b - y) >= KR + 3));
+        const pick = [];
+        ys.forEach(y => { if (pick.length < ports.length && pick.every(u => Math.abs(u - y) >= 6)) pick.push(y); });
+        while (pick.length < ports.length) pick.push(n.Y + 6 * pick.length);
+        pick.sort((p, q) => p - q);
+        ports.forEach((q, i) => anchorAt.set(q.key + '@' + id, Object.assign({}, p0, { y: pick[i] })));
+      }
+    });
+  }
+  App.crossAnchor = (key, id) => anchorAt.get(key + '@' + id);
+  // Концы связи для подсветки выбранного, когда «Связи» выключены: те же значки и выходы, что у линий;
+  // пути потом прокладываются все вместе, чтобы у каждой линии была своя дорожка
+  function crossPath(e, ida, idb, toB) {
+    const key = e ? e.a + '|' + e.b : null;
+    const A = (key && anchorAt.get(key + '@' + ida)) || portOf(nodeById.get(ida));
+    const B = toB || (key && anchorAt.get(key + '@' + idb)) || portOf(nodeById.get(idb));
+    return { A, B, marks: [A, B].filter(x => x.mark) };
+  }
   function drawCross() {
     xKey = null; peekId = null; xBox = null;
-    const pairs = state.showLinks ? PAIRS.filter(e => visible.has(e.a) && visible.has(e.b) && nodeById.get(e.a).band !== nodeById.get(e.b).band) : [];
-    const raw = pairs.map(e => ({ e, key: e.a + '|' + e.b, k: e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(e.a + '|' + e.b) }));
-    // Концы линий, выходящие из одной колонки в одну сторону, разводятся по полосам поперёк карточки
-    const ends = new Map();
-    const addEnd = (key, n, dir, toX) => { const g = n.X + '|' + dir; if (!ends.has(g)) ends.set(g, []); ends.get(g).push({ id: key + '@' + n.data.id, n, toX }); };
-    raw.forEach(r => {
-      if (r.k) { const o = nodeById.get(r.k.s.data.id === r.e.a ? r.e.b : r.e.a); addEnd(r.key, o, o.Y > r.k.y ? 'up' : 'down', r.k.x); return; }
-      const a = nodeById.get(r.e.a), b = nodeById.get(r.e.b), [u, v] = a.Y <= b.Y ? [a, b] : [b, a];
-      addEnd(r.key, u, 'down', v.X); addEnd(r.key, v, 'up', u.X);
-    });
-    const LANES = [0, -34, 34, -68, 68, -17, 17, -51, 51, -78, 78];
-    const lane = new Map();
-    ends.forEach(list => { list.sort((p, q) => p.n.Y - q.n.Y || p.toX - q.toX); list.forEach((x, i) => lane.set(x.id, LANES[i % LANES.length])); });
-    const off = (key, id) => lane.get(key + '@' + id) || 0;
-    const geo = raw.map(({ e, key, k }) => {
-      const g = k ? (o => knotCross(o, k, off(key, o.data.id)))(nodeById.get(k.s.data.id === e.a ? e.b : e.a))
-        : crossGeom(nodeById.get(e.a), nodeById.get(e.b), off(key, e.a), off(key, e.b));
-      return Object.assign({ key, e, knot: k || null }, g);
+    const all = PAIRS.filter(e => visible.has(e.a) && visible.has(e.b) && nodeById.get(e.a).band !== nodeById.get(e.b).band);
+    crossAnchors(all);
+    const pairs = state.showLinks ? all : [];
+    const items = pairs.map(e => { const key = e.a + '|' + e.b; return { key, A: anchorAt.get(key + '@' + e.a), B: anchorAt.get(key + '@' + e.b) }; });
+    const routed = App.routeLines(items);
+    App.crossUnder = new Map();
+    const geo = [];
+    pairs.forEach(e => {
+      const key = e.a + '|' + e.b, r = routed.get(key);
+      if (!r) return;
+      const k = e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(key);
+      if (r.under.length) App.crossUnder.set(key, r.under);
+      geo.push(Object.assign({ key, e, knot: k || null }, r));
     });
     layers.x.selectAll('path.xlink').data(geo, d => d.key).join('path')
       .attr('class', d => 'xlink t-' + d.e.type)
       .attr('d', d => d.d);
-    // полоса наведения — ломаной по той же кривой: на очень длинных кривых (через всё древо) браузер проверяет попадание
-    // приближённо и местами промахивается мимо линии, по ломаной — точно
-    const flat = d => {
-      if (!d.pts) return d.d;
-      const P = d.pts, len = Math.hypot(P[1][0] - P[0][0], P[1][1] - P[0][1]) + Math.hypot(P[2][0] - P[1][0], P[2][1] - P[1][1]) + Math.hypot(P[3][0] - P[2][0], P[3][1] - P[2][1]);
-      const n = Math.max(8, Math.min(600, Math.ceil(len / 30)));
-      let out = 'M' + P[0][0] + ',' + P[0][1];
-      for (let i = 1; i <= n; i++) { const q = bez(P, i / n); out += ' L' + q[0].toFixed(1) + ',' + q[1].toFixed(1); }
-      return out;
-    };
+    // полоса наведения — по той же ломаной
     layers.x.selectAll('path.xhit').data(geo, d => d.key).join(enter => enter.append('path').attr('class', 'xhit').call(xEvents))
-      .attr('d', flat);
-    // Значок брака — в середине линии, но не на карточке, не на заголовке дома и не вплотную к другому значку
-    const busy = allNodes.map(n => [n.X - 14, n.Y - H / 2 - 14, n.X + W + (hasKids(n) ? TOG + 10 : 0) + 14, n.Y + H / 2 + 14])
-      .concat(knots.map(k => [k.x - 16, k.y - 16, k.x + 16, k.y + 16]))
-      .concat(bandBoxes.map(b => [b.hx0 - 10, b.top, b.hx0 + b.tx + (b.headW || 300) + 10, b.top + 92]));
-    const spots = [];
-    const ok = pt => !busy.some(r => pt[0] > r[0] && pt[0] < r[2] && pt[1] > r[1] && pt[1] < r[3]) && !spots.some(q => Math.hypot(q[0] - pt[0], q[1] - pt[1]) < 34);
-    const markData = geo.filter(d => d.e.type === 'm' && !d.knot);
-    markData.forEach(d => {
-      let pt = null;
-      for (let i = 0; i <= 16 && !pt; i++) for (const sgn of i ? [-1, 1] : [1]) { const q = bez(d.pts, 0.5 + sgn * i * 0.025); if (ok(q)) { pt = q; break; } }
-      d.mp = pt || [d.mx, d.my];
-      spots.push(d.mp);
+      .attr('d', d => d.d);
+    // Значки браков — у обеих карточек, в колонке значков (кроме конца, где брак выходит из узла с детьми)
+    const markData = [];
+    geo.forEach(d => {
+      if (d.e.type !== 'm') return;
+      [d.e.a, d.e.b].forEach(id => {
+        const a = anchorAt.get(d.key + '@' + id);
+        if (a && a.mark) markData.push(Object.assign({}, d, { key: d.key + '@' + id, lkey: d.key, at: id, mp: [a.x, a.y] }));
+      });
     });
     const marks = layers.marks.selectAll('g.xmark').data(markData, d => d.key).join(enter => {
       const g = enter.append('g').attr('class', 'xmark').attr('tabindex', 0).attr('role', 'button').call(xEvents);
@@ -725,11 +753,10 @@
     marks.attr('transform', d => 'translate(' + d.mp[0] + ',' + d.mp[1] + ')')
       .attr('aria-label', d => xText(d.e) + '. ' + App.t('Перейти к {name}', { name: byId.get(xFar(d, d.mp)).full }));
   }
-  // Дальний от точки конец линии: туда и ведёт нажатие
+  // Дальний от точки конец линии — по длине пути, а не по прямой: туда и ведёт нажатие
   function xFar(d, pt) {
-    const a = nodeById.get(d.e.a), b = nodeById.get(d.e.b);
-    const da = Math.hypot(a.X + W / 2 - pt[0], a.Y - pt[1]), db = Math.hypot(b.X + W / 2 - pt[0], b.Y - pt[1]);
-    return da > db ? d.e.a : d.e.b;
+    const { at, len } = App.alongPath(d.pts, pt);
+    return at < len / 2 ? d.to : d.from;
   }
   function xGo(d, pt) { xHover(null); select(xFar(d, pt), { center: true }); }
   const canvasEl = document.getElementById('canvas');
@@ -740,14 +767,14 @@
      запоминаются в начале наведения — на каждом движении мыши раскладка страницы не читается. */
   let xKey = null, xFarId = null, xBox = null, xTipW = 0, xTipH = 0;
   function xHover(d, ev) {
-    const key = d ? d.key : null;
+    const key = d ? (d.lkey || d.key) : null;
     if (key !== xKey) {
       layers.x.selectAll('path.xlink.hover').classed('hover', false);
       layers.marks.selectAll('g.xmark.hover').classed('hover', false);
       layers.nodes.selectAll('g.node.xpeer').classed('xpeer', false);
       if (d) {
         layers.x.selectAll('path.xlink').filter(q => q.key === key).classed('hover', true);
-        layers.marks.selectAll('g.xmark').filter(q => q.key === key).classed('hover', true);
+        layers.marks.selectAll('g.xmark').filter(q => q.lkey === key).classed('hover', true);
         layers.nodes.selectAll('g.node').filter(n => n.data.id === d.e.a || n.data.id === d.e.b).classed('xpeer', true);
       }
       xKey = key; xFarId = null;
@@ -774,7 +801,9 @@
     return d3.zoomTransform(svg.node()).invert([ev.clientX - xBox.sl, ev.clientY - xBox.st]);
   }
   function xEvents(sel) {
-    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving) xHover(d, e); })
+    // с зажатой кнопкой не подсвечиваем: pointermove приходит раньше mousemove, по которому d3 начинает перетаскивание,
+    // и без этого первый шаг перетаскивания подсвечивал линию, оказавшуюся под указателем
+    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving && !e.buttons) xHover(d, e); })
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
@@ -876,29 +905,50 @@
         if (!other || !visible.has(other.data.id)) return;
         const k = knotByPair.get(sel + '|' + other.data.id);
         if (k && (other.band === a.band || state.showLinks)) return;
-        if (other.band === a.band || !state.showLinks) extra.push({ kind: 'sp', type: e.type, a, b: other, key: 'sp' + other.data.id });
+        if (other.band === a.band || !state.showLinks) extra.push({ kind: 'sp', type: e.type, a, b: other, key: 'sp' + other.data.id, x: other.band !== a.band ? crossPath(e, sel, other.data.id) : null });
       });
       a.data.par.forEach(r => {
         const ref = (/^[a-z_0-9]+/.exec(r) || [''])[0];
         const op = nodeById.get(ref);
         if (!op || ref === a.data.p || !visible.has(ref)) return;
         if (selKnot && selKnot.o.id === ref && (op.band === a.band || state.showLinks)) return;
-        extra.push({ kind: 'par', a: op, b: a, key: 'par' + ref });
+        let x = null;
+        if (op.band !== a.band) {
+          // второй родитель из другого дома — к узлу брака, из которого выходит ребёнок, иначе к самому ребёнку
+          if (selKnot && selKnot.o.id === ref) {
+            const sid = selKnot.s.data.id, e = PAIRS.find(q => (q.a === sid && q.b === ref) || (q.a === ref && q.b === sid));
+            x = crossPath(e, ref, sid, e ? null : { id: sid, x: selKnot.x, y: selKnot.y, g: selKnot.s.gen, band: selKnot.s.band });
+          } else x = crossPath(null, ref, sel);
+        }
+        extra.push({ kind: 'par', a: op, b: a, key: 'par' + ref, x });
       });
     }
+    const xs = extra.filter(d => d.x);
+    const routed = xs.length ? App.routeLines(xs.map(d => ({ key: d.key, A: d.x.A, B: d.x.B }))) : null;
+    xs.forEach(d => { const r = routed.get(d.key); d.x.d = r ? r.d : null; });
     layers.sel.selectAll('path').data(extra, d => d.key).join('path')
       .attr('class', d => d.kind === 'par' ? 'second' : 'spouse t-' + d.type)
       .attr('d', d => {
+        if (d.x) return d.x.d;
         if (d.kind === 'par') {
-          if (d.a.band !== d.b.band) return crossGeom(d.a, d.b).d;
+          if (d.a.band !== d.b.band) return null;
           return linkGen({ source: [d.a.X + W + (hasKids(d.a) && state.mode === 'gen' ? TOG : 4), d.a.Y], target: [d.b.X, d.b.Y] });
         }
-        if (d.a.band !== d.b.band) return crossGeom(d.a, d.b).d;
+        if (d.a.band !== d.b.band) return null;
         const x1 = d.a.X + W + (hasKids(d.a) ? TOG : 4), y1 = d.a.Y;
         const x2 = d.b.X + W + (hasKids(d.b) ? TOG : 4), y2 = d.b.Y;
         const off = 44 + Math.min(180, Math.abs(y2 - y1) * 0.12);
         return 'M' + x1 + ',' + y1 + ' C' + (x1 + off) + ',' + y1 + ' ' + (x2 + off) + ',' + y2 + ' ' + x2 + ',' + y2;
       });
+    // значки браков у концов подсвеченной связи с другим домом (когда «Связи» выключены, своих значков нет)
+    const selMarks = [];
+    extra.forEach(d => { if (d.x && d.kind === 'sp' && d.type === 'm') d.x.marks.forEach(m => selMarks.push({ key: d.key + '@' + m.id, x: m.x, y: m.y })); });
+    layers.sel.selectAll('g.selmark').data(selMarks, d => d.key).join(enter => {
+      const g = enter.append('g').attr('class', 'xmark hot selmark').attr('aria-hidden', 'true');
+      g.append('circle').attr('r', 10);
+      g.append('text').text('⚭');
+      return g;
+    }).attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
   }
   App.decorate = decorate;
 

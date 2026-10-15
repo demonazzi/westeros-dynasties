@@ -320,6 +320,7 @@ rect.lg-sub { fill: var(--hc); }
 .xmark text { pointer-events: none; }
 .xmark:hover circle, .xmark.hover circle, .xmark:focus-visible circle { stroke-width: 2.8; fill: var(--surface-2, var(--surface)); }
 .xmark:focus { outline: none; }
+.selmark { pointer-events: none; }
 .node.xpeer .halo { stroke: var(--union); stroke-width: 3.2; }
 .xtip { position: absolute; left: 0; top: 0; z-index: 6; max-width: 320px; pointer-events: none;
   padding: 8px 12px; background: var(--surface); border: 1.5px solid var(--union); border-radius: 10px; box-shadow: var(--ov-shadow);

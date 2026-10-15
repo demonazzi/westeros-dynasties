@@ -336,6 +336,7 @@ rect.lg-sub { fill: var(--hc); }
 .xmark text { pointer-events: none; }
 .xmark:hover circle, .xmark.hover circle, .xmark:focus-visible circle { stroke-width: 2.8; fill: var(--surface-2, var(--surface)); }
 .xmark:focus { outline: none; }
+.selmark { pointer-events: none; }
 .node.xpeer .halo { stroke: var(--union); stroke-width: 3.2; }
 .xtip { position: absolute; left: 0; top: 0; z-index: 6; max-width: 320px; pointer-events: none;
   padding: 8px 12px; background: var(--surface); border: 1.5px solid var(--union); border-radius: 10px; box-shadow: var(--ov-shadow);
@@ -3557,16 +3558,6 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     App.bandOrderCost = { before: cost(blocks.map((_, i) => i)), after: best, order: ord.slice(), cost, stepwise };
   })();
 
-  /* Линия между домами: из низа верхней карточки в верх нижней. oa, ob — сдвиг конца от середины карточки,
-     чтобы линии из одной колонки не шли друг по другу. */
-  function crossGeom(a, b, oa = 0, ob = 0) {
-    const [u, v, ou, ov] = a.Y <= b.Y ? [a, b, oa, ob] : [b, a, ob, oa];
-    const x1 = u.X + W / 2 + ou, y1 = u.Y + H / 2, x2 = v.X + W / 2 + ov, y2 = v.Y - H / 2;
-    const k = Math.max(70, (y2 - y1) * 0.42);
-    return { d: 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + (y1 + k) + ' ' + x2 + ',' + (y2 - k) + ' ' + x2 + ',' + y2, mx: (x1 + x2) / 2, my: (y1 + y2) / 2, pts: [[x1, y1], [x1, y1 + k], [x2, y2 - k], [x2, y2]] };
-  }
-  App.crossGeom = crossGeom;
-
   /* Узлы браков: дети одной пары выходят из общего узла справа от родителя на древе. */
   let knots = [], knotOf = new Map(), knotByPair = new Map();
   App.knots = () => knots;
@@ -3624,13 +3615,6 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     const dx = Math.max(26, Math.abs(k.x - ox) * 0.5), dy = Math.max(22, Math.abs(ty - oy) * 0.55);
     return 'M' + ox + ',' + oy + ' C' + (ox + dx) + ',' + oy + ' ' + k.x + ',' + (ty + dir * dy) + ' ' + k.x + ',' + ty;
   }
-  function knotCross(o, k, oo = 0) {
-    const below = o.Y > k.y;
-    const x1 = o.X + W / 2 + oo, y1 = o.Y + (below ? -H / 2 : H / 2), y2 = k.y + (below ? KR : -KR);
-    const c = Math.max(70, Math.abs(y2 - y1) * 0.42) * (below ? 1 : -1);
-    return { d: 'M' + x1 + ',' + y1 + ' C' + x1 + ',' + (y1 - c) + ' ' + k.x + ',' + (y2 + c) + ' ' + k.x + ',' + y2, mx: (x1 + k.x) / 2, my: (y1 + y2) / 2, pts: [[x1, y1], [x1, y1 - c], [k.x, y2 + c], [k.x, y2]] };
-  }
-
   function render() {
     if (App.hideXTip) App.hideXTip();
     const links = App.layouts[state.mode]();
@@ -3721,7 +3705,7 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
       t.append('title');
       t.on('click', (e, d) => { e.stopPropagation(); toggle(d); });
       g.on('click', (e, d) => App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id));
-      g.on('pointerenter', (e, d) => peek(d.data.id)).on('pointerleave', () => peek(null));
+      g.on('pointerenter', (e, d) => { if (!e.buttons) peek(d.data.id); }).on('pointerleave', () => peek(null));
       g.on('keydown', (e, d) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); App.onNodeClick ? App.onNodeClick(d.data.id, e) : select(d.data.id); }
         else if (e.key === 'ArrowRight' && d._children) { e.preventDefault(); toggle(d); }
@@ -3935,55 +3919,100 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     return e.type === 'w' ? t('Воспитанник: {b} у {a}', { a, b })
       : e.type === 'rumor' ? (byId.get(e.b).par.some(r => r.startsWith(e.a + ' (по теории')) ? t('По теории: {b} — ребёнок {a}', { a, b }) : t('По слухам: {b} — ребёнок {a}', { a, b }))
       : t(X_KIND[e.type]) + ': ' + t('{a} и {b}', { a, b }); };
-  const bez = (p, t) => { const u = 1 - t; return [0, 1].map(i => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]); };
+  /* Концы линий между домами — справа от карточки. Брак с детьми в этой полосе выходит из своего узла брака;
+     у каждого другого брака с другим домом — свой значок ⚭ в колонке значков, под узлами браков этого
+     человека; остальные связи (помолвки, связи, слухи, воспитанники) — от кнопки ветви, каждая на своей высоте,
+     в стороне от значков. Значки и выходы считаются для всех видимых связей, даже когда «Связи» выключены:
+     тогда подсветка выбранного идёт теми же путями. */
+  let anchorAt = new Map();
+  const portOf = n => ({ id: n.data.id, x: n.X + W + (hasKids(n) ? TOG : 4), y: n.Y, g: n.gen, band: n.band });
+  function crossAnchors(all) {
+    anchorAt = new Map();
+    const taken = new Map();
+    const col = x => Math.round(x);
+    const put = (x, y) => { const k = col(x); if (!taken.has(k)) taken.set(k, []); taken.get(k).push(y); };
+    knots.forEach(k => put(k.x, k.y));
+    const needs = new Map();
+    all.forEach(e => {
+      const key = e.a + '|' + e.b;
+      const k = e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(key);
+      [e.a, e.b].forEach(id => {
+        const n = nodeById.get(id);
+        if (k && k.s.data.id === id) { anchorAt.set(key + '@' + id, { id, x: k.x, y: k.y, g: n.gen, band: n.band, knot: k.key }); return; }
+        if (!needs.has(id)) needs.set(id, []);
+        needs.get(id).push({ key, mark: e.type === 'm', other: nodeById.get(id === e.a ? e.b : e.a) });
+      });
+    });
+    // сверху вниз — в порядке дальних концов: линия вверх берёт верхнее место, вниз — нижнее
+    const byOther = (p, q) => p.other.Y - q.other.Y || p.other.X - q.other.X;
+    const SLOT = 2 * KR + 6;
+    needs.forEach((list, id) => {
+      const n = nodeById.get(id), kx = n.X + W + TOG + KG;
+      const marks = list.filter(q => q.mark).sort(byOther);
+      if (marks.length) {
+        const busy = taken.get(col(kx)) || [];
+        const free = [];
+        // места по очереди: напротив карточки, ниже, выше, ещё ниже… — значки встают под узлами браков
+        for (let i = 0; free.length < marks.length && i < 40; i++) {
+          const cand = i % 2 ? n.Y + Math.ceil(i / 2) * SLOT : n.Y - (i / 2) * SLOT;
+          if (busy.concat(free).every(b => Math.abs(b - cand) >= SLOT - 0.5)) free.push(cand);
+        }
+        while (free.length < marks.length) free.push(n.Y + (free.length + 1) * SLOT);
+        free.sort((p, q) => p - q);
+        marks.forEach((q, i) => { anchorAt.set(q.key + '@' + id, { id, x: kx, y: free[i], g: n.gen, band: n.band, mark: true }); put(kx, free[i]); });
+      }
+      const ports = list.filter(q => !q.mark).sort(byOther);
+      if (ports.length) {
+        const busy = taken.get(col(kx)) || [], p0 = portOf(n);
+        const ys = [0, 12, -12, 6, -6, 18, -18].map(o => n.Y + o)
+          .filter(y => busy.every(b => Math.abs(b - y) >= KR + 3));
+        const pick = [];
+        ys.forEach(y => { if (pick.length < ports.length && pick.every(u => Math.abs(u - y) >= 6)) pick.push(y); });
+        while (pick.length < ports.length) pick.push(n.Y + 6 * pick.length);
+        pick.sort((p, q) => p - q);
+        ports.forEach((q, i) => anchorAt.set(q.key + '@' + id, Object.assign({}, p0, { y: pick[i] })));
+      }
+    });
+  }
+  App.crossAnchor = (key, id) => anchorAt.get(key + '@' + id);
+  // Концы связи для подсветки выбранного, когда «Связи» выключены: те же значки и выходы, что у линий;
+  // пути потом прокладываются все вместе, чтобы у каждой линии была своя дорожка
+  function crossPath(e, ida, idb, toB) {
+    const key = e ? e.a + '|' + e.b : null;
+    const A = (key && anchorAt.get(key + '@' + ida)) || portOf(nodeById.get(ida));
+    const B = toB || (key && anchorAt.get(key + '@' + idb)) || portOf(nodeById.get(idb));
+    return { A, B, marks: [A, B].filter(x => x.mark) };
+  }
   function drawCross() {
     xKey = null; peekId = null; xBox = null;
-    const pairs = state.showLinks ? PAIRS.filter(e => visible.has(e.a) && visible.has(e.b) && nodeById.get(e.a).band !== nodeById.get(e.b).band) : [];
-    const raw = pairs.map(e => ({ e, key: e.a + '|' + e.b, k: e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(e.a + '|' + e.b) }));
-    // Концы линий, выходящие из одной колонки в одну сторону, разводятся по полосам поперёк карточки
-    const ends = new Map();
-    const addEnd = (key, n, dir, toX) => { const g = n.X + '|' + dir; if (!ends.has(g)) ends.set(g, []); ends.get(g).push({ id: key + '@' + n.data.id, n, toX }); };
-    raw.forEach(r => {
-      if (r.k) { const o = nodeById.get(r.k.s.data.id === r.e.a ? r.e.b : r.e.a); addEnd(r.key, o, o.Y > r.k.y ? 'up' : 'down', r.k.x); return; }
-      const a = nodeById.get(r.e.a), b = nodeById.get(r.e.b), [u, v] = a.Y <= b.Y ? [a, b] : [b, a];
-      addEnd(r.key, u, 'down', v.X); addEnd(r.key, v, 'up', u.X);
-    });
-    const LANES = [0, -34, 34, -68, 68, -17, 17, -51, 51, -78, 78];
-    const lane = new Map();
-    ends.forEach(list => { list.sort((p, q) => p.n.Y - q.n.Y || p.toX - q.toX); list.forEach((x, i) => lane.set(x.id, LANES[i % LANES.length])); });
-    const off = (key, id) => lane.get(key + '@' + id) || 0;
-    const geo = raw.map(({ e, key, k }) => {
-      const g = k ? (o => knotCross(o, k, off(key, o.data.id)))(nodeById.get(k.s.data.id === e.a ? e.b : e.a))
-        : crossGeom(nodeById.get(e.a), nodeById.get(e.b), off(key, e.a), off(key, e.b));
-      return Object.assign({ key, e, knot: k || null }, g);
+    const all = PAIRS.filter(e => visible.has(e.a) && visible.has(e.b) && nodeById.get(e.a).band !== nodeById.get(e.b).band);
+    crossAnchors(all);
+    const pairs = state.showLinks ? all : [];
+    const items = pairs.map(e => { const key = e.a + '|' + e.b; return { key, A: anchorAt.get(key + '@' + e.a), B: anchorAt.get(key + '@' + e.b) }; });
+    const routed = App.routeLines(items);
+    App.crossUnder = new Map();
+    const geo = [];
+    pairs.forEach(e => {
+      const key = e.a + '|' + e.b, r = routed.get(key);
+      if (!r) return;
+      const k = e.type !== 'rumor' && e.type !== 'w' && knotByPair.get(key);
+      if (r.under.length) App.crossUnder.set(key, r.under);
+      geo.push(Object.assign({ key, e, knot: k || null }, r));
     });
     layers.x.selectAll('path.xlink').data(geo, d => d.key).join('path')
       .attr('class', d => 'xlink t-' + d.e.type)
       .attr('d', d => d.d);
-    // полоса наведения — ломаной по той же кривой: на очень длинных кривых (через всё древо) браузер проверяет попадание
-    // приближённо и местами промахивается мимо линии, по ломаной — точно
-    const flat = d => {
-      if (!d.pts) return d.d;
-      const P = d.pts, len = Math.hypot(P[1][0] - P[0][0], P[1][1] - P[0][1]) + Math.hypot(P[2][0] - P[1][0], P[2][1] - P[1][1]) + Math.hypot(P[3][0] - P[2][0], P[3][1] - P[2][1]);
-      const n = Math.max(8, Math.min(600, Math.ceil(len / 30)));
-      let out = 'M' + P[0][0] + ',' + P[0][1];
-      for (let i = 1; i <= n; i++) { const q = bez(P, i / n); out += ' L' + q[0].toFixed(1) + ',' + q[1].toFixed(1); }
-      return out;
-    };
+    // полоса наведения — по той же ломаной
     layers.x.selectAll('path.xhit').data(geo, d => d.key).join(enter => enter.append('path').attr('class', 'xhit').call(xEvents))
-      .attr('d', flat);
-    // Значок брака — в середине линии, но не на карточке, не на заголовке дома и не вплотную к другому значку
-    const busy = allNodes.map(n => [n.X - 14, n.Y - H / 2 - 14, n.X + W + (hasKids(n) ? TOG + 10 : 0) + 14, n.Y + H / 2 + 14])
-      .concat(knots.map(k => [k.x - 16, k.y - 16, k.x + 16, k.y + 16]))
-      .concat(bandBoxes.map(b => [b.hx0 - 10, b.top, b.hx0 + b.tx + (b.headW || 300) + 10, b.top + 92]));
-    const spots = [];
-    const ok = pt => !busy.some(r => pt[0] > r[0] && pt[0] < r[2] && pt[1] > r[1] && pt[1] < r[3]) && !spots.some(q => Math.hypot(q[0] - pt[0], q[1] - pt[1]) < 34);
-    const markData = geo.filter(d => d.e.type === 'm' && !d.knot);
-    markData.forEach(d => {
-      let pt = null;
-      for (let i = 0; i <= 16 && !pt; i++) for (const sgn of i ? [-1, 1] : [1]) { const q = bez(d.pts, 0.5 + sgn * i * 0.025); if (ok(q)) { pt = q; break; } }
-      d.mp = pt || [d.mx, d.my];
-      spots.push(d.mp);
+      .attr('d', d => d.d);
+    // Значки браков — у обеих карточек, в колонке значков (кроме конца, где брак выходит из узла с детьми)
+    const markData = [];
+    geo.forEach(d => {
+      if (d.e.type !== 'm') return;
+      [d.e.a, d.e.b].forEach(id => {
+        const a = anchorAt.get(d.key + '@' + id);
+        if (a && a.mark) markData.push(Object.assign({}, d, { key: d.key + '@' + id, lkey: d.key, at: id, mp: [a.x, a.y] }));
+      });
     });
     const marks = layers.marks.selectAll('g.xmark').data(markData, d => d.key).join(enter => {
       const g = enter.append('g').attr('class', 'xmark').attr('tabindex', 0).attr('role', 'button').call(xEvents);
@@ -3995,11 +4024,10 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     marks.attr('transform', d => 'translate(' + d.mp[0] + ',' + d.mp[1] + ')')
       .attr('aria-label', d => xText(d.e) + '. ' + App.t('Перейти к {name}', { name: byId.get(xFar(d, d.mp)).full }));
   }
-  // Дальний от точки конец линии: туда и ведёт нажатие
+  // Дальний от точки конец линии — по длине пути, а не по прямой: туда и ведёт нажатие
   function xFar(d, pt) {
-    const a = nodeById.get(d.e.a), b = nodeById.get(d.e.b);
-    const da = Math.hypot(a.X + W / 2 - pt[0], a.Y - pt[1]), db = Math.hypot(b.X + W / 2 - pt[0], b.Y - pt[1]);
-    return da > db ? d.e.a : d.e.b;
+    const { at, len } = App.alongPath(d.pts, pt);
+    return at < len / 2 ? d.to : d.from;
   }
   function xGo(d, pt) { xHover(null); select(xFar(d, pt), { center: true }); }
   const canvasEl = document.getElementById('canvas');
@@ -4010,14 +4038,14 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
      запоминаются в начале наведения — на каждом движении мыши раскладка страницы не читается. */
   let xKey = null, xFarId = null, xBox = null, xTipW = 0, xTipH = 0;
   function xHover(d, ev) {
-    const key = d ? d.key : null;
+    const key = d ? (d.lkey || d.key) : null;
     if (key !== xKey) {
       layers.x.selectAll('path.xlink.hover').classed('hover', false);
       layers.marks.selectAll('g.xmark.hover').classed('hover', false);
       layers.nodes.selectAll('g.node.xpeer').classed('xpeer', false);
       if (d) {
         layers.x.selectAll('path.xlink').filter(q => q.key === key).classed('hover', true);
-        layers.marks.selectAll('g.xmark').filter(q => q.key === key).classed('hover', true);
+        layers.marks.selectAll('g.xmark').filter(q => q.lkey === key).classed('hover', true);
         layers.nodes.selectAll('g.node').filter(n => n.data.id === d.e.a || n.data.id === d.e.b).classed('xpeer', true);
       }
       xKey = key; xFarId = null;
@@ -4044,7 +4072,9 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     return d3.zoomTransform(svg.node()).invert([ev.clientX - xBox.sl, ev.clientY - xBox.st]);
   }
   function xEvents(sel) {
-    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving) xHover(d, e); })
+    // с зажатой кнопкой не подсвечиваем: pointermove приходит раньше mousemove, по которому d3 начинает перетаскивание,
+    // и без этого первый шаг перетаскивания подсвечивал линию, оказавшуюся под указателем
+    sel.on('pointerenter pointermove', (e, d) => { if (!panning && !moving && !e.buttons) xHover(d, e); })
       .on('pointerleave', () => xHover(null))
       .on('click', (e, d) => { e.stopPropagation(); xGo(d, treePoint(e)); });
   }
@@ -4146,29 +4176,50 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
         if (!other || !visible.has(other.data.id)) return;
         const k = knotByPair.get(sel + '|' + other.data.id);
         if (k && (other.band === a.band || state.showLinks)) return;
-        if (other.band === a.band || !state.showLinks) extra.push({ kind: 'sp', type: e.type, a, b: other, key: 'sp' + other.data.id });
+        if (other.band === a.band || !state.showLinks) extra.push({ kind: 'sp', type: e.type, a, b: other, key: 'sp' + other.data.id, x: other.band !== a.band ? crossPath(e, sel, other.data.id) : null });
       });
       a.data.par.forEach(r => {
         const ref = (/^[a-z_0-9]+/.exec(r) || [''])[0];
         const op = nodeById.get(ref);
         if (!op || ref === a.data.p || !visible.has(ref)) return;
         if (selKnot && selKnot.o.id === ref && (op.band === a.band || state.showLinks)) return;
-        extra.push({ kind: 'par', a: op, b: a, key: 'par' + ref });
+        let x = null;
+        if (op.band !== a.band) {
+          // второй родитель из другого дома — к узлу брака, из которого выходит ребёнок, иначе к самому ребёнку
+          if (selKnot && selKnot.o.id === ref) {
+            const sid = selKnot.s.data.id, e = PAIRS.find(q => (q.a === sid && q.b === ref) || (q.a === ref && q.b === sid));
+            x = crossPath(e, ref, sid, e ? null : { id: sid, x: selKnot.x, y: selKnot.y, g: selKnot.s.gen, band: selKnot.s.band });
+          } else x = crossPath(null, ref, sel);
+        }
+        extra.push({ kind: 'par', a: op, b: a, key: 'par' + ref, x });
       });
     }
+    const xs = extra.filter(d => d.x);
+    const routed = xs.length ? App.routeLines(xs.map(d => ({ key: d.key, A: d.x.A, B: d.x.B }))) : null;
+    xs.forEach(d => { const r = routed.get(d.key); d.x.d = r ? r.d : null; });
     layers.sel.selectAll('path').data(extra, d => d.key).join('path')
       .attr('class', d => d.kind === 'par' ? 'second' : 'spouse t-' + d.type)
       .attr('d', d => {
+        if (d.x) return d.x.d;
         if (d.kind === 'par') {
-          if (d.a.band !== d.b.band) return crossGeom(d.a, d.b).d;
+          if (d.a.band !== d.b.band) return null;
           return linkGen({ source: [d.a.X + W + (hasKids(d.a) && state.mode === 'gen' ? TOG : 4), d.a.Y], target: [d.b.X, d.b.Y] });
         }
-        if (d.a.band !== d.b.band) return crossGeom(d.a, d.b).d;
+        if (d.a.band !== d.b.band) return null;
         const x1 = d.a.X + W + (hasKids(d.a) ? TOG : 4), y1 = d.a.Y;
         const x2 = d.b.X + W + (hasKids(d.b) ? TOG : 4), y2 = d.b.Y;
         const off = 44 + Math.min(180, Math.abs(y2 - y1) * 0.12);
         return 'M' + x1 + ',' + y1 + ' C' + (x1 + off) + ',' + y1 + ' ' + (x2 + off) + ',' + y2 + ' ' + x2 + ',' + y2;
       });
+    // значки браков у концов подсвеченной связи с другим домом (когда «Связи» выключены, своих значков нет)
+    const selMarks = [];
+    extra.forEach(d => { if (d.x && d.kind === 'sp' && d.type === 'm') d.x.marks.forEach(m => selMarks.push({ key: d.key + '@' + m.id, x: m.x, y: m.y })); });
+    layers.sel.selectAll('g.selmark').data(selMarks, d => d.key).join(enter => {
+      const g = enter.append('g').attr('class', 'xmark hot selmark').attr('aria-hidden', 'true');
+      g.append('circle').attr('r', 10);
+      g.append('text').text('⚭');
+      return g;
+    }).attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
   }
   App.decorate = decorate;
 
@@ -6294,6 +6345,246 @@ const I18N_DATA = {"en": {"Алгуды": "Algood", "Аллирионы": "Allyr
     else if (e.key === 'Home') { e.preventDefault(); set(DEF, true); }
   });
   window.addEventListener('resize', () => set(w));
+})();
+
+/* Маршруты линий между домами.
+   Линия выходит справа от карточки — от значка брака или от кнопки ветви — и идёт по коридору своей колонки:
+   по полосе между колонкой значков браков и следующей колонкой карточек. В другой коридор она переходит только
+   по промежутку между полосами домов и входит в другую карточку тоже справа, по коридору её колонки.
+   У каждой линии на каждом участке своя дорожка (там, где участки не перекрываются, дорожка общая). Дорожки
+   упорядочены так, чтобы линии не пересекали друг друга на поворотах — вложенно: та, что поворачивает раньше,
+   идёт снаружи. В коридорах карточек нет, поэтому под карточку линия уходит, только если коридор переполнен;
+   такие линии помечаются (under — под какими карточками прошла). Считается в браузере при каждой раскладке. */
+(function () {
+  const App = window.App;
+  const { W, H, TOG, KG, KR } = App;
+  const TURN = 60;          // цена поворота в другой коридор: лишний поворот должен окупаться длиной
+  const HEAD_PEN = 4000;    // цена прохода через заголовок дома (герб, название, девиз)
+  // шаг дорожек: полоса наведения у линии 14 px, при шаге 10 px у каждой линии остаётся своя середина
+  const LANE = 10, LANE_MIN = 4, GLANE = 10, CORNER = 6;
+
+  /* Порядок дорожек в одном коридоре (или промежутке). Участок — отрезок [lo, hi] вдоль коридора; на концах
+     участка линия поворачивает в сторону dir (−1 — к меньшей координате, +1 — к большей). Поворот на отметке p
+     пересекает соседний участок, если тот проходит через p и стоит с той стороны, куда поворачивают.
+     C[i][j] — сколько пересечений, если i стоит раньше j (ближе к меньшей координате). Порядок — вставками
+     в лучшее место и перестановками, пока сумма уменьшается. */
+  function arrange(list) {
+    const n = list.length;
+    if (n < 2) return list.map((_, i) => i);
+    const inside = (p, s) => p >= s.lo - 1 && p <= s.hi + 1;
+    const C = list.map(() => new Array(n).fill(0));
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+      if (i === j) continue;
+      let c = 0;
+      list[j].ends.forEach(e => { if (e.dir < 0 && inside(e.p, list[i])) c++; });
+      list[i].ends.forEach(e => { if (e.dir > 0 && inside(e.p, list[j])) c++; });
+      C[i][j] = c;
+    }
+    const bestPos = (ord, i) => {
+      let c = 0;
+      ord.forEach(x => { c += C[i][x]; });
+      let best = c, pos = 0;
+      for (let q = 0; q < ord.length; q++) {
+        c += C[ord[q]][i] - C[i][ord[q]];
+        if (c < best) { best = c; pos = q + 1; }
+      }
+      return pos;
+    };
+    const byLen = list.map((_, i) => i).sort((a, b) => (list[b].hi - list[b].lo) - (list[a].hi - list[a].lo) || a - b);
+    const ord = [];
+    byLen.forEach(i => ord.splice(bestPos(ord, i), 0, i));
+    for (let pass = 0; pass < 8; pass++) {
+      let moved = false;
+      byLen.forEach(i => {
+        const at = ord.indexOf(i);
+        ord.splice(at, 1);
+        const pos = bestPos(ord, i);
+        ord.splice(pos, 0, i);
+        if (pos !== at) moved = true;
+      });
+      if (!moved) break;
+    }
+    return ord;
+  }
+  // Номера дорожек по порядку: участок получает номер на один больше, чем у перекрывающихся с ним соседей,
+  // уже стоящих ближе к краю, с которого считаем
+  function lanes(list, ord) {
+    const r = new Array(list.length).fill(0);
+    const done = [];
+    ord.forEach(i => {
+      let k = 0;
+      done.forEach(j => { if (list[i].lo < list[j].hi + 8 && list[j].lo < list[i].hi + 8) k = Math.max(k, r[j] + 1); });
+      r[i] = k; done.push(i);
+    });
+    return r;
+  }
+
+  // Путь по ломаной со скруглёнными углами
+  function roundPath(P) {
+    let d = 'M' + P[0][0] + ',' + P[0][1];
+    for (let i = 1; i < P.length - 1; i++) {
+      const [x0, y0] = P[i - 1], [x, y] = P[i], [x1, y1] = P[i + 1];
+      const l0 = Math.hypot(x - x0, y - y0), l1 = Math.hypot(x1 - x, y1 - y);
+      const r = Math.min(CORNER, l0 / 2, l1 / 2);
+      const ax = x - (x - x0) / l0 * r, ay = y - (y - y0) / l0 * r, bx = x + (x1 - x) / l1 * r, by = y + (y1 - y) / l1 * r;
+      d += ' L' + ax.toFixed(1) + ',' + ay.toFixed(1) + ' Q' + x + ',' + y + ' ' + bx.toFixed(1) + ',' + by.toFixed(1);
+    }
+    const L = P[P.length - 1];
+    return d + ' L' + L[0] + ',' + L[1];
+  }
+  // Убирает повторы и точки посреди прямого участка
+  function simplify(P) {
+    const out = [];
+    P.forEach(p => {
+      const q = out[out.length - 1];
+      if (q && Math.abs(q[0] - p[0]) < 0.01 && Math.abs(q[1] - p[1]) < 0.01) return;
+      const o = out[out.length - 2];
+      if (o && q && ((Math.abs(o[0] - q[0]) < 0.01 && Math.abs(q[0] - p[0]) < 0.01) || (Math.abs(o[1] - q[1]) < 0.01 && Math.abs(q[1] - p[1]) < 0.01))) out[out.length - 1] = p;
+      else out.push(p);
+    });
+    return out;
+  }
+
+  /* items: [{ key, A, B }], A и B — концы: { id, x, y — точка, откуда линия уходит вправо; g — колонка поколения;
+     band — дом полосы }. Возвращает Map key → { pts, d, len, from, to, under }. */
+  function routeLines(items) {
+    const out = new Map();
+    const bands = App.bandBoxes();
+    const nb = bands.length;
+    if (!nb || !items.length) return out;
+    const bi = new Map(bands.map((b, i) => [b.house, i]));
+    const colX = App.colX;
+    const cx0 = g => colX(g) + W + TOG + KG + KR + 6;
+    const cx1 = g => colX(g + 1) - 14;
+    const cxm = g => (cx0(g) + cx1(g)) / 2;
+    // промежуток j — под полосой j; под последней полосой — место до низа древа
+    const gapOf = j => j < nb - 1 ? [bands[j].bottom, bands[j + 1].top] : [bands[j].bottom, bands[j].bottom + 150];
+    const gapY = j => { const g = gapOf(j); return (g[0] + g[1]) / 2; };
+    // уровни по вертикали: заголовок полосы k — k, карточки полосы i — i + 0.5, промежуток j — j + 0.75
+    const nodes = App.allNodes();
+    let gMin = Infinity, gMax = -Infinity;
+    nodes.forEach(n => { gMin = Math.min(gMin, n.gen); gMax = Math.max(gMax, n.gen); });
+    const cols = [];
+    for (let g = gMin; g <= gMax; g++) cols.push(g);
+    // сколько заголовков домов лежит на пути по коридору: префиксные суммы по полосам
+    const pref = new Map();
+    cols.forEach(g => {
+      const a = cx0(g), b = cx1(g), p = [0];
+      bands.forEach((bd, k) => { const h0 = bd.hx0 - 8, h1 = bd.hx0 + bd.tx + (bd.headW || 300) + 16; p.push(p[k] + (a < h1 && h0 < b ? 1 : 0)); });
+      pref.set(g, p);
+    });
+    const heads = (g, l1, l2) => {
+      const p = pref.get(g);
+      if (!p) return 0;
+      const lo = Math.min(l1, l2), hi = Math.max(l1, l2);
+      return p[Math.min(nb, Math.floor(hi) + 1)] - p[Math.min(nb, Math.floor(lo) + 1)];
+    };
+    const vCost = (g, y1, l1, y2, l2) => Math.abs(y2 - y1) + HEAD_PEN * heads(g, l1, l2);
+    const hCost = (g1, g2) => g1 === g2 ? 0 : Math.abs(cxm(g1) - cxm(g2)) + TURN;
+
+    // 1. Выбор пути: коридор начала → (промежуток → коридор)* → коридор конца
+    const routes = [];
+    items.forEach(it => {
+      let A = it.A, B = it.B, flip = false;
+      if (!bi.has(A.band) || !bi.has(B.band)) return;
+      if (bi.get(A.band) > bi.get(B.band)) { [A, B] = [B, A]; flip = true; }
+      const ia = bi.get(A.band), ib = bi.get(B.band), la = ia + 0.5, lb = ib + 0.5;
+      let best = null;
+      const take = (cost, plan) => { if (!best || cost < best.cost - 1e-6) best = { cost, plan }; };
+      if (A.g === B.g) take(vCost(A.g, A.y, la, B.y, lb), []);
+      const jLo = Math.max(0, ia - 1), jHi = Math.min(ib, nb - 1);
+      for (let j1 = jLo; j1 <= jHi; j1++) {
+        const y1 = gapY(j1), l1 = j1 + 0.75, head = vCost(A.g, A.y, la, y1, l1);
+        if (A.g !== B.g) take(head + hCost(A.g, B.g) + vCost(B.g, y1, l1, B.y, lb) + 0.001 * Math.abs(j1 - (ib - 1)), [{ j: j1, g: B.g }]);
+        for (let j2 = j1 + 1; j2 <= jHi; j2++) {
+          const y2 = gapY(j2), l2 = j2 + 0.75, tail = vCost(B.g, y2, l2, B.y, lb);
+          cols.forEach(gm => {
+            if (gm === A.g || gm === B.g) return;
+            take(head + hCost(A.g, gm) + vCost(gm, y1, l1, y2, l2) + hCost(gm, B.g) + tail, [{ j: j1, g: gm }, { j: j2, g: B.g }]);
+          });
+        }
+      }
+      if (!best) return;
+      const legs = [A.g].concat(best.plan.map(s => s.g)), turns = best.plan.map(s => s.j);
+      routes.push({ it, A, B, flip, legs, turns, lx: [], ty: [] });
+    });
+
+    // 2. Дорожки в коридорах. Концы участков у промежутков пока берутся по середине промежутка.
+    const vert = new Map();
+    routes.forEach((r, ri) => {
+      r.legs.forEach((g, i) => {
+        const y0 = i ? gapY(r.turns[i - 1]) : r.A.y, y1 = i < r.turns.length ? gapY(r.turns[i]) : r.B.y;
+        const ends = [];
+        // у карточки линия уходит влево, к своему значку или кнопке; у промежутка — в сторону следующего коридора
+        ends.push({ p: y0, dir: i ? Math.sign(cxm(r.legs[i - 1]) - cxm(g)) : -1 });
+        ends.push({ p: y1, dir: i < r.turns.length ? Math.sign(cxm(r.legs[i + 1]) - cxm(g)) : -1 });
+        if (!vert.has(g)) vert.set(g, []);
+        vert.get(g).push({ ri, i, lo: Math.min(y0, y1), hi: Math.max(y0, y1), ends });
+      });
+    });
+    vert.forEach((list, g) => {
+      const ord = arrange(list);
+      // считаем от правого края коридора: одиночная линия идёт у следующей колонки, а не у значков
+      const r = lanes(list, ord.slice().reverse());
+      const m = Math.max(0, ...r), wide = cx1(g) - cx0(g);
+      const sp = m ? Math.max(LANE_MIN, Math.min(LANE, wide / m)) : LANE;
+      list.forEach((s, k) => { routes[s.ri].lx[s.i] = cx1(g) - r[k] * sp; });
+    });
+
+    // 3. Дорожки в промежутках между полосами — по настоящим дорожкам коридоров
+    const horiz = new Map();
+    routes.forEach((r, ri) => {
+      r.turns.forEach((j, i) => {
+        const xa = r.lx[i], xb = r.lx[i + 1], gy = gapY(j);
+        // вертикаль до поворота идёт от своего начала, после поворота — к своему концу
+        const yBefore = i ? gapY(r.turns[i - 1]) : r.A.y, yAfter = i + 1 < r.turns.length ? gapY(r.turns[i + 1]) : r.B.y;
+        const ends = [{ p: xa, dir: Math.sign(yBefore - gy) }, { p: xb, dir: Math.sign(yAfter - gy) }];
+        if (!horiz.has(j)) horiz.set(j, []);
+        horiz.get(j).push({ ri, i, lo: Math.min(xa, xb), hi: Math.max(xa, xb), ends });
+      });
+    });
+    horiz.forEach((list, j) => {
+      const ord = arrange(list);
+      const r = lanes(list, ord);
+      const m = Math.max(0, ...r), [g0, g1] = gapOf(j), room = g1 - g0 - 48;
+      const sp = m ? Math.max(LANE_MIN, Math.min(GLANE, room / m)) : GLANE;
+      const top = (g0 + g1) / 2 - m * sp / 2;
+      list.forEach((s, k) => { routes[s.ri].ty[s.i] = top + r[k] * sp; });
+    });
+
+    // 4. Ломаные, пометка проходов под карточками
+    const cards = nodes.map(n => ({ id: n.data.id, r: [n.X, n.Y - H / 2, n.X + W, n.Y + H / 2] }));
+    routes.forEach(r => {
+      let P = [[r.A.x, r.A.y], [r.lx[0], r.A.y]];
+      r.turns.forEach((j, i) => { P.push([r.lx[i], r.ty[i]], [r.lx[i + 1], r.ty[i]]); });
+      P.push([r.lx[r.legs.length - 1], r.B.y], [r.B.x, r.B.y]);
+      P = simplify(P);
+      if (r.flip) P.reverse();
+      const under = [];
+      for (let s = 1; s < P.length; s++) {
+        const x0 = Math.min(P[s - 1][0], P[s][0]), x1 = Math.max(P[s - 1][0], P[s][0]), y0 = Math.min(P[s - 1][1], P[s][1]), y1 = Math.max(P[s - 1][1], P[s][1]);
+        cards.forEach(c => { if (x0 < c.r[2] && c.r[0] < x1 + 0.01 && y0 < c.r[3] && c.r[1] < y1 + 0.01 && under.indexOf(c.id) < 0) under.push(c.id); });
+      }
+      let len = 0;
+      for (let s = 1; s < P.length; s++) len += Math.hypot(P[s][0] - P[s - 1][0], P[s][1] - P[s - 1][1]);
+      out.set(r.it.key, { pts: P, d: roundPath(P), len, from: r.it.A.id, to: r.it.B.id, under });
+    });
+    return out;
+  }
+  App.routeLines = routeLines;
+
+  // Положение точки вдоль ломаной: длина пути от начала до ближайшей к точке её точки
+  App.alongPath = (P, pt) => {
+    let best = Infinity, at = 0, acc = 0;
+    for (let s = 1; s < P.length; s++) {
+      const [x0, y0] = P[s - 1], [x1, y1] = P[s], L = Math.hypot(x1 - x0, y1 - y0);
+      const t = L ? Math.max(0, Math.min(1, ((pt[0] - x0) * (x1 - x0) + (pt[1] - y0) * (y1 - y0)) / (L * L))) : 0;
+      const dd = Math.hypot(x0 + t * (x1 - x0) - pt[0], y0 + t * (y1 - y0) - pt[1]);
+      if (dd < best) { best = dd; at = acc + t * L; }
+      acc += L;
+    }
+    return { at, len: acc };
+  };
 })();
 
 /* Книги и сериалы: актёры и отличия в карточках, режим «Экранизации» на древе (приглушает тех, кого нет на экране, и помечает расхождения). */

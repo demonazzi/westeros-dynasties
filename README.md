@@ -45,7 +45,7 @@ node tools/check-house.js     # карточка дома
 node tools/check-i18n.js      # английская версия
 node tools/check-tips.js      # подсказки у линий
 node tools/check-scale.js     # шкала времени (запускать отдельно)
-node tools/check-links.js     # линии между домами (≈10 минут)
+node tools/check-links.js     # линии между домами: наведение, нажатие, проход через чужие карточки (≈10 минут)
 ```
 
 ## Где что лежит
@@ -59,6 +59,7 @@ data/vassals.json         присяги — собирается из research/
 texts/                    длинные тексты (Markdown): people/<дом>.md, vassals.md (дома), dragons.md, screen*.md
 texts/en/                 то же по-английски + data.json (переводы коротких строк из data/)
 src/                      код: app-core.js (древо, карточка, поиск), app-mod-*.js (вкладки и модули),
+                          app-mod-route.js (пути линий между домами),
                           app-mod-sigils.js (гербы), styles.css (цвета домов), i18n/en.json (интерфейс по-английски),
                           vendor/d3.min.js и fonts/ — встраиваются в страницу при сборке
 tools/                    сборка, проверки, синхронизация текстов и переводов

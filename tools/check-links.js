@@ -1,5 +1,7 @@
 /* Проверка связей между домами в настоящем браузере: каждый значок брака и каждая линия отзываются на наведение
-   (подсказка с обоими именами, подсветка обоих концов) и на нажатие (переход к дальнему концу); значки не лежат на карточках. */
+   (подсказка с обоими именами, подсветка обоих концов) и на нажатие (переход к дальнему концу); значки не лежат на карточках;
+   линии нигде на своём пути не проходят через чужие карточки. Если пути без карточек нет, раскладчик пускает линию под
+   карточки и помечает её — такие линии выводятся предупреждением, а больше пяти — ошибка: значит, коридоры где-то не работают. */
 const { chromium } = require('./pw');
 const fs = require('fs'), path = require('path');
 (async () => {
@@ -19,7 +21,7 @@ const fs = require('fs'), path = require('path');
     return [r.left + r.width / 2, r.top + r.height / 2];
   }, [x, y, k]);
   const marks = await p.evaluate(() => App.layers.marks.selectAll('g.xmark').data().map(d => ({ key: d.key, a: d.e.a, b: d.e.b, mp: d.mp })));
-  const lines = await p.evaluate(() => App.layers.x.selectAll('path.xhit').data().map(d => ({ key: d.key, a: d.e.a, b: d.e.b, type: d.e.type })));
+  const lines = await p.evaluate(() => App.layers.x.selectAll('path.xhit').data().map(d => ({ key: d.key, a: d.e.a, b: d.e.b, type: d.e.type, from: d.from })));
   // Значки не лежат на карточках
   const overlap = await p.evaluate(() => {
     const out = [];
@@ -30,6 +32,33 @@ const fs = require('fs'), path = require('path');
     return out;
   });
   overlap.forEach(o => bad.push('значок брака лежит на карточке: ' + o));
+  // Линии по всему пути: через каждые 2 px — не внутри ли чужой карточки (своих концов линия касается только справа,
+  // у значка или кнопки ветви, так что внутрь карточки не заходит и у своих). Помеченные раскладчиком — отдельно.
+  const through = await p.evaluate(() => {
+    const G = 40, cards = new Map();
+    App.allNodes().forEach(n => {
+      const r = [n.X, n.Y - App.H / 2, n.X + App.W, n.Y + App.H / 2];
+      for (let gx = Math.floor(r[0] / G); gx <= Math.floor(r[2] / G); gx++) for (let gy = Math.floor(r[1] / G); gy <= Math.floor(r[3] / G); gy++) { const k = gx + ',' + gy; if (!cards.has(k)) cards.set(k, []); cards.get(k).push({ id: n.data.id, r }); }
+    });
+    const out = [];
+    App.layers.x.selectAll('path.xlink').each(function (d) {
+      const L = this.getTotalLength(), hit = new Set();
+      for (let s = 0; s <= L; s += 2) {
+        const q = this.getPointAtLength(s), c = cards.get(Math.floor(q.x / G) + ',' + Math.floor(q.y / G));
+        if (c) c.forEach(o => { if (q.x > o.r[0] + 0.5 && q.x < o.r[2] - 0.5 && q.y > o.r[1] + 0.5 && q.y < o.r[3] - 0.5) hit.add(o.id); });
+      }
+      if (hit.size) out.push({ key: d.key, ids: [...hit], marked: (App.crossUnder && App.crossUnder.get(d.key)) || [] });
+    });
+    const marked = App.crossUnder ? [...App.crossUnder.keys()] : [];
+    return { out, marked };
+  });
+  const warn = [];
+  through.out.forEach(t => {
+    const loose = t.ids.filter(id => t.marked.indexOf(id) < 0);
+    if (loose.length) bad.push('линия ' + t.key + ' проходит через чужие карточки: ' + loose.join(', ') + (t.marked.length ? '' : ' (раскладчик её не пометил)'));
+  });
+  through.marked.forEach(k => { const t = through.out.find(o => o.key === k); warn.push('линия ' + k + ' уходит под карточки: ' + (t ? t.ids : []).join(', ')); });
+  if (through.marked.length > 5) bad.push('под карточки уходит линий: ' + through.marked.length + ' (допустимо до 5) — коридоры где-то не работают');
   // Каждый значок: под указателем именно он, подсказка с обоими именами, нажатие уводит к одному из супругов
   for (const m of marks) {
     await p.evaluate(() => App.select(null));
@@ -57,7 +86,7 @@ const fs = require('fs'), path = require('path');
       await p.evaluate(() => App.select(null));
       const res = await p.evaluate(([key, from, to]) => {
         const path = App.layers.x.selectAll('path.xhit').filter(q => q.key === key).node();
-        const L = path.getTotalLength(), n = App.nodeById.get(from), m = App.nodeById.get(to);
+        const L = path.getTotalLength();
         // точки линий между домами (через 1.5 px), линий родства (через 3 px) и карточки (вместе с кружком
         // раскрытия справа) — один раз на раскладку, в сетке по 20 px: соседей ищем только в ближайших клетках
         const tkey = App.allNodes().length + '|' + App.bandsBottom();
@@ -75,6 +104,7 @@ const fs = require('fs'), path = require('path');
         const { xs, tree, cards, G } = window.__geo;
         const around = (grid, q, f) => { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { const c = grid.get((Math.floor(q.x / G) + i) + ',' + (Math.floor(q.y / G) + j)); if (c && c.some(f)) return true; } return false; };
         const knots = App.layers.knots.selectAll('g.knot').data(), marks = App.layers.marks.selectAll('g.xmark').data();
+        const fromStart = path.__data__.from === from;
         // точки линии вне карточек и вдали от других линий и линий родства, ближайшие к концу from
         // (с half — на его половине: нажатие ведёт к дальнему от указателя концу); до четырёх мест через 30 px
         const pick = (gap, half) => {
@@ -87,8 +117,9 @@ const fs = require('fs'), path = require('path');
             if (marks.some(k => Math.hypot(k.mp[0] - q.x, k.mp[1] - q.y) < 14)) continue;
             if (around(xs, q, o => o[2] !== key && Math.hypot(o[0] - q.x, o[1] - q.y) < gap)) continue;
             if (around(tree, q, o => Math.abs(o[0] - q.x) < 6 && Math.abs(o[1] - q.y) < 6)) continue;
-            const dist = Math.hypot(n.X + 88 - q.x, n.Y - q.y);
-            if (half && dist >= Math.hypot(m.X + 88 - q.x, m.Y - q.y)) continue;
+            // ближе к концу from — по длине пути: туда же считает и подсказка
+            const dist = fromStart ? s : L - s;
+            if (half && dist >= L / 2) continue;
             all.push({ x: q.x, y: q.y, dist });
           }
           all.sort((u, v) => u.dist - v.dist);
@@ -174,6 +205,7 @@ const fs = require('fs'), path = require('path');
   }
   if (errs.length) bad.push('ошибки страницы: ' + errs.join(' | '));
   console.log('значков брака', marks.length, 'линий между домами', lines.length);
-  if (bad.length) { console.log(bad.join('\n')); process.exitCode = 1; } else console.log('связи в порядке: значки и линии отзываются на наведение и нажатие, ведут к нужному концу, на карточках не лежат; перетаскивание с линии не трогает подсветку');
+  if (warn.length) console.log('предупреждения:\n' + warn.join('\n'));
+  if (bad.length) { console.log(bad.join('\n')); process.exitCode = 1; } else console.log('связи в порядке: значки и линии отзываются на наведение и нажатие, ведут к нужному концу, на карточках не лежат; линии не проходят через чужие карточки; перетаскивание с линии не трогает подсветку');
   await b.close();
 })();

@@ -46,7 +46,7 @@ node tools/check-house.js     # house card
 node tools/check-i18n.js      # English version
 node tools/check-tips.js      # tooltips on lines
 node tools/check-scale.js     # time scale (run on its own)
-node tools/check-links.js     # lines between houses (≈10 minutes)
+node tools/check-links.js     # lines between houses: hover, click, passing through other cards (≈10 minutes)
 ```
 
 ## What is where
@@ -60,6 +60,7 @@ data/vassals.json         allegiances — built from research/vassal/*.json, do 
 texts/                    long texts (Markdown): people/<house>.md, vassals.md (houses), dragons.md, screen*.md
 texts/en/                 the same in English + data.json (translations of short strings from data/)
 src/                      code: app-core.js (tree, card, search), app-mod-*.js (tabs and modules),
+                          app-mod-route.js (paths of lines between houses),
                           app-mod-sigils.js (sigils), styles.css (house colours), i18n/en.json (English interface),
                           vendor/d3.min.js and fonts/ — embedded into the page at build time
 tools/                    build, checks, text and translation sync
